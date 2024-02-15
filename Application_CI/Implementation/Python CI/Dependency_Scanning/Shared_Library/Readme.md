@@ -70,16 +70,16 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 ## Setup of Dependency Scanning Via Shared Library
 * Follow this document for Setup [**Cilck here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)
 
-  <img width="760" length="100" alt="Golang" src=""> 
+  <img width="760" length="100" alt="python" src="https://github.com/avengers-p7/Documentation/assets/156056413/a0bb9810-02de-4c58-851c-671de028c6df"> 
 
 * Console Output:
-  
-   <img width="760" length="100" alt="Golang" src=""> 
+
+   <img width="760" length="100" alt="python" src="https://github.com/avengers-p7/Documentation/assets/156056413/e682a483-b102-4a67-ac0e-08bfcf39dddd"> 
 
 
 > [!NOTE]
 > **Changes**
-> *  **Pipeline name**       **-**  ``
+> *  **Pipeline name**       **-**  `Dependency_Scanning_(Python)`
 > *  **Jenkinsfile Path**    **-**  `SharedLibrary/Python/DependencySacnning/Jenkinsfile`  
 
 ***
@@ -92,6 +92,20 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
   * [**Jenkinsfie**](https://github.com/avengers-p7/Jenkinsfile/blob/main/SharedLibrary/Python/DependencySacnning/Jenkinsfile)
   ```shell
 
+@Library('snaatak-p7') _
+def pythonDependencyScanning = new org.avengers.template.PythonDependencyScanning()
+
+node {
+    
+    def url = 'https://github.com/OT-MICROSERVICES/attendance-api.git'
+    def creds = 'vishal-cred'
+    def branch = 'main'
+    def depVersion = '9.0.9'
+    def javaVersion = '17'
+    
+    pythonDependencyScanning.call(url, creds, branch, depVersion, javaVersion)
+    
+}
 ```
 ## Shared Library
    * [**GitCheckoutPrivate.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/GitCheckoutPrivate.groovy)
@@ -107,21 +121,83 @@ def call(String url, String creds, String branch) {
     }
 }
 ```
-  * [****]()
+  * [**JavaDownload.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/JavaDownload.groovy)
   ```shell
+//src/org/avengers/common/JavaDownload.groovy
+package org.avengers.common
 
+def call(String javaVersion) {
+    stage('Install Java') {
+        script {
+            sh "sudo apt update && sudo apt install -y openjdk-${javaVersion}-jdk"
+        }
+    }
+}
 ```
-  * [****]()
+  * [**DownloadDependencyCheck.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/python/dependencyScanning/DownloadDependencyCheck.groovy)
   ```shell
+//src/org/avengers/python/dependencyScanning/DownloadDependencyCheck.groovy
+package org.avengers.python.dependencyScanning
 
+def call(String depVersion) {
+    stage('Download Dependency Check') {
+            script {
+                sh "wget -q https://github.com/jeremylong/DependencyCheck/releases/download/v${depVersion}/dependency-check-${depVersion}-release.zip"
+                sh "sudo apt install unzip -y"
+                sh "unzip -q dependency-check-${depVersion}-release.zip"
+            }
+    }
+}
 ```
-  * [****]()
+  * [**DependencyCheck.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/python/dependencyScanning/DependencyCheck.groovy)
   ```shell
+//src/org/avengers/python/dependencyScanning/DependencyCheck.groovy
+package org.avengers.python.dependencyScanning
 
+def call() {
+    stage('Run Dependency Check') {
+        script {
+           sh "dependency-check/bin/dependency-check.sh --scan /var/lib/jenkins/workspace/ --out dep-check.html"
+        }
+    }
+}
 ```
-  * [****]()
+  * [**Clean.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/python/dependencyScanning/Clean.groovy)
   ```shell
+//src/org/avengers/python/dependencyScanning/Clean.groovy
+package org.avengers.python.dependencyScanning
 
+def call() {
+    stage('Clean workspace') {
+        script {
+           sh "rm -rf *.zip"
+           sh "rm -rf dependency-check"
+        }
+    }
+}
+```
+  * [**PythonDependencyScanning.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/PythonDependencyScanning.groovy)
+  ```shell
+//src/org/avengers/template/PythonDependencyScanning.groovy
+package org.avengers.template
+
+import org.avengers.common.*
+import org.avengers.python.dependencyScanning.*
+
+def call(String url, String creds, String branch, String depVersion, String javaVersion){
+  javaDownload = new JavaDownload()
+  downloadDependencyCheck = new DownloadDependencyCheck()
+  gitCheckoutPrivate = new GitCheckoutPrivate()
+  dependencyCheck = new DependencyCheck()
+  clean = new Clean()
+
+  javaDownload.call(javaVersion)
+  downloadDependencyCheck.call(depVersion) 
+  gitCheckoutPrivate.call(url, creds, branch)
+  dependencyCheck.call()
+  clean.call()
+}
+  
 ```
 
 ***
