@@ -112,7 +112,7 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9767ba5-b4b0-43dd-8975-a61217d9026b)
 
 ***
-## [Pipeline](https://github.com/avengers-p7/Jenkinsfile/blob/main/Declarative%20Pipeline/Java/CodeCompilation/Jenkinsfile)
+## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/CodeCompilation/Jenkinsfile)
 
 ```shell
 @Library("my-shared-library") _
