@@ -50,8 +50,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 # Flow Diagram
 
-
-
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/4e88f408-78aa-4f4b-ae17-5d8980150b6a)
 
 ***
 
@@ -82,87 +81,113 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 Based on the console output provided below, we can infer that there are a few bugs present
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/ef8d19e0-2a1c-4f68-921c-fdc7a9282b3d)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/be56255c-ccd9-4c8a-b6c3-aa69a638e643)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e5ebe3b1-04c0-4533-863c-26316979dfa1)
+
 
 
 ***
 
 # HTML Report
+
  * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/spotbugHtmlReports/spotbugs.html)
 
 ***
 # Jenkinsfile
-  * [**Jenkinsfie**](https://github.com/avengers-p7/Jenkinsfile/blob/main/SharedLibrary/Java/BugAnalysis/Jenkinsfile)
-  ```shell
+
+  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/BugAnalysis/Jenkinsfile)
 
  ```shell
-@Library('my-shared-library') _
+@Library("my-shared-library") _
 
-pipeline {
-    agent any
-    stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    javaBugAnalysis.checkoutStage()
-                }
-            }
-        }
-        stage('Bug Analysis') {
-            steps {
-                script {
-                    javaBugAnalysis.bugAnalysisStage()
-                }
-            }
-        }
-        stage('Publish HTML Report') {
-            steps {
-                script {
-                    javaBugAnalysis.htmlReportStage()
-                }
-            }
-        }
-    }
+def javaBugAnalysis = new org.avengers.template.java.javaBugAnalysis()
+
+node {
+    
+    def url = 'https://github.com/Parasharam-Desai/salary-api.git'
+    def branch = 'main'
+    
+    javaBugAnalysis.call(branch: branch,url: url)
+    
 }
         
 ```
 # Shared Library
 
-```
-    [**javaBugAnalysis.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/vars/javaBugAnalysis.groovy)
+[**gitCheckout.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/vars/gitCheckout.groovy)
+
   ```shell
-def checkoutStage() {
-    stage("Git Checkout") {
-        steps {
-            git branch: 'main', url: 'https://github.com/Parasharam-Desai/salary-api.git'
-        }
-    }
+// Checkout Github Public Repository
+def call(Map config = [:]) {
+            checkout scm: [
+                $class: 'GitSCM',
+                branches: [[name: config.branch]],
+                userRemoteConfigs: [[url: config.url]]
+            ]
 }
 
-def bugAnalysisStage() {
-    stage("Bug Analysis") {
-        steps {
-            sh 'mvn compile'
-            sh 'mvn spotbugs:spotbugs'
-            sh 'mvn site'
+```
+[**bug.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/bugAnalysis/bug.groovy)
+
+ ```shell
+
+package org.avengers.java.bugAnalysis
+
+def call(){           
+        stage("Bug Analysis ") {
+                script {
+                    sh 'mvn compile'
+                    sh 'mvn spotbugs:spotbugs'
+                    sh 'mvn site'
+                }
         }
-    }
 }
 
-def htmlReportStage() {
-    stage('Publish HTML Report') {
-        steps {
-            publishHTML(target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                keepAll: true,
-                reportDir: 'target/site',
-                reportFiles: 'spotbugs.html',
-                reportName: 'SpotBugs Report'
-            ])
-        }
-    }
-}
+```
 
+[**publishHtml.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/bugAnalysis/publishHtml.groovy)
+
+ ```shell
+
+package org.avengers.java.bugAnalysis
+
+def call() {
+          stage('Publish HTML Report') {
+                      publishHTML([
+                          allowMissing: false,
+                          alwaysLinkToLastBuild: true,
+                          keepAll: true,
+                          reportDir: 'target/site',
+                          reportFiles: 'spotbugs.html',
+                          reportName: 'SpotBugs Report'
+                      ])
+                  }
+              }
+```
+[**javatemplate.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaBugAnalysis.groovy)
+
+```shell
+package org.avengers.template.java
+
+import org.avengers.common.gitCheckout
+import org.avengers.common.cleanWorkspace
+import org.avengers.java.bugAnalysis.*
+
+def call(Map config = [:]){
+    def gitCheckout = new gitCheckout()
+    def javaBugAnalysis = new bug()
+    def javaPublishHtml = new publishHtml()
+    def cleanWorkspace = new cleanWorkspace()
+
+    gitCheckout.call(branch: config.branch, url: config.url  )
+    javaBugAnalysis.call()
+    javaPublishHtml.call()
+    cleanWorkspace.call()
+  
+}
 ```
 ***
 # Conclusion
