@@ -161,7 +161,7 @@ def call() {
     }
 }
 ```
-  * [**GolangUnitTesting.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/GolangUnitTesting.groovy)
+  * [**GolangUnitTesting.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/golang/GolangUnitTesting.groovy)
   ```shell
 //src/org/avengers/template/GolangUnitTesting.groovy
 package org.avengers.template
@@ -203,4 +203,3 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | Unit Testing | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Intro-of-Unit-Testing.md) |
 
 ***
-
