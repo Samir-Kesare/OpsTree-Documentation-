@@ -58,7 +58,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 | **Maven Compiler Plugin** | For springboot project compilation |
 ***
 ## Flow Diagram
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/59436209-693a-4740-a95c-c8f3e4bb656d)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4c9dbcb2-0f02-42bd-9ace-38c961f9504b)
 
 ***
 ## Pipeline Setup
