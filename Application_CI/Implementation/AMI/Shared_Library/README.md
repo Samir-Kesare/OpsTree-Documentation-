@@ -1,4 +1,4 @@
-# POC Of Slack Notification Using Shared Library
+# POC Of AMI creation Using Shared Library
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156057205/7ab97e86-1928-454d-8770-4b5e13487e95)
 
