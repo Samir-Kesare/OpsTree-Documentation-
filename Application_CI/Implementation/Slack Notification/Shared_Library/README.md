@@ -20,9 +20,10 @@
 6. [Slack Notification Setup](#slack-notification-setup)
 7. [Pipeline](#Pipeline)
 8. [Shared Library File](#shared-library-file)
-9. [Conclusion](#conclusion)
-10. [Contact Information](#contact-information)
-11. [Reference](#reference)
+9. [Template File](#Template-File)
+10. [Conclusion](#conclusion)
+11. [Contact Information](#contact-information)
+12. [Reference](#reference)
 
 ***
 
@@ -158,39 +159,10 @@ Go to "Manage Jenkins" > "Configure System."Scroll down to the "Slack" section.I
 ```shell
 @Library("my-shared-library") _
 
-pipeline {
-    agent any
+def genericCiSlackNotification = new org.avengers.template.genericCi.GenericCiSlackNotification()
 
-    stages {
-        stage('Build') {
-            steps {
-                script {
-                    // Define the DSL for creating a Freestyle job
-                    def jobDSL = '''
-                        job('My-Freestyle-Job') {
-                            description('This is a sample Freestyle job created using a Declarative Pipeline')
-                            steps {
-                                shell('echo "Hello, world!"')
-                            }
-                        }
-                    '''
-                    // Execute the job DSL to create the Freestyle job
-                    jobDsl scriptText: jobDSL
-                }
-            }
-        }
-    }
-
-    post {
-        success { 
-            slackNotification("SUCCESS")
-            echo 'Compiled Successfully !'
-        }
-        failure { 
-            slackNotification("FAILURE")
-            echo 'Compilation Failed !'
-        }
-    }
+node {
+   genericCiSlackNotification.call() 
 }
  
 ```
@@ -199,18 +171,70 @@ pipeline {
 
 # Shared Library File
 
-```shell
-// vars/slackNotification.groovy
+### src/org/avengers/genericCi/slackNotification/DslJob.groovy
 
-def call(String status) {
-    if (status == 'SUCCESS') {
-            slackSend channel: 'jenkinss', message: 'Job Build successfully'
-    }
-    if (status == 'FAILURE'){
-            slackSend channel: 'jenkinss', message: 'Job Failed '
-    }
+
+
+```shell
+package org.avengers.genericCi.slackNotification
+
+def call() {
+    // Define the DSL for creating a Freestyle job
+    def jobDSL = '''
+        job('Freestyle-Job') {
+            description('This is a sample Freestyle job created using a Scripted Pipeline')
+            steps {
+                shell('echo "Hello, world!"')
+            }
+        }
+    '''
+    // Execute the job DSL to create the Freestyle job
+    jobDsl(scriptText: jobDSL)
 }
 ```
+***
+
+### src/org/avengers/genericCi/slackNotification/SendNotification.groovy
+
+
+
+```shell
+package org.avengers.genericCi.slackNotification
+
+def call() {
+    def status = env.BUILD_STATUS ?: 'SUCCESS' // Default to 'SUCCESS' if BUILD_STATUS is not set
+    if (status == 'FAILURE') {
+        slackSend channel: 'jenkinss', message: 'Job Failed'
+    } else if (status == 'SUCCESS') {
+        slackSend channel: 'jenkinss', message: 'Job Build successfully'
+    }
+}
+
+```
+
+***
+
+# Template File
+
+### src/org/avengers/template/genericCi/GenericCiSlackNotification
+
+
+
+```shell
+package org.avengers.template.genericCi
+
+import org.avengers.genericCi.slackNotification.*
+
+def call(){
+  dslJob = new DslJob()
+  sendNotification = new SendNotification()
+
+  dslJob .call()
+  sendNotification.call()
+}
+
+```
+
 ***
 
 **Pipeline Syntax For Slacksend**
