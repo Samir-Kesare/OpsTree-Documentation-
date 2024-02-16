@@ -117,34 +117,16 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ```shell
 @Library("my-shared-library") _
-pipeline {
-    agent any
 
-    stages {
-        stage('GIT Checkout') {
-            steps {
-                gitCheckout(branch: "main", url: "https://github.com/Panu-S-Harshit-Ninja-07/OT-Salary-API.git"  )
+def javaCodeCompile = new org.avengers.template.java.javaCodeCompilation()
 
-            }
-        }
-        stage('Compile'){
-            steps{
-                javaCodeCompilation()
-            }
-        }
-    }
-post {
-        always {
-        // One or more steps need to be included within each condition's block.
-        cleanWorkspace()
-       }
-        success { 
-            echo 'Compiled Successfully !'
-        }
-        failure { 
-            echo 'Compilation Failed !'
-        }
-    }
+node {
+    
+    def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
+    def branch = 'main'
+    
+    javaCodeCompile.call(branch: branch,url: url)
+    
 }
 ```
 
