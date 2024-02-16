@@ -15,15 +15,16 @@
 1. [Introduction](#introduction)
 2. [What is Shared Library?](#what-is-shared-library)
 3. [Why Shared Library](#why-shared-library)
-4. [Pre-requisites](#pre-requisites)
-5. [Flow Diagram](#flow-diagram)
-6. [Slack Notification Setup](#slack-notification-setup)
-7. [Pipeline](#Pipeline)
-8. [Shared Library File](#shared-library-file)
-9. [Template File](#Template-File)
-10. [Conclusion](#conclusion)
-11. [Contact Information](#contact-information)
-12. [Reference](#reference)
+4. [Why use src folder structure in a Jenkins shared library](#Why-use-src-folder-structure-in-a-Jenkins-shared-library)
+5. [Pre-requisites](#pre-requisites)
+6. [Flow Diagram](#flow-diagram)
+7. [Slack Notification Setup](#slack-notification-setup)
+8. [Pipeline](#Pipeline)
+9. [Shared Library File](#shared-library-file)
+10. [Template File](#Template-File)
+11. [Conclusion](#conclusion)
+12. [Contact Information](#contact-information)
+13. [Reference](#reference)
 
 ***
 
@@ -49,6 +50,19 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 | **Dynamic Linking** |  When a program uses a shared library, the code from the library is not directly included in the program's executable file. Instead, references to the library are included, and the actual library code is loaded into memory at runtime when the program is executed. |
 | **Efficient Memory Usage** | Since shared libraries are loaded into memory only once, even if multiple programs are using them simultaneously, they can help conserve system resources and reduce memory usage. |
 | **Updates and Maintenance** |  If a shared library is updated or patched to fix bugs or add features, all programs that use that library can benefit from the changes without needing to be recompiled. |
+
+***
+
+# Why use `src` folder structure in a Jenkins shared library
+
+| Benefit                    | Description                                                                                                                                                                    |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Organizational Structure**  | Placing source files in a `src` folder provides a clear and organized structure for the library, aiding developers in quickly locating files and understanding the layout.      |
+| **Isolation of Source Code**  | Keeping source code separate from other files (e.g., documentation, configuration, tests) prevents clutter and confusion, making the codebase easier to manage.                 |
+| **Easier Maintenance**        | With a clear structure, maintaining and updating the library becomes straightforward, as developers know where to find specific files and can make changes confidently.     |
+| **Build and Packaging**       | Adhering to conventions like using a `src` folder facilitates integration with build tools and package managers, as they often expect a certain directory structure.           |
+| **Compatibility with IDEs**   | Standard project structures, such as a `src` folder, improve compatibility with integrated development environments (IDEs), enabling features like code navigation and auto-completion. |
+| **Readability and Maintainability** | A well-organized structure enhances readability and maintainability by making it easier for developers to understand the codebase's layout and locate relevant files efficiently. |
 
 ***
 
