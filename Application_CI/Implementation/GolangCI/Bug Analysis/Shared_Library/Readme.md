@@ -168,7 +168,7 @@ def call() {
     }
 }
 ```
-  * [**GolangBugAnalysis.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/GolangBugAnalysis.groovy)
+  * [**GolangBugAnalysis.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/golang/GolangBugAnalysis.groovy)
   ```shell
 //src/org/avengers/template/GolangBugAnalysis.groovy
 package org.avengers.template
@@ -211,4 +211,3 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | Bug Analysis | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/05-%20GoLang%20CI%20Checks/Bug%20Analysis/Introduction%20of%20Bugs%20analysis%20(GoLang%20CI%20Checks).md#resources-and-references) |
 
 ***
-
