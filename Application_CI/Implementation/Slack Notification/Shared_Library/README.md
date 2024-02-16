@@ -166,6 +166,8 @@ node {
 }
  
 ```
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Slack_Notification/Jenkinsfile) for the script file.
 
 ***
 
@@ -173,6 +175,7 @@ node {
 
 ### src/org/avengers/genericCi/slackNotification/DslJob.groovy
 
+This DSL script creates a Freestyle job named **Freestyle-Job** in Jenkins. The job description includes a shell step that echoes **"Hello, world!"**. This script encapsulates the job configuration within a Groovy string (jobDSL) and then executes it using the jobDsl step provided by Jenkins Pipeline.
 
 
 ```shell
@@ -192,11 +195,15 @@ def call() {
     jobDsl(scriptText: jobDSL)
 }
 ```
+
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/DslJob.groovy) for the script file.
+
 ***
 
 ### src/org/avengers/genericCi/slackNotification/SendNotification.groovy
 
-
+This DSL script sends Slack notifications based on the build status in Jenkins. It checks the **BUILD_STATUS** environment variable and defaults to **'SUCCESS'** if not set. If the build status is **'FAILURE'**, it sends a message indicating the job failure. Conversely, if the build status is **'SUCCESS'**, it sends a message indicating the successful build.
 
 ```shell
 package org.avengers.genericCi.slackNotification
@@ -212,13 +219,16 @@ def call() {
 
 ```
 
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/SendNotification.groovy) for the script file.
+
 ***
 
 # Template File
 
 ### src/org/avengers/template/genericCi/GenericCiSlackNotification
 
-
+This DSL script integrates two functionalities into a Jenkins pipeline. First, it initiates the creation of a job using the DslJob DSL from **org.avengers.genericCi.slackNotification**. Then, it triggers a Slack notification using the SendNotification DSL, also from the same package. This script encapsulates these actions into a single call, making it easier to use within Jenkins pipelines for Continuous Integration workflows.
 
 ```shell
 package org.avengers.template.genericCi
@@ -235,6 +245,9 @@ def call(){
 
 ```
 
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/genericCi/GenericCiSlackNotification.groovy) for the script file.
+>
 ***
 
 **Pipeline Syntax For Slacksend**
