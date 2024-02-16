@@ -107,10 +107,9 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ***
 ## Console Output
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/614b3d13-9fa3-41b6-87a9-aee594326800)
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/9260e44f-16f4-4c00-8003-555fa7ec75d1)
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/d607ffe4-4f4c-4d7b-82f9-68e1edf82e40)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9767ba5-b4b0-43dd-8975-a61217d9026b)
 
 ***
 ## [Pipeline](https://github.com/avengers-p7/Jenkinsfile/blob/main/Declarative%20Pipeline/Java/CodeCompilation/Jenkinsfile)
@@ -127,6 +126,82 @@ node {
     
     javaCodeCompile.call(branch: branch,url: url)
     
+}
+```
+
+## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary.git)
+### [template/java/javaCodeCompilation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaCodeCompilation.groovy)
+```shell
+package org.avengers.template
+
+import org.avengers.common.gitCheckout
+import org.avengers.common.cleanWorkspace
+import org.avengers.java.compile.*
+
+def call(Map config = [:]){
+    def gitCheckout = new gitCheckout()
+    def javaCompile = new compile()
+    def cleanWorkspace = new cleanWorkspace()
+    try{
+    gitCheckout.call(branch: config.branch, url: config.url  )
+    javaCompile.call()   
+    }
+    // gitCheckout.call(branch: config.branch, url: config.url  )
+    // javaCompile.call()
+    catch (e) {
+        echo 'Analysis Failed'
+        cleanWorkspace.call()
+        // Since we're catching the exception in order to report on it,
+        // we need to re-throw it, to ensure that the build is marked as failed
+        throw e
+    } 
+    finally {
+         def currentResult = currentBuild.result ?: 'SUCCESS'
+        if ((currentResult == 'UNSTABLE')||(currentResult == 'ABORTED')) {
+        cleanWorkspace.call()
+            // echo 'This will run only if the run was marked as unstable'
+    }
+  }
+}
+```
+### [gitCheckout.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
+```shell
+// Checkout Github Public Repository
+package org.avengers.common
+
+def call(Map config = [:]) {
+    stage('GIT Checkout') {
+        checkout scm: [
+                $class: 'GitSCM',
+                branches: [[name: config.branch]],
+                userRemoteConfigs: [[url: config.url]]
+            ]
+    }
+}
+```
+
+### [cleanWorkspace.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/cleanWorkspace.groovy)
+```shell
+// Will not clean workspace if build is Sucessful and vice versa
+package org.avengers.common
+
+def call() {
+  stage('Clean Workspace'){
+      cleanWs cleanWhenSuccess: false
+  }
+}
+```
+
+### [compile.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/compile/compile.groovy)
+```shell
+package org.avengers.java.compile
+
+def call() {
+  stage('Compile'){
+    script{
+      sh 'mvn clean compile'
+    }
+  }
 }
 ```
 
