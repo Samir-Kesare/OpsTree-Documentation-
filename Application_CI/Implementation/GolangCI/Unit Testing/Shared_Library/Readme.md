@@ -55,7 +55,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 ***
 ## Flow Diagram  
-![Screenshot from 2024-02-10 12-24-04](https://github.com/avengers-p7/Documentation/assets/156056413/a5324c1b-68c8-447c-9299-dcf28c6870d2)
+![Screenshot from 2024-02-16 12-20-51](https://github.com/avengers-p7/Documentation/assets/156056413/fa90fe02-3f4a-4d7a-9994-647f0f2e2fc7)
 
 ***
 ## Pre-requisites
