@@ -6,7 +6,7 @@
 
 | **Author** | **Created On** | **Last Updated** | **Document Version** |
 | ---------- | -------------- | ---------------- | -------------------- |
-| **Shreya Jaiswal** | **12-02-2024** | **13-02-2024** | **v1** |
+| **Shreya Jaiswal** | **16-02-2024** | **17-02-2024** | **v1** |
 
 ***
 
@@ -18,7 +18,7 @@
 4. [Why use src folder structure in a Jenkins shared library](#Why-use-src-folder-structure-in-a-Jenkins-shared-library)
 5. [Pre-requisites](#pre-requisites)
 6. [Flow Diagram](#flow-diagram)
-7. [Slack Notification Setup](#slack-notification-setup)
+7. [AMI Setup](#slack-notification-setup)
 8. [Pipeline](#Pipeline)
 9. [Shared Library File](#shared-library-file)
 10. [Template File](#Template-File)
