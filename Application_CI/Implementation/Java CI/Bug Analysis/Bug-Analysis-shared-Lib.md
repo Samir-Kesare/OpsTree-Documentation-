@@ -2,21 +2,23 @@
 
 | **Author** | **Created On** | **Last Updated** | **Document Version** |
 | ---------- | -------------- | ---------------- | -------------------- |
-| **Parasharam Desai** | 07-02-2024 | 07-02-2024 | V1 |
+| **Parasharam Desai** | 16-02-2024 | 16-02-2024 | V1 |
 
 ***
-## Table of Contents
-+ [Introduction](#Introduction)
-+ [Why Shared Library](#Why-Shared-Library)
-+ [Flow Diagram](#Flow-Diagram)
-+ [Pre-requisites](#Pre-requisites)
-+ [Setup of Bug Analysis](#Setup-of-Bug-Analysis-Via-Shared-Library)
-+ [HTML Report](#HTML-Report)
-+ [Jenkinsfile](#Jenkinsfile)
-+ [Shared Library](#Shared-Library)
-+ [Conclusion](#Conclusion)
-+ [Contact Information](#Contact-Information)
-+ [Resources and References](#Resources-and-References)
+# Table of Contents
++ [Introduction](#introduction)
++ [Why Shared Library](#why-shared-library)
++ [Why use src folder structure in a Jenkins shared library](#why-use-src-folder-structure-in-a-jenkins-shared-library)
++ [Flow Diagram](#flow-diagram)
++ [Pre-requisites](#pre-requisites)
++ [Steps to run Pipeline](#steps-to-run-pipeline)
++ [HTML Report](#html-report)
++ [Jenkinsfile](#jenkinsfile)
++ [Shared Library](#shared-library)
++ [Conclusion](#conclusion)
++ [Contact Information](#contact-information)
++ [Resources and References](#resources-and-references)
+
   
 ***
 # Introduction
@@ -37,6 +39,19 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 | **Collaboration**      | Jenkins Shared Libraries encourage collaboration among teams, as they can share and contribute to a common set of pipeline tools and utilities.                         |
 | **Versioning Control** | Jenkins Shared Library can be version-controlled, enabling teams to manage changes and rollbacks effectively.                                                        |
 | **Ease of Maintenance** | As the Jenkins Shared Library is maintained separately from individual pipelines, updates and bug fixes can be implemented without impacting the pipelines directly. |
+
+***
+# Why use `src` folder structure in a Jenkins shared library
+
+| Benefit                    | Description                                                                                                                                                                    |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Organizational Structure**  | Placing source files in a `src` folder provides a clear and organized structure for the library, aiding developers in quickly locating files and understanding the layout.      |
+| **Isolation of Source Code**  | Keeping source code separate from other files (e.g., documentation, configuration, tests) prevents clutter and confusion, making the codebase easier to manage.                 |
+| **Easier Maintenance**        | With a clear structure, maintaining and updating the library becomes straightforward, as developers know where to find specific files and can make changes confidently.     |
+| **Build and Packaging**       | Adhering to conventions like using a `src` folder facilitates integration with build tools and package managers, as they often expect a certain directory structure.           |
+| **Compatibility with IDEs**   | Standard project structures, such as a `src` folder, improve compatibility with integrated development environments (IDEs), enabling features like code navigation and auto-completion. |
+| **Readability and Maintainability** | A well-organized structure enhances readability and maintainability by making it easier for developers to understand the codebase's layout and locate relevant files efficiently. |
+
 
 ***
 # Prerequisites
@@ -64,8 +79,6 @@ To include the Spotbugs plugin in the `pom.xml` file, follow these steps:
 * Ensure that running `mvn site` will generate the Spot Bugs report.
 
 For detailed instructions, please refer to the [Proof of Concept (POC) documentation](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md).
-
-
 
 **2. Configure Maven tool in Jenkins**
 
