@@ -80,7 +80,15 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 # Flow Diagram
 
+**Flow of Work**
+
 <img width="587" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/0d7db1d4-4331-429e-a088-e871ffbd7716">
+
+***
+
+**Shared Library File Structure**
+
+<img width="600" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ca8b6b9b-3b92-440e-8539-56dce86ce0f2">
 
 ***
 
