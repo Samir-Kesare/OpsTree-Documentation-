@@ -176,7 +176,7 @@ def call() {
     }
 }
 ```
-  * [**PythonDependencyScanning.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/PythonDependencyScanning.groovy)
+  * [**PythonDependencyScanning.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/python/PythonDependencyScanning.groovy)
   ```shell
 //src/org/avengers/template/PythonDependencyScanning.groovy
 package org.avengers.template
@@ -221,4 +221,3 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | Dependency Scanning | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Dependency%20Scanning/Dependency%20Scanning%20Introduction.md) |
 
 ***
-
