@@ -82,19 +82,15 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 # AMI Setup
 
-**Step-4 Jenkins Configuration** 
+**Tool Installation**
 
-Setting up Jenkins Global Configuration for Slack notifications allows you to centralize and manage Slack-related settings at a global level. This global configuration provides a convenient way to store and share common information, such as Slack team domain and integration tokens, across multiple Jenkins jobs.
-
-Go to "Manage Jenkins" > "Configure System."Scroll down to the "Slack" section.In the "Team Domain" field, enter the Slack team domain.In the "Integration Token Credential" section, click on "Add" to add your Slack integration token as a Jenkins credential.Enter the necessary information, such as the token itself and an ID to identify the credential.In the "Test Connection" section, enter a Slack channel name and click on "Test Connection" to verify that Jenkins can communicate with Slack.
-
-<img width="700" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/2b373364-80e5-4559-8c63-d08279d38c9d">
+<img width="407" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/5dee9dff-af57-4556-96bf-8a2c1b3012d4">
 
 ***
 
 **Jenkinsfile Path in Configuration**
 
-<img width="668" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/c9a7e00b-d4b3-4db8-a629-ead680753c89">
+<img width="646" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e3503ded-6235-4121-82da-cc22c26d49e7">
 
 ***
 
