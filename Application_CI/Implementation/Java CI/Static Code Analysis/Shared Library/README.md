@@ -1,8 +1,9 @@
-# Java Code Compilation(Shared Library)
+# Java Static Code Analysis(Shared Library)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/b839096e-6758-42d0-8681-01955ffd6c90)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
-| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 02-02-2024  | 1.0        | Harshit Singh   | 11-02-2024      |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 02-02-2024  | 1.0        | Harshit Singh   | 17-02-2024      |
 
 
 ## Table  of Contents
@@ -13,20 +14,22 @@
 4. [Runtime Prerequisites](#Runtime-Prerequisites)
 5. [Flow Diagram](#Flow-Diagram)
 6. [Pipeline Setup](#Pipeline-Setup)
-7. [Contact Information](#Contact-Information)
-8. [References](#References)
+7. [Results](#results)
+8. [Pipeline](#pipeline)
+9. [Shared Library](#Shared-Library)
+10. [Contact Information](#Contact-Information)
+11. [References](#References)
 ***
 
 ## Introduction 
 
-The process of code compilation involves converting high-level programming code, such as Java, C++, or Python, into machine-readable instructions or bytecode. This transformation is carried out by a compiler, which is a specialized tool designed to translate human-readable source code into an executable format.
-Here we are using maven compiler to convert of code into  bytecode.
+Static analysis, also called static code analysis, is a method of computer program debugging that is done by examining the code without executing the program. The process provides an understanding of the code structure and can help ensure that the code adheres to industry standards. Static analysis is used in software engineering by software development and quality assurance teams. Automated tools can assist programmers and developers in carrying out static analysis. The software will scan all code in a project to check for vulnerabilities while validating the code.
 
 **For more information visit the below document link:**
 
-[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Code%20Complication.md)
+[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md)
 
-In this task, we are using Declarative Pipeline.
+In this task, we are using Shared Library.
 ***
 ## What is Shared Library?
 
@@ -45,6 +48,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 | Tool | Description |
 | ---- | ----------- |
 | **Jenkins(2.426.3)** | To build our pipeline |
+|**Sonarqube(9.6.1.59531)**| [For Static code analysis](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md) |
 
 > [!Important]
 > I have installed the plugin bundle provided by Jenkins during setup. If you have not done the same, you may encounter plugin errors.
@@ -56,112 +60,108 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 |-------|-------|
 | **Java 17** | For springboot project compilation | 
 | **Maven Compiler Plugin** | For springboot project compilation |
+|**Sonarque Scanner Plugin**| To integrate Jenkins with Sonarqube |
+
 ***
 ## Flow Diagram
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/0653e3d6-54da-4a2e-b021-94f9c7152604)
 
 ***
 ## Pipeline Setup
-1. **Fork the Github Repo**
-```shell
-git clone https://github.com/OT-MICROSERVICES/salary-api.git
-```
-[**Repo Link**](https://github.com/OT-MICROSERVICES/salary-api)
-
-2. **Add maven compiler plugin in `pom.xml`**   
-```shell
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
-				<!-- ... other configurations ... -->
-			</plugin>
-```
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/5375b03d-718e-4ef3-a79a-b7a035a9956e)
-
-3. **Configure Maven tool in Jenkins**
+1. **Configure Maven tool in Jenkins**
 Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056444/d9ff8a0d-900a-4e4b-ac68-34507ef3348b)
 
-4. **Configure Shared library in Jenkins**
-	
- 	Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
+2. **Install Sonarqube Scanner plugin in Jenkins**
 
+![image](https://github.com/avengers-p7/Documentation/assets/156056444/28625f84-3ae7-45e3-8cea-d1d73daba895)
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/1038a25c-7953-4e72-af36-9d4f9eb77f98)
+3. **Create  token in Sonarqube**
+	- login to Sonarqube Server and go to `Administration --> Security --> Users`
+		![image](https://github.com/avengers-p7/Documentation/assets/156056444/f01959ac-2a3a-4644-ba49-ea52e886f2db)
 
+	- click on `Update Tokens`
+		![image](https://github.com/avengers-p7/Documentation/assets/156056444/f2f5fcbd-15db-45f7-8e41-abcda2e21da3)
 
-5. **Create and Configure your Jenkins Pipeline job**
+ 	- give name of token , select no. of days and then genarate the token
+		![image](https://github.com/avengers-p7/Documentation/assets/156056444/8a0838e5-e186-4f2a-8a55-8151bad09958)
+
+  	- copy and keep your token
+     		![image](https://github.com/avengers-p7/Documentation/assets/156056444/511a3b73-922b-4277-b2a1-01d782609aca)
+     
+
+4. **Add Sonarqube token in Jenkins Credentials**
+   	- login to your jenkins Dashboard and go to `Dashboard --> Manage Jenkins --> Credentials`
+
+   	  	Below, click on add `Add Credentials`
+
+		![image](https://github.com/avengers-p7/Documentation/assets/156056444/125c1d80-6342-4e24-9d0d-4f122ddeaf95)
+  
+	- Select **`Secret Text`** and provide the token that you copied in secret section. Also, give ID and Description to your credential.
+		![image](https://github.com/avengers-p7/Documentation/assets/156056444/2727ea81-3014-4910-93ef-77237529f313)
+
+5.  **Configure Sonarqube Server  in `Dashboard --> Manage Jenkins --> System`**
+
+![image](https://github.com/avengers-p7/Documentation/assets/156056444/1681289c-a3ef-4d6a-9e54-a2b2a948d660)
+
+6. **Create and Configure your Jenkins Pipeline job**
 
 	Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/2738c32a-4c64-4d0f-828a-35b63cb030c6)
+	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/2ba35900-b7c2-40c3-b6b3-80eb4339bcc6)
 
-6. **Now Build your Pipeline**
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/13bb69da-5072-449b-803d-e9f4244124e0)
-
+7. **Now Build your Pipeline**
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d8798924-c97e-4d4d-b4fc-6e1a80f01fa2)
 ***
-## Console Output
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/614b3d13-9fa3-41b6-87a9-aee594326800)
+## Results
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4f9c3fe8-3364-458d-bfe8-11ca904f80f8)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9767ba5-b4b0-43dd-8975-a61217d9026b)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/c6bb0d11-a5d4-43d1-b593-393b96fb0b1c)
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ac1d82cd-f0b5-4da1-be48-5b36dc6c7dfa)
 ***
-## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/CodeCompilation/Jenkinsfile)
+## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/StaticCodeAnalysis/Jenkinsfile)
 
 ```shell
 @Library("my-shared-library") _
 
-def javaCodeCompile = new org.avengers.template.java.javaCodeCompilation()
+def staticCodeAnalysis = new org.avengers.template.java.codeAnalysis()
 
 node {
     
     def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
     def branch = 'main'
     
-    javaCodeCompile.call(branch: branch,url: url)
+    staticCodeAnalysis.call(branch: branch,url: url)
     
 }
 ```
 
 ## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary.git)
-### [template/java/javaCodeCompilation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaCodeCompilation.groovy)
+### [template/java/javaCodeCompilation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/codeAnalysis.groovy)
 ```shell
 package org.avengers.template
 
 import org.avengers.common.gitCheckout
 import org.avengers.common.cleanWorkspace
 import org.avengers.java.compile.*
+import org.avengers.java.staticCodeAnalysis.*
 
 def call(Map config = [:]){
     def gitCheckout = new gitCheckout()
     def javaCompile = new compile()
+    def staticCodeAnalysis = new staticCodeAnalysis()
     def cleanWorkspace = new cleanWorkspace()
-    try{
+
     gitCheckout.call(branch: config.branch, url: config.url  )
-    javaCompile.call()   
-    }
-    // gitCheckout.call(branch: config.branch, url: config.url  )
-    // javaCompile.call()
-    catch (e) {
-        echo 'Analysis Failed'
-        cleanWorkspace.call()
-        // Since we're catching the exception in order to report on it,
-        // we need to re-throw it, to ensure that the build is marked as failed
-        throw e
-    } 
-    finally {
-         def currentResult = currentBuild.result ?: 'SUCCESS'
-        if ((currentResult == 'UNSTABLE')||(currentResult == 'ABORTED')) {
-        cleanWorkspace.call()
-            // echo 'This will run only if the run was marked as unstable'
-    }
-  }
+    javaCompile.call()
+    staticCodeAnalysis.call()
+    cleanWorkspace.call()
+  
 }
 ```
 ### [gitCheckout.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
@@ -204,7 +204,18 @@ def call() {
   }
 }
 ```
+### [staticCodeAnalysis.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/staticCodeAnalysis/staticCodeAnalysis.groovy)
+```shell
+package org.avengers.java.staticCodeAnalysis
 
+def call() {
+  stage('Static Code Analysis'){
+        withSonarQubeEnv(installationName: 'sq1') { 
+          sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
+        }    
+  }
+}
+```
 ***
 
 ## Contact Information
