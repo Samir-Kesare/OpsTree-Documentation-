@@ -64,7 +64,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ***
 ## Flow Diagram
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/0653e3d6-54da-4a2e-b021-94f9c7152604)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/2ffe655d-553c-4c45-8460-20cc117197a1)
 
 ***
 ## Pipeline Setup
