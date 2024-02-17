@@ -65,7 +65,7 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 ***
 
 >[!Note]
->Click this [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/AMI/AMI%20via%20Packer.) for AMI Setup Document.
+>Click this [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/AMI/AMI%20via%20Packer.md) for AMI Setup Document.
 
 ***
 
