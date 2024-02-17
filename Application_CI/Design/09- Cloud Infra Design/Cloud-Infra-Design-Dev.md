@@ -34,18 +34,12 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 
 **Ideal Infra**
 
-![Ideal-Dev-Infra - Page 1 (3)](https://github.com/CodeOps-Hub/Documentation/assets/156056709/148de290-8809-4080-b105-5ebef2cf1f4b)
+![Ideal-Dev-Infra - Page 1 (3)](https://github.com/CodeOps-Hub/Documentation/assets/156056709/6fc6484e-0265-4544-a538-03361df0531c)
 
 
 **Require Infra**
 
-![Ideal-Dev-Infra - Page 1 (4)](https://github.com/CodeOps-Hub/Documentation/assets/156056709/3a1bf4e9-c694-4cde-b290-019bfe21ee91)
-
-
-
-
-
-
+![Ideal-Dev-Infra - Page 1](https://github.com/CodeOps-Hub/Documentation/assets/156056709/2bd86119-9e48-4762-88fc-1c996d896d5c)
 
 ---
 # Description
