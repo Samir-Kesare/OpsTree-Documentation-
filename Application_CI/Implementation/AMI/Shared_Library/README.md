@@ -70,7 +70,7 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 ***
 
 >[!Note]
->Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/DslJob.groovy) for AMI Aetup uisng Jenkinsfile.
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/DslJob.groovy) for AMI Setup using Jenkinsfile.
 
 ***
 
