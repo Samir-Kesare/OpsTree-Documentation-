@@ -96,7 +96,7 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 **Console Output**
 
-
+<img width="950" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a25f6ae6-f7e3-46ef-bb26-3630e30f0335">
 
 ***
 
