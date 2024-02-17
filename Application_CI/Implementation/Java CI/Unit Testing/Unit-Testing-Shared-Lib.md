@@ -82,13 +82,31 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056444/d9ff8a0d-900a-4e4b-ac68-34507ef3348b)
 
-**3. Unit Testing Setup via Shared Library**
-* Follow this document for Setup [**Cilck here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)
+**3. Configure Shared library in Jenkins**
+	
+ 	Follow below document
+
+	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
+
+![image](https://github.com/avengers-p7/Documentation/assets/156056444/1038a25c-7953-4e72-af36-9d4f9eb77f98)
+
+
+**4. Create and Configure your Jenkins Pipeline job**
+
+	Follow below document
+
+	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
+![Screenshot from 2024-02-16 22-29-53](https://github.com/CodeOps-Hub/Documentation/assets/156056709/6648dbcb-3f41-4e68-8dad-4e4dc90754ec)
+
+
+
+**5. Now Build your Pipeline**
+
+![image](https://github.com/avengers-p7/Documentation/assets/156056709/5d8efe47-2793-4fed-a6c5-4e1ccc9a8d28)
+
 
 
 # Console Output:
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056709/5d8efe47-2793-4fed-a6c5-4e1ccc9a8d28)
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056709/32746369-25bc-4e3c-84dc-3281916074e9)
 
