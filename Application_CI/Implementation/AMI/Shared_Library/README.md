@@ -162,10 +162,8 @@ This Groovy script is responsible for `initiating Packer` in a specified directo
 package org.avengers.genericCi.packerAmi
 
 def call() {
-    // Change to the directory containing the Packer configuration
-                    dir('/home/shreya/') {
-                        // Initialize Packer (if necessary)
-                        sh '/usr/bin/packer init .'
+    dir('/home/shreya/') {
+        sh '/usr/bin/packer init .'
     }
 }
 
