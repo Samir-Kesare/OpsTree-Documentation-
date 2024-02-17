@@ -56,7 +56,7 @@ Declarative pipelines use Jenkins DSL, a Groovy-based domain-specific language, 
 - After triggering the build, you can view the progress and console output of the build by clicking on the build number in the Jenkins dashboard.
 - The console output will display the steps executed by the pipeline script, including code checkout and compilation.
 - Verify Successful Compilation
-![WhatsApp Image 2024-02-13 at 13 04 16_2d06bc2a](https://github.com/avengers-p7/Documentation/assets/156056460/93882b19-d721-4184-9f8a-6574cd5c5c81)
+![WhatsApp Image 2024-02-18 at 03 14 13_c846d813](https://github.com/avengers-p7/Documentation/assets/156056460/775da429-6535-4ac2-a6a2-d38a9ee75bc5)
 ![WhatsApp Image 2024-02-13 at 13 05 34_8cb5346a](https://github.com/avengers-p7/Documentation/assets/156056460/2e051239-c92f-4ef7-bd60-263a49263f94)
 ![image](https://github.com/avengers-p7/Documentation/assets/156056460/479f10ed-1800-4b0e-8189-c568d76e71a6)
 
@@ -65,23 +65,26 @@ Declarative pipelines use Jenkins DSL, a Groovy-based domain-specific language, 
 ``` shell
 pipeline {
     agent any
-    
+
     tools {
-        // Define the Go tool installation named 'Go' using the configured path
         go 'go1.22.0'
     }
-    
+
     stages {
+         stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Checkout') {
-            steps { 
+            steps {
                 git branch: 'main', credentialsId: 'khushi_cred', url: 'https://github.com/OT-MyGurukulam/employee-api.git'
             }
         }
         stage('Code Compilation') {
             steps {
                 script {
-                    // Use the 'go' tool to run Go commands
-                    sh 'go install' 
+                    sh 'go install'
                     sh "go list -f '{{.Target}}'"
                 }
             }
