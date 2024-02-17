@@ -36,6 +36,8 @@ The purpose of a Signed-off-by trailer in Git is:-
 |--------------|-----------|
 | Jenkins      | 2.426.3   |
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d9febe6e-5c07-4a8c-85c3-ebc47c5803db)
+
 # Commit Sign-off Setup
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056460/41bfd967-03e5-4379-a05c-be1439a1ce6e)
