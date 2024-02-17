@@ -65,7 +65,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 # Flow Diagram
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7dc60731-5044-406e-90f9-d785bf635726)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/57b2c147-362a-4057-8eb6-1e8a5decc418)
 
 
 ***
@@ -181,7 +181,7 @@ def call() {
                   }
               }
 ```
-[**javatemplate.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaBugAnalysis.groovy)
+[**javaBugAnalysis.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaBugAnalysis.groovy)
 
 ```shell
 package org.avengers.template.java
