@@ -65,7 +65,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 # Flow Diagram
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/57b2c147-362a-4057-8eb6-1e8a5decc418)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1530fff8-2637-4f14-b1a1-3af04738e1fc)
 
 
 ***
@@ -95,23 +95,17 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/1038a25c-7953-4e72-af36-9d4f9eb77f98)
-
-
 **4. Create and Configure your Jenkins Pipeline job**
 
 	Follow below document
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
-![Screenshot from 2024-02-16 22-29-53](https://github.com/CodeOps-Hub/Documentation/assets/156056709/6648dbcb-3f41-4e68-8dad-4e4dc90754ec)
-
+![Screenshot from 2024-02-16 22-05-03](https://github.com/CodeOps-Hub/Documentation/assets/156056709/223fe9e6-be98-4ba6-bb94-9dd829682739)
 
 
 **5. Now Build your Pipeline**
 
-![Uploading Screenshot from 2024-02-16 22-29-53.png…]()
-
+![Screenshot from 2024-02-16 22-24-40](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e5391960-ff4c-4f6e-9274-b4ff2321da90)
 
 # Console Output:
 
