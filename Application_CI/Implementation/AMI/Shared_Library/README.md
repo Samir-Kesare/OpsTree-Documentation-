@@ -74,6 +74,9 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 ***
 
+>[!Note]
+>Click this [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md) to view Generic Doc POC Link.
+
 **Shared Library File Structure**
 
 <img width="485" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1a27b018-6294-4621-94e3-5295f428c6d9">
