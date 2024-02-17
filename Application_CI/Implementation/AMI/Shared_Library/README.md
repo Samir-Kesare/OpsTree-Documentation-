@@ -100,15 +100,18 @@ Go to "Manage Jenkins" > "Configure System."Scroll down to the "Slack" section.I
 
 **Console Output**
 
-<img width="700" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/d9835a9a-c48a-428a-976b-e32c32f8afbe">
+<img width="946" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/c988aa87-8635-4d5d-a4bc-d85e78dca5b2">
 
-<img width="689" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/4b915529-ab33-49d6-8e03-e31d13d43c31">
+***
+
+<img width="680" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a1046f45-7aa8-46ba-abd4-3d8c1dd73325">
+
 
 ***
 
 **AMI Result**
 
-
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/eea68c85-88ca-4a01-87df-3367bea308f1">
 
 ***
 
@@ -117,101 +120,119 @@ Go to "Manage Jenkins" > "Configure System."Scroll down to the "Slack" section.I
 ```shell
 @Library("my-shared-library") _
 
-def genericCiSlackNotification = new org.avengers.template.genericCi.GenericCiSlackNotification()
+def genericCiPackerAmi = new org.avengers.template.genericCi.GenericCiAmi()
 
 node {
-   genericCiSlackNotification.call() 
+   genericCiPackerAmi.call() 
 }
  
 ```
 >[!Note]
->Click this [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Slack_Notification/Jenkinsfile) for the script file.
+>Click this [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/AMI/Jenkinsfile) for the script file.
 
 ***
 
 # Shared Library File
 
-### src/org/avengers/genericCi/slackNotification/DslJob.groovy
+### src/org/avengers/genericCi/packerAmi/AwsCreds.groovy
 
-This DSL script creates a Freestyle job named **Freestyle-Job** in Jenkins. The job description includes a shell step that echoes **"Hello, world!"**. This script encapsulates the job configuration within a Groovy string (jobDSL) and then executes it using the jobDsl step provided by Jenkins Pipeline.
-
-
-```shell
-package org.avengers.genericCi.slackNotification
-
-def call() {
-    // Define the DSL for creating a Freestyle job
-    def jobDSL = '''
-        job('Freestyle-Job') {
-            description('This is a sample Freestyle job created using a Scripted Pipeline')
-            steps {
-                shell('echo "Hello, world!"')
-            }
-        }
-    '''
-    // Execute the job DSL to create the Freestyle job
-    jobDsl(scriptText: jobDSL)
-}
-```
-
->[!Note]
->Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/DslJob.groovy) for the script file.
-
-***
-
-### src/org/avengers/genericCi/slackNotification/SendNotification.groovy
-
-This DSL script sends Slack notifications based on the build status in Jenkins. It checks the **BUILD_STATUS** environment variable and defaults to **'SUCCESS'** if not set. If the build status is **'FAILURE'**, it sends a message indicating the job failure. Conversely, if the build status is **'SUCCESS'**, it sends a message indicating the successful build.
+This class, `AwsCreds`, encapsulates AWS credentials retrieval. It provides a static method, `awsCredentials()`, that returns a map containing details necessary for AWS credential retrieval. These details include the `credentialsId`, `accessKeyVariable`, and `secretKeyVariable`, which are essential for securely accessing AWS services and resources.
 
 ```shell
-package org.avengers.genericCi.slackNotification
+package org.avengers.genericCi.packerAmi
 
-def call() {
-    def status = env.BUILD_STATUS ?: 'SUCCESS' // Default to 'SUCCESS' if BUILD_STATUS is not set
-    if (status == 'FAILURE') {
-        slackSend channel: 'jenkinss', message: 'Job Failed'
-    } else if (status == 'SUCCESS') {
-        slackSend channel: 'jenkinss', message: 'Job Build successfully'
+class AwsCreds {
+    static def awsCredentials() {
+        return [
+            credentialsId: 'aws creds',
+            accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        ]
     }
 }
 
 ```
 
 >[!Note]
->Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/SendNotification.groovy) for the script file.
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/packerAmi/AwsCreds.groovy) for the script file.
 
 ***
 
-# Template File
+### src/org/avengers/genericCi/packerAmi/PackerInit.groovy
 
-### src/org/avengers/template/genericCi/GenericCiSlackNotification
-
-This DSL script integrates two functionalities into a Jenkins pipeline. First, it initiates the creation of a job using the DslJob DSL from **org.avengers.genericCi.slackNotification**. Then, it triggers a Slack notification using the SendNotification DSL, also from the same package. This script encapsulates these actions into a single call, making it easier to use within Jenkins pipelines for Continuous Integration workflows.
+This Groovy script is responsible for `initiating Packer` in a specified directory. It ensures that Packer is initialized correctly, preparing it for subsequent operations within the specified directory.
 
 ```shell
-package org.avengers.template.genericCi
+package org.avengers.genericCi.packerAmi
 
-import org.avengers.genericCi.slackNotification.*
-
-def call(){
-  dslJob = new DslJob()
-  sendNotification = new SendNotification()
-
-  dslJob .call()
-  sendNotification.call()
+def call() {
+    // Change to the directory containing the Packer configuration
+                    dir('/home/shreya/') {
+                        // Initialize Packer (if necessary)
+                        sh '/usr/bin/packer init .'
+    }
 }
 
 ```
 
 >[!Note]
->Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/genericCi/GenericCiSlackNotification.groovy) for the script file.
->
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/packerAmi/PackerInit.groovy) for the script file.
+
 ***
 
-**Pipeline Syntax For Slacksend**
+### src/org/avengers/genericCi/packerAmi/PackerBuild.groovy
 
-![Screenshot 2024-02-13 133308](https://github.com/avengers-p7/Documentation/assets/156057205/c5706782-2cb5-458f-ade0-6fee95cc6d6d)
+This Groovy script is a part of a Jenkins shared library used for building Amazon Machine Images (AMIs) with Packer. It defines a pipeline step `(call())` that switches to a directory containing Packer configuration files. Within this directory, it securely binds AWS credentials using the withCredentials block, ensuring that the access key and secret key are available as environment variables (`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, respectively). Finally, it executes the Packer build command `(packer build .)` within this context.
 
+```shell
+package org.avengers.genericCi.packerAmi
+
+def call() {
+    dir('/home/shreya/') {
+        withCredentials([[
+            $class: 'AmazonWebServicesCredentialsBinding',
+            credentialsId: 'aws creds',
+            accessKeyVariable: 'AWS_ACCESS_KEY_ID',
+            secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
+        ]]) {
+            sh '/usr/bin/packer build .'
+        }
+    }
+}
+
+```
+
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/packerAmi/PackerBuild.groovy) for the script file.
+
+***
+
+# Template File
+
+### src/org/avengers/template/genericCi/GenericCiAmi.groovy
+
+This Groovy script is a template for a generic continuous integration (CI) pipeline. It coordinates the execution of three main steps: obtaining AWS credentials, initializing Packer in a specific directory, and subsequently building an Amazon Machine Image (AMI) using Packer.
+
+```shell
+package org.avengers.template.genericCi
+
+import org.avengers.genericCi.packerAmi.*
+
+def call() {
+    def awsCred = new AwsCreds()
+    def packerInit = new PackerInit()
+    def packerBuild = new PackerBuild()
+
+    awsCred.awsCredentials()  // Call the correct method
+    packerInit.call()
+    packerBuild.call()
+}
+
+```
+
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/genericCi/GenericCiAmi.groovy) for the script file.
+>
 ***
 
 # Conclusion
@@ -233,7 +254,6 @@ In conclusion, this documentation has provided you with a comprehensive guide on
 | ---------- | --------------- |
 | [Link](https://keentolearn.medium.com/how-to-improve-your-jenkins-builds-with-shared-libraries-5e225b7435fb#:~:text=A%20shared%20library%20in%20Jenkins,efficient%20and%20easier%20to%20maintain.) | Link For Shared Library |
 | [Link](https://phoenixnap.com/kb/jenkins-shared-library) | Reference Link For Understanding the concept of Shared Library |
-| [Link](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbHluUi1nZVZJcmRLai1COXZxMVRjcERlLXhXZ3xBQ3Jtc0trT05uZ3dWaG1sZmZHYXVQeWluVnl2ZHF6c3BYdGlyUE1OREh3NkRFb0dFMG5VQWxyMXhNRHRnWkxBY2hKTnB5UkJySW9BOVJkczJzRlZiZm92NVdWNHg1ZEJLeU5tRmFlS2sxWDZJUmE0YThuQ1JPQQ&q=https%3A%2F%2Fwww.jenkins.io%2Fdoc%2Fbook%2Fpipeline%2Fshared-libraries%2F&v=Wj-weFEsTb0) | Reference Link |
 | [Link](https://www.youtube.com/watch?v=pQUDhOMZiZQ) | Video Reference For Shared Library |
 | [Link](https://youtu.be/Wj-weFEsTb0?feature=shared) | Video Reference For Shared Library |
 | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md) | Generic Doc Link |
