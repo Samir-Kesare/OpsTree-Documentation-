@@ -28,6 +28,8 @@ In this task, we are using Scripted Pipeline.
 ***
 ## Scripted Pipeline
 
+Scripted Pipeline uses a Groovy-based scripting syntax, where you write code directly using Groovy scripting language. It offers maximum flexibility and power to define complex pipelines using imperative programming constructs like loops, conditionals etc. This helps in providing fine-grained control over the flow of execution. 
+
 **For more information visit the below document link:**
 
 [\[ Reference Doc \]](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)
@@ -71,12 +73,13 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
 
-<img width="944" alt="Screenshot 2024-02-17 at 5 16 48 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/95c45d64-1789-4460-947a-b5328825e98c">
+<img width="971" alt="Screenshot 2024-02-17 at 7 20 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1426780c-31e9-4a4b-af11-c8a2c21add20">
+
 
 
 4. **Build Pipeline**
 
-<img width="1256" alt="Screenshot 2024-02-17 at 5 22 36 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/ce072bee-07c3-4e4c-8ce5-97a0815f82b5">
+<img width="1151" alt="Screenshot 2024-02-17 at 7 20 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d13f0130-0950-4d07-aca2-030297d1aabd">
 
 
 ***
