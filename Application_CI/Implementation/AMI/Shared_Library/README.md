@@ -30,7 +30,7 @@
 
 # Introduction
 
-This documentation presents the development and usage of a shared library for Slack notification. The shared library includes common functions for sending notifications to Slack channels. The purpose of this library is to streamline the process of integrating Slack notifications into various applications, reducing duplication of code and ensuring consistency in notification functionality across different projects.
+This documentation will walk you through the steps involved in creating an AMI using a shared library.This guide is designed to assist users in creating a customized AMI on the Amazon Web Services (AWS) platform efficiently. AMIs are pre-configured templates that contain software configurations, launch permissions, and other settings required to launch an instance on AWS. By leveraging shared libraries, users can streamline the setup process, promote code reuse, and ensure consistency across multiple instances.
 
 ***
 
@@ -66,23 +66,13 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 ***
 
-# Pre-requisites
-
-| **Pre-requisites** |
-| ------------------ |
-| **Jenkins** |
-| **Slack Notification Plugin** |
-| **Job Dsl Plugin** |
-| **Global Pipeline Library Configured** |
-| **Global Slack Notification Configuration** |
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/DslJob.groovy) for AMI Setup Document.
 
 ***
 
-# Flow Diagram
-
-**Flow of Work**
-
-<img width="587" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/0d7db1d4-4331-429e-a088-e871ffbd7716">
+>[!Note]
+>Click this [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/genericCi/slackNotification/DslJob.groovy) for AMI Aetup uisng Jenkinsfile.
 
 ***
 
@@ -92,41 +82,7 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 ***
 
-# Slack Notification Setup
-
-Setting up Slack notifications in Jenkins involves integrating Jenkins with Slack using a Jenkins plugin and configuring the necessary settings in both Jenkins and Slack.
-
-**Step-1 Workspace Creation**
-
-Different projects or teams may have different Jenkins jobs with unique notification requirements. Using separate workspaces in Slack allows for the isolation and organization of notifications related to specific projects or teams.
-
-Go to the Slack website.Click on "Get started for free" or "Create a new workspace."Follow the prompts to set up your Slack workspace, providing details such as your email address and password.
-
-<img width="865" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/5abb2e1b-f5d1-47a0-ba8b-26a6c7bf7287">
-
-***
-
-**Step-2 Channel Creation**
-
-Creating a dedicated channel for Jenkins notifications helps isolate and organize build-related messages.
-
-Log in to your Slack workspace.In the left sidebar, click on the "+" button next to "Channels."Choose "Create a channel."
-
-<img width="700" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/d0c01488-0c49-4ada-8d78-cb736d6a653f">
-
-***
-
-**Step-3 Jenkins CI Setup**
-
-This step includes the steps for "Password" or "Secret Text" creation,which is an important part for Slack Notification.With this,will get the "Team Subdomain" & "Password" which is needed for jenkins slack notification configuration.
-
-<img width="945" alt="Screenshot 2024-01-23 181736" src="https://github.com/avengers-p7/Documentation/assets/156057205/ac515c7a-4501-48b6-b84d-2724d1084572">
-
-***
-
-<img width="940" alt="Screenshot 2024-01-23 181811" src="https://github.com/avengers-p7/Documentation/assets/156057205/a531d89d-8ee9-4c2c-b230-b3f66726201e">
-
-***
+# AMI Setup
 
 **Step-4 Jenkins Configuration** 
 
@@ -135,18 +91,6 @@ Setting up Jenkins Global Configuration for Slack notifications allows you to ce
 Go to "Manage Jenkins" > "Configure System."Scroll down to the "Slack" section.In the "Team Domain" field, enter the Slack team domain.In the "Integration Token Credential" section, click on "Add" to add your Slack integration token as a Jenkins credential.Enter the necessary information, such as the token itself and an ID to identify the credential.In the "Test Connection" section, enter a Slack channel name and click on "Test Connection" to verify that Jenkins can communicate with Slack.
 
 <img width="700" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/2b373364-80e5-4559-8c63-d08279d38c9d">
-
-***
-
-**Slack Notification Plugin**
-
-<img width="644" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/3b91bb9d-bb3c-4f5e-b600-08b11bf3f009">
-
-***
-
-**Job Dsl Plugin**
-
-<img width="596" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/e5bc6f6f-5ddd-414a-81a9-1f1f6a1a69e7">
 
 ***
 
@@ -164,15 +108,9 @@ Go to "Manage Jenkins" > "Configure System."Scroll down to the "Slack" section.I
 
 ***
 
-**Freestyle Job Created of name "My-Freestyle-Job"**
+**AMI Result**
 
-<img width="709" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/608ae964-707c-4839-a3ee-ac798a493148">
 
-***
-
-**Slack Notification Result**
-
-<img width="683" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/190d9968-727b-48b0-be23-271b90b1e6c0">
 
 ***
 
@@ -280,7 +218,7 @@ def call(){
 
 # Conclusion
 
-In conclusion, the shared library for Slack notification simplifies the process of integrating Slack notifications into applications by providing common functions for sending messages to Slack channels. By using this library, developers can save time and effort by avoiding the need to write notification code from scratch for each project. The library promotes code reuse, enhances consistency, and improves the overall development workflow when incorporating Slack notifications into various applications.
+In conclusion, this documentation has provided you with a comprehensive guide on setting up an Amazon Machine Image (AMI) using a shared library. By following the steps outlined in this guide, you can effectively leverage shared libraries to streamline the process of creating and managing AMIs on the Amazon Web Services (AWS) platform.Utilizing shared libraries offers numerous benefits, including code reuse, improved maintainability, and enhanced consistency across your infrastructure. 
 
 ***
 
@@ -302,4 +240,6 @@ In conclusion, the shared library for Slack notification simplifies the process 
 | [Link](https://youtu.be/Wj-weFEsTb0?feature=shared) | Video Reference For Shared Library |
 | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md) | Generic Doc Link |
 | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md) | Generic Poc Doc Link |
+| [Link](https://devopscube.com/packer-tutorial-for-beginners/) | Reference Link For AMI Creation |
+| [Link](https://flugel-it.medium.com/building-and-running-custom-amis-on-aws-using-packer-and-terraform-3db28c968b30) | Reference Link |
 
