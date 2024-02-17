@@ -17,7 +17,7 @@
 3. [Why Shared Library](#why-shared-library)
 4. [Why use src folder structure in a Jenkins shared library](#Why-use-src-folder-structure-in-a-Jenkins-shared-library)
 5. [Flow Diagram](#Flow-Diagram)
-6. [File Structure](#File-Structure)
+6. [Shared Library File Structure](#Shared-Library-File-Structure)
 7. [AMI Setup](#AMI-setup)
 8. [Pipeline](#Pipeline)
 9. [Shared Library File](#shared-library-file)
@@ -87,7 +87,7 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 ***
 
-**Shared Library File Structure**
+# Shared Library File Structure
 
 <img width="485" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1a27b018-6294-4621-94e3-5295f428c6d9">
 
