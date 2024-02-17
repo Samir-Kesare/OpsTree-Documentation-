@@ -16,7 +16,7 @@
 2. [What is Shared Library?](#what-is-shared-library)
 3. [Why Shared Library](#why-shared-library)
 4. [Why use src folder structure in a Jenkins shared library](#Why-use-src-folder-structure-in-a-Jenkins-shared-library)
-6. [AMI Setup](#slack-notification-setup)
+6. [AMI Setup](#AMI-setup)
 7. [Pipeline](#Pipeline)
 8. [Shared Library File](#shared-library-file)
 9. [Template File](#Template-File)
