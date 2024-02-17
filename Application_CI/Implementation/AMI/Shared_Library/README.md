@@ -162,10 +162,10 @@ This Groovy script is responsible for `initiating Packer` in a specified directo
 package org.avengers.genericCi.packerAmi
 
 def call() {
-    dir('/home/shreya/') {
-        sh '/usr/bin/packer init .'
+    stage('Initialize Packer') {
+            sh '/usr/bin/packer init .'
+        }
     }
-}
 
 ```
 
@@ -182,7 +182,7 @@ This Groovy script is a part of a Jenkins shared library used for building Amazo
 package org.avengers.genericCi.packerAmi
 
 def call() {
-    dir('/home/shreya/') {
+    stage('Build AMI') {
         withCredentials([[
             $class: 'AmazonWebServicesCredentialsBinding',
             credentialsId: 'aws creds',
@@ -210,13 +210,16 @@ This Groovy script is a template for a generic continuous integration (CI) pipel
 ```shell
 package org.avengers.template.genericCi
 
+import org.avengers.common.*
 import org.avengers.genericCi.packerAmi.*
 
-def call() {
+def call(String url, String creds, String branch){
+    gitCheckoutPrivate = new GitCheckoutPrivate()
     def awsCred = new AwsCreds()
     def packerInit = new PackerInit()
     def packerBuild = new PackerBuild()
 
+    gitCheckoutPrivate.call(url, creds, branch)
     awsCred.awsCredentials()  // Call the correct method
     packerInit.call()
     packerBuild.call()
