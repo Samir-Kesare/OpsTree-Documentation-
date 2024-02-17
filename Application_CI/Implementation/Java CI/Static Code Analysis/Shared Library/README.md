@@ -229,6 +229,9 @@ def call() {
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
+| Sonarqube | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md |
+| Statis Code Analysis | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md |
+| Sonarqube Intergration | https://www.youtube.com/watch?v=KsTMy0920go&t=342s |
 | Clean Workspace | https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps/#finishing-up |
 | Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
 | Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
