@@ -96,7 +96,6 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 	Follow below document
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
-![Screenshot from 2024-02-16 22-29-53](https://github.com/CodeOps-Hub/Documentation/assets/156056709/6648dbcb-3f41-4e68-8dad-4e4dc90754ec)
 
 
 
