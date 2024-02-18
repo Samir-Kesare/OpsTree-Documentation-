@@ -83,7 +83,7 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 5. **Build Pipeline**
 
-<img width="1256" alt="Screenshot 2024-02-17 at 5 22 36 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/ce072bee-07c3-4e4c-8ce5-97a0815f82b5">
+<img width="1253" alt="Screenshot 2024-02-18 at 11 12 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/5112c254-3e03-4746-b483-b9ad61ab929e">
 
 
 ***
@@ -106,27 +106,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Cleanup Workspace') {
-            steps {
-                // Clean up the workspace
-                cleanWs()
-            }
-        }
         stage('Clone Repository') {
             steps {
                 // Clone the repository
                 git branch: 'main', url: 'https://github.com/vyadavP7/Salary-API.git'
             }
         }
-        stage('Package Artifacts') {
-            steps {
-                sh 'mvn clean package -DskipTests=true'
-            }
-        }
         stage('Owasp DP-Check') {
             steps {
                 // Run DP-Check
                 dependencyCheck additionalArguments: '--scan target/ --format ALL', odcInstallation: 'DP-check'
+            }
+        }
+        stage('Package Artifacts') {
+            steps {
+                sh 'mvn clean package -DskipTests=true'
             }
         }
     }
