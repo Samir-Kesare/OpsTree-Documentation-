@@ -13,8 +13,8 @@
 # Table Of Contents
 
 1. [Introduction](#introduction)
-2. [What is Scripted Pipeline](#what-is-scripted-pipeline)
-3. [What is Jenkins Freestyle Job](#what-is-jenkins-freestyle-job)
+2. [What is Scripted Pipeline?](#what-is-scripted-pipeline)
+3. [What is Jenkins Freestyle Job?](#what-is-jenkins-freestyle-job)
 4. [Pre-requisites](#pre-requisites)
 5. [Flow Diagram](#flow-diagram)
 6. [Slack Notification Setup](#slack-notification-setup)
@@ -31,13 +31,13 @@ In today's agile development environments, effective communication is key. With 
 
 ***
 
-# What is Scripted Pipeline
+# What is Scripted Pipeline?
 
 A Scripted Pipeline in Jenkins is a Groovy-based approach to defining continuous integration and continuous delivery (CI/CD) pipelines. It allows users to write pipeline scripts using Groovy syntax, providing full flexibility and customization for defining build, test, and deployment stages. Scripted Pipelines enable users to incorporate conditional logic, loops, and functions within the pipeline script to handle complex workflows and custom requirements. While offering extensive power and flexibility, Scripted Pipelines require users to have knowledge of Groovy programming and scripting concepts. They are well-suited for projects with intricate build processes or those requiring advanced automation and customization capabilities.
 
 ***
 
-# What is Jenkins Freestyle Job
+# What is Jenkins Freestyle Job?
 
 In Jenkins, a Freestyle job is a type of project configuration that allows users to create flexible and customizable build processes without adhering to a strict structure or predefined steps. Freestyle jobs provide a straightforward interface where users can define build steps, configure source code management, specify triggers, and set up post-build actions using a graphical user interface (GUI). 
 
