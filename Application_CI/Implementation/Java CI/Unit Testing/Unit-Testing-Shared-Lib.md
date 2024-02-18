@@ -84,16 +84,16 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 **3. Configure Shared library in Jenkins**
 	
- 	Follow below document
+Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
+[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
 
 **4. Create and Configure your Jenkins Pipeline job**
 
-	Follow below document
+Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
+[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
 
 
 
@@ -203,3 +203,4 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | Bug Analysis Setup via Shared Library |[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
 | Unit-Testing-POC | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Unit%20Testing/POC.md) |
 |Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
+|Configure your Shared Library|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
