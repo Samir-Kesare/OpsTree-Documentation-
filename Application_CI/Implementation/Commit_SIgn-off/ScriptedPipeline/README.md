@@ -1,4 +1,4 @@
-# Scripted Pipeline-Commit SIgn-off
+# Scripted Pipeline Commit Sign-off
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
@@ -9,6 +9,7 @@
 - [Pre-requisites](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/ScriptedPipeline/README.md#pre-requisites)
 - [Commit Sign-off Setup](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/ScriptedPipeline/README.md#commit-sign-off-setup)
 - [Contact Information](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/ScriptedPipeline/README.md#contact-information)
+- [Conclusion](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/ScriptedPipeline/README.md#conclusion)
 - [Resources and References](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/ScriptedPipeline/README.md#resources-and-references)
 
 # Introduction
@@ -36,7 +37,7 @@ In a Jenkins scripted pipeline, enforcing commit sign-off means that before allo
 - In the job configuration page, scroll down to the Pipeline section.
 - Select Pipeline script from SCM.
 - Give required repo url and enter your credentials.
-![WhatsApp Image 2024-02-13 at 21 08 27_9d2c0f7c](https://github.com/avengers-p7/Documentation/assets/156056460/24354844-1d24-489e-bf2b-fd0eeac631f0)
+![WhatsApp Image 2024-02-18 at 10 29 26_e709c060](https://github.com/avengers-p7/Documentation/assets/156056460/575dbebd-9363-4622-ba00-c0ba7978891a)
 ![WhatsApp Image 2024-02-13 at 21 09 53_f8eb0af4](https://github.com/avengers-p7/Documentation/assets/156056460/1835787e-f7b9-4f4e-ada0-1a00fd10fad4)
 
 **Step-3** Save the Configuration
@@ -98,11 +99,14 @@ node {
     }
 }
 ```
+# Conclusion
+In conclusion, implementing a scripted pipeline commit sign-off process can greatly enhance the reliability and security of software development projects. By requiring developers to sign off on their commits through a scripted pipeline, teams can ensure that each code change undergoes thorough review and validation before being merged into the main codebase. This not only helps in maintaining code quality and consistency but also reinforces accountability among team members.
 
 # Contact Information
 | Name            | Email Address                        |
 |-----------------|--------------------------------------|
 | Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
+
 
 # Resources and References 
 [JenkinsPipeline](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)
