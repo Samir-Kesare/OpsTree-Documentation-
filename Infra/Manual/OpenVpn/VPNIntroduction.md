@@ -136,7 +136,7 @@ In conclusion, VPNs play a crucial role in safeguarding online security and priv
 
 | **Source** | **Reference** |
 | ---------- | ------------- |
-| [Link](https://www.kaspersky.com/resource-center/definitions/what-is-a-vpn) | Reference Link for VPN |
-| [Link](https://nordvpn.com/what-is-a-vpn/) | Reference Link |
+| [Link](https://www.kaspersky.com/resource-center/definitions/what-is-a-vpn) | Reference Link for understanding of VPN |
+| [Link](https://nordvpn.com/what-is-a-vpn/) | Reference Link for the concept of VPN |
 | [Link](https://www.geeksforgeeks.org/what-is-vpn-and-how-it-works/) | Working Of VPN |
 
