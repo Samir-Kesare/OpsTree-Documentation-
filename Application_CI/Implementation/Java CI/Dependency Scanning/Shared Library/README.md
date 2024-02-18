@@ -47,7 +47,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 ***
 ## Runtime Prerequisites
 
-|Language / Dependency|Description|
+|Tool|Description|
 |-------|-------|
 | **Maven Plugin** | to enable jenkins to build maven projects |
 | **OWASP Dependency-Check Plugin** | for dependency-check configuration on your jenkins server |
