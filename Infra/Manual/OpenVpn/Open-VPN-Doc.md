@@ -130,7 +130,7 @@ In conclusion, OpenVPN offers a versatile and secure VPN solution suitable for a
 
 | **Source** | **Reference** |
 | ---------- | ------------- |
-| [Link](https://openvpn.net/faq/what-is-openvpn/) | Reference Link for OpenVPN |
-| [Link](https://dataprot.net/guides/what-is-openvpn/) | Reference Link |
+| [Link](https://openvpn.net/faq/what-is-openvpn/) | Reference Link for OpenVPN Understanding |
+| [Link](https://dataprot.net/guides/what-is-openvpn/) | Reference Link for concept of OpenVpn |
 | [Link](https://nordvpn.com/blog/what-is-openvpn/) | Working Of OpenVPN |
 | [VPN Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/OpenVpn/VPN.md) | Reference Link of VPN Doc |
