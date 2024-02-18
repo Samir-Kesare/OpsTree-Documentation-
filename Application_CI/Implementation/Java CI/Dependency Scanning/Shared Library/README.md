@@ -108,7 +108,7 @@ https://github.com/CodeOps-Hub/p7-salary-API.git
 <img width="810" alt="Screenshot 2024-02-18 at 3 34 43 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c3079aa6-7f4b-4480-9051-f19fc812e371">
 
 ***
-## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/Dependency%20Scanning/Jenkinsfile)
+## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/Dependency%20Scanning/Jenkinsfile)
 
 ```shell
 @Library("shared_library") _
