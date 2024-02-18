@@ -10,7 +10,7 @@
 
 1. [Introduction](#introduction)
 2. [Purpose](#purpose)
-3. [What is Quality Gates in SonarQube](#what-is-quality-gates-in-sonarqube)
+3. [What is Quality Gates in SonarQube?](#what-is-quality-gates-in-sonarqube)
 4. [Why Quality Gates](#why-quality-gates)
 5. [Flow Diagram of Quality Gates in SonarQube](#flow-diagram-of-quality-gates-in-sonarqube)
 6. [Best Practices](#best-practices)
