@@ -1,12 +1,13 @@
 
-# Java Static Code Analysis(Shared Library)
+# Python Static Code Analysis(Shared Library)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/9b34c66c-1ce1-4791-adfd-7fd8fcc21c45)
 
 
 
-
-| Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
-| ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
-| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 02-02-2024  | 1.0        | Harshit Singh   | 17-02-2024      |
+| Author        | Created on  | Version    | Last Updated by | Last Updated on |
+| --------------| ----------- | ---------- | --------------- | --------------- |
+| Vikram Bisht  | 17-02-2024  | 1.0        | Vikram Bisht    | 17-02-2024      |
 
 
 ## Table  of Contents
@@ -30,7 +31,7 @@ Static analysis, also called static code analysis, is a method of computer progr
 
 **For more information visit the below document link:**
 
-[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md)
+[\[ Reference Doc \]](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Static%20code%20analysis(Python%20CI%20Checks).md)
 
 In this task, we are using Shared Library.
 ***
@@ -50,24 +51,19 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 | Tool | Description |
 | ---- | ----------- |
-| **Jenkins(2.426.3)** | To build our pipeline |
-|**Sonarqube(9.6.1.59531)**| [For Static code analysis](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md) |
+| Jenkins(2.426.3) | To build our pipeline |
 
-> [!Important]
-> I have installed the plugin bundle provided by Jenkins during setup. If you have not done the same, you may encounter plugin errors.
 
-***
 ## Runtime Prerequisites
 
-|Language / Dependency|Description|
-|-------|-------|
-| **Java 17** | For springboot project compilation | 
-| **Maven Compiler Plugin** | For springboot project compilation |
-|**Sonarque Scanner Plugin**| To integrate Jenkins with Sonarqube |
+|Language / Dependency|Description            |
+|---------------------|-----------------------|
+| python3             | latest version        |
+| pylint              | It will help to do Static code analysis on python code   |
 
 ***
 ## Flow Diagram
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/2ffe655d-553c-4c45-8460-20cc117197a1)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/47ee78af-3674-4623-ac6c-bf9426712d0d)
 
 ***
 ## Pipeline Setup
