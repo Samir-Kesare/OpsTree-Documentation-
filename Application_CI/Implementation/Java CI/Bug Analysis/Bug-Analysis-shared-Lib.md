@@ -79,7 +79,7 @@ To include the Spotbugs plugin in the `pom.xml` file, follow these steps:
 * Add the Spotbugs-maven-plugin within the reporting section.
 * Ensure that running `mvn site` will generate the Spot Bugs report.
 
-For detailed instructions, please refer to the [Proof of Concept (POC) documentation](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md).
+For detailed instructions, please refer to the [Proof of Concept (POC) documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md).
 
 **2. Configure Maven tool in Jenkins**
 
@@ -235,3 +235,5 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 |---------------------------------------------------------|-----------------------------------------------|
 | Jenkins Pipeline     | [Jenkins Pipeline Documentation](https://www.jenkins.io/doc/book/pipeline/) |
 | Bug Analysis Setup via Shared Library* |[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
+| Bug Analysis POC |[Link ](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md)|
+|Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
