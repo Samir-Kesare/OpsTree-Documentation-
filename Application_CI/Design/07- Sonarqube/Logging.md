@@ -8,7 +8,7 @@
 
 # Table of contents
 1. [Introduction](#introduction)
-2. [What is Logging Metrics in SonarQube](#what-is-logging-metrics-in-sonarqube)
+2. [What is Logging Metrics in SonarQube?](#what-is-logging-metrics-in-sonarqube)
 3. [Features of Logging Metrics](#features-of-logging-metrics)
 4. [Why Logging Metrics](#why-logging-metrics)
 5. [Flow Diagram of Logging Metrics in SonarQube](#flow-diagram-of-logging-metrics-in-sonarqube)
