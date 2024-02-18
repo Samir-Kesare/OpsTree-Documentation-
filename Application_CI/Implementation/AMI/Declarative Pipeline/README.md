@@ -13,7 +13,7 @@
 # Table Of Contents
 
 1. [Introduction](#introduction)
-2. [What is Declarative Pipeline](#what-is-declarative-pipeline)
+2. [What is Declarative Pipeline?](#what-is-declarative-pipeline)
 3. [Why Declarative Pipeline](#why-declarative-pipeline)
 4. [What is Packer](#what-is-packer)
 5. [Pre-requisites](#pre-requisites)
