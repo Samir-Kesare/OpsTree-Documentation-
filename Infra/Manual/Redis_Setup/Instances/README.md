@@ -142,7 +142,7 @@ cluster nodes
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/8584dd07-6068-4944-a3ac-f9cfd4bb2448)
 
-**Cluster has been created successfully**
+### Cluster has been created successfully
 
 # Contact Information
 | Name            | Email Address                        |
