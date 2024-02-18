@@ -11,17 +11,17 @@
 ***
 
 # Table of Contents
-[Introduction](#Introduction)
-[What is VPN?](#What-is-VPN?)
-[Why VPN](#Why-VPN)
-[Types of VPN](#Types-of-VPN)
-[How VPN Works](#How-VPN-Works)
-[Advantages of VPN](#Advantages-of-VPN)
-[Disadvantages of VPN](#Disadvantages-of-VPN)
-[Best Practices](#Best-Practices)
-[Conclusion](#Conclusion)
-[Contact Information](#Contact-Information)
-[References](#References)
++ [Introduction](#Introduction)
++ [What is VPN?](#What-is-VPN?)
++ [Why VPN](#Why-VPN)
++ [Types of VPN](#Types-of-VPN)
++ [How VPN Works](#How-VPN-Works)
++ [Advantages of VPN](#Advantages-of-VPN)
++ [Disadvantages of VPN](#Disadvantages-of-VPN)
++ [Best Practices](#Best-Practices)
++ [Conclusion](#Conclusion)
++ [Contact Information](#Contact-Information)
++ [References](#References)
 
 ***
 
