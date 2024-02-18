@@ -63,5 +63,6 @@ Security groups play a crucial role in securing your cloud infrastructure by con
 # Resources and References 
 | Reference | Link |
 |-----------|------|
+| Redis Instances | [Instance Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md)|
 | Node to node communication | [stackoverflow](https://stackoverflow.com/questions/39568561/how-to-solve-redis-cluster-waiting-for-the-cluster-to-join-issue)|
 |  Ports Defining          |  [AWS official doc](https://repost.aws/questions/QUeQOeMFtxRNmgYfQD3cHR2Q/should-i-open-the-port-16379-bus-port-for-aws-elasticache-for-redis)
