@@ -38,7 +38,8 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 - Select Pipeline script from SCM.
 - Give required repo url and enter your credentials.
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056460/c9ec8323-1c57-4ad7-b10e-33a9244c8567)
+![image](https://github.com/avengers-p7/Documentation/assets/156056460/fd2ce394-cce7-44c0-bba0-5f27c6a45939)
+
 
 **Step-3** Save the Configuration
 
@@ -54,7 +55,7 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 - The console output will display the steps executed by the pipeline script, including code checkout and compilation.
 - Verify Successful Compilation:
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056460/525218c5-6e00-4b81-8349-e7ee841c3d34)
+![image](https://github.com/avengers-p7/Documentation/assets/156056460/3a1f7144-5fcd-40d2-ad28-17e660d66ad0)
 ![image](https://github.com/avengers-p7/Documentation/assets/156056460/e8543a19-f042-46e3-ae78-a275de219f28)
 ![image](https://github.com/avengers-p7/Documentation/assets/156056460/9d506576-6151-4f79-9ee2-45b2034dac21)
 
