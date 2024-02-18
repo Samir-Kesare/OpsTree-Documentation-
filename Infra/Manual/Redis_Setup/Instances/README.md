@@ -156,7 +156,7 @@ Redis installation and Redis cluster manually in a well-planned and secure manne
 | Reference | Link |
 |-----------|------|
 | Security Group | [Ports Defining](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
-| Redis cluster | [Redis official document](https://redis.io/docs/management/scaling/)) |
+| Redis cluster | [Redis official document](https://redis.io/docs/management/scaling/) |
 | Configuring the clusters | [stackoverflow](https://stackoverflow.com/questions/39568561/how-to-solve-redis-cluster-waiting-for-the-cluster-to-join-issue)|
 | Redis Specification | [Specification redis doc](https://redis.io/docs/reference/cluster-spec/)|
 
