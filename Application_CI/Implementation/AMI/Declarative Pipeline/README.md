@@ -32,7 +32,7 @@ Creating Amazon Machine Images (AMIs) using Packer with Jenkins pipelines allows
 
 ***
 
-# What is Declarative Pipeline
+# What is Declarative Pipeline?
 
 Declarative Pipeline in Jenkins offers a simplified and structured approach for defining CI/CD pipelines, using a human-readable syntax with predefined sections like pipeline, stages, and agent. It's designed to be easy to read and maintain, making it suitable for users without strong scripting skills.It enforces a stricter syntax and allows for less flexibility compared to the scripted pipeline, which can be seen as an advantage for ensuring consistency and readability.
 
