@@ -44,7 +44,7 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
     4. Source: The source of the traffic (e.g., an IP address, another security group).
 **Outbound Rules:** Define rules to allow outbound traffic. By default, outbound traffic is allowed to all destinations. 
 
-# In all my [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md), I have set the following Inbound Rules:
+# In all my [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md), I have set the following Inbound Rules
 
 | Rule                 | Port(s)   | Protocol | Source                        |
 |----------------------|-----------|----------|-------------------------------|
@@ -54,7 +54,7 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 
 ![Untitled design (7)](https://github.com/CodeOps-Hub/Documentation/assets/156056460/1e9e5aa9-d0a5-4ab3-99bf-67cb5ed580cd)
 
-# In all my [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md), I have set the following Outbound Rules:
+# In all my [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md), I have set the following Outbound Rules
 
 | Outbound Rule        | Port/Protocol | Destination       |
 |----------------------|---------------|-------------------|
