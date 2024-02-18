@@ -13,7 +13,7 @@
 # Table Of Contents
 
 1. [Introduction](#introduction)
-2. [What is Scripted Pipeline](#what-is-scripted-pipeline)
+2. [What is Scripted Pipeline?](#what-is-scripted-pipeline)
 3. [Why Scripted Pipeline](#why-scripted-pipeline)
 4. [What is Packer](#what-is-packer)
 5. [Pre-requisites](#pre-requisites)
