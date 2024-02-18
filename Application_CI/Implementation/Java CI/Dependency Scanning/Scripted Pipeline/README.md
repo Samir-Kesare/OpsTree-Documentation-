@@ -51,7 +51,7 @@ Scripted Pipeline uses a Groovy-based scripting syntax, where you write code dir
 ***
 ## Flow Diagram
 
-<img width="1262" alt="Screenshot 2024-02-17 at 5 54 37 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/70d80186-bae4-4168-a648-2975b6fca9fd">
+<img width="741" alt="Screenshot 2024-02-18 at 11 32 12 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/02248ccf-7891-4151-98f8-9058d7aa5438">
 
 ***
 ## Pipeline Setup
