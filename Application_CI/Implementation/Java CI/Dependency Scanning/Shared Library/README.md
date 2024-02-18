@@ -77,6 +77,7 @@ https://github.com/CodeOps-Hub/p7-salary-API.git
 
 <img width="1327" alt="Screenshot 2024-02-18 at 4 17 25 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/16cb4a7f-430b-4423-9f73-7de330a4300a">
 
+* For more information follow the [reference link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Dependency%20Scanning%20POC/README.md)
 5. **Configure Shared library in Jenkins**
 	
 * Follow below document
