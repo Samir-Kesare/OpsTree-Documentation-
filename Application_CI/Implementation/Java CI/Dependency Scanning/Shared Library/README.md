@@ -30,7 +30,8 @@ In this task, we are using Shared Library.
 ## What is Shared Library?
 
 A shared library in Jenkins is a reusable collection of Groovy scripts that can be used by multiple Jenkins jobs. This allows you to share code and functionality between different jobs, which can make your builds more efficient and easier to maintain. 
-To understand the concept of shared libraries, let’s consider a real-time example. Imagine you have multiple Jenkins pipelines that require a common set of functions for interacting with a version control system, such as Git. Instead of duplicating the Git-related code in each pipeline, you can create a shared library that encapsulates the necessary Git operations.
+
+A shared library is typically organized as a Git repository containing code that you want to share across pipelines. This repository would have a specific structure with directories like src, vars, resources, etc., where you place your Groovy scripts, classes, and other resources.
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056444/f99a6591-da1b-42f4-a13c-8c4bb1bb947c)
 
@@ -67,13 +68,14 @@ https://github.com/CodeOps-Hub/p7-salary-API.git
 [**Repo Link**](https://github.com/CodeOps-Hub/p7-salary-API.git)
 
 2. **Configure Maven tool in Jenkins**
-Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
+
+* Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 <img width="975" alt="Screenshot 2024-02-17 at 5 19 24 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/8ffb33b3-b11f-4ec8-a6b4-9764d5aca18c">
 
 4. **Configure Shared library in Jenkins**
 	
- Follow below document
+* Follow below document
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
@@ -83,7 +85,7 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 5. **Create and Configure your Jenkins Pipeline job**
 
-	Follow below document
+* Follow below document
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
 
@@ -91,6 +93,7 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 
 6. **Build Pipeline**
+
 <img width="805" alt="Screenshot 2024-02-18 at 3 10 36 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9d22a37e-df89-468a-8874-24046df8d813">
 
 
@@ -101,56 +104,71 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9767ba5-b4b0-43dd-8975-a61217d9026b)
 
 ***
-## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/CodeCompilation/Jenkinsfile)
+## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/Dependency%20Scanning/Jenkinsfile)
 
 ```shell
-@Library("my-shared-library") _
+@Library("shared_library") _
 
-def javaCodeCompile = new org.avengers.template.java.javaCodeCompilation()
+def dpcheck = new org.avengers.template.java.dependencyCheck()
 
 node {
     
-    def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
+    def url = 'https://github.com/CodeOps-Hub/p7-salary-API.git'
     def branch = 'main'
+    def creds = 'vyadavP7'
     
-    javaCodeCompile.call(branch: branch,url: url)
-    
+    dpcheck.call(url, creds, branch)
 }
 ```
 
-## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary.git)
-### [template/java/javaCodeCompilation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaCodeCompilation.groovy)
+## [Shared Library]()
 ```shell
-package org.avengers.template
+package org.avengers.template.java
 
-import org.avengers.common.gitCheckout
+import org.avengers.common.packageArtifacts
+import org.avengers.common.GitCheckoutPrivate
 import org.avengers.common.cleanWorkspace
-import org.avengers.java.compile.*
+import org.avengers.java.dependencyCheck.dpCheck
 
-def call(Map config = [:]){
-    def gitCheckout = new gitCheckout()
-    def javaCompile = new compile()
-    def cleanWorkspace = new cleanWorkspace()
-    try{
-    gitCheckout.call(branch: config.branch, url: config.url  )
-    javaCompile.call()   
-    }
-    // gitCheckout.call(branch: config.branch, url: config.url  )
-    // javaCompile.call()
-    catch (e) {
-        echo 'Analysis Failed'
-        cleanWorkspace.call()
-        // Since we're catching the exception in order to report on it,
-        // we need to re-throw it, to ensure that the build is marked as failed
+
+def call(String url, String creds, String branch){
+
+    def gitCheckout = new GitCheckoutPrivate()
+    def packageArtifacts = new packageArtifacts()
+    def dpCheck = new dpCheck()
+    def cleanW = new cleanWorkspace()
+  
+    try {
+        // Clone repository 
+        gitCheckout.call(url, creds, branch)
+
+        // Package artifacts
+        packageArtifacts.call()
+        
+        // perform Dependency Scanning 
+        dpCheck.call()
+      
+    } catch (e) {
+        echo 'DP check Failed !'
+
+        // clean workspace 
+        cleanW.call()
+  
         throw e
-    } 
-    finally {
-         def currentResult = currentBuild.result ?: 'SUCCESS'
-        if ((currentResult == 'UNSTABLE')||(currentResult == 'ABORTED')) {
-        cleanWorkspace.call()
-            // echo 'This will run only if the run was marked as unstable'
+    } finally {
+     //   echo "In finally block"
+      //  echo "Current build result: ${currentBuild.currentResult}"
+        
+        if (currentBuild.currentResult == 'SUCCESS') {
+            echo 'DP check Successful!'
+
+            // archive HTML reports as artifacts
+            archiveArtifacts artifacts: '**/dependency-check-report.html'
+
+            // show workspace in tree structure
+            sh 'tree ${WORKSPACE}'
+        }
     }
-  }
 }
 ```
 ### [gitCheckout.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
