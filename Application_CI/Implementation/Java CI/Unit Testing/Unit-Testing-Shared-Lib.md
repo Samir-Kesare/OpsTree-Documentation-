@@ -201,6 +201,7 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 
 |       **Description**                                   |           **References**                    |
 |---------------------------------------------------------|-----------------------------------------------|
-| Jenkins Pipeline     | [Jenkins Pipeline Documentation](https://www.jenkins.io/doc/book/pipeline/) |
+| Jenkins Pipeline Documentation   | [Link](https://www.jenkins.io/doc/book/pipeline/) |
 | Bug Analysis Setup via Shared Library |[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
-| Junit-POC | [Detailed POC Documentation](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Unit%20Testing/POC.md) |
+| Unit-Testing-POC | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Unit%20Testing/POC.md) |
+|Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
