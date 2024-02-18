@@ -51,7 +51,7 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 ***
 ## Flow Diagram
 
-<img width="1262" alt="Screenshot 2024-02-17 at 5 54 37 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/70d80186-bae4-4168-a648-2975b6fca9fd">
+<img width="741" alt="Screenshot 2024-02-18 at 11 32 12 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c68cfcb8-faa9-4daa-9fd2-6a7f796a0631">
 
 ***
 ## Pipeline Setup
