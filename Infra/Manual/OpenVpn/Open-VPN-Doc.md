@@ -13,8 +13,8 @@
 # Table of Contents
 + [Introduction](#Introduction)
 + [What is OpenVPN?](#What-is-OpenVPN?)
-+ [Why OpenVPN](#Why-OpenVPN)
-+ [How OpenVPN Works](#How-OpenVPN-Works)
++ [Why OpenVPN](#Why-Open-VPN)
++ [How OpenVPN Works](#How-Open-VPN-Works)
 + [Advantages of OpenVPN](#Advantages-of-OpenVPN)
 + [Disadvantages of OpenVPN](#Disadvantages-of-OpenVPN)
 + [Best Practices](#Best-Practices)
