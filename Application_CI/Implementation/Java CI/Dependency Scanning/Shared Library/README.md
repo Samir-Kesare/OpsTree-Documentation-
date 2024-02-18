@@ -33,7 +33,8 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 
 A shared library is typically organized as a Git repository containing code that you want to share across pipelines. This repository would have a specific structure with directories like src, vars, resources, etc., where you place your Groovy scripts, classes, and other resources.
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/f99a6591-da1b-42f4-a13c-8c4bb1bb947c)
+<img width="750" alt="Screenshot 2024-02-19 at 1 47 58 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2a1d5804-8c7e-4eed-b8f7-941629fb46f2">
+
 
 **For more information visit the below document link:**
 
