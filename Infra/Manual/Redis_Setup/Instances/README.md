@@ -118,7 +118,19 @@ sudo systemctl restart redis-server
 redis-cli --cluster create <server1_IP>:6379 <server2_IP>:6379 <server3_IP>:6379 --cluster-replicas 0
 ```
 
-**Step-9** After succeff
+**Step-9** Check Cluster info 
+- To check the status and information of your Redis cluster, you can use the redis-cli tool with the cluster command.
+```shell
+redis-cli -h <node_IP_address> -p <port_number>
+```
+```shell
+cluster info
+```
+```shell
+cluster nodes
+```
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/8584dd07-6068-4944-a3ac-f9cfd4bb2448)
+
 
 
 
