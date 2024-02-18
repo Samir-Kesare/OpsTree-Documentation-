@@ -8,7 +8,7 @@
 
 # Table of contents
 1. [Introduction](#introduction)
-2. [What is Monitoring Metrics in SonarQube](#what-is-monitoring-metrics-in-sonarqube)
+2. [What is Monitoring Metrics in SonarQube?](#what-is-monitoring-metrics-in-sonarqube)
 3. [Why Monitoring Metrics](#why-monitoring-metrics)
 4. [Key Metrics in Sonarqube commonly monitored](#key-metrics-in-sonarqube-commonly-monitored)
 5. [Flow Diagram of Monitoring Metrics in SonarQube](#flow-diagram-of-monitoring-metrics-in-sonarQube)
