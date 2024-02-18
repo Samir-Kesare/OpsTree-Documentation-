@@ -4,6 +4,16 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  13 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+# Table of Contents
+- [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#introduction)
+- [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#pre-requisites)
+- [Setup Security Group for Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#setup-security-group-for-redis-instances)
+- [In all my Redis Instances, I have set the following Inbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#in-all-my-redis-instances-i-have-set-the-following-inbound-rules)
+- [In all my Redis Instances, I have set the following Outbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#in-all-my-redis-instances-i-have-set-the-following-outbound-rules)
+- [Conclusion](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#conclusion)
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#contact-information)
+- [Resources and References](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#resources-and-references)
+***
 # Introduction
 In Amazon Web Services (AWS), a security group is a fundamental component of network security that acts as a virtual firewall for controlling inbound and outbound traffic to instances (such as EC2 instances) within a VPC (Virtual Private Cloud).
 
