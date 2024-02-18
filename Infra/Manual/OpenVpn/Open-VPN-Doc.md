@@ -12,7 +12,7 @@
 
 # Table of Contents
 + [Introduction](#Introduction)
-+ [What is OpenVPN?](#What-is-OpenVPN?)
++ [What is OpenVPN](#What-is-OpenVPN)
 + [Why OpenVPN](#Why-OpenVPN)
 + [How OpenVPN Works](#How-OpenVPN-Works)
 + [Advantages of OpenVPN](#Advantages-of-OpenVPN)
