@@ -31,7 +31,7 @@
 
 ***
 
-# What is VPN
+# What is VPN?
 
 VPN stands for the Virtual Private Network. A virtual private network (VPN) is a technology that creates a safe and encrypted connection over a less secure network, such as the Internet. A Virtual Private Network is a way to extend a private network using a public network such as the Internet. The name only suggests that it is a “Virtual Private Network”, i.e. user can be part of a local network sitting at a remote location. It makes use of tunnelling protocols to establish a secure connection.
 
