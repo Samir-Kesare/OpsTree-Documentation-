@@ -12,7 +12,7 @@
 
 # Table of Contents
 + [Introduction](#Introduction)
-+ [What is VPN ?](#What-is-VPN ?)
++ [What is VPN ?](#What-is-VPN-?)
 + [Why VPN](#Why-VPN)
 + [Types of VPN](#Types-of-VPN)
 + [How VPN Works](#How-VPN-Works)
