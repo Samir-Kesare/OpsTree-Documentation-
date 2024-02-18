@@ -103,7 +103,7 @@ https://github.com/CodeOps-Hub/p7-salary-API.git
 
 <img width="536" alt="Screenshot 2024-02-18 at 3 27 13 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d3e3a94e-b62f-41a1-9619-7b28d0de15b7">
 
-* Archived HTML depenedency check reports
+* Archived HTML dependency check reports
 
 <img width="810" alt="Screenshot 2024-02-18 at 3 34 43 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c3079aa6-7f4b-4480-9051-f19fc812e371">
 
