@@ -33,6 +33,7 @@ So, with Redis Cluster, you get the ability to:
 - Go to the EC2 dashboard.
 - Launch a new EC2 instance using an Ubuntu Server AMI (Amazon Machine Image).
 - Instance type - t2.medium
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/a31570b3-d169-4d0a-9252-6ce9ea934848)
 
 
@@ -55,6 +56,7 @@ sudo apt install redis-server
 ```Shell
 sudo systemctl status redis-server
 ```
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/37220e92-31c2-4841-b6de-be9fe6d98fb8)
 
 - Configure Redis Instances
@@ -62,19 +64,24 @@ sudo systemctl status redis-server
 ```shell
 sudo nano /etc/redis/redis.conf
 ```
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/b1c65664-abea-41d0-972c-667c879272b5)
 
   2. Find the line `bind 127.0.0.1` and replace it with `bind <server1_IP>`. Replace `<server1_IP>` with the private IP address of the servers.
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/293c39d3-05bc-4b20-b59e-93b17104b75f)
 
   3. Find the line `protected-mode yes` and change it to `protected-mode no` to allow external connections.
   4. Fnd the line `port 6379` and uncomment it.
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c3264077-90aa-4018-a6f3-575d7999e632)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c4a22e99-c917-4ad0-88c3-ea9f6eb7c2a7)
 
   5. Find the line `cluster-enabled no` and change it to `cluster-enabled yes`.
   6. Find the line `cluster-config-file nodes-6379.conf` and uncomment it.
   7. Find the line `cluster-node-timeout 150000` and uncomment it.
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/5cf56bc1-45ab-46f0-99d7-c3b387e7c8f0)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/e16543c0-e452-4af3-86cd-9548d747b3df)
+
 
   5. Save and close the file.
 
@@ -100,7 +107,9 @@ sudo netstat -tuln | grep 6379
 tail -f /var/log/redis/redis-server.log
 ```
 If this Warning message is displayed on your screen.
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/3e9d0bce-d2d7-478e-ab6d-da0ab068e9fc)
+
 This warning suggests that the overcommit_memory setting is not optimized for Redis, which may cause issues with background saves under low memory conditions. It's recommended to follow the instructions provided in the warning message to adjust the overcommit_memory setting.
 you can run the command directly without persisting it
 ```shell
@@ -110,6 +119,7 @@ After making this change, it's advisable to restart the Redis service for the ne
 ```shell
 sudo systemctl restart redis-server
 ```
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d51cb988-c1ca-4178-be24-67b03b5bc323)
 
 **Step-8** Create the Redis Cluster:
@@ -129,6 +139,7 @@ cluster info
 ```shell
 cluster nodes
 ```
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/8584dd07-6068-4944-a3ac-f9cfd4bb2448)
 
 
