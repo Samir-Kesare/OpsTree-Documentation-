@@ -37,8 +37,8 @@ So, with Redis Cluster, you get the ability to:
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/a31570b3-d169-4d0a-9252-6ce9ea934848)
 
 
-**Step-2** Security Group Configuration
-- Create 3 new security group.
+**Step-2** [Security Group Configuration](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
+- Create 3 security group.
 
 **Step-3** Connect to your EC2 Instances
 - Once the instance is running, connect to it using SSH. The private key associated with the key pair selected at launch will be required.
@@ -155,6 +155,7 @@ Redis installation and Redis cluster manually in a well-planned and secure manne
 # Resources and References 
 | Reference | Link |
 |-----------|------|
+| Security Group | [Ports Defining](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
 | Redis cluster | [Redis official document](https://redis.io/docs/management/scaling/)) |
 | Configuring the clusters | [stackoverflow](https://stackoverflow.com/questions/39568561/how-to-solve-redis-cluster-waiting-for-the-cluster-to-join-issue)|
 | Redis Specification | [Specification redis doc](https://redis.io/docs/reference/cluster-spec/)|
