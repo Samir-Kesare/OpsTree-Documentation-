@@ -142,6 +142,20 @@ cluster nodes
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/8584dd07-6068-4944-a3ac-f9cfd4bb2448)
 
+**Cluster has been created successfully**
+
+# Contact Information
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
+
+# Resources and References 
+| Reference | Link |
+|-----------|------|
+| Redis cluster | [Redis official document](https://redis.io/docs/management/scaling/)) |
+| Configuring the clusters | [stackoverflow](https://stackoverflow.com/questions/39568561/how-to-solve-redis-cluster-waiting-for-the-cluster-to-join-issue)|
+| Redis Specification | [Specification redis doc](https://redis.io/docs/reference/cluster-spec/)|
+
 
 
 
