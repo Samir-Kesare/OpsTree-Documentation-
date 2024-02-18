@@ -73,7 +73,7 @@ https://github.com/CodeOps-Hub/p7-salary-API.git
 
 <img width="975" alt="Screenshot 2024-02-17 at 5 19 24 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/8ffb33b3-b11f-4ec8-a6b4-9764d5aca18c">
 
-3. Install OWASP Plugin
+3. **Install OWASP Plugin**
 
 <img width="1327" alt="Screenshot 2024-02-18 at 4 17 25 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/16cb4a7f-430b-4423-9f73-7de330a4300a">
 
