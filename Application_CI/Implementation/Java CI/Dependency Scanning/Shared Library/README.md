@@ -98,10 +98,10 @@ https://github.com/CodeOps-Hub/p7-salary-API.git
 
 
 ***
-## Console Output
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/614b3d13-9fa3-41b6-87a9-aee594326800)
+## Output
+* Dependency check reports generated in all formats 
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9767ba5-b4b0-43dd-8975-a61217d9026b)
+<img width="536" alt="Screenshot 2024-02-18 at 3 27 13 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d3e3a94e-b62f-41a1-9619-7b28d0de15b7">
 
 ***
 ## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/Dependency%20Scanning/Jenkinsfile)
@@ -121,7 +121,7 @@ node {
 }
 ```
 
-## [Shared Library]()
+## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/dependencyCheck.groovy)
 ```shell
 package org.avengers.template.java
 
@@ -171,18 +171,15 @@ def call(String url, String creds, String branch){
     }
 }
 ```
-### [gitCheckout.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
+### [GitCheckoutPrivate.groovy]()
 ```shell
-// Checkout Github Public Repository
 package org.avengers.common
 
-def call(Map config = [:]) {
-    stage('GIT Checkout') {
-        checkout scm: [
-                $class: 'GitSCM',
-                branches: [[name: config.branch]],
-                userRemoteConfigs: [[url: config.url]]
-            ]
+def call(String url, String creds, String branch) {
+    stage('Clone') {
+        script {
+            git branch: "${branch}", credentialsId: "${creds}", url: "${url}"
+        }
     }
 }
 ```
@@ -199,16 +196,17 @@ def call() {
 }
 ```
 
-### [compile.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/compile/compile.groovy)
+### [packageArtifacts.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/packageArtifacts.groovy)
 ```shell
-package org.avengers.java.compile
+package org.avengers.common
 
 def call() {
-  stage('Compile'){
-    script{
-      sh 'mvn clean compile'
+    stage('Build') {
+        script {
+                // Package artifacts minus the testing
+            sh 'mvn clean package -DskipTests=true'
+        }
     }
-  }
 }
 ```
 
@@ -229,4 +227,4 @@ def call() {
 | Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
 | Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
 | Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
-| Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
+| Shared library | https://stackoverflow.com/questions/52604334/how-to-use-currentbuild-result-to-indicate-success-not-null|
