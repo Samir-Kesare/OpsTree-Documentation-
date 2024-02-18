@@ -22,6 +22,8 @@
 # Introduction
 This role is designed to automate the installation and configuration of Jenkins on target ubuntu servers. Whether you're setting up Jenkins for continuous integration, continuous delivery, or other purposes, this role aims to simplify the process.
 
+Please refer to the following link to access the Jenkins playbook separately: [Jenkins Playbook](https://github.com/CodeOps-Hub/Jenkins-Playbook/tree/main)
+
 ***
 ## Ansible and Jenkins
 
