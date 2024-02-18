@@ -4,6 +4,14 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  13 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+# Table of Contents
+- [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#introduction)
+- [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#pre-requisites)
+- [Setup Redis Manually](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#setup-redis-manually)
+- [Conclusion](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#conclusion)
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#contact-information)
+- [Resources and References](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#resources-and-references)
+***
 
 # Introduction
 Redis can be used as a database, cache, streaming engine, message broker, and more.
