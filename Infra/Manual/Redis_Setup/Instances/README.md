@@ -17,6 +17,10 @@ So, with Redis Cluster, you get the ability to:
 |--------------|-----------------|
 | AWS Instance | t2.medium       |
 
+| Tool         | Command |
+|--------------|---------|
+| netstat      | `sudo apt install net-tools`|
+
 | Security Protocol | 
 |-------------------|
 | Security Group    | 
@@ -45,6 +49,10 @@ So, with Redis Cluster, you get the ability to:
 ```shell
 sudo apt install redis-server
 ```
+- To check whether Redis is running on your server, you can use the following command
+```Shell
+sudo systemctl status redis-server
+```
 - Configure Redis Instances
   1. Edit the Redis configuration file in each server:
 ```shell
@@ -64,6 +72,7 @@ sudo systemctl restart redis-server
 ```Shell
 sudo netstat -tuln | grep 6379
 ```
+
 
 
 
