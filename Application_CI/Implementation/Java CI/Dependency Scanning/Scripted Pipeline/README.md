@@ -66,8 +66,11 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 <img width="975" alt="Screenshot 2024-02-17 at 5 19 24 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/8ffb33b3-b11f-4ec8-a6b4-9764d5aca18c">
 
+3. Install OWASP Plugin
 
-3. **Create and Configure your Jenkins Pipeline job**
+<img width="1327" alt="Screenshot 2024-02-18 at 4 17 25 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c1cfeb0f-8ac2-4ff3-a302-ad9225950145">
+
+4. **Create and Configure your Jenkins Pipeline job**
 
 * Follow below document to integrate Github with Jenkins:
 
@@ -77,7 +80,7 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 
 
-4. **Build Pipeline**
+5. **Build Pipeline**
 
 <img width="1151" alt="Screenshot 2024-02-17 at 7 20 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d13f0130-0950-4d07-aca2-030297d1aabd">
 
