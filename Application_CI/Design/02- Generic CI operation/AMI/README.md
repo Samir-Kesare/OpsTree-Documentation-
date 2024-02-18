@@ -9,7 +9,7 @@
 # Table of Contents
 
 + [Introduction](#introduction)
-+ [What is AMI](#what-is-AMI)
++ [What is AMI?](#what-is-AMI)
 + [Why AMI](#why-AMI)
 + [Types of AMI](#types-of-AMI)
 + [EBS-Backed AMI vs Instance Store-Backed AMI](#EBS-Backed-AMI-vs-Instance-Store-Backed-AMI)
