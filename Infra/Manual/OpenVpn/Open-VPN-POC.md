@@ -39,33 +39,33 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 # OpenVPN Setup
 
-## Launching EC2 Instance
+### Launching EC2 Instance
 
-### Step-1 First, launch an `EC2 Instance`, access the EC2 dashboard, Click on `Launch Instance.`
+**Step-1 First, launch an `EC2 Instance`, access the EC2 dashboard, Click on `Launch Instance`.**
 
 ![Screenshot 2024-02-19 133820](https://github.com/CodeOps-Hub/Documentation/assets/156057205/45575af6-697e-4fd2-9b5d-cd5aa43338ae)
 
 ***
 
-### Step-2 Choose an appropriate name for the instance and choose `Ubuntu AMI`
+**Step-2 Choose an appropriate name for the instance and choose `Ubuntu AMI`**
 
 ![Screenshot 2024-02-19 133937](https://github.com/CodeOps-Hub/Documentation/assets/156057205/6b269d7d-2aec-4a8a-8b91-90f2d9ff693a)
 
 ***
 
-### Step-3 Select the instance type as `t2-micro`. Generate a key pair with an appropriate name. 
+**Step-3 Select the instance type as `t2-micro`. Generate a key pair with an appropriate name.** 
 
 ![Screenshot 2024-02-19 134047](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fcf83314-e725-4e8d-a43d-297856398546)
 
 ***
 
-### Step-4 In the network settings, pick a VPC; in this case, choose the `Management-VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.Navigate to the security group settings. Ensure that `port 1194` is open if using UDP (default for OpenVPN). 
+**Step-4 In the network settings, pick a VPC; in this case, choose the `Management-VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.Navigate to the security group settings. Ensure that `port 1194` is open if using UDP (default for OpenVPN).** 
 
 ![Screenshot 2024-02-19 134343](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f33b7660-2e08-4571-97f3-fcee10d8dfa7)
 
 ***
 
-### Step-5 Leave other settings as default for now. Finally click on `launch instance`. That's it, we have successfully launched the `instance`.
+**Step-5 Leave other settings as default for now. Finally click on `launch instance`. That's it, we have successfully launched the `instance`.**
 
 ![Screenshot 2024-02-19 134504](https://github.com/CodeOps-Hub/Documentation/assets/156057205/c87c30c3-40dc-4ec9-b0e0-ea46568b7389)
 
@@ -73,7 +73,7 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 ## Configuring OpenVPN
 
-### Step-1 Let's set up our OpenVPN server. Start by updating your system packages using the below commands.
+**Step-1 Let's set up our OpenVPN server. Start by updating your system packages using the below commands.**
 
 ```shell
 sudo apt update
@@ -84,7 +84,7 @@ sudo apt upgrade -y
 
 ***
 
-### Step-2  We'll use this script to install and configure the OpenVPN server. To get the script, run the following command mentioned below.
+**Step-2  We'll use this script to install and configure the OpenVPN server. To get the script, run the following command mentioned below.**
 
 ```shell
 wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
@@ -93,7 +93,7 @@ wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-
 
 ***
 
-### Step-3 Grant the script necessary (execution) permission by running the below command.
+**Step-3 Grant the script necessary (execution) permission by running the below command.**
 
 ```shell
 sudo chmod +x openvpn-install.sh
@@ -103,48 +103,62 @@ sudo chmod +x openvpn-install.sh
 
 ***
 
-### Step-4 Execute the script with the following command.
+**Step-4 Execute the script with the following command.**
 
 ```shell
 sudo ./openvpn-install.sh
 ```
 ***
 
-### Step-5 As soon as the script runs, it will pose below given questions. 
+**Step-5 As soon as the script runs, it will pose below given questions.** 
 
 **The first question verifies your Linux machine's IP address. Press Enter if it's correct; otherwise, press any other key. it will automatically detect your IP address; press enter to continue.**
 
 <img width="656" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4c7175cf-3a5f-4f52-b123-815a1919ffbc">
 
+***
+
 **The script will then inquire about enabling IPv6 connectivity. You can stick with the default option and press enter.**
 
 <img width="521" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f975be29-65cd-45ce-9130-5f7d9a057243">
+
+***
 
 **You'll be prompted to choose a port. The default is 1194, but you can either stick with it or specify a different one. Note that you'll need to open this chosen port in your firewall, a step we'll cover later.**
 
 <img width="671" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ef134517-959f-4bd8-bae1-ddd379c4dbce">
 
+***
+
 **Another question will ask whether to use TCP or UDP. Simply press Enter to select UDP.**
 
 <img width="637" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/57075f94-5b80-41d5-9e0b-06da1ba5a839">
+
+***
 
 **Following that, the script will inquire about your DNS resolver preference. I suggest opting for Google, which is option 9.**
 
 <img width="443" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f0ed0e51-c7b9-4b60-8e74-01566a01df02">
 
+***
+
 **Then, it will question you about using compression. Stick with the default choice, which is "no," and press Enter.**
 
 ![Screenshot 2024-02-19 154939](https://github.com/CodeOps-Hub/Documentation/assets/156057205/0d03e0ac-e416-40b6-b1d8-7bd08a9ab438)
+
+***
 
 **Finally, there's a query about customizing encryption settings. Once again, go with the default option, which is "no," and press Enter.**
 
 ![Screenshot 2024-02-19 155004](https://github.com/CodeOps-Hub/Documentation/assets/156057205/d2b5b367-4435-4357-82d1-9f139e952390)
 
+***
+
 **Press enter at the next prompt to start the process of applying the settings and installing the required certificates.**
 
-![Screenshot 2024-02-19 141313](https://github.com/CodeOps-Hub/Documentation/assets/156057205/e166affd-aa67-4489-8468-2a6ac3356de1)
+<img width="764" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/13a4caba-520f-4b13-8eba-7b55de91a2e0">
 
-![Screenshot 2024-02-19 141325](https://github.com/CodeOps-Hub/Documentation/assets/156057205/19cb019d-db33-4a28-9200-708b136d52b4)
+***
 
 **Provide the name of the client that will establish a connection with our VPN server. Subsequently, you will be prompted to indicate your preference regarding the use of a password for the client. opt for option 2 and input your desired password.**
 
@@ -152,56 +166,46 @@ sudo ./openvpn-install.sh
 
 <img width="658" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/6c58361f-ee0f-48c2-8e07-d965c58d9dd2">
 
+***
+
 **Enter the password. The configuration process is complete. OpenVPN now generates a file for each user you create.**
 
 <img width="634" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/88b3794c-0c65-41ec-ae80-ac4af9141ff0">
 
+***
+
 **To add additional clients, revoke an existing client, or uninstall OpenVPN, rerun the script, and it will provide you with the respective options.**
 
+<img width="469" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ef846c5e-b24f-462d-944f-2bd9ba1a8015">
+
+***
 
 **This file, containing all the necessary configuration details, has been generated for connecting to the VPN server.**
 
+![Screenshot 2024-02-19 141959](https://github.com/CodeOps-Hub/Documentation/assets/156057205/1dc0b636-0a14-4440-8ba2-514f13b839fa)
 
 ***
 
-## Assuming the client has received the files, we will proceed to establish the connection.
-
-### Step-1 Navigate to the settings and click on the plus sign in the Network settings, as illustrated in the picture below.
-
-
-***
-
-### Step-2 Select the "Import File" option.
-
-
-***
-
-### Step-3 Choose the necessary OVPN file for importing.
-
-***
-
-### Step-4 After importing the file, you will encounter the interface provided below. Click on the "add" button.
-
-***
-
-### Step-5 Upon observing, you will notice that the file has been successfully added. Click the toggle button to establish a connection with your VPN server. 
-
-***
-
-### Step-6 After successfully authenticating with the password, we will be connected to the VPN network.
-
-***
-
- ## Alternatively, we can connect to the VPN server from a Linux client using below command.
+ ## We can connect to the VPN server from a Linux client using below command.
  
  ```shell
-
+sudo openvpn –config path_to_client_configuration_file
 ```
+
+![Screenshot 2024-02-19 145226](https://github.com/CodeOps-Hub/Documentation/assets/156057205/6ff89a36-7a5a-4deb-8f8e-a00155b1677e)
 
 ***
 
 # Result
 
+```shell
+route -n
+curl ifconfig.me
+```
+
+<img width="761" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/98c300f4-d695-4ccf-8e2c-62bcce6842b9">
+
+<img width="584" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/532297f5-3102-4bd5-868e-dd4db54da1a0">
 
 ***
 
