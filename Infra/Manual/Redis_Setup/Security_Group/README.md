@@ -48,7 +48,9 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 - Configure Security Group Settings.
 
 - Name and Description: Enter a name and description for your security group to help you identify its purpose.
+
 **Inbound Rules:** Define rules to allow inbound traffic. Click "Add rule" for each rule you want to add. Each rule requires the following information:
+
 | Details       | Description                                                       |
 |---------------|-------------------------------------------------------------------|
 | Type          | The type of traffic (e.g., HTTP, SSH, RDP).                       |
