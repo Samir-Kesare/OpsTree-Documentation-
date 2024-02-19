@@ -50,6 +50,7 @@
 ## Resources and References
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
+| Poc Document | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Frontend/README.md) |
 
 
 ***
