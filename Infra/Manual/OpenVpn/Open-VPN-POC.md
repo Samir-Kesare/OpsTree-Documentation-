@@ -76,7 +76,8 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 ### Step-1 Let's set up our OpenVPN server. Start by updating your system packages using the below commands.
 
 ```shell
-
+sudo apt update
+sudo apt upgrade -y
 ```
 
 ***
