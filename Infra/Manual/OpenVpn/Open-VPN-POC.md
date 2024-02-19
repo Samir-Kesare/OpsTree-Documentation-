@@ -49,7 +49,7 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 ***
 
-<img width="332" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bdc48239-0f9a-40f5-b24c-bb95e6659514">
+<img width="600" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bdc48239-0f9a-40f5-b24c-bb95e6659514">
 
 ***
 
