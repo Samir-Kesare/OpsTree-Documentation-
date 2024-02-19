@@ -57,7 +57,9 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
  * **Port Range:** The range of ports to which the rule applies.
  * **Source/Destination:** The IP range or security group that is allowed to access the resource.
  * **Allow/Deny:** Whether the rule allows or denies traffic that matches the rule criteria.
-   
+
+***
+
 ## Pre-requisites
  * Active AWS Account.
 
