@@ -96,15 +96,18 @@ wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-
 ### Step-3 Grant the script necessary (execution) permission by running the below command.
 
 ```shell
-
+sudo chmod +x openvpn-install.sh
 ```
+
+
 ***
 
 ### Step-4 Execute the script with the following command.
 
 ```shell
-
+sudo ./openvpn-install.sh
 ```
+
 
 ***
 
@@ -125,6 +128,10 @@ wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-
 
 
 **Following that, the script will inquire about your DNS resolver preference. I suggest opting for Google, which is option 9.**
+
+
+
+**Then, it will question you about using compression. Stick with the default choice, which is "no," and press Enter.**
 
 
 **Finally, there's a query about customizing encryption settings. Once again, go with the default option, which is "no," and press Enter.**
