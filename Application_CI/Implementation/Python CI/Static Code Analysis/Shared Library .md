@@ -236,3 +236,5 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 |---------------------------------------------------------|-----------------------------------------------|
 | Jenkins Pipeline     | [Link](https://www.jenkins.io/doc/book/pipeline/) |
 |Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
+| Jenkins File     | [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Python/StaticCodeAnalysis/Jenkinsfile) |
+| Static Code Analysis |  [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Python%20Static%20Code%20POC%20.md) |
