@@ -57,13 +57,15 @@ So, with Redis Cluster, you get the ability to:
 **Step-2** [Security Group Configuration](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
 - Create 3 security group.
 - Inbound Rules
-  | Rule                 | Port(s)   | Protocol | Source                        |
+
+| Rule                 | Port(s)   | Protocol | Source                        |
 |----------------------|-----------|----------|-------------------------------|
 | SSH                  | 22        | TCP      | 0.0.0.0/0                     |
 | Redis Default Port   | 6379      | TCP      | Custom from respective nodes  |
 | Redis Cluster Bus    | 16379     | TCP      | Custom from respective nodes  |
 
 - Outbound Rules
+
 | Outbound Rule        | Port/Protocol | Destination       |
 |----------------------|---------------|-------------------|
 | Allow All Traffic    | All           | 0.0.0.0/0         |
