@@ -51,7 +51,7 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 ***
 
-### Step-3 Select the instance type as `t2-micro`. Generate a key pair with an appropriate name. In thge network settings, pick a VPC; in this case, choose the `management VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.
+### Step-3 Select the instance type as `t2-micro`. Generate a key pair with an appropriate name. In thge network settings, pick a VPC; in this case, choose the `Management-VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.
 
 
 
