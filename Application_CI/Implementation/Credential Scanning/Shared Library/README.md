@@ -92,7 +92,31 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 ***
 
 ## JSON Report
- * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Shared_Library/Report.html)
+ * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Credential%20Scanning/Declarative%20Pipeline/credScanReport)
+   ```json
+   [
+   {
+    "Description": "Identified a pattern that may indicate AWS credentials, risking unauthorized cloud resource access and data breaches on AWS platforms.",
+    "StartLine": 91,
+    "EndLine": 91,
+    "StartColumn": 20,
+    "EndColumn": 39,
+    "Match": "ASIAIOSFODNN7EXAMPLE",
+    "Secret": "ASIAIOSFODNN7EXAMPLE",
+    "File": "README.md",
+    "SymlinkFile": "",
+    "Commit": "b5f56681961eba0f07c1b4bb23d463b117b32e22",
+    "Entropy": 3.5841837,
+    "Author": "Sandeep Rawat",
+    "Email": "sandeep@opstree.com",
+    "Date": "2024-01-20T08:02:12Z",
+    "Message": "Update README.md",
+    "Tags": [],
+    "RuleID": "aws-access-token",
+    "Fingerprint": "b5f56681961eba0f07c1b4bb23d463b117b32e22:README.md:aws-access-token:91"
+   }
+    ]
+   ```
 
 ***
 ## Jenkinsfile
@@ -215,10 +239,10 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | ---------------- | ------------ |
 | About Jenkins Shared Library (Generic Document) | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md) |
 | POC Generic Document | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md) |
-| Jenkinsfile | [Link](https://github.com/avengers-p7/Jenkinsfile/blob/main/SharedLibrary/Python/DependencySacnning/Jenkinsfile) |
-| Manual Setup | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Dependency%20Scanning/Dependency%20scanning(Python%20CI%20Checks).md) |
-| Manual Pipeline | [Declarative](https://github.com/avengers-p7/Documentation/tree/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Declarative_Pipeline) & [Scripted](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Scripted_Pipeline/Readme.md) |
-| Credential Scanning | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Dependency%20Scanning/Dependency%20Scanning%20Introduction.md) |
+| Jenkinsfile | [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Cred_Scanning/Jenkinsfile) |
+| Manual Setup | [Link]() |
+| Manual Pipeline | [Declarative]() & [Scripted]() |
+| Credential Scanning | [Link]() |
 
 ***
 
