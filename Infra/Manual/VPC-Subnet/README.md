@@ -33,7 +33,7 @@ This documentation provides a step-by-step guide on creating CIDR blocks and sub
    
    * Click on the Create VPC button.
    * Enter a name for your VPC.
-   * Define the IPv4 CIDR block for your VPC. For example, 10.0.0.0/16.
+   * Define the IPv4 CIDR block for your VPC. For example, 10.0.0.0/25.
    * Choose whether to enable IPv6 CIDR block.
    * Set any additional configurations such as DNS resolution and DNS hostnames.
    * Click Create VPC.
