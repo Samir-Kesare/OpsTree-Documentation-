@@ -13,6 +13,7 @@
 + [How Do AWS Security Groups Work](#How-Do-AWS-Security-Groups-Work)
 + [Why Use Security Group](#Why-Use-Security-Group)
 + [AWS Security Groups Rules](#AWS-Security-Groups-Rules)
++ [Flow Diagram](#Flow-Diagram)
 + [Pre-requisites](#Pre-requisites)
 + [Steps to Create a Security Group](#Steps-to-Create-a-Security-Group)
 + [Conclusion](#Conclusion)
@@ -59,7 +60,11 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
  * **Allow/Deny:** Whether the rule allows or denies traffic that matches the rule criteria.
 
 ***
+## Flow Diagram
 
+![Screenshot from 2024-02-19 21-27-12](https://github.com/CodeOps-Hub/Documentation/assets/156056413/b07e4aa4-fee9-4cf4-9029-c741def8dbed)
+
+***
 ## Pre-requisites
  * Active AWS Account.
 
