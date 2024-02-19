@@ -156,3 +156,22 @@ def call(String url, String creds, String branch){
   codecompilation.call()
 }
 ```
+
+# Contact Information
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
+
+# Resources and References
+| Description                                   | References  
+| --------------------------------------------  | -------------------------------------------------|
+| Code Compilation | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/05-%20GoLang%20CI%20Checks/Code_Compilation_GoLang.md |
+| Code Compilation | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/05-%20GoLang%20CI%20Checks/Code_compilationPOC-go.md |
+| Clean Workspace | https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps/#finishing-up |
+| Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
+| Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
+| Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
+| Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
+| Pipeline Concepts | https://www.jenkins.io/doc/book/pipeline/#pipeline-concepts |
+| Shared Library | https://www.jenkins.io/doc/book/pipeline/shared-libraries/ |
+| What is shared Library | https://keentolearn.medium.com/how-to-improve-your-jenkins-builds-with-shared-libraries-5e225b7435fb#:~:text=A%20shared%20library%20in%20Jenkins,efficient%20and%20easier%20to%20maintain. |
