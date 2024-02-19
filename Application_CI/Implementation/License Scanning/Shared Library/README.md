@@ -55,7 +55,8 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 ***
 ## Flow Diagram  
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056344/5e78b5ce-9716-441d-98d8-262d8aa27dac)
+![Screenshot 2024-02-19 171556](https://github.com/CodeOps-Hub/Documentation/assets/156056344/74a9d1f8-aee4-4c1f-9e93-797045f68d6a)
+
 
 
 ***
@@ -63,7 +64,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 | **Pre-requisites** | **Version** |
 | ------------------ | ----------- |
 | Jenkins | 2.426.3 | 
-| GitLeaks | 9.18.2 |
+| FOSSA CLI | 3.9.5 |
 
  
 
