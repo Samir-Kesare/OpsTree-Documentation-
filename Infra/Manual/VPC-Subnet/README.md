@@ -1,5 +1,8 @@
 # Create VPC and Subnets for Dev Environment
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7c45a2ad-f4ba-4632-b4d2-b974b5287411)
+
+
 | **Author**           | **Created On** | **Last Updated** | **Document Version** |
 | -------------------- | -------------- | ---------------- | -------------------- |
 | **Parasharam Desai** | 29-01-2024     | 19-02-2024       | V1                   |
