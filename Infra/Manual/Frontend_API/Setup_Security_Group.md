@@ -62,9 +62,10 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
 ***
 ## Flow Diagram
 
-![Screenshot from 2024-02-19 21-27-12](https://github.com/CodeOps-Hub/Documentation/assets/156056413/b07e4aa4-fee9-4cf4-9029-c741def8dbed)
-
+ <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/b07e4aa4-fee9-4cf4-9029-c741def8dbed">  
+ 
 ***
+
 ## Pre-requisites
  * Active AWS Account.
 
