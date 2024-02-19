@@ -51,6 +51,7 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 - In the job configuration page, scroll down to the Pipeline section.
 - Select Pipeline script from SCM.
 - Give required repo url and enter your credentials.
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/72f17d8f-060b-40b0-b8b3-10d09fe1f27a)
 
 **Step-3** Save the Configuration
