@@ -47,6 +47,8 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 <img width="551" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/0192d580-9696-4407-8a12-09f30d35fd59">
 
+***
+
 # OpenVPN Setup
 
 ### Launching EC2 Instance
