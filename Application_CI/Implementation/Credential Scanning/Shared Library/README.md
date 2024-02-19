@@ -79,7 +79,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 * Console Output:
 
- ![Screenshot 2024-02-19 165317](https://github.com/CodeOps-Hub/Documentation/assets/156056344/b376763a-e72b-4151-912c-27d0c489520c)
+  ![Screenshot 2024-02-19 165317](https://github.com/CodeOps-Hub/Documentation/assets/156056344/b376763a-e72b-4151-912c-27d0c489520c)
 
 
 
