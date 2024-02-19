@@ -1,6 +1,6 @@
 # Setup Security Group for (Frontend API)
 
- <img width="300" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/2398c807-5b80-43d2-8a3f-52fce1781f82"> 
+ <img width="300" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/cb9f041f-a770-49f0-94a0-a0aaf06756eb"> 
 
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
@@ -64,15 +64,34 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
  * Active AWS Account.
 
 ***
-## Steps to Create a Security Group
+## Steps to Create a Security Group 
 
+  **Step-1 :** Go to the AWS console and sign into your account first.
+ 
+  **Step-2 :** Visit the EC2 Dashboard after logging into the Amazon Management Console, and Select the "EC2" service. 
+ 
+  **Step-3 :** Choose `Security Groups` from the panel. 
 
-  <img width="760" length="100" alt="Security" src=""> 
-  <img width="760" length="100" alt="Security" src=""> 
-  <img width="760" length="100" alt="Security" src=""> 
-  <img width="760" length="100" alt="Security" src=""> 
+   <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ef9ca08e-168e-488a-a9c7-22995e59e890"> 
+    
+ **Step-4 :** Click the `Create Security Group` button after selecting the `Security Groups` option from the left-hand menu. 
 
+   <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/03a99b66-f5f2-49b6-8df9-9c2dd3ebc39b">  
+ 
+ **Step-5 :** Configure Security Group Settings: 
+ 
+   * **Security Group Name:** Give your security group a descriptive name.eg `Frontend-sg`
+   * **Description:** Provide a brief description of the security group's purpose. eg `Allow for frontend Server`
+   * **VPC info** Choose your choice for the VPC where the security group will be created.
 
+     <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a82848f5-131b-463f-b39d-61d2b6897a24"> 
+
+   * **Add Inbound Rules:** Under the "Inbound Rules" section, define rules for incoming traffic. Click the `Add Rule` button and specify the type, port range, and source IP or security group.
+
+  <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/cdde2342-a575-4383-a1ef-59f0a7d6ee92"> 
+
+  <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ec468ded-7848-49e3-a2fd-fae8b7f39028"> 
+ 
 ***
 ## Conclusion
 
