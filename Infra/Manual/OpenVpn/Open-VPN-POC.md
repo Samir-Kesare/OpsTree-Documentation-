@@ -154,6 +154,7 @@ sudo ./openvpn-install.sh
 
 **Enter the password. The configuration process is complete. OpenVPN now generates a file for each user you create.**
 
+<img width="634" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/88b3794c-0c65-41ec-ae80-ac4af9141ff0">
 
 **To add additional clients, revoke an existing client, or uninstall OpenVPN, rerun the script, and it will provide you with the respective options.**
 
