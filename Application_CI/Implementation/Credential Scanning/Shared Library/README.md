@@ -55,19 +55,20 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 ***
 ## Flow Diagram  
-![Screenshot from 2024-02-16 12-40-16](https://github.com/avengers-p7/Documentation/assets/156056413/691b3fb2-ab64-4218-9d1d-8d33cd09844f)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056344/5e78b5ce-9716-441d-98d8-262d8aa27dac)
+
 
 ***
 ## Pre-requisites
 | **Pre-requisites** | **Version** |
 | ------------------ | ----------- |
 | Jenkins | 2.426.3 | 
-| Java | 17 |
-| OWASP Dependency-Check | 9.0.9 |
+| GitLeaks | 9.18.2 |
+
  
 
 ***
-## Setup of Dependency Scanning Via Shared Library
+## Setup of Credential Scanning Via Shared Library
 * Follow this document for Setup [**Cilck here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)
 
   <img width="760" length="100" alt="python" src="https://github.com/avengers-p7/Documentation/assets/156056413/a0bb9810-02de-4c58-851c-671de028c6df"> 
@@ -79,8 +80,8 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 > [!NOTE]
 > **Changes**
-> *  **Pipeline name**       **-**  `Dependency_Scanning_(Python)`
-> *  **Jenkinsfile Path**    **-**  `SharedLibrary/Python/DependencySacnning/Jenkinsfile`  
+> *  **Pipeline name**       **-**  `Credential Scanning via Shared Library`
+> *  **Jenkinsfile Path**    **-**  `SharedLibrary/Cred_Scanning/Jenkinsfile`  
 
 ***
 
