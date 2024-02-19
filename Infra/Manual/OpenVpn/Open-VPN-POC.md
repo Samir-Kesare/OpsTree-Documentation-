@@ -13,6 +13,7 @@
 # Table of Contents
 + [Introduction](#Introduction)
 + [Pre-requisites](#Pre-requisites)
++ [Flow Diagram](#Flow Diagram)
 + [OpenVPN Setup](#OpenVPN-Setup)
 + [Result](#Result)
 + [Conclusion](#Conclusion)
