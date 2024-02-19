@@ -3,6 +3,17 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  13 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+# Table of Contents
+- [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#introduction)
+- [What is Shared Library](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#what-is-shared-library)
+- [Prerequisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#prerequisites)
+- [Flow Diagram](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#flow-diagram)
+- [Pipeline Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#pipeline-setup)
+- [Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#pipeline)
+- [Shared Library](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#shared-library)
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#contact-information)
+- [Resources and References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#resources-and-references)
+***
 
 # Introduction 
 The process of code compilation involves converting high-level programming code, such as Java, C++, or Python, into machine-readable instructions or bytecode. 
@@ -29,13 +40,13 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 ***
 
 # Pipeline Setup
-Step-1 Create a New Pipeline Job
+**Step-1** Create a New Pipeline Job
 
 - Navigate to the Jenkins dashboard and click on New Item.
 - Enter a name for your job (e.g., "Shared_Library_Code_Compilation").
 - Select Pipeline and click OK.
 
-Step-2 Configure Pipeline Script
+**Step-2** Configure Pipeline Script
 
 - In the job configuration page, scroll down to the Pipeline section.
 - Select Pipeline script from SCM.
@@ -78,9 +89,9 @@ node {
 }
 ```
 # [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary)
-***
+
 ## [src/org/avengers/golang/CodeCompilation](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/golang/CodeCompilation)
-***
+
 ### [codecompilation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/golang/CodeCompilation/codecompilation.groovy)
 ```shell
 package org.avengers.golang.CodeCompilation
@@ -107,7 +118,7 @@ def call() {
 }
 ```
 ## [src/org/avengers/common](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/common)
-***
+
 ### [CleanWorkSpace.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/CleanWorkSpace.groovy)
 ```shell
 package org.avengers.common
@@ -135,7 +146,7 @@ def call(String url, String creds, String branch) {
 ```
 
 ## [src/org/avengers/template/golang](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/template/golang)
-***
+
 ### [GolangCodeCompilation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/golang/GolangCodeCompilation.groovy)
 ```shell
 package org.avengers.template.golang
