@@ -4,6 +4,10 @@
 | -------------------- | -------------- | ---------------- | -------------------- |
 | **Parasharam Desai** | 29-01-2024     | 19-02-2024       | V1.1                 |
 
+## Introduction
+
+This document provides a guide for setting up security groups for Scylla-DB. By configuring inbound and outbound rules, you can control network traffic to and from your Scylla-DB instances, enhancing the security of your infrastructure.
+
 ## Inbound Rules
 
 Attached the backend security group as the source for the Scylla-Security group:
