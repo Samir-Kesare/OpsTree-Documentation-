@@ -15,17 +15,17 @@ This document provides a guide for setting up security groups for Scylla-DB. By 
 * Understanding of your application's network requirements.
 
 ## Steps
-**Access the AWS Management Console**
+**Step-1 Access the AWS Management Console**
 
   Navigate to the AWS Management Console and sign in to your AWS account.
 
-**Open the EC2 Dashboard**
+**Step-2 Open the EC2 Dashboard**
 
 In the AWS Management Console, go to the Services drop down.
 
 Under the "Compute" section, select EC2.
 
-**Navigate to Security Groups**
+**Step-3 Navigate to Security Groups**
 
 In the EC2 Dashboard, locate and click on Security Groups in the left navigation pane.
 
@@ -33,7 +33,7 @@ In the EC2 Dashboard, locate and click on Security Groups in the left navigation
 
 
 
-**Choose or Create a Security Group**
+**Step-4 Choose or Create a Security Group**
 
 * Select an existing security group or create a new one by clicking the Create Security Group button.
 
@@ -42,14 +42,14 @@ In the EC2 Dashboard, locate and click on Security Groups in the left navigation
   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/82f6ed9b-8ea9-4092-9e3a-db318d806168)
   
 
-**Define Inbound Rules**
+**Step-5 Define Inbound Rules**
 Attached the backend security group as the source for the Scylla-Security group:
 
 * Click on the Inbound Rules tab.
 
 * Click the Edit Inbound Rules button.
 
-**Define Outbound Rules**
+**Step-6 Define Outbound Rules**
 
 * Click on the Outbound Rules tab.
 
