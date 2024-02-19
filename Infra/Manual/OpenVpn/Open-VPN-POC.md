@@ -59,7 +59,7 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 | **Public Subnet** | Selected Public Subnet with CIDR `172.31.0.0/20` |
 | **Route Table** | Created `Route Table` and associated it with `Public Subnet` |
 | **Internet Gateway** | Created `Internet Gateway` and attached with `Route Table` |
-| **Security Group** | Created `Security Group` with port **22,80,443,1194** |
+| **Security Group** | Created `Security Group` with port **TCP(22),HTTP(80),HTTPS(443),UDP(1194)** |
 | **EC2 Instance** | Created `EC2 Instance` of name `OpenVPN-Server` |
 
 ***
