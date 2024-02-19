@@ -23,7 +23,7 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 | Tool | Description |
 | ---- | ----------- |
 | **Jenkins(2.426.3)** | To build our pipeline |
-| **Go plugin | Go 1.22.0 |
+| **Go plugin** | Go 1.22.0 |
 
 # Flow Diagram 
 ***
