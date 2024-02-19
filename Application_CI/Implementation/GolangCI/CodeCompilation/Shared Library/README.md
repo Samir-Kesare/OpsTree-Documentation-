@@ -37,6 +37,9 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 | **Go plugin** | Go 1.22.0 |
 
 # Flow Diagram 
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/86d42cf1-2a29-4649-99d6-5b7cba0cde7b)
+
 ***
 
 # Pipeline Setup
