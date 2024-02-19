@@ -90,113 +90,106 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 ***
 ## Jenkinsfile
-  * [**Jenkinsfie**](https://github.com/avengers-p7/Jenkinsfile/blob/main/SharedLibrary/Python/DependencySacnning/Jenkinsfile)
+  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Cred_Scanning/Jenkinsfile)
   ```shell
 
-@Library('snaatak-p7') _
-def pythonDependencyScanning = new org.avengers.template.PythonDependencyScanning()
+@Library("my-shared-library") _
+
+def credScan  = new org.avengers.template.genericCi.CredScan()
 
 node {
     
-    def url = 'https://github.com/OT-MICROSERVICES/attendance-api.git'
-    def creds = 'vishal-cred'
+    def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
     def branch = 'main'
-    def depVersion = '9.0.9'
-    def javaVersion = '17'
+    def gitLeaksVersion = '8.18.2'
+    def reportName = 'credScanReport.json'
     
-    pythonDependencyScanning.call(url, creds, branch, depVersion, javaVersion)
+   credScan.call(branch: branch,url: url, gitLeaksVersion, reportName)
     
 }
 ```
 ## Shared Library
-   * [**GitCheckoutPrivate.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/GitCheckoutPrivate.groovy)
+   * [**gitCheckout.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
   ```shell
-//src/org/avengers/common/GitCheckoutPrivate.groovy
+// Checkout Github Public Repository
 package org.avengers.common
 
-def call(String url, String creds, String branch) {
-    stage('Clone') {
-        script {
-            git branch: "${branch}", credentialsId: "${creds}", url: "${url}"
-        }
+def call(Map config = [:]) {
+    stage('GIT Checkout') {
+        checkout scm: [
+                $class: 'GitSCM',
+                branches: [[name: config.branch]],
+                userRemoteConfigs: [[url: config.url]]
+            ]
     }
 }
 ```
-  * [**JavaDownload.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/JavaDownload.groovy)
+  * [**CleanAfterArchive.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/CleanAfterArchive.groovy)
   ```shell
-//src/org/avengers/common/JavaDownload.groovy
 package org.avengers.common
 
-def call(String javaVersion) {
-    stage('Install Java') {
+def call(String reportName){
+  stage('Archive and Clean Workspace') {
         script {
-            sh "sudo apt update && sudo apt install -y openjdk-${javaVersion}-jdk"
+           archiveArtifacts artifacts: "**/${reportName}"
+           cleanWs()
         }
     }
+  
 }
 ```
-  * [**DownloadDependencyCheck.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/python/dependencyScanning/DownloadDependencyCheck.groovy)
+  * [**Gitleaks.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/credScanning/GitLeaks.groovy)
   ```shell
-//src/org/avengers/python/dependencyScanning/DownloadDependencyCheck.groovy
-package org.avengers.python.dependencyScanning
+package org.avengers.credScanning
 
-def call(String depVersion) {
-    stage('Download Dependency Check') {
-            script {
-                sh "wget -q https://github.com/jeremylong/DependencyCheck/releases/download/v${depVersion}/dependency-check-${depVersion}-release.zip"
-                sh "sudo apt install unzip -y"
-                sh "unzip -q dependency-check-${depVersion}-release.zip"
-            }
-    }
-}
-```
-  * [**DependencyCheck.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/python/dependencyScanning/DependencyCheck.groovy)
-  ```shell
-//src/org/avengers/python/dependencyScanning/DependencyCheck.groovy
-package org.avengers.python.dependencyScanning
-
-def call() {
-    stage('Run Dependency Check') {
+def call(String gitLeaksVersion){
+  stage('Download and Install Gitleaks') {
         script {
-           sh "dependency-check/bin/dependency-check.sh --scan /var/lib/jenkins/workspace/ --out dep-check.html"
+           sh "wget https://github.com/gitleaks/gitleaks/releases/download/v${gitLeaksVersion}/gitleaks_${gitLeaksVersion}_linux_x64.tar.gz"
+                  // Extract Gitleaks
+            sh "tar xvzf gitleaks_${gitLeaksVersion}_linux_x64.tar.gz"
         }
     }
+  
 }
 ```
-  * [**Clean.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/python/dependencyScanning/Clean.groovy)
+  * [**Scan.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/credScanning/Scan.groovy)
   ```shell
-//src/org/avengers/python/dependencyScanning/Clean.groovy
-package org.avengers.python.dependencyScanning
+package org.avengers.credScanning
 
-def call() {
-    stage('Clean workspace') {
+def call(String reportName){
+  stage('Gitleaks Scan') {
         script {
-           sh "rm -rf *.zip"
-           sh "rm -rf dependency-check"
+           sh "./gitleaks detect -r ${reportName}"
         }
     }
+  
 }
 ```
-  * [**PythonDependencyScanning.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/template/python/PythonDependencyScanning.groovy)
+
+  * [**CredScan.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/genericCi/CredScan.groovy)
   ```shell
-//src/org/avengers/template/PythonDependencyScanning.groovy
-package org.avengers.template
+package org.avengers.template.genericCi
 
 import org.avengers.common.*
-import org.avengers.python.dependencyScanning.*
+import org.avengers.credScanning.*
 
-def call(String url, String creds, String branch, String depVersion, String javaVersion){
-  javaDownload = new JavaDownload()
-  downloadDependencyCheck = new DownloadDependencyCheck()
-  gitCheckoutPrivate = new GitCheckoutPrivate()
-  dependencyCheck = new DependencyCheck()
-  clean = new Clean()
+def call(Map config = [:], String gitLeaksVersion, String reportName){
+  gitClone = new gitCheckout()
+  gitLeaks = new GitLeaks()
+  scan = new Scan()
+  cleanAfterArchive = new CleanAfterArchive()
 
-  javaDownload.call(javaVersion)
-  downloadDependencyCheck.call(depVersion) 
-  gitCheckoutPrivate.call(url, creds, branch)
-  dependencyCheck.call()
-  clean.call()
+  try {
+    gitClone.call(branch: config.branch, url: config.url  )
+    gitLeaks.call(gitLeaksVersion)
+    scan.call(reportName)
+    } catch (Exception e) {
+        echo "Check your code for credential Leak: ${e.message}"
+    } finally {
+       cleanAfterArchive.call(reportName) 
+    }
+  
 }
   
 ```
@@ -209,7 +202,7 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 ## Contact Information
 | Name | Email address |
 | ---- | ------------- |
-| Vishal | vishal.kesarwani.snaatak@mygurukulam.co |
+| Aakash Tripathi | aakash.tripathi.snaatak@mygurukulam.co |
 ***
 ## Resources and References
 |  **Description** |   **Source** |
@@ -219,7 +212,7 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | Jenkinsfile | [Link](https://github.com/avengers-p7/Jenkinsfile/blob/main/SharedLibrary/Python/DependencySacnning/Jenkinsfile) |
 | Manual Setup | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Dependency%20Scanning/Dependency%20scanning(Python%20CI%20Checks).md) |
 | Manual Pipeline | [Declarative](https://github.com/avengers-p7/Documentation/tree/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Declarative_Pipeline) & [Scripted](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Scripted_Pipeline/Readme.md) |
-| Dependency Scanning | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Dependency%20Scanning/Dependency%20Scanning%20Introduction.md) |
+| Credential Scanning | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Dependency%20Scanning/Dependency%20Scanning%20Introduction.md) |
 
 ***
 
