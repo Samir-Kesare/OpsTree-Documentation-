@@ -34,7 +34,7 @@ Here, we harness the efficiency of Ansible, an open-source automation tool strea
 
 * This diagram should help you visualize the sequence of tasks in your Ansible playbook for installing Jenkins.
 
-<img width="1197" alt="Screenshot 2024-02-01 at 4 19 50 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/73aef5f2-f1ce-402f-8015-c44e7b14236b">
+<img width="1457" alt="Screenshot 2024-02-19 at 11 41 38 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/b17b5300-0479-4ef2-83aa-72873b09ed0e">
 
 ***
 ## Pre-requisites
