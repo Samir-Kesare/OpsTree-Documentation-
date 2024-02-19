@@ -89,7 +89,7 @@ sudo apt upgrade -y
 ```shell
 wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
 ```
-<img width="943" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a12347e5-1b61-4246-bf77-c3223ef5255c">
+<img width="770" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/295830f7-f712-4833-9bd0-aa644d256242">
 
 ***
 
@@ -99,6 +99,7 @@ wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-
 sudo chmod +x openvpn-install.sh
 ```
 
+<img width="573" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/819dc2ee-f265-478d-8d71-9d9d2c341c5d">
 
 ***
 
@@ -107,41 +108,49 @@ sudo chmod +x openvpn-install.sh
 ```shell
 sudo ./openvpn-install.sh
 ```
-
-
 ***
 
 ### Step-5 As soon as the script runs, it will pose below given questions. 
 
 **The first question verifies your Linux machine's IP address. Press Enter if it's correct; otherwise, press any other key. it will automatically detect your IP address; press enter to continue.**
 
-
-
+<img width="656" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4c7175cf-3a5f-4f52-b123-815a1919ffbc">
 
 **The script will then inquire about enabling IPv6 connectivity. You can stick with the default option and press enter.**
 
+<img width="521" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f975be29-65cd-45ce-9130-5f7d9a057243">
 
 **You'll be prompted to choose a port. The default is 1194, but you can either stick with it or specify a different one. Note that you'll need to open this chosen port in your firewall, a step we'll cover later.**
 
+<img width="671" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ef134517-959f-4bd8-bae1-ddd379c4dbce">
 
 **Another question will ask whether to use TCP or UDP. Simply press Enter to select UDP.**
 
+<img width="637" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/57075f94-5b80-41d5-9e0b-06da1ba5a839">
 
 **Following that, the script will inquire about your DNS resolver preference. I suggest opting for Google, which is option 9.**
 
-
+<img width="443" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f0ed0e51-c7b9-4b60-8e74-01566a01df02">
 
 **Then, it will question you about using compression. Stick with the default choice, which is "no," and press Enter.**
 
+![Screenshot 2024-02-19 154939](https://github.com/CodeOps-Hub/Documentation/assets/156057205/0d03e0ac-e416-40b6-b1d8-7bd08a9ab438)
 
 **Finally, there's a query about customizing encryption settings. Once again, go with the default option, which is "no," and press Enter.**
 
+![Screenshot 2024-02-19 155004](https://github.com/CodeOps-Hub/Documentation/assets/156057205/d2b5b367-4435-4357-82d1-9f139e952390)
 
 **Press enter at the next prompt to start the process of applying the settings and installing the required certificates.**
 
+![Screenshot 2024-02-19 141313](https://github.com/CodeOps-Hub/Documentation/assets/156057205/e166affd-aa67-4489-8468-2a6ac3356de1)
+
+![Screenshot 2024-02-19 141325](https://github.com/CodeOps-Hub/Documentation/assets/156057205/19cb019d-db33-4a28-9200-708b136d52b4)
 
 **Provide the name of the client that will establish a connection with our VPN server. Subsequently, you will be prompted to indicate your preference regarding the use of a password for the client. opt for option 2 and input your desired password.**
 
+<img width="650" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8c3f5d01-9de1-4b44-8dee-227fd7eefc45">
+
+<img width="658" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/6c58361f-ee0f-48c2-8e07-d965c58d9dd2">
 
 **Enter the password. The configuration process is complete. OpenVPN now generates a file for each user you create.**
 
