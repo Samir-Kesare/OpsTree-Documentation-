@@ -80,6 +80,8 @@ sudo apt update
 sudo apt upgrade -y
 ```
 
+<img width="937" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/938be885-f051-4735-8006-080ab6b90bcf">
+
 ***
 
 ### Step-2  We'll use this script to install and configure the OpenVPN server. To get the script, run the following command mentioned below.
