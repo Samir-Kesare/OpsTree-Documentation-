@@ -86,7 +86,7 @@ Security groups are a fundamental security feature in AWS, allowing you to contr
 | ---------------- | ------------ |
 | About Security Group | [Link](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) |
 | Creation Setup | [Link](https://www.geeksforgeeks.org/what-is-security-group-in-aws-and-how-to-create-it/) |
-| Flow this Infra Diagram | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
+| Follow this Infra Diagram for setup | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
 
 ***
 
