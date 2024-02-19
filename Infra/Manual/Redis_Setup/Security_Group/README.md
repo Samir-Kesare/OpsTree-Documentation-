@@ -4,6 +4,9 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  13 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/a51bc5e5-03c8-4f5c-a36a-8ee2ccc2af5e)
+
 # Table of Contents
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#introduction)
 - [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#pre-requisites)
