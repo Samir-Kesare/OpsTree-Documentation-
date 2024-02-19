@@ -14,7 +14,7 @@
 + [Flow Diagram](#Flow-Diagram)
 + [Pre-requisites](#Pre-requisites)
 + [Setup of License Scanning](#Setup-of-License-Scanning-Via-Shared-Library)
-+ [JSON Report](#JSON-Report)
++ [Report](#Report)
 + [Jenkinsfile](#Jenkinsfile)
 + [Shared Library](#Shared-Library)
 + [Conclusion](#Conclusion)
@@ -92,26 +92,27 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 ***
 
 ## Report
- * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Credential%20Scanning/Declarative%20Pipeline/credScanReport)
+ * Cilck [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/License%20Scanning/Shared%20Library/project-attribution-custom%2B42731_github.com_OT-MICROSERVICES_salary-api%2479356799a4e74ff24c7bda42371bbece4f35d4d7-1708344219859.csv)
+
+The report is available at fossa website. A live link of the report can also be created. 
+![Screenshot 2024-02-19 174223](https://github.com/CodeOps-Hub/Documentation/assets/156056344/f642a24a-595b-46b1-adfc-820fc550f6f5)
+
  
 ***
 ## Jenkinsfile
-  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Cred_Scanning/Jenkinsfile)
+  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/License_Scan/Jenkinsfile)
   ```shell
-
 @Library("my-shared-library") _
 
-def credScan  = new org.avengers.template.genericCi.CredScan()
+def licenseScan  = new org.avengers.template.genericCi.LicenseScan()
 
 node {
     
-    def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
+    def url = 'https://github.com/OT-MICROSERVICES/employee-api.git'
     def branch = 'main'
-    def gitLeaksVersion = '8.18.2'
-    def reportName = 'credScanReport.json'
-    
-   credScan.call(branch: branch,url: url, gitLeaksVersion, reportName)
-    
+   withCredentials([string(credentialsId: 'fossaToken', variable: 'FOSSA_API_KEY')]){
+   licenseScan.call(branch: branch,url: url)
+   }
 }
 ```
 ## Shared Library
@@ -130,74 +131,69 @@ def call(Map config = [:]) {
     }
 }
 ```
-  * [**CleanAfterArchive.groovy**](https://github.com/avengers-p7/SharedLibrary/blob/main/src/org/avengers/common/CleanAfterArchive.groovy)
+  * [**CleanWorkSpace.groovy**]()
   ```shell
 package org.avengers.common
-
-def call(String reportName){
-  stage('Archive and Clean Workspace') {
+// Always Clean 
+def call(){
+  stage('Clean Workspace') {
         script {
-           archiveArtifacts artifacts: "**/${reportName}"
            cleanWs()
         }
     }
   
 }
 ```
-  * [**Gitleaks.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/credScanning/GitLeaks.groovy)
+  * [**Fossa.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/licenseScanning/Fossa.groovy)
   ```shell
-package org.avengers.credScanning
+package org.avengers.licenseScanning
 
-def call(String gitLeaksVersion){
-  stage('Download and Install Gitleaks') {
-        script {
-           sh "wget https://github.com/gitleaks/gitleaks/releases/download/v${gitLeaksVersion}/gitleaks_${gitLeaksVersion}_linux_x64.tar.gz"
-                  // Extract Gitleaks
-            sh "tar xvzf gitleaks_${gitLeaksVersion}_linux_x64.tar.gz"
+def call() {
+    stage('Download and Install FOSSA') {
+        script {           
+            sh 'curl -H \'Cache-Control: no-cache\' https://raw.githubusercontent.com/fossas/fossa-cli/master/install-latest.sh | bash'
         }
     }
-  
 }
 ```
-  * [**Scan.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/credScanning/Scan.groovy)
+  * [**Scan.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/licenseScanning/Scan.groovy)
   ```shell
-package org.avengers.credScanning
+package org.avengers.licenseScanning
 
-def call(String reportName){
-  stage('Gitleaks Scan') {
+def call() {
+    stage('FOSSA Analyze & Test') {
         script {
-           sh "./gitleaks detect -r ${reportName}"
+            sh 'fossa analyze'
+            sh 'fossa test'
         }
     }
-  
 }
 ```
 
-  * [**CredScan.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/genericCi/CredScan.groovy)
+  * [**LicenseScan.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/genericCi/LicenseScan.groovy)
   ```shell
 package org.avengers.template.genericCi
 
 import org.avengers.common.*
-import org.avengers.credScanning.*
+import org.avengers.licenseScanning.*
 
-def call(Map config = [:], String gitLeaksVersion, String reportName){
+def call(Map config = [:]){
   gitClone = new gitCheckout()
-  gitLeaks = new GitLeaks()
+  fossa = new Fossa()
   scan = new Scan()
-  cleanAfterArchive = new CleanAfterArchive()
+  cleanworkspace = new CleanWorkSpace()
 
   try {
     gitClone.call(branch: config.branch, url: config.url  )
-    gitLeaks.call(gitLeaksVersion)
-    scan.call(reportName)
+    fossa.call()
+    scan.call()
     } catch (Exception e) {
-        echo "Check your code for credential Leak: ${e.message}"
+        echo "Check your code for License Issues: ${e.message}"
     } finally {
-       cleanAfterArchive.call(reportName) 
+       cleanworkspace.call() 
     }
   
 }
-  
 ```
 
 ***
