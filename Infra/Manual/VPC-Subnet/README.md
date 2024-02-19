@@ -55,6 +55,13 @@ This documentation provides a step-by-step guide on creating CIDR blocks and sub
    * Click Create Subnet.
    * ![Create Subnet](https://github.com/CodeOps-Hub/Documentation/assets/156056709/4b563a06-a926-41dc-aa4b-2161b90999e5)
    * ![Subnet Configuration](https://github.com/CodeOps-Hub/Documentation/assets/156056709/9ffbf5c5-8561-4d8d-a2f9-4d30cfd53563)
+     
+ **Dev VPC Subnets:**
+     
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/72fa7343-6f73-465f-877f-82dbc0e4473b)
+
+
+
 
 3. **Repeat for Additional Subnets**
    
