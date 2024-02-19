@@ -56,7 +56,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 | Tool   | Description                          | Python3 Support | Purpose        |
 |--------|--------------------------------------|-----------------|----------------|
-| Bandit | A tool for bug analysis in Python   | Yes             | Python App     |
+| OWASP ZAP | A tool for DAST in Golang   | Yes             | Python App     |
 | Jenkins | CICD Tool                          |                 |                 |
 
 ***
