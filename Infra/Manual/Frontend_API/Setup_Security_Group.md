@@ -27,14 +27,28 @@ AWS Security Groups are a vital component of AWS's network security and cloud da
 Security groups operate at the instance level, meaning that they define rules that specify what traffic is allowed to reach the associated resources. These rules can be applied to both incoming and outgoing traffic, providing a granular way to manage access to your AWS resources.
 
 ***
+## How Do AWS Security Groups Work?
+
+Here's a simplified breakdown of the process:
+
+* **Inbound Traffic :** When an incoming packet arrives at an AWS resource, AWS evaluates the rules defined in the associated security group. If the packet matches any of the rules allowing the traffic, it is permitted; otherwise, it is denied.
+
+* **Outbound Traffic :** Outbound traffic from an AWS resource is also controlled by the security group's rules. It follows the same principle: traffic is allowed or denied based on the rules defined for outbound traffic.
+***
 ## Why 
 
 ***
+## AWS Security Groups Rules
+
+AWS Security Groups are defined by a set of rules that specify which traffic is allowed and which is denied. Each rule consists of the following components:
+
+ * **Type:** The protocol type (e.g., TCP, UDP, ICMP) to which the rule applies.
+ * **Port Range:** The range of ports to which the rule applies.
+ * **Source/Destination:** The IP range or security group that is allowed to access the resource.
+ * **Allow/Deny:** Whether the rule allows or denies traffic that matches the rule criteria.
+   
 ## Pre-requisites
-| **Pre-requisites** | **Version** |
-| ------------------ | ----------- |
-|  |  | 
-|  |  |
+ * Active AWS Account.
 
 ***
 ## Setup
@@ -46,7 +60,7 @@ Security groups operate at the instance level, meaning that they define rules th
 ***
 ## Conclusion
 
-Securing your AWS cloud environment is essential, and Security Groups are key to achieving this. Understanding their function, managing rules effectively, and adhering to best practices bolsters AWS resource security. Regularly updating configurations is crucial to adapt to evolving threats. With a solid approach to Security Groups, you can confidently harness cloud benefits while safeguarding applications and data integrity.
+Security groups are a fundamental security feature in AWS, allowing you to control the traffic that is allowed to access your resources. In this article, we have discussed what a security group is and how to create it. By following the steps mentioned above, you can create security groups for your resources and ensure they are secure. 
 
 ***
 ## Contact Information
@@ -58,8 +72,8 @@ Securing your AWS cloud environment is essential, and Security Groups are key to
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
 | About Security Group | [Link](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html) |
-
-
+| Creation Setup | [Link](https://www.geeksforgeeks.org/what-is-security-group-in-aws-and-how-to-create-it/) |
+| Flow this Infra Diagram | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
 
 ***
 
