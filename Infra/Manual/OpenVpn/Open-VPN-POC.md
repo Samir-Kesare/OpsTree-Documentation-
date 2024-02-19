@@ -43,27 +43,31 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 ### Step-1 First, launch an `EC2 Instance`, access the EC2 dashboard, Click on `Launch Instance.`
 
+![Screenshot 2024-02-19 133820](https://github.com/CodeOps-Hub/Documentation/assets/156057205/45575af6-697e-4fd2-9b5d-cd5aa43338ae)
 
 ***
 
 ### Step-2 Choose an appropriate name for the instance and choose `Ubuntu AMI`
 
+![Screenshot 2024-02-19 133937](https://github.com/CodeOps-Hub/Documentation/assets/156057205/6b269d7d-2aec-4a8a-8b91-90f2d9ff693a)
 
 ***
 
-### Step-3 Select the instance type as `t2-micro`. Generate a key pair with an appropriate name. In thge network settings, pick a VPC; in this case, choose the `Management-VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.
+### Step-3 Select the instance type as `t2-micro`. Generate a key pair with an appropriate name. 
 
-
-
-***
-
-### Step-4 Navigate to the security group settings. Ensure that `port 1194` is open if using UDP (default for OpenVPN). Leave other settings as default for now. Finally click on `launch instance`. That's it, we have successfully launched the `instance`.
-
+![Screenshot 2024-02-19 134047](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fcf83314-e725-4e8d-a43d-297856398546)
 
 ***
 
-### Step-5 
+### Step-4 In the network settings, pick a VPC; in this case, choose the `Management-VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.Navigate to the security group settings. Ensure that `port 1194` is open if using UDP (default for OpenVPN). 
 
+![Screenshot 2024-02-19 134343](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f33b7660-2e08-4571-97f3-fcee10d8dfa7)
+
+***
+
+### Step-5 Leave other settings as default for now. Finally click on `launch instance`. That's it, we have successfully launched the `instance`.
+
+![Screenshot 2024-02-19 134504](https://github.com/CodeOps-Hub/Documentation/assets/156057205/c87c30c3-40dc-4ec9-b0e0-ea46568b7389)
 
 ***
 
