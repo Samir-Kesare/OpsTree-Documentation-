@@ -72,21 +72,24 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 **1. Configure Shared library in Jenkins**
 	
 Follow below document
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/ccbac0ff-5d5c-462e-b1e2-bdcaaf4f3832)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/92c48503-44e4-44ef-bb4e-ff97cd82eed6)
 
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
 
-**4. Create and Configure your Jenkins Pipeline job**
+**2. Create and Configure your Jenkins Pipeline job**
 
 Follow below document
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/ccbac0ff-5d5c-462e-b1e2-bdcaaf4f3832)
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
 
 
 
-**5. Now Build your Pipeline**
+**3. Now Build your Pipeline**
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/92e41995-fa4e-49d4-b3db-ae62aa7e4f0a)
 
