@@ -10,42 +10,56 @@
 | Vikram Bisht  | 17-02-2024  | 1.0        | Vikram Bisht    | 17-02-2024      |
 
 
-## Table  of Contents
-
-1. [Introduction](#Introduction)
-2. [What is Shared Library](#What-is-Shared-Library)
-3. [Prerequisites](#Prerequisites)
-4. [Runtime Prerequisites](#Runtime-Prerequisites)
-5. [Flow Diagram](#Flow-Diagram)
-6. [Pipeline Setup](#Pipeline-Setup)
-7. [Results](#results)
-8. [Pipeline](#pipeline)
-9. [Shared Library](#Shared-Library)
-10. [Contact Information](#Contact-Information)
-11. [References](#References)
 ***
+# Table of Contents
++ [Introduction](#introduction)
++ [Why Shared Library](#why-shared-library)
++ [Why use src folder structure in a Jenkins shared library](#why-use-src-folder-structure-in-a-jenkins-shared-library)
++ [Flow Diagram](#flow-diagram)
++ [Pre-requisites](#pre-requisites)
++ [Steps to run Pipeline](#steps-to-run-pipeline)
++ [HTML Report](#html-report)
++ [Jenkinsfile](#jenkinsfile)
++ [Shared Library](#shared-library)
++ [Conclusion](#conclusion)
++ [Contact Information](#contact-information)
++ [Resources and References](#resources-and-references)
 
-## Introduction 
-
-Static analysis, also called static code analysis, is a method of computer program debugging that is done by examining the code without executing the program. The process provides an understanding of the code structure and can help ensure that the code adheres to industry standards. Static analysis is used in software engineering by software development and quality assurance teams. Automated tools can assist programmers and developers in carrying out static analysis. The software will scan all code in a project to check for vulnerabilities while validating the code.
-
-**For more information visit the below document link:**
-
-[\[ Reference Doc \]](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/04-%20Python%20CI%20Checks/Static%20code%20analysis(Python%20CI%20Checks).md)
-
-In this task, we are using Shared Library.
+  
 ***
-## What is Shared Library?
+# Introduction
 
-A shared library in Jenkins is a reusable collection of Groovy scripts that can be used by multiple Jenkins jobs. This allows you to share code and functionality between different jobs, which can make your builds more efficient and easier to maintain.
-### Why
-To understand the concept of shared libraries, let’s consider a real-time example. Imagine you have multiple Jenkins pipelines that require a common set of functions for interacting with a version control system, such as Git. Instead of duplicating the Git-related code in each pipeline, you can create a shared library that encapsulates the necessary Git operations.
+ <img width="360" length="100" alt="Golang" src="https://github.com/avengers-p7/Documentation/assets/156056413/f94f127a-d207-4c76-bc32-d25e4fe48280"> 
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/f99a6591-da1b-42f4-a13c-8c4bb1bb947c)
+A Jenkins Shared Library is a collection of reusable code that facilitates the sharing of common pipeline logic among teams in Jenkins. It simplifies CI/CD processes by abstracting complex tasks into functions, speeding up pipeline development. By keeping shared code separate from individual pipelines, teams ensure consistency and minimize duplication. This fosters collaboration, encourages best practices, and streamlines Jenkins pipeline creation, leading to better software delivery and development workflows.  
+About more information [**Click Here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
 
-**For more information visit the below document link:**
+***
+# Why Shared Library
+| Advantage          | Description                                                                                                                                                          |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Reusability**        | Shared Libraries allow teams to write code once and reuse it across multiple pipelines. This reduces duplication of effort and promotes consistency in the CI/CD process. |
+| **Centralization**     | By centralizing common pipeline logic, updates and improvements can be made in one place, benefiting all pipelines that use the library.                             |
+| **Abstraction**        | Complex tasks can be abstracted into simple functions in the Jenkins Shared Library, making pipeline scripts cleaner and more maintainable.                            |
+| **Standardization**    | Jenkins Shared Library allows organizations to define standardized practices, coding conventions, and security measures across all pipelines.                         |
+| **Collaboration**      | Jenkins Shared Libraries encourage collaboration among teams, as they can share and contribute to a common set of pipeline tools and utilities.                         |
+| **Versioning Control** | Jenkins Shared Library can be version-controlled, enabling teams to manage changes and rollbacks effectively.                                                        |
+| **Ease of Maintenance** | As the Jenkins Shared Library is maintained separately from individual pipelines, updates and bug fixes can be implemented without impacting the pipelines directly. |
 
-[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
+***
+# Why use `src` folder structure in a Jenkins shared library
+
+| Benefit                    | Description                                                                                                                                                                    |
+|----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Organizational Structure**  | Placing source files in a `src` folder provides a clear and organized structure for the library, aiding developers in quickly locating files and understanding the layout.      |
+| **Isolation of Source Code**  | Keeping source code separate from other files (e.g., documentation, configuration, tests) prevents clutter and confusion, making the codebase easier to manage.                 |
+| **Easier Maintenance**        | With a clear structure, maintaining and updating the library becomes straightforward, as developers know where to find specific files and can make changes confidently.     |
+| **Build and Packaging**       | Adhering to conventions like using a `src` folder facilitates integration with build tools and package managers, as they often expect a certain directory structure.           |
+| **Compatibility with IDEs**   | Standard project structures, such as a `src` folder, improve compatibility with integrated development environments (IDEs), enabling features like code navigation and auto-completion. |
+| **Readability and Maintainability** | A well-organized structure enhances readability and maintainability by making it easier for developers to understand the codebase's layout and locate relevant files efficiently. |
+
+
+***
 
 ## Prerequisites
 
@@ -63,179 +77,173 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ***
 ## Flow Diagram
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/47ee78af-3674-4623-ac6c-bf9426712d0d)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/052a2f75-39c6-4c61-9d9b-6291a6626b08)
 
 ***
-## Pipeline Setup
-1. **Configure Maven tool in Jenkins**
+# Steps to run Pipeline
+
+**1. Including Spotbugs Plugin in pom.xml**
+
+To include the Spotbugs plugin in the `pom.xml` file, follow these steps:
+
+* Add the Spotbugs-maven-plugin within the reporting section.
+* Ensure that running `mvn site` will generate the Spot Bugs report.
+
+For detailed instructions, please refer to the [Proof of Concept (POC) documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md).
+
+**2. Configure Maven tool in Jenkins**
+
 Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056444/d9ff8a0d-900a-4e4b-ac68-34507ef3348b)
 
 
-2. **Install Sonarqube Scanner plugin in Jenkins**
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/28625f84-3ae7-45e3-8cea-d1d73daba895)
+**3. Configure Shared library in Jenkins**
+	
+Follow below document
 
-3. **Create  token in Sonarqube**
-	- login to Sonarqube Server and go to `Administration --> Security --> Users`
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/f01959ac-2a3a-4644-ba49-ea52e886f2db)
+[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
-	- click on `Update Tokens`
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/f2f5fcbd-15db-45f7-8e41-abcda2e21da3)
+**4. Create and Configure your Jenkins Pipeline job**
 
- 	- give name of token , select no. of days and then genarate the token
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/8a0838e5-e186-4f2a-8a55-8151bad09958)
+Follow below document
 
-  	- copy and keep your token
-     		![image](https://github.com/avengers-p7/Documentation/assets/156056444/511a3b73-922b-4277-b2a1-01d782609aca)
-     
+[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
+![Screenshot from 2024-02-16 22-05-03](https://github.com/CodeOps-Hub/Documentation/assets/156056709/223fe9e6-be98-4ba6-bb94-9dd829682739)
 
-4. **Add Sonarqube token in Jenkins Credentials**
-   	- login to your jenkins Dashboard and go to `Dashboard --> Manage Jenkins --> Credentials`
 
-   	  	Below, click on add `Add Credentials`
+**5. Now Build your Pipeline**
 
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/125c1d80-6342-4e24-9d0d-4f122ddeaf95)
-  
-	- Select **`Secret Text`** and provide the token that you copied in secret section. Also, give ID and Description to your credential.
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/2727ea81-3014-4910-93ef-77237529f313)
+![Screenshot from 2024-02-16 22-24-40](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e5391960-ff4c-4f6e-9274-b4ff2321da90)
 
-5.  **Configure Sonarqube Server  in `Dashboard --> Manage Jenkins --> System`**
+# Console Output:
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/1681289c-a3ef-4d6a-9e54-a2b2a948d660)
+Based on the console output provided below, we can infer that there are a few bugs present
 
-6. **Create and Configure your Jenkins Pipeline job**
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/be56255c-ccd9-4c8a-b6c3-aa69a638e643)
 
-	Follow below document
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e5ebe3b1-04c0-4533-863c-26316979dfa1)
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/2ba35900-b7c2-40c3-b6b3-80eb4339bcc6)
 
-7. **Now Build your Pipeline**
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d8798924-c97e-4d4d-b4fc-6e1a80f01fa2)
 ***
-## Results
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4f9c3fe8-3364-458d-bfe8-11ca904f80f8)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/c6bb0d11-a5d4-43d1-b593-393b96fb0b1c)
+# HTML Report
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ac1d82cd-f0b5-4da1-be48-5b36dc6c7dfa)
+ * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/spotbugHtmlReports/spotbugs.html)
+
 ***
-## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/StaticCodeAnalysis/Jenkinsfile)
+# Jenkinsfile
 
-```shell
+  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/BugAnalysis/Jenkinsfile)
+
+ ```shell
 @Library("my-shared-library") _
 
-def staticCodeAnalysis = new org.avengers.template.java.codeAnalysis()
+def javaBugAnalysis = new org.avengers.template.java.javaBugAnalysis()
 
 node {
     
-    def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
+    def url = 'https://github.com/Parasharam-Desai/salary-api.git'
     def branch = 'main'
     
-    staticCodeAnalysis.call(branch: branch,url: url)
+    javaBugAnalysis.call(branch: branch,url: url)
     
 }
+        
 ```
+# Shared Library
 
-## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary.git)
-### [template/java/codeAnalysis.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/codeAnalysis.groovy)
-```shell
-package org.avengers.template
+[**gitCheckout.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/vars/gitCheckout.groovy)
 
-import org.avengers.common.gitCheckout
-import org.avengers.common.cleanWorkspace
-import org.avengers.java.compile.*
-import org.avengers.java.staticCodeAnalysis.*
-
-def call(Map config = [:]){
-    def gitCheckout = new gitCheckout()
-    def javaCompile = new compile()
-    def staticCodeAnalysis = new staticCodeAnalysis()
-    def cleanWorkspace = new cleanWorkspace()
-
-    gitCheckout.call(branch: config.branch, url: config.url  )
-    javaCompile.call()
-    staticCodeAnalysis.call()
-    cleanWorkspace.call()
-  
-}
-```
-### [gitCheckout.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
-```shell
+  ```shell
 // Checkout Github Public Repository
-package org.avengers.common
-
 def call(Map config = [:]) {
-    stage('GIT Checkout') {
-        checkout scm: [
+            checkout scm: [
                 $class: 'GitSCM',
                 branches: [[name: config.branch]],
                 userRemoteConfigs: [[url: config.url]]
             ]
-    }
 }
+
+```
+[**bug.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/bugAnalysis/bug.groovy)
+
+ ```shell
+
+package org.avengers.java.bugAnalysis
+
+def call(){           
+        stage("Bug Analysis ") {
+                script {
+                    sh 'mvn compile'
+                    sh 'mvn spotbugs:spotbugs'
+                    sh 'mvn site'
+                }
+        }
+}
+
 ```
 
-### [cleanWorkspace.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/cleanWorkspace.groovy)
-```shell
-// Will not clean workspace if build is Sucessful and vice versa
-package org.avengers.common
+[**publishHtml.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/bugAnalysis/publishHtml.groovy)
+
+ ```shell
+
+package org.avengers.java.bugAnalysis
 
 def call() {
-  stage('Clean Workspace'){
-      cleanWs cleanWhenSuccess: false
-  }
-}
+          stage('Publish HTML Report') {
+                      publishHTML([
+                          allowMissing: false,
+                          alwaysLinkToLastBuild: true,
+                          keepAll: true,
+                          reportDir: 'target/site',
+                          reportFiles: 'spotbugs.html',
+                          reportName: 'SpotBugs Report'
+                      ])
+                  }
+              }
 ```
+[**javaBugAnalysis.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaBugAnalysis.groovy)
 
-### [compile.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/compile/compile.groovy)
 ```shell
-package org.avengers.java.compile
+package org.avengers.template.java
 
-def call() {
-  stage('Compile'){
-    script{
-      sh 'mvn clean compile'
-    }
-  }
-}
-```
-### [staticCodeAnalysis.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/staticCodeAnalysis/staticCodeAnalysis.groovy)
-```shell
-package org.avengers.java.staticCodeAnalysis
+import org.avengers.common.gitCheckout
+import org.avengers.common.cleanWorkspace
+import org.avengers.java.bugAnalysis.*
 
-def call() {
-  stage('Static Code Analysis'){
-        withSonarQubeEnv(installationName: 'sq1') { 
-          sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-        }    
-  }
+def call(Map config = [:]){
+    def gitCheckout = new gitCheckout()
+    def javaBugAnalysis = new bug()
+    def javaPublishHtml = new publishHtml()
+    def cleanWorkspace = new cleanWorkspace()
+
+    gitCheckout.call(branch: config.branch, url: config.url  )
+    javaBugAnalysis.call()
+    javaPublishHtml.call()
+    cleanWorkspace.call()
+  
 }
 ```
 ***
+# Conclusion
+The Jenkins Shared Library streamlines CI/CD processes by allowing teams to share reusable code and logic across various pipelines. It standardizes workflows, minimizes duplication, and ensures consistency. With abstracted complex tasks into reusable functions, it simplifies maintenance and fosters collaboration among teams. By promoting best practices and enabling version control, it enhances the efficiency and reliability of the CI/CD process, accessible even without Jenkins admin access.
 
-## Contact Information
-
-|     Name         | Email  |
-| -----------------| ------------------------------------ |
-| Harshit Singh    | harshit.singh.snaatak@mygurukulam.co |
 ***
+# Contact Information
 
-## References
+|    Name                                   | Email Address                    |
+|-------------------------------------------|----------------------------------|
+| **[Parasharam Desai](https://github.com/Parasharam-Desai)** | parasharam.desai.snaatak@mygurukulam.co |
 
-| Description                                   | References  
-| --------------------------------------------  | -------------------------------------------------|
-| Sonarqube | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md |
-| Statis Code Analysis | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md |
-| Sonarqube Intergration | https://www.youtube.com/watch?v=KsTMy0920go&t=342s |
-| Clean Workspace | https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps/#finishing-up |
-| Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
-| Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
-| Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
-| Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
-| Pipeline Concepts | https://www.jenkins.io/doc/book/pipeline/#pipeline-concepts |
-| Shared Library | https://www.jenkins.io/doc/book/pipeline/shared-libraries/ |
-| What is shared Library | https://keentolearn.medium.com/how-to-improve-your-jenkins-builds-with-shared-libraries-5e225b7435fb#:~:text=A%20shared%20library%20in%20Jenkins,efficient%20and%20easier%20to%20maintain. |
+***
+# Resources and References
+
+|       **Description**                                   |           **References**                    |
+|---------------------------------------------------------|-----------------------------------------------|
+| Jenkins Pipeline     | [Link](https://www.jenkins.io/doc/book/pipeline/) |
+| Bug Analysis Setup via Shared Library* |[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
+| Bug Analysis POC |[Link ](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md)|
+|Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
