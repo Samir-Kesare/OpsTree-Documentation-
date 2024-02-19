@@ -72,6 +72,8 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 **1. Configure Shared library in Jenkins**
 	
 Follow below document
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/ccbac0ff-5d5c-462e-b1e2-bdcaaf4f3832)
+
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
