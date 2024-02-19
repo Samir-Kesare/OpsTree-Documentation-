@@ -21,6 +21,11 @@
 
 ***
 
+> [!Note]
+> Documentation for introduction of OpenVPN is created in separate doc, click this [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/OpenVpn/Open-VPN-Doc.md)
+
+***
+
 # Introduction
 
 This Proof of Concept (PoC) documentation aims to provide a comprehensive guide for setting up and testing OpenVPN on an Ubuntu Server environment. OpenVPN is a widely-used open-source VPN (Virtual Private Network) solution known for its robust security features and flexibility. 
