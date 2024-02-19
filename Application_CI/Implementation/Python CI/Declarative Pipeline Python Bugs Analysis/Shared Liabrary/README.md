@@ -106,70 +106,73 @@ Follow below document
   
 
  ```shell
-@Library("my-shared-library") _
-
-def unitTesting = new org.avengers.template.java.javaUnitTesting()
+@Library('snaatak-p7') _
+def bugsAnalysis = new org.avengers.template.python.PythonBugsAnalysis()
 
 node {
     
-    def url = 'https://github.com/Parasharam-DevOps/salary-api.git'
+    def url = 'https://github.com/CodeOps-Hub/attendance-api.git'
+    def creds = '890c8a72-7383-4986-8573-519aacdeb7d2'
     def branch = 'main'
-    
-    unitTesting.call(branch: branch,url: url)
+       
+    bugsAnalysis.call(url, creds, branch)
     
 }
-        
 ```
 # Shared Library
 
-[**gitCheckout.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/vars/gitCheckout.groovy)
+[**pythonbugsanalysis.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/python/PythonBugsAnalysis.groovy)
 
   ```shell
-// Checkout Github Public Repository
-def call(Map config = [:]) {
-            checkout scm: [
-                $class: 'GitSCM',
-                branches: [[name: config.branch]],
-                userRemoteConfigs: [[url: config.url]]
-            ]
-}
+package  org.avengers.python.BugsAnalysis
+def call() {
+  stage('Bugs Analysis - Bandit') {
+                script {
+              
+                        // Ensure Bandit is installed and run the analysis
+                        sh 'bandit --version' 
+                        sh 'bandit -r . -f json -o bandit_report.json'
+                    
+                    }
+                }
+            }
 
 ```
-[**test.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/unitTesting/test.groovy)
+[**InstallDependencies.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/python/BugsAnalysis/InstallDependencies.groovy)
 
  ```shell
 
-package org.avengers.java.unitTesting
-
-def call(){           
-        stage("Unit Testing ") {
-                script {
-                   
-                    sh 'mvn test'
+package  org.avengers.python.BugsAnalysis
+def calll() {
+  stage('Install Dependencies') {
+    // Install necessary dependencies
+    script {
+      sh 'python3 -m venv myenv'
+      sh '. myenv/bin/activate'
                 }
             }
         }
 
 ```
 
-[**javaUnitTesting.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaUnitTesting.groovy)
+[**PythonBugsAnalysis.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/python/PythonBugsAnalysis.groovy)
 
 ```shell
-package org.avengers.template.java
+package org.avengers.template.python
 
-import org.avengers.common.gitCheckout
-import org.avengers.common.cleanWorkspace
-import org.avengers.java.unitTesting.*
+import org.avengers.common.*
+import org.avengers.python.BugsAnalysis.*
 
-def call(Map config = [:]){
-    def gitCheckout = new gitCheckout()
-    def javaUnitTesting = new test()
-    def cleanWorkspace = new cleanWorkspace()
+def call(String url, String creds, String branch){
+  gitCheckoutPrivate = new GitCheckoutPrivate()
+  cleanWorkspace = new cleanWorkspace()
+  bugsAnalysisBandit = new BugsAnalysisBandit()
+  installDependencies = new InstallDependencies()
 
-    gitCheckout.call(branch: config.branch, url: config.url  )
-    javaUnitTesting.call()
-    cleanWorkspace.call()
-  
+  gitCheckoutPrivate.call(url, creds, branch)
+  cleanWorkspace.call()
+  bugsAnalysisBandit.call()
+  installDependencies.call()
 }
 ```
 
@@ -183,7 +186,7 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 
 |    Name                                   | Email Address                    |
 |-------------------------------------------|----------------------------------|
-| **[Parasharam Desai](https://github.com/Parasharam-Desai)** | parasharam.desai.snaatak@mygurukulam.co |
+| **[Samir Kesare]((https://github.com/Snatak-SamirKesare)** | samir.kesare.snaatak@mygurukulam.co |
 
 ***
 # Resources and References
@@ -192,6 +195,5 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 |---------------------------------------------------------|-----------------------------------------------|
 | Jenkins Pipeline Documentation   | [Link](https://www.jenkins.io/doc/book/pipeline/) |
 | Bug Analysis Setup via Shared Library |[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
-| Unit-Testing-POC | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Unit%20Testing/POC.md) |
 |Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
 |Configure your Shared Library|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
