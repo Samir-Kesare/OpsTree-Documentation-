@@ -56,6 +56,17 @@ So, with Redis Cluster, you get the ability to:
 
 **Step-2** [Security Group Configuration](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
 - Create 3 security group.
+- Inbound Rules
+  | Rule                 | Port(s)   | Protocol | Source                        |
+|----------------------|-----------|----------|-------------------------------|
+| SSH                  | 22        | TCP      | 0.0.0.0/0                     |
+| Redis Default Port   | 6379      | TCP      | Custom from respective nodes  |
+| Redis Cluster Bus    | 16379     | TCP      | Custom from respective nodes  |
+
+- Outbound Rules
+| Outbound Rule        | Port/Protocol | Destination       |
+|----------------------|---------------|-------------------|
+| Allow All Traffic    | All           | 0.0.0.0/0         |
 
 **Step-3** Connect to your EC2 Instances
 - Once the instance is running, connect to it using SSH. The private key associated with the key pair selected at launch will be required.
