@@ -67,8 +67,8 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22, 3000                | frontend-lb-sg   |               
-| Backend  | Backend-sg          | 22, 8080              | frontend-lb-sg     |               
+| Frontend | Frontend-sg         | 22, 3000                | Frontend-lb-sg   |               
+| Backend  | Backend-sg          | 22, 8080             | Frontend-lb-sg     |               
 | Database | Postgresql-sg      | 22, 5432              | Backend-sg       |               
 | Database | Redis-sg         | 22, 6379              | Backend-sg       |            
 | Database | Scylla-sg      | 22, 9042             | Backend-sg          |               
