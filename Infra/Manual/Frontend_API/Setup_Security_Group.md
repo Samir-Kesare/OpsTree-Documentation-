@@ -93,6 +93,16 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
   <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ec468ded-7848-49e3-a2fd-fae8b7f39028"> 
  
 ***
+## Best practices
+
+| Best Practice                   | Description                                                                                                           |
+|--------------------------------|-----------------------------------------------------------------------------------------------------------------------|
+| **Principle of Least Privilege**  | Grant only necessary permissions to resources. Limit access to minimum required ports, protocols, and IP ranges.     |
+| **Separation of Duties**           | Create different security groups for different functions to limit the impact of breaches.                             |
+| **Regular Reviews and Audits**     | Regularly review and audit security groups to ensure alignment with security policies. Remove unnecessary permissions. |
+| **Use Security Groups over IPs**   | Utilize other security groups instead of specifying IP addresses directly for dynamic updates and simplified management. |
+| **Enable Logging and Monitoring** | Enable logging to monitor traffic patterns and detect/respond to suspicious activities.                                |
+***
 ## Conclusion
 
 Security groups are a fundamental security feature in AWS, allowing you to control the traffic that is allowed to access your resources. In this article, we have discussed what a security group is and how to create it. By following the steps mentioned above, you can create security groups for your resources and ensure they are secure. 
