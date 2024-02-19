@@ -71,21 +71,27 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 ## Setup of Credential Scanning Via Shared Library
 * Follow this document for Setup [**Cilck here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)
 
-  <img width="760" length="100" alt="python" src="https://github.com/avengers-p7/Documentation/assets/156056413/a0bb9810-02de-4c58-851c-671de028c6df"> 
+  ![Screenshot 2024-02-19 165417](https://github.com/CodeOps-Hub/Documentation/assets/156056344/41680948-a8f7-4cb5-854e-79be309aee63)
+
+* Build
+  
+  ![Screenshot 2024-02-19 165258](https://github.com/CodeOps-Hub/Documentation/assets/156056344/9422562c-40a2-4ea8-963d-400502a00b0a)
 
 * Console Output:
 
-   <img width="760" length="100" alt="python" src="https://github.com/avengers-p7/Documentation/assets/156056413/e682a483-b102-4a67-ac0e-08bfcf39dddd"> 
+ ![Screenshot 2024-02-19 165317](https://github.com/CodeOps-Hub/Documentation/assets/156056344/b376763a-e72b-4151-912c-27d0c489520c)
+
 
 
 > [!NOTE]
 > **Changes**
 > *  **Pipeline name**       **-**  `Credential Scanning via Shared Library`
 > *  **Jenkinsfile Path**    **-**  `SharedLibrary/Cred_Scanning/Jenkinsfile`  
+![Screenshot 2024-02-19 165435](https://github.com/CodeOps-Hub/Documentation/assets/156056344/59ad509b-4b93-4a9c-85a7-c7e720e52b18)
 
 ***
 
-## HTML Report
+## JSON Report
  * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Shared_Library/Report.html)
 
 ***
