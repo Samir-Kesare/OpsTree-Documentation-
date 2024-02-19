@@ -10,7 +10,7 @@
 ***
 ## Table of Contents
 + [Introduction](#Introduction)
-+ [How Do AWS Security Groups Work?](#How-Do-AWS-Security-Groups-Work?)
++ [How Do AWS Security Groups Work](#How-Do-AWS-Security-Groups-Work)
 + [Why Use Security Group](#Why-Use-Security-Group)
 + [AWS Security Groups Rules](#AWS-Security-Groups-Rules)
 + [Pre-requisites](#Pre-requisites)
@@ -29,7 +29,7 @@ AWS Security Groups are a vital component of AWS's network security and cloud da
 Security groups operate at the instance level, meaning that they define rules that specify what traffic is allowed to reach the associated resources. These rules can be applied to both incoming and outgoing traffic, providing a granular way to manage access to your AWS resources.
 
 ***
-## How Do AWS Security Groups Work?
+## How Do AWS Security Groups Work
 
 Here's a simplified breakdown of the process:
 
