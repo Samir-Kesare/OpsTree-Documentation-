@@ -8,8 +8,8 @@
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#introduction)
 - [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#pre-requisites)
 - [Setup Security Group for Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#setup-security-group-for-redis-instances)
-- [In all my Redis Instances, I have set the following Inbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#in-all-my-redis-instances-i-have-set-the-following-inbound-rules)
-- [In all my Redis Instances, I have set the following Outbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#in-all-my-redis-instances-i-have-set-the-following-outbound-rules)
+- [Inbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#in-all-my-redis-instances-i-have-set-the-following-inbound-rules)
+- [Outbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#in-all-my-redis-instances-i-have-set-the-following-outbound-rules)
 - [Conclusion](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#conclusion)
 - [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#contact-information)
 - [Resources and References](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#resources-and-references)
@@ -44,7 +44,7 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
     4. Source: The source of the traffic (e.g., an IP address, another security group).
 **Outbound Rules:** Define rules to allow outbound traffic. By default, outbound traffic is allowed to all destinations. 
 
-# In all my [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md), I have set the following Inbound Rules
+# Inbound Rules
 
 | Rule                 | Port(s)   | Protocol | Source                        |
 |----------------------|-----------|----------|-------------------------------|
@@ -54,7 +54,7 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 
 ![Untitled design (7)](https://github.com/CodeOps-Hub/Documentation/assets/156056460/1e9e5aa9-d0a5-4ab3-99bf-67cb5ed580cd)
 
-# In all my [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md), I have set the following Outbound Rules
+# Outbound Rules
 
 | Outbound Rule        | Port/Protocol | Destination       |
 |----------------------|---------------|-------------------|
