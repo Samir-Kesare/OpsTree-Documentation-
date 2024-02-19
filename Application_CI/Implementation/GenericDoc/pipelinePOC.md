@@ -9,11 +9,12 @@
 
 1. [Introduction](#Introduction)
 2. [Prerequisites](#Prerequisites)
-3. [Generate Personal Access Token(PAT)](#generate-personal-access-tokenpat)
-4. [Add Credentials in Jenkins](#Add-Credentials-in-Jenkins)
-5. [Create Pipeline using Jenkinsfile](#Create-Pipeline-using-Jenkinsfile)
-6. [Contact Information](#Contact-Information)
-7. [References](#References)
+3. [Flow Diagram](#Flow-Diagram)
+4. [Generate Personal Access Token(PAT)](#generate-personal-access-tokenpat)
+5. [Add Credentials in Jenkins](#Add-Credentials-in-Jenkins)
+6. [Create Pipeline using Jenkinsfile](#Create-Pipeline-using-Jenkinsfile)
+7. [Contact Information](#Contact-Information)
+8. [References](#References)
 ***
 
 ## Introduction
@@ -27,6 +28,9 @@ In this document we will see how to integrate _**Jenkins**_  with _**Jenkinsfile
 > [!Important]
 > I have installed the plugin bundle provided by Jenkins during setup. If you have not done the same, you may encounter plugin errors.
 
+***
+## Flow Diagram
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/76bc9c27-79b5-459c-ad0a-7c1e5f32bd53)
 ***
 ## Generate Personal Access Token(PAT)
 ### Step 1 - Go to your Github profile
