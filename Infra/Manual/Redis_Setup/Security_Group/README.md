@@ -25,6 +25,10 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 |--------------|
 | AWS Account  |
 
+# Flow Diagram 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/fe27182d-fa1a-4eb1-8acc-97e8d18ae781)
+***
+
 # Setup Security Group for [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md)
  
 - Creating a security group in AWS involves several steps. Security groups act as virtual firewalls that control inbound and outbound traffic for EC2 instances. Here's a step-by-step guide on how to create a security group in the AWS Management Console:
