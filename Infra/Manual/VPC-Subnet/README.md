@@ -1,4 +1,4 @@
-# Create VPC and subnets for Dev Environment
+# Create VPC and Subnets for Dev Environment
 
 | **Author**           | **Created On** | **Last Updated** | **Document Version** |
 | -------------------- | -------------- | ---------------- | -------------------- |
