@@ -36,6 +36,11 @@ So, with Redis Cluster, you get the ability to:
 | Security Protocol | 
 |-------------------|
 | [Security Group](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)   | 
+***
+
+# Flow Diagram 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/7b9c4ce0-2fd6-4673-b59b-ef74adf0e5f2)
+***
 
 # Setup Redis Manually
 ***
