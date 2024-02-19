@@ -10,7 +10,9 @@
 ***
 ## Table of Contents
 + [Introduction](#Introduction)
-+ [Why](#Why)
++ [How Do AWS Security Groups Work?](#How-Do-AWS-Security-Groups-Work?)
++ [Why Use Security Group](#Why-Use-Security-Group)
++ [AWS Security Groups Rules](#AWS-Security-Groups-Rules)
 + [Pre-requisites](#Pre-requisites)
 + [Setup](#Setup)
 + [Conclusion](#Conclusion)
@@ -20,7 +22,7 @@
 ***
 ## Introduction
 
-<img width="300" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/2398c807-5b80-43d2-8a3f-52fce1781f82"> 
+<img width="300" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/722e1aca-906a-48cd-a904-b4bc2b4d3394"> 
 
 AWS Security Groups are a vital component of AWS's network security and cloud data security. They act as a virtual firewall that controls inbound and outbound traffic to and from AWS resources. Each AWS resource, such as Amazon Elastic Compute Cloud (EC2) instances or Relational Database Service (RDS) instances, can be associated with one or more security groups.
 
@@ -35,7 +37,16 @@ Here's a simplified breakdown of the process:
 
 * **Outbound Traffic :** Outbound traffic from an AWS resource is also controlled by the security group's rules. It follows the same principle: traffic is allowed or denied based on the rules defined for outbound traffic.
 ***
-## Why 
+## Why Use Security Group
+
+| Reasons to Use Security Groups in AWS                                              | Description                                                                                                                                                      |
+|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Controlled Access**                                                                   | Security Groups act as virtual firewalls, controlling inbound and outbound traffic to AWS resources. They allow you to define which traffic is allowed or denied.  |
+| **Granular Security**                                                                   | You can specify security group rules at the port level and for specific IP ranges or other security groups, enabling precise control over access to resources.       |
+| **Dynamic Adaptation**                                                                  | Security Groups can be updated in real-time, enabling quick adjustments to changing security requirements or responses to emerging threats.                         |
+| **Scalability and Flexibility**                                                         | Security Groups can scale with your infrastructure and easily be applied to new resources or modified, providing flexibility without compromising security.           |
+| **Centralized Management**                                                              | They can be managed centrally through the AWS Management Console, CLI, or API, ensuring consistent administration and configuration across your AWS environment.        |
+
 
 ***
 ## AWS Security Groups Rules
