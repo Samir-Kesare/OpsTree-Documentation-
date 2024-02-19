@@ -17,6 +17,7 @@
 + [Why use src folder structure in a Jenkins shared library](#why-use-src-folder-structure-in-a-jenkins-shared-library)
 + [Flow Diagram](#flow-diagram)
 + [Pre-requisites](#pre-requisites)
++ [Runtime Pre-requisites](#pre-requisites)
 + [Steps to run Pipeline](#steps-to-run-pipeline)
 + [HTML Report](#html-report)
 + [Jenkinsfile](#jenkinsfile)
@@ -61,14 +62,14 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 ***
 
-## Prerequisites
+## Pre-requisites
 
 | Tool | Description |
 | ---- | ----------- |
 | Jenkins(2.426.3) | To build our pipeline |
 
 
-## Runtime Prerequisites
+## Runtime Pre-requisites
 
 |Language / Dependency|Description            |
 |---------------------|-----------------------|
