@@ -4,6 +4,10 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  13 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/f1234fc1-cc02-495e-8cd7-756a11548bb8)
+
+
 # Table of Contents
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#introduction)
 - [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md#pre-requisites)
