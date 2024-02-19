@@ -91,15 +91,15 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 **3. Configure Shared library in Jenkins**
 	
- 	Follow below document
+Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
+[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
 **4. Create and Configure your Jenkins Pipeline job**
 
-	Follow below document
+Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
+[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
 ![Screenshot from 2024-02-16 22-05-03](https://github.com/CodeOps-Hub/Documentation/assets/156056709/223fe9e6-be98-4ba6-bb94-9dd829682739)
 
 
