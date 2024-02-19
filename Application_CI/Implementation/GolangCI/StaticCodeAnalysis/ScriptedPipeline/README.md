@@ -10,6 +10,7 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 **For more information visit the below document link:**
 
 [\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md)
+
 [\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md )
 
 # Pre-requisites
