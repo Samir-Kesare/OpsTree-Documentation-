@@ -14,7 +14,7 @@
 + [Why Use Security Group](#Why-Use-Security-Group)
 + [AWS Security Groups Rules](#AWS-Security-Groups-Rules)
 + [Pre-requisites](#Pre-requisites)
-+ [Setup](#Setup)
++ [Steps to Create a Security Group](#Steps-to-Create-a-Security-Group)
 + [Conclusion](#Conclusion)
 + [Contact Information](#Contact-Information)
 + [Resources and References](#Resources-and-References)
@@ -64,9 +64,12 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
  * Active AWS Account.
 
 ***
-## Setup
+## Steps to Create a Security Group
 
 
+  <img width="760" length="100" alt="Security" src=""> 
+  <img width="760" length="100" alt="Security" src=""> 
+  <img width="760" length="100" alt="Security" src=""> 
   <img width="760" length="100" alt="Security" src=""> 
 
 
