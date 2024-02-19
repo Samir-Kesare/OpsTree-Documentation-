@@ -23,6 +23,7 @@
 
 # Introduction
 
+This Proof of Concept (PoC) documentation aims to provide a comprehensive guide for setting up and testing OpenVPN on an Ubuntu Server environment. OpenVPN is a widely-used open-source VPN (Virtual Private Network) solution known for its robust security features and flexibility. 
 
 ***
 
@@ -43,16 +44,24 @@
 
 # Conclusion
 
+In conclusion, this Proof of Concept (PoC) documentation has provided a detailed overview of deploying OpenVPN on Ubuntu Server for establishing secure remote access. Through the installation and configuration steps outlined in this documentation, users can successfully set up a functional OpenVPN server and initiate secure VPN connections.
 
 ***
 
 # Contact Information
 
+| **Name** | **Email Address** |
+| -------- | ----------------- |
+| **Shreya Jaiswal** | shreya.jaiswal.snaatak@mygurukulam.co |
 
 ***
 
 # References
 
+| **Source** | **Description** |
+| ---------- | --------------- |
+| [Link](https://www.youtube.com/watch?v=jmTtvxgspbk) | Video Reference for OpenVPN Setup |
+| [Link](https://surfshark.com/blog/what-is-openvpn) | Reference Link for understanding the concept of OpenVPN |
 
 
 
