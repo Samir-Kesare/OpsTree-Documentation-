@@ -83,48 +83,30 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 ***
 # Steps to run Pipeline
 
-**1. Including Spotbugs Plugin in pom.xml**
-
-To include the Spotbugs plugin in the `pom.xml` file, follow these steps:
-
-* Add the Spotbugs-maven-plugin within the reporting section.
-* Ensure that running `mvn site` will generate the Spot Bugs report.
-
-For detailed instructions, please refer to the [Proof of Concept (POC) documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md).
-
-**2. Configure Maven tool in Jenkins**
-
-Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/d9ff8a0d-900a-4e4b-ac68-34507ef3348b)
-
-
-
-**3. Configure Shared library in Jenkins**
+**1. Configure Shared library in Jenkins**
 	
 Follow below document
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
-**4. Create and Configure your Jenkins Pipeline job**
+**2. Create and Configure your Jenkins Pipeline job**
 
 Follow below document
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
-![Screenshot from 2024-02-16 22-05-03](https://github.com/CodeOps-Hub/Documentation/assets/156056709/223fe9e6-be98-4ba6-bb94-9dd829682739)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/a802e7f1-4b54-430c-90a0-f47cce0906ce)
 
 
 **5. Now Build your Pipeline**
 
-![Screenshot from 2024-02-16 22-24-40](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e5391960-ff4c-4f6e-9274-b4ff2321da90)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/f94a20c2-d0d5-4a30-9eb6-bb35a872873a)
 
 # Console Output:
 
 Based on the console output provided below, we can infer that there are a few bugs present
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/be56255c-ccd9-4c8a-b6c3-aa69a638e643)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/07ef4108-0690-4313-aaa0-4d00b3c32e0a)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e5ebe3b1-04c0-4533-863c-26316979dfa1)
 
 
 
@@ -132,99 +114,107 @@ Based on the console output provided below, we can infer that there are a few bu
 
 # HTML Report
 
- * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/spotbugHtmlReports/spotbugs.html)
+ * Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Static%20Code%20Analysis/Scripted%20Pipeline/pylint.log)
 
 ***
 # Jenkinsfile
 
-  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/BugAnalysis/Jenkinsfile)
+  * [**Jenkinsfie**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Python/StaticCodeAnalysis/Jenkinsfile)
 
  ```shell
-@Library("my-shared-library") _
-
-def javaBugAnalysis = new org.avengers.template.java.javaBugAnalysis()
+@Library('snaatak-p7') _
+def codeAnalysis = new org.avengers.template.python.PythonStaticCodeAnalysis()
 
 node {
     
-    def url = 'https://github.com/Parasharam-Desai/salary-api.git'
+    def url = 'https://github.com/CodeOps-Hub/attendance-api.git'
+    def creds = 'Attendance-creds'
     def branch = 'main'
-    
-    javaBugAnalysis.call(branch: branch,url: url)
+       
+    codeAnalysis.call(url, creds, branch)
     
 }
         
 ```
 # Shared Library
 
-[**gitCheckout.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/vars/gitCheckout.groovy)
+[**GitCheckoutPrivate.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/GitCheckoutPrivate.groovy)
 
   ```shell
-// Checkout Github Public Repository
-def call(Map config = [:]) {
-            checkout scm: [
-                $class: 'GitSCM',
-                branches: [[name: config.branch]],
-                userRemoteConfigs: [[url: config.url]]
-            ]
-}
+package org.avengers.common
 
-```
-[**bug.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/bugAnalysis/bug.groovy)
-
- ```shell
-
-package org.avengers.java.bugAnalysis
-
-def call(){           
-        stage("Bug Analysis ") {
-                script {
-                    sh 'mvn compile'
-                    sh 'mvn spotbugs:spotbugs'
-                    sh 'mvn site'
-                }
+def call(String url, String creds, String branch) {
+    stage('Clone') {
+        script {
+            git branch: "${branch}", credentialsId: "${creds}", url: "${url}"
         }
+    }
 }
 
 ```
-
-[**publishHtml.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/bugAnalysis/publishHtml.groovy)
+[**virtualEnv.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/python/staticCodeAnalysis/virtualEnv.groovy)
 
  ```shell
 
-package org.avengers.java.bugAnalysis
+package org.avengers.python.staticCodeAnalysis
 
 def call() {
-          stage('Publish HTML Report') {
-                      publishHTML([
-                          allowMissing: false,
-                          alwaysLinkToLastBuild: true,
-                          keepAll: true,
-                          reportDir: 'target/site',
-                          reportFiles: 'spotbugs.html',
-                          reportName: 'SpotBugs Report'
-                      ])
-                  }
-              }
+stage('Create Virtual ENV') {
+                    script {
+                    sh 'python3 -m venv myenv'
+                    sh '. myenv/bin/activate'
+                }
+            }
+          }
+        
+
 ```
-[**javaBugAnalysis.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaBugAnalysis.groovy)
+
+[**staticCodeAnalysis.groovy**](https://github.com/CodeOpsHub/SharedLibrary/blob/main/src/org/avengers/python/staticCodeAnalysis/staticCodeAnalysis.groovy)
+
+ ```shell
+
+package org.avengers.python.staticCodeAnalysis
+
+def call() {
+stage('Static Code Analysis') {
+            
+                script {
+                    sh 'pylint router/ client/ models/ utils/ app.py | tee pylint.log'
+                }
+            }
+        }
+    
+```
+[**PythonStaticCodeAnalysis.groovy**](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/python/PythonStaticCodeAnalysis.groovy)
 
 ```shell
-package org.avengers.template.java
+package org.avengers.template.python
 
-import org.avengers.common.gitCheckout
-import org.avengers.common.cleanWorkspace
-import org.avengers.java.bugAnalysis.*
+import org.avengers.common.*
+import org.avengers.python.staticCodeAnalysis.*
 
-def call(Map config = [:]){
-    def gitCheckout = new gitCheckout()
-    def javaBugAnalysis = new bug()
-    def javaPublishHtml = new publishHtml()
-    def cleanWorkspace = new cleanWorkspace()
-
-    gitCheckout.call(branch: config.branch, url: config.url  )
-    javaBugAnalysis.call()
-    javaPublishHtml.call()
-    cleanWorkspace.call()
+def call(String url, String creds, String branch) {
+  
+    gitCheckoutPrivate = new GitCheckoutPrivate()
+    virtual = new virtualEnv()
+    dep = new dependencies()
+    code = new staticCodeAnalysis()
+    arch = new ArchiveArtifacts() 
+  
+    
+  
+  try {
+    gitCheckoutPrivate.call(url, creds, branch)
+    virtual.call()
+    dep.call()
+    code.call()
+    } catch (Exception e) {
+        // Handle any exceptions during static code analysis
+        echo "An error occurred during static code analysis: ${e.message}"
+    } finally {
+        arch.call()
+    }
   
 }
 ```
@@ -237,7 +227,7 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 
 |    Name                                   | Email Address                    |
 |-------------------------------------------|----------------------------------|
-| **[Parasharam Desai](https://github.com/Parasharam-Desai)** | parasharam.desai.snaatak@mygurukulam.co |
+| **[Vikram Bisht](https://github.com/vikram445)** | Vikram.bisht@opstree.com |
 
 ***
 # Resources and References
@@ -245,6 +235,4 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 |       **Description**                                   |           **References**                    |
 |---------------------------------------------------------|-----------------------------------------------|
 | Jenkins Pipeline     | [Link](https://www.jenkins.io/doc/book/pipeline/) |
-| Bug Analysis Setup via Shared Library* |[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)|
-| Bug Analysis POC |[Link ](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Bug%20Analysis/POC.md)|
 |Configure your Jenkins Pipeline job|[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)|
