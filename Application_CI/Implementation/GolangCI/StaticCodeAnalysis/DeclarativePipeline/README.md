@@ -65,12 +65,11 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 
 
 
-## Contact Information
+# Contact Information
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
 
-|     Name         | Email  |
-| -----------------| ------------------------------------ |
-| Harshit Singh    | harshit.singh.snaatak@mygurukulam.co |
-***
 
 ## References
 
