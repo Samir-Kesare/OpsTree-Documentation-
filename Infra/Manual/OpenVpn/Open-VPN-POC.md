@@ -51,6 +51,17 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 <img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bdc48239-0f9a-40f5-b24c-bb95e6659514">
 
+| **Resource** | **Description** |
+| ------------ | --------------- |
+| **AWS Cloud** | Choosed AWS Cloud for setup |
+| **Region** | Selected Mumbai Region(ap-south-1) |
+| **VPC** | Selected Management VPC of CIDR `172.31.0.0/16` |
+| **Public Subnet** | Selected Public Subnet with CIDR `172.31.0.0/20` |
+| **Route Table** | Created `Route Table` and associated it with `Public Subnet` |
+| **Internet Gateway** | Created `Internet Gateway` and attached with `Route Table` |
+| **Security Group** | Created `Security Group` |
+| **EC2 Instance** | Created `EC2 Instance` of name `OpenVPN-Server` |
+
 ***
 
 # OpenVPN Setup
