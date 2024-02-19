@@ -29,7 +29,8 @@ Under the "Compute" section, select EC2.
 
 In the EC2 Dashboard, locate and click on Security Groups in the left navigation pane.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/99a94659-153a-4500-b196-b06b6ab196b2)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/54e01965-722a-4db3-a66a-cd15f0fac52b)
+
 
 
 **Choose or Create a Security Group**
