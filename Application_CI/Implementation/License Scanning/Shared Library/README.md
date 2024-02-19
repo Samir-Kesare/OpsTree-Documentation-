@@ -75,19 +75,21 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 * Build
   
-  ![Screenshot 2024-02-19 165258](https://github.com/CodeOps-Hub/Documentation/assets/156056344/9422562c-40a2-4ea8-963d-400502a00b0a)
+ ![Screenshot 2024-02-19 174751](https://github.com/CodeOps-Hub/Documentation/assets/156056344/0baf48db-dc07-47bc-b9bc-529b261b7885)
+
 
 * Console Output:
 
-  ![Screenshot 2024-02-19 165317](https://github.com/CodeOps-Hub/Documentation/assets/156056344/b376763a-e72b-4151-912c-27d0c489520c)
+ ![Screenshot 2024-02-19 174735](https://github.com/CodeOps-Hub/Documentation/assets/156056344/97671a20-c24c-4b8f-a8f0-91fb869ad51b)
 
 
 
 > [!NOTE]
 > **Changes**
 > *  **Pipeline name**       **-**  `License Scanning via Shared Library`
-> *  **Jenkinsfile Path**    **-**  `SharedLibrary/License_Scanning/Jenkinsfile`  
-![Screenshot 2024-02-19 165435](https://github.com/CodeOps-Hub/Documentation/assets/156056344/59ad509b-4b93-4a9c-85a7-c7e720e52b18)
+> *  **Jenkinsfile Path**    **-**  `SharedLibrary/License_Scan/Jenkinsfile`  
+![Screenshot 2024-02-19 174826](https://github.com/CodeOps-Hub/Documentation/assets/156056344/8614679e-e9eb-441e-9b1a-6dd5feef0f68)
+
 
 ***
 
@@ -211,10 +213,10 @@ The Jenkins Shared Library streamlines CI/CD processes by allowing teams to shar
 | ---------------- | ------------ |
 | About Jenkins Shared Library (Generic Document) | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md) |
 | POC Generic Document | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md) |
-| Jenkinsfile | [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Cred_Scanning/Jenkinsfile) |
-| Manual Setup | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/Credentials%20Scanning/Credential%20Scanning%20via%20GitLeaks%20POC.md) |
-| Manual Pipeline | [Declarative](https://github.com/avengers-p7/Documentation/tree/main/Application_CI/Implementation/Credential%20Scanning/Declarative%20Pipeline) & [Scripted](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Credential%20Scanning/Scripted%20Pipelines/README.md) |
-| License Scanning | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/Credentials%20Scanning/README.md) |
+| Jenkinsfile | [Link](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/License_Scan/Jenkinsfile) |
+| Manual Setup | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/License%20Scanning/License%20Scanning%20via%20FOSSA%20POC.md) |
+| Manual Pipeline | [Declarative](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/License%20Scanning/Declarative%20Pipeline/README.md) & [Scripted](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/License%20Scanning/Scripted%20Pipeline/README.md) |
+| License Scanning | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/License%20Scanning/README.md) |
 
 ***
 
