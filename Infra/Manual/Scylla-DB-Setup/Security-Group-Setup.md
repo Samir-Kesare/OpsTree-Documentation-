@@ -9,7 +9,7 @@
 This document provides a guide for setting up security groups for Scylla-DB. By configuring inbound and outbound rules, you can control network traffic to and from your Scylla-DB instances, enhancing the security of your infrastructure.
 
 
-## Prerequisites
+## Pre-requisites
 * Access to the AWS Management Console or AWS CLI with appropriate permissions.
 
 * Understanding of your application's network requirements.
