@@ -87,8 +87,9 @@ sudo apt upgrade -y
 ### Step-2  We'll use this script to install and configure the OpenVPN server. To get the script, run the following command mentioned below.
 
 ```shell
-
+wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
 ```
+<img width="943" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a12347e5-1b61-4246-bf77-c3223ef5255c">
 
 ***
 
