@@ -49,14 +49,29 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 * Click the Edit Inbound Rules button.
 
+ | Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|----------|---------------------|-------------------|---------------------|
+| Scylla-sg    | 22                | 20.0.0.0/28           | 
+| Scylla-sg   |  9042               | Backend-sg   | 
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
+
+
+
 **Step-6 Define Outbound Rules**
 
 * Click on the Outbound Rules tab.
 
 * Click the Edit Outbound Rules button.
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
+
+| Security Group Name | Outbound Rule Port | Outbound Rule Source |
+|----------|---------------------|-------------------|---------------------|
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1d86e360-8cd3-4edd-959b-fbab18a4e0b2)
+
+
+
 
 
 
