@@ -2,21 +2,62 @@
 
 | **Author**           | **Created On** | **Last Updated** | **Document Version** |
 | -------------------- | -------------- | ---------------- | -------------------- |
-| **Parasharam Desai** | 29-01-2024     | 19-02-2024       | V1.1                 |
+| **Parasharam Desai** | 19-02-2024     | 19-02-2024       | V1.1                 |
 
 ## Introduction
 
 This document provides a guide for setting up security groups for Scylla-DB. By configuring inbound and outbound rules, you can control network traffic to and from your Scylla-DB instances, enhancing the security of your infrastructure.
 
-## Inbound Rules
 
+## Prerequisites
+* Access to the AWS Management Console or AWS CLI with appropriate permissions.
+
+* Understanding of your application's network requirements.
+
+## Steps
+**Access the AWS Management Console**
+
+  Navigate to the AWS Management Console and sign in to your AWS account.
+
+**Open the EC2 Dashboard**
+
+In the AWS Management Console, go to the Services drop down.
+
+Under the "Compute" section, select EC2.
+
+**Navigate to Security Groups**
+
+In the EC2 Dashboard, locate and click on Security Groups in the left navigation pane.
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/99a94659-153a-4500-b196-b06b6ab196b2)
+
+
+**Choose or Create a Security Group**
+
+* Select an existing security group or create a new one by clicking the Create Security Group button.
+
+* Provide a name, description, and VPC assignment for your new security group.
+
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/82f6ed9b-8ea9-4092-9e3a-db318d806168)
+  
+
+**Define Inbound Rules**
 Attached the backend security group as the source for the Scylla-Security group:
 
-![Inbound Rules Image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/611311ca-49c4-4589-8d52-d0807db6a0e3)
+* Click on the Inbound Rules tab.
 
-## Outbound Rules 
+* Click the Edit Inbound Rules button.
 
-![Outbound Rules Image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/9a6babb6-5ed6-4f32-a4a3-90bc3facdecb)
+**Define Outbound Rules**
+
+* Click on the Outbound Rules tab.
+
+* Click the Edit Outbound Rules button.
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1d86e360-8cd3-4edd-959b-fbab18a4e0b2)
+
+
 
 ---
 
