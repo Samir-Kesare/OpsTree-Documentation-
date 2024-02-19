@@ -37,6 +37,9 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 - Select Pipeline script from SCM.
 - Give required repo url and enter your credentials.
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/15895918-649d-49fd-9fd7-95148f060ac5)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/b3933591-d583-4cee-a067-b8a6f2597a42)
 
 **Step-3** Save the Configuration
 
@@ -63,7 +66,8 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 # Resources and References
 | Description                                   | References                                       |
 | --------------------------------------------  | -------------------------------------------------|
-|  Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
+| Commit Sign-off | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/CommitSignOff.md |
+| Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
 | Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
 | Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
 | Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
