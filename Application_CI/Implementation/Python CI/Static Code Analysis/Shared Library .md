@@ -97,13 +97,13 @@ Follow below document
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/a802e7f1-4b54-430c-90a0-f47cce0906ce)
 
 
-**5. Now Build your Pipeline**
+**3. Now Build your Pipeline**
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/f94a20c2-d0d5-4a30-9eb6-bb35a872873a)
 
 # Console Output:
 
-Based on the console output provided below, we can infer that there are a few bugs present
+Based on the console output provided below, we can see our pipeline has given us code snalysis report
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/07ef4108-0690-4313-aaa0-4d00b3c32e0a)
 
