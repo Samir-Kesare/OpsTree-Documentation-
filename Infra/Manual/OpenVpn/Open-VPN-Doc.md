@@ -25,7 +25,7 @@
 ***
 
 > [!Note]
-> **There is a separate doc for VPN, if you want to explore, click this [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/OpenVpn/VPN.md)**
+> **There is a separate doc for VPN, if you want to explore, click this [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/OpenVpn/VPNIntroduction.md)**
 
 # Introduction
 
