@@ -45,23 +45,24 @@ A security group controls the traffic that is allowed to reach and leave the res
 
 ***
 ## Setup
-**Step-1 Access the AWS Management Console**
+
+**Step-1** Access the AWS Management Console
 
 Navigate to the AWS Management Console and sign in to your AWS account.
 
-**Step-2 Open the EC2 Dashboard**
+**Step-2** Open the EC2 Dashboard
 
 In the AWS Management Console, go to the Services drop down.
 
 Under the "Compute" section, select EC2.
 
-**Step-3 Navigate to Security Groups**
+**Step-3** Navigate to Security Groups
 
 In the EC2 Dashboard, locate and click on Security Groups in the left navigation pane.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/54e01965-722a-4db3-a66a-cd15f0fac52b)
 
-**Step-4 Choose or Create a Security Group**
+**Step-4** Choose or Create a Security Group
 
 * Select an existing security group or create a new one by clicking the Create Security Group button.
 
@@ -70,7 +71,7 @@ In the EC2 Dashboard, locate and click on Security Groups in the left navigation
   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/82f6ed9b-8ea9-4092-9e3a-db318d806168)
   
 
-**Step-5 Define Inbound Rules**
+**Step-5** Define Inbound Rules
 Attached the backend security group as the source for the Scylla-Security group:
 
 * Click on the Inbound Rules tab.
@@ -84,7 +85,7 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d0c7fb00-c625-4547-aef3-81449b94ee63)
 
-**Step-6 Define Outbound Rules**
+**Step-6** Define Outbound Rules
 
 * Click on the Outbound Rules tab.
 
