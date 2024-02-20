@@ -39,20 +39,20 @@
 
 | Name      | Date    | Reason      | Count| Amount |
 | ----      | ----    | ------      | ---- | ----   |
-| Shantanu  | 6-7  Feb   | Status mail | 2    | 10     |
-| Nidhi     | 7-8 Feb | Status mail | 1    | 10     |
-| vikram    | 6 Feb   | Status Mail | 1    | 05     |
-| Vidhi     | 6-7 Feb | Status Mail | 2    | 10     |
-| Sameer    | 6 Feb,   | Staus mail  | 2    | 05     |
-| Date      | 13 Feb   |  |     |      |
-| Sameer    | 13 Feb   | Staus mail,Morning call  | 2    |   10   |
-| Khushi    | 13 Feb   | status mail | 1    |  05    |
-| Nidhi    | 13 Feb   | Morning Call,status mail | 1    |  05    |
-| Date      | 14 Feb   | 
+| Shantanu  | **6-7  Feb**   | Status mail | 2    | 10     |
+| Nidhi     | **7-8 Feb** | Status mail | 1    | 10     |
+| vikram    | **6 Feb**   | Status Mail | 1    | 05     |
+| Vidhi     | **6-7 Feb** | Status Mail | 2    | 10     |
+| Sameer    | **6 Feb**  | Staus mail  | 2    | 05     |
+| Date      | **13 Feb**  |  |     |      |
+| Sameer    |   | Staus mail,Morning call  | 2    |   10   |
+| Khushi    |  | status mail | 1    |  05    |
+| Nidhi    |  | Morning Call,status mail | 1    |  05    |
+| Date      | **14 Feb**   | 
 | Nidhi      | |Status Mail(Blog Link) |  1   |   05   |
-| Date      | 19 Feb   | 
+| Date      | **19 Feb**   | 
 | Shikha      |   | Camera Off|  1   |   05   |
-| Date      | 20 Feb   | 
+| Date      | **20 Feb**   | 
 | Nidhi      |   |Status Mail|  1   |   05   |
 
 
