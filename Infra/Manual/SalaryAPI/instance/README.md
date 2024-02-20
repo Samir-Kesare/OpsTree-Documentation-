@@ -15,7 +15,7 @@
 + [Steps to Launch an Ec2 Instance](#Steps-to-Launch-an-Ec2-Instance)
 + [Conclusion](#Conclusion)
 + [Contact Information](#Contact-Information)
-+ [Resources and References](#Resources-and-References)
++ [References](#References)
   
 ***
 ## Introduction
@@ -53,8 +53,9 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
 
 ***
 ## Pre-requisites
+* Access to the AWS Management Console or AWS CLI with appropriate permissions.
 
-  * Active AWS Acount.
+* Understanding of your application's [network requirements](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md).
 
 ***
 ## Steps to Launch an Ec2 Instance
@@ -79,7 +80,7 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/929ae488-96dc-4ba3-b303-c1a0f9c314ed)
 
   
-  **Step-5 :** 
+  **Step-6 :** Select Instance type, Key Pair and Network 
   - Under Instance type, from the Instance type list,
   - Slect an existing or create a new key pair with an appropriate name.
   - In the network settings, select a VPC; in this case, we will select `Dev-VPC`.
@@ -87,12 +88,22 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
   
   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9cbf3a1-3a50-4de4-9f91-b0a6fea36ac4)
 
-  **Step-6 :** Navigate to the security group settings, Choose your security group .eg `Frontend-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we have successfully launched the instance.
+  **Step-7 :** Navigate to the security group settings, Choose your security group .eg `Frontend-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we      have successfully launched the instance.
+
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/72ad719e-ffc2-49a6-8b42-a3e09a32c3a5)
+
+  **Step-8 :** A confirmation page lets you know that your instance is launching. Choose **View all instances** to close the confirmation page and return to the console.
+
+  On the **Instances** screen, you can view the status of the launch. It takes a short time for an instance to launch. 
+
+  It can take a few minutes for the instance to be ready for you to connect to it. Check that your instance has passed its status checks; you can view this information in the **Status check**     
+  column.
   
-<img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7ca1d3ab-cb87-4f00-8dc0-f4ae4207ea52"> 
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/bfb5ee1b-70ca-4327-be01-543c3d3764fd)
+
 
 > [!NOTE]
-> * After successfully launching the instance follow this [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Frontend/README.md) to setup Frontend-API.
+> * After successfully launching the instance follow this [**Salary API Setup Document**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Salary%20API/README.md).
 
 ***
 ## Conclusion
@@ -113,7 +124,4 @@ Amazon EC2 offers customizable virtual servers (instances) in the cloud. Users c
 | --------------------------------------------  | -------------------------------------------------|
 | Documentation Template | https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template |
 | Dev Infra Design      | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md |
-| Security Group | https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html |
-
-
-## Setup
+| Setup Instance | https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html |
