@@ -66,7 +66,7 @@ Setting up networking in a cloud environment, such as AWS, involves several esse
 
 * Select "Actions" and then click on "Attach VPC."
 * Choose the desired VPC, such as the Dev VPC, from the available options.
-* 
+  
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/07f67bc6-dcfa-4c3a-b510-789c06c1cb21)
 
 
@@ -119,6 +119,7 @@ Setting up networking in a cloud environment, such as AWS, involves several esse
 
 
 # Associate Subnets
+
 * In the "Subnet Associations" tab, click on "Edit subnet associations."
 
 * Associate the route table with the desired subnets. then click on Save association
