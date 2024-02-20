@@ -10,9 +10,8 @@
 1. [Introduction](#introduction)
 2. [Pre-requisites](#pre-requisites)
 3. [Steps](#steps)
-4. [Output](#output)
-5. [Contact Information](#contact-information)
-6. [Resources and References](#resources-and-references)
+4. [Contact Information](#contact-information)
+5. [Resources and References](#resources-and-references)
 
 
 ## Introduction
