@@ -23,34 +23,30 @@
 ***
 ## Introduction
 
-Declarative Pipeline is a streamlined way to define Jenkins pipelines using a structured syntax within a pipeline {} block. It offers simplicity, readability, and built-in directives for defining stages, steps, and more. It integrates well with the Jenkins UI, provides pipeline visualization, and supports pipeline templates for code reuse. It's ideal for teams looking for a straightforward approach to CI/CD pipeline configuration. Cilck [**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)
+. Click [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)
 
 ***
-## Why Declarative Pipeline
-| Aspect          | Description                                                                                               |
-|-----------------|-----------------------------------------------------------------------------------------------------------|
-| **Organization**    | Markdown tables organize pipeline stages, descriptions, and commands into neat columns for easier readability and understanding. |
-| **Readability**     | Condenses verbose Declarative Pipeline syntax, particularly beneficial for complex pipelines, enhancing readability and comprehension. |
-| **Documentation**   | Integrates pipeline configuration seamlessly into project documentation using Markdown, providing a comprehensive overview of CI/CD processes. |
-| **Version Control** | Markdown files are version-controlled with tools like Git, enabling tracking of pipeline changes, revision history, and collaboration. |
-| **Accessibility**   | Markdown files are viewable and editable with basic text editors or online Markdown editors, facilitating review and contribution by team members, including non-technical stakeholders. |
-| **Presentation**    | Markdown files can be rendered into multiple formats, including HTML, PDF, and slideshows, enabling formatted documents or presentations for sharing and presentation purposes. |
+## Declarative Pipeline
 
-***
+Declarative Pipeline in Jenkins offers a simplified and structured approach for defining CI/CD pipelines, using a human-readable syntax with predefined sections like pipeline, stages, and agent. It's designed to be easy to read and maintain, making it suitable for users without strong scripting skills. While it may be less flexible in terms of allowing complex scripting logic, it is a newer and more concise way to define Jenkins pipeline.
+
+**For more information visit the below document link:**
+
+[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md )
+
+
 ## Flow Diagram
 
-![Screenshot 2024-02-13 230840](https://github.com/avengers-p7/Documentation/assets/156056570/ada5121d-79a9-4aa7-bafa-fc6c0ec0ddc9)
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056570/e7037d9f-dbbd-403d-90ff-cd870b1a3391)
 
 ***
 ## Pre-requisites
 
 | Tool   | Description                          | 
 |--------|--------------------------------------|
-| OWASP ZAP | A tool for bug analysis in Python | 
+| OWASP ZAP (version: 2.14) | Tool required to perform DAST  | 
 | Jenkins | CICD Tool                          |  
-| JAVA    |                                    |
+| JRE (Java runtime environment     | Zap is coded in Java, and its fundamental operations require a Java runtime environment for execution.    |
+
 ***
 ## Setup
 
