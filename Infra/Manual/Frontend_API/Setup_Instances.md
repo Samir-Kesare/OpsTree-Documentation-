@@ -80,7 +80,13 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
 
 > [!Important]
 > * After configuring Load-Balancer, use the DNS of the load-balancer and hit in web browser, you wil see the  
-  UI of Frontend-API. [**DNS**]() 
+  UI of Frontend-API.
+> * Please note that before hitting the DNS, the machine active and `npm start` commands should be run. [**DNS**](http://dev-alb-1442510364.us-east-1.elb.amazonaws.com/)
+
+### After hitting the DNS
+
+<img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/29aac58d-cd9e-4955-8456-5f53abdbbf09"> 
+
 ***
 ## Conclusion
 
