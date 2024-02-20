@@ -12,7 +12,7 @@
 + [EC2 instance types](#EC2-instance-types)
 + [Why use AWS EC2 Instance](#Why-use-AWS-EC2-Instance)
 + [Pre-requisites](#Pre-requisites)
-+ [Setup](#Setup)
++ [Steps to Launch an Ec2 Instance](#Steps-to-Launch-an-Ec2-Instance)
 + [Conclusion](#Conclusion)
 + [Contact Information](#Contact-Information)
 + [Resources and References](#Resources-and-References)
@@ -49,26 +49,35 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
 
 ***
 ## Pre-requisites
-| **Pre-requisites** | **Version** |
-| ------------------ | ----------- |
+
   * Active AWS Acount.
-  * Completed Setup Vpc Infta .
 
 ***
-## Setup
-  **Step-1 :**
-  **Step-2 :**
-  **Step-3 :**
-  **Step-4 :**
-  **Step-5 :**
-  **Step-6 :**
-  **Step-7 :**
+## Steps to Launch an Ec2 Instance
 
-  <img width="760" length="100" alt="Instance" src=""> 
-  <img width="760" length="100" alt="Instance" src=""> 
-  <img width="760" length="100" alt="Instance" src=""> 
+  **Step-1 :** Go to the AWS console and sign into your account first.
+ 
+  **Step-2 :** After logging into the Amazon Management Console, visit the EC2 Dashboard .
+ 
+  **Step-3 :** Choose `Launch Instance` from the panel. 
 
+  <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a986a6cb-5628-4ae2-9719-2005b87471b6"> 
+  
+  **Step-4 :** Choose an appropriate name for the instance and choose Ubuntu AMI
 
+  <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/26221d54-fcd1-4aa0-98db-8e47f0d99edf">
+
+  **Step-5 :** Select the instance type as t2-micro. Generate a key pair with an appropriate name.In the network settings, pick a VPC; in this case, choose the `Dev-VPC`. Choose a subnet , preferably a `Frontend-Pvt-subnet`. Disable auto-assign IP.
+  
+  <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a13cbf60-6bf7-4f65-b3d9-dc95a7078d90"> 
+  
+  **Step-6 :** Navigate to the security group settings, Choose your security group .eg `Frontend-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we have successfully launched the instance.
+  
+<img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7ca1d3ab-cb87-4f00-8dc0-f4ae4207ea52"> 
+
+> [!NOTE]
+> * After successfully launching the instance follow this [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Frontend/README.md) to setup Frontend-API.
+  
 ***
 ## Conclusion
 
