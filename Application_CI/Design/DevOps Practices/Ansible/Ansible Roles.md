@@ -198,7 +198,6 @@ When creating Ansible roles, following best practices helps ensure your roles ar
 | **Best Practice** | **Description** |
 | ----------------- | --------------- |
 | Use ansible-galaxy init | When creating a new role, use the ansible-galaxy init command to set up the basic directory structure. This provides a standardized layout for your roles and includes directories for tasks, defaults, handlers, meta, templates, vars, and files. |
-| Organize tasks effectively | Break down tasks into smaller, modular components. Use separate task files within the tasks/ directory, and include them in the main tasks/main.yml file. This makes it easier to understand and maintain your role. |
 | Document your role | Include a README.md file in your role directory with information about the role's purpose, variables, dependencies, and usage. Documentation is crucial for users who may want to leverage or contribute to your role. |
 | Parameterize variables | Use the defaults/main.yml file to define default variables. Parameterizing your role makes it more flexible and allows users to customize the role's behavior by overriding these variables in their playbooks. |
 | Separate sensitive data | Avoid hardcoding sensitive information such as passwords or API keys directly into your roles. Instead, use Ansible Vault to encrypt sensitive data or prompt users for input during playbook execution. |
