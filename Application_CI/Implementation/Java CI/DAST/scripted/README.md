@@ -57,7 +57,7 @@ Scripted Pipeline uses a Groovy-based scripting syntax, where you write code dir
 
 2. **Build Pipeline**
 
-<img width="1090" alt="Screenshot 2024-02-20 at 6 51 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0d9eb3b2-a654-42ce-87cf-a8d04160697d">
+<img width="1032" alt="Screenshot 2024-02-20 at 9 50 35 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/6880b007-3e7f-40da-abc8-c7ab0a0cc0bb">
 
 ***
 ## Console Output
