@@ -64,9 +64,11 @@ So, with Redis Cluster, you get the ability to:
 
 | Rule                 | Port(s)   | Protocol | Source                        |
 |----------------------|-----------|----------|-------------------------------|
-| SSH                  | 22        | TCP      | 0.0.0.0/0                     |
-| Redis Default Port   | 6379      | TCP      | Custom from respective nodes  |
-| Redis Cluster Bus    | 16379     | TCP      | Custom from respective nodes  |
+| SSH                  | 22        | TCP      | 20.0.0.0/28                  |
+| Redis Default Port   | 6379      | TCP      | Backend-sg  |
+| Redis Default Port   | 6379      | TCP      | 10.0.1.0/24 |
+| Redis Cluster Bus Node to Node    | 16379     | TCP      | 10.0.1.0/24  |
+
 
 - Outbound Rules
 
