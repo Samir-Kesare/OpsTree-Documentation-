@@ -70,7 +70,7 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 
 <img width="963" alt="Screenshot 2024-02-20 at 4 44 57 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/fc69fe22-7e71-4374-8854-1be62891f0db">
 
-* HTML Report can be found [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/ZAP%20Report.html)
+* HTML Report can be found [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/declarative/ZAP%20Report.html)
 
 <img width="1160" alt="Screenshot 2024-02-20 at 5 01 40 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1948e7bc-46ad-4012-a4ce-4f003d111b67">
 
