@@ -23,6 +23,9 @@ In this document we will create a new Amazon EC2 instance running , and configur
 ### What
 An instance in Amazon EC2 is essentially a virtual server that users can create and manage within the AWS cloud. These instances are configurable with varying amounts of CPU, memory, storage, and networking resources, allowing users to tailor them to specific application requirements. Instances are launched from pre-configured Amazon Machine Images (AMIs), which serve as templates containing the necessary operating system and software configurations. Users can start, stop, terminate, and resize instances as needed, providing scalability and flexibility to accommodate changing workloads and demands. Instances play a vital role in enabling users to deploy and run their applications and services in a scalable, reliable, and cost-effective manner on the AWS platform.
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/3e1def3e-317b-46e5-8c18-fb5f5b3e0433)
+
+
 ***
 ## EC2 instance types
 
@@ -62,16 +65,28 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
  
   **Step-3 :** Choose `Launch Instance` from the panel. 
 
-  <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a986a6cb-5628-4ae2-9719-2005b87471b6"> 
-  
-  **Step-4 :** Choose an appropriate name for the instance and choose Ubuntu AMI
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/7e7c1c3b-624e-49ee-975b-99a3f154078a)
 
-  <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/26221d54-fcd1-4aa0-98db-8e47f0d99edf">
+  **Step-4 :** Under **Name and tags**, for **Name**, enter a descriptive name for your instance.
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/04a13c51-3270-4600-b9ee-2720fb1d9538)
 
-  **Step-5 :** Select the instance type as t2-micro. Generate a key pair with an appropriate name.In the network settings, pick a VPC; in this case, choose the `Dev-VPC`. Choose a subnet , preferably a `Frontend-Pvt-subnet`. Disable auto-assign IP.
+  **Step-5 :** Under Application and OS Images (Amazon Machine Image), do the following:
+
+  - Choose Quick Start, and then choose Amazon Linux. This is the operating system (OS) for your instance.
+
+  - From Amazon Machine Image (AMI), select an Amazon Machine Image (AMI).
+
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/929ae488-96dc-4ba3-b303-c1a0f9c314ed)
+
   
-  <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a13cbf60-6bf7-4f65-b3d9-dc95a7078d90"> 
+  **Step-5 :** 
+  - Under Instance type, from the Instance type list,
+  - Slect an existing or create a new key pair with an appropriate name.
+  - In the network settings, select a VPC; in this case, we will select `Dev-VPC`.
+  - Select a subnet , here `Backend-Pvt-subnet` and disable auto-assign IP.
   
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9cbf3a1-3a50-4de4-9f91-b0a6fea36ac4)
+
   **Step-6 :** Navigate to the security group settings, Choose your security group .eg `Frontend-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we have successfully launched the instance.
   
 <img width="760" length="100" alt="Instance" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7ca1d3ab-cb87-4f00-8dc0-f4ae4207ea52"> 
