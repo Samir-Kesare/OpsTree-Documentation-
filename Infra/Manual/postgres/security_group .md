@@ -62,7 +62,7 @@ Attached the backend security group as the source for the PostgreSQL-Security gr
 | Security Group Name                | Inbound Rule Port | Inbound Rule Source |
 |------------------------------------|-------------------|---------------------|
 | PostgreSQL Security Group          | 22                | 20.0.0.0/28         |
-| PostgreSQL Security Group          | 5432              | PostgreSQL-sg       |
+| PostgreSQL Security Group          | 5432              | Backend-sg       |
 
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
