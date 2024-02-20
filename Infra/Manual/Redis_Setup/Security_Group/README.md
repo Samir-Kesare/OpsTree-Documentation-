@@ -81,7 +81,7 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 |----------------------|---------------|-------------------|
 | Allow All Traffic    | All           | 0.0.0.0/0         |
 
-![Uploading image.png…]()
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/319655c1-5c3a-409d-852f-2d35384c2c12)
 
 
  # Conclusion
