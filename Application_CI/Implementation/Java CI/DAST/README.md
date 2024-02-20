@@ -1,7 +1,6 @@
 # Declarative Pipeline Java DAST
 
-![download](https://github.com/avengers-p7/Documentation/assets/156056570/a292f2dd-4795-4566-bfb6-014b634f76bf)
-
+<img width="668" alt="Screenshot 2024-02-20 at 5 00 24 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ca064fee-9fda-46b9-8073-9b3a4b87ad81">
 
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
@@ -60,83 +59,71 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 <img width="1243" alt="Screenshot 2024-02-20 at 2 33 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/548c6ae8-bf02-4b68-8e4e-1061c094513c">
 
+***
+## Console Output
+* Resultant output for ZAP attack
 
-### HTML Report
+<img width="965" alt="Screenshot 2024-02-20 at 4 46 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a71d40f8-6fb3-49e5-b467-413b562b5464">
 
-* Click [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/ZAP%20Report.html)
+* HTML file reports generated as `result.html`
+
+<img width="963" alt="Screenshot 2024-02-20 at 4 44 57 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/fc69fe22-7e71-4374-8854-1be62891f0db">
+
+* HTML Report can be found [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/ZAP%20Report.html)
 
 ***
-## Jenkinsfile
+## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/Declarative%20Pipeline/Java/DAST/Jenkinsfile)
 ```shell
 pipeline {
     agent any
-    
+
     environment {
-        TARGET_URL = 'https://github.com/OT-MICROSERVICES/employee-api.git'
+        CURRENT_WORKSPACE = "${WORKSPACE}"
     }
     
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                // Checkout your code repository
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/OT-MICROSERVICES/employee-api.git']])
+                // Clone the repository
+                git branch: 'main', url: 'https://github.com/CodeOps-Hub/Salary-API.git'
             }
         }
-        
         stage('Install ZAP') {
             steps {
                 script {
                     // Download and install OWASP ZAP
                     sh 'wget https://github.com/zaproxy/zaproxy/releases/download/v2.14.0/ZAP_2.14.0_Linux.tar.gz'
-                    sh 'tar -xvf ZAP_2.14.0_Linux.tar.gz'
-                    
+                    sh 'tar -xf ZAP_2.14.0_Linux.tar.gz'
                 }
             }
         }
-        
-        stage('Run ZAP Scan') {
+        stage('Run Zap Scan') {
             steps {
                 script {
-                    // Start ZAP and perform the scan
-                    sh "/var/lib/jenkins/workspace/'Declarative Pipeline GoLang DAST'/ZAP_2.14.0/zap.sh -cmd -port 8090 -quickurl http://18.183.109.200:8080/api/v1/employee/health -quickprogress -quickout ~/out2.html"
+                    sh "${CURRENT_WORKSPACE}/ZAP_2.14.0/zap.sh -cmd -port 8082 -quickurl http://174.129.170.198:8080/swagger-ui/index.html -quickout ${CURRENT_WORKSPACE}/results.html"
                 }
             }
         }
-        
-        stage('Publish ZAP Scan Report') {
+        stage('Archive reports') {
             steps {
-                // Publish HTML report
-                publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: '/var/lib/jenkins/workspace/Declarative Pipeline GoLang DAST/ZAP_2.14.0/', reportFiles: 'out2.html', reportName: 'ZAP Scan Report', reportTitles: ''])
+                // Archive ZAP scan report
+                archiveArtifacts artifacts: '**/results.html'
             }
-        }
-    }
-    
-    post {
-        always {
-            // Clean workspace
-            cleanWs()
         }
     }
 }
-
 ```
-
-***
-## Conclusion
-
-Declarative Pipeline simplifies Jenkins pipeline configuration, offering clarity, readability, and integration with Markdown tables. It enhances collaboration, version control, and accessibility while enabling easy documentation and presentation of CI/CD processes.
 
 ***
 ## Contact Information
 
 | Name | Email address |
 | ---- | ------------- |
-| Samir Kesare | samir.kesare.snaatak@mygurukulam.co |
+| Vidhi Yadav | vidhi.yadhav.snaatak@mygurukulam.co |
 
 ***
 ## Resources and References
 
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
-| OWASP ZAP Integration | https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404 |
-
+| OWASP ZAP  | https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404 |
