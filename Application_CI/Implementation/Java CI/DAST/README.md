@@ -117,6 +117,8 @@ pipeline {
 }
 ```
 
+* For more comprehensive understanding of each step in the pipeline and detailed information, you can visit the following link: [Link to Documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/DAST%20POC/README.md)
+
 ***
 ## Contact Information
 
