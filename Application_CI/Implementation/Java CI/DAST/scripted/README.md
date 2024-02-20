@@ -63,7 +63,7 @@ Scripted Pipeline uses a Groovy-based scripting syntax, where you write code dir
 ## Console Output
 * Resultant output for ZAP attack
 
-<img width="915" alt="Screenshot 2024-02-20 at 6 52 07 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/aaf72c17-36a1-4927-9dce-29983b64b09e">
+<img width="967" alt="Screenshot 2024-02-20 at 9 42 39 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/87055c47-ccbb-4d3f-ada4-676509f0c48c">
 
 * HTML file reports generated as `result.html`
 
