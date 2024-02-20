@@ -68,9 +68,10 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 
 | Rule                 | Port(s)   | Protocol | Source                        |
 |----------------------|-----------|----------|-------------------------------|
-| SSH                  | 22        | TCP      | 0.0.0.0/0                     |
-| Redis Default Port   | 6379      | TCP      | Custom from respective nodes  |
-| Redis Cluster Bus    | 16379     | TCP      | Custom from respective nodes  |
+| SSH                  | 22        | TCP      | 20.0.0.0/28                  |
+| Redis Default Port   | 6379      | TCP      | Backend-sg  |
+| Redis Default Port   | 6379      | TCP      | 10.0.1.0/24 |
+| Redis Cluster Bus    | 16379     | TCP      | 10.0.1.0/24  |
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/466dc1ed-c810-4dfc-b230-102d9717ddde)
 
