@@ -49,7 +49,7 @@ In the EC2 Dashboard, locate and click on Security Groups in the left navigation
 
 * Provide a name, description, and VPC assignment for your new security group.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/2dbe85dc-e3a6-4fe5-80aa-871f7ab4cfa6)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/82f6ed9b-8ea9-4092-9e3a-db318d806168)
   
 
 **Step-5 Define Inbound Rules**
@@ -59,13 +59,13 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 * Click the Edit Inbound Rules button.
 
-| Security Group Name              | Inbound Rule Port | Inbound Rule Source |
-|----------------------------------|-------------------|---------------------|
-| Postgres Security Group          | 22                | 20.0.0.0/28          |
-| Postgres Security Group          | 5432              | PostgreSQL-sg        |
+| Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|---------------------|-------------------|---------------------|
+| Scylla-sg          | 22                | 20.0.0.0/28         |
+| Scylla-sg          | 9042              | Backend-sg          |
 
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/4c6774ea-76b2-44ab-ad4f-4db4486094cb)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
 
 
 
@@ -86,7 +86,7 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 **Output**
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/49b449db-87cf-4d67-9fc9-e15ad066a524)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7237be06-321a-4953-b804-e9799bf18ab8)
 
 ---
 
