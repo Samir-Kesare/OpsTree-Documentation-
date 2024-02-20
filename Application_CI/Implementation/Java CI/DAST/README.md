@@ -132,3 +132,4 @@ pipeline {
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
 | OWASP ZAP  | https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404 |
+| ZAP Official Documentation | https://www.zaproxy.org/ |
