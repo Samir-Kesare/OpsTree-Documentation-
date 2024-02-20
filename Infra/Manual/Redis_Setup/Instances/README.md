@@ -43,7 +43,7 @@ So, with Redis Cluster, you get the ability to:
 ***
 
 # Setup Redis Manually
-***
+
 ## Installing Redis
 **Step-1** Launch 3 EC2 Instances
 - Sign in to the AWS Management Console.
