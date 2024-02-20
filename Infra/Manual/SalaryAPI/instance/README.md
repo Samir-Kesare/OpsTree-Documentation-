@@ -69,6 +69,7 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/7e7c1c3b-624e-49ee-975b-99a3f154078a)
 
   **Step-4 :** Under **Name and tags**, for **Name**, enter a descriptive name for your instance.
+  
   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/04a13c51-3270-4600-b9ee-2720fb1d9538)
 
   **Step-5 :** Under Application and OS Images (Amazon Machine Image), do the following:
