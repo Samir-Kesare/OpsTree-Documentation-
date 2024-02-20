@@ -88,10 +88,11 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
 
    * **Add Inbound Rules:** Under the "Inbound Rules" section, define rules for incoming traffic. Click the `Add Rule` button and specify the type, port range, and source IP or security group.
 
-     | Inbound Rule Port | Inbound Rule Source |
-     |-------------------|---------------------|
-     | 22                | Frontend-sg         |
-     | 3000              | Frontend-sg          |
+   | Security Group Name | Inbound Rule Port | Inbound Rule Source |
+   |---------------------|-------------------|---------------------|
+   | Frontend-sg         | 22                | 20.0.0.0/28         |
+   | Frontend-sg         | 3000              | Frontend-sg         |
+
 
 
   <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/cdde2342-a575-4383-a1ef-59f0a7d6ee92"> 
