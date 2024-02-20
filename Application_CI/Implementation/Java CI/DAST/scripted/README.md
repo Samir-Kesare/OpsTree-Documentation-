@@ -67,7 +67,7 @@ Scripted Pipeline uses a Groovy-based scripting syntax, where you write code dir
 
 * HTML file reports generated as `result.html`
 
-<img width="833" alt="Screenshot 2024-02-20 at 9 39 04 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/7193ef72-3f8d-42d4-9a9c-bf05dfeb3a30">
+<img width="838" alt="Screenshot 2024-02-20 at 9 41 14 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/e805e52f-95a6-4a8b-8fd0-99e25d816e00">
 
 * HTML Report can be found [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/declarative/ZAP%20Report.html)
 
