@@ -38,12 +38,6 @@ A shared library is typically organized as a Git repository containing code that
 
 [\[ Reference Doc \]]()
 
-## Prerequisites
-
-| Tool | Description |
-| ---- | ----------- |
-| **Jenkins(2.414.3)** | To build our pipeline |
-
 ***
 ## Pre-requisites
 
