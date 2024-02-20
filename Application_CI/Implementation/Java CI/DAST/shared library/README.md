@@ -13,8 +13,9 @@
 4. [Runtime Prerequisites](#Runtime-Prerequisites)
 5. [Flow Diagram](#Flow-Diagram)
 6. [Pipeline Setup](#Pipeline-Setup)
-7. [Contact Information](#Contact-Information)
-8. [References](#References)
+7. [Best Practices](#best-practices)
+8. [Contact Information](#Contact-Information)
+9. [References](#References)
 ***
 
 ## Introduction 
@@ -35,7 +36,7 @@ A shared library is typically organized as a Git repository containing code that
 
 **For more information visit the below document link:**
 
-[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
+[\[ Reference Doc \]]()
 
 ## Prerequisites
 
@@ -65,7 +66,7 @@ A shared library is typically organized as a Git repository containing code that
 	
 * Follow below document
 
-[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
+[Reference Document](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
 
 <img width="921" alt="Screenshot 2024-02-20 at 9 09 24 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/069fac7d-e622-4012-821d-c9b1dafea609">
 
@@ -74,7 +75,7 @@ A shared library is typically organized as a Git repository containing code that
 
 * Follow below document
 
-	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
+	[Reference Document](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
 
 <img width="899" alt="Screenshot 2024-02-20 at 9 10 44 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/678f85b5-faf0-45c2-8359-58fb66220179">
 
