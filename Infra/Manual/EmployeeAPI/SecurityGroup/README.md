@@ -111,12 +111,6 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1d86e360-8cd3-4edd-959b-fbab18a4e0b2)
 
-
-
-**Output**
-
-
-
 ---
 
 # Best Practices
