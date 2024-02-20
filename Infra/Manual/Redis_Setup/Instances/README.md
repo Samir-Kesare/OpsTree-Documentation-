@@ -49,10 +49,12 @@ So, with Redis Cluster, you get the ability to:
 **Step-1** Launch 3 EC2 Instances
 - Sign in to the AWS Management Console.
 - Go to the EC2 dashboard.
-- Launch a new EC2 instance using an Ubuntu Server AMI (Amazon Machine Image).
-- Instance type - t2.medium
+- Launch a new EC2 instance.
+- Instance type - t2.medium.
+- Auto assign Public IP `disabled`
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/a31570b3-d169-4d0a-9252-6ce9ea934848)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d069233b-fe50-41fb-bfaf-641e45b6b3be)
+
 
 
 **Step-2** [Security Group Configuration](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
@@ -72,7 +74,16 @@ So, with Redis Cluster, you get the ability to:
 | Allow All Traffic    | All           | 0.0.0.0/0         |
 
 **Step-3** Connect to your EC2 Instances
-- Once the instance is running, connect to it using SSH. The private key associated with the key pair selected at launch will be required.
+- Once the instance is running, connect to it using SSH from `master-jenkins` server.
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/79d874c7-719d-4cea-8e6e-3e812f5a56f9)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/3eb11497-7650-4b49-81e2-df89a159576e)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/228a4fc5-e934-470f-9aec-a730d4091226)
+
+
+
+
 
 **Step-4** Install Redis on Each Server
 - Update the package index
