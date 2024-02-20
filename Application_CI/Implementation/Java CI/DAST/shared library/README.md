@@ -44,136 +44,97 @@ A shared library is typically organized as a Git repository containing code that
 | **Jenkins(2.414.3)** | To build our pipeline |
 
 ***
-## Runtime Prerequisites
+## Pre-requisites
 
-|Tool|Description|
-|-------|-------|
-| **Maven Plugin** | to enable jenkins to build maven projects |
-| **OWASP Dependency-Check Plugin** | for dependency-check configuration on your jenkins server |
-
+| Tool   | Description                          | 
+|--------|--------------------------------------|
+| OWASP ZAP (version: 2.14) | Tool required to perform DAST  | 
+| Jenkins | CICD Tool                          |  
+| JRE (Java runtime environment     | Zap is coded in Java, and its fundamental operations require a Java runtime environment for execution.    |
 
 ***
 ## Flow Diagram
 
-<img width="920" alt="Screenshot 2024-02-19 at 1 55 09 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/77e9a8ad-742d-4d0a-88a9-1d6a25adb841">
 
 
 ***
 ## Pipeline Setup
-1. **Fork the Github Repo**
-```shell
-https://github.com/CodeOps-Hub/p7-salary-API.git
-```
-[**Repo Link**](https://github.com/CodeOps-Hub/p7-salary-API.git)
 
-2. **Configure Maven tool in Jenkins**
-
-* Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
-
-<img width="975" alt="Screenshot 2024-02-17 at 5 19 24 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/8ffb33b3-b11f-4ec8-a6b4-9764d5aca18c">
-
-3. **Install OWASP Plugin**
-
-<img width="1327" alt="Screenshot 2024-02-18 at 4 17 25 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/16cb4a7f-430b-4423-9f73-7de330a4300a">
-
-* For more information follow the [reference link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Dependency%20Scanning%20POC/README.md)
-5. **Configure Shared library in Jenkins**
+1. **Configure Shared library in Jenkins**
 	
 * Follow below document
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
-<img width="925" alt="Screenshot 2024-02-18 at 3 08 16 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/013a320a-af4a-4d78-80f9-3d490fd5c3fe">
+<img width="921" alt="Screenshot 2024-02-20 at 9 09 24 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/069fac7d-e622-4012-821d-c9b1dafea609">
 
 
-
-5. **Create and Configure your Jenkins Pipeline job**
+2. **Create and Configure your Jenkins Pipeline job**
 
 * Follow below document
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
 
-<img width="979" alt="Screenshot 2024-02-18 at 3 09 50 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3d473b69-b730-46d0-9008-7af994cfdedf">
+<img width="899" alt="Screenshot 2024-02-20 at 9 10 44 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/678f85b5-faf0-45c2-8359-58fb66220179">
 
 
-6. **Build Pipeline**
+3. **Build Pipeline**
 
-<img width="903" alt="Screenshot 2024-02-18 at 3 18 24 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/34a8f989-a986-4545-a47d-1516a6924cf8">
-
+<img width="1128" alt="Screenshot 2024-02-20 at 9 11 39 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/dec74f72-721a-424a-ba77-377ace5bce7e">
 
 ***
 ## Output
-* Dependency check reports generated in all formats 
+* OWASP ZAP console log
 
-<img width="536" alt="Screenshot 2024-02-18 at 3 27 13 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d3e3a94e-b62f-41a1-9619-7b28d0de15b7">
+<img width="1006" alt="Screenshot 2024-02-20 at 9 13 18 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/89083752-f859-4657-83a3-ffcd8b1978ad">
 
-* Archived HTML dependency check reports
+* Archived HTML ZAP reports
 
-<img width="810" alt="Screenshot 2024-02-18 at 3 34 43 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c3079aa6-7f4b-4480-9051-f19fc812e371">
+<img width="762" alt="Screenshot 2024-02-20 at 9 14 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/47364a3e-0301-45c8-9499-abdc60ff6921">
 
 ***
-## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/Dependency%20Scanning/Jenkinsfile)
+## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/DAST/Jenkinsfile)
 
 ```shell
-@Library("shared_library") _
-
-def dpcheck = new org.avengers.template.java.dependencyCheck()
+@Library('dast_sharedLib') _
+def dast = new org.avengers.template.java.javaDast()
 
 node {
     
-    def url = 'https://github.com/CodeOps-Hub/p7-salary-API.git'
-    def branch = 'main'
+    def url = 'https://github.com/CodeOps-Hub/Salary-API.git'
     def creds = 'vyadavP7'
+    def branch = 'main'
+    def zapVersion = '2.14.0'
+    def currentWorkspace = env.WORKSPACE 
+        
+    dast.call(url, creds, branch, zapVersion, currentWorkspace)
     
-    dpcheck.call(url, creds, branch)
 }
 ```
 
-## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/dependencyCheck.groovy)
+## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/javaDast.groovy)
+
 ```shell
 package org.avengers.template.java
 
 import org.avengers.common.*
-import org.avengers.java.dependencyCheck.dpCheck
+import org.avengers.java.dast.*
 
+def call(String url, String creds, String branch, String zapVersion, String currentWorkspace){
+  gitCheckoutPrivate = new GitCheckoutPrivate()
+  owaspZapInstallation = new OwaspZapInstallation()
+  runZap = new RunZap()
 
-def call(String url, String creds, String branch){
+  gitCheckoutPrivate.call(url, creds, branch)
+  owaspZapInstallation.call(zapVersion)
+  runZap.call(zapVersion, currentWorkspace)
 
-    def gitCheckout = new GitCheckoutPrivate()
-    def dpCheck = new dpCheck()
-    def cleanW = new cleanWorkspace()
-  
-    try {
-        // Clone repository 
-        gitCheckout.call(url, creds, branch)
-        
-        // perform Dependency Scanning 
-        dpCheck.call()
-      
-    } catch (e) {
-        echo 'DP check Failed !'
-
-        // clean workspace 
-        cleanW.call()
-  
-        throw e
-    } finally {
-     //   echo "In finally block"
-      //  echo "Current build result: ${currentBuild.currentResult}"
-        
-        if (currentBuild.currentResult == 'SUCCESS') {
-            echo 'DP check Successful!'
-
-            // archive HTML reports as artifacts
-            archiveArtifacts artifacts: '**/dependency-check-report.html'
-
-            // show workspace in tree structure
-            sh 'tree ${WORKSPACE}'
-        }
-    }
+  // Archive ZAP scan results
+  archiveArtifacts artifacts: '**/results.html', allowEmptyArchive: true
 }
 ```
-### [GitCheckoutPrivate.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/GitCheckoutPrivate.groovy)
+
+### [GitCheckoutPrivate.groovy]()
 ```shell
 package org.avengers.common
 
@@ -199,6 +160,15 @@ def call() {
 ```
 
 ***
+## Best Practices
+
+1. **Collaboration and Reporting:** Share scan results with relevant stakeholders, including developers, security teams, and management. Use OWASP ZAP's reporting features to generate detailed reports that highlight identified vulnerabilities, their impact, and recommended remediation steps.
+   
+2. **Stay Updated:** Regularly update OWASP ZAP to the latest version to ensure you have the most up-to-date features and security checks.
+ 
+3. **Authentication Configuration:** If your application requires authentication, configure OWASP ZAP to handle it properly. Provide credentials or session tokens to ensure comprehensive testing of authenticated parts of the application.
+
+***
 
 ## Contact Information
 
@@ -211,8 +181,6 @@ def call() {
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Clean Workspace | https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps/#finishing-up |
 | Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
 | Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
-| Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
 | Shared library | https://stackoverflow.com/questions/52604334/how-to-use-currentbuild-result-to-indicate-success-not-null|
