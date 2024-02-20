@@ -54,5 +54,6 @@
 | Shikha      |   | Camera Off|  1   |   05   |
 | Date      | **20 Feb**   | 
 | Nidhi      |   |Status Mail|  1   |   05   |
-
+| Vidhi      |   | Standup call (Not Present)|  1   |   05   |
+| Vidhi      |   | Standup call (Late Join)|  1   |   05   |
 
