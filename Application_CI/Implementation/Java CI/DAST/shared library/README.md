@@ -200,11 +200,12 @@ def call(){
 ***
 ## Best Practices
 
-1. **Collaboration and Reporting:** Share scan results with relevant stakeholders, including developers, security teams, and management. Use OWASP ZAP's reporting features to generate detailed reports that highlight identified vulnerabilities, their impact, and recommended remediation steps.
-   
-2. **Stay Updated:** Regularly update OWASP ZAP to the latest version to ensure you have the most up-to-date features and security checks.
- 
-3. **Authentication Configuration:** If your application requires authentication, configure OWASP ZAP to handle it properly. Provide credentials or session tokens to ensure comprehensive testing of authenticated parts of the application.
+| **Best Practice**                                           | **Description**                                                                                         |
+|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| **Collaboration and Reporting**                             | Share scan results with relevant stakeholders, including developers, security teams, and management. Use OWASP ZAP's reporting features to generate detailed reports that highlight identified vulnerabilities, their impact, and recommended remediation steps. |
+| **Stay Updated**                                           | Regularly update OWASP ZAP to the latest version to ensure you have the most up-to-date features and security checks.                                                     |
+| **Authentication Configuration**                          | If your application requires authentication, configure OWASP ZAP to handle it properly. Provide credentials or session tokens to ensure comprehensive testing of authenticated parts of the application.              |
+
 
 ***
 
