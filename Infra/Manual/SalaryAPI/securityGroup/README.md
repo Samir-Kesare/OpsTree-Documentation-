@@ -1,4 +1,4 @@
-# Salary API Security Group Setup
+# Security Group Setup ( Salary API )
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a3b73bcf-492f-47ca-9308-4d23101e45fd)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
@@ -81,10 +81,7 @@ Attached the backend security group as the source for the Scylla-Security group:
 | Backend-sg          | 22                | 20.0.0.0/28         |
 | Backend-sg          | 8080              | Frontend-lb-sg          |
 
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
-
-
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d0c7fb00-c625-4547-aef3-81449b94ee63)
 
 **Step-6 Define Outbound Rules**
 
@@ -96,11 +93,8 @@ Attached the backend security group as the source for the Scylla-Security group:
 |---------------------|---------------------|------------------------|--------------------------|
 | *                   | All traffic         | All                    | 0.0.0.0/0                | 
 
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1d86e360-8cd3-4edd-959b-fbab18a4e0b2)
-
-
----
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/09859986-25c0-420f-a966-f90e7c28d3b3)
+***
 
 ## Contact Information
 
