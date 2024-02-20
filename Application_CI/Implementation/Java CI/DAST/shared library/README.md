@@ -90,7 +90,11 @@ A shared library is typically organized as a Git repository containing code that
 
 * Archived HTML ZAP reports
 
-<img width="762" alt="Screenshot 2024-02-20 at 9 14 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/47364a3e-0301-45c8-9499-abdc60ff6921">
+<img width="833" alt="Screenshot 2024-02-20 at 9 39 04 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ee550ed2-276c-45b9-a8d0-2d1d3537bde8">
+
+* HTML Report can be found [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/declarative/ZAP%20Report.html)
+
+<img width="1160" alt="Screenshot 2024-02-20 at 5 01 40 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1948e7bc-46ad-4012-a4ce-4f003d111b67">
 
 ***
 ## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/DAST/Jenkinsfile)
@@ -149,15 +153,20 @@ def call(String url, String creds, String branch) {
 
 ### [cleanWorkspace.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/cleanWorkspace.groovy)
 ```shell
-// Will not clean workspace if build is Sucessful and vice versa
 package org.avengers.common
 
-def call() {
-  stage('Clean Workspace'){
-      cleanWs cleanWhenSuccess: false
-  }
+// Always Clean 
+def call(){
+  stage('Clean Workspace') {
+        script {
+           cleanWs()
+        }
+    }
+  
 }
 ```
+
+* For more comprehensive understanding of each step in the pipeline and detailed information, you can visit the following link: [Link to Documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/DAST%20POC/README.md)
 
 ***
 ## Best Practices
