@@ -46,17 +46,18 @@ Ansible is an open-source automation tool that simplifies and accelerates IT inf
 
 
 2. **SSH Access to Target Servers:**
-   - Ensure that you have SSH access to the target servers where SonarQube will be installed.
+   - Ensure that you have SSH access to the target servers where Redis will be installed.
 
 ***
 
 ## Redis  
-SonarQube is a leading open-source platform for continuous inspection of code quality. It analyzes codebases, identifies bugs, security vulnerabilities, and code smells. Offering a comprehensive view of code health, SonarQube assists development teams in maintaining high-quality software, ensuring robust security, and fostering continuous improvement in codebases.
+Redis is an open-source, high-performance, in-memory data store known for its speed and versatility. It functions as a key-value store and supports various data structures, including strings, hashes, lists, sets, and sorted sets. Commonly used for caching due to its in-memory storage, Redis also serves as a message broker with Pub/Sub messaging capabilities. Its atomic operations, support for persistence, scripting with Lua, and clustering features make Redis a popular choice for applications requiring fast data access, real-time processing, and horizontal scalability.
 
-Please refer [*SonarQube Document*](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md) for better understanding of SonarQube
+Please refer [*Redis Document*](https://github.com/avengers-p7/Documentation/blob/main/OT%20Micro%20Services/Software/Redis/README.md) for better understanding of Redis
 
 # Steps 
 * Before going further check  [*Ansible Role For Redis Installation*](https://github.com/CodeOps-Hub/redis-ansiblerole/tree/main/roles/redis)
+* For more information on [Ansible Roles](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/DevOps%20Practices/Ansible/Ansible%20Role.md)
 
 **Step 1: Dynamic Inventory Setup** 
 
@@ -121,7 +122,7 @@ groups:
     - redis
 ```
 **Step 5: Tasks**
-1. `main.yml`: This main.yml file is acting as an orchestrator, importing tasks from the `sonarqube_debian.yml` file. This separation of tasks into different files is a good practice for better organization, especially when dealing with complex configurations or roles.
+1. `main.yml`: This main.yml file is acting as an orchestrator, importing tasks from other task files. This separation of tasks into different files is a good practice for better organization, especially when dealing with complex configurations or roles.
 
 ```yaml
 ---
@@ -352,7 +353,7 @@ We need to create two jinja2 templates :
 * To configure Redis
 * To set up redis Service
 
-1. `redis.conf.j2` teamplate includes parameteters to configure SonarQube database and webserver
+1. `redis.conf.j2` template includes parameteters to configure Redis
 
 ```yaml
 {{ ansible_managed | comment }}
@@ -443,7 +444,7 @@ WantedBy=multi-user.target
 
 **Step 7: Playbook Execution**
 
-* To set up Jenkins on your target servers, you will execute the Ansible playbook using the following command:
+* To set up Redis on your target servers, you will execute the Ansible playbook using the following command:
 
 ```bash
 ansible-playbook -i aws_ec2.yml playbook.yml
