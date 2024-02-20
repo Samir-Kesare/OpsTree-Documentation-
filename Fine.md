@@ -49,6 +49,10 @@
 | Khushi    | 13 Feb   | status mail | 1    |  05    |
 | Nidhi    | 13 Feb   | Morning Call,status mail | 1    |  05    |
 | Date      | 14 Feb   | 
-| Nidhi      | 14 Feb   |Status Mail(Blog Link) |  1   |   05   |
+| Nidhi      | |Status Mail(Blog Link) |  1   |   05   |
+| Date      | 19 Feb   | 
+| Shikha      |   | Camera Off|  1   |   05   |
+| Date      | 20 Feb   | 
+| Nidhi      |   |Status Mail|  1   |   05   |
 
 
