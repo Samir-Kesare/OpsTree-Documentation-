@@ -53,9 +53,61 @@ Applications have various use cases in which we have to set up traffic routing b
 
 ***
 ## Steps to setup Listener Rules for Load Balancer
+### Step 1: Configure a target group
+  
+  *  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+  *  In the navigation pane, choose `Target Groups`.
+  *  Choose Create target group.
+ 
+   <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/af210fdd-50b2-4f76-b6ab-911ca8ca7f8a">   
+   
+  *  Choose Create target group.
+    
+  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0274d078-fed6-419b-9d51-a974fd613279">  
+  
+  * `Choose a target type` select `Instances` to specify targets by instance ID or IP addresses to specify targets by only IP address.
+  * `Target group name` enter a name for the target group.eg `frontend-tg`
+  * `VPC` select a virtual private cloud (VPC) with the targets that you want to include in your target group.eg `Dev-VPC`
+  *  All configurtion default then Choose Next. 
+  
+  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5e6fee6f-db64-4633-8963-9e2572653ce2">  
+  
+   <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5fca6e2d-bdd7-4e00-be1d-bdeddc307dfe">
+
+### Step 2: Register targets
+
+  * Select one or more instances, enter one or more eg `3000` ports, and then choose Include as pending below.
+  * Then Choose Create target group.
+    
+ <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/afe80217-25ba-4be8-97be-b1949847de91"> 
+
+### Step 3: Configure a load balancer and a listener
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
 
-  <img width="760" length="100" alt="Security" src=""> 
+    
+  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/63694869-46f0-4609-894a-e6253b8433dd"> 
+
+
 
 
 ***
@@ -73,6 +125,7 @@ Applications have various use cases in which we have to set up traffic routing b
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
 | About Listener Rules | [Link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html) |
+| About Load Balancer | [Link](https://www.nginx.com/resources/glossary/load-balancing/) |
 | Types of Load Balancer | [Link](https://kavishbaghel.com/utilising-listener-rules-for-load-balancing-using-aws-application-load-balancer-8e090e0ba469) |
 | Follow this Infra Diagram | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | 
 
