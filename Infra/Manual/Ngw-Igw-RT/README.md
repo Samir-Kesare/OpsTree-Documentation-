@@ -99,13 +99,23 @@ Setting up networking in a cloud environment, such as AWS, involves several esse
 
 * In the "Routes" tab, click on "Edit routes."
 
-* Add the necessary routes based on your requirements (e.g., a default route to the internet gateway).
+* Add the necessary routes based on your requirements (e.g., a default route to the internet gateway). then click on save the change
 
-then click on save the change 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/149f1ae1-9e9d-4d6e-a6d3-cddfda082614)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/d67a27ec-ddab-403a-81fb-70100845b4c7)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/6e5f220a-f181-4a78-b2f7-1c46f608a591)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/fd726a34-b7e3-4d71-8f1b-db4c6cd2eff8)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7ce5a66c-64d3-4603-803d-3b76b458206e)
+
+
+**Public-RT Routes**
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/8f584692-478f-4df1-89bf-6f1c130f968c)
+
+
+**Private-RT Routes**
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/4a3e81d6-3d4b-42d8-b16f-2a30ceecd910)
 
 
 # Associate Subnets
