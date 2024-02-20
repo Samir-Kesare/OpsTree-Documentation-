@@ -48,7 +48,7 @@ A declarative pipeline is a feature in Jenkins, which is an open-source automati
 | Pytest | It is a widely used testing framework for Python, streamlining the task of creating and running tests. |
 ***
 
-<img width="695" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/823c2e8d-4e48-4bd4-8cf3-2ccfa178ef4b">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5a6af77f-e467-46fa-94d6-215a4710293f)
 
 ***
 # Jenkinsfile Configuration
@@ -177,24 +177,11 @@ pipeline {
     }
 }
 ```
+***
+> [!Note]
+> There is a separate doc Generic Doc which includes common steps for pipeline, click this [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)to see.
 
-# Pipeline Configuration
-
-**Configure pipeline job for Jenkins and execute the pipeline.**
-
-* Click on **"New Item"** or **"Create new jobs"** from the Jenkins dashboard.
-
-* Enter a name for your job (e.g., "Python App Static_code_analysis") and select **"Pipeline"** as the job type.
-
-* Click **"OK"** to create the new job.
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056364/29b29fe2-de41-4257-a8a5-c9dc6bcc2674)
-
-
-* Then write your Pipeline Script under **“Script”** section and click “Save” Button.
-
-  ![Screenshot 2024-02-15 at 7 22 20 PM](https://github.com/avengers-p7/Documentation/assets/156056364/3509bded-0bbf-47df-b4e0-8c21ac8a86cc)
-
+***
 
 * Then execute your Pipeline by clicking on **“Build Now”**
 
