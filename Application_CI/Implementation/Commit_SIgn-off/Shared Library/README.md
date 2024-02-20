@@ -3,6 +3,20 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  13 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+
+# Table of Contents
+- [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#introduction)
+- [What is Shared Library](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#what-is-shared-library)
+- [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#pre-requisites)
+- [Flow Diagram](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#flow-diagram)
+- [Pipeline Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#pipeline-setup)
+- [Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#pipeline)
+- [GitCommit.groovy](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#gitcommitgroovy)
+- [CommitSignOffPipeline.groovy](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#commitsignoffpipelinegroovy)
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#contact-information)
+- [Resources and References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Commit_SIgn-off/Shared%20Library/README.md#resources-and-references)
+
+
 # Introduction 
 In the context of version control systems like Git, a commit sign-off is a line added to the end of a commit message that serves several purposes:
 1. Attribution: It identifies the author of the commit, typically including their name and email address.
@@ -22,6 +36,8 @@ It's like building modular components for your CI/CD pipelines, promoting effici
 | **Jenkins(2.426.3)** | To build our pipeline |
 
 # Flow Diagram 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/15464e56-677c-4bc4-95e8-41765d23d6e9)
+
 ***
 
 # Pipeline Setup
@@ -169,9 +185,8 @@ def call(){
 | Description                                   | References                                       |
 | --------------------------------------------  | -------------------------------------------------|
 | Commit Sign-off | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/CommitSignOff.md |
-| Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
-| Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
-| Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
+| Shared Library (Generic Doc) | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
+| Create Pipeline (Generic Doc)| https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
 | Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
 | Pipeline Concepts | https://www.jenkins.io/doc/book/pipeline/#pipeline-concepts |
 | Shared Library | https://www.jenkins.io/doc/book/pipeline/shared-libraries/ |
