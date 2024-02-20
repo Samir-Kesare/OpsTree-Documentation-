@@ -225,6 +225,6 @@ def call(){
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Shared Library (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
-| Shared Library Setup (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
+| Shared Library (Generic Doc) |  |	https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md
+| Shared Library Setup (Generic Doc) | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md |
 | Shared library | https://stackoverflow.com/questions/52604334/how-to-use-currentbuild-result-to-indicate-success-not-null|
