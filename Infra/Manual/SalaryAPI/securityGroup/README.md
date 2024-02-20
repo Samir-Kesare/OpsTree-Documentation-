@@ -11,10 +11,9 @@
 1. [Introduction](#Introduction)
 2. [Pre-requisites](#Pre-requisites)
 3. [Important Ports](#Important-Ports)
-4. [Flow Diagram](#Flow-Diagram)
-5. [Setup](#Setup)
-6. [Contact Information](#Contact-Information)
-7. [References](#References)
+4. [Setup](#Setup)
+5. [Contact Information](#Contact-Information)
+6. [References](#References)
 ***
 
 ## Introduction
