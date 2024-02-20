@@ -4,7 +4,7 @@
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
-| Shantanu |  19-02-2024  |  Version 1 | Vishal  | 19-02-2024    |
+| Shantanu |  19-02-2024  |  Version 1 | Shantanu  | 19-02-2024    |
 
 ***
 ## Table of Contents
