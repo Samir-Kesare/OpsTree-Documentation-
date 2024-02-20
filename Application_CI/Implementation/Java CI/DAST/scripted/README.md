@@ -96,6 +96,9 @@ node {
     stage('Archive reports') {
         archiveArtifacts artifacts: '**/results.html'
     }
+    stage('Clean Workspace') {
+        cleanWs()
+    }
 }
 ```
 
