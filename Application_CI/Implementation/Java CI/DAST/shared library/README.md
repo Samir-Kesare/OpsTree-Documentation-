@@ -55,6 +55,7 @@ A shared library is typically organized as a Git repository containing code that
 ***
 ## Flow Diagram
 
+<img width="890" alt="Screenshot 2024-02-20 at 9 55 58 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/bb1e65cb-c705-4e5e-b565-1c400b348e4a">
 
 
 ***
