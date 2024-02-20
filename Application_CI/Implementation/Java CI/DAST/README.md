@@ -11,11 +11,10 @@
 ***
 ## Table of Contents
 + [Introduction](#Introduction)
-+ [Why Declarative Pipeline](#Why-Declarative-Pipeline)
++ [Declarative Pipeline](#Declarative-Pipeline)
 + [Flow Diagram](#Flow-Diagram)
 + [Pre-requisites](#Pre-requisites)
-+ [Setup](#Setup)
-+ [Jenkinsfile](#Jenkinsfile)
++ [Setup](#pipeline-setup)
 + [Conclusion](#Conclusion)
 + [Contact Information](#Contact-Information)
 + [Resources and References](#Resources-and-References)
@@ -23,7 +22,7 @@
 ***
 ## Introduction
 
-. Click [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)
+[Dynamic Application Security Testing (DAST)](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md) is an approach in the field of cybersecurity, dedicated to evaluating and enhancing the security posture of web applications. DAST operates dynamically during runtime, actively examining web applications in their functional state by simulating real-world attacks. Unlike static analysis, DAST assesses applications in their deployed environment, providing a comprehensive view of potential vulnerabilities and security weaknesses.
 
 ***
 ## Declarative Pipeline
@@ -34,7 +33,7 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 
 [\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md )
 
-
+***
 ## Flow Diagram
 
 
@@ -48,37 +47,23 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 | JRE (Java runtime environment     | Zap is coded in Java, and its fundamental operations require a Java runtime environment for execution.    |
 
 ***
-## Setup
+## Pipeline Setup
 
-### Configure Pipeline Script:
+1. **Fork the Github Repo**
+```shell
+https://github.com/avengers-p7/Salary-API/tree/main
+```
+[**Repo Link**](https://github.com/OT-MICROSERVICES/salary-api)
 
-* In the job configuration page, scroll down to the Pipeline section.
-* Select Pipeline script from SCM.
-* Give required repo url and enter your credentials.
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056570/2cf29533-0104-4cc1-bcfb-68228f9037fa)
-
-
-### Build the Pipeline and View Build Console Output:
-
-* Once the pipeline configuration is saved, you can manually trigger the build by clicking on Build Now.
-* After triggering the build, you can view the progress and console output of the build by clicking on the build number in the Jenkins dashboard.
-* The console output will display the steps executed by the pipeline script, including code checkout and compilation.
-
-![Screenshot 2024-02-13 230752](https://github.com/avengers-p7/Documentation/assets/156056570/efcd108d-7143-4d78-a04f-0165fd3d8780)
-
-![Screenshot 2024-02-13 230820](https://github.com/avengers-p7/Documentation/assets/156056570/894ad8f2-48df-4e2b-ad31-3e2b39777cd3)
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056570/c1c3c11f-bbb7-4b55-aef9-61a0ca071a72)
+2. **Build Pipeline**
 
 
+<img width="1243" alt="Screenshot 2024-02-20 at 2 33 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/548c6ae8-bf02-4b68-8e4e-1061c094513c">
 
 
 ### HTML Report
 
-* Click[**here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GolangCI/Declarative%20Pipeline%20GoLang%20DAST/Declarative%20Pipeline/HTML%20Report)
-
-![Screenshot 2024-02-13 230445](https://github.com/avengers-p7/Documentation/assets/156056570/2414b727-8df0-454f-8bb6-eec702cf02c8)
+* Click[**here**](file:///Users/vidhiyadav/Desktop/ZAP%20Report.html)
 
 ***
 ## Jenkinsfile
