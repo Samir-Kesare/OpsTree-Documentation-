@@ -4,6 +4,23 @@
 | -------------------- | -------------- | ---------------- | -------------------- |
 | **Parasharam Desai** | 19-02-2024     | 19-02-2024       | V1                |
 
+
+# Table of Contents
+
+1. [Introduction](#introduction)
+2. [Pre-requisites](#pre-requisites)
+3. [Steps](#steps)
+    - [Step 1: Access the AWS Management Console](#step-1-access-the-aws-management-console)
+    - [Step 2: Open the EC2 Dashboard](#step-2-open-the-ec2-dashboard)
+    - [Step 3: Navigate to Security Groups](#step-3-navigate-to-security-groups)
+    - [Step 4: Choose or Create a Security Group](#step-4-choose-or-create-a-security-group)
+    - [Step 5: Define Inbound Rules](#step-5-define-inbound-rules)
+    - [Step 6: Define Outbound Rules](#step-6-define-outbound-rules)
+4. [Output](#output)
+5. [Contact Information](#contact-information)
+6. [Resources and References](#resources-and-references)
+
+
 ## Introduction
 
 This document provides a guide for setting up security groups for Scylla-DB. By configuring inbound and outbound rules, you can control network traffic to and from your Scylla-DB instances, enhancing the security of your infrastructure.
