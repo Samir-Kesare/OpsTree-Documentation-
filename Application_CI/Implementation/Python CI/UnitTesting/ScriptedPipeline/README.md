@@ -50,7 +50,7 @@ A scripted pipeline typically refers to a set of automated processes or tasks th
 | Python | Python is a versatile, high-level programming language. |
 | Pytest | It is a widely used testing framework for Python, streamlining the task of creating and running tests. |
 ***
-<img width="695" alt="image" src="https://github.com/avengers-p7/Documentation/assets/156057205/823c2e8d-4e48-4bd4-8cf3-2ccfa178ef4b">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5a6af77f-e467-46fa-94d6-215a4710293f)
 
 ***
 
@@ -133,6 +133,11 @@ node {
     }
 }
 ```
+***
+
+> [!Note]
+> There is a separate doc Generic Doc which includes common steps for pipeline, click this [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md)to see.
+
 ***
 
 * Then execute your Pipeline by clicking on **“Build Now”**
