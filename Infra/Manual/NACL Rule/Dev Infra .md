@@ -66,8 +66,35 @@ Add new rule according to the infra setup.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/70c45f01-2f3f-4c28-871c-44751e022639)
 
+## We have followed below set of rules for our NACL Inbound rules
+### Public NACL Inbound Rules
 
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 0.0.0.0/0    | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/2b21fd44-ddba-42dc-b4ad-847337fe9f78)
+
+## Frontend NACL Inbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 10.0.1.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28  | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/e965df8b-f00f-47c2-9bdd-c58c7db4f7f6)
+
+## Backend NACL Inbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 10.0.1.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | 10.0.1.16/28 | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/c05601dd-20a2-4076-90c7-ec6150d814b9)
 
 
 **Step-5 Configure Outbound Rules**
@@ -81,6 +108,53 @@ Click the Action under the drop down select Edit Outbound Rule button or else yo
 Add new rule according to the infra setup
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/c6089f27-b9d6-4e87-9573-387c4b34f474)
+
+## We have followed below set of rules for our NACL Inbound rules
+### Public NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 10.0.1.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 10.0.0.0/28  | Allow      |
+| *           | All traffic | All     | All       | 0.0.0.0/0    | Deny      |
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/f2fbd1da-b002-470e-81f2-c4f528193f60)
+
+## Frontend NACL Outbound Rules
+
+| Rule number | Type       | Protocol | Port range | Destination  | Allow/Deny |
+|-------------|----------- |----------|------------|--------------|------------|
+| 100         | SSH        | TCP      | 22         | 10.0.1.0/28  | Allow      |
+| 110         | Custom TCP | TCP      | 3000       | 10.0.1.0/28  | Allow      |
+| 120         | Custom TCP | TCP      | 32768-65535| 10.0.1.0/28  | Allow      |
+| 130         | Custom TCP | TCP      | 1024-65535 | 10.0.1.0/28  | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/310e3499-f430-4d49-aa43-02f9c9264aea)
+
+## Backend NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 10.0.1.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | 10.0.1.16/28 | Allow      |
+| 130         | Custom TCP| TCP      | 32768-65535| 10.0.1.16/28 | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny      |
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/c16cc6d3-b9b8-445e-a1c6-dc2809968305)
+
+## Database NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 10.0.1.0/28  | Allow      |
+| 120         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
+| 130         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
+| 140         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
+| 150         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/28 | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/b1eaa024-4de4-4765-a27c-e2593c1fae67)
 
 
 ## Conclusion
