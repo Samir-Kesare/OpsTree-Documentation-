@@ -40,7 +40,7 @@ So, with Redis Cluster, you get the ability to:
 ***
 
 # Flow Diagram 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/0f8dadce-c10a-4336-aece-4a29872716d4)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/75882e2e-da6a-4192-953a-fdec6a686124)
 
 ***
 
