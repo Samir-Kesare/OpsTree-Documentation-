@@ -72,7 +72,7 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 | Redis Default Port   | 6379      | TCP      | Custom from respective nodes  |
 | Redis Cluster Bus    | 16379     | TCP      | Custom from respective nodes  |
 
-![Untitled design (7)](https://github.com/CodeOps-Hub/Documentation/assets/156056460/1e9e5aa9-d0a5-4ab3-99bf-67cb5ed580cd)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/466dc1ed-c810-4dfc-b230-102d9717ddde)
 
 # Outbound Rules
 
@@ -80,7 +80,8 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 |----------------------|---------------|-------------------|
 | Allow All Traffic    | All           | 0.0.0.0/0         |
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/9805e414-1db4-4443-a024-6175b9f60e3f)
+![Uploading image.png…]()
+
 
  # Conclusion
 Security groups play a crucial role in securing your cloud infrastructure by controlling inbound and outbound traffic to your instances. They provide granular control, flexibility, and scalability, helping you enforce a robust security posture and protect your applications and data from unauthorized access and malicious activity.
