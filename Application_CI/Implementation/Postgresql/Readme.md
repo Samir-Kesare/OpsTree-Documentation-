@@ -1,5 +1,5 @@
 
-# Ansible Role to setup PostgreSQL (Ubuntu)
+# Ansible Role to setup PostgreSQL
 
 ![image](https://github.com/avengers-p7/Documentation/assets/79625874/08f84d0b-467a-46f1-b6de-8603020cf116)
 
@@ -14,6 +14,7 @@
 + [Introduction](#Introduction)
 + [Pre-requisites](#Pre-requisites)
 + [Port-Numbers](#Port-Numbers)
++ [Flow Diagram](#Flow-Diagram)
 + [Steps](#Steps)
 + [Output Verification](#output-Verification)
 + [Conclusion](#conclusion)
@@ -42,9 +43,15 @@ This role is designed to automate the installation and configuration of PostgreS
 | 22               | For SSH       |
 | 5432             | PostdreSQL    |
 
+# Flow Diagram
+
+* This diagram should help you visualize the sequence of tasks in your Ansible playbook for installing Jenkins.
+
+![image](https://github.com/avengers-p7/Documentation/assets/79625874/6fa6a96a-f15b-43b1-9c29-17b0d1491587)
+
 
 # Steps 
-* Before going further check the link for Ansible Role: https://github.com/vikram445/PostgreSQL.git
+* Before going further check the link for [Ansible Role](https://github.com/vishalkk2805/my_Tool/tree/main/Postgresql_tool)
 
 **Step 1: Dynamic Inventory Setup** 
 
@@ -194,7 +201,3 @@ This guide illustrates the process of deploying PostgreSQL in a server through A
 | Ansible documentation           | https://docs.ansible.com/ansible/latest/index.html    |
 | PostgreSQL Document             |  [Link](https://github.com/avengers-p7/Documentation/blob/main/OT%20Micro%20Services/Software/PostgresSQL/README.md) |
 | Ansible Dynamic Inventory       | https://www.youtube.com/watch?v=junPdh2yvbU&t=454s | 
-
-
-
-
