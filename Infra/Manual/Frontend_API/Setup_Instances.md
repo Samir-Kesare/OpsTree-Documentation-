@@ -77,7 +77,10 @@ An instance in Amazon EC2 is essentially a virtual server that users can create 
 
 > [!NOTE]
 > * After successfully launching the instance follow this [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Frontend/README.md) to setup Frontend-API.
-  
+
+> [!Important]
+> * After configuring Load-Balancer, use the DNS of the load-balancer and hit in web browser, you wil see the  
+  UI of Frontend-API. [**DNS**]() 
 ***
 ## Conclusion
 
