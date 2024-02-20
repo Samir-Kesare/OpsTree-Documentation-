@@ -51,7 +51,7 @@ This role is designed to automate the installation and configuration of PostgreS
 
 
 # Steps 
-* Before going further check the link for [Ansible Role](https://github.com/vishalkk2805/my_Tool/tree/main/Postgresql_tool)
+* Before going further check the link for [Ansible Role](https://github.com/CodeOps-Hub/Postgres/tree/main/Role)
 
 **Step 1: Dynamic Inventory Setup** 
 
