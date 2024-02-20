@@ -115,7 +115,7 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 **Output**
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7237be06-321a-4953-b804-e9799bf18ab8)
+
 
 ---
 
