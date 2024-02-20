@@ -59,6 +59,7 @@ So, with Redis Cluster, you get the ability to:
 
 
 **Step-2** [Security Group Configuration](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
+
 - Create 3 security group.
 - Inbound Rules
 
