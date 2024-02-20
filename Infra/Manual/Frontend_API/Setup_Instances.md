@@ -85,6 +85,7 @@ Amazon EC2 offers customizable virtual servers (instances) in the cloud. Users c
 | ---------------- | ------------ |
 | Poc Document | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Frontend/README.md) |
 | About Instance | [Link](https://aws.amazon.com/what-is/cloud-instances/#:~:text=You%20can%20run%20multiple%20virtual,of%20sharing%20and%20scaling%20resources.) |
+| Infra Diagram | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | 
 
 
 ***
