@@ -1,12 +1,24 @@
-# Scylla-DB Manual Security Group Setup
+# Salary API Security Group Setup
 
-| **Author**           | **Created On** | **Last Updated** | **Document Version** |
-| -------------------- | -------------- | ---------------- | -------------------- |
-| **Parasharam Desai** | 19-02-2024     | 19-02-2024       | V1                |
+| Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
+| ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 20-02-2024  | 1.0        | Harshit Singh   | 20-02-2024      |
+
+
+## Table  of Contents
+
+1. [Introduction](#Introduction)
+2. [Pre-requisites](#Pre-requisites)
+3. [Important Ports](#Important-Ports)
+4. [Flow Diagram](#Flow-Diagram)
+5. [Setup](#Setup)
+6. [Contact Information](#Contact-Information)
+7. [References](#References)
+***
 
 ## Introduction
 
-This document provides a guide for setting up security groups for Scylla-DB. By configuring inbound and outbound rules, you can control network traffic to and from your Scylla-DB instances, enhancing the security of your infrastructure.
+This document provides a guide for setting up security groups for Salary API. By configuring inbound and outbound rules, you can control network traffic to and from your Salary API instances, enhancing the security of your infrastructure.
 
 
 ## Pre-requisites
@@ -82,15 +94,17 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 ## Contact Information
 
-| Name               | Email Address                               |
-| ------------------ | ------------------------------------------- |
-| Parasharam Desai   | parasharam.desai.snaatak@mygurukulam.co     |
+|     Name         | Email  |
+| -----------------| ------------------------------------ |
+| Harshit Singh    | harshit.singh.snaatak@mygurukulam.co |
+***
 
----
+## References
 
-## Resources and References
-
-| Description           | References                                                        |
-| --------------------- | ----------------------------------------------------------------- |
-| Documentation Template | [Link](https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template) |
-| Dev Infra Design      | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
+| Description                                   | References  
+| --------------------------------------------  | -------------------------------------------------|
+| Clean Workspace | https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps/#finishing-up |
+| Pipeline (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
+| Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
+| Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
+| Pipeline Concepts | https://www.jenkins.io/doc/book/pipeline/#pipeline-concepts |
