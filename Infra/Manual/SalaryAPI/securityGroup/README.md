@@ -63,8 +63,8 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |---------------------|-------------------|---------------------|
-| Scylla-sg          | 22                | 20.0.0.0/28         |
-| Scylla-sg          | 9042              | Backend-sg          |
+| Backend-sg          | 22                | 20.0.0.0/28         |
+| Backend-sg          | 8080              | Frontend-lb-sg          |
 
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/a2c7a204-f43a-4689-8c19-853afc0446ab)
@@ -84,11 +84,6 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1d86e360-8cd3-4edd-959b-fbab18a4e0b2)
 
-
-
-**Output**
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7237be06-321a-4953-b804-e9799bf18ab8)
 
 ---
 
