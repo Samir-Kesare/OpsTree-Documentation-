@@ -63,7 +63,7 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 ### HTML Report
 
-* Click[**here**](file:///Users/vidhiyadav/Desktop/ZAP%20Report.html)
+* Click [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/ZAP%20Report.html)
 
 ***
 ## Jenkinsfile
