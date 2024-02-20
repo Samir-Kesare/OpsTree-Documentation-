@@ -1,5 +1,5 @@
 # Security Group Setup ( Salary API )
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a3b73bcf-492f-47ca-9308-4d23101e45fd)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/cf209d64-d328-430c-b815-0035cd4d9ba2)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
