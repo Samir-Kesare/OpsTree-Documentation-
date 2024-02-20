@@ -9,6 +9,7 @@
 
 # Table of Contents
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#introduction)
+- [Flow Diagram ](
 - [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#pre-requisites)
 - [Setup Security Group for Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#setup-security-group-for-redis-instances)
 - [Inbound Rules](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md#inbound-rules)
@@ -26,7 +27,8 @@ In Amazon Web Services (AWS), a security group is a fundamental component of net
 | AWS Account  |
 
 # Flow Diagram 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/fe27182d-fa1a-4eb1-8acc-97e8d18ae781)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/9a151f2f-9a1b-4ff8-b05a-8811a90d3710)
+
 ***
 
 # Setup Security Group for [Redis Instances](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Instances/README.md)
