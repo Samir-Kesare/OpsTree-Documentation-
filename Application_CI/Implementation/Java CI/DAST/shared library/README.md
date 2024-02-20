@@ -9,7 +9,7 @@
 
 1. [Introduction](#Introduction)
 2. [What is Shared Library](#What-is-Shared-Library)
-3. [Prerequisites](#Prerequisites)
+3. [Pre-requisites](#Pre-requisites)
 4. [Runtime Prerequisites](#Runtime-Prerequisites)
 5. [Flow Diagram](#Flow-Diagram)
 6. [Pipeline Setup](#Pipeline-Setup)
