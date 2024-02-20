@@ -81,7 +81,7 @@ A shared library is typically organized as a Git repository containing code that
 
 3. **Build Pipeline**
 
-<img width="1128" alt="Screenshot 2024-02-20 at 9 11 39 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/dec74f72-721a-424a-ba77-377ace5bce7e">
+<img width="1022" alt="Screenshot 2024-02-20 at 10 02 52 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/f258fabd-9543-4d63-8521-c5a7d9a1513d">
 
 ***
 ## Output
