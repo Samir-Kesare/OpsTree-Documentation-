@@ -1,4 +1,3 @@
-update the table of content and give me readme.md code and also add * for sub points
 
 # Create NAT Gateway, Internet gateway and Route Table for Dev Environment Manually
 
@@ -6,94 +5,101 @@ update the table of content and give me readme.md code and also add * for sub po
 | -------------------- | -------------- | ---------------- | -------------------- |
 | **Parasharam Desai** | 19-02-2024     | 19-02-2024       | V1                   |
 
-Introduction
-Prerequisites
-Create a Route Table
-Add Routes
-Associate Subnets
-conclusion
-Resources and References
-Contact Info
+# Table of Contents
 
-Introduction
-Creating and associating a route table is an essential step when setting up networking in a cloud environment, such as AWS. Below are the general steps for creating a route table and associating it with subnets.
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Create a Route Table](#create-a-route-table)
+4. [Create a NAT Gateway](#create-a-nat-gateway)
+5. [Create an Internet Gateway](#create-an-internet-gateway)
+6. [Add Routes](#add-routes)
+7. [Associate Subnets](#associate-subnets)
+8. [Conclusion](#conclusion)
+9. [Resources and References](#resources-and-references)
+10. [Contact Information](#contact-information)
 
 
+# Introduction
 
-Create a NAT Gateway 
-Go to the AWS Management Console.
+Setting up networking in a cloud environment, such as AWS, involves several essential steps, including creating and associating route tables. This guide outlines the process of manually creating NAT Gateway, Internet Gateway, and Route Table for a Dev environment in AWS VPC. By following these steps, you can ensure proper networking configuration to facilitate communication within your VPC and with external resources.
 
-Navigate to the VPC Dashboard.
 
-In the left navigation pane, choose "NAT Gateway."
+# Create a NAT Gateway 
+* Go to the AWS Management Console.
+
+* Navigate to the VPC Dashboard.
+
+* In the left navigation pane, choose "NAT Gateway."
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/94fe9f40-81c6-4ade-88ad-e258b49e7477)
 
-Click on the "NAT Gateway." button.
+* Click on the "NAT Gateway." button.
 
-Give the NAT Gateway a name and select the VPC for which you want to create the NAT Gateway.
+* Give the NAT Gateway a name and select the VPC for which you want to create the NAT Gateway.
 
-Click on "Create."
+* Click on "Create."
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/2d5db5a6-dd6f-42d1-ab4d-2e8f49fc5154)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/c3f96057-7de4-4a23-a88e-8319f0c39955)
 
 
-Create a Internet Gateway 
-Go to the AWS Management Console.
+# Create a Internet Gateway 
+* Go to the AWS Management Console.
 
-Navigate to the VPC Dashboard.
+* Navigate to the VPC Dashboard.
 
-In the left navigation pane, choose "Internet Gateway."
+* In the left navigation pane, choose "Internet Gateway."
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/013a3f66-61b2-4a41-b0c2-d9a73fceba7d)
 
 
-Click on the "Internet Gateway" button.
+* Click on the "Internet Gateway" button.
 
-Give the Internet Gateway a name and select the VPC for which you want to create the Internet Gateway.
+* Give the Internet Gateway a name and select the VPC for which you want to create the Internet Gateway.
 
-Click on "Create."
+* Click on "Create."
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7474ef7e-d17d-42b9-81a3-90a46ae86a97)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/11eaa23c-87df-45d9-a731-5b4af4ce2b3f)
 
-Select ACtion then Attach Vpc & choose the Dev Vpc
+* Select "Actions" and then click on "Attach VPC."
+* Choose the desired VPC, such as the Dev VPC, from the available options.
+* 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/07f67bc6-dcfa-4c3a-b510-789c06c1cb21)
 
 
 
-Create a Route Table
-Go to the AWS Management Console.
+# Create a Route Table
+* Go to the AWS Management Console.
 
-Navigate to the VPC Dashboard.
+* Navigate to the VPC Dashboard.
 
-In the left navigation pane, choose "Route Tables."
+* In the left navigation pane, choose "Route Tables."
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/8c4daf8c-abee-403b-89f4-258bff67c505)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/41ccd34e-8300-49a3-936c-c7ed3b775f46)
 
-Click on the "Create Route Table" button.
+* Click on the "Create Route Table" button.
 
-Give the route table a name and select the VPC for which you want to create the route table.
+* Give the route table a name and select the VPC for which you want to create the route table.
 
-Click on "Create."
+* Click on "Create."
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/214c356f-3e81-4d29-bb13-34678e5d17f0)
 
-Follow Steps to Create Public-RT & Private-RT 
+* Follow Steps to Create Public-RT & Private-RT 
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/3e4bbbbe-5005-4032-9d22-96cf72da349d)
 
-Add Routes
-Select the newly created route table.
+# Add Routes
+* Select the newly created route table.
 
-In the "Routes" tab, click on "Edit routes."
+* In the "Routes" tab, click on "Edit routes."
 
-Add the necessary routes based on your requirements (e.g., a default route to the internet gateway).
+* Add the necessary routes based on your requirements (e.g., a default route to the internet gateway).
 
 then click on save the change 
 
@@ -102,21 +108,19 @@ then click on save the change
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/fd726a34-b7e3-4d71-8f1b-db4c6cd2eff8)
 
 
-Associate Subnets
-In the "Subnet Associations" tab, click on "Edit subnet associations."
+# Associate Subnets
+* In the "Subnet Associations" tab, click on "Edit subnet associations."
 
-Associate the route table with the desired subnets.
-
-then click on Save association
+* Associate the route table with the desired subnets. then click on Save association
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/dbee0798-ac85-4fdf-b411-ca2cc038aac4)
-
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/c91e119a-2026-4758-9760-b6c04906efb5)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/be2acd6e-c81f-4bd6-9779-217d8f941f0d)
 
-Follow Same process to association in Private-RT
+* Follow the same process to associate the private route table (Private-RT) with the desired subnets.
+
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/e4a215d1-67bf-40db-b8b3-dfa167effc37)
 
@@ -128,8 +132,10 @@ Follow Same process to association in Private-RT
 
 
 
-conclusion
-In conclusion, setting up a route table in a cloud environment involves several prerequisites to ensure the proper functioning and security of your network. By following the steps outlined above and adhering to best practices, you can create a well-organized and secure network infrastructure
+# Conclusion
+
+In this guide, we've provided a detailed walkthrough for creating NAT Gateway, Internet Gateway, and Route Table in AWS VPC. By following the outlined steps, you can establish the necessary networking infrastructure to support your Dev environment. Proper configuration of these components is crucial for enabling seamless communication between resources within the VPC and the broader internet. With this setup, you're well-equipped to proceed with deploying and managing your applications in the AWS cloud.
+
 
 
 
