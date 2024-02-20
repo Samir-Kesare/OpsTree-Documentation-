@@ -23,7 +23,8 @@ This document provides a guide for setting up security groups for Salary API. By
 
 A security group controls the traffic that is allowed to reach and leave the resources that it is associated with. For example, after you associate a security group with an EC2 instance, it controls the inbound and outbound traffic for the instance.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e6225e41-b16c-4f40-9174-ac7d465f4701)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/c2985136-71f2-41a9-b796-d8dc9d9af76b)
+
 ***
 ## Pre-requisites
 * Access to the AWS Management Console or AWS CLI with appropriate permissions.
