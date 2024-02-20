@@ -1,4 +1,5 @@
 # Salary API Security Group Setup
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a3b73bcf-492f-47ca-9308-4d23101e45fd)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
@@ -20,11 +21,14 @@
 
 This document provides a guide for setting up security groups for Salary API. By configuring inbound and outbound rules, you can control network traffic to and from your Salary API instances, enhancing the security of your infrastructure.
 
+A security group controls the traffic that is allowed to reach and leave the resources that it is associated with. For example, after you associate a security group with an EC2 instance, it controls the inbound and outbound traffic for the instance.
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e6225e41-b16c-4f40-9174-ac7d465f4701)
 
 ## Pre-requisites
 * Access to the AWS Management Console or AWS CLI with appropriate permissions.
 
-* Understanding of your application's network requirements.
+* Understanding of your application's [network requirements](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md).
 
 ## Steps
 **Step-1 Access the AWS Management Console**
@@ -98,8 +102,6 @@ Attached the backend security group as the source for the Scylla-Security group:
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Clean Workspace | https://www.jenkins.io/doc/pipeline/tour/running-multiple-steps/#finishing-up |
-| Pipeline (Generic Doc) | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md |
-| Create Pipeline (Generic Doc)| https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md |
-| Pipeine Syntax | https://www.jenkins.io/doc/book/pipeline/#pipeline-syntax-overview |
-| Pipeline Concepts | https://www.jenkins.io/doc/book/pipeline/#pipeline-concepts |
+| Documentation Template | https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template |
+| Dev Infra Design      | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md |
+| Security Group | https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html |
