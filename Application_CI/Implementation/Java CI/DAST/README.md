@@ -54,7 +54,11 @@ https://github.com/avengers-p7/Salary-API/tree/main
 ```
 [**Repo Link**](https://github.com/OT-MICROSERVICES/salary-api)
 
-2. **Build Pipeline**
+2. Configure Job
+
+<img width="916" alt="Screenshot 2024-02-20 at 5 02 54 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/99a6b362-6fb3-427b-9023-07992bd48d08">
+
+4. **Build Pipeline**
 
 
 <img width="1243" alt="Screenshot 2024-02-20 at 2 33 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/548c6ae8-bf02-4b68-8e4e-1061c094513c">
