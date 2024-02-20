@@ -71,6 +71,8 @@ https://github.com/avengers-p7/Salary-API/tree/main
 
 * HTML Report can be found [**here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/DAST/ZAP%20Report.html)
 
+<img width="1160" alt="Screenshot 2024-02-20 at 5 01 40 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1948e7bc-46ad-4012-a4ce-4f003d111b67">
+
 ***
 ## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/Declarative%20Pipeline/Java/DAST/Jenkinsfile)
 ```shell
