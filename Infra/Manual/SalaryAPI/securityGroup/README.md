@@ -24,16 +24,29 @@ This document provides a guide for setting up security groups for Salary API. By
 A security group controls the traffic that is allowed to reach and leave the resources that it is associated with. For example, after you associate a security group with an EC2 instance, it controls the inbound and outbound traffic for the instance.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e6225e41-b16c-4f40-9174-ac7d465f4701)
-
+***
 ## Pre-requisites
 * Access to the AWS Management Console or AWS CLI with appropriate permissions.
 
 * Understanding of your application's [network requirements](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md).
+***
+## Important Ports
+### Inbound Rule
+| Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|---------------------|-------------------|---------------------|
+| Backend-sg          | 22                | 20.0.0.0/28         |
+| Backend-sg          | 8080              | Frontend-lb-sg          |
 
-## Steps
+### Outbound Rule
+| Security Group Name | Outbound Rule Port | Outbound Rule Protocol | Outbound Rule Destination |
+|---------------------|---------------------|------------------------|--------------------------|
+| *                   | All traffic         | All                    | 0.0.0.0/0                | 
+
+***
+## Setup
 **Step-1 Access the AWS Management Console**
 
-  Navigate to the AWS Management Console and sign in to your AWS account.
+Navigate to the AWS Management Console and sign in to your AWS account.
 
 **Step-2 Open the EC2 Dashboard**
 
@@ -46,8 +59,6 @@ Under the "Compute" section, select EC2.
 In the EC2 Dashboard, locate and click on Security Groups in the left navigation pane.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/54e01965-722a-4db3-a66a-cd15f0fac52b)
-
-
 
 **Step-4 Choose or Create a Security Group**
 
