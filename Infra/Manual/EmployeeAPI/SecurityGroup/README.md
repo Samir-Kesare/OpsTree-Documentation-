@@ -1,13 +1,15 @@
-# POC for Manual Setup of Security Group for Employee API
+# Employee API Manual Security Group Setup
 | Author | Created On | Last Updated | Document Version | Last Updated By |
 | ------ | ---------- | ------------ | ---------------- | --------------- |
-| Shantanu | 12-02-2024 | 13-02-2024   |         v1     |     Shantanu    |
+| Shantanu | 12-02-2024 | 20-02-2024   |         v1     |     Shantanu    |
 ***
 
 # Table of Content
 [1. Introduction](#introduction)
 
 [2. Overview](#overview)
+
+[3.Pre-requisites](#Pre-requisites)
 
 [3. Setting Up the Environment](#setting-up-the-environment)
 
@@ -49,24 +51,73 @@ AWS Security Groups act as virtual firewalls for EC2 instances, controlling inbo
 | Flexible configuration options  | Security Groups offer flexibility in defining rules based on ports, protocols, and IP addresses, providing adaptability to diverse application requirements and network architectures. |
 ***
 
-# Setting Up the Environment
+# Pre-requisites
+* Access to the AWS Management Console or AWS CLI with appropriate permissions.
 
-### Navigate to the EC2 Dashboard
-* In the AWS Management Console, go to the "Services" menu and select "EC2" under the "Compute" section.
-* In the EC2 Dashboard, locate the "Network & Security" section in the left navigation pane and click on "Security Groups."
-* Select the VPC (Virtual Private Cloud) for which you want to create the security group.
-* Under the "Inbound rules" section, click "Add Rule" to add the rules for incoming traffic. (8080,9042,6379,22)
-* Click the "Create" button to create the security group.
+* Understanding of your application's network requirements.
+
+# Setting Up The Environment
+
+**Step-1 Access the AWS Management Console**
+
+  Navigate to the AWS Management Console and sign in to your AWS account.
+
+**Step-2 Open the EC2 Dashboard**
+
+In the AWS Management Console, go to the Services drop down.
+
+Under the "Compute" section, select EC2.
+
+**Step-3 Navigate to Security Groups**
+
+In the EC2 Dashboard, locate and click on Security Groups in the left navigation pane.
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/54e01965-722a-4db3-a66a-cd15f0fac52b)
+
+
+**Step-4 Choose or Create a Security Group**
+
+* Select an existing security group or create a new one by clicking the Create Security Group button.
+
+* Provide a name, description, and VPC assignment for your new security group.
+
+  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/82f6ed9b-8ea9-4092-9e3a-db318d806168)
   
-![Screenshot 2024-02-14 at 11 15 25 PM](https://github.com/avengers-p7/Documentation/assets/156056364/3ff679ae-90c5-4da8-8668-4d53f3839a39)
 
-### Associating the Security Group with Instances
-* After creating the security group, you need to associate it with your instances.
-* In the EC2 Dashboard, go to the "Instances" section.
-* Select the instance you want to associate with the security group.
-* Under the "Description" tab, find the "Security groups" section and click "Edit security groups."
-* Choose the newly created security group and click "Save."
-***
+**Step-5 Define Inbound Rules**
+Attached the backend security group as the source for the Scylla-Security group:
+
+* Click on the Inbound Rules tab.
+
+* Click the Edit Inbound Rules button.
+
+| Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|---------------------|-------------------|---------------------|
+| Backend-sg          | 22                | 20.0.0.0/28         |
+| Backend-sg          | 8080              | Backend-sg          |
+
+![image](https://github.com/avengers-p7/Documentation/assets/156057205/6073c8a4-d39e-4c3b-b0fd-2dc5a491ddbf)
+
+**Step-6 Define Outbound Rules**
+
+* Click on the Outbound Rules tab.
+
+* Click the Edit Outbound Rules button.
+
+| Security Group Name | Outbound Rule Port | Outbound Rule Protocol | Outbound Rule Destination |
+|---------------------|---------------------|------------------------|--------------------------|
+| *                   | All traffic         | All                    | 0.0.0.0/0                | 
+
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/1d86e360-8cd3-4edd-959b-fbab18a4e0b2)
+
+
+
+**Output**
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/7237be06-321a-4953-b804-e9799bf18ab8)
+
+---
 
 # Best Practices
 | Best Practices                               | Explanation                                              |
@@ -90,4 +141,5 @@ This POC demonstrates the process of creating a Security Group in AWS for hostin
 # References
 | Source | Description  | 
 | -------- | ------- | 
-| https://github.com/avengers-p7/Documentation/blob/main/OT%20Micro%20Services/Application/Employee_API/README.md | Employee API |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Employee_API/README.md) | Employee API |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | Dev Infra Link |
