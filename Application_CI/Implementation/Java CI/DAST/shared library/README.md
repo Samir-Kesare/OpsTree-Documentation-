@@ -139,7 +139,38 @@ def call(String url, String creds, String branch, String zapVersion, String curr
 }
 ```
 
-### [GitCheckoutPrivate.groovy]()
+### [OwaspZapInstallation.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/dast/OwaspZapInstallation.groovy)
+```
+package org.avengers.java.dast
+
+def call(String zapVersion) {
+  stage('Install ZAP') {
+    script {
+         // Download and install OWASP ZAP
+          sh "wget https://github.com/zaproxy/zaproxy/releases/download/v${zapVersion}/ZAP_${zapVersion}_Linux.tar.gz"
+          sh "tar -xvf ZAP_${zapVersion}_Linux.tar.gz"
+                    
+                }
+            }
+        }
+```
+
+### [RunZap.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/dast/RunZap.groovy)
+
+```
+package org.avengers.java.dast
+
+def call(String zapVersion, String currentWorkspace) {
+stage('Run ZAP Scan') {
+            script {
+                 // Start ZAP and perform the scan
+                  sh "${currentWorkspace}/ZAP_${zapVersion}/zap.sh -cmd -port 8082 -quickurl http://174.129.170.198:8080/swagger-ui/index.html -quickout ${currentWorkspace}/results.html"
+                }
+            }
+        }
+```
+
+### [GitCheckoutPrivate.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/GitCheckoutPrivate.groovy)
 ```shell
 package org.avengers.common
 
@@ -166,6 +197,8 @@ def call(){
   
 }
 ```
+
+
 
 * For more comprehensive understanding of each step in the pipeline and detailed information, you can visit the following link: [Link to Documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/DAST%20POC/README.md)
 
