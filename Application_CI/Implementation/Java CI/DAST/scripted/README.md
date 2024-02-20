@@ -102,7 +102,7 @@ node {
 * For more comprehensive understanding of each step in the pipeline and detailed information, you can visit the following link: [Link to Documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/DAST%20POC/README.md)
 
 ***
-Best Practices
+## Best Practices
 1. **Collaboration and Reporting:** Share scan results with relevant stakeholders, including developers, security teams, and management. Use OWASP ZAP's reporting features to generate detailed reports that highlight identified vulnerabilities, their impact, and recommended remediation steps.
    
 2. **Stay Updated:** Regularly update OWASP ZAP to the latest version to ensure you have the most up-to-date features and security checks.
