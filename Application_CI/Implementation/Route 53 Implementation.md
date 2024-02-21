@@ -7,9 +7,31 @@
 
 
 
+
+# Table of content 
+
+1. [Introduction](#Introduction)
+2. [Prerequisites](#Prerequisites)
+3. [Steps](#Steps)
+4. [Conclusion](#Conclusion) 
+5. [Resources and References](#Resources-and-References)
+6. [Contact Info](#Contact-Info)
+
+
 # Introduction 
 
 Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service. You can use Route 53 to perform three main functions in any combination: domain registration, DNS routing, and health checking.
+
+
+
+# Prerequisites 
+
+Before you begin, ensure that you have:
+
+1. AWS account credentials with sufficient permissions to create hosted zone in route 53
+
+2. Access to go daddy account as our domain is from go daddy
+
 
 
 
