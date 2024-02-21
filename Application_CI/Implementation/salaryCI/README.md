@@ -27,7 +27,7 @@ Continuous Integration (CI) is a development practice where developers integrate
 
 **For more information about CI checks performed in Salary API, use the following directory link:**
 
-[\[ Reference Dir \]](https://github.com/CodeOps-Hub/Documentation/tree/main/Application_CI/Implementation/Java%20CI)
+[\[ Reference Directory \]](https://github.com/CodeOps-Hub/Documentation/tree/main/Application_CI/Implementation/Java%20CI)
 
 In this task, we are using Shared Library to perform CI on Salary API.
 ***
