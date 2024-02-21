@@ -112,7 +112,7 @@ Applications have various use cases in which we have to set up traffic routing b
   * Listeners and routing, the default listener accepts HTTP traffic on port 80. You can keep the default protocol and port, or choose different ones.eg `frontend-tg`.
   * Other  all configuration default .
      
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/d020611f-830d-482f-bb3d-e376b873bc78"> 
+<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/c3c02a66-e419-4c07-9c9f-c2aaeb9a0259"> 
 
   * Review your configuration and choose Create load balancer. 
 
