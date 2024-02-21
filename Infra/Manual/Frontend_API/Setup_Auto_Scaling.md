@@ -63,7 +63,7 @@ First you should choose which service or an application you want to scale then s
  
   *  Click on the Create `launch template`.
 
-    <img width="760" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/77e3fa2a-a442-46fd-87d0-b4f639135c0e">
+   <img width="760" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/77e3fa2a-a442-46fd-87d0-b4f639135c0e">
   
 ***
 ## Conclusion
