@@ -57,7 +57,7 @@ First you should choose which service or an application you want to scale then s
 ### Steps To create Launch Template  
 
   *  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-  *  In the navigation pane, choose `Target Groups`.
+  *  In the navigation pane, choose `Launch Templates`.
 
      <img width="760" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/94584484-c221-4651-b20a-e0a22d7f8334"> 
  
@@ -106,7 +106,7 @@ First you should choose which service or an application you want to scale then s
 
       <img width="660" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/31ea1111-6f32-40e5-b9ea-8a4de2a476ac">
 
-   * Select the VPC or go with the default VPC and also select the Availability zone.eg `Dev-VPC` `Frontend-vt-subnet`
+   * Select the VPC or go with the default VPC and also select the Availability zone.eg `Dev-VPC` `Frontend-Pvt-subnet`
    * Then Cilck `Next`.
 
       <img width="660" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/4863e403-bd8f-4c50-a7c9-5f97a8c414ef">
