@@ -49,8 +49,8 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 | ---- | ----------- |
 | **Jenkins(2.426.3)** | To build our pipeline |
 |**Sonarqube(9.6.1.59531)**| [For Static code analysis](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md) |
-| FOSSA CLI(3.9.5) | Licence Scanning |
-| GitLeaks(9.18.2) | for Credential Scanning |
+| FOSSA CLI(3.9.5) | [Licence Scanning](https://github.com/CodeOps-Hub/Documentation/tree/main/Application_CI/Implementation/License%20Scanning/Shared%20Library) |
+| GitLeaks(9.18.2) | for [Credential Scanning](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Credential%20Scanning/Shared%20Library/README.md?plain=1) |
 
 
 > [!Important]
@@ -234,6 +234,7 @@ def call() {
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
+| Licence Scanning | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/02-%20Generic%20CI%20operation/License%20Scanning/README.md |
 | Sonarqube | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md |
 | Statis Code Analysis | https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md |
 | Sonarqube Intergration | https://www.youtube.com/watch?v=KsTMy0920go&t=342s |
