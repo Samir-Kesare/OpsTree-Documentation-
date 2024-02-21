@@ -90,9 +90,9 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
 
 <img width="797" alt="Screenshot 2024-02-21 at 1 19 31 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9c4c2f5f-2fcd-4ca2-9a89-74066020821e">
 
- 8. Choose the Virtual Private Cloud (VPC) from the dropdown menu. In this case, we will select **Dev-VPC** as the VPC.
-    From the available subnets within the selected VPC, choose the appropriate subnet. Here, we will select **Backend-Pvt-subnet**.
-    Ensure to disable auto-assign IP for the selected subnet to prevent automatic assignment of public IP    
+8. Choose the Virtual Private Cloud (VPC) from the dropdown menu. In this case, we will select **Dev-VPC** as the VPC.
+    - From the available subnets within the selected VPC, choose the appropriate subnet. Here, we will select **Backend-Pvt-subnet**.
+    - Ensure to disable auto-assign IP for the selected subnet to prevent automatic assignment of public IP.  
        
 <img width="779" alt="Screenshot 2024-02-21 at 1 19 47 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ffc14f3d-8763-4f8b-8c98-100be9e5d395">
   
