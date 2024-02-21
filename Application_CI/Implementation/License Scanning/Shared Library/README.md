@@ -29,6 +29,11 @@
 A Jenkins Shared Library is a collection of reusable code that facilitates the sharing of common pipeline logic among teams in Jenkins. It simplifies CI/CD processes by abstracting complex tasks into functions, speeding up pipeline development. By keeping shared code separate from individual pipelines, teams ensure consistency and minimize duplication. This fosters collaboration, encourages best practices, and streamlines Jenkins pipeline creation, leading to better software delivery and development workflows.  
 About more information [**Click Here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
 
+### License Scanning Tool Used : FOSSA
+![9543448](https://github.com/avengers-p7/Documentation/assets/156056344/38655575-0ce4-43eb-b832-a37bd28f5870)
+
+FOSSA is a leading open-source license compliance and dependency analysis tool. It enables developers to identify and manage licensing obligations, ensuring legal compliance and reducing the risk of intellectual property issues. FOSSA automates license scanning, providing detailed insights into dependencies, helping teams navigate licensing complexities in their software projects effortlessly.
+
 ***
 ## Why Shared Library
 | Advantage          | Description                                                                                                                                                          |
