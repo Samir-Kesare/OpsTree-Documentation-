@@ -24,8 +24,8 @@
 2. [Prerequisites](#Prerequisites)
 3. [Steps](#Steps)
 4. [Conclusion](#Conclusion) 
-5. [Resources and References](#Resources-and-References)
-6. [Contact Info](#Contact-Info)
+5. [References](#References)
+6. [Contact Information](#Contact-Information)
 
 
 # Introduction 
