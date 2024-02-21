@@ -29,6 +29,11 @@
 A Jenkins Shared Library is a collection of reusable code that facilitates the sharing of common pipeline logic among teams in Jenkins. It simplifies CI/CD processes by abstracting complex tasks into functions, speeding up pipeline development. By keeping shared code separate from individual pipelines, teams ensure consistency and minimize duplication. This fosters collaboration, encourages best practices, and streamlines Jenkins pipeline creation, leading to better software delivery and development workflows.  
 About more information [**Click Here**](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
 
+### Credential Scanning Tool Used : GitLeaks 
+![download](https://github.com/avengers-p7/Documentation/assets/156056344/46144a07-f058-45d6-87de-2220d12fd87f)
+
+GitLeaks is a powerful open-source tool designed to enhance security in software development by scanning Git repositories for potential leaks of sensitive information. Leveraging regular expressions, it identifies and flags patterns indicative of credentials, passwords, and API keys, helping developers prevent accidental exposure of confidential data in their version-controlled codebases.
+
 ***
 ## Why Shared Library
 | Advantage          | Description                                                                                                                                                          |
