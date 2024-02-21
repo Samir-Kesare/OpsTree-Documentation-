@@ -1,4 +1,4 @@
-<img width="797" alt="Screenshot 2024-02-21 at 1 19 31 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/05fe2fa6-1e4d-49bc-b81f-ff214750ac3a"># Instance Setup for Attendance API
+Instance Setup (Attendance API)
 
 <img width="512" alt="Screenshot 2024-02-21 at 10 24 44 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/e5cdbef2-07a6-41de-964c-1ebc948d496d">
 
