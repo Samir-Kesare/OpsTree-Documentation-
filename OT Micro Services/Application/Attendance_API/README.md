@@ -119,7 +119,12 @@ export PATH="$HOME/.local/bin:$PATH"
 <img width="960" alt="Screenshot 2024-01-19 at 1 28 04 AM" src="https://github.com/avengers-p7/Documentation/assets/156056349/cd0a1807-5864-4ae5-92e7-c9aca68e664f">
 
 *** 
-4) To make sure poetry run without any error you will need to install psycopg2
+4) Install all necessary dependencies using `poetry`
+```
+poetry install
+```
+
+4) Now, To install psycopg2 using binary packages and ensure Poetry runs without any errors, you can follow these steps:
 ```shell
 poetry add psycopg2-binary
 ```
