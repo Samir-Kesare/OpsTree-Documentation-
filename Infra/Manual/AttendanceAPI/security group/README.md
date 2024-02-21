@@ -1,4 +1,4 @@
-<img width="460" alt="Screenshot 2024-02-21 at 9 49 07 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d4663bac-9e9e-46fd-93ea-c00229e3b6b9"># Security Group Setup for Attendance API
+# Security Group Setup for Attendance API
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/00b05f8a-24ba-4ab4-83a2-805a7c79459e)
 
