@@ -49,6 +49,9 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 | ---- | ----------- |
 | **Jenkins(2.426.3)** | To build our pipeline |
 |**Sonarqube(9.6.1.59531)**| [For Static code analysis](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/07-%20Sonarqube/README.md) |
+| FOSSA CLI(3.9.5) | Licence Scanning |
+| GitLeaks(9.18.2) | for Credential Scanning |
+
 
 > [!Important]
 > I have installed the plugin bundle provided by Jenkins during setup. If you have not done the same, you may encounter plugin errors.
@@ -61,6 +64,8 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 | **Java 17** | For springboot project compilation | 
 | **Maven Compiler Plugin** | For springboot project compilation |
 |**Sonarque Scanner Plugin**| To integrate Jenkins with Sonarqube |
+| **OWASP Dependency-Check Plugin** | for dependency-check configuration on your jenkins server |
+
 
 ***
 ## Flow Diagram
