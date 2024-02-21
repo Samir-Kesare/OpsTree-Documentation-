@@ -75,14 +75,14 @@ Applications have various use cases in which we have to set up traffic routing b
 
   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5a91aade-231d-4778-9c85-8400319040a5">  
   
-   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5fca6e2d-bdd7-4e00-be1d-bdeddc307dfe">
-
 ### Step 2: Register targets
 
   * Select one or more instances, enter one or more eg `3000` ports, and then choose Include as pending below.
   * Then Choose Create target group.
     
- <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/afe80217-25ba-4be8-97be-b1949847de91"> 
+ <img width="724" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/01d96d2f-5085-4541-ba1c-8e9fd9892c0c">
+
+***
 
 ### Step 3: Configure a load balancer and a listener
   
