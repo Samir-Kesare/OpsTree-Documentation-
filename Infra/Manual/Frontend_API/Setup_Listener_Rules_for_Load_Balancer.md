@@ -49,7 +49,7 @@ Applications have various use cases in which we have to set up traffic routing b
 ***
 ## Pre-requisites
 
- * Active Aws Acount .
+ * Active Aws Account
 
 ***
 ## Steps to setup Listener Rules for Load Balancer
