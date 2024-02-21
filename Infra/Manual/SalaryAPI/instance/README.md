@@ -20,7 +20,7 @@
 ***
 ## Introduction
 In this document we will create a new Amazon EC2 instance running , and configure it.
-### What
+### What?
 An instance in Amazon EC2 is essentially a virtual server that users can create and manage within the AWS cloud. These instances are configurable with varying amounts of CPU, memory, storage, and networking resources, allowing users to tailor them to specific application requirements. Instances are launched from pre-configured Amazon Machine Images (AMIs), which serve as templates containing the necessary operating system and software configurations. Users can start, stop, terminate, and resize instances as needed, providing scalability and flexibility to accommodate changing workloads and demands. Instances play a vital role in enabling users to deploy and run their applications and services in a scalable, reliable, and cost-effective manner on the AWS platform.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/3e1def3e-317b-46e5-8c18-fb5f5b3e0433)
