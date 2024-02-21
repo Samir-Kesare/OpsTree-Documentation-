@@ -106,10 +106,14 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
   
 	- Select **`Secret Text`** and provide the token that you copied in secret section. Also, give ID and Description to your credential.
 		![image](https://github.com/avengers-p7/Documentation/assets/156056444/2727ea81-3014-4910-93ef-77237529f313)
+4. **Configure Shared library in Jenkins**
+	
+ 	Follow below document
 
-5.  **Configure Sonarqube Server  in `Dashboard --> Manage Jenkins --> System`**
+	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/1681289c-a3ef-4d6a-9e54-a2b2a948d660)
+
+![image](https://github.com/avengers-p7/Documentation/assets/156056444/1038a25c-7953-4e72-af36-9d4f9eb77f98)
 
 6. **Create and Configure your Jenkins Pipeline job**
 
