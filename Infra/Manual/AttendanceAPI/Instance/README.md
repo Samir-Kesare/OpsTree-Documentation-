@@ -10,10 +10,11 @@
 ***
 ## Table of Contents
 + [Introduction](#Introduction)
-+ [EC2 Instance](#EC2-Instance)
-+ [EC2 instance types](#EC2-instance-types)
++ [EC2 Features](#key-features)
++ [Instance types](#EC2-instance-types)
 + [Pre-requisites](#Pre-requisites)
 + [Launch Ec2 Instance](#Steps-to-Launch-an-Ec2-Instance)
++ [Output](#output)
 + [Conclusion](#Conclusion)
 + [Contact Information](#Contact-Information)
 + [References](#References)
@@ -23,12 +24,12 @@
 
 This document provides step-by-step instructions for setting up an Amazon EC2 instance.
 
+**Amazon Elastic Compute Cloud (EC2)** is a web service offered by Amazon Web Services (AWS) that are virtual servers which you can use to run applications and workloads.Instances are launched from pre-configured Amazon Machine Images (AMIs), which serve as templates containing the necessary operating system and software configurations. Users can start, stop, terminate, and resize instances as needed, providing scalability and flexibility to accommodate changing workloads and demands.
+
 ![ec2-basic-arch](https://github.com/CodeOps-Hub/Documentation/assets/156056349/72351bcb-ec46-4d65-a260-1d750701fb9a)
 
-## EC2
 
-Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Services (AWS) that are virtual servers which you can use to run applications and workloads.Instances are launched from pre-configured Amazon Machine Images (AMIs), which serve as templates containing the necessary operating system and software configurations. Users can start, stop, terminate, and resize instances as needed, providing scalability and flexibility to accommodate changing workloads and demands.
-
+## Key Features
 
 | Key Feature       | Description                                                                                                                            |
 |-------------------|----------------------------------------------------------------------------------------------------------------------------------------|
@@ -123,6 +124,10 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 curl http://instance-IP:8080/apidocs/
 ```
 * Make sure to replace `instance-IP` with the actual Public IP address of your EC2 instance.
+
+* This command will enable you to determine whether the Swagger API is visible on port 8080 or not.
+
+<img width="1149" alt="Screenshot 2024-02-21 at 5 26 21 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/5129fb71-a031-4cd0-870e-1b3623d5a6ca">
 
 ***
 ## Conclusion
