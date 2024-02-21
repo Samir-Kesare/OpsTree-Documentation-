@@ -104,7 +104,7 @@ First you should choose which service or an application you want to scale then s
 
      <img width="560" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/73cc9093-1e84-478b-bee5-bae1eb38f991">
 
-   * Select the VPC or go with the default VPC and also select the Availability zone.eg `Dev-VPC` `Backend-Pvt-subnet`
+   * Select the VPC and also select the Availability zone.eg `Dev-VPC` `Backend-Pvt-subnet`
    * Then Cilck `Next`.
 
      <img width="432" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a41fdd4f-55a8-4afe-bb2e-e615843afee1">
