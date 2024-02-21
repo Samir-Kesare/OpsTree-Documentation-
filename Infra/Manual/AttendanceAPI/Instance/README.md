@@ -1,4 +1,4 @@
-# Instance Setup for Attendance API
+<img width="797" alt="Screenshot 2024-02-21 at 1 19 31 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/05fe2fa6-1e4d-49bc-b81f-ff214750ac3a"># Instance Setup for Attendance API
 
 <img width="512" alt="Screenshot 2024-02-21 at 10 24 44 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/e5cdbef2-07a6-41de-964c-1ebc948d496d">
 
@@ -61,54 +61,60 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 ***
 ## Launch an Ec2 Instance
 
-  **Step-1 :** Go to the AWS console and sign into your account first.
+  **1** Go to the AWS console and sign into your account first.
  
-  **Step-2 :** After logging into the Amazon Management Console, visit the EC2 Dashboard .
+  **2** After logging into the Amazon Management Console, visit the EC2 Dashboard .
 
   <img width="1088" alt="Screenshot 2024-02-21 at 4 42 55 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/eaff3a4b-12cf-4fbd-868a-ca467639455f">
 
-  **Step-3 :** Click on the "Launch Instance" button to start the instance creation wizard. 
-
+  **3** Click on the "Launch Instance" button to start the instance creation wizard. 
 
 <img width="872" alt="Screenshot 2024-02-21 at 4 44 13 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/777657ff-a99e-4760-bce0-3f6f887f9b21">
 
-  **Step-4 :** Under **Name and tags**, for **Name**, enter a descriptive name for your instance.
+  **4** Under **Name and tags**, for **Name**, enter a descriptive name for your instance.
+
+  <img width="828" alt="Screenshot 2024-02-21 at 12 49 00 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/beae9961-550f-4ec2-ad46-22672c918b50">
+
+  **5** Select an Amazon Machine Image (AMI) based on your requirements (e.g., Amazon Linux 2, Ubuntu, etc.).
+
+  - Choose Quick Start, and then choose your preferred AMI.
+
+<img width="788" alt="Screenshot 2024-02-21 at 12 49 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0c2e0dc2-7b11-457e-9df1-bfb570bce665">
+
+  **6** From the "Instance Type" list, choose the appropriate instance type based on your workload requirements. This determines the computing power, memory, and storage capacity of your EC2 instance.
   
-  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/04a13c51-3270-4600-b9ee-2720fb1d9538)
+<img width="812" alt="Screenshot 2024-02-21 at 12 49 48 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/aa2538a3-a34c-496b-8850-3db4909a364f">
+  
+**7** Select an existing key pair from the dropdown menu if you have one, or create a new key pair .
 
-  **Step-5 :** Under Application and OS Images (Amazon Machine Image), do the following:
+<img width="797" alt="Screenshot 2024-02-21 at 1 19 31 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9c4c2f5f-2fcd-4ca2-9a89-74066020821e">
 
-  - Choose Quick Start, and then choose Amazon Linux. This is the operating system (OS) for your instance.
-
-  - From Amazon Machine Image (AMI), select an Amazon Machine Image (AMI).
-
-   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/929ae488-96dc-4ba3-b303-c1a0f9c314ed)
+ **8** a) Choose the Virtual Private Cloud (VPC) from the dropdown menu. In this case, we will select `Dev-VPC` as the VPC.
+       b) From the available subnets within the selected VPC, choose the appropriate subnet. Here, we will select Backend-Pvt-subnet.
+       c) Ensure to disable auto-assign IP for the selected subnet to prevent automatic assignment of public IP    
+       
+<img width="779" alt="Screenshot 2024-02-21 at 1 19 47 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ffc14f3d-8763-4f8b-8c98-100be9e5d395">
 
   
-  **Step-6 :** Select Instance type, Key Pair and Network 
-  - Under Instance type, from the Instance type list,
-  - Slect an existing or create a new key pair with an appropriate name.
-  - In the network settings, select a VPC; in this case, we will select `Dev-VPC`.
-  - Select a subnet , here `Backend-Pvt-subnet` and disable auto-assign IP.
-  
-  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/e9cbf3a1-3a50-4de4-9f91-b0a6fea36ac4)
-
-  **Step-7 :** Navigate to the security group settings, Choose your security group .eg `Frontend-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we      have successfully launched the instance.
+  **8** Navigate to the security group settings, Choose your security group .eg `Attendance-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we have successfully launched the instance.
 
   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/72ad719e-ffc2-49a6-8b42-a3e09a32c3a5)
 
-  **Step-8 :** A confirmation page lets you know that your instance is launching. Choose **View all instances** to close the confirmation page and return to the console.
+**9** Specify the size and type of the(e.g., SSD, HDD) of the root volume. Add additional volumes if needed.
 
-  On the **Instances** screen, you can view the status of the launch. It takes a short time for an instance to launch. 
+<img width="796" alt="Screenshot 2024-02-21 at 12 52 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/697fe22d-c390-4f01-98c7-f1a8530b3517">
 
-  It can take a few minutes for the instance to be ready for you to connect to it. Check that your instance has passed its status checks; you can view this information in the **Status check**     
-  column.
+  **10** On the `Instances` screen, you can track the launch status. Instances typically take a short time to launch.
+
+<img width="713" alt="Screenshot 2024-02-21 at 12 52 49 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/cab4dc52-462f-4286-84da-93f40daa0e85">
   
-  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/bfb5ee1b-70ca-4327-be01-543c3d3764fd)
+* It may take a few minutes for the instance to become available for connection. Verify that your instance has passed its status checks by checking the `Status check` column.
+  
+<img width="1050" alt="Screenshot 2024-02-21 at 5 08 51 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2daa1238-2f84-4f3c-966e-b19e2a106c12">
 
 
 > [!NOTE]
-> * After successfully launching the instance follow this [**Salary API Setup Document**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Salary%20API/README.md).
+> * After successfully launching the instance follow this [**Attendance API Document**]() to setup Attendance-API.
 
 ***
 ## Conclusion
