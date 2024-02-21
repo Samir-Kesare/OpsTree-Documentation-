@@ -1,4 +1,4 @@
-# Slary API CI (Shared Library)
+# Salary API CI (Shared Library)
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/dc808906-6fa5-4307-b472-e13fbed8560d)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
