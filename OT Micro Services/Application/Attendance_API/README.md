@@ -113,7 +113,7 @@ sudo apt-get install python3.11-dev
 curl -sSL https://install.python-poetry.org | python3 -
 ```
 ```shell
-export PATH="$HOME/ubuntu/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 ```
 
 <img width="960" alt="Screenshot 2024-01-19 at 1 28 04 AM" src="https://github.com/avengers-p7/Documentation/assets/156056349/cd0a1807-5864-4ae5-92e7-c9aca68e664f">
