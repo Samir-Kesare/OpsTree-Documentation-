@@ -1,4 +1,4 @@
-# Setup Auto Scaling for (Frontend API)
+# Setup Auto Scaling for (Employee-API)
 
 <img width="360" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/697fb29c-b84f-43bf-a48d-6c86d0ec41fa"> 
 
