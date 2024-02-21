@@ -110,7 +110,8 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
   
 * It may take a few minutes for the instance to become available for connection. Verify that your instance has passed its status checks by checking the **Status check** column.
   
-<img width="1050" alt="Screenshot 2024-02-21 at 5 08 51 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2daa1238-2f84-4f3c-966e-b19e2a106c12">
+<img width="1050" alt="Screenshot 2024-02-21 at 5 08 51 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/f7bbcf95-d022-45b4-af16-f0bf7fc0035d">
+
 
 
 > [!NOTE]
