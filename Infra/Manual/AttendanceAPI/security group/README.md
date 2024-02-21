@@ -33,7 +33,7 @@ A security group functions like a gatekeeper, dictating the types of traffic per
 |-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | **Traffic Filtering**                               | Security groups act as virtual firewalls controlling inbound and outbound traffic for instances within a subnet, based on user-defined rules. |
 |                                                     | Rules can specify allowed traffic based on IP ranges and ports, enhancing network security by filtering incoming and outgoing traffic. |
-| **Granular Control:**                            | Users can define rules at the instance level, specifying allowed protocols, ports, and source/destination IP ranges for inbound and outbound traffic. |                                                             |
+| **Granular Control**                            | Users can define rules at the instance level, specifying allowed protocols, ports, and source/destination IP ranges for inbound and outbound traffic. |                                                             |
 
 
 ***
