@@ -38,7 +38,7 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 | Pay-As-You-Go    | Pricing model where you only pay for the compute capacity used, suitable for both small startups and large enterprises.                  |
 
 ***
-## EC2 instance types
+## Instance types
 
 | Instance Type          | Description                                                                                     | Common Use Cases                                                                                              |
 |------------------------|-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
@@ -51,9 +51,12 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
                                             
 ***
 ## Pre-requisites
-* Access to the AWS Management Console or AWS CLI with appropriate permissions.
 
-* Understanding of your application's [network requirements](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md).
+| Requirement                                               | Description                                                                                       |
+|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
+| AWS account    | Users need to have an AWS account with appropriate permissions to create and manage EC2 instances.       |                    
+| SSH key pair       | If users plan to access their EC2 instances via SSH, they need to generate an SSH key pair         |
+
 
 ***
 ## Steps to Launch an Ec2 Instance
