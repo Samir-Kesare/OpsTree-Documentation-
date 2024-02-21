@@ -124,7 +124,7 @@ export PATH="$HOME/.local/bin:$PATH"
 poetry install
 ```
 
-4) Now, To install psycopg2 using binary packages and ensure Poetry runs without any errors, you can follow these steps:
+5) Now, To install psycopg2 using binary packages and ensure Poetry runs without any errors, you can follow these steps:
 ```shell
 poetry add psycopg2-binary
 ```
