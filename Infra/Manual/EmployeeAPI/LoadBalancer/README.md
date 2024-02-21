@@ -2,9 +2,12 @@
 
 <img width="300" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6fd74997-5bda-4edc-bdc2-885df3b5e75f"> 
 
+***
+
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
-| Vishal Kumar Kesarwani |  20-02-2024  |  Version 1 | Vishal  | 20-02-2024    |
+| Shreya Jaiswal |  21-02-2024  |  Version 1 | Shreya  | 21-02-2024    |
+| Parasharam Desai | 21-02-2024 | Version 1 | Parasharam | 21-02-2024 |
 
 ***
 ## Table of Contents
@@ -140,8 +143,11 @@ This document offers a streamlined approach to implementing listener rules for l
 ## Contact Information
 | Name | Email address |
 | ---- | ------------- |
-| Vishal | vishal.kesarwani.snaatak@mygurukulam.co |
+| **Shreya Jaiswal** | shreya.jaiswal.snaatak@mygurukulam.co |
+| **Parasharam Desai** | parasharam.desai.snaatak@mygurukulam.co |
+
 ***
+
 ## Resources and References
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
