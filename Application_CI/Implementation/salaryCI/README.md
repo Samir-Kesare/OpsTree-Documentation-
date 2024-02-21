@@ -10,7 +10,7 @@
 
 1. [Introduction](#Introduction)
 2. [What is Shared Library](#What-is-Shared-Library)
-3. [Prerequisites](#Prerequisites)
+3. [Pre-requisites](#Prerequisites)
 4. [Runtime Prerequisites](#Runtime-Prerequisites)
 5. [Flow Diagram](#Flow-Diagram)
 6. [Pipeline Setup](#Pipeline-Setup)
@@ -43,7 +43,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 [\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md)
 
-## Prerequisites
+## Pre-requisites
 
 | Tool | Description |
 | ---- | ----------- |
