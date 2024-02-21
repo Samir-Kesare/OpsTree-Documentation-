@@ -1,4 +1,4 @@
-pipeline {
+    pipeline {
     agent any
     
     environment {
@@ -78,5 +78,5 @@ pipeline {
                 reportName: 'Bandit Security Report'
             ])
         }
+      }
     }
-}
