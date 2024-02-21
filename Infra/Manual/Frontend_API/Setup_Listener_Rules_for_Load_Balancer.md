@@ -66,11 +66,11 @@ Applications have various use cases in which we have to set up traffic routing b
   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0274d078-fed6-419b-9d51-a974fd613279">  
   
   * `Choose a target type` select `Instances` to specify targets by instance ID or IP addresses to specify targets by only IP address.
-  * `Target group name` enter a name for the target group.eg `frontend-tg`
+  * `Target group name` enter a name for the target group.eg `frontend-tg` and Port `3000`.
   * `VPC` select a virtual private cloud (VPC) with the targets that you want to include in your target group.eg `Dev-VPC`
   *  All configurtion default then Choose Next. 
-  
-  <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5e6fee6f-db64-4633-8963-9e2572653ce2">  
+
+  <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5a91aade-231d-4778-9c85-8400319040a5">  
   
    <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5fca6e2d-bdd7-4e00-be1d-bdeddc307dfe">
 
