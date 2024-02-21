@@ -59,15 +59,18 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 
 
 ***
-## Steps to Launch an Ec2 Instance
+## Launch an Ec2 Instance
 
   **Step-1 :** Go to the AWS console and sign into your account first.
  
   **Step-2 :** After logging into the Amazon Management Console, visit the EC2 Dashboard .
- 
-  **Step-3 :** Choose `Launch Instance` from the panel. 
 
-  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/7e7c1c3b-624e-49ee-975b-99a3f154078a)
+  <img width="1088" alt="Screenshot 2024-02-21 at 4 42 55 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/eaff3a4b-12cf-4fbd-868a-ca467639455f">
+
+  **Step-3 :** Click on the "Launch Instance" button to start the instance creation wizard. 
+
+
+<img width="872" alt="Screenshot 2024-02-21 at 4 44 13 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/777657ff-a99e-4760-bce0-3f6f887f9b21">
 
   **Step-4 :** Under **Name and tags**, for **Name**, enter a descriptive name for your instance.
   
