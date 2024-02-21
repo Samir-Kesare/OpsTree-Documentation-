@@ -15,6 +15,8 @@
 - [Resources and References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/CodeCompilation/Shared%20Library/README.md#resources-and-references)
 ***
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/861a26a9-4904-44d4-8200-0a72e180c3c5)
+
 # Introduction 
 The process of code compilation involves converting high-level programming code, such as Java, C++, or Python, into machine-readable instructions or bytecode. 
 This transformation is carried out by a compiler, which is a specialized tool designed to translate human-readable source code into an executable format. Here we are using "go Build" to compile the code.
