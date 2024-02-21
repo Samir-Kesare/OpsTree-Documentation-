@@ -15,8 +15,9 @@
 3. [Pre-requisites](#Pre-requisites)
 4. [Important Ports](#Important-Ports)
 5. [Setup](#Setup)
-6. [Contact Information](#Contact-Information)
-7. [References](#References)
+6. [Conclusion](#conclusion)
+7. [Contact Information](#Contact-Information)
+8. [References](#References)
 ***
 
 ## Introduction
@@ -121,6 +122,14 @@ Attached the backend security group as the source for your backend group:
 7. Finally, click on **Create Security Group** and you're all set!
 ***
 
+# Conclusion
+
+
+In conclusion, setting up Security Groups in AWS is an essential aspect of ensuring the security and integrity of your cloud infrastructure. By leveraging the key features of Security Groups with other AWS services, you can establish robust security policies that safeguard your EC2 instances and data from unauthorized access and malicious threats.
+
+With Security Groups, you have the flexibility to define and manage inbound and outbound traffic rules efficiently, adapt to evolving security requirements, and maintain consistency across your infrastructure.
+
+***
 ## Contact Information
 
 |     Name         | Email  |
