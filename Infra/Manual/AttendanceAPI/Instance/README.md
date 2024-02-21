@@ -28,7 +28,7 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
 
 ![ec2-basic-arch](https://github.com/CodeOps-Hub/Documentation/assets/156056349/72351bcb-ec46-4d65-a260-1d750701fb9a)
 
-
+***
 ## Key Features
 
 | Key Feature       | Description                                                                                                                            |
@@ -116,6 +116,7 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
 > [!NOTE]
 > * After successfully launching the instance follow this [**Attendance API Document**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Attendance_API/README.md) to setup Attendance-API.
 
+***
 # Output 
 
 * After setting up the Attendance API on your instance, you can access the Swagger API documentation at http://instance-IP:8080/apidocs/. To view the Swagger documentation, you can use the following command with curl:
