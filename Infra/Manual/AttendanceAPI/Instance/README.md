@@ -48,7 +48,7 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 | **Memory Optimized**       | Utilizes high-speed solid-state drives for ultra-fast data access, suitable for memory-intensive applications with less CPU power.                                | Open-source databases, real-time big data analytics, in-memory caches.                                          |
 | **Storage Optimized**      | Ideal for high I/O performance applications like NoSQL databases, data processing, warehousing, analytics, and log processing.                                    | NoSQL databases, data processing, warehousing, analytics, log processing.                                      |
 | **Micro**                  | Suitable for low-throughput applications, such as small database servers, software testing platforms, or web servers with low transaction rates.                | Small database servers, software testing, web servers with low transaction rates.                                |
-                                                                                   |
+                                            
 ***
 ## Pre-requisites
 * Access to the AWS Management Console or AWS CLI with appropriate permissions.
