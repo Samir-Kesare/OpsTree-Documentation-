@@ -68,7 +68,7 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
 
   <img width="1088" alt="Screenshot 2024-02-21 at 4 42 55 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/eaff3a4b-12cf-4fbd-868a-ca467639455f">
 
-3. Click on the "Launch Instance" button to start the instance creation wizard. 
+3. Click on the **Launch Instance** button to start the instance creation wizard. 
 
 <img width="872" alt="Screenshot 2024-02-21 at 4 44 13 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/777657ff-a99e-4760-bce0-3f6f887f9b21">
 
@@ -90,9 +90,9 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
 
 <img width="797" alt="Screenshot 2024-02-21 at 1 19 31 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9c4c2f5f-2fcd-4ca2-9a89-74066020821e">
 
- 8. * Choose the Virtual Private Cloud (VPC) from the dropdown menu. In this case, we will select `Dev-VPC` as the VPC.
-    * From the available subnets within the selected VPC, choose the appropriate subnet. Here, we will select Backend-Pvt-subnet.
-    * Ensure to disable auto-assign IP for the selected subnet to prevent automatic assignment of public IP    
+ 8. Choose the Virtual Private Cloud (VPC) from the dropdown menu. In this case, we will select **Dev-VPC** as the VPC.
+    From the available subnets within the selected VPC, choose the appropriate subnet. Here, we will select **Backend-Pvt-subnet**.
+    Ensure to disable auto-assign IP for the selected subnet to prevent automatic assignment of public IP    
        
 <img width="779" alt="Screenshot 2024-02-21 at 1 19 47 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ffc14f3d-8763-4f8b-8c98-100be9e5d395">
   
@@ -100,15 +100,15 @@ This document provides step-by-step instructions for setting up an Amazon EC2 in
 
 <img width="778" alt="Screenshot 2024-02-21 at 12 51 27 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a9c327db-79f2-44ea-81d5-0fc90f40d33c">
 
-10. Specify the size of the `root volume`. Add additional volumes if needed. Finally, click on `Launch Instance`. After this step, your instance would successfully be launched!
+10. Specify the size of the **root volume**. Add additional volumes if needed. Finally, click on **Launch Instance**. After this step, your instance would successfully be launched!
 
 <img width="796" alt="Screenshot 2024-02-21 at 12 52 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/697fe22d-c390-4f01-98c7-f1a8530b3517">
 
-11. On the `Instances` screen, you can track the launch status. Instances typically take a short time to launch.
+11. On the **Instances** screen, you can track the launch status. Instances typically take a short time to launch.
 
 <img width="713" alt="Screenshot 2024-02-21 at 12 52 49 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/cab4dc52-462f-4286-84da-93f40daa0e85">
   
-* It may take a few minutes for the instance to become available for connection. Verify that your instance has passed its status checks by checking the `Status check` column.
+* It may take a few minutes for the instance to become available for connection. Verify that your instance has passed its status checks by checking the **Status check** column.
   
 <img width="1050" alt="Screenshot 2024-02-21 at 5 08 51 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2daa1238-2f84-4f3c-966e-b19e2a106c12">
 
