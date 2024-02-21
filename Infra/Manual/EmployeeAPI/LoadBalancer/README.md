@@ -73,8 +73,10 @@ Applications have various use cases in which we have to set up traffic routing b
   * `VPC` select a virtual private cloud (VPC) with the targets that you want to include in your target group.eg `Dev-VPC`
   *  All configurtion default then Choose Next. 
 
-  <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5a91aade-231d-4778-9c85-8400319040a5">  
-  
+ <img width="409" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/feeab858-d9c3-406a-a8b4-7708a51b3f9b">
+
+ ***
+
 ### Step 2: Register targets
 
   * Select one or more instances, enter one or more eg `3000` ports, and then choose Include as pending below.
