@@ -29,9 +29,14 @@ A security group functions like a gatekeeper, dictating the types of traffic per
 
 ***
 # Key Principles of Security Groups
-**Traffic Filtering:** Security groups act as virtual firewalls that control the inbound and outbound traffic for instances within a particular subnet. They allow you to specify the type of traffic that is allowed to reach your instances based on rules you define. These rules can be configured to allow traffic from specific IP ranges, protocols, and ports, effectively filtering incoming and outgoing traffic to enhance network security.
+| Feature                                             | Description                                                                                                                                   |
+|-----------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Traffic Filtering**                               | Security groups act as virtual firewalls controlling inbound and outbound traffic for instances within a subnet, based on user-defined rules. |
+|                                                     | Rules can specify allowed traffic based on IP ranges, protocols, and ports, enhancing network security by filtering incoming and outgoing traffic. |
+| **Stateful Enforcement**                            | Security groups enforce stateful filtering, tracking connection states.                                                                   |
+|                                                     | Inbound rules automatically allow related response traffic, simplifying security management.                                               |
+|                                                     | Security groups apply the most permissive rule, ensuring traffic is allowed unless explicitly blocked, reducing configuration errors.        |
 
-**Stateful Enforcement:** Security groups enforce stateful filtering, meaning they keep track of the state of connections. When you define an inbound rule to allow traffic on a specific port, for example, any response traffic related to that connection is automatically allowed to return. This simplifies security management by eliminating the need to create separate outbound rules for response traffic. Additionally, security groups automatically apply the most permissive rule, ensuring that traffic is always allowed unless explicitly blocked, which simplifies rule management and reduces configuration errors.
 
 ***
 ## Pre-requisites
