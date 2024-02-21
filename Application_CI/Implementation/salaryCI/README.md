@@ -73,40 +73,17 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ***
 ## Pipeline Setup
-1. **Configure Maven tool in Jenkins**
-Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/d9ff8a0d-900a-4e4b-ac68-34507ef3348b)
-
-
-2. **Install Sonarqube Scanner plugin in Jenkins**
-
-![image](https://github.com/avengers-p7/Documentation/assets/156056444/28625f84-3ae7-45e3-8cea-d1d73daba895)
-
-3. **Create  token in Sonarqube**
-	- login to Sonarqube Server and go to `Administration --> Security --> Users`
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/f01959ac-2a3a-4644-ba49-ea52e886f2db)
-
-	- click on `Update Tokens`
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/f2f5fcbd-15db-45f7-8e41-abcda2e21da3)
-
- 	- give name of token , select no. of days and then genarate the token
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/8a0838e5-e186-4f2a-8a55-8151bad09958)
-
-  	- copy and keep your token
-     		![image](https://github.com/avengers-p7/Documentation/assets/156056444/511a3b73-922b-4277-b2a1-01d782609aca)
-     
-
-4. **Add Sonarqube token in Jenkins Credentials**
-   	- login to your jenkins Dashboard and go to `Dashboard --> Manage Jenkins --> Credentials`
-
-   	  	Below, click on add `Add Credentials`
-
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/125c1d80-6342-4e24-9d0d-4f122ddeaf95)
+1. **Setup and Configure plugins & tools in Jenkins**
+- [gitCheckout](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
+- [Credential Scanning](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Credential%20Scanning/Shared%20Library/README.md)
+- [Licence Scanning](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/License%20Scanning/Shared%20Library/README.md)
+- [Compile](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/Code%20Compilation/Shared%20Library/README.md)
+- [Bug Analysis](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/Bug%20Analysis/Bug-Analysis-shared-Lib.md)
+- [Dependency Check](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/Dependency%20Scanning/Shared%20Library/README.md)
+- [Static Code Analysis](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/Static%20Code%20Analysis/Shared%20Library/README.md)
+- [Unit Testing](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Java%20CI/Unit%20Testing/Unit-Testing-Shared-Lib.md)
   
-	- Select **`Secret Text`** and provide the token that you copied in secret section. Also, give ID and Description to your credential.
-		![image](https://github.com/avengers-p7/Documentation/assets/156056444/2727ea81-3014-4910-93ef-77237529f313)
-4. **Configure Shared library in Jenkins**
+2. **Configure Shared library in Jenkins**
 	
  	Follow below document
 
@@ -115,7 +92,7 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056444/1038a25c-7953-4e72-af36-9d4f9eb77f98)
 
-6. **Create and Configure your Jenkins Pipeline job**
+3. **Create and Configure your Jenkins Pipeline job**
 
 	Follow below document
 
@@ -123,7 +100,7 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/0243f7e0-f8dc-462b-8145-1a000fe4f374)
 
-7. **Now Build your Pipeline**
+4. **Now Build your Pipeline**
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/9f1bd614-8daa-462b-9af1-dae3dcf7efd0)
 ***
 ## Results
@@ -132,99 +109,94 @@ Go to `Dashboard--> Manage Jenkins--> Tools` and configure maven tool.
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/5d1d0d40-9d62-4e6a-8c90-3a9637c61797)
 
 ***
-## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Java/StaticCodeAnalysis/Jenkinsfile)
+## [Pipeline](https://github.com/CodeOps-Hub/Salary-API/blob/feature/slarayCI/Jenkinsfile)
 
 ```shell
 @Library("my-shared-library") _
 
-def staticCodeAnalysis = new org.avengers.template.java.codeAnalysis()
+def salaryCI = new org.avengers.template.salaryCI.salaryCI()
 
 node {
     
-    def url = 'https://github.com/OT-MICROSERVICES/salary-api.git'
-    def branch = 'main'
+    def url = 'https://github.com/CodeOps-Hub/Salary-API.git'
+    def branch = 'feature/slarayCI'
+    def gitLeaksVersion = '8.18.2'
+    def reportName = 'credScanReport.json'
     
-    staticCodeAnalysis.call(branch: branch,url: url)
+    salaryCI.call(branch: branch,url: url, gitLeaksVersion, reportName)
     
 }
 ```
 
 ## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary.git)
-### [template/java/codeAnalysis.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/java/codeAnalysis.groovy)
+### [template/salaryCI/salaryCI.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/salaryCI/salaryCI.groovy)
 ```shell
 package org.avengers.template
 
-import org.avengers.common.gitCheckout
-import org.avengers.common.cleanWorkspace
+import org.avengers.licenseScanning.licenceScan
+import org.avengers.credScanning.*
+import org.avengers.common.*
 import org.avengers.java.compile.*
 import org.avengers.java.staticCodeAnalysis.*
+import org.avengers.java.dependencyCheck.*
+import org.avengers.java.unitTesting.*
+import org.avengers.java.bugAnalysis.*
 
-def call(Map config = [:]){
+
+def call(Map config = [:], String gitLeaksVersion, String reportName){
+    
+    def licenceScan = new licenceScan()
     def gitCheckout = new gitCheckout()
     def javaCompile = new compile()
     def staticCodeAnalysis = new staticCodeAnalysis()
     def cleanWorkspace = new cleanWorkspace()
-
+    def dpCheck = new dpCheck()
+    def javaUnitTesting = new test()
+    def javaBugAnalysis = new bug()
+    def javaPublishHtml = new publishHtml()
+    def gitLeaks = new GitLeaks()
+    def  scan = new Scan()
+    cleanAfterArchive = new CleanAfterArchive()
+    
+    try{
     gitCheckout.call(branch: config.branch, url: config.url  )
+    gitLeaks.call(gitLeaksVersion)
+    scan.call(reportName)
+    withCredentials([string(credentialsId: 'fossaToken', variable: 'FOSSA_API_KEY')]){
+        licenceScan.installFossa()
+        licenceScan.scan()
+    }
     javaCompile.call()
-    staticCodeAnalysis.call()
-    cleanWorkspace.call()
-  
-}
-```
-### [gitCheckout.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/gitCheckout.groovy)
-```shell
-// Checkout Github Public Repository
-package org.avengers.common
+    parallel dpCheck: {
+        dpCheck.call()
+    },
+    statisCodeAnalysis: {
+        staticCodeAnalysis.call()        
+    },
+    bugAnalysis: {
+        javaBugAnalysis.call()
+        javaPublishHtml.call()
+    },
+    unitTesting:{
+        javaUnitTesting.call()   
+    }
+    }
+    catch (e){
+        echo 'Salary CI Failed'
+        cleanWorkspace.call()
+        throw e
+    }
+    finally {
+         def currentResult = currentBuild.result ?: 'SUCCESS'
+        if ((currentResult == 'UNSTABLE')||(currentResult == 'ABORTED')) {
+        cleanWorkspace.call()
+            // echo 'This will run only if the run was marked as unstable'
+        }
+        // cleanAfterArchive.call(reportName) 
 
-def call(Map config = [:]) {
-    stage('GIT Checkout') {
-        checkout scm: [
-                $class: 'GitSCM',
-                branches: [[name: config.branch]],
-                userRemoteConfigs: [[url: config.url]]
-            ]
     }
 }
 ```
-
-### [cleanWorkspace.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/common/cleanWorkspace.groovy)
-```shell
-// Will not clean workspace if build is Sucessful and vice versa
-package org.avengers.common
-
-def call() {
-  stage('Clean Workspace'){
-      cleanWs cleanWhenSuccess: false
-  }
-}
-```
-
-### [compile.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/compile/compile.groovy)
-```shell
-package org.avengers.java.compile
-
-def call() {
-  stage('Compile'){
-    script{
-      sh 'mvn clean compile'
-    }
-  }
-}
-```
-### [staticCodeAnalysis.groovy](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/java/staticCodeAnalysis/staticCodeAnalysis.groovy)
-```shell
-package org.avengers.java.staticCodeAnalysis
-
-def call() {
-  stage('Static Code Analysis'){
-        withSonarQubeEnv(installationName: 'sq1') { 
-          sh './mvnw org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155:sonar'
-        }    
-  }
-}
-```
-***
 
 ## Contact Information
 
