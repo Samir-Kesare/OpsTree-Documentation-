@@ -1,4 +1,5 @@
 # Slary API CI (Shared Library)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/dc808906-6fa5-4307-b472-e13fbed8560d)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
@@ -22,13 +23,13 @@
 
 ## Introduction 
 
-Static analysis, also called static code analysis, is a method of computer program debugging that is done by examining the code without executing the program. The process provides an understanding of the code structure and can help ensure that the code adheres to industry standards. Static analysis is used in software engineering by software development and quality assurance teams. Automated tools can assist programmers and developers in carrying out static analysis. The software will scan all code in a project to check for vulnerabilities while validating the code.
+Continuous Integration (CI) is a development practice where developers integrate code into a shared repository frequently, preferably several times a day. Each integration can then be verified by an automated build and automated tests. While automated testing is not strictly part of CI it is typically implied. 
 
-**For more information visit the below document link:**
+**For more information about CI checks performed in Salary API, use the following directory link:**
 
-[\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/08-%20Jenkins/static%20code%20Analysis.md)
+[\[ Reference Dir \]](https://github.com/CodeOps-Hub/Documentation/tree/main/Application_CI/Implementation/Java%20CI)
 
-In this task, we are using Shared Library.
+In this task, we are using Shared Library to perform CI on Salary API.
 ***
 ## What is Shared Library?
 
