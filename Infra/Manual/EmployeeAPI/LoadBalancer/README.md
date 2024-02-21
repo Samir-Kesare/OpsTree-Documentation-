@@ -126,10 +126,7 @@ Applications have various use cases in which we have to set up traffic routing b
   
 <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0e988d1d-543b-4152-ad13-7a84e8962cb4">     
 
-  * Paste the DNS name into the address field of an internet connected web browser.
-  
-> [!NOTE]
-> * Please note that before hitting the DNS, the machine active and `npm start` commands should be run.
+***
 
   * [**DNS**](Dev-ALB-1442510364.us-east-1.elb.amazonaws.com)
    
