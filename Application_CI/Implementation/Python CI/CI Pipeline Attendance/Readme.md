@@ -86,51 +86,18 @@ By adhering to these best practices, you can establish a robust pipeline for sta
 
 
 # Declarative Syntax
-```
-pipeline {
-    agent any
 
-    stages {
-        stage('Code Checkout') {
-            steps {
-                git branch: 'main', credentialsId: 'Attendance-creds', url: 'https://github.com/OT-MICROSERVICES/attendance-api.git'
-            }
-        }
+[Link to Declarative Syntax](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/CI%20Pipeline%20Attendance/Declarative%20pipeline%20.md)
 
-        stage('Create Virtual ENV') {
-            steps {
-                script {
-                    sh 'python3 -m venv myenv'
-                    sh '. myenv/bin/activate'
-                }
-            }
-        }
 
-        stage('Install dependencies') {
-            steps {
-                script {
-                    sh 'python3 -m pip install -r requirements.txt'
-                }
-            }
-        }
 
-        stage('Static Code Analysis') {
-            steps {
-                script {
-                    sh 'pylint router/ client/ models/ utils/ app.py | tee pylint.log'
-                }
-            }
-        }
-    }
 
-    post {
-        always {
-            // Archive pylint reports
-            archiveArtifacts artifacts: '**/pylint.log', allowEmptyArchive: true
-        }
-    }
-}
-```
+
+
+
+
+
+
 # Output or Job Result
 
 ![image](https://github.com/avengers-p7/Documentation/assets/79625874/e2532ce3-7ad7-4867-8e23-22941f91a1f9)
