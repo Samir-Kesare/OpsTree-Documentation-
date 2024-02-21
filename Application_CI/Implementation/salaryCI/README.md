@@ -119,7 +119,7 @@ def salaryCI = new org.avengers.template.salaryCI.salaryCI()
 node {
     
     def url = 'https://github.com/CodeOps-Hub/Salary-API.git'
-    def branch = 'feature/slarayCI'
+    def branch = 'feature/salaryCI'
     def gitLeaksVersion = '8.18.2'
     def reportName = 'credScanReport.json'
     
