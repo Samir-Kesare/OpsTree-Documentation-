@@ -38,7 +38,7 @@ Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web 
 
 Before you begin, ensure that you have:
 
-1. AWS account credentials with sufficient permissions to create hosted zone in route 53
+1. AWS account credentials with sufficient permissions to create hosted zone in XYZ.com
 
 2. Access to go daddy account as our domain is from go daddy
 
@@ -95,14 +95,32 @@ Now. Our hosted zone has been created.
 
 
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156644891/8fdc6111-99f4-4bc5-8f22-d3002dd549c2)
+![Screenshot from 2024-02-21 17-29-51](https://github.com/CodeOps-Hub/Documentation/assets/156644891/f072ff1d-c5f6-4d1e-9e9a-324333d87f25)
 
 
 
 
-Here, we have entered the name-servers provided by AWS
+
+Next, go inside the hosted zone and click on “Create record“. 
 
 
+
+
+**Step 5**
+
+
+
+
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156644891/4e810e80-3132-4143-a49a-a38c5c1be4be)
+
+
+
+
+ Fill in all the required details such as Name, Type, Alias, TTL seconds, Value, etc. Click the Create Record option. Create one more record for some other region so that there will be two records with the same domain name pointing to different IP addresses with your selected routing policy.
+
+
+***
 
 
 # Conclusion
@@ -121,15 +139,11 @@ Amazon Route 53 is a powerful tool for managing domain registration and traffic 
 
 
 
+
 # References 
 
 
 | Description                  | References  |
 | ------------------------ | ---------------------------------------------|
 |https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html|officaial documentation |
-
-
-
-
-
-
+|https://k21academy.com/amazon-web-services/aws-solutions-architect/aws-route-53/|Setup Document|
