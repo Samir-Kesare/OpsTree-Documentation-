@@ -176,7 +176,6 @@ sudo vim ~/.profile
 ``` 
 Then, add the following information to the end of your file:
 ```shell
-. . .
 export PATH=$PATH:/usr/local/go/bin
 ``` 
 Next, refresh your profile by running the following command:
