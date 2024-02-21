@@ -11,11 +11,12 @@
 ## Table  of Contents
 
 1. [Introduction](#Introduction)
-2. [Pre-requisites](#Pre-requisites)
-3. [Important Ports](#Important-Ports)
-4. [Setup](#Setup)
-5. [Contact Information](#Contact-Information)
-6. [References](#References)
+2. [Key Feature](#Key-principles-of-security-groups)
+3. [Pre-requisites](#Pre-requisites)
+4. [Important Ports](#Important-Ports)
+5. [Setup](#Setup)
+6. [Contact Information](#Contact-Information)
+7. [References](#References)
 ***
 
 ## Introduction
