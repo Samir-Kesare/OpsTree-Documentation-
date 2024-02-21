@@ -81,6 +81,21 @@ Amazon Route 53 is a powerful tool for managing domain registration and traffic 
 
 
 
+# Contact Information
+
+|     Name         | Email  |
+| -----------------| ------------------------------------ |
+| Nidhi Bhardwaj    | nidhi.bhardwaj.snaatak@mygurukulam.co |
+
+
+
+# References 
+
+
+| Description                  | References  |
+| ------------------------ | ---------------------------------------------|
+|https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingHostedZone.html|officaial documentation |
+
 
 
 
