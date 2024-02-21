@@ -147,7 +147,7 @@ curl -s https://packagecloud.io/install/repositories/golang-migrate/migrate/scri
 sudo apt-get update
 sudo apt-get install migrate
 ``` 
-### Insall JQ (JSON processor)
+### Install JQ (JSON processor)
 
 ```shell
 sudo apt install jq
