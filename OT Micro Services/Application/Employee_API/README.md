@@ -61,7 +61,7 @@ Supported features in the applications are:-
 
 ***
 
-# Pre-Requisites
+# Pre-requisites
 
 The application doesn't have any specific pre-requisites except the database connectivity. Additionally, we can add Redis as cache system but it's not part of the mandatory setup.
 
