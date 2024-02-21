@@ -96,11 +96,11 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 <img width="779" alt="Screenshot 2024-02-21 at 1 19 47 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ffc14f3d-8763-4f8b-8c98-100be9e5d395">
 
   
-  **8** Navigate to the security group settings, Choose your security group .eg `Attendance-sg` ,Leave other settings as default for now. Finally click on launch instance. That's it, we have successfully launched the instance.
+  **8** Navigate to the security group settings and select your designated security group, such as Attendance-sg. Leave all other settings as default for now. 
 
-  ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/72ad719e-ffc2-49a6-8b42-a3e09a32c3a5)
+<img width="778" alt="Screenshot 2024-02-21 at 12 51 27 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a9c327db-79f2-44ea-81d5-0fc90f40d33c">
 
-**9** Specify the size and type of the(e.g., SSD, HDD) of the root volume. Add additional volumes if needed.
+**9** Specify the size of the `root volume`. Add additional volumes if needed. Finally, click on `Launch Instance`. After this step, your instance would successfully be launched!
 
 <img width="796" alt="Screenshot 2024-02-21 at 12 52 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/697fe22d-c390-4f01-98c7-f1a8530b3517">
 
@@ -114,25 +114,33 @@ Amazon Elastic Compute Cloud (EC2) is a web service offered by Amazon Web Servic
 
 
 > [!NOTE]
-> * After successfully launching the instance follow this [**Attendance API Document**]() to setup Attendance-API.
+> * After successfully launching the instance follow this [**Attendance API Document**](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Attendance_API/README.md) to setup Attendance-API.
+
+# Output 
+
+* After setting up the Attendance API on your instance, you can access the Swagger API documentation at http://instance-IP:8080/apidocs/. To view the Swagger documentation, you can use the following command with curl:
+```
+curl http://instance-IP:8080/apidocs/
+```
+* Make sure to replace `instance-IP` with the actual Public IP address of your EC2 instance.
 
 ***
 ## Conclusion
 
-Amazon EC2 offers customizable virtual servers (instances) in the cloud. Users can tailor resources to fit specific needs and choose from various instance types optimized for different workloads. Key features include support for multiple operating systems, flexible storage options, elastic IP addresses, monitoring with CloudWatch, bare-metal instances, and the ability to pause and resume instances. EC2 provides scalability, reliability, and cost-efficiency for deploying applications and services on the AWS platform.
+In this documentation, we have provided comprehensive instructions for setting up an Amazon EC2 instance. By following these steps, you have successfully launched an EC2 instance tailored to your specific requirements, including selecting the instance type, configuring network settings, and choosing appropriate security groups.
 
 ***
 ## Contact Information
 
 |     Name         | Email  |
 | -----------------| ------------------------------------ |
-| Harshit Singh    | harshit.singh.snaatak@mygurukulam.co |
+| Vidhi Yadav    | vidhi.yadhav.snaatak@mygurukulam.co |
 ***
 
 ## References
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Documentation Template | [Link](https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template) |
+| attendance Documentation Template | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/OT%20Micro%20Services/Application/Attendance_API/README.md) |
 | Dev Infra Design      | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
 | Setup Instance | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) |
