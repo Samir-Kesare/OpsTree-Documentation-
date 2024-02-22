@@ -1,6 +1,6 @@
 # Setup Listener Rules for Load Balancer for (Frontend API)
 
-<img width="300" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6fd74997-5bda-4edc-bdc2-885df3b5e75f"> 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/b57e6cf7-a5d0-4075-9804-27b130955125)
 
 ***
 
