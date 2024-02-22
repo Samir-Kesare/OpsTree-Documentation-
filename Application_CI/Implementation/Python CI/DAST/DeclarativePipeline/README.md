@@ -58,6 +58,18 @@ The Declarative Pipeline provides a simplified method for delineating Jenkins pi
 
     ![Screenshot 2024-02-19 at 10 51 29 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/62b2b6f0-aab4-43a4-aecc-401eaf91ff97)
 
+### Build the Pipeline and View Build Console Output:
+* Once the pipeline configuration is saved, you can manually trigger the build by clicking on Build Now.
+* After triggering the build, you can view the progress and console output of the build by clicking on the build number in the Jenkins dashboard.
+* The console output will display the steps executed by the pipeline script, including code checkout and compilation.
+
+![Screenshot 2024-02-22 at 5 38 36 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/9bcf3d1b-9fb3-4c33-93d3-464136dd2f86)
+
+# Report
+Click [here]()
+![Screenshot 2024-02-22 at 5 40 27 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/807d9ba1-6630-4993-b95d-bf9f20e1c5a0)
+
+
 ***
 
 # 
