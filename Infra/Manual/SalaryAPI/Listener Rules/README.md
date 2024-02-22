@@ -9,9 +9,11 @@
 ## Table of Contents
 1. [Introduction](#Introduction)
 2. [Pre-requisites](#Pre-requisites)
-3 [Steps to setup Listener Rules for Load Balancer](#Steps-to-setup-Listener-Rules-for-Load-Balancer)
-4. [Contact Information](#Contact-Information)
-5. [References](#References)
+3. [Steps to setup Listener Rules for Load Balancer](#Steps-to-setup-Listener-Rules-for-Load-Balancer)
+4. [Output](#Output)
+5. [Conclusion](#Conclusion)
+6. [Contact Information](#Contact-Information)
+7. [References](#References)
 
 ***
 
@@ -35,9 +37,10 @@ You also create `listeners` to check for connection requests from clients, and `
 
 ***
 ## Steps to setup Listener Rules for Load Balancer
-### Step 1: Configure a target group
+### Step 1: Create target group
   
   1. Open the Amazon EC2 console at _**https://console.aws.amazon.com/ec2/**_ .
+  
   2. In the navigation pane, choose `Target Groups`.
 
      <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/af210fdd-50b2-4f76-b6ab-911ca8ca7f8a">   
@@ -62,66 +65,69 @@ You also create `listeners` to check for connection requests from clients, and `
 
       ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/9401f626-b211-4e41-b911-ee9d8da0c838)
 
-  8. Keep all other configurtion to default then Choose Next. 
+  8. Keep all other configurtion to default then Choose `Next`. 
 
       ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a5a3d5cd-ccd8-47c0-a7ce-bbf6fb683bd2)
 
-### Step 2: Register targets
+  9. Register targets
+     To register instances, choose Register targets. Select one or more instances, enter the default instance port as needed here, it is `8080` and then choose Include as pending below. When         you are finished adding instances, choose Register pending targets.
 
-  * Select one or more instances, enter one or more eg `3000` ports, and then choose Include as pending below.
-  * Then Choose Create target group.
-    
- <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/afe80217-25ba-4be8-97be-b1949847de91"> 
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d5ce63cd-956f-4748-98b0-e82617b7a5d0)
+     <br><br>
 
-### Step 3: Configure a load balancer and a listener
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/54f5f26d-40cb-42b0-82b0-9203af381fb0)
+
+### Step 2: Add listener rule of load balancer 
   
-  *  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-  *  In the navigation pane, choose Load Balancers.
-  *  Choose `Create Load Balancer`.
+  1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+  2. In the navigation pane, choose Load Balancers.
+  3. Click on `Dev-ALB`.
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/141a7e43-4eed-43bc-ad76-8c93e50a5ba8)
+
+  4. Click on Protocok Port `HTTP:80`
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/fe1aab7a-7510-4aa5-bff5-0fd4f56d5bb8)
+
+  5. Click on `Add Rule`
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/0f1e118b-280a-42b0-9b50-6d2740306b03)
+
+  6. Define **Name**, and other required tags. 
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/7e59494f-d5ad-4a50-86d9-5991dddf134c)
+
+  7. Choose **Next.**
+  8. Choose **Add condition**. Select and define the **path**. For example: `/item/*` . To save the condition, choose **Confirm**.
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/99ef3cfd-8bc4-42dd-a166-bb663a821073)
+
+  9. Choose **Next.**
+  
+  10. **Forward to target groups –** Choose one or more target groups to forward traffic to. To add target groups choose Add target group. If using more than one target group, select a weight         for each target group and review the associated percentage.
+
+      ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/fc3a1375-043f-4593-aa0c-d1a9cca70d34)
+
+  11. Choose **Next.**
+  
+  12. In the Rule section, specify the Priority of your rule from 1-50000. It's recommended to leave gaps between your listener rules priority numbers.
+
+      ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/150f15a2-617b-4a85-b3bb-ea6ffe5176bc)
+
+  13. Choose **Next.**
+  
+  14. Review all the details and settings currently configured for your new rule. Once you're satisfied with your selections, choose **Create.**
+
+      ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/379bfbcb-2070-4fdf-9566-429a88be204b)
  
-  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/63694869-46f0-4609-894a-e6253b8433dd">   
-  
-  * Under Application Load Balancer, choose Create.
-    
-  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a27ebe0b-d905-42d8-a98e-8cbd63f80b0d"> 
-  
-  * `Load balancer name` enter a name for your load balancer. For example :- `DEV-ALB`.
-  * Other  all configuration default .
-
- <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/df209245-4109-471f-867e-cb3deb86f0af"> 
-
- * VPC select the VPC that you used for your EC2 instances.eg `DEV-VPC`
- * Mappings enable zones for your load balancer by selecting subnets from two or more Availability Zones.
-
- <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c2e9a346-a9ca-4675-9db5-5c036decaea3"> 
-
-  * Security groups, select an existing security group, or create a new one. `with 80(HTTP) and 443(HTTPS)` `Frontend-lb-sg`
-  * Listeners and routing, the default listener accepts HTTP traffic on port 80. You can keep the default protocol and port, or choose different ones.eg `frontend-tg`.
-  * Other  all configuration default .
-     
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/d020611f-830d-482f-bb3d-e376b873bc78"> 
-
-  * Review your configuration and choose Create load balancer. 
-
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/12c8aedb-027c-4897-9a78-ce20a36c47f1"> 
-
-### Step 4: Test the load balancer
-
-* Select the newly created load balancer.
-* Choose Description and copy the DNS name of the internet facing or internal load balancer
-* (for example, `Dev-ALB-1442510364.us-east-1.elb.amazonaws.com`).
-  
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0e988d1d-543b-4152-ad13-7a84e8962cb4">     
-
-  * Paste the DNS name into the address field of an internet connected web browser.
-  
 > [!NOTE]
-> * Please note that before hitting the DNS, the machine active and `npm start` commands should be run.
+> Please note that before hitting the DNS, ensure that API is running
 
-  * [**DNS**](Dev-ALB-1442510364.us-east-1.elb.amazonaws.com)
-   
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/9914249d-3f0f-496c-9d0c-b8f217957b37">
+## Output
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/bd814bb6-da87-4d0b-804a-e73ec1b15b9f)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/96f01a2c-8f67-41ef-96d6-bb179286760c)
 ***
 ## Conclusion
 
@@ -141,4 +147,4 @@ This document offers a streamlined approach to implementing listener rules for l
 | --------------------------------------------  | -------------------------------------------------|
 | Documentation Template | [Link](https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template) |
 | Dev Infra Design      | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
-| Setup Instance | [Link](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) |
+| Listener Rules | https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html |
