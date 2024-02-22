@@ -147,11 +147,9 @@ This guide outlines a straightforward process for configuring listener rules for
 ## Resources and References
 |  **Description** |   **Source** |
 | ---------------- | ------------ |
-| About Listener Rules | [Link](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html) |
-| About Load Balancer | [Link](https://www.nginx.com/resources/glossary/load-balancing/) |
-| Types of Load Balancer | [Link](https://kavishbaghel.com/utilising-listener-rules-for-load-balancing-using-aws-application-load-balancer-8e090e0ba469) |
+| About Listener Rules | [Link](https://www.youtube.com/watch?v=QWiSQCRoG6A) |
+| About Load Balancer | [Link](https://www.youtube.com/watch?v=msSOxyvXNr8&t=1041s) |
 | Follow this Infra Diagram | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | 
-
 
 ***
 
