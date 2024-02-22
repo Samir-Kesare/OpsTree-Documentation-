@@ -43,45 +43,17 @@ Here, we are going to implement a CI pipeline for the Python code. This pipeline
 | Python3    | For python                                              | 
 | Pylint     | It will help to do Static code analysis. on python code |
 | Bandit     | A tool for bug analysis in Python code                  |
-| Pytest     | Tool for unit testing on a python code                  |
 | Owasp      | Tool for Dependency scanning                            |
-
-
-
-
-
-
-
-
-
-
-
-
 
 # Flow Diagram
 
-![image](https://github.com/avengers-p7/Documentation/assets/79625874/2492a83d-bd29-4682-bb94-974fbaedca77)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/f024e52f-b948-4850-b456-18c3b750b174)
 
 # Configure Pipeline job
 
 Set up Jenkins Pipeline job & Configure your pipeline using the detailed documentation provided in the following link:**
 
 **[Reference Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)**
-
-# Best Pratices
-
-By adhering to these best practices, you can establish a robust pipeline for static code analysis in Python projects using Jenkins Declarative Pipeline.
-
-| **Aspect**                | **Description**                                         | 
-| ----------                | -------------------------                               | 
-| Pipeline Structure	    | Use a declarative pipeline structure to define stages and steps clearly. This provides better readability and maintainability. | 
-| Code Checkout             | Implement a stage for checking out the code from the version control system (e.g., Git) to ensure the latest changes are analyzed. |
-| Virtual Environment Creation    | Create a virtual environment to isolate dependencies and ensure consistent analysis. Utilize tools like venv or virtualenv for this purpose. |
-| Dependency Installation    | Install project dependencies using pip or a dependency management tool. Use a requirements.txt file for specifying dependencies to maintain consistency. |
-| Static Code Analysis    | Incorporate static code analysis tools like pylint, flake8, or bandit to analyze Python code for potential issues, adherence to coding standards, and security flaws. |
-| Report Generation    | Generate reports from static code analysis tools to provide insights into code quality and potential improvements. |
-| Artifact Archiving   | Archive generated reports and artifacts to ensure traceability and easy access for further analysis or reference. |
-| Post-Build Actions   | Define post-build actions like sending notifications, triggering downstream jobs, or publishing reports to external systems for better integration and automation. | 
 
 
 
