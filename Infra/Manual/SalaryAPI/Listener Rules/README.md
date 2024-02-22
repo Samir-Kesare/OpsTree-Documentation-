@@ -1,6 +1,5 @@
-# Instance Setup ( Salary API )
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/bb8cfc67-7b66-4019-9730-b9e4b58e4ad3)
-
+# Setup Listener Rules for Load Balancer ( Salary API )
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/64e2dc7e-b422-4f2d-bafd-51e475cde508)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
