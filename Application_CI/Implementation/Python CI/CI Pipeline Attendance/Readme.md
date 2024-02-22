@@ -84,16 +84,23 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 	[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/0243f7e0-f8dc-462b-8145-1a000fe4f374)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/c85f8733-1270-4e4a-8e3d-0d1f67eee1ca)
 
 4. **Now Build your Pipeline**
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/9f1bd614-8daa-462b-9af1-dae3dcf7efd0)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/68aec9d8-3924-4cd4-8618-2842879ed561)
 
 # Output or Job Result
 
-![image](https://github.com/avengers-p7/Documentation/assets/79625874/e2532ce3-7ad7-4867-8e23-22941f91a1f9)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/151900fe-d23c-4477-bf1e-94fb6f117098)
 
-If you want to see Detail Report please follow this **[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Static%20Code%20Analysis/Scripted%20Pipeline/pylint.log)**
+If you want to see Detail Report  
+
+**[Static Code Analysis](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Static%20Code%20Analysis/Scripted%20Pipeline/pylint.log)**
+
+**[Bugs Analysis](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Declarative%20Pipeline%20Python%20Bugs%20Analysis/Declarative%20Pipeline/JSON%20Report)**
+
+**[Dependency Scanning](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Shared_Library/Report.html)**
 
 
 ## [Pipeline](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/Python/CI_Pipeline/Jenkinsfile)
@@ -184,15 +191,10 @@ This pipeline will do Static Code Analysis against a python code and provide you
 
 # References
 
-|  Source                                                                                 |        Description      |
-| ------------                                                                            | ----------------------- |
-|  **[Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Shared_Library/Readme.md)**                                               | Shared Library Dependency Scannning    |  
-|**[Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Static%20Code%20Analysis/Shared%20Library%20.md)**                  | Shared Library Static Code Analysis   |
-
-|**[Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)**  | Configure Shared library in Jenkins    |
-
-|**[Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Declarative%20Pipeline%20Python%20Bugs%20Analysis/Shared%20Liabrary/README.md)**  | Shared Library Bugs Analysis    | 
-
-|**[Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/Attandance_CI/attandanceCI.groovy)**  | Shared Library | 
-
-
+| Source | Description |
+| ------ | ----------- |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Dependency_Scanning/Shared_Library/Readme.md) | Shared Library Dependency Scanning |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Static%20Code%20Analysis/Shared%20Library%20.md) | Shared Library Static Code Analysis |
+| [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md) | Configure Shared library in Jenkins |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/Declarative%20Pipeline%20Python%20Bugs%20Analysis/Shared%20Liabrary/README.md) | Shared Library Bugs Analysis |
+| [Link](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/Attandance_CI/attandanceCI.groovy) | Shared Library CI Pipeline |
