@@ -40,7 +40,7 @@ So, with Redis Cluster, you get the ability to:
 ***
 
 # Flow Diagram 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/75882e2e-da6a-4192-953a-fdec6a686124)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c2c82a39-9c17-4130-a848-6503a71964dc)
 
 ***
 
@@ -60,7 +60,7 @@ So, with Redis Cluster, you get the ability to:
 
 **Step-2** [Security Group Configuration](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Redis_Setup/Security_Group/README.md)
 
-- Create 3 security group.
+- Create security group.
 - Inbound Rules
 
 | Rule                 | Port(s)   | Protocol | Source                        |
