@@ -1,4 +1,4 @@
-# Documentation of CI Pipeline Attendance (Shared Library)
+# CI Pipeline Attendance (Shared Library)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/8b664069-f89d-46e6-9380-63a0e8c05e42)
 
