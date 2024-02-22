@@ -52,8 +52,12 @@ The Declarative Pipeline provides a simplified method for delineating Jenkins pi
 ### Configure Pipeline Script:
 
 * Upon saving the pipeline configuration, you have the option to manually initiate the build by selecting the "Build Now" button.
+
 * Following the initiation of the build, you can monitor the ongoing progress and examine the console output by clicking on the corresponding build number on the Jenkins dashboard.
 * The console output will showcase the executed steps of the pipeline script, encompassing tasks such as code checkout and compilation.
+
+    ![Screenshot 2024-02-19 at 10 51 29 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/62b2b6f0-aab4-43a4-aecc-401eaf91ff97)
+
 ***
 
 # 
