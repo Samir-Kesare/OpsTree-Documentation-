@@ -13,7 +13,6 @@
 + [Introduction](#Introduction)
 + [Load Balancer](#Why-use-AWS-Load-Balancer)
 + [Listener Rules](#Listener-Rules)
-+ [Importance of Listener Rules](#Importance-of-Listener-Rules)
 + [Pre-requisites](#Pre-requisites)
 + [Steps to setup Listener Rules for Load Balancer](#Steps-to-setup-Listener-Rules-for-Load-Balancer)
 + [Conclusion](#Conclusion)
