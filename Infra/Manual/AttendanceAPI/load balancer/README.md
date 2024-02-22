@@ -80,41 +80,41 @@ Listener rules in AWS load balancers determine how incoming traffic is routed to
   * Select Instances and Ports: Choose the instances you want to include and specify the ports (e.g., `3000`). Click "Include as pending" below.
   * Create Target Group: After selecting instances and ports, click "Create target group".
     
- <img width="724" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/01d96d2f-5085-4541-ba1c-8e9fd9892c0c">
+<img width="994" alt="Screenshot 2024-02-23 at 1 14 17 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/36b802ee-4348-499c-99f3-64653abae405">
 
 ***
 
-### Step 3: Configure a load balancer and a listener
+### Step 3: Configuring Load Balancer and Listener
   
-  *  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-  *  In the navigation pane, choose Load Balancers.
-  *  Choose `Create Load Balancer`.
- 
-  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/63694869-46f0-4609-894a-e6253b8433dd">   
-  
-  * Under Application Load Balancer, choose Create.
+  *  Navigate to Load Balancers: Click on `Load Balancers` in the navigation pane.
+  *  **Create Load Balancer:** Select "Create Load Balancer" to start configuring a new load balancer.
     
-  <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a27ebe0b-d905-42d8-a98e-8cbd63f80b0d"> 
-  
-  * `Load balancer name` enter a name for your load balancer. For example :- `DEV-ALB`.
-  * Other  all configuration default .
+  <img width="1057" alt="Screenshot 2024-02-23 at 1 17 12 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9c4b01c4-29a2-4235-99f9-27ad5acbc71e">
 
- <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/df209245-4109-471f-867e-cb3deb86f0af"> 
+  * Under Application Load Balancer, choose Create.
+<img width="711" alt="Screenshot 2024-02-23 at 1 18 53 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/59426e87-0d3d-4463-bbd7-5bf2de0787b2">
 
- * VPC select the VPC that you used for your EC2 instances.eg `DEV-VPC`
+
+  * Enter a name for your load balancer (e.g., DEV-ALB) and proceed with default settings.
+
+<img width="791" alt="Screenshot 2024-02-23 at 1 19 49 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0414b0ae-66be-41c5-969c-ae64c3af3585">
+
+ * Select the appropriate VPC and subnets for your load balancer.
  * Mappings enable zones for your load balancer by selecting subnets from two or more Availability Zones.
  
- <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a9fc8a8a-d0c5-4718-9a68-a86805694888"> 
+<img width="862" alt="Screenshot 2024-02-23 at 1 20 29 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9b95327a-31da-4521-a552-f6da9aec7b53">
 
-  * Security groups, select an existing security group, or create a new one. `with 80(HTTP) and 443(HTTPS)` `Frontend-lb-sg`
-  * Listeners and routing, the default listener accepts HTTP traffic on port 80. You can keep the default protocol and port, or choose different ones.eg `frontend-tg`.
-  * Other  all configuration default .
+  * Choose or create a security group allowing traffic on ports `80 (HTTP)` and `443 (HTTPS)`.
+
+<img width="920" alt="Screenshot 2024-02-23 at 1 23 16 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0ce6d33d-90ae-4000-9696-fb2847aa228b">
+  
+  * Configure listeners to accept HTTP traffic on port 80 or choose custom settings.
      
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/c3c02a66-e419-4c07-9c9f-c2aaeb9a0259"> 
+<img width="964" alt="Screenshot 2024-02-23 at 1 23 13 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/7773b9d5-6a42-4eb5-859f-b59d97d1d821">
 
-  * Review your configuration and choose Create load balancer. 
+  * **Review and Create:** Review your configurations and click "Create load balancer".
 
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/12c8aedb-027c-4897-9a78-ce20a36c47f1"> 
+<img width="1010" alt="Screenshot 2024-02-23 at 1 24 49 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3c02dc93-ff8c-4487-8443-34f00a9d88e0">
 
 ### Step 4: Test the load balancer
 
@@ -122,18 +122,18 @@ Listener rules in AWS load balancers determine how incoming traffic is routed to
 * Choose Description and copy the DNS name of the internet facing or internal load balancer
 * (for example, `Dev-ALB-1442510364.us-east-1.elb.amazonaws.com`).
   
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0e988d1d-543b-4152-ad13-7a84e8962cb4">     
+
+<img width="752" alt="Screenshot 2024-02-23 at 1 26 21 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2fdc1ec8-8850-4e6a-914f-09def2463f92">
 
 ***
-
-  * [**DNS**](Dev-ALB-1442510364.us-east-1.elb.amazonaws.com)
+  * Test your Attendance API using Load Balancer's AWS domain
    
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/9914249d-3f0f-496c-9d0c-b8f217957b37">
+<img width="853" alt="Screenshot 2024-02-22 at 11 53 55 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8a6929a1-857f-44e8-aec7-e4c291e535e5">
 
 ***
 ## Conclusion
 
-This document offers a streamlined approach to implementing listener rules for load balancers within AWS. By understanding the significance of load balancing and the benefits provided by AWS Load Balancer, users can effectively optimize their application's performance, availability, and scalability. The step-by-step instructions provided in the document enable users to configure target groups, register targets, set up a load balancer and listener, and conduct thorough testing. This process ensures efficient traffic management, enhancing the overall reliability and responsiveness of applications hosted on AWS infrastructure.
+This guide outlines a straightforward process for configuring listener rules for AWS load balancers. By leveraging AWS Load Balancer, users can enhance the performance, availability, and scalability of their applications. Following these step-by-step instructions ensures efficient traffic management, ultimately improving the reliability and responsiveness of applications hosted on AWS infrastructure.
 
 ***
 
