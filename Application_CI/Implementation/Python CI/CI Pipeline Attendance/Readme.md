@@ -17,8 +17,7 @@
 3. [Runtime Pre-requisites](#Runtime-Pre-requisites)
 4. [Flow Diagram](#Flow-diagram)
 5. [Configure Pipeline job](#Configure-Pipeline-job)
-6. [Best Pratices](#Best-Pratices)
-7. [Declarative Syntax](#Declarative-Syntax)
+6. [Shared Libraries](#Shared-Libraries)
 8. [Output or Job Result](#Output-or-Job-Result)
 9. [Conclusion](#conclusion)
 10. [Contact Information](#contact-information)
@@ -57,9 +56,13 @@ Set up Jenkins Pipeline job & Configure your pipeline using the detailed documen
 
 
 
-# Declarative Syntax
+# Shared Libraries
 
-[Link to Declarative Syntax](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/CI%20Pipeline%20Attendance/Declarative%20pipeline%20.md)
+[Static Code Analysis](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/python/staticCodeAnalysis)
+[Bugs Analysis](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/python/BugsAnalysis)
+[Dependency Scanning](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/python/dependencyScanning)
+
+
 
 
 
