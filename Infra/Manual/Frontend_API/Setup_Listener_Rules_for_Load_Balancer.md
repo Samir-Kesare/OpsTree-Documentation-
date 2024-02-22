@@ -100,8 +100,8 @@ Applications have various use cases in which we have to set up traffic routing b
 
  * VPC select the VPC that you used for your EC2 instances.eg `DEV-VPC`
  * Mappings enable zones for your load balancer by selecting subnets from two or more Availability Zones.
- 
- <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a9fc8a8a-d0c5-4718-9a68-a86805694888"> 
+
+ <img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c2e9a346-a9ca-4675-9db5-5c036decaea3"> 
 
   * Security groups, select an existing security group, or create a new one. `with 80(HTTP) and 443(HTTPS)` `Frontend-lb-sg`
   * Listeners and routing, the default listener accepts HTTP traffic on port 80. You can keep the default protocol and port, or choose different ones.eg `frontend-tg`.
