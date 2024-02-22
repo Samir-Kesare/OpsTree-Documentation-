@@ -47,31 +47,34 @@ Listener rules in AWS load balancers determine how incoming traffic is routed to
 ***
 ## Pre-requisites
 
- * Active Aws Account
+| Prerequisite                     | Description                                                                                                                                              |
+|---------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| AWS Account                     | An active AWS account is required to access AWS services. You can sign up for an account on the AWS website.                                           |
+| Instances or Lambda Functions   | Prepare instances or Lambda functions to serve as targets for your load balancer. These instances should be running and healthy to register them with the target groups. |
+
 
 ***
-## Steps to setup Listener Rules for Load Balancer
-### Step 1: Configure a target group
+## Setting Up Listener Rules for AWS Load Balancer
+### Step 1: Setting Up a Target Group
   
-  *  Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
-  *  In the navigation pane, choose `Target Groups`.
-  *  Choose Create target group.
+  *  **Access the Amazon EC2 Console:** Log in to your AWS account and navigate to the EC2 console.
+  *  **Navigate to Target Groups:** In the navigation pane, click on `Target Groups`.
+  *  **Create a New Target Group:** Select `Create target group` to begin configuring a new target group.
  
-   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/af210fdd-50b2-4f76-b6ab-911ca8ca7f8a">   
-   
-  *  Choose Create target group.
-    
-  <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0274d078-fed6-419b-9d51-a974fd613279">  
+   <img width="1011" alt="Screenshot 2024-02-23 at 12 47 19 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/18f8f451-cdd8-4fd7-aac6-ec4a9076a621">
   
-  * `Choose a target type` select `Instances` to specify targets by instance ID or IP addresses to specify targets by only IP address.
-  * `Target group name` enter a name for the target group.eg `frontend-tg` and Port `3000`.
-  * `VPC` select a virtual private cloud (VPC) with the targets that you want to include in your target group.eg `Dev-VPC`
-  *  All configurtion default then Choose Next. 
+  * Select the target type, either "Instances" or "IP addresses".
+  * Enter a name for the target group (e.g., attendance-tg) and specify the port (e.g., 8080).
+  * Choose the appropriate VPC where your targets reside.
+  * Proceed with default configurations and click "Next".
+    
+<img width="831" alt="Screenshot 2024-02-23 at 12 51 01 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0c7bb3ae-6a20-4c84-a96a-e57143bbc1c1">
 
- <img width="409" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/feeab858-d9c3-406a-a8b4-7708a51b3f9b">
+<img width="856" alt="Screenshot 2024-02-23 at 12 51 34 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/05dc8cd6-2d30-4b40-9426-f5bc2a0dcccc">
 
- ***
+<img width="831" alt="Screenshot 2024-02-23 at 12 51 01 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/aef0717c-9e4e-46ca-b6d3-db9152110bca">
 
+***
 ### Step 2: Register targets
 
   * Select one or more instances, enter one or more eg `3000` ports, and then choose Include as pending below.
