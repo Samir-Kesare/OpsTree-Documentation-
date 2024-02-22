@@ -45,11 +45,6 @@ In today's tech world, where online services need to be up all the time and hand
 Listener rules in AWS load balancers determine how incoming traffic is routed to target groups based on request characteristics. Each rule, associated with a listener, prioritizes conditions like HTTP method, path, and source IP address, with lower priority numbers taking precedence. Actions include forwarding to target groups, redirecting, or returning fixed responses. Default rules handle unmatched requests by routing to a default target group or returning an error response.
 
 ***
-## Importance of Listener Rules
-
-Applications have various use cases in which we have to set up traffic routing based on various factors. Some applications have their setup as distributed microservices where the requests need to serve on the basis of the path to the different services. Sometimes, we may need to use a single load balancer for multiple applications and route the traffic based on the application URLs. These rules provide us a way to design our load balancing strategies according to our use cases and apply them without any complexities.
-
-***
 ## Pre-requisites
 
  * Active Aws Account
@@ -142,8 +137,7 @@ This document offers a streamlined approach to implementing listener rules for l
 ## Contact Information
 | Name | Email address |
 | ---- | ------------- |
-| **Shreya Jaiswal** | shreya.jaiswal.snaatak@mygurukulam.co |
-| **Parasharam Desai** | parasharam.desai.snaatak@mygurukulam.co |
+| **Vidhi Yadav** | vidhi.yadhav.snaatak@mygurukulam.co |
 
 ***
 
