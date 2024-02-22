@@ -3,27 +3,29 @@
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
-| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 20-02-2024  | 1.0        | Harshit Singh   | 20-02-2024      |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 22-02-2024  | 1.0        | Harshit Singh   | 22-02-2024      |
 
 ***
 ## Table of Contents
-+ [Introduction](#Introduction)
-+ [EC2 instance types](#EC2-instance-types)
-+ [Why use AWS EC2 Instance](#Why-use-AWS-EC2-Instance)
-+ [Pre-requisites](#Pre-requisites)
-+ [Steps to Launch an Ec2 Instance](#Steps-to-Launch-an-Ec2-Instance)
-+ [Conclusion](#Conclusion)
-+ [Contact Information](#Contact-Information)
-+ [References](#References)
-  
+1. [Introduction](#Introduction)
+2. [Pre-requisites](#Pre-requisites)
+3. [Important Ports](#Important-Ports)
+4. [Setup](#Setup)
+5. [Contact Information](#Contact-Information)
+6. [References](#References)
+
 ***
+
 ## Introduction
-In this document we will create a new Amazon EC2 instance running , and configure it.
-### What?
-An instance in Amazon EC2 is essentially a virtual server that users can create and manage within the AWS cloud. These instances are configurable with varying amounts of CPU, memory, storage, and networking resources, allowing users to tailor them to specific application requirements. Instances are launched from pre-configured Amazon Machine Images (AMIs), which serve as templates containing the necessary operating system and software configurations. Users can start, stop, terminate, and resize instances as needed, providing scalability and flexibility to accommodate changing workloads and demands. Instances play a vital role in enabling users to deploy and run their applications and services in a scalable, reliable, and cost-effective manner on the AWS platform.
+Load balancing in AWS refers to the process of distributing incoming network traffic across multiple servers or resources to ensure high availability and reliability of applications or services. The primary purpose of load balancing is to optimize resource utilization, maximize throughput, minimize response time, and avoid overloading any single resource.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/3e1def3e-317b-46e5-8c18-fb5f5b3e0433)
+A **load balancer** serves as the single point of contact for clients. Clients send requests to the load balancer, and the load balancer sends them to targets, such as EC2 instances. 
 
+To configure your load balancer, you create **target groups**, and then register targets with your target groups. 
+
+You also create **listeners** to check for connection requests from clients, and **listener rules** to route requests from clients to the targets in one or more target groups.
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/35961366-c45c-4b16-b1a1-c3b511578cb7)
 
 ***
 ## EC2 instance types
