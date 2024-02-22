@@ -1,6 +1,6 @@
 # Setup Listener Rules for Load Balancer for Attendance API
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/b57e6cf7-a5d0-4075-9804-27b130955125)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/6cccf599-1e8b-45d6-9844-3483cb9b9f01)
 
 ***
 
