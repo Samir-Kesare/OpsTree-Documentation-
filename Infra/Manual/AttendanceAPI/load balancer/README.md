@@ -105,9 +105,12 @@ Listener rules in AWS load balancers determine how incoming traffic is routed to
 <img width="862" alt="Screenshot 2024-02-23 at 1 20 29 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/9b95327a-31da-4521-a552-f6da9aec7b53">
 
   * Choose or create a security group allowing traffic on ports `80 (HTTP)` and `443 (HTTPS)`.
+  * Add path-based routing rules as needed.
 
 <img width="920" alt="Screenshot 2024-02-23 at 1 23 16 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0ce6d33d-90ae-4000-9696-fb2847aa228b">
-  
+
+<img width="658" alt="Screenshot 2024-02-23 at 1 33 44 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/afbed04d-5707-4074-a717-cd49548bdb00">
+
   * Configure listeners to accept HTTP traffic on port 80 or choose custom settings.
      
 <img width="964" alt="Screenshot 2024-02-23 at 1 23 13 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/7773b9d5-6a42-4eb5-859f-b59d97d1d821">
