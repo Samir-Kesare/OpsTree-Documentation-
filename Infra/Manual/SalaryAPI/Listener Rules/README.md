@@ -39,30 +39,32 @@ You also create `listeners` to check for connection requests from clients, and `
   
   1. Open the Amazon EC2 console at _**https://console.aws.amazon.com/ec2/**_ .
   2. In the navigation pane, choose `Target Groups`.
+
+     <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/af210fdd-50b2-4f76-b6ab-911ca8ca7f8a">   
+ 
   3. Choose Create target group.
-   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/af210fdd-50b2-4f76-b6ab-911ca8ca7f8a">   
-    
-   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0274d078-fed6-419b-9d51-a974fd613279">  
+
+     <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0274d078-fed6-419b-9d51-a974fd613279">  
   
   4. `Choose a target type` select `Instances` to specify targets by instance ID or IP addresses to specify targets by only IP address.
-   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1f3d4c87-a5d2-4703-a103-d436e5557400)
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1f3d4c87-a5d2-4703-a103-d436e5557400)
 
   5. `Target group name` enter a name for the target group.eg `Dev-salary-tg`.
-    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/b21fcfac-42b3-4d3c-b71b-ab7886c80bc9)
+
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/b21fcfac-42b3-4d3c-b71b-ab7886c80bc9)
 
   6. `VPC` select a virtual private cloud (VPC) with the targets that you want to include in your target group.eg `Dev-VPC`
-   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/318d77cf-4ae9-4740-8e1b-1306d1df6cf1)
 
-  7. Provide health check [endpoint](https://github.com/CodeOps-Hub/Salary-API?tab=readme-ov-file#endpoint-information).
-   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/9401f626-b211-4e41-b911-ee9d8da0c838)
+     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/318d77cf-4ae9-4740-8e1b-1306d1df6cf1)
+
+  7. Provide health check [**endpoint**](https://github.com/CodeOps-Hub/Salary-API?tab=readme-ov-file#endpoint-information).
+
+      ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/9401f626-b211-4e41-b911-ee9d8da0c838)
 
   8. Keep all other configurtion to default then Choose Next. 
-   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a5a3d5cd-ccd8-47c0-a7ce-bbf6fb683bd2)
 
-
-  <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5a91aade-231d-4778-9c85-8400319040a5">  
-  
-   <img width="800" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/5fca6e2d-bdd7-4e00-be1d-bdeddc307dfe">
+      ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a5a3d5cd-ccd8-47c0-a7ce-bbf6fb683bd2)
 
 ### Step 2: Register targets
 
