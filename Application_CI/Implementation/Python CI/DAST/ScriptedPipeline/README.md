@@ -57,9 +57,9 @@ The Scripted Pipeline provides a simplified method for delineating Jenkins pipel
 * Following the initiation of the build, you can monitor the ongoing progress and examine the console output by clicking on the corresponding build number on the Jenkins dashboard.
 * The console output will showcase the executed steps of the pipeline script, encompassing tasks such as code checkout and compilation.
 
-For better understanding on private pipeline please click [here](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
+For better understanding on pipeline please click [here](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)
 
-    ![Screenshot 2024-02-19 at 10 51 29 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/62b2b6f0-aab4-43a4-aecc-401eaf91ff97)
+![Screenshot 2024-02-19 at 10 51 29 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/62b2b6f0-aab4-43a4-aecc-401eaf91ff97)
 
 ### Build the Pipeline and View Build Console Output:
 * Once the pipeline configuration is saved, you can manually trigger the build by clicking on Build Now.
