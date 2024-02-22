@@ -145,6 +145,6 @@ This document offers a streamlined approach to implementing listener rules for l
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Documentation Template | [Link](https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template) |
-| Dev Infra Design      | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) |
+| Documentation Template | https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template |
+| Dev Infra Design      | https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md |
 | Listener Rules | https://docs.aws.amazon.com/elasticloadbalancing/latest/application/listener-update-rules.html |
