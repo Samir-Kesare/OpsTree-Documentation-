@@ -77,8 +77,8 @@ Listener rules in AWS load balancers determine how incoming traffic is routed to
 ***
 ### Step 2: Register targets
 
-  * Select one or more instances, enter one or more eg `3000` ports, and then choose Include as pending below.
-  * Then Choose Create target group.
+  * Select Instances and Ports: Choose the instances you want to include and specify the ports (e.g., `3000`). Click "Include as pending" below.
+  * Create Target Group: After selecting instances and ports, click "Create target group".
     
  <img width="724" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/01d96d2f-5085-4541-ba1c-8e9fd9892c0c">
 
