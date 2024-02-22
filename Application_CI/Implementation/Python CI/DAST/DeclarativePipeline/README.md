@@ -66,10 +66,70 @@ The Declarative Pipeline provides a simplified method for delineating Jenkins pi
 ![Screenshot 2024-02-22 at 5 38 36 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/9bcf3d1b-9fb3-4c33-93d3-464136dd2f86)
 
 # Report
-Click [here]()
+Click [here](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/DAST/DeclarativePipeline/out2.html)
 ![Screenshot 2024-02-22 at 5 40 27 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/807d9ba1-6630-4993-b95d-bf9f20e1c5a0)
+***
 
+# Jenkinsfile
+
+```
+pipeline {
+    agent any
+    
+    environment {
+        TARGET_URL = 'https://github.com/CodeOps-Hub/Attendance-API.git'
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout your code repository
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/CodeOps-Hub/Attendance-API.git']])
+            }
+        }
+        
+        stage('Install ZAP') {
+            steps {
+                script {
+                    // Download and install OWASP ZAP
+                    sh 'wget https://github.com/zaproxy/zaproxy/releases/download/v2.14.0/ZAP_2.14.0_Linux.tar.gz'
+                    sh 'tar -xvf ZAP_2.14.0_Linux.tar.gz'
+                    
+                }
+            }
+        }
+        
+        stage('Run ZAP Scan') {
+            steps {
+                script {
+                    // Start ZAP and perform the scan
+                    sh "/var/lib/jenkins/workspace/DAST_declarative/ZAP_2.14.0/zap.sh -cmd -port 8090 -quickurl http://54.179.71.71:8080/api/v1/attendance/health -quickprogress -quickout ~/out2.html"
+                }
+            }
+        }
+        
+        stage('Publish ZAP Scan Report') {
+            steps {
+                // Publish HTML report
+                publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: true, keepAll: true, reportDir: 'var/lib/jenkins/workspace/DAST_declarative/ZAP_2.14.0/', reportFiles: 'out2.html', reportName: 'ZAP Scan Report', reportTitles: ''])
+            }
+        }
+    }
+}
+```
 
 ***
 
-# 
+
+# Conclusion
+Declarative Pipeline simplifies Jenkins pipeline configuration, offering clarity, readability, and integration with Markdown tables. It enhances collaboration, version control, and accessibility while enabling easy documentation and presentation of CI/CD processes.
+***
+# Contact Information
+| Name | Email Address |
+| ---- | ------------- |
+| Shantanu  | shantanu.chauhan.snaatak@mygurukulam.co |
+***
+# References
+| Source | Description  | 
+| -------- | ------- |
+| https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404 | OWASP ZAP Integration with jenkins |
