@@ -17,13 +17,13 @@
 ***
 
 ## Introduction
-Load balancing in AWS refers to the process of distributing incoming network traffic across multiple servers or resources to ensure high availability and reliability of applications or services. The primary purpose of load balancing is to optimize resource utilization, maximize throughput, minimize response time, and avoid overloading any single resource.
+**_Load balancing_** in AWS refers to the process of distributing incoming network traffic across multiple servers or resources to ensure high availability and reliability of applications or services. The primary purpose of load balancing is to optimize resource utilization, maximize throughput, minimize response time, and avoid overloading any single resource.
 
-A **load balancer** serves as the single point of contact for clients. Clients send requests to the load balancer, and the load balancer sends them to targets, such as EC2 instances. 
+A **_load balancer_** serves as the single point of contact for clients. Clients send requests to the load balancer, and the load balancer sends them to targets, such as EC2 instances. 
 
-To configure your load balancer, you create **target groups**, and then register targets with your target groups. 
+To configure your load balancer, you create **_target groups_**, and then register targets with your target groups. 
 
-You also create **listeners** to check for connection requests from clients, and **listener rules** to route requests from clients to the targets in one or more target groups.
+You also create **_listeners_** to check for connection requests from clients, and **_listener rules_** to route requests from clients to the targets in one or more target groups.
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/35961366-c45c-4b16-b1a1-c3b511578cb7)
 
