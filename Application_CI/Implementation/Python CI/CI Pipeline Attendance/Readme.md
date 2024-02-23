@@ -126,6 +126,7 @@ node {
 package org.avengers.template.Attandance_CI
 
 import org.avengers.python.BugsAnalysis.*
+import org.avengers.python.unitTesting.*    
 import org.avengers.python.dependencyScanning.*
 import org.avengers.python.staticCodeAnalysis.*
 import org.avengers.common.*  
@@ -144,8 +145,12 @@ def call(String url, String creds, String branch, String depVersion, String java
 
     // bugs analysis definition
     def bugsAnalysisBandit = new BugsAnalysisBandit()
-    def installDependencies = new InstallDependencies()
+    
+    // Unit testing definition
+    def Installdependency = new installDependency()
+    def unitTest = new testing()   
 
+    
     // // dependency scanning definition
     def downloadDependencyCheck = new DownloadDependencyCheck()
     def dependencyCheck = new DependencyCheck()
@@ -168,14 +173,21 @@ def call(String url, String creds, String branch, String depVersion, String java
      bugsAnalysisBandit.call()
      installDependencies.call()
 
+    // Unit Testing
+
+    
+    Installdependency.call()
+    unitTest.call()
+  
+    
   // dependency scanning 
   javaDownload.call(javaVersion)
   downloadDependencyCheck.call(depVersion) 
   gitCheckoutPrivate.call(url, creds, branch)
   dependencyCheck.call()
   cleandp.call()
- 
-} 
+}    
+
 ```
 
 
