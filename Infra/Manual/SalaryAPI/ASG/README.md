@@ -53,9 +53,106 @@ _**AWS Auto Scaling**_ monitors your applications and automatically adjusts capa
     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/df708075-3eac-4177-864d-ef1da9fcfaab)
 
 It may take a few minutes for the AMI to be created. After it is created, it will appear in the **AMIs view** in AWS Explorer. To display this view, double-click the Amazon EC2 | AMIs node in AWS Explorer. To see your AMIs, from the Viewing drop-down list, choose **Owned By Me**. You may need to choose **Refresh** to see your AMI. When the AMI first appears, it may be in a **pending state**, but after a few moments, it transitions to an **available state**.
- 
-> [!NOTE]
-> Please note that before hitting the DNS, ensure that API is running
+
+### Step 2: Create Launch Template
+
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/.
+
+2. In the navigation pane, choose Launch Templates, and then choose Create launch template.
+   
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/215beaa4-fb86-4ea9-a8a1-72822cb94767)
+
+3. For **Launch template name**, enter a descriptive name for the launch template. For **Template version description**, provide a brief description of this version of the launch template.
+
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/bd57c86a-f302-4557-a5e3-18f6411f8d03)
+
+4. **Application and OS Images (Amazon Machine Image)**
+    Select the AMI that was created earlier.
+    
+    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/2d7b1d82-ff9a-4dfa-b4f8-f1a9f8fd4f91)
+
+5. **Instance type and Key Pair (login)**
+    Select required instance type and key pair.
+
+    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d9255c62-52da-4bac-bc90-1a3047c93b45)
+
+6.  **Network settings**
+    Configure the network settings, as necessary.
+
+    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/75a56513-f805-48bb-831b-0dbf2d230d10)
+
+7. Choose **Create Launch Template**
+   
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/71a89854-78ab-461b-b507-2192d785955a)
+
+### Step 3: Create an Auto Scaling group using a launch template
+
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/, and choose Auto Scaling Groups from the navigation pane.
+
+2. On the navigation bar at the top of the screen, choose the same AWS Region that you used when you created the launch template.
+
+3. Choose Create an Auto Scaling group.
+
+On the Choose launch template or configuration page, do the following:
+
+For Auto Scaling group name, enter a name for your Auto Scaling group.
+
+For Launch template, choose an existing launch template.
+
+For Launch template version, choose whether the Auto Scaling group uses the default, the latest, or a specific version of the launch template when scaling out.
+
+Verify that your launch template supports all of the options that you are planning to use, and then choose Next.
+
+On the Choose instance launch options page, if you're not using multiple instance types, you can skip the Instance type requirements section to use the EC2 instance type that is specified in the launch template.
+
+To use multiple instance types, see Auto Scaling groups with multiple instance types and purchase options.
+
+Under Network, for VPC, choose a VPC. The Auto Scaling group must be created in the same VPC as the security group you specified in your launch template.
+
+For Availability Zones and subnets, choose one or more subnets in the specified VPC. Use subnets in multiple Availability Zones for high availability. For more information, see Considerations when choosing VPC subnets.
+
+If you created a launch template with an instance type specified, then you can continue to the next step to create an Auto Scaling group that uses the instance type in the launch template.
+
+Alternatively, you can choose the Override launch template option if no instance type is specified in your launch template or if you want to use multiple instance types for auto scaling. For more information, see Auto Scaling groups with multiple instance types and purchase options.
+
+Choose Next to continue to the next step.
+
+Or, you can accept the rest of the defaults, and choose Skip to review.
+
+(Optional) On the Configure advanced options page, configure the following options, and then choose Next:
+
+To register your Amazon EC2 instances with a load balancer, choose an existing load balancer or create a new one. For more information, see Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group. To create a new load balancer, follow the procedure in Configure an Application Load Balancer or Network Load Balancer from the Amazon EC2 Auto Scaling console.
+
+(Optional) For Health checks, Additional health check types, select Turn on Elastic Load Balancing health checks.
+
+(Optional) For Health check grace period, enter the amount of time, in seconds. This is how long Amazon EC2 Auto Scaling needs to wait before checking the health status of an instance after it enters the InService state. For more information, see Set the health check grace period for an Auto Scaling group.
+
+Under Additional settings, Monitoring, choose whether to enable CloudWatch group metrics collection. These metrics provide measurements that can be indicators of a potential issue, such as number of terminating instances or number of pending instances. For more information, see Monitor CloudWatch metrics for your Auto Scaling groups and instances.
+
+For Enable default instance warmup, select this option and choose the warm-up time for your application. If you are creating an Auto Scaling group that has a scaling policy, the default instance warmup feature improves the Amazon CloudWatch metrics used for dynamic scaling. For more information, see Set the default instance warmup for an Auto Scaling group.
+
+(Optional) On the Configure group size and scaling policies page, configure the following options, and then choose Next:
+
+Under Group size, for Desired capacity, enter the initial number of instances to launch.
+
+In the Scaling section, under Scaling limits, if your new value for Desired capacity is greater than Min desired capacity and Max desired capacity, the Max desired capacity is automatically increased to the new desired capacity value. You can change these limits as needed. For more information, see Set scaling limits for your Auto Scaling group.
+
+For Automatic scaling, choose whether you want to create a target tracking scaling policy. You can also create this policy after your create your Auto Scaling group.
+
+If you choose Target tracking scaling policy, follow the directions in Create a target tracking scaling policy to create the policy.
+
+For Instance maintenance policy, choose whether you want to create an instance maintenance policy. You can also create this policy after your create your Auto Scaling group. Follow the directions in Set an instance maintenance policy to create the policy.
+
+Under Instance scale-in protection, choose whether to enable instance scale-in protection. For more information, see Use instance scale-in protection.
+
+(Optional) To receive notifications, for Add notification, configure the notification, and then choose Next. For more information, see Amazon SNS notification options for Amazon EC2 Auto Scaling.
+
+(Optional) To add tags, choose Add tag, provide a tag key and value for each tag, and then choose Next. For more information, see Tag Auto Scaling groups and instances.
+
+On the Review page, choose Create Auto Scaling group.
+
+
+
 
 ## Output
 
