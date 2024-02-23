@@ -37,7 +37,8 @@ The Declarative Pipeline provides a simplified method for delineating Jenkins pi
 
 # Flow Diagram
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/11f2441f-3b0d-4aa8-abff-e0e45ca75e1d)
+![Screenshot 2024-02-23 at 6 49 50 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/cd5ac7f2-4155-4468-b107-6eb339a00b87)
+
 ***
 
 # Pre-requisites
