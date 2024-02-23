@@ -170,7 +170,7 @@ def call(Map config = [:], String gitLeaksVersion, String reportName){
     parallel dpCheck: {
         dpCheck.call()
     },
-    statisCodeAnalysis: {
+    staticCodeAnalysis: {
         staticCodeAnalysis.call()        
     },
     bugAnalysis: {
