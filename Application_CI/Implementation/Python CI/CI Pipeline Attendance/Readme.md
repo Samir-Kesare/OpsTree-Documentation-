@@ -78,7 +78,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056444/1038a25c-7953-4e72-af36-9d4f9eb77f98)
 
-3. **Create and Configure your Jenkins Pipeline job**
+2. **Create and Configure your Jenkins Pipeline job**
 
 	Follow below document
 
@@ -86,9 +86,9 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/c85f8733-1270-4e4a-8e3d-0d1f67eee1ca)
 
-4. **Now Build your Pipeline**
+3. **Now Build your Pipeline**
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/68aec9d8-3924-4cd4-8618-2842879ed561)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/a8731321-3f8a-492e-ba6e-99a4211661e2)
 
 # Output or Job Result
 
