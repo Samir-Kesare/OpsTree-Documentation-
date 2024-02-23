@@ -123,25 +123,28 @@ First you should choose which service or an application you want to scale then s
             * Minimum: 1  
             * Maximum: 2
 
-<img width="605" alt="Screenshot 2024-02-23 at 1 46 20 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/31a8ce53-aaf3-4c48-85ea-d26d26d08b57">
+  <img width="605" alt="Screenshot 2024-02-23 at 1 46 20 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/31a8ce53-aaf3-4c48-85ea-d26d26d08b57">
 
   * Choose the target tracking scaling policy for automatic adjustments.
 
-<img width="738" alt="Screenshot 2024-02-23 at 1 49 57 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/b5ac38ad-1ba9-4f1a-bbb2-0b7e8f2c603e">
+  <img width="738" alt="Screenshot 2024-02-23 at 1 49 57 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/b5ac38ad-1ba9-4f1a-bbb2-0b7e8f2c603e">
 
   * Optionally, add notifications and tags for organizational purposes.
 
-<img width="815" alt="Screenshot 2024-02-23 at 1 51 19 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/28a78801-e30e-4a63-ae69-f749302620b3">
-<img width="807" alt="Screenshot 2024-02-23 at 1 51 50 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/514499fb-0a33-468e-87fb-e802d7fe48cf">
+  <img width="815" alt="Screenshot 2024-02-23 at 1 51 19 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/28a78801-e30e-4a63-ae69-f749302620b3">
+  <img width="807" alt="Screenshot 2024-02-23 at 1 51 50 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/514499fb-0a33-468e-87fb-e802d7fe48cf">
 
 
  * Review the configuration and create the Auto Scaling group.
 
-<img width="847" alt="Screenshot 2024-02-23 at 1 52 28 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/fe70a489-8420-4b08-8592-b4d18cf936e7">
-<img width="524" alt="Screenshot 2024-02-23 at 1 52 49 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c2e81642-5593-42d9-aa73-8eee03aac04b">
+ <img width="847" alt="Screenshot 2024-02-23 at 1 52 28 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/fe70a489-8420-4b08-8592-b4d18cf936e7">
 
+
+ <img width="960" alt="Screenshot 2024-02-23 at 1 52 58 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3e385d6a-839e-4d62-bb8d-08329f6a9bbd">
 
  * This is the ASG we created, as per the configuration, 2 instances were created .  
+
+ <img width="1047" alt="Screenshot 2024-02-23 at 1 55 16 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/774798b8-83ba-4a21-8bb0-080738484ddb">
 
   
 ***
