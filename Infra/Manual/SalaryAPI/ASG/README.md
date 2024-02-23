@@ -82,7 +82,16 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/75a56513-f805-48bb-831b-0dbf2d230d10)
 
-7. Choose **Create Launch Template**
+7. Optionally, add a script in the user data section for custom setup.
+
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/79e2c248-8b62-4095-a6ec-dfeff441b190)
+
+   ```shell
+    #!/bin/bash  
+    java -jar Salary-API/target/salary-0.1.0-RELEASE.jar
+   ```
+   
+8. Choose **Create Launch Template**
    
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/71a89854-78ab-461b-b507-2192d785955a)
 
