@@ -50,11 +50,25 @@ First you should choose which service or an application you want to scale then s
 | Prerequisite      | Description                                                                                                                     |
 |-------------------|---------------------------------------------------------------------------------------------------------------------------------|
 | AWS Account       | Access to an AWS account with permissions to create and manage auto scaling groups, launch templates, and associated resources. |
-| EC2 Instances     | Create or identify the EC2 instances you want to scale. These instances should be based on an Amazon Machine Image (AMI) and should be properly configured for your application. |
 
 
 ***
 ## Steps To create Auto Scaling
+### Create AMI (Amazon Machine Image)
+
+1. Select the Instance and Choose "Actions": Right-click on the instance or select it and click on the "Actions" dropdown menu.
+
+<img width="1135" alt="Screenshot 2024-02-23 at 2 06 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/c52afc6f-8f44-4167-9f7c-d41e59fcf02c">
+
+2. Provide Image Details: In the dialogue box that appears, provide details for the new AMI:
+
+Image Name: Give a descriptive name for the AMI (e.g., Myinstance-AMI).
+Image Description: Optionally, add a brief description for the AMI.
+
+<img width="1026" alt="Screenshot 2024-02-23 at 2 08 19 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/96cb90bc-575a-4252-9495-1199334de4fd">
+
+3. Now, click on "Create image (AMI)."
+
 ### Create Launch Template  
 
   *  Begin by accessing the Amazon EC2 console on the AWS Management Console.
