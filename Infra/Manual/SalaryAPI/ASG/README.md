@@ -9,7 +9,7 @@
 ## Table of Contents
 1. [Introduction](#Introduction)
 2. [Pre-requisites](#Pre-requisites)
-3. [Steps to setup Listener Rules for Load Balancer](#Steps-to-setup-Listener-Rules-for-Load-Balancer)
+3. [Steps to setup Auto Scaling](#Steps-to-setup-Auto-Scaling)
 4. [Output](#Output)
 5. [Conclusion](#Conclusion)
 6. [Contact Information](#Contact-Information)
