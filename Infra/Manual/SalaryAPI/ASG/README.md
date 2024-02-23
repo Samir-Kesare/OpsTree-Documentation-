@@ -1,4 +1,4 @@
-# Setup Auto Scaling for Salary API
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a47cad5d-6cd6-45d9-810a-3f94e2f49a27)# Setup Auto Scaling for Salary API
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/96dc6672-d14f-41f4-8f2f-7d6642840df2)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
@@ -87,41 +87,45 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
 ### Step 3: Create an Auto Scaling group using a launch template
 
-1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/, and choose Auto Scaling Groups from the navigation pane.
+1. Open the Amazon EC2 console at https://console.aws.amazon.com/ec2/, and choose **Auto Scaling Groups** from the navigation pane.
 
-2. On the navigation bar at the top of the screen, choose the same AWS Region that you used when you created the launch template.
+2. On the navigation bar at the top of the screen, choose the same **AWS Region** that you used when you created the **launch template**.
 
-3. Choose Create an Auto Scaling group.
+3. Choose **Create an Auto Scaling group**.
 
-On the Choose launch template or configuration page, do the following:
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8a8cdb98-9104-45ce-a8c9-d1ba4d2afe9f)
 
-For Auto Scaling group name, enter a name for your Auto Scaling group.
+4. On the Choose launch template or configuration page, do the following:
 
-For Launch template, choose an existing launch template.
+   a. For Auto Scaling group name, enter a **name** for your Auto Scaling group.
 
-For Launch template version, choose whether the Auto Scaling group uses the default, the latest, or a specific version of the launch template when scaling out.
+   b. For **Launch template**, choose an existing launch template.
 
-Verify that your launch template supports all of the options that you are planning to use, and then choose Next.
+   c. For **Launch template version**, choose whether the Auto Scaling group uses the default, the latest, or a specific version of the launch template when scaling out.
 
-On the Choose instance launch options page, if you're not using multiple instance types, you can skip the Instance type requirements section to use the EC2 instance type that is specified in the launch template.
+   d. Verify that your launch template supports all of the options that you are planning to use, and then choose **Next**.
 
-To use multiple instance types, see Auto Scaling groups with multiple instance types and purchase options.
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a189770f-e324-4cd5-a699-c5f6a0d47d3c)
 
-Under Network, for VPC, choose a VPC. The Auto Scaling group must be created in the same VPC as the security group you specified in your launch template.
+6. On the **Choose instance** launch options page, if you're not using multiple instance types, you can skip the Instance type requirements section to use the EC2 instance type that is specified in    the launch template.
 
-For Availability Zones and subnets, choose one or more subnets in the specified VPC. Use subnets in multiple Availability Zones for high availability. For more information, see Considerations when choosing VPC subnets.
+   a. Under Network, for VPC, choose a **VPC**. The Auto Scaling group must be created in the same VPC as the security group you specified in your launch template.
 
-If you created a launch template with an instance type specified, then you can continue to the next step to create an Auto Scaling group that uses the instance type in the launch template.
+   b. For **Availability Zones and subnets**, choose one or more subnets in the specified VPC. Use subnets in multiple Availability Zones for high availability. For more information, see   Considerations when choosing VPC subnets.
 
-Alternatively, you can choose the Override launch template option if no instance type is specified in your launch template or if you want to use multiple instance types for auto scaling. For more information, see Auto Scaling groups with multiple instance types and purchase options.
+   c. Choose **Next** to continue to the next step.
 
-Choose Next to continue to the next step.
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/54805492-8318-46d4-85ab-7b4a1f28d67b)
+
+7. On the Configure advanced options page, configure the following options, and then choose Next:
+   To register your Amazon EC2 instances with a load balancer, choose an existing load balancer().
+8. 
 
 Or, you can accept the rest of the defaults, and choose Skip to review.
 
-(Optional) On the Configure advanced options page, configure the following options, and then choose Next:
+(Optional) 
 
-To register your Amazon EC2 instances with a load balancer, choose an existing load balancer or create a new one. For more information, see Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group. To create a new load balancer, follow the procedure in Configure an Application Load Balancer or Network Load Balancer from the Amazon EC2 Auto Scaling console.
+For more information, see Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group. To create a new load balancer, follow the procedure in Configure an Application Load Balancer or Network Load Balancer from the Amazon EC2 Auto Scaling console.
 
 (Optional) For Health checks, Additional health check types, select Turn on Elastic Load Balancing health checks.
 
