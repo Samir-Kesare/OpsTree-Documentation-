@@ -75,6 +75,9 @@ Follow below document
 
 [Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/c5addddd-4c18-4792-b6d0-71ea90063897)
+
+
 
 **3. Create and Configure your Jenkins Pipeline job**
 
