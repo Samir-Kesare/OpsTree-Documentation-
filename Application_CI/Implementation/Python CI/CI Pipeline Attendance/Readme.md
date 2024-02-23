@@ -92,7 +92,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 # Output or Job Result
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/151900fe-d23c-4477-bf1e-94fb6f117098)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/7aa5d066-0cd0-4743-9f5a-d29724150052)
 
 If you want to see Detail Report  
 
