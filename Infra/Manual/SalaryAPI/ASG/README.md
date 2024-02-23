@@ -1,4 +1,5 @@
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a47cad5d-6cd6-45d9-810a-3f94e2f49a27)# Setup Auto Scaling for Salary API
+# Setup Auto Scaling for Salary API
+
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/96dc6672-d14f-41f4-8f2f-7d6642840df2)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
