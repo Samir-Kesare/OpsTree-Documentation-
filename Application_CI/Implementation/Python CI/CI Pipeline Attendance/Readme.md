@@ -1,6 +1,6 @@
 # CI Pipeline Attendance (Shared Library)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/8b664069-f89d-46e6-9380-63a0e8c05e42)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/380377f6-6d0f-426f-9026-8b34105c8357)
 
 
 
