@@ -128,9 +128,10 @@ Applications have various use cases in which we have to set up traffic routing b
 
 ***
 
-  * [**DNS**](Dev-ALB-1442510364.us-east-1.elb.amazonaws.com)
+  * [**DNS**](http://dev-alb-1442510364.us-east-1.elb.amazonaws.com/api/v1/employee/health)
    
-<img width="760" length="100" alt="LB" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/9914249d-3f0f-496c-9d0c-b8f217957b37">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/94221ad0-1038-4cd0-a6fc-cf0f4ad0c2f6)
+
 
 ***
 ## Conclusion
