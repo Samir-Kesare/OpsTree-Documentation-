@@ -108,7 +108,7 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1c0f77b2-42a4-4d06-8343-140634aa7f55)
 
-6. On the **Choose instance** launch options page, if you're not using multiple instance types, you can skip the Instance type requirements section to use the EC2 instance type that is specified in    the launch template.
+5. On the **Choose instance** launch options page, if you're not using multiple instance types, you can skip the Instance type requirements section to use the EC2 instance type that is specified in the launch template.
 
    a. Under Network, for VPC, choose a **VPC**. The Auto Scaling group must be created in the same VPC as the security group you specified in your launch template.
 
@@ -118,12 +118,12 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/54805492-8318-46d4-85ab-7b4a1f28d67b)
 
-7. On the **Configure advanced** options page, configure the following options, and then choose **Next**:
+6. On the **Configure advanced** options page, configure the following options, and then choose **Next**:
    To register your Amazon EC2 instances with a load balancer, choose an existing **load balancer --> select load balancer target group**(`Dev-salary-tg`).
 
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a302cda7-a41c-449a-a30e-2e9627353e53)
 
-8. On the **Configure group size** and scaling policies page, configure the following options, and then choose Next:
+7. On the **Configure group size** and scaling policies page, configure the following options, and then choose Next:
 
    Under **Group size**, for **Desired capacity**, enter the initial number of instances to launch.
 
@@ -131,13 +131,13 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1969e3a5-4ab2-4fd1-91c6-a12d3e523156)
 
-9 (Optional) To receive notifications, for **Add notification**, configure the notification, and then choose Next. For more information, see Amazon SNS notification options for Amazon EC2 Auto Scaling.
+8. (Optional) To receive notifications, for **Add notification**, configure the notification, and then choose Next. For more information, see Amazon SNS notification options for Amazon EC2 Auto Scaling.
 
-10. To add tags, choose **Add tag**, provide a tag key and value for each tag, and then choose Next. For more information, see Tag Auto Scaling groups and instances.
+9. To add tags, choose **Add tag**, provide a tag key and value for each tag, and then choose Next. For more information, see Tag Auto Scaling groups and instances.
 
     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d01dfa54-cca6-447c-ae8f-ac3bc51aecc4)
 
-11. On the **Review** page, choose **Create Auto Scaling group**.
+10. On the **Review** page, choose **Create Auto Scaling group**.
 
     ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/79ed826c-9308-4205-8731-2becf8133c61)
 ***
