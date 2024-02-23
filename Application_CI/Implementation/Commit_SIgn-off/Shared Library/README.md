@@ -26,7 +26,7 @@ In the context of version control systems like Git, a commit sign-off is a line 
 # What is Shared Library 
 A shared library is a collection of reusable Groovy scripts that you can share across multiple Jenkins jobs. 
 It's like building modular components for your CI/CD pipelines, promoting efficiency and maintainability.
-**For more information click [here](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md).
+**For more information click** [here](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/README.md).
 ***
 
 ## Pre-requisites
