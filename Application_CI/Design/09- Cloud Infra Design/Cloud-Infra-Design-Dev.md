@@ -1,4 +1,4 @@
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/6047afaa-7c15-45e9-a1f0-9f4c483fa83d)# Cloud Infra Design Dev
+# Cloud Infra Design Dev
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056709/1b617352-6355-4913-aa8d-4b6667f650c8)
 
@@ -97,7 +97,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.16/28  | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28  | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ## Frontend NACL Outbound Rules
@@ -105,7 +105,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.16/28 | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28 | Allow      |
 | 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
 | 130         | Custom TCP| TCP      | 32768-65535| 10.0.1.0/28  | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
