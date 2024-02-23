@@ -51,7 +51,7 @@ Here's a flow summary of the infrastructure:
 
 # Infrastructure Diagram
 
-![Dev-infra - Page 1 (2)](https://github.com/avengers-p7/Documentation/assets/156056709/65ec3972-4458-4bf7-9fd2-75c793ee19a6)
+![Ideal-Dev-Infra - Page 1 (1)](https://github.com/avengers-p7/Documentation/assets/156056709/b3b20fb2-a69b-42e3-a1d5-77fe8ecd20a1)
 
 
 
