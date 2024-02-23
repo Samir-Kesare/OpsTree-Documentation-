@@ -61,7 +61,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ## Flow Diagram
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/f024e52f-b948-4850-b456-18c3b750b174)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/b9bde010-7c4f-4709-8f7b-d706823b22de)
 
 ## Pipeline Setup
 1. **Setup and Configure plugins & tools in Jenkins**
