@@ -4,7 +4,7 @@
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
-| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 22-02-2024  | 1.0        | Harshit Singh   | 22-02-2024      |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**  | 23-02-2024  | 1.0        | Harshit Singh   | 23-02-2024      |
 
 ***
 ## Table of Contents
@@ -106,7 +106,7 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
    d. Verify that your launch template supports all of the options that you are planning to use, and then choose **Next**.
 
-   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a189770f-e324-4cd5-a699-c5f6a0d47d3c)
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1c0f77b2-42a4-4d06-8343-140634aa7f55)
 
 6. On the **Choose instance** launch options page, if you're not using multiple instance types, you can skip the Instance type requirements section to use the EC2 instance type that is specified in    the launch template.
 
@@ -118,53 +118,38 @@ It may take a few minutes for the AMI to be created. After it is created, it wil
 
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/54805492-8318-46d4-85ab-7b4a1f28d67b)
 
-7. On the Configure advanced options page, configure the following options, and then choose Next:
-   To register your Amazon EC2 instances with a load balancer, choose an existing load balancer().
-8. 
+7. On the **Configure advanced** options page, configure the following options, and then choose **Next**:
+   To register your Amazon EC2 instances with a load balancer, choose an existing **load balancer --> select load balancer target group**(`Dev-salary-tg`).
 
-Or, you can accept the rest of the defaults, and choose Skip to review.
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a302cda7-a41c-449a-a30e-2e9627353e53)
 
-(Optional) 
+8. On the **Configure group size** and scaling policies page, configure the following options, and then choose Next:
 
-For more information, see Use Elastic Load Balancing to distribute traffic across the instances in your Auto Scaling group. To create a new load balancer, follow the procedure in Configure an Application Load Balancer or Network Load Balancer from the Amazon EC2 Auto Scaling console.
+   Under **Group size**, for **Desired capacity**, enter the initial number of instances to launch.
 
-(Optional) For Health checks, Additional health check types, select Turn on Elastic Load Balancing health checks.
+   In the Scaling section, under Scaling limits, if your new value for Desired capacity is greater than Min desired capacity and Max desired capacity, the Max desired capacity is automatically     increased to the new desired capacity value. You can change these limits as needed. For more information, see Set scaling limits for your Auto Scaling group.
 
-(Optional) For Health check grace period, enter the amount of time, in seconds. This is how long Amazon EC2 Auto Scaling needs to wait before checking the health status of an instance after it enters the InService state. For more information, see Set the health check grace period for an Auto Scaling group.
+   ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1969e3a5-4ab2-4fd1-91c6-a12d3e523156)
 
-Under Additional settings, Monitoring, choose whether to enable CloudWatch group metrics collection. These metrics provide measurements that can be indicators of a potential issue, such as number of terminating instances or number of pending instances. For more information, see Monitor CloudWatch metrics for your Auto Scaling groups and instances.
+9 (Optional) To receive notifications, for **Add notification**, configure the notification, and then choose Next. For more information, see Amazon SNS notification options for Amazon EC2 Auto Scaling.
 
-For Enable default instance warmup, select this option and choose the warm-up time for your application. If you are creating an Auto Scaling group that has a scaling policy, the default instance warmup feature improves the Amazon CloudWatch metrics used for dynamic scaling. For more information, see Set the default instance warmup for an Auto Scaling group.
+10. To add tags, choose **Add tag**, provide a tag key and value for each tag, and then choose Next. For more information, see Tag Auto Scaling groups and instances.
 
-(Optional) On the Configure group size and scaling policies page, configure the following options, and then choose Next:
+    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/d01dfa54-cca6-447c-ae8f-ac3bc51aecc4)
 
-Under Group size, for Desired capacity, enter the initial number of instances to launch.
+11. On the **Review** page, choose **Create Auto Scaling group**.
 
-In the Scaling section, under Scaling limits, if your new value for Desired capacity is greater than Min desired capacity and Max desired capacity, the Max desired capacity is automatically increased to the new desired capacity value. You can change these limits as needed. For more information, see Set scaling limits for your Auto Scaling group.
-
-For Automatic scaling, choose whether you want to create a target tracking scaling policy. You can also create this policy after your create your Auto Scaling group.
-
-If you choose Target tracking scaling policy, follow the directions in Create a target tracking scaling policy to create the policy.
-
-For Instance maintenance policy, choose whether you want to create an instance maintenance policy. You can also create this policy after your create your Auto Scaling group. Follow the directions in Set an instance maintenance policy to create the policy.
-
-Under Instance scale-in protection, choose whether to enable instance scale-in protection. For more information, see Use instance scale-in protection.
-
-(Optional) To receive notifications, for Add notification, configure the notification, and then choose Next. For more information, see Amazon SNS notification options for Amazon EC2 Auto Scaling.
-
-(Optional) To add tags, choose Add tag, provide a tag key and value for each tag, and then choose Next. For more information, see Tag Auto Scaling groups and instances.
-
-On the Review page, choose Create Auto Scaling group.
-
-
-
-
+    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/79ed826c-9308-4205-8731-2becf8133c61)
+***
 ## Output
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8b5d8369-bd3d-4ee5-b5d9-40641a85ca3a)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/0a8fdff2-1bdd-4476-a7c2-30bacea8d901)
 
 ***
 ## Conclusion
 
-This document offers a streamlined approach to implementing listener rules for load balancers within AWS. By understanding the significance of load balancing and the benefits provided by AWS Load Balancer, users can effectively optimize their application's performance, availability, and scalability. The step-by-step instructions provided in the document enable users to configure target groups, register targets, set up a load balancer and listener, and conduct thorough testing. This process ensures efficient traffic management, enhancing the overall reliability and responsiveness of applications hosted on AWS infrastructure.
+Amazon EC2 Auto Scaling manages your application's scalability by organizing instances into groups. It adjusts instance counts based on demand, offering features like health monitoring, custom checks, and load balancing. Simple steps help create Auto Scaling groups for dynamic scaling, optimizing performance and costs.
 
 ***
 ## Contact Information
