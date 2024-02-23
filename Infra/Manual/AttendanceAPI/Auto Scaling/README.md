@@ -1,4 +1,4 @@
-# Setup Auto Scaling for Attendance API
+<img width="734" alt="Screenshot 2024-02-23 at 1 22 30 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ac0e8c1e-0b1a-45e5-b154-2e20daa2ddf3"># Setup Auto Scaling for Attendance API
 
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
@@ -60,37 +60,41 @@ First you should choose which service or an application you want to scale then s
   *  Begin by accessing the Amazon EC2 console on the AWS Management Console.
   *  From the navigation pane, select "Launch Templates."
 
-     <img width="760" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/94584484-c221-4651-b20a-e0a22d7f8334"> 
- 
+ <img width="938" alt="Screenshot 2024-02-23 at 1 01 10 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/95ca6b98-aa53-458d-b3f2-ac9283fe71e3">
+
   *  Click on the "Create launch template" button.
 
-      <img width="460" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/77e3fa2a-a442-46fd-87d0-b4f639135c0e">
+<img width="1325" alt="Screenshot 2024-02-23 at 1 02 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0a3b8301-05e7-44d7-a631-4200d3c87d1d">
 
   * Provide a name for the template (e.g., Frontend-template) and assign a version (e.g., version-1).
 
-      <img width="560" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/d9c2b358-7c77-4fa9-b9b2-981963da31ca">
+<img width="784" alt="Screenshot 2024-02-23 at 1 19 44 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/acdbfafe-1ca3-4823-8a4f-16020e5c2709">
 
   * Choose an existing Amazon Machine Image (AMI) or select a custom one.
-      <img width="560" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a951c64f-4ac7-436d-91e7-1da9110d5951">
-      
+
+      <img width="750" alt="Screenshot 2024-02-23 at 1 21 22 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/72dda7b3-ae37-423f-9a68-61c68d28a036">
+
   * Specify the instance type, key pair, and subnet for the EC2 instances.
   
-      <img width="760" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/f9a787fc-6007-48f2-89f9-3466712032e4">
+<img width="734" alt="Screenshot 2024-02-23 at 1 22 30 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2d2503c7-da21-4350-9f3f-d9efd2c02095">
 
    *  Assign the appropriate security group.
+<img width="711" alt="Screenshot 2024-02-23 at 1 23 30 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/35700a6a-f515-4694-b702-a13d6474b8d3">
 
-      <img width="460" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/be0ba791-be16-4684-8c56-41ea64b1d63e">
 
   * Optionally, add a script in the user data section for custom setup.
+<img width="742" alt="Screenshot 2024-02-23 at 1 32 10 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/25b129b6-8a1b-49d9-b9bd-8b0c3561d64f">
+
     ```shell
-    #!/bin/bash
-    cd /home/ubuntu/attendance/attendance
+    cd attendance
+    cd attendance-api/
     poetry shell
-    
+    gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
     ```
   * Complete the creation process by clicking on "Create Launch Template."
-           
-      <img width="560" length="100" alt="ASG" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/4adc5f1a-9914-4360-a40a-ba0934f8cfda">
+
+    <img width="614" alt="Screenshot 2024-02-23 at 1 34 06 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/b769b8d0-9c81-4522-a96f-7132152e94df">
+
 
 ### Create An Auto Scaling Group Using a Launch Template
 
