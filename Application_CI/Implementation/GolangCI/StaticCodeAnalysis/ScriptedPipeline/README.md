@@ -5,7 +5,15 @@
 | Khushi Malhotra |  07 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
 # Table of Contents
-- [Introduction](
+- [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#introduction)
+- [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#pre-requisites)
+- [Flow Diagram](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#flow-diagram)
+- [go plugin](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#go-plugin)
+- [Static Code Analysis Setup](
+- [Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#pipeline)
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#contact-information)
+- [References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#references)
+
 # Introduction
 Scripted Pipelines are a powerful way to define and automate software delivery workflows in Jenkins. They offer more flexibility and customization compared to the simplified Declarative Pipelines. 
 
@@ -31,7 +39,7 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 ![WhatsApp Image 2024-02-13 at 13 30 55_1bbd4add](https://github.com/avengers-p7/Documentation/assets/156056460/bb5dce1a-3952-4ebd-a40b-8a41a45375dd)
 
 
-# Code Compilation Setup
+# Static Code Analysis Setup
 **Step-1** Create a New Pipeline Job
 
 - Navigate to the Jenkins dashboard and click on New Item.
