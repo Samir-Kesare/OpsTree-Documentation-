@@ -108,7 +108,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ## Results
 
-   <img width="760" length="100" alt="Employee" src="(https://github.com/CodeOps-Hub/Documentation/assets/156056413/c9cb6335-1a4d-4b89-97b4-21741e94d23d"> 
+   <img width="760" length="100" alt="Employee" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c9cb6335-1a4d-4b89-97b4-21741e94d23d"> 
 
 ***
 ## [Pipeline](https://github.com/CodeOps-Hub/Employee-API/blob/feature/employeeCI/Jenkinsfile)
