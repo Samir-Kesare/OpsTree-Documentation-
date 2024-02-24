@@ -9,7 +9,7 @@
 - [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#pre-requisites)
 - [Flow Diagram](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#flow-diagram)
 - [go plugin](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#go-plugin)
-- [Static Code Analysis Setup](
+- [Static Code Analysis Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#static-code-analysis-setup)
 - [Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#pipeline)
 - [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#contact-information)
 - [References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#references)
