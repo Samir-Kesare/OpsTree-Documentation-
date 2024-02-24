@@ -4,6 +4,8 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  07 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+# Table of Contents
+- [Introduction](
 # Introduction
 Scripted Pipelines are a powerful way to define and automate software delivery workflows in Jenkins. They offer more flexibility and customization compared to the simplified Declarative Pipelines. 
 
@@ -20,6 +22,7 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 | go plugin    | v1.22.0 |
 
 # Flow Diagram
+
 ***
 
 # go plugin
@@ -39,6 +42,9 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 - In the job configuration page, scroll down to the Pipeline section.
 - Select Pipeline script from SCM.
 - Give required repo url and enter your credentials.
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/e07007c2-da74-434b-b53f-0b2f4002bbbf)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/3c3596fb-bf41-4144-a31f-0de617379e8d)
 
 **Step-3** Save the Configuration
 
@@ -54,6 +60,11 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 - The console output will display the steps executed by the pipeline script, including code checkout and compilation.
 - Verify Successful Compilation:
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/399f3e93-9aab-4dd5-bec5-d53117aa9fb8)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d8d0d5f4-f85c-4a6b-9e93-2149a6410efa)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/40b763bb-c31a-4414-b1c4-a18768edfd96)
 
 # Contact Information
 | Name            | Email Address                        |
