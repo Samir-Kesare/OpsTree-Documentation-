@@ -57,13 +57,38 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 - The console output will display the steps executed by the pipeline script, including code checkout and compilation.
 - Verify Successful Compilation
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/6a6c23f4-ca5e-4a98-a078-bb5bab74a15a)
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/253cd688-9ee0-4dd9-ad97-5144dcb3d6b3)
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/40b763bb-c31a-4414-b1c4-a18768edfd96)
 
+#Pipeline
+```shell
+pipeline {
+    agent any
+    tools {
+        go 'go1.22.0'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/CodeOps-Hub/Employee-API.git'
+            }
+        }
+        stage('SonarQube Analysis') {
+            steps {
 
+                 withSonarQubeEnv('sq1') {
+                        sh "/var/lib/jenkins/tools/hudson.plugins.sonar.MsBuildSQRunnerInstallation/SonarScanner/sonar-scanner-5.0.1.3006/bin/sonar-scanner -Dsonar.projectKey=gloang-static-01 -Dsonar.sources=. -Dsonar.host.url=http://10.188.0.3:9000  -Dsonar.login=sqp_baf01327c387b84a45b8796884f8bdcd2f3c7097"
+                    }
+                     
+                    }
+                        }
+                    }
+                }
 
-
-
+```
 
 # Contact Information
 | Name            | Email Address                        |
