@@ -76,7 +76,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 ## Flow Diagram
 
-<img width="460" length="100" alt="Employee" src="">
+<img width="860" length="100" alt="Employee" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0976e11d-d1a5-4e10-b21e-f991c16908f2">
 
 ***
 ## Pipeline Setup
@@ -102,26 +102,106 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 
 4. **Now Build your Pipeline**
    
-    <img width="760" length="100" alt="Employee" src=""> 
+    <img width="760" length="100" alt="Employee" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/19fbeb9a-cbf7-4c9a-bb40-0c7b8ddf8d67"> 
 
 ***
 
 ## Results
 
-   <img width="760" length="100" alt="Employee" src=""> 
+   <img width="760" length="100" alt="Employee" src="(https://github.com/CodeOps-Hub/Documentation/assets/156056413/c9cb6335-1a4d-4b89-97b4-21741e94d23d"> 
 
 ***
 ## [Pipeline](https://github.com/CodeOps-Hub/Employee-API/blob/feature/employeeCI/Jenkinsfile)
 
 ```shell
+@Library('snaatak-p7') _
 
+def employeeCi = new org.avengers.template.employeeCI.EmployeeCi()
+
+node {
+    
+    def url = 'https://github.com/CodeOps-Hub/Employee-API.git'
+    def branch = 'feature/employeeCI'
+    def gitLeaksVersion = '8.18.2'
+    def gitLeaksReport = 'credScanReport.json'
+    def depVersion = '9.0.9'
+    def javaVersion = '17'
+    def uniTestReport = 'coverage.html'
+    def BugAnalysisreport = 'BugAnalysisreport.html'
+    def depreport = 'dep-check.html'
+    
+    employeeCi.call(branch: branch,url: url, gitLeaksVersion, depVersion, javaVersion, gitLeaksReport, uniTestReport, BugAnalysisreport, depreport)
+    
+}
 ```
 
 ## [Shared Library](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/employeeCI/EmployeeCi.groovy)
 
 ```shell
 // src/org/avengers/template/employeeCI
+package org.avengers.template.employeeCI
 
+import org.avengers.licenseScanning.licenceScan
+import org.avengers.credScanning.*
+import org.avengers.common.*
+import org.avengers.golang.CodeCompilation.*
+import org.avengers.golang.GoLangDependencyScanning.*
+import org.avengers.golang.bugAnalysis.*
+import org.avengers.golang.unitTesting.*
+import org.avengers.golang.StaticAnalysis.*
+    
+def call(Map config = [:], String gitLeaksVersion, String depVersion, String javaVersion, String gitLeaksReport, String uniTestReport, String BugAnalysisreport, String depreport) {
+
+    def licenceScanner = new licenceScan()
+    def gitCheckout = new gitCheckout()
+    def gitLeaks = new GitLeaks()
+    def compile = new codecompilation() 
+    def installGo = new InstallationPreRequisites()
+    def bugAnalysis = new Linting()
+    def generateReport = new GenerateReport()
+    def downloadDepCheck = new DownloadDependencyCheck()
+    def depCheck = new DependencyCheck()
+    def unitTesting = new Testing()
+    def javaDownload = new JavaDownload()
+    def cleanForEmp =new CleanForEmp()
+    def cleanWorkSpace =new CleanWorkSpace()
+    def staticAnalysis = new gostaticanalysis()
+
+    try{
+    gitCheckout.call(branch: config.branch, url: config.url  )
+    gitLeaks.call(gitLeaksVersion)
+    withCredentials([string(credentialsId: 'fossaToken', variable: 'FOSSA_API_KEY')]){
+        licenceScanner.installFossa()
+        licenceScanner.scan()
+    }
+    installGo.call()
+    javaDownload.call(javaVersion)
+    downloadDepCheck.call(depVersion)
+    compile.call()
+    parallel depCheck: {
+        depCheck.call(depreport)
+    },
+    staticAnalysis: {
+        staticAnalysis.call()
+    },
+    bugAnalysis: {
+        bugAnalysis.call()
+    },
+    unitTesting:{
+        unitTesting.call()   
+    }
+    generateReport.call(gitLeaksReport, uniTestReport, BugAnalysisreport)
+    }
+    catch (e){
+        echo 'Emplyoee CI Failed'
+        cleanWorkSpace.call()
+        throw e
+    }
+    finally {
+        cleanForEmp.call(gitLeaksReport, uniTestReport, BugAnalysisreport, depreport)
+        cleanWorkSpace.call()
+    }
+}
 ```
 
 ***
