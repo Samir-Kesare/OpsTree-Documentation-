@@ -30,7 +30,7 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 ![WhatsApp Image 2024-02-13 at 13 30 55_1bbd4add](https://github.com/avengers-p7/Documentation/assets/156056460/bb5dce1a-3952-4ebd-a40b-8a41a45375dd)
 
 
-#Code Compilation Setup
+# Code Compilation Setup
 **Step-1** Create a New Pipeline Job
 
 - Navigate to the Jenkins dashboard and click on New Item.
@@ -65,6 +65,24 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d8d0d5f4-f85c-4a6b-9e93-2149a6410efa)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/40b763bb-c31a-4414-b1c4-a18768edfd96)
+
+# Pipeline
+```shell
+node {
+    def goHome = tool name: 'go1.22.0', type: 'go'
+    
+    stage('Checkout') {
+        git branch: 'main', url: 'https://github.com/CodeOps-Hub/Employee-API.git'
+    }
+    
+    stage('SonarQube Analysis') {
+        withSonarQubeEnv('sq1') {
+            sh "/var/lib/jenkins/tools/hudson.plugins.sonar.MsBuildSQRunnerInstallation/SonarScanner/sonar-scanner-5.0.1.3006/bin/sonar-scanner -Dsonar.projectKey=gloang-static-01 -Dsonar.sources=. -Dsonar.host.url=http://10.188.0.3:9000  -Dsonar.login=sqp_baf01327c387b84a45b8796884f8bdcd2f3c7097"
+                    
+        }
+    }
+}
+```
 
 # Contact Information
 | Name            | Email Address                        |
