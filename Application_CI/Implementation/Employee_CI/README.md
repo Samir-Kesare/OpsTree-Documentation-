@@ -1,6 +1,6 @@
 # Employee API CI (Shared Library)
 
-<img width="560" length="100" alt="Employee" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/35e741fc-d67e-4d35-9f16-7c12e31b1dd5">
+<img width="560" length="100" alt="Employee" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ed7edbe7-3bd0-431d-88f9-3750713e61e3">
 
 ***
 
