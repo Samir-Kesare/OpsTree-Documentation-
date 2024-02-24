@@ -22,6 +22,7 @@ Scripted Pipelines are a powerful way to define and automate software delivery w
 | go plugin    | v1.22.0 |
 
 # Flow Diagram
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/0448c461-e7f0-4c85-9c19-68a2706959d1)
 
 ***
 
