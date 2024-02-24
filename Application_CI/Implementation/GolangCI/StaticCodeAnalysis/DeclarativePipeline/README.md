@@ -37,6 +37,7 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 
 [\[ Reference Doc \]](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/jenkinsPipeline.md )
 
+
 ## Pre-requisites
 | Item         | Version   |
 |--------------|-----------|
@@ -46,6 +47,10 @@ Declarative Pipeline in Jenkins offers a simplified and structured approach for 
 # go plugin
 ![WhatsApp Image 2024-02-13 at 13 33 44_886b7a78](https://github.com/avengers-p7/Documentation/assets/156056460/55c954ee-4937-496d-bff9-6ca2df8cca38)
 ![WhatsApp Image 2024-02-13 at 13 30 55_1bbd4add](https://github.com/avengers-p7/Documentation/assets/156056460/bb5dce1a-3952-4ebd-a40b-8a41a45375dd)
+
+# Flow Diagram
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/bcaea722-8f53-49d4-a185-f91c7276122b)
+***
 
 # Static-Code Analysis Setup 
 **Step-1** Create a New Pipeline Job
