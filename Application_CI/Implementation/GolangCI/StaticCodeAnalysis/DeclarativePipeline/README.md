@@ -4,15 +4,22 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  07 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
-#Table of Contents
--[Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#introduction)
--[What is Declarative Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#what-is-declarative-pipeline)
--[Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#pre-requisites)
--[go plugin](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#go-plugin)
--[Static-Code Analysis Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#static-code-analysis-setup)
--[Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#pipeline)
--[Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#contact-information)
--[References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#references)
+# Table of Contents
+- [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#introduction)
+
+- [What is Declarative Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#what-is-declarative-pipeline)
+
+- [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#pre-requisites)
+
+- [go plugin](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#go-plugin)
+
+- [Static-Code Analysis Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#static-code-analysis-setup)
+
+- [Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#pipeline)
+
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#contact-information)
+
+- [References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#references)
 
 ## Introduction
 Static analysis, also called static code analysis, is a method of computer program debugging that is done by examining the code without executing the program. The process provides an understanding of the code structure and can help ensure that the code adheres to industry standards. Static analysis is used in software engineering by software development and quality assurance teams. Automated tools can assist programmers and developers in carrying out static analysis. The software will scan all code in a project to check for vulnerabilities while validating the code.
