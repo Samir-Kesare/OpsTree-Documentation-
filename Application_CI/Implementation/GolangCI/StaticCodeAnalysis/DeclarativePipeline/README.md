@@ -10,7 +10,7 @@
 -[Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#pre-requisites)
 -[go plugin](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#go-plugin)
 -[Static-Code Analysis Setup](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#static-code-analysis-setup)
--[Pipeline](
+-[Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#pipeline)
 -[Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#contact-information)
 -[References](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#references)
 
