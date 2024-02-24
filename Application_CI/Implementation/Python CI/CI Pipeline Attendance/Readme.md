@@ -57,6 +57,7 @@ To understand the concept of shared libraries, let’s consider a real-time exam
 | Python3    | For python                                              | 
 | Pylint     | It will help to do Static code analysis. on python code |
 | Bandit     | A tool for bug analysis in Python code                  |
+| Pytest     | Tool for unit testing                                   |
 | Owasp      | Tool for Dependency scanning                            |
 
 ## Flow Diagram
