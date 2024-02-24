@@ -33,7 +33,7 @@ A shared library in Jenkins is a reusable collection of Groovy scripts that can 
 ![WhatsApp Image 2024-02-13 at 13 33 44_886b7a78](https://github.com/avengers-p7/Documentation/assets/156056460/55c954ee-4937-496d-bff9-6ca2df8cca38)
 ![WhatsApp Image 2024-02-13 at 13 30 55_1bbd4add](https://github.com/avengers-p7/Documentation/assets/156056460/bb5dce1a-3952-4ebd-a40b-8a41a45375dd)
 
-# Code-Compilation Setup 
+# Static Code Analysis Setup 
 **Step-1** Create a New Pipeline Job
 
 - Navigate to the Jenkins dashboard and click on New Item.
