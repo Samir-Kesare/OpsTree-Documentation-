@@ -60,41 +60,30 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 # Flow Diagram
 
-![Uploading Screenshot 2024-02-25 at 11.26.26 PM.png…]()
-
+![Screenshot 2024-02-25 at 11 40 04 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/744267d2-fbd6-4ece-890d-bc86cae15caa)
 
 ***
 
 # Steps to run Pipeline
 
-**1. Including Requirements in requirements.txt**
+**Configure Shared library in Jenkins**
 
-* Add dependency to the reuirements.txt file. Refer to the documentation [PythonUnit Testing]([https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Unit%20Testing/POC.md](https://github.com/CodeOps-Hub/Documentation/tree/main/Application_CI/Implementation/Python%20CI/UnitTesting/DeclarativePipeline)).
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/9d5dbd3a-34be-4508-b4e3-3d02f8ea4c41)
 
-**2. Configure Shared library in Jenkins**
-	
-Follow below document
-
-[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)<br><br>
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/c5addddd-4c18-4792-b6d0-71ea90063897)
+[Reference Doc](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/sharedLibrary/setup.md)
 
 
 
-**3. Create and Configure your Jenkins Pipeline job**
+**Now Build your Pipeline**
 
-Follow below document
-
-[Reference Document](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Implementation/GenericDoc/pipelinePOC.md)<br><br>
-
-**4. Now Build your Pipeline**
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/d2fd5064-d5f9-4599-aac1-f0a098f220c0)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/ada93ec0-4ac2-48f6-a6ff-1c8c12e3193e)
 
 ***
 # Console Output
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/39af50b0-2af3-4915-a2c1-c6beb3c8071a)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/5eb61244-26ef-4e67-9145-9da2e861e3df)
+
+[Report](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/Python%20CI/DAST/DeclarativePipeline/out2.html)
 ***
 
 # Jenkinsfile
@@ -155,7 +144,7 @@ def call(String zapVersion) {
 stage('Run ZAP Scan') {
             script {
                  // Start ZAP and perform the scan
-                  sh "/var/lib/jenkins/workspace/'DAST_declarative'/ZAP_${zapVersion}/zap.sh -cmd -port 8090 -quickurl http://43.207.90.113:8080/api/v1/attendance/health -quickprogress -quickout out2.html"
+                  sh "/var/lib/jenkins/workspace/'DAST_declarative'/ZAP_${zapVersion}/zap.sh -cmd -port 8090 -quickurl http://34.100.232.65:8080/api/v1/attendance/health -quickprogress -quickout out2.html"
                 }
             }
         }
@@ -176,6 +165,4 @@ By promoting best practices and enabling version control, it enhances the effici
 # References
 | Source | Description  | 
 | -------- | ------- |
-| https://realpython.com/pytest-python-testing/ | Pytest |
-| https://skamalakannan.dev/posts/jenkins-pipeline-python/ | Jenkin pipeline with python |
-| https://www.jenkins.io/doc/book/pipeline/ | Jenkins pipeline |
+| https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404 | OWASP ZAP Integration with jenkins |
