@@ -4,6 +4,8 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  07 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/bbc12a10-5b6c-4dcb-a23a-ac62343df48c)
+
 # Table of Contents
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/DeclarativePipeline/README.md#introduction)
 
