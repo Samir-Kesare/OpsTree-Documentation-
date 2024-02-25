@@ -4,6 +4,8 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  30 Jan 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/129696bc-ee40-43d9-9f62-ef9c2d63550e)
+
 # Table of Contents
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/SharedLibrary/README.md#introduction)
 - [What is Shared Library?](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/SharedLibrary/README.md#what-is-shared-library)
@@ -14,7 +16,7 @@
 - [Pipeline](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/SharedLibrary/README.md#pipeline)
 - [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/SharedLibrary/README.md#contact-information)
 - [Reference](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/SharedLibrary/README.md#reference)
-  
+
 # Introduction 
 
 Static analysis, also called static code analysis, is a method of computer program debugging that is done by examining the code without executing the program. The process provides an understanding of the code structure and can help ensure that the code adheres to industry standards. Static analysis is used in software engineering by software development and quality assurance teams. Automated tools can assist programmers and developers in carrying out static analysis. The software will scan all code in a project to check for vulnerabilities while validating the code.
