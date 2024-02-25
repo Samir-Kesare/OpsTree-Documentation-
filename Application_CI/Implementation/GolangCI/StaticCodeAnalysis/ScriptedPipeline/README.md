@@ -4,6 +4,8 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  07 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 ***
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/f30e7c1f-307b-4a80-b617-9a20949db8b5)
+
 # Table of Contents
 - [Introduction](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#introduction)
 - [Pre-requisites](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GolangCI/StaticCodeAnalysis/ScriptedPipeline/README.md#pre-requisites)
