@@ -60,7 +60,9 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 
 # Flow Diagram
 
-![Screenshot 2024-02-23 at 6 06 52 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/31336ab8-1f30-40b0-bc41-63c71e018011)
+![Uploading Screenshot 2024-02-25 at 11.26.26 PM.png…]()
+
+
 ***
 
 # Steps to run Pipeline
