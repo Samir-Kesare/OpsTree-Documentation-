@@ -55,7 +55,7 @@ About more information [**Click Here**](https://github.com/avengers-p7/Documenta
 | ---- | ----------- |
 | **Jenkins (2.426.3)** | Enables Continuous Integration |
 | **Java 17** | Required for compiling Jenkins and Spring Boot projects |
-| **Pytest** | Facilitates Unit testing |
+| **OWASP ZAP** | Facilitates DAST |
 ***
 
 # Flow Diagram
@@ -99,16 +99,18 @@ Follow below document
 
 # Jenkinsfile
 ```
-@Library("unitTesting-python-library") _
+@Library('snaatak-p7') _
+def dast = new org.avengers.template.python.PythonDast()
 
-def unitTesting = new org.avengers.template.python.unitTesting()
 
 node {
     
-    def url = 'https://github.com/CodeOps-Hub/Attendance-API.git'
+    def url = 'https://github.com/OT-MICROSERVICES/attendance-api.git'
+    def creds = '890c8a72-7383-4986-8573-519aacdeb7d2'
     def branch = 'main'
+    def zapVersion = '2.14.0'
     
-    unitTesting.call(branch: branch,url: url)
+    dast.call(url, creds, branch, zapVersion)
     
 }
 ```
@@ -116,20 +118,20 @@ node {
 
 # Shared Library
 
-### installDependency.groovy
+### OwaspZapInstallation.groovy
 
 ```
-// installDependency.groovy
-package org.avengers.python.unitTesting
-
-def call() {
-    stage('Install Dependencies') {
-        script {
-            sh 'pip install -r requirements.txt'
-            sh 'pip install pytest pytest-html'
+package org.avengers.python.dast
+def call(String zapVersion) {
+  stage('Install ZAP') {
+    script {
+         // Download and install OWASP ZAP
+          sh "wget https://github.com/zaproxy/zaproxy/releases/download/v${zapVersion}/ZAP_${zapVersion}_Linux.tar.gz"
+          sh "tar -xvf ZAP_${zapVersion}_Linux.tar.gz"
+                    
+                }
+            }
         }
-    }
-}
 ```
 ### testing.groovy
 
@@ -146,18 +148,17 @@ def call() {
 }
 ```
 
-### virtENV.groovy
+### RunZap.groovy
 ```
-package org.avengers.python.unitTesting
-
-def call() {           
-    stage('Create Virtual ENV') {
-        script {
-            sh 'python3 -m venv myenv'
-            sh '. myenv/bin/activate'
+package org.avengers.python.dast
+def call(String zapVersion) {
+stage('Run ZAP Scan') {
+            script {
+                 // Start ZAP and perform the scan
+                  sh "/var/lib/jenkins/workspace/'DAST_declarative'/ZAP_${zapVersion}/zap.sh -cmd -port 8090 -quickurl http://43.207.90.113:8080/api/v1/attendance/health -quickprogress -quickout out2.html"
+                }
+            }
         }
-    }
-}
 ```
 ***
 # Conclusion
