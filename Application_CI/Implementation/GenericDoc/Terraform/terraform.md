@@ -1,5 +1,6 @@
 # Introduction of Terraform
 
+***
 
 | **Author** | **Created On** | **Last Updated** | **Document version** |
 | ---------- | -------------- | ---------------- | -------------------- |
@@ -7,5 +8,8 @@
 | **Vishal Kesharwani** | **26 Feb 2024** | **26 Feb 2024** | **v1** |
 
 ***
+
+# Table of Contents
+
 
 
