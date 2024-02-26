@@ -14,8 +14,8 @@
 ## Table of Contents
 
 * [Introduction](#Introduction) 
-* [Infrastructure as Code(IaC)](#Infrastructure-as-Code(IaC)) 
-* [Why Infrastructure as Code (IaC)](#Why-Infrastructure-as-Code-(IaC)) 
+* [Infrastructure as Code(IaC)](#Infrastructure-as-Code) 
+* [Why Infrastructure as Code (IaC)](#Why-Infrastructure-as-Code) 
 * [Why Terraform](#Why-Terraform) 
 * [Terraform Flow Diagram](#Terraform-Flow-Diagram) 
 * [How Terraform Works](#How-Terraform-Works) 
