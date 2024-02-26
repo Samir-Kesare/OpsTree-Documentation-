@@ -1,7 +1,7 @@
 
 # Introduction of Terraform Modules
 
-<img width="360" length="100" alt="Terraform" src="">
+<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/22b61f1f-9c7f-4de5-98a6-05e73c10eb0a">
 
 ***
 
