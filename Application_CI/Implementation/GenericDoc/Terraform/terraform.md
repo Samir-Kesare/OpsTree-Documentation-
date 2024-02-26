@@ -1,4 +1,4 @@
-# Introduction Of Terraform
+# Introduction of Terraform
 
 
 | **Author** | **Created On** | **Last Updated** | **Document version** |
