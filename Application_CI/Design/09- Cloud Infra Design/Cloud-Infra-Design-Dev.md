@@ -39,7 +39,8 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 
 **Require Infra**
 
-![Ideal-Dev-Infra - Page 1](https://github.com/CodeOps-Hub/Documentation/assets/156056709/2bd86119-9e48-4762-88fc-1c996d896d5c)
+![Ideal-Dev-Infra - Page 1 (1)](https://github.com/CodeOps-Hub/Documentation/assets/156056709/708faa1b-5dfa-487d-8143-dc56a68e659a)
+
 
 ---
 # Description
