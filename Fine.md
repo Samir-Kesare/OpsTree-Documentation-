@@ -57,4 +57,11 @@
 | Vidhi      |   | Standup call (Late Join)|  1   |   05   |
 | Date      | **22 Feb**   | |     |      |
 | Khushi    |  |Morning Call |  1   |   05   |
+| Date      | **24 Feb**   | |     |      |
+| Vidhi    |  |Morning Call |  1   |   05   |
+| Vikram    |  |Morning Call |  1   |   05   |
+| Date      | **26 Feb**   | |     |      |
+| Khushi    |  |Morning Call |  1   |   05   |
+| Vikram    |  |Morning Call |  1   |   05   |
+
 
