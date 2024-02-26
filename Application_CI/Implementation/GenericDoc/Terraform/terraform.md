@@ -12,17 +12,18 @@
 ***
 
 ## Table of Contents
- [Introduction](#Introduction)
- [Infrastructure as Code(IaC)](#Infrastructure-as-Code-(IaC))
- [Why Infrastructure as Code (IaC)?](#Why-Infrastructure-as-Code-(IaC)?)
- [Why Terraform](#Why-Terraform)
- [Terraform Flow Diagram](#Terraform-Flow-Diagram)
- [How Terraform Works](#How-Terraform-Works)
- [Terraform Configuration Overview](#Terraform-Configuration-Overview)
- [Best Practices](#Best-Practices)
- [Conclusion](#Conclusion)
- [Contact Information](#Contact-Information)
- [Reference](#Reference)
+
+* [Introduction](#Introduction) 
+* [Infrastructure as Code(IaC)](#Infrastructure-as-Code-(IaC)) 
+* [Why Infrastructure as Code (IaC)?](#Why-Infrastructure-as-Code-(IaC)?) 
+* [Why Terraform](#Why-Terraform) 
+* [Terraform Flow Diagram](#Terraform-Flow-Diagram) 
+* [How Terraform Works](#How-Terraform-Works) 
+* [Terraform Configuration Overview](#Terraform-Configuration-Overview) 
+* [Best Practices](#Best-Practices) 
+* [Conclusion](#Conclusion) 
+* [Contact Information](#Contact-Information) 
+* [Reference](#Reference)
 
  ***
 
