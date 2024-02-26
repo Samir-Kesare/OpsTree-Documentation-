@@ -89,7 +89,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 0.0.0.0/0   | Allow      |
 | *           | All traffic | All     | All       | 0.0.0.0/0    | Deny      |
 
 ## Frontend NACL Inbound Rules
