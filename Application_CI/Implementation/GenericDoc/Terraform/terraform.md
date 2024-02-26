@@ -36,7 +36,7 @@ It supports multiple providers like AWS, Azure, Google Cloud Platform, etc., all
 
  ***
 
-## Infrastructure as Code(IaC)
+## Infrastructure as Code
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/fa9b30e5-bb65-4126-9f9b-e26c619b032a">
 
@@ -44,7 +44,7 @@ It supports multiple providers like AWS, Azure, Google Cloud Platform, etc., all
 
  ***
 
-## Why Infrastructure as Code (IaC)?
+## Why Infrastructure as Code?
 
 To better understand the advantages of Terraform, it helps to first understand the benefits of Infrastructure as Code (IaC). IaC allows developers to codify infrastructure in a way that makes provisioning automated, faster, and repeatable. It’s a key component of Agile and DevOps practices such as version control, continuous integration, and continuous deployment.
 Infrastructure as code can help with the following:
