@@ -23,7 +23,7 @@
 * [Best Practices](#Best-Practices) 
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
-* [Reference](#Reference)
+* [References](#References)
 
  ***
 
