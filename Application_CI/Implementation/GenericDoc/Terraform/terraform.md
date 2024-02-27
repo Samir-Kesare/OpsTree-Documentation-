@@ -98,10 +98,10 @@ To begin writing a Terraform configuration while adhering to the best practices,
 
 <img width="500" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/8f134ebd-b5da-450e-912f-c2c7872269aa">
 
-*  **Provider.tf –** containing the terraform block, s3 backend definition, provider configurations, and aliases.
-*  **Main.tf –** containing the resource blocks which define the resources to be created in the target cloud platform.
-*  **Variables.tf –** containing the variable declarations used in the resource blocks.
-*  **Output.tf –** containing the output that needs to be generated on successful completion of “apply” operation.
+*  **provider.tf –** containing the terraform block, s3 backend definition, provider configurations, and aliases.
+*  **main.tf –** containing the resource blocks which define the resources to be created in the target cloud platform.
+*  **variables.tf –** containing the variable declarations used in the resource blocks.
+*  **output.tf –** containing the output that needs to be generated on successful completion of “apply” operation.
 *  ***.tfvars –** containing the environment-specific default values of variables.
 
 ***
