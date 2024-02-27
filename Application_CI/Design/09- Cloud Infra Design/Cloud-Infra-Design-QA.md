@@ -78,7 +78,7 @@ Documentation of QA processes for microservices on cloud infrastructure is vital
 
 | **Source** | **Description** |
 | --------- | --------------- |
-| [Link](https://github.com/OT-CLOUD-KIT/terraform-aws-vpc/blob/master/README.md) | Template Reference Link |
+| [Link](https://github.com/OT-MICROSERVICES/documentation-template/wiki/Application-Template) | Template Reference Link |
 | [Link](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-30K-Feet.md) | Cloud Infra Diagram 30k Feet  |
 | [Link](https://www.nops.io/blog/cloud-architecture-best-practices/) | Cloud Infra Best Practices |
 
