@@ -39,6 +39,8 @@ In the modern software development landscape, microservices architecture has bec
 
 # Infrastructure Diagram
 
+![Ideal-Dev-Infra - Page 1](https://github.com/CodeOps-Hub/Documentation/assets/156057205/a578f20d-7f4c-4cf1-9943-13f9f681b61e)
+
 *** 
 
 # Description
