@@ -57,7 +57,7 @@ In the modern software development landscape, microservices architecture has bec
 | **Route Tables**                    | - Public-RT for public subnet internet access.<br>- Private-RT for communication within the VPC.    |
 | **ALB (Application Load Balancer)** | Configured to distribute frontend traffic across multiple targets for high availability.            |
 | **Auto Scaling Group (ASG)**        | Dynamically adjusts frontend and API service instances based on demand for scalability.              |
-| **Region and Availability Zone**    | Deployed in Europe region, specifically Frankfurt (eu-central-1). Utilizes availability zones (eu-central-1a) for redundancy and fault tolerance. |
+| **Region and Availability Zone**    | Deployed in US East region, specifically N.Virginia (us-east-1). Utilizes availability zones (us-east-1a) for redundancy and fault tolerance. |
 | **VPC (Virtual Private Cloud)**     | Created for Development environments, organizes components for scalability and availability.        |
             
 ***
