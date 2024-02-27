@@ -18,7 +18,8 @@
 * [Why Infrastructure as Code (IaC)](#Why-Infrastructure-as-Code) 
 * [Why Terraform](#Why-Terraform) 
 * [Terraform Flow Diagram](#Terraform-Flow-Diagram) 
-* [How Terraform Works](#How-Terraform-Works) 
+* [How Terraform Works](#How-Terraform-Works)
+* [How to Structure a Terraform Project](#How-to-Structure-a-Terraform-Project)
 * [Terraform Configuration Overview](#Terraform-Configuration-Overview) 
 * [Best Practices](#Best-Practices) 
 * [Conclusion](#Conclusion) 
@@ -89,6 +90,19 @@ Infrastructure as code can help with the following:
 | **Terraform Plan**                | Execute `terraform plan` to generate an execution plan, comparing desired state with current infrastructure and outlining proposed changes.                        |
 | **Terraform Apply**               | Apply changes to infrastructure by running `terraform apply`, which provisions resources according to the plan and updates the state file.                           |
 | **Terraform Destroy**            | Use `terraform destroy` to tear down the infrastructure, deleting all resources managed by Terraform. Exercise caution as this action is irreversible.               |
+
+***
+## How to Structure a Terraform Project
+
+To begin writing a Terraform configuration while adhering to the best practices, we create the files below in the project’s root directory.
+
+<img width="500" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/8f134ebd-b5da-450e-912f-c2c7872269aa">
+
+*  **Provider.tf –** containing the terraform block, s3 backend definition, provider configurations, and aliases.
+*  **Main.tf –** containing the resource blocks which define the resources to be created in the target cloud platform.
+*  **Variables.tf –** containing the variable declarations used in the resource blocks.
+*  **Output.tf –** containing the output that needs to be generated on successful completion of “apply” operation.
+*  ***.tfvars –** containing the environment-specific default values of variables.
 
 ***
 
