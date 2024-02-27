@@ -1,6 +1,6 @@
 # Cloud Infra Design QA
 
-<img width="300" length="100" alt="Golang" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a5bd713e-2bea-4257-baed-27798aef3b3b">
+<img width="300" length="100" alt="QA Infra" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a5bd713e-2bea-4257-baed-27798aef3b3b">
 
 ***
 
