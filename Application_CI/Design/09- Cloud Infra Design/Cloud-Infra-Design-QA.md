@@ -43,6 +43,114 @@ In the modern software development landscape, microservices architecture has bec
 
 # Description
 
+| Component                           | Details                                                                                           |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **User Access**                     | Users connect to the infrastructure through the internet.                                          |
+| **Route53**                         | DNS service for routing traffic to various components.                                               |
+| **Public Subnets**                  | Public subnets host components requiring direct internet access. Bastion Host facilitates secure access.|
+| **Private Subnets**                 | Frontend app, Attendance, Employee, and Salary APIs hosted in separate private subnets. Databases (PostgreSQL, Scylla, Redis) in another private subnet. |
+| **Security Groups**                 | - To provide security on instance level |
+| **NACLs (Network ACLs)**           | Control inbound and outbound traffic at subnet level for specific private subnets.                  |
+| **Internet Gateway & NAT Gateway**  | - Internet Gateway (Igw) for VPC internet access.<br>- NAT Gateway for outbound traffic from private subnets to the internet.|
+| **Route Tables**                    | - Public-RT for public subnet internet access.<br>- Private-RT for communication within the VPC.    |
+| **ALB (Application Load Balancer)** | Configured to distribute frontend traffic across multiple targets for high availability.            |
+| **Auto Scaling Group (ASG)**        | Dynamically adjusts frontend and API service instances based on demand for scalability.              |
+| **Region and Availability Zone**    | Deployed in Europe region, specifically Frankfurt (eu-central-1). Utilizes availability zones (eu-central-1a) for redundancy and fault tolerance. |
+| **VPC (Virtual Private Cloud)**     | Created for Development environments, organizes components for scalability and availability.        |
+            
+***
+
+### Security Groups and Inbound Rules
+
+| Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|----------|---------------------|-------------------|---------------------|
+| Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
+| Frontend | Frontend-sg         | 22, 3000                | Frontend-lb-sg   |               
+| Backend  | Backend-sg          | 22, 8080             | Frontend-lb-sg     |               
+| Database | Postgresql-sg      | 22, 5432              | Backend-sg       |               
+| Database | Redis-sg         | 22, 6379              | Backend-sg       |            
+| Database | Scylla-sg      | 22, 9042             | Backend-sg          |               
+
+***
+
+## NACL Rules
+
+### Public NACL Inbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 0.0.0.0/0    | Allow      |
+| 110         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.16/28    | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+### Public NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | Custom TCP| TCP      | 1024-65535 | 0.0.0.0/0   | Allow      |
+| *           | All traffic | All     | All       | 0.0.0.0/0    | Deny      |
+
+### Frontend NACL Inbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28  | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+### Frontend NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28 | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 130         | Custom TCP| TCP      | 32768-65535| 10.0.1.0/28  | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+### Backend NACL Inbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
+| 120         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/28    | Allow      |
+| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/28    | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+### Backend NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535| 10.0.1.48/28 | Allow      |
+| 140         | Custom TCP| TCP      | 1024-65535| 10.0.1.64/28 | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+### Database NACL Inbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
+| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
+### Database NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
+| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
+| 140         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/28 | Allow      |
+| 150         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28 | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+
 ***
 
 # Best Practices
