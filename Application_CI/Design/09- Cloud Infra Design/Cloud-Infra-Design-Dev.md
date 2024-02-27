@@ -117,7 +117,8 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
 | 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
-| 110         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/28    | Allow      |
+| 120         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/28    | Allow      |
+| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/28    | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ## Backend NACL Outbound Rules
