@@ -46,9 +46,9 @@ This is a Terraform custom standalone module to create a Virtual Machine in Azur
 
 Tools Used
 
-Terraform: Version 0.12.29
+Terraform: Version 1.12.29
 
-Azurerm provider: Version v2.20.0
+Aws Version 4.66
 
 
 
@@ -85,17 +85,18 @@ Azurerm provider: Version v2.20.0
 
 |Name	|Description	|Type	|Default	Required|
 |-----|-------------|-----|-------|
-|name	|The sting name append in tags |string	|"opstree"|	yes|
-|cidr_block	|The CIDR block for the VPC.| The default value is a valid CIDR	|string	|"10.0.0.0/24"|	no|
-|instance_tenancy|	A tenancy option for instances launched into the VPC	|string	|"default"	|no|
-|enable_dns_support	|A dns support for instances launched into the VPC|	boolean	|"true"	|no|
-|enable_dns_hostnames|	A dns hostname for instances launched into the VPC	|boolean|	"false"	|no|
-|enable_classiclink	|A dns classiclink for instances launched into the VPC|	boolean	|"false"	|no|
-|enable_igw_publicRouteTable_PublicSubnets_resource|	This variable is used to create IGW, Public Route Table and Public Subnets	|boolean|	"True"	|no|
-|enable_nat_privateRouteTable_PrivateSubnets_resource	|This variable is used to create NAT, Private Route Table and Private Subnets|	boolean|	"True"|	no|
-|enable_public_web_security_group_resource|	This variable is to create Web Security Group	|boolean	|"True"	|no|
-|Default|enable_pub_alb_resource|	This variable is to create ALB|	boolean	|"True"	|no|
-|enable_aws_route53_zone_resource	|This variable is to create Route 53 Zone	|boolean	|"True"	|no|
+|ami|	ID of AMI to use for the instance|	string|	null	|no|
+|ami_ssm_parameter	|SSM parameter name for the AMI ID. For Amazon Linux AMI SSM parameters see reference|	string	|"/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"|	no|
+|associate_public_ip_address	|Whether to associate a public IP address with an instance in a VPC	|bool	|null	|no|
+|availability_zone|	AZ to start the instance in|	string	|null	 |no |
+|capacity_reservation_specification	|Describes an instance's Capacity Reservation targeting option |	any	{}	no
+cpu_core_count	Sets the number of CPU cores for an instance	number	null	no
+cpu_credits	The credit option for CPU usage (unlimited or standard)	string	null	no
+cpu_options	Defines CPU options to apply to the instance at launch time.	any	{}	no
+cpu_threads_per_core	Sets the number of CPU threads per core for an instance (has no effect unless cpu_core_count is also set)	number	null	no
+create	Whether to create an instance	bool	true	no
+create_iam_instance_profile	Determines whether an IAM instance profile is created or to use an existing IAM instance profile	bool	false	no
+
 
 ***
 
@@ -103,24 +104,21 @@ Azurerm provider: Version v2.20.0
 
 **Create a new Virtual Machine using module**
 
-```provider "azure" {
-  version = "=2.20.0"
-  features {}
-}
+```module "ec2_instance" {
+  source  = "terraform-aws-modules/ec2-instance/aws"
 
-module "az_virtual_machine" {
-  source              = "../../terraform-azure-virtual-machine-standalone"
-  base_name           = "Nidhi"
-  size_vm             = "Standard_D2_v2"
-  os_disk_size        = "30"
-  image_publisher     = "Canonical"
-  image_offer         = "UbuntuServer"
-  image_version       = "latest"
-  image_sku           = "18.04-LTS"
-  os_profile_username = "devops"
-  os_profile_password = "Devops123456789"
-  location            = "westeurope"
-  creator             = "Nidhi"
+  name = "single-instance"
+
+  instance_type          = "t2.micro"
+  key_name               = "user1"
+  monitoring             = true
+  vpc_security_group_ids = ["sg-12345678"]
+  subnet_id              = "subnet-eddcdzz4"
+
+  tags = {
+    Terraform   = "true"
+    Environment = "dev"
+  }
 }
 ```
 
