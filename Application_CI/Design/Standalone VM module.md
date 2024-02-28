@@ -10,25 +10,25 @@
 
 # Table of Contents
 
-1.[Introduction](#Introduction)
+1. [Introduction](#Introduction)
 
-2.[Terraform Modules](#Terraform-Modules)
+2. [Terraform Modules](#Terraform-Modules)
 
-3.[Parameters to pass](#Parameters-to-pass)
+3. [Parameters to pass](#Parameters-to-pass)
 
-4.[Tags](#Tags)
+4. [Tags](#Tags)
 
-5.[Inputs](#Inputs)
+5. [Inputs](#Inputs)
 
-6.[Usage](#Usage)
+6. [Usage](#Usage)
 
-7.[Terraform Execution](#Terraform-Execution)
+7. [Terraform Execution](#Terraform-Execution)
 
-8.[Conclusion](#Conclusion)
+8. [Conclusion](#Conclusion)
 
-9.[Contact Information](#Contact-Information)
+9. [Contact Information](#Contact-Information)
 
-10.[References](#References)
+10. [References](#References)
 
 ***
 
