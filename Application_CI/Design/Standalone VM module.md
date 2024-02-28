@@ -42,7 +42,7 @@ This is a Terraform custom standalone module to create a Virtual Machine in Azur
 
 # Terraform Modules
 
-**Terraform Module to create Virtual Machine in Microsoft Azure**
+**Terraform Module to create Virtual Machine in AWS**
 
 Tools Used
 
@@ -100,6 +100,39 @@ Aws Version 4.66
 
 
 ***
+
+# Output
+
+
+|Name	|Description|
+|-----|-----------|
+|AMI|	AMI ID that was used to create the instance|
+|arn	|The ARN of the instance|
+|availability_zone|	The availability zone of the created instance|
+|capacity_reservation_specification|	Capacity reservation specification of the instance|
+|ebs_block_device|	EBS block device information|
+|ephemeral_block_device	|Ephemeral block device information|
+|iam_instance_profile_arn |	ARN assigned by AWS to the instance profile|
+|iam_instance_profile_id	|Instance profile's ID |
+|iam_instance_profile_unique |	Stable and unique string identifying the IAM instance profile|
+|iam_role_arn	|The Amazon Resource Name (ARN) specifying the IAM role|
+|iam_role_name|	The name of the IAM role|
+|iam_role_unique_id	| Stable and unique string identifying the IAM role |
+|id	| The ID of the instance |
+|instance_state	| The state of the instance|
+|ipv6_addresses	| The IPv6 address assigned to the instance, if applicable|
+|outpost_arn	|The ARN of the Outpost the instance is assigned to|
+|password_data	|Base-64 encoded encrypted password data for the instance. Useful for getting the administrator password for instances running Microsoft Windows. This attribute is only exported if get_password_data is true|
+|primary_network_interface_id |	The ID of the instance's primary network interface|
+|private_dns |	The private DNS name assigned to the instance. Can only be used inside the Amazon EC2, and only available if you've enabled DNS hostnames for your VPC|
+|private_ip	| The private IP address assigned to the instance|
+|public_dns	| The public DNS name assigned to the instance. For EC2-VPC, this is only available if you've enabled DNS hostnames for your VPC|
+|public_ip|	The public IP address assigned to the instance, if applicable. NOTE: If you are using an aws_eip with your instance, you should refer to the EIP's address directly and not use public_ip as this field will change after the EIP is attached|
+
+
+
+
+
 
 # Usage
 
