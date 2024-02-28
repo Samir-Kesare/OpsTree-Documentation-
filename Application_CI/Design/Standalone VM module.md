@@ -20,21 +20,23 @@
 
 5. [Inputs](#Inputs)
 
-6. [Usage](#Usage)
+6. [Output](#Output)
 
-7. [Terraform Execution](#Terraform-Execution)
+7. [Usage](#Usage)
 
-8. [Conclusion](#Conclusion)
+8. [Terraform Execution](#Terraform-Execution)
 
-9. [Contact Information](#Contact-Information)
+9. [Conclusion](#Conclusion)
 
-10. [References](#References)
+10. [Contact Information](#Contact-Information)
+
+11. [References](#References)
 
 ***
 
 # Introduction 
 
-This is a Terraform custom standalone module to create a Virtual Machine in Azure Cloud. In the background, it creates Resource Group, Virtual Network, Subnet, Public IP, Network Interface Controller, Security Group and Virtual Machine.
+In the realm of cloud computing, particularly within the expansive infrastructure of Amazon Web Services (AWS), the concept of virtualization plays a pivotal role in enabling scalability, efficiency, and flexibility for businesses worldwide. Among the myriad components that compose AWS's ecosystem, the Virtual Machine (VM) module stands out as a foundational pillar, offering a standalone environment where users can deploy and manage their applications and workloads with autonomy and precision. This module encapsulates the essence of virtualization, providing users with the ability to create, customize, and operate virtual instances of computing resources within the AWS cloud infrastructure. 
 
 
 ***
