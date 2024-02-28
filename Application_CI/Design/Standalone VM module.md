@@ -99,7 +99,15 @@ Aws Version 4.66
 |cpu_threads_per_core	Sets| the number of CPU threads per core for an instance (has no effect unless cpu_core_count is also set)	|number	|null	| no|
 |create |	Whether to create an instance	|bool	|true	| no|
 |create_iam_instance_profile |	Determines whether an IAM instance profile is created or to use an existing IAM instance profile	| bool |	false |	no|
-
+|iam_instance_profile	|IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile|	string |	null	|no|
+|iam_role_description	|Description of the role|	string|	null|	no|
+|iam_role_name|	Name to use on IAM role created|	string	|null	|no|
+|iam_role_path	|IAM role path	|string	|null	|no|
+|iam_role_permissions_boundary|	ARN of the policy that is used to set the permissions boundary for the IAM role |	string	| null	| no|
+iam_role_policies	Policies attached to the IAM role	map(string)	{}	no
+|iam_role_tags|	A map of additional tags to add to the IAM role/profile created	map| (string)|	{}	no|
+|iam_role_use_name_prefix	|Determines whether the IAM role name (iam_role_name or name) is used as a prefix	| bool	|true	|no|
+|ignore_ami_changes|	Whether changes to the AMI ID changes should be ignored by Terraform. Note - changing this value will result in the replacement of the instance|	bool|	false|
 
 ***
 
