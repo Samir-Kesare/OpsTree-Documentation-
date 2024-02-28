@@ -65,9 +65,9 @@ Azurerm provider: Version v2.20.0
 
 # Tags
 
-Tags are assigned to resources with name variables as prefixes.
++ Tags are assigned to resources with name variables as prefixes.
 
-Additional tags can be assigned by tag variables as defined above.
++ Additional tags can be assigned by tag variables as defined above.
 
 
 ***
