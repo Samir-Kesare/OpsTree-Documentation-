@@ -123,7 +123,9 @@ module "az_virtual_machine" {
 # Terraform Execution:
 
 
+
 **To initialize Terraform**
+
 
 
 
