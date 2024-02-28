@@ -126,6 +126,8 @@ module "az_virtual_machine" {
 **To initialize Terraform**
 
 
+
+
 ```terraform init```
 
 
@@ -133,7 +135,10 @@ module "az_virtual_machine" {
 **To execute Terraform Plan**
 
 
+
 ```terraform plan```
+
+
 
 
 **To apply Terraform changes**
@@ -141,6 +146,7 @@ module "az_virtual_machine" {
 
 
 ```terraform apply```
+
 
 
 # Conclusion
