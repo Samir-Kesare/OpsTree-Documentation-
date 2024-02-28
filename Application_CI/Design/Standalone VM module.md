@@ -6,6 +6,8 @@
 | Nidhi bhardwaj   |  28 Feb 2024  |     v1     | Nidhi Bhardwaj  | 28 Feb 2024    |
 
 
+***
+
 # Table of Contents
 
 1.[Introduction](#Introduction)
@@ -19,6 +21,7 @@
 9.[Contact Information](#Contact-Information)
 10.[References](#References)
 
+***
 
 # Introduction 
 
@@ -39,6 +42,9 @@ Terraform: Version 0.12.29
 Azurerm provider: Version v2.20.0
 
 
+
+***
+
 # Parameters to pass
 
 
@@ -55,12 +61,16 @@ Azurerm provider: Version v2.20.0
 
 
 
+***
+
 # Tags
 
 Tags are assigned to resources with name variables as prefixes.
 
 Additional tags can be assigned by tag variables as defined above.
 
+
+***
 
 # Inputs
 
@@ -78,7 +88,9 @@ Additional tags can be assigned by tag variables as defined above.
 |Default|enable_pub_alb_resource|	This variable is to create ALB|	boolean	|"True"	|no|
 |enable_aws_route53_zone_resource	|This variable is to create Route 53 Zone	|boolean	|"True"	|no|
 
-# Usage:
+***
+
+# Usage
 
 **Create a new Virtual Machine using module**
 
@@ -100,11 +112,13 @@ module "az_virtual_machine" {
   os_profile_password = "Devops123456789"
   location            = "westeurope"
   creator             = "Nidhi"
-}```
+}
+```
 
 
 
 
+***
 
 # Terraform Execution:
 
