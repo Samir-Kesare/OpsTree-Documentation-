@@ -14,7 +14,7 @@
 
 2. [Terraform Modules](#Terraform-Modules)
 
-3. [Parameters to pass](#Parameters-to-pass)
+3. [Resources](#Resources)
 
 4. [Tags](#Tags)
 
@@ -54,19 +54,20 @@ Aws Version 4.66
 
 ***
 
-# Parameters to pass
+# Resources 
 
 
-|Parameters	|Need |	Description|
-|----------|---------|-----------|
-|source	|(Required)	|source of this module|
-|base_name|	(Required)|	Base Name of all the resources being created|
-|location|	(Required)	|Location of all the resources being created|
-|size_vm|	(Required)|	Configuration of the VM|
-|os_disk_size|	(Required)|	Size of the VM|
-|os_profile_username|	(Required)	|Username of the VM|
-|os_profile_password	|(Required)	|Password to login to VM|
-|creator	|(Optional)	|tag a creator|
+|Name	|Type |
+|-----|------|
+|aws_iam_instance_profile.this	|resource|
+|aws_iam_role.this	|resource|
+|aws_iam_role_policy_attachment .this|	resource|
+|aws_instance.ignore_ami	|resource|
+|aws_instance.this|	resource|
+|aws_spot_instance_request.this|	resource|
+|aws_iam_policy_document.assume_role_policy|	data source|
+|aws_partition.current|	data source|
+|aws_ssm_parameter.this	|data source|
 
 
 
@@ -89,13 +90,13 @@ Aws Version 4.66
 |ami_ssm_parameter	|SSM parameter name for the AMI ID. For Amazon Linux AMI SSM parameters see reference|	string	|"/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2"|	no|
 |associate_public_ip_address	|Whether to associate a public IP address with an instance in a VPC	|bool	|null	|no|
 |availability_zone|	AZ to start the instance in|	string	|null	 |no |
-|capacity_reservation_specification	|Describes an instance's Capacity Reservation targeting option |	any	{}	no
-cpu_core_count	Sets the number of CPU cores for an instance	number	null	no
-cpu_credits	The credit option for CPU usage (unlimited or standard)	string	null	no
-cpu_options	Defines CPU options to apply to the instance at launch time.	any	{}	no
-cpu_threads_per_core	Sets the number of CPU threads per core for an instance (has no effect unless cpu_core_count is also set)	number	null	no
-create	Whether to create an instance	bool	true	no
-create_iam_instance_profile	Determines whether an IAM instance profile is created or to use an existing IAM instance profile	bool	false	no
+|capacity_reservation_specification	|Describes an instance's Capacity Reservation targeting option |	any	{}	|no|
+|cpu_core_count	|Sets the number of CPU cores for an instance|	number	|null |	no|
+|cpu_credits	|The credit option for CPU usage (unlimited or standard)|	string|	null	|no|
+|cpu_options|	Defines CPU options to apply to the instance at launch| time.|	any	{}	|no|
+|cpu_threads_per_core	Sets| the number of CPU threads per core for an instance (has no effect unless cpu_core_count is also set)	|number	|null	| no|
+|create |	Whether to create an instance	|bool	|true	| no|
+|create_iam_instance_profile |	Determines whether an IAM instance profile is created or to use an existing IAM instance profile	| bool |	false |	no|
 
 
 ***
@@ -124,6 +125,53 @@ create_iam_instance_profile	Determines whether an IAM instance profile is create
 
 
 
+
+***
+
+
+# Make an encrypted AMI for use
+
+
+```provider "aws" {
+  region = "us-west-2"
+}
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["679593333241"]
+
+  filter {
+    name   = "name"
+    values = ["ubuntu-minimal/images/hvm-ssd/ubuntu-focal-20.04-*"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+resource "aws_ami_copy" "ubuntu_encrypted_ami" {
+  name              = "ubuntu-encrypted-ami"
+  description       = "An encrypted root ami based off ${data.aws_ami.ubuntu.id}"
+  source_ami_id     = data.aws_ami.ubuntu.id
+  source_ami_region = "eu-west-2"
+  encrypted         = true
+
+  tags = { Name = "ubuntu-encrypted-ami" }
+}
+
+data "aws_ami" "encrypted-ami" {
+  most_recent = true
+
+  filter {
+    name   = "name"
+    values = [aws_ami_copy.ubuntu_encrypted_ami.id]
+  }
+
+  owners = ["self"]
+}
+```
 
 ***
 
