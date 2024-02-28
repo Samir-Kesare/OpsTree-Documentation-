@@ -13,12 +13,19 @@
 1.[Introduction](#Introduction)
 
 2.[Terraform Modules](#Terraform-Modules)
+
 3.[Parameters to pass](#Parameters-to-pass)
+
 4.[Tags](#Tags)
+
 5.[Inputs](#Inputs)
+
 6.[Usage](#Usage)
+
 7.[Terraform Execution](#Terraform-Execution)
+
 8.[Conclusion](#Conclusion)
+
 9.[Contact Information](#Contact-Information)
 10.[References](#References)
 
