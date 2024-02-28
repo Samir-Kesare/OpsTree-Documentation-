@@ -129,9 +129,26 @@ module "az_virtual_machine" {
 ```terraform apply```
 
 
-# 
+# Conclusion
+
+
+In conclusion, the standalone VM module presents a compelling solution for organizations seeking flexibility, portability, cost-efficiency, scalability, interoperability, and security in their virtualized environments. By decoupling virtualization from specific hypervisors or cloud platforms, this module offers users the freedom to deploy virtual machines across diverse hardware configurations without vendor lock-in. Its portability enables seamless migration of virtualized workloads across different environments, promoting agility and adaptability.
+
+
+# Contact Information
+
+|  Name                     |        	Email Address         |
+| ------------              | --------------------------------|
+| Nidhi Bhardwaj            | nidhi.bhardwaj.snaatak@mygurukulam.co   |
 
 
 
+
+# References
+
+| Title                                      | URL                                           |
+|--------------------------------------------|-----------------------------------------------|
+|Documentation|https://registry.terraform.io/modules/iankesh/virtual-machine-standalone/azure/latest?tab=outputs|
+|Docs |https://github.com/OT-CLOUD-KIT/terraform-aws-vpc/blob/master/README.md|
 
 
