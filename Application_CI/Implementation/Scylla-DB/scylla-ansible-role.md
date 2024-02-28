@@ -40,7 +40,9 @@ Please ensure you have access to an AWS account for deployment purposes in addit
 
 ***
 # Flow Diagram:
-![image](https://github.com/avengers-p7/Documentation/assets/156056709/9e6a4ced-3182-40a9-b772-2ac7021a436c)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056709/bc72dbab-f299-447c-9de7-d3cab3ae709e)
+
 
 
 ***
