@@ -132,7 +132,7 @@ Aws Version 4.66
 |public_ip|	The public IP address assigned to the instance, if applicable. NOTE: If you are using an aws_eip with your instance, you should refer to the EIP's address directly and not use public_ip as this field will change after the EIP is attached|
 
 
-
+***
 
 
 
@@ -224,6 +224,7 @@ data "aws_ami" "encrypted-ami" {
 
 
 
+
 **To execute Terraform Plan**
 
 
@@ -260,7 +261,7 @@ In conclusion, the standalone VM module presents a compelling solution for organ
 
 | Title                                      | URL                                           |
 |--------------------------------------------|-----------------------------------------------|
-|Documentation|https://registry.terraform.io/modules/iankesh/virtual-machine-standalone/azure/latest?tab=outputs|
+|Documentation|https://registry.terraform.io/modules/terraform-aws-modules/ec2-instance/aws/latest|
 |Docs |https://github.com/OT-CLOUD-KIT/terraform-aws-vpc/blob/master/README.md|
 
 
