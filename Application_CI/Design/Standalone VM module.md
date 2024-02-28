@@ -1,11 +1,31 @@
 # Documentation of Standalone VM Module
 
 
+|   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
+| -----------------| --------------| -----------|---------------- | -------------- |
+| Nidhi bhardwaj   |  28 Feb 2024  |     v1     | Nidhi Bhardwaj  | 28 Feb 2024    |
+
+
+# Table of Contents
+
+1.[Introduction](#Introduction)
+2.[Terraform Modules](#Terraform-Modules)
+3.[Parameters to pass](#Parameters-to-pass)
+4.[Tags](#Tags)
+5.[Inputs](#Inputs)
+6.[Usage](#Usage)
+7.[Terraform Execution](#Terraform-Execution)
+8.[Conclusion](#Conclusion)
+9.[Contact Information](#Contact-Information)
+10.[References](#References)
 
 
 # Introduction 
 
-This is a Terraform custom standalone module to create Virtual Machine in Azure Cloud. In background, it creates Resource Group, Virtual Network, Subnet, Public IP, Network Interface Controller, Security Group also with Virtual Machine.
+This is a Terraform custom standalone module to create a Virtual Machine in Azure Cloud. In the background, it creates Resource Group, Virtual Network, Subnet, Public IP, Network Interface Controller, Security Group and Virtual Machine.
+
+
+***
 
 
 # Terraform Modules
@@ -26,9 +46,9 @@ Azurerm provider: Version v2.20.0
 |----------|---------|-----------|
 |source	|(Required)	|source of this module|
 |base_name|	(Required)|	Base Name of all the resources being created|
-|location|	(Reqiured)	|Location of all the resources being created|
+|location|	(Required)	|Location of all the resources being created|
 |size_vm|	(Required)|	Configuration of the VM|
-|os_disk_size|	(Reqiured)|	Size of the VM|
+|os_disk_size|	(Required)|	Size of the VM|
 |os_profile_username|	(Required)	|Username of the VM|
 |os_profile_password	|(Required)	|Password to login to VM|
 |creator	|(Optional)	|tag a creator|
@@ -69,7 +89,7 @@ Additional tags can be assigned by tag variables as defined above.
 
 module "az_virtual_machine" {
   source              = "../../terraform-azure-virtual-machine-standalone"
-  base_name           = "ankesh"
+  base_name           = "Nidhi"
   size_vm             = "Standard_D2_v2"
   os_disk_size        = "30"
   image_publisher     = "Canonical"
@@ -79,7 +99,7 @@ module "az_virtual_machine" {
   os_profile_username = "devops"
   os_profile_password = "Devops123456789"
   location            = "westeurope"
-  creator             = "ankesh"
+  creator             = "Nidhi"
 }```
 
 
@@ -107,6 +127,9 @@ module "az_virtual_machine" {
 
 
 ```terraform apply```
+
+
+# 
 
 
 
