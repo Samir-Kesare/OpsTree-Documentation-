@@ -63,7 +63,7 @@ In the realm of cloud computing, particularly within the expansive infrastructur
 
 
 
-
+***
 
 # Terraform Modules
 
@@ -95,6 +95,8 @@ Aws Version 4.66
 
 
 
+***
+
 
 # Resources 
 
@@ -115,6 +117,7 @@ Aws Version 4.66
 
 ***
 
+
 # Tags
 
 + Tags are assigned to resources with name variables as prefixes.
@@ -123,6 +126,7 @@ Aws Version 4.66
 
 
 ***
+
 
 # Inputs
 
@@ -150,6 +154,8 @@ iam_role_policies	Policies attached to the IAM role	map(string)	{}	no
 |ignore_ami_changes|	Whether changes to the AMI ID changes should be ignored by Terraform. Note - changing this value will result in the replacement of the instance|	bool|	false|
 
 ***
+
+
 
 # Output
 
