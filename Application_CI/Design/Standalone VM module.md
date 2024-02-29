@@ -84,6 +84,18 @@ Aws Version 4.66
 
 ***
 
+
+
+# Structure of Modules 
+
+
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156644891/4d3744e6-9e69-427b-8c5c-741b8f9d8b63)
+
+
+
+
+
 # Resources 
 
 
