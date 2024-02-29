@@ -1,6 +1,14 @@
 # Documentation of Standalone VM Module
 
 
+
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156644891/26b5654a-2e78-47f8-8f33-327ec58d02fa)
+
+
+
+
+
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
 | -----------------| --------------| -----------|---------------- | -------------- |
 | Nidhi bhardwaj   |  28 Feb 2024  |     v1     | Nidhi Bhardwaj  | 28 Feb 2024    |
