@@ -51,6 +51,20 @@ In the realm of cloud computing, particularly within the expansive infrastructur
 ***
 
 
+# Flow Chart 
+
+
+
+
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156644891/9039f9a9-d8da-4196-a249-641fe4533be3)
+
+
+
+
+
+
+
 # Terraform Modules
 
 
