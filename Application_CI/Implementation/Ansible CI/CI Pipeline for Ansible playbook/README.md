@@ -1,6 +1,7 @@
 # CI Pipeline for Ansible playbook
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/8b4714ec-7c6b-4f84-8c2e-b29495fd0658)
+![308138119-8b4714ec-7c6b-4f84-8c2e-b29495fd0658-removebg-preview](https://github.com/CodeOps-Hub/Documentation/assets/156056570/5d80d84c-9e9f-454e-9007-e59b5cdf902c)
+
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
