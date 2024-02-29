@@ -74,7 +74,7 @@ inventory      = aws_ec2.yml
 host_key_checking = False
 
 # Specify the path to the private key file for SSH connections.
-private_key_file = /path/to/private_key
+private_key_file = privateKey.pem
 
 Sets the remote user for SSH connections to 'ubuntu'
 remote_user = ubuntu
@@ -93,7 +93,7 @@ enable_plugins = aws_ec2, host_list, virtualbox, yaml, constructed, script, auto
 ---
 plugin: aws_ec2
 regions:
-  - your_aws_region
+  - us-east-1
 
 groups: 
   redis: "'redis' in tags.Type"
@@ -110,7 +110,7 @@ groups:
 
 
 
-**Step 4: playbook.yml**
+**Step 4: redis-playbook.yml**
 * This file is defining a set of tasks to be executed on hosts belonging to the ubuntu group.
 
 ```yaml
