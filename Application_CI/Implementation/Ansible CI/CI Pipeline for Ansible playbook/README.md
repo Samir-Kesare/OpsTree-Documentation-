@@ -61,22 +61,95 @@ Setting up a Continuous Integration (CI) pipeline for Ansible playbooks is a val
 | Jenkins | To check our codes and to setup pipelines         | 
 
 ***
+## Jenkinsfile
+```shell
+pipeline {
+    agent any
+    
+    stages {
+        stage('Checkout Stage') {
+            steps {
+                // Checkout the latest version of the Ansible playbook code from the repository
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '890c8a72-7383-4986-8573-519aacdeb7d2', url: 'https://github.com/CodeOps-Hub/Jenkins-Playbook.git']])
+            }
+        }
+        stage('Credential Scanning') {
+            steps {
+                sh 'wget https://github.com/gitleaks/gitleaks/releases/download/v8.18.2/gitleaks_8.18.2_linux_x64.tar.gz'
+                // Extract Gitleaks
+                sh 'tar xvzf gitleaks_8.18.2_linux_x64.tar.gz'
+                sh './gitleaks detect -r credScanReport.json'
+            }
+        }
+        stage('Linting Stage') {
+            steps {
+                script {
+                    try {
+                        // Use Ansible Lint to perform linting on your Ansible playbook
+                        sh 'ansible-lint /var/lib/jenkins/workspace/Ansible_CI/jenkins_playbook/install_debian.yml -q > lint_report.txt'
+                    } catch (Exception e) {
+                        // Ignore linting errors
+                        echo 'Linting completed with errors. Ignoring...'
+                    }
+                }
+            }
+        }
+        stage('Syntax Checking Stage') {
+            steps {
+                script {
+                    try {
+                        // Run ansible-playbook with the --syntax-check option to validate playbook syntax
+                        sh 'ansible-playbook /var/lib/jenkins/workspace/Ansible_CI/jenkins_playbook/install_debian.yml --syntax-check > syntaxcheck_report.txt'
+                    } catch (Exception e) {
+                        // Ignore syntax check errors
+                        echo 'Syntax checking completed with errors. Ignoring...'
+                    }
+                }
+            }
+        }
+        stage('Git Tag Stage') {
+            steps {
+                // Tag the version
+                sh 'git tag -a v1.0 -m "Version 1.0"'
+            }
+        }
+    }
+}
+
+```
+***
+## Jenkins Job Output
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/7953a041-854c-4680-a0ad-c95ce1f4e8f7)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/17454703-533d-4698-a36b-f5e9ef22444b)
+
+
 ## Steps
 ### Step 1:
 
-Checkout Stage: The pipeline should start by checking out the latest version of the Ansible playbook code from the repository.
+Credential Scanning Stage: The pipeline should start by checking out for passwords, access tokens etc in  Ansible playbook code from the repository.
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/1de7cd62-9267-4b36-9bdc-19b9a79dc596)
+
 
 ### Step 2:
 
 Linting Stage: Use Ansible Lint or similar tools to perform linting on your Ansible playbook to ensure adherence to best practices and coding standards.
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/3122a40b-4e46-4b27-8188-33d9cc8a9613)
+
+
 ### Step 3:
 
 Syntax Checking Stage: Run ansible-playbook with the --syntax-check option to validate the syntax of the playbook.
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/401a40bd-b859-4c7f-ad5b-8333f3ee239d)
+
+
 ### Step 4:
 
-Dry Run: Finally we can do a dry of our Ansible playbook where it will check that all the permissions and configuration are in place.
+Git Tag Stage: 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/f0d1df3e-a39d-47e1-ade2-81b35c726981)
+
 
 ***
 ## Conclusion 
