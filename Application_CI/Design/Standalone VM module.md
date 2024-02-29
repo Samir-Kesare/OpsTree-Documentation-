@@ -21,25 +21,31 @@
 
 1. [Introduction](#Introduction)
 
-2. [Terraform Modules](#Terraform-Modules)
+2. [Flow chart](#Flow-chart)
 
-3. [Resources](#Resources)
+3. [Terraform Modules](#Terraform-Modules)
 
-4. [Tags](#Tags)
+4. [What is state file](#What-is-state-file)
 
-5. [Inputs](#Inputs)
+5. [Structure of Modules](#Structure-of-Modules)
 
-6. [Output](#Output)
+6. [Resources](#Resources)
 
-7. [Usage](#Usage)
+7. [Tags](#Tags)
 
-8. [Terraform Execution](#Terraform-Execution)
+8. [Inputs](#Inputs)
 
-9. [Conclusion](#Conclusion)
+9. [Output](#Output)
 
-10. [Contact Information](#Contact-Information)
+10. [Usage](#Usage)
 
-11. [References](#References)
+11. [Terraform Execution](#Terraform-Execution)
+
+12. [Conclusion](#Conclusion)
+
+13. [Contact Information](#Contact-Information)
+
+14. [References](#References)
 
 ***
 
@@ -83,6 +89,15 @@ Aws Version 4.66
 
 
 ***
+
+
+
+# What is a State file?
+
+
+The state file is an artifact that you’re left with once an Infrastructure as Code framework finishes a deployment. It is the “single source of truth” about what was deployed, 
+
+where it was deployed, and all the configuration needed to deploy it. 
 
 
 
