@@ -68,5 +68,8 @@
 ## Sprint-3 
  | Name      | Date    | Reason      | Count| Amount |
  |-----------|--------|--------------|-----|---------|
- | Vidhi     | 29-02-2024| No Present | 1 | 5       |
+ | Vidhi     | 29-02-2024| No Present | 1  |     5   |
+ | khushi    | 1-03-2024 | status mail| 1  |     5   |
+ | Santanu   | 1-03-2024 | status mail| 1  |     5   |
+ | Parasharam | 1-03-2024 | status mail| 1 |     5  |
 
