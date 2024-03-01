@@ -1,6 +1,6 @@
 # Network Skeleton Terraform Module Doc
 
-<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f758ff94-b3ee-42ae-a42c-d0246d1c8b0f">
+<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f95dfc00-7217-45b6-b770-c0f2af907cec">
 
 ***
 
