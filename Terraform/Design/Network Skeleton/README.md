@@ -88,14 +88,56 @@ module "network" {
 ***
 
 # Tags
-
+* Tags are assigned to resources with name variable as prefix.
+* Additial tags can be assigned by tags variables as defined above.
+  
 ***
 
 # Inputs
 
+| Name | Description | Type | Default | Required |
+| ---- | ----------- | ---- | ------- | -------- |
+| **vpc_cidr** | CIDR for the VPC | `string` | `10.0.1.0/25` | yes |
+| **vpc_name** | Name of the VPC | `string` | `dev_vpc` | yes |
+| **vpc_tenancy** | Tenancy of the VPC | `string` | `default` |  |
+| **vpc_enable_dns_support** | A dns support for instances launched into the VPC | `boolean` | `true` | no |
+| **vpc_enable_dns_hostnames** | A dns hostname for instances launched into the VPC |`boolean` | `true` | no |
+| **pub_sub_names** | Names of Public Subnets | `string` | `dev-public-subnet-01`,`dev-public-subnet-02` |   |
+| **pub_sub_cidr** | CIDRs for Public Subnets | `string` | `10.0.1.0/28`, `10.0.1.64/28` |  |
+| **pub_sub_az** | Availability Zone for Public Subnets | `string` | `ap-south-1a`, `ap-south-1b` |  |
+| **enable_map_public_ip_on_launch** |   | `string` |  |  |
+| **pvt_sub_names** | Names of Private Subnets | `string` | `dev-frontend-subnet`, `dev-backend-subnet`, `dev-database-subnet` | |
+| **pvt_sub_cidr** | CIDRs for Private Subnets | `string` | `10.0.1.16/28`, `10.0.1.32/28`, `10.0.1.48/28` |  |
+| **pvt_sub_az** | Availability Zone for Private Subnets | `string` | `ap-south-1a`, `ap-south-1b`, `ap-south-1c` |  |
+| **igw_name** | Internet Gateway's name | `string` | `dev-igw` |  |
+| **nat_gtw** | NAT Gateway's name | `string` | `dev-nat-gtw` |   |
+| **dev_pub_rt** | Public Route Table | `string` | `dev_pub_rt` |  |
+| **dev-pvt-rt** | Private Route Table | `string` | `dev_pvt_rt` |  |
+| **sec_grp_name** | Nmae of the Security Group | `string` | `dev_sg` |  |
+| **sec_grp_description** | Description for the Security Group | `string` | Security group for Dev Env |  |
+| **sg_inbound_ports** | Inbound Rules for Security Group | `string` | `allowed ports` |  |
+| **sg_outbound_ports** | Outbound Rule for Security Group | `string` | `defined port` |  |
+| **Sec_grp_tags** | Tag for Security Group | `string` | `dev-sg` |  |
+| **nacl_tag** | Tag for Network ACL | `string` | `dev-nacl` |  |
+| **nacl_inbound_ports** | Inbound rules for NACL | `string` | `allowed ports` |  |
+| **nacl_outbound_ports** | Outbound rules for NACL | `string` | `allowed ports` |  |
+
 ***
 
-# Outputs
+# Outputs 
+
+| Name | Description |
+|------|-------------|
+| vpc_id | The ID of the VPC |
+| dev-pub-rt-id | Public route table ID |
+| dev-pvt-rt-id | Private Route table ID |
+| dev-igw-id | Internet Gateway ID |
+| pvt_subnet_id | Private Subnet IDs |
+| pub_subnet_id | Public Subnet IDs |
+| Security_Group_id | Security Group ID |
+| dev-nat-id | NAT Gateway ID |
+| nacl_id | Network ACL ID |
+
 
 ***
 
