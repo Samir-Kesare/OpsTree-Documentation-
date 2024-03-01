@@ -84,6 +84,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 0.0.0.0/0    | Allow      |
 | 110         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.16/28    | Allow      |
+| 120         | Custom TCP      | TCP      | 1194        | 0.0.0.0/0   | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ## Public NACL Outbound Rules
@@ -99,6 +100,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
 | 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28  | Allow      |
+| 130         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ## Frontend NACL Outbound Rules
@@ -119,6 +121,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
 | 120         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/28    | Allow      |
 | 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/28    | Allow      |
+| 140         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ## Backend NACL Outbound Rules
@@ -140,6 +143,7 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
 | 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
 | 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
+| 140         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ## Database NACL Outbound Rules
