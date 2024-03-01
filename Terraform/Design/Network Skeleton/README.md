@@ -12,6 +12,7 @@
 
 # Table of contents
 * [Introduction](#Introduction)
+* [Flow Diagram](#Flow-Diagram)
 * [Pre-requisites](#Pre-requisites)
 * [Usage](#Usage)
 * [Tags](#Tags)
@@ -50,6 +51,12 @@ With the increasing complexity of modern networks and the need for agility in in
 | ----------------- | --------------- |
 | **AWS Account**   | Access to the AWS Management Console with credentials configured. |
 | **Hashicrop Terraform** | Terraform **(v1.7.4)** for configuration of AWS resources. |
+
+***
+
+# Flow Diagram
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156057205/2e96799f-1729-4b52-91a2-c6b06330c18c)
 
 ***
 
