@@ -1,6 +1,6 @@
 # Avengers-P7 Fine Sheet
 
-# Sprint-0
+# Sprint-0 ( 2 Weeks )
 
 | Name      | Date   | Reason        | Time | Amount  |
 | ----      | ----   | ------        | ---- | ----    |
@@ -17,7 +17,7 @@
 |           |        |  Total        |      | 65      | 
 ***
 
-# Sprint-1
+# Sprint-1 (2 Weeks )
 | Name      | Date    | Reason      | Time | Amount |
 | ----      | ----    | ------      | ---- | ----   |
 | Shikha    | 24 Jan  | Camera off  | 1st  | 05     |
@@ -35,7 +35,7 @@
 
 
 
-# Sprint-2 Week-1
+# Sprint-2 ( 3 Weeks )
 
 | Name      | Date    | Reason      | Count| Amount |
 | ----      | ----    | ------      | ---- | ----   |
@@ -65,7 +65,7 @@
 | Vikram    |  |Morning Call |  1   |   05   |
 
 ***
-## Sprint-3 week-1:
+## Sprint-3 
  | Name      | Date    | Reason      | Count| Amount |
  |-----------|--------|--------------|-----|---------|
  | Vidhi     | 29-02-2024| No Present | 1 | 5       |
