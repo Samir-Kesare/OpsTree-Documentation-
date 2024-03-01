@@ -63,7 +63,7 @@ With the increasing complexity of modern networks and the need for agility in in
 
 # Directory Structure
 
-<img width="166" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1e3a5974-f001-4284-9292-a937b4d3669d">
+<img width="300" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1e3a5974-f001-4284-9292-a937b4d3669d">
 
 ***
 
