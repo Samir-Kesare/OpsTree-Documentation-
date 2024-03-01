@@ -65,7 +65,7 @@
 
 ***
 
-# Reference
+# References
 
 | **Source** | **Description** |
 | ---------- | --------------- |
