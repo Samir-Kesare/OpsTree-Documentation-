@@ -94,6 +94,8 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
    |---------------------|-------------------|---------------------|
    | Frontend-sg         | 22                | 20.0.0.0/28         |
    | Frontend-sg         | 3000              | Frontend-lb-sg      |
+   | Frontend-sg         | 3000              | OpenVPN-SG          |
+   
 
    * **Outbound Rule**
   
@@ -101,10 +103,9 @@ AWS Security Groups are defined by a set of rules that specify which traffic is 
   |---------------------|---------------------|------------------------|--------------------------|
   | *                   | All traffic         | All                    | 0.0.0.0/0                | 
    
-    
+ 
 
-
-  <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ac47f73b-ff2a-463c-907a-7473b1c1d227"> 
+  <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7d905690-643f-4943-84d1-25e5bab2ae45"> 
 
   <img width="700" length="100" alt="Security" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/18e98ad3-6f07-4cbb-9c25-ee757edb0c0c"> 
  
