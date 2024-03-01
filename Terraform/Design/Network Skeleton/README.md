@@ -13,7 +13,7 @@
 # Table of contents
 * [Introduction](#Introduction)
 * [Flow Diagram](#Flow-Diagram)
-* [Directory Structure](Directory-Structure)
+* [Directory Structure](#Directory-Structure)
 * [Pre-requisites](#Pre-requisites)
 * [Usage](#Usage)
 * [Tags](#Tags)
