@@ -13,6 +13,7 @@
 # Table of contents
 * [Introduction](#Introduction)
 * [Flow Diagram](#Flow-Diagram)
+* [Directory Structure](Directory-Structure)
 * [Pre-requisites](#Pre-requisites)
 * [Usage](#Usage)
 * [Tags](#Tags)
@@ -57,6 +58,12 @@ With the increasing complexity of modern networks and the need for agility in in
 # Flow Diagram
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156057205/2e96799f-1729-4b52-91a2-c6b06330c18c)
+
+***
+
+# Directory Structure
+
+<img width="166" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1e3a5974-f001-4284-9292-a937b4d3669d">
 
 ***
 
