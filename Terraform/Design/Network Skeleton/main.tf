@@ -75,8 +75,8 @@ resource "aws_eip" "dev_elastic_ip" {
 resource "aws_nat_gateway" "dev_nat" {
   allocation_id = aws_eip.dev_elastic_ip.id
   subnet_id     = aws_subnet.public_subnets[0].id
-  tags = var.nat_gtw
-  depends_on = [aws_eip.dev_elastic_ip]
+  tags          = var.nat_gtw
+  depends_on    = [aws_eip.dev_elastic_ip]
 }
 locals {
   inbound_ports         = var.sg_inbound_ports
@@ -135,5 +135,32 @@ resource "aws_network_acl" "nacl" {
       from_port   = egress.value.port
       to_port     = egress.value.port
     }
+  }
+}
+
+resource "aws_lb" "load_balancer" {
+  internal           = false
+  load_balancer_type = var.lb_type
+  security_groups    = [aws_security_group.dev_sec_grp.id]
+  subnets            = aws_subnet.public_subnets[*].id
+  tags               = var.lb_name 
+}
+
+resource "aws_lb_target_group" "target_group" {
+  port        = var.target_group_port
+  protocol    = "HTTP"
+  vpc_id      = aws_vpc.dev-vpc.id
+  target_type = "ip"
+  tags        = var.target_group_name
+}
+
+resource "aws_lb_listener" "listener" {
+  load_balancer_arn = aws_lb.load_balancer.arn
+  port              = var.lb_listener_port
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.target_group.arn
   }
 }
