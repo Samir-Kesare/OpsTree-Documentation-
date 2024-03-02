@@ -90,12 +90,17 @@ module "network" {
     dev_pvt_rt                     = var.private_route_table_names
     sec_grp_name                   = var.Sec_grp_name
     sec_grp_description            = var.sec_grp_creation
-    sg_inbound_ports               = var.sec_gp_inbound_ports
-    sg_outbound_ports              = var.sec_gp_outbound_ports
+    sg_inbound_ports               = var.sec_grp_inbound_ports
+    sg_outbound_ports              = var.sec_grp_outbound_ports
     Sec_grp_tags                   = var.sec_grp_tags
     nacl_tag                       = var.nacl-tag
     nacl_inbound_ports             = var.nacl-inbound-ports
     nacl_outbound_ports            = var.nacl-outbound-ports
+    lb_name                        = var.lb-name
+    lb_type                        = var.lb-type
+    lb_listener_port               = var.lb-listener-port
+    target_group_name              = var.target-group-name
+    target_group_port              = var.target-group-port
 }
 ```
 
@@ -119,7 +124,7 @@ module "network" {
 | **pub_sub_names** | Names of Public Subnets | `string` | `dev-public-subnet-01`,`dev-public-subnet-02` |   |
 | **pub_sub_cidr** | CIDRs for Public Subnets | `string` | `10.0.1.0/28`, `10.0.1.64/28` |  |
 | **pub_sub_az** | Availability Zone for Public Subnets | `string` | `ap-south-1a`, `ap-south-1b` |  |
-| **enable_map_public_ip_on_launch** |   | `string` |  |  |
+| **enable_map_public_ip_on_launch** |   | `boolean` |  |  |
 | **pvt_sub_names** | Names of Private Subnets | `string` | `dev-frontend-subnet`, `dev-backend-subnet`, `dev-database-subnet` | |
 | **pvt_sub_cidr** | CIDRs for Private Subnets | `string` | `10.0.1.16/28`, `10.0.1.32/28`, `10.0.1.48/28` |  |
 | **pvt_sub_az** | Availability Zone for Private Subnets | `string` | `ap-south-1a`, `ap-south-1b`, `ap-south-1c` |  |
@@ -129,12 +134,17 @@ module "network" {
 | **dev-pvt-rt** | Private Route Table | `string` | `dev_pvt_rt` |  |
 | **sec_grp_name** | Nmae of the Security Group | `string` | `dev_sg` |  |
 | **sec_grp_description** | Description for the Security Group | `string` | Security group for Dev Env |  |
-| **sg_inbound_ports** | Inbound Rules for Security Group | `string` | `allowed ports` |  |
-| **sg_outbound_ports** | Outbound Rule for Security Group | `string` | `defined port` |  |
+| **sg_inbound_ports** | Inbound Rules for Security Group | `object` | `allowed ports` |  |
+| **sg_outbound_ports** | Outbound Rule for Security Group | `object` | `defined port` |  |
 | **Sec_grp_tags** | Tag for Security Group | `string` | `dev-sg` |  |
 | **nacl_tag** | Tag for Network ACL | `string` | `dev-nacl` |  |
-| **nacl_inbound_ports** | Inbound rules for NACL | `string` | `allowed ports` |  |
-| **nacl_outbound_ports** | Outbound rules for NACL | `string` | `allowed ports` |  |
+| **nacl_inbound_ports** | Inbound rules for NACL | `object` | `allowed ports` |  |
+| **nacl_outbound_ports** | Outbound rules for NACL | `object` | `allowed ports` |  |
+| **lb_name** | Load Balancer Name | `string` | `dev-LB` |  |
+| **lb_type** | Load Balancer Type | `string` | `application` |  |
+| **lb_listener_port** | Listner Rule for Load Balancer | `number`| `80` |  |
+| **target_group_name** | Name of the Target Group | `string` | `dev-TG` |  |
+| **target_group_port** | Port of the Target Group | `number` | `80` |  |
 
 ***
 
@@ -142,16 +152,18 @@ module "network" {
 
 | Name | Description |
 |------|-------------|
-| vpc_id | The ID of the VPC |
-| dev-pub-rt-id | Public route table ID |
-| dev-pvt-rt-id | Private Route table ID |
-| dev-igw-id | Internet Gateway ID |
-| pvt_subnet_id | Private Subnet IDs |
-| pub_subnet_id | Public Subnet IDs |
-| Security_Group_id | Security Group ID |
-| dev-nat-id | NAT Gateway ID |
-| nacl_id | Network ACL ID |
-
+| **vpc_id** | The ID of the VPC |
+| **dev-pub-rt-id** | Public route table ID |
+| **dev-pvt-rt-id** | Private Route table ID |
+| **dev-igw-id** | Internet Gateway ID |
+| **pvt_subnet_id** | Private Subnet IDs |
+| **pub_subnet_id** | Public Subnet IDs |
+| **Security_Group_id** | Security Group ID |
+| **dev-nat-id** | NAT Gateway ID |
+| **nacl_id** | Network ACL ID |
+| **lb_dns_name** | The DNS name of the load balancer |
+| **lb_arn** | The ARN of the load balancer |
+| **target_group_arn** | The ARN of the target group |
 
 ***
 
