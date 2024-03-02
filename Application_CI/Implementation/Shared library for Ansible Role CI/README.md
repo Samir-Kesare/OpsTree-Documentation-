@@ -170,6 +170,19 @@ def call(String tagVersion) {
 
 In summary, implementing comprehensive CI checks for Ansible playbooks is essential for maintaining the reliability and quality of automation code. Through a combination of syntax validation, linting, playbook execution in test mode, role-specific testing, inventory validation, secrets scanning, integration tests, idempotent checks, documentation validation, code coverage analysis, and dependency management, developers can ensure a robust and error-free Ansible automation workflow. These checks, integrated into a CI pipeline, not only catch issues early in the development cycle but also contribute to the creation of efficient, well-documented, and secure automation solutions.
 ***
+## Contact Information
+
+| Name | Email address |
+| ---- | ------------- |
+| Samir Kesare | samir.kesare.snaatak@mygurukulam.co |
+
+***
+## Resources and References
+
+|  **Description** |   **Source** |
+| ---------------- | ------------ |
+| How to run Ansible playbook from Jenkins pipeline job | [https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404](https://www.youtube.com/watch?v=PRpEbFZi7nI)https://www.youtube.com/watch?v=PRpEbFZi7nI |
+
 
 
 
