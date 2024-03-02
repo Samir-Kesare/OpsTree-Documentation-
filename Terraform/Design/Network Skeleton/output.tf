@@ -40,3 +40,17 @@ output "nacl_id" {
   value       = aws_network_acl.nacl.id
 }
 
+output "lb_dns_name" {
+  description = "The DNS name of the load balancer"
+  value       = aws_lb.load_balancer.dns_name
+}
+
+output "lb_arn" {
+  description = "The ARN of the load balancer"
+  value       = aws_lb.load_balancer.arn
+}
+
+output "target_group_arn" {
+  description = "The ARN of the target group"
+  value       = aws_lb_target_group.target_group.arn
+}
