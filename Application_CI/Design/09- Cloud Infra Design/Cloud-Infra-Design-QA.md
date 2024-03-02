@@ -77,21 +77,6 @@ In the modern software development landscape, microservices architecture has bec
 
 ## NACL Rules
 
-### Public NACL Inbound Rules
-
-| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 0.0.0.0/0    | Allow      |
-| 110         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.16/27    | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
-
-### Public NACL Outbound Rules
-
-| Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | 0.0.0.0/0   | Allow      |
-| *           | All traffic | All     | All       | 0.0.0.0/0    | Deny      |
-
 ### Frontend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
