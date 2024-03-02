@@ -67,11 +67,11 @@ In the modern software development landscape, microservices architecture has bec
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22, 3000                | Frontend-lb-sg   |               
-| Backend  | Backend-sg          | 22, 8080             | Frontend-lb-sg     |               
-| Database | Postgresql-sg      | 22, 5432              | Backend-sg       |               
-| Database | Redis-sg         | 22, 6379              | Backend-sg       |            
-| Database | Scylla-sg      | 22, 9042             | Backend-sg          |               
+| Frontend | Frontend-sg         | 22, 3000                | Frontend-lb-sg, OpenVPN-SG  |               
+| Backend  | Backend-sg          | 22, 8080             | Frontend-lb-sg, OpenVPN-SG     |               
+| Database | Postgresql-sg      | 22, 5432              | Backend-sg, OpenVPN-SG       |               
+| Database | Redis-sg         | 22, 6379              | Backend-sg, OpenVPN-SG       |            
+| Database | Scylla-sg      | 22, 9042             | Backend-sg, OpenVPN-SG         |               
 
 ***
 
@@ -83,7 +83,8 @@ In the modern software development landscape, microservices architecture has bec
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
 | 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/27  | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 120         | Custom UDP | UDP     | 1194       | 10.0.1.0/27  | Allow      |
+| *           | All traffic | All     | All        | 0.0.0.0/0   | Deny       |
 
 ### Frontend NACL Outbound Rules
 
@@ -101,7 +102,8 @@ In the modern software development landscape, microservices architecture has bec
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
 | 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/27 | Allow      |
-| 120         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/27    | Allow      |
+| 120         | Custom UDP | UDP     | 1194       | 10.0.1.0/27 | Allow      |
+| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/27    | Allow      |
 | 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/27    | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
@@ -120,10 +122,11 @@ In the modern software development landscape, microservices architecture has bec
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/27 | Allow      |
-| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/27 | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/27 | Allow      |
+| 100         | SSH       | TCP               | 22         | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP(Redis)       | TCP | 6379       | 10.0.1.32/27 | Allow      |
+| 120         | Custom TCP(Scylla)      | TCP | 9042       | 10.0.1.32/27 | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | 10.0.1.32/27 | Allow      |
+| 140         | Custom UDP              | UDP | 1194       | 10.0.1.0/27  | Allow      | 
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Outbound Rules
