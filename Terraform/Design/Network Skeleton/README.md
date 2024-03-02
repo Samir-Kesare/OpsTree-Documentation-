@@ -133,7 +133,7 @@ module "network" {
 | **dev_pub_rt** | Public Route Table | `string` | `dev_pub_rt` |  |
 | **dev-pvt-rt** | Private Route Table | `string` | `dev_pvt_rt` |  |
 | **sec_grp_name** | Nmae of the Security Group | `string` | `dev_sg` |  |
-| **sec_grp_description** | Description for the Security Group | `string` | Security group for Dev Env |  |
+| **sec_grp_description** | Description for the Security Group | `string` | `Security group for Dev Env` |  |
 | **sg_inbound_ports** | Inbound Rules for Security Group | `object` | `allowed ports` |  |
 | **sg_outbound_ports** | Outbound Rule for Security Group | `object` | `defined port` |  |
 | **Sec_grp_tags** | Tag for Security Group | `string` | `dev-sg` |  |
