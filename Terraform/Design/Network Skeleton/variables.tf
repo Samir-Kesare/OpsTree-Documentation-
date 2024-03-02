@@ -206,6 +206,41 @@ variable "nacl_outbound_ports" {
   ]
 }
 
+variable "lb_name" {
+  description  = "Name of the load balancer"
+  type         = map(string)
+  default      = {
+    Name       = "dev-LB"
+    Enviroment = "dev"
+    Owner      = "shreya"
+  }
+}
 
+variable "lb_type" {
+  description = "Type of the load balancer"
+  type        = string
+  default     = "application"
+}
 
+variable "lb_listener_port" {
+  description = "Port for the load balancer listener"
+  type        = number
+  default     = 80
+}
+
+variable "target_group_name" {
+  description = "Name of the target group"
+  type        = map(string)
+  default     = {
+    Name      = "dev-TG"
+    Environment = "dev"
+    Owner       = "shreya"
+  }
+}
+
+variable "target_group_port" {
+  description = "Port for the target group"
+  type        = number
+  default     = 80
+}
 
