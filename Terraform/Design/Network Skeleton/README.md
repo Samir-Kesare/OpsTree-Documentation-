@@ -118,37 +118,37 @@ module "network" {
 
 # Inputs
 
-| Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | -------- |
-| **vpc_cidr** | CIDR for the VPC | `string` | `10.0.1.0/25` | yes |
-| **vpc_name** | Name of the VPC | `string` | `dev_vpc` | yes |
-| **vpc_tenancy** | Tenancy of the VPC | `string` | `default` |  |
-| **vpc_enable_dns_support** | A dns support for instances launched into the VPC | `boolean` | `true` | no |
-| **vpc_enable_dns_hostnames** | A dns hostname for instances launched into the VPC |`boolean` | `true` | no |
-| **pub_sub_names** | Names of Public Subnets | `string` | `dev-public-subnet-01`,`dev-public-subnet-02` |   |
-| **pub_sub_cidr** | CIDRs for Public Subnets | `string` | `10.0.1.0/28`, `10.0.1.64/28` |  |
-| **pub_sub_az** | Availability Zone for Public Subnets | `string` | `ap-south-1a`, `ap-south-1b` |  |
-| **enable_map_public_ip_on_launch** | Enabling map for public ip  | `boolean` | `true` |  |
-| **pvt_sub_names** | Names of Private Subnets | `string` | `dev-frontend-subnet`, `dev-backend-subnet`, `dev-database-subnet` | |
-| **pvt_sub_cidr** | CIDRs for Private Subnets | `string` | `10.0.1.16/28`, `10.0.1.32/28`, `10.0.1.48/28` |  |
-| **pvt_sub_az** | Availability Zone for Private Subnets | `string` | `ap-south-1a`, `ap-south-1b`, `ap-south-1c` |  |
-| **igw_name** | Internet Gateway's name | `string` | `dev-igw` |  |
-| **nat_gtw** | NAT Gateway's name | `string` | `dev-nat-gtw` |   |
-| **dev_pub_rt** | Public Route Table | `string` | `dev_pub_rt` |  |
-| **dev-pvt-rt** | Private Route Table | `string` | `dev_pvt_rt` |  |
-| **sec_grp_name** | Nmae of the Security Group | `string` | `dev_sg` |  |
-| **sec_grp_description** | Description for the Security Group | `string` | `Security group for Dev Env` |  |
-| **sg_inbound_ports** | Inbound Rules for Security Group | `object` | `allowed ports` |  |
-| **sg_outbound_ports** | Outbound Rule for Security Group | `object` | `defined port` |  |
-| **Sec_grp_tags** | Tag for Security Group | `string` | `dev-sg` |  |
-| **nacl_tag** | Tag for Network ACL | `string` | `dev-nacl` |  |
-| **nacl_inbound_ports** | Inbound rules for NACL | `object` | `allowed ports` |  |
-| **nacl_outbound_ports** | Outbound rules for NACL | `object` | `allowed ports` |  |
-| **lb_name** | Load Balancer Name | `string` | `dev-LB` |  |
-| **lb_type** | Load Balancer Type | `string` | `application` |  |
-| **lb_listener_port** | Listner Rule for Load Balancer | `number`| `80` |  |
-| **target_group_name** | Name of the Target Group | `string` | `dev-TG` |  |
-| **target_group_port** | Port of the Target Group | `number` | `80` |  |
+| Name | Description | Type | Default | 
+| ---- | ----------- | ---- | ------- | 
+| **vpc_cidr** | CIDR for the VPC | `string` | `10.0.1.0/25` |
+| **vpc_name** | Name of the VPC | `string` | `dev_vpc` |
+| **vpc_tenancy** | Tenancy of the VPC | `string` | `default` |  
+| **vpc_enable_dns_support** | A dns support for instances launched into the VPC | `boolean` | `true` | 
+| **vpc_enable_dns_hostnames** | A dns hostname for instances launched into the VPC |`boolean` | `true` | 
+| **pub_sub_names** | Names of Public Subnets | `string` | `dev-public-subnet-01`,`dev-public-subnet-02` |   
+| **pub_sub_cidr** | CIDRs for Public Subnets | `string` | `10.0.1.0/28`, `10.0.1.64/28` |  
+| **pub_sub_az** | Availability Zone for Public Subnets | `string` | `ap-south-1a`, `ap-south-1b` |  
+| **enable_map_public_ip_on_launch** | Enabling map for public ip  | `boolean` | `true` |  
+| **pvt_sub_names** | Names of Private Subnets | `string` | `dev-frontend-subnet`, `dev-backend-subnet`, `dev-database-subnet` | 
+| **pvt_sub_cidr** | CIDRs for Private Subnets | `string` | `10.0.1.16/28`, `10.0.1.32/28`, `10.0.1.48/28` |  
+| **pvt_sub_az** | Availability Zone for Private Subnets | `string` | `ap-south-1a`, `ap-south-1b`, `ap-south-1c` |  
+| **igw_name** | Internet Gateway's name | `string` | `dev-igw` |  
+| **nat_gtw** | NAT Gateway's name | `string` | `dev-nat-gtw` |   
+| **dev_pub_rt** | Public Route Table | `string` | `dev_pub_rt` |  
+| **dev-pvt-rt** | Private Route Table | `string` | `dev_pvt_rt` |  
+| **sec_grp_name** | Nmae of the Security Group | `string` | `dev_sg` | 
+| **sec_grp_description** | Description for the Security Group | `string` | `Security group for Dev Env` |  
+| **sg_inbound_ports** | Inbound Rules for Security Group | `object` | `allowed ports` |  
+| **sg_outbound_ports** | Outbound Rule for Security Group | `object` | `defined port` |  
+| **Sec_grp_tags** | Tag for Security Group | `string` | `dev-sg` | 
+| **nacl_tag** | Tag for Network ACL | `string` | `dev-nacl` |  
+| **nacl_inbound_ports** | Inbound rules for NACL | `object` | `allowed ports` |  
+| **nacl_outbound_ports** | Outbound rules for NACL | `object` | `allowed ports` |  
+| **lb_name** | Load Balancer Name | `string` | `dev-LB` |  
+| **lb_type** | Load Balancer Type | `string` | `application` |  
+| **lb_listener_port** | Listner Rule for Load Balancer | `number`| `80` |  
+| **target_group_name** | Name of the Target Group | `string` | `dev-TG` |  
+| **target_group_port** | Port of the Target Group | `number` | `80` |  
 
 ***
 
@@ -180,9 +180,6 @@ module "network" {
 | [Route Table](https://github.com/CodeOps-Hub/Terraform/blob/harshit/routeTable/Dev_Infra/Static_Tf/network/main.tf) |
 | [Internet Gateway](https://github.com/CodeOps-Hub/Terraform/blob/harshit/igw/Dev_Infra/Static_Tf/network/main.tf) |
 | [NAT Gateway](https://github.com/CodeOps-Hub/Terraform/blob/harshit/nat/Dev_Infra/Static_Tf/network/main.tf) |
-| [NACL]() |
-| [Load Balancer]() |
-| [Route-53]() |
 
 ***
 
@@ -207,3 +204,4 @@ In conclusion, the Network Skeleton Terraform module offers a flexible and effic
 | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [Link](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [Link](https://medium.com/@selvamraju007/terraform-modules-explanation-726ba4a0b98e) | Reference Link For Terraform Modules. |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Network%20Skeleton/aws-resources.md)  |  AWS Resources Image Link |
