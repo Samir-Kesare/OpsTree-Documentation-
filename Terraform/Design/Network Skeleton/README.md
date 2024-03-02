@@ -124,7 +124,7 @@ module "network" {
 | **pub_sub_names** | Names of Public Subnets | `string` | `dev-public-subnet-01`,`dev-public-subnet-02` |   |
 | **pub_sub_cidr** | CIDRs for Public Subnets | `string` | `10.0.1.0/28`, `10.0.1.64/28` |  |
 | **pub_sub_az** | Availability Zone for Public Subnets | `string` | `ap-south-1a`, `ap-south-1b` |  |
-| **enable_map_public_ip_on_launch** |   | `boolean` |  |  |
+| **enable_map_public_ip_on_launch** | Enabling map for public ip  | `boolean` | `true` |  |
 | **pvt_sub_names** | Names of Private Subnets | `string` | `dev-frontend-subnet`, `dev-backend-subnet`, `dev-database-subnet` | |
 | **pvt_sub_cidr** | CIDRs for Private Subnets | `string` | `10.0.1.16/28`, `10.0.1.32/28`, `10.0.1.48/28` |  |
 | **pvt_sub_az** | Availability Zone for Private Subnets | `string` | `ap-south-1a`, `ap-south-1b`, `ap-south-1c` |  |
