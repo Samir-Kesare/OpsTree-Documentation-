@@ -111,6 +111,7 @@ In the modern software development landscape, microservices architecture has bec
 | 100         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
 | 110         | Custom TCP| TCP      | 1024-65535 | 10.0.1.48/27 | Allow      |
 | 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.64/27 | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Inbound Rules
@@ -129,6 +130,7 @@ In the modern software development landscape, microservices architecture has bec
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/27 | Allow      |
 | 110         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ***
