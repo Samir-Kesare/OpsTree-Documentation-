@@ -71,7 +71,8 @@ In the modern software development landscape, microservices architecture has bec
 | Backend  | Backend-sg          | 22, 8080             | Frontend-lb-sg, OpenVPN-SG     |               
 | Database | Postgresql-sg      | 22, 5432              | Backend-sg, OpenVPN-SG       |               
 | Database | Redis-sg         | 22, 6379              | Backend-sg, OpenVPN-SG       |            
-| Database | Scylla-sg      | 22, 9042             | Backend-sg, OpenVPN-SG         |               
+| Database | Scylla-sg      | 22, 9042             | Backend-sg, OpenVPN-SG         | 
+| OpenVPN  | OpenVPN-SG | 22,443,943,945,1194      |                                |
 
 ***
 
@@ -90,39 +91,35 @@ In the modern software development landscape, microservices architecture has bec
 
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/27 | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
-| 130         | Custom TCP| TCP      | 32768-65535| 10.0.1.0/27  | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/27 | Allow      |
-| 120         | Custom UDP | UDP     | 1194       | 10.0.1.0/27 | Allow      |
-| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/27    | Allow      |
-| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/27    | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/27  | Allow      |
+| 120         | Custom UDP| UDP      | 1194       | 10.0.1.0/27  | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | 10.0.1.48/27 | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | 10.0.1.64/27 | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/27 | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535| 10.0.1.48/27 | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535| 10.0.1.64/27 | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 10.0.1.48/27 | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.64/27 | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP               | 22         | 20.0.0.0/28  | Allow      |
+| 100         | SSH       | TCP         | 22               | 20.0.0.0/28  | Allow      |
 | 110         | Custom TCP(Redis)       | TCP | 6379       | 10.0.1.32/27 | Allow      |
 | 120         | Custom TCP(Scylla)      | TCP | 9042       | 10.0.1.32/27 | Allow      |
 | 130         | Custom TCP (PostgreSQL) | TCP | 5432       | 10.0.1.32/27 | Allow      |
@@ -133,13 +130,9 @@ In the modern software development landscape, microservices architecture has bec
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/27 | Allow      |
-| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/27 | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/27 | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/27 | Allow      |
-| 150         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28 | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/27 | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ***
 
