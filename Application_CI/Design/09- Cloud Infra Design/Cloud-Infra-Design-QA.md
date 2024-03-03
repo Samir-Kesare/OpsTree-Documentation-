@@ -33,7 +33,7 @@ In the modern software development landscape, microservices architecture has bec
 
 | Tool                  | Description                                  |
 |-----------------------|----------------------------------------------|
-| AWS Management Console | Required for provisioning AWS resources.     |
+| **AWS Account**       | Required for provisioning AWS resources.     |
 
 ***
 
