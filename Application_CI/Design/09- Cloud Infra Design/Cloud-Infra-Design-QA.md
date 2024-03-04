@@ -39,7 +39,7 @@ In the modern software development landscape, microservices architecture has bec
 
 # Infrastructure Diagram
 
-![Ideal-QA-Infra - Page 1](https://github.com/CodeOps-Hub/Documentation/assets/156057205/c9055afc-0502-428d-8986-22811cde4848)
+![Ideal-QA-Infra - Page 1 (2)](https://github.com/CodeOps-Hub/Documentation/assets/156057205/eef74ae9-bba3-4f93-b0e2-be2172ef3212)
 
 *** 
 
