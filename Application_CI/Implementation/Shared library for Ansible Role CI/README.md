@@ -133,6 +133,7 @@ def call() {
     }
 ```
 
+
 ### Step 3:
 
 Syntax Checking Stage: Run ansible-playbook with the --syntax-check option to validate the syntax of the playbook
