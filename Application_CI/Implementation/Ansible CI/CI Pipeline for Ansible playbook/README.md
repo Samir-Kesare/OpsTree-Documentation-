@@ -10,7 +10,7 @@
 ***
 ## Table of Contents
 + [Introduction](#Introduction)
-+ [Key Components](#Key Components)
++ [Key Components](#Key-Components)
 + [Flow Diagram](#Flow-Diagram)
 + [Pre-requisites](#Pre-requisites)
 + [Jenkinsfile](#Jenkinsfile)
@@ -47,6 +47,8 @@ Setting up a Continuous Integration (CI) pipeline for Ansible playbooks is a val
 ## Flow Diagram
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/7aa5ca3e-4d28-4d45-8329-d65213f7d680)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/3cd816da-9982-404e-a7a8-53088a687d3e)
+
 
 
 ***
