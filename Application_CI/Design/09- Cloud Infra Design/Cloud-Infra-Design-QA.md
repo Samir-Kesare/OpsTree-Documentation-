@@ -83,7 +83,7 @@ In the modern software development landscape, microservices architecture has bec
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH       | TCP      | 22         | 20.0.0.0/28, 10.0.1.0/27  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/27, 10.0.1.64/27 | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/27  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Frontend NACL Outbound Rules
