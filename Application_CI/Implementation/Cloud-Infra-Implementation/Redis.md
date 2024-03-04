@@ -12,13 +12,12 @@
 
 # Table of contents
 * [Introduction](#Introduction)
+* [What is DSL Pipeline](#What-is-DSL-Pipeline)
+* [Why DSL Pipeline](#Why-DSP-Pipeline)
 * [Flow Diagram](#Flow-Diagram)
-* [Directory Structure](#Directory-Structure)
 * [Pre-requisites](#Pre-requisites)
-* [Usage](#Usage)
-* [Tags](#Tags)
-* [Inputs](#Inputs)
-* [Outputs](#Outputs)
+* [Jenkinsfile](#Jenkinsfile)
+* [Output](#Output)
 * [Related Works](#Related-Works)
 * [Conclusion](#Conclusion)
 * [Contact Information](#Contact-Information)
@@ -56,6 +55,33 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
+# Pre-requisites
+
+| **Pre-requisites** | **Description** |
+| ------------------ | ---------------- |
+| **AWS Account**    | Access to the AWS Management Console with credentials configured. |
+| **Jenkins**        | To integrate infra through DSL Pipeline. |
+| **Jenkins Job DSL Plugin** |   |
+| **Terraform Plugin**  |  |
+| ****
+
+***
+
+# Jenkinsfile
+
+
+***
+
+# Output
+
+
+***
+
+# Related Works
+
+
+***
+
 # Conclusion
 
 In conclusion, our DSL Pipeline offers a powerful solution for creating and managing domain-specific languages, enabling developers to express complex ideas in a concise and understandable manner. By embracing DSLs, organizations can accelerate development cycles, improve collaboration between domain experts and developers, and ultimately deliver higher-quality software solutions. 
@@ -76,8 +102,8 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | ---------- | --------------- |
 | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [Link](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
-| [Link](https://medium.com/@selvamraju007/terraform-modules-explanation-726ba4a0b98e) | Reference Link For Terraform Modules. |
-| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Design-tf-modules/Network-skeleton/AWS-resources.md)  |  AWS Resources Image Link |
+| [Link](https://www.linkedin.com/pulse/how-run-terraform-script-jenkins-step-by-step-guide-praveen-dandu) | Reference Link For DSL Pipeline. |
+| [Link](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
 
 
 
