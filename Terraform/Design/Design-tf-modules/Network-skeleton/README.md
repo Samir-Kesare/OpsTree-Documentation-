@@ -204,4 +204,4 @@ In conclusion, the Network Skeleton Terraform module offers a flexible and effic
 | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [Link](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [Link](https://medium.com/@selvamraju007/terraform-modules-explanation-726ba4a0b98e) | Reference Link For Terraform Modules. |
-| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Network%20Skeleton/aws-resources.md)  |  AWS Resources Image Link |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Design-tf-modules/Network-skeleton/AWS-resources.md)  |  AWS Resources Image Link |
