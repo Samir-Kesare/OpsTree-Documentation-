@@ -55,11 +55,11 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 | ------------ | --------------- |
 | **AWS Cloud** | Choosed AWS Cloud for setup |
 | **Region** | Selected Mumbai Region(ap-south-1) |
-| **VPC** | Selected Management VPC of CIDR `172.31.0.0/16` |
-| **Public Subnet** | Selected Public Subnet with CIDR `172.31.0.0/20` |
+| **VPC** | Selected Dev VPC of CIDR `10.0.1.0/25` |
+| **Public Subnet** | Selected Public Subnet with CIDR `10.0.1.0/28` |
 | **Route Table** | Created `Route Table` and associated it with `Public Subnet` |
 | **Internet Gateway** | Created `Internet Gateway` and attached with `Route Table` |
-| **Security Group** | Created `Security Group` with port **TCP(22),HTTP(80),HTTPS(443),UDP(1194)** |
+| **Security Group** | Created `Security Group` with port **TCP(22),UDP(1194)** |
 | **EC2 Instance** | Created `EC2 Instance` of name `OpenVPN-Server` |
 
 ***
@@ -88,7 +88,7 @@ This Proof of Concept (PoC) documentation aims to provide a comprehensive guide 
 
 **Step-4 In the network settings, pick a VPC; in this case, choose the `Management-VPC`. Choose a subnet , preferably a `public subnet`. Enable `auto-assign IP`.Navigate to the security group settings. Ensure that `port 1194` is open if using UDP (default for OpenVPN).** 
 
-![Screenshot 2024-02-19 134343](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f33b7660-2e08-4571-97f3-fcee10d8dfa7)
+<img width="900" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3345eede-e95b-464f-af07-2d4e8b1c748c">
 
 ***
 
@@ -223,6 +223,14 @@ sudo openvpn –config path_to_client_configuration_file
 
 ***
 
+# Open-VPN Tool Configuration
+
+Uploaded the `open-vpn.ovpn`file that we created above and tested the connection
+
+<img width="293" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/2276496f-375b-4765-9ed5-e0d4565fa60e">
+
+***
+
 # Result
 
 ```shell
@@ -230,9 +238,13 @@ route -n
 curl ifconfig.me
 ```
 
-<img width="761" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/98c300f4-d695-4ccf-8e2c-62bcce6842b9">
+<img width="750" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/98c300f4-d695-4ccf-8e2c-62bcce6842b9">
 
-<img width="584" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/532297f5-3102-4bd5-868e-dd4db54da1a0">
+<img width="750" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/532297f5-3102-4bd5-868e-dd4db54da1a0">
+
+**Able to connect to the Private Subnet Instance locally**
+
+<img width="750" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/552fa9fe-dc9f-4d37-aa5f-b21806eabf19">
 
 ***
 
