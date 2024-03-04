@@ -79,6 +79,9 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 # Related Works
 
+| **References** |
+| [Link](https://github.com/CodeOps-Hub/Terraform/blob/main/Dev_Infra/Static_Tf/redis/main.tf) |
+| [Link]() |
 
 ***
 
