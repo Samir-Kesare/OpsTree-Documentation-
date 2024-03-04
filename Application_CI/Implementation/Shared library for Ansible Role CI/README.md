@@ -56,7 +56,7 @@ In summary, shared libraries play a crucial role in software development by prom
 | Github Accounts | To store and manage the codes| 
 | Jenkins | To check our codes and to setup pipelines         |  
 
-## Runtime Prerequisites
+## Runtime Pre-requisites
 
 | Tool   | Description                          | 
 |--------|--------------------------------------|
