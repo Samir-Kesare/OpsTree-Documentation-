@@ -12,9 +12,11 @@
 
 # Table of contents
 * [Introduction](#Introduction)
+* [Terraform Modules](#Terraform-Modules)
+* [What is State file](#What-is-State-file)
+* [Pre-requisites](#Pre-requisites)
 * [Flow Diagram](#Flow-Diagram)
 * [Directory Structure](#Directory-Structure)
-* [Pre-requisites](#Pre-requisites)
 * [Usage](#Usage)
 * [Tags](#Tags)
 * [Inputs](#Inputs)
@@ -40,7 +42,7 @@ Terraform modules serve as fundamental building blocks within the Terraform infr
 
 ***
 
-# What is a State file?
+# What is State file?
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/40ac0ac5-1a6a-4221-b2a8-f97467608f01">
 
