@@ -148,7 +148,7 @@ pipeline {
     post {
         success {
             echo 'Terraform operation successful!'
-            archiveArtifacts artifacts: '*Key.pem', followSymlinks: false
+            archiveArtifacts artifacts: '*.pem', followSymlinks: false
             cleanWs()
         }
         failure {
