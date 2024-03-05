@@ -163,7 +163,7 @@ This Jenkins pipeline automates the deployment of a Redis server infrastructure 
 
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`aakash/redis_server`). |                                                                                    
+| **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
 | **Copy Terraform Files**    | Copies Redis-related Terraform configuration files to the Jenkins workspace. |                                                                                                
 | **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
 | **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
