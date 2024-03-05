@@ -67,7 +67,7 @@ In the modern software development landscape, microservices architecture has bec
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22, 3000          | Frontend-lb-sg, OpenVPN-SG, ManagemenT-vpc |               
+| Frontend | Frontend-sg         | 22, 3000          | Frontend-lb-sg, OpenVPN-SG, Management-vpc |               
 | Backend  | Backend-sg          | 22, 8080          | Frontend-lb-sg, OpenVPN-SG, Management-vpc |               
 | Database | Postgresql-sg       | 22, 5432          | Backend-sg, OpenVPN-SG, Management-vpc |               
 | Database | Redis-sg            | 22, 6379          | Backend-sg, OpenVPN-SG, Management-vpc |            
