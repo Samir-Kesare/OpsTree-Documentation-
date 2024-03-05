@@ -92,7 +92,7 @@ pipeline {
         stage('Copy Terraform Files') {
             steps {
                 // Copy or move specific files from the repository to Jenkins workspace
-                sh 'cp Dev_Infra/Static_Tf/redis/* .'
+                sh 'cp Dev_Infra/Static_Tf/scylladb/* .'
             }
         }
         
@@ -167,7 +167,7 @@ This Jenkins pipeline automates the deployment of a Redis server infrastructure 
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
-| **Copy Terraform Files**    | Copies Redis-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| **Copy Terraform Files**    | Copies Scylladb-related Terraform configuration files to the Jenkins workspace. |                                                                                                
 | **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
 | **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
 | **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
@@ -180,40 +180,40 @@ This Jenkins pipeline automates the deployment of a Redis server infrastructure 
 
 **Blue Ocean Output**
 
-<img width="951" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/6a535d77-700c-4813-a2db-d293a59ef799">
+<img width="947" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bfaaa291-14ab-4343-a2fa-37f13105e037">
 
 ***
 
 **Console Output**
 
-<img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3f134493-6e49-4cca-bc8a-7c5070c30ee7">
+<img width="725" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e22caf42-f73a-4e27-9b69-046b731b8adf">
 
 ***
 
-**EC2 Instance Output (StandaloneRedisServer)**
+**EC2 Instance Output (StandaloneScyllaDBServer)**
 Deploys a Redis server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
 
-![Screenshot 2024-03-05 132014](https://github.com/CodeOps-Hub/Documentation/assets/156057205/4b1a4184-de45-4010-a683-78bf94c50c92)
+<img width="948" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8107530b-5fc6-4215-ab70-4a25b2c537e1">
 
 ***
 
-**Security Group for redis(Redis-sg)**
+**Security Group for ScyllaDB(ScyllaDB-sg)**
  Defines a security group for Redis servers with specified ingress and egress rules.
  
-![Screenshot 2024-03-05 132107](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f9e9ef4d-689e-4415-bbb1-fdd076cd7be0)
+<img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/da009808-1368-475b-aac2-c911e9f36c71">
 
 ***
 
-**SSH Key Pair for redis server(redisKey.pem)**
+**SSH Key Pair for ScyllaDB Server(scylladbKey.pem)**
 Creates an AWS key pair for SSH access to the Redis server.
 
-![Screenshot 2024-03-05 132123](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fbed8a49-6dfc-4513-9a4b-c50c32ccb7b4)
+<img width="956" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4508af18-f1e8-4195-9137-f69a0a7c657a">
 
 ***
 
 **Archive Artifact (SSH key pair)**
 
-<img width="957" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e3fc938a-7391-4a06-9205-0bbab97be329">
+<img width="944" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7130a5d3-2bde-4b31-b1af-099b8a1dac6c">
 
 ***
 
@@ -221,7 +221,7 @@ Creates an AWS key pair for SSH access to the Redis server.
 
 | **References** |
 | -------------- |
-| [Link](https://github.com/CodeOps-Hub/Terraform/blob/aakash/redis_server/Dev_Infra/EC2/main.tf) |
+| [Link](https://github.com/CodeOps-Hub/Terraform/blob/shreya/scylladb_pipeline/Dev_Infra/Static_Tf/scylladb/main.tf) |
 
 ***
 
