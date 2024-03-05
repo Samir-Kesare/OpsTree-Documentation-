@@ -43,10 +43,10 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 | Key Features  | Description                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------|
-| Modularity    | The DSL Pipeline offers a modular architecture, allowing developers to define and integrate custom DSL components seamlessly. |
-| Extensibility | Extend the capabilities of the DSL Pipeline by incorporating new DSL constructs, transformations, and integrations with existing tools and libraries. |
-| Automation    | Automate repetitive tasks in the development lifecycle through pipeline automation, including parsing, validation, transformation, and code generation. |
-| Flexibility   | Accommodate diverse DSL requirements with flexible configuration options, support for various syntax styles, and compatibility with multiple target platforms. |
+| **Modularity**    | The DSL Pipeline offers a modular architecture, allowing developers to define and integrate custom DSL components seamlessly. |
+| **Extensibility** | Extend the capabilities of the DSL Pipeline by incorporating new DSL constructs, transformations, and integrations with existing tools and libraries. |
+| **Automation**    | Automate repetitive tasks in the development lifecycle through pipeline automation, including parsing, validation, transformation, and code generation. |
+| **Flexibility**   | Accommodate diverse DSL requirements with flexible configuration options, support for various syntax styles, and compatibility with multiple target platforms. |
 
 ***
 
@@ -75,14 +75,14 @@ This Jenkins pipeline automates the deployment of a Redis server infrastructure 
 
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Checkout                | Fetches the Terraform code from a GitHub repository branch (`aakash/redis_server`). |                                                                                     
-| Copy Terraform Files    | Copies Redis-related Terraform configuration files to the Jenkins workspace. |                                                                                                
-| Terraform Init          | Initializes Terraform in the workspace directory. |                                                                                                                                
-| Terraform Plan          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
-| Review and Approve Apply | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
-| Review and Approve Destroy | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |                                                                            
-| Apply or Destroy        | Executes Terraform apply or destroy based on the selected action. |                                                                                                               
-| Post                    | Displays success or failure messages. |                                                                                                                                          
+| **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`aakash/redis_server`). |                                                                                    
+| **Copy Terraform Files**    | Copies Redis-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
+| **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
+| **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
+| **Review and Approve Destroy** | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |                                                                            
+| **Apply or Destroy**        | Executes Terraform apply or destroy based on the selected action. |                                                                                                               
+| **Post**                    | Displays success or failure messages. |                                                                                                                                          
 ***
 
 # Output
