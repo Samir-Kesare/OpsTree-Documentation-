@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Last Updated** | **Document Version** |
 | ---------- | -------------- | ---------------- | -------------------- |
-| **Shreya Jaiswal** | **04 March 2024** | **04 March 2024** | **v1** |
+| **Shreya Jaiswal** | **04 March 2024** | **05 March 2024** | **v1** |
 
 ***
 
@@ -61,9 +61,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 | ------------------ | ---------------- |
 | **AWS Account**    | Access to the AWS Management Console with credentials configured. |
 | **Jenkins**        | To integrate infra through DSL Pipeline. |
-| **Jenkins Job DSL Plugin** |   |
-| **Terraform Plugin**  |  |
-| ****
+| **Terraform**      | Terraform HCL (v1.7.4) | ****
 
 ***
 
@@ -74,6 +72,27 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 # Output
 
+**Console Output**
+
+<img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3f134493-6e49-4cca-bc8a-7c5070c30ee7">
+
+***
+
+**EC2 Instance Output (Standaloneredis)**
+
+![Screenshot 2024-03-05 132014](https://github.com/CodeOps-Hub/Documentation/assets/156057205/4b1a4184-de45-4010-a683-78bf94c50c92)
+
+***
+
+**Security Group for redis(Redis-sg)**
+
+![Screenshot 2024-03-05 132107](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f9e9ef4d-689e-4415-bbb1-fdd076cd7be0)
+
+***
+
+**SSH Key Pair for redis server(redisKey.pem)**
+
+![Screenshot 2024-03-05 132123](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fbed8a49-6dfc-4513-9a4b-c50c32ccb7b4)
 
 ***
 
