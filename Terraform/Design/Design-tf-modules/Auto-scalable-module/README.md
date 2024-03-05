@@ -1,6 +1,6 @@
 # Design for Auto scalable module
 
-<img width="360" length="100" alt="Terraform" src="">
+<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7bebcb9c-e68b-4251-9974-9752be51b3b3">
 
 ***
 
@@ -19,6 +19,10 @@
 * [Flow Diagram](#Flow-Diagram)
 * [Directory Structure](#Directory-Structure)
 * [Usage](#Usage)
+* [Tags](#Tags)
+* [Inputs](#Inputs)
+* [Outputs](#Outputs)
+* [Result](#Result)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -33,7 +37,7 @@ With the increasing complexity of modern networks and the need for agility in in
 
 ## Terraform Modules
 
-<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/b2ec5454-cc39-4212-9dd9-fbc7b9967317">
+<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/4bd29a49-2c4f-47f2-aeb0-45707bf552bc">
 
 Terraform modules serve as fundamental building blocks within the Terraform infrastructure as code (IaC) framework, enabling users to encapsulate and reuse configuration logic across different projects and environments. Essentially, a Terraform module is a collection of resources and associated configuration files that define a specific piece of infrastructure, such as a virtual machine, network, or application. By organizing infrastructure components into modular units, users can achieve greater abstraction, maintainability, and scalability in their infrastructure provisioning workflows.Additionally, Terraform modules support parameterization, allowing users to customize module behavior through input variables and outputs, further enhancing flexibility and adaptability.
 
