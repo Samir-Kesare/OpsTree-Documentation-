@@ -79,18 +79,21 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 ***
 
 **EC2 Instance Output (StandaloneRedisServer)**
+Deploys a Redis server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
 
 ![Screenshot 2024-03-05 132014](https://github.com/CodeOps-Hub/Documentation/assets/156057205/4b1a4184-de45-4010-a683-78bf94c50c92)
 
 ***
 
 **Security Group for redis(Redis-sg)**
-
+ Defines a security group for Redis servers with specified ingress and egress rules.
+ 
 ![Screenshot 2024-03-05 132107](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f9e9ef4d-689e-4415-bbb1-fdd076cd7be0)
 
 ***
 
 **SSH Key Pair for redis server(redisKey.pem)**
+Creates an AWS key pair for SSH access to the Redis server.
 
 ![Screenshot 2024-03-05 132123](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fbed8a49-6dfc-4513-9a4b-c50c32ccb7b4)
 
