@@ -52,6 +52,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 # Flow Diagram
 
+<img width="500" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/de4fd94f-f1de-4486-ba61-5aa58d5de178">
 
 ***
 
@@ -68,6 +69,20 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 # Jenkinsfile
 
 
+This Jenkins pipeline automates the deployment of a Redis server infrastructure using Terraform. It's configured to perform the following actions:
+
+## Terraform Deployment Pipeline Overview
+
+| Stage                   | Description                                                                                                                                                                      |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Checkout                | Fetches the Terraform code from a GitHub repository branch (`aakash/redis_server`). |                                                                                     
+| Copy Terraform Files    | Copies Redis-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| Terraform Init          | Initializes Terraform in the workspace directory. |                                                                                                                                
+| Terraform Plan          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
+| Review and Approve Apply | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
+| Review and Approve Destroy | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |                                                                            
+| Apply or Destroy        | Executes Terraform apply or destroy based on the selected action. |                                                                                                               
+| Post                    | Displays success or failure messages. |                                                                                                                                          
 ***
 
 # Output
