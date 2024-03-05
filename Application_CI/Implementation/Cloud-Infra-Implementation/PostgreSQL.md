@@ -149,7 +149,6 @@ pipeline {
         success {
             echo 'Terraform operation successful!'
             archiveArtifacts artifacts: '*.pem', followSymlinks: false
-            cleanWs()
         }
         failure {
             echo 'Terraform operation failed!'
