@@ -72,6 +72,12 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 # Output
 
+**Blue Ocean Output**
+
+<img width="951" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/6a535d77-700c-4813-a2db-d293a59ef799">
+
+***
+
 **Console Output**
 
 <img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3f134493-6e49-4cca-bc8a-7c5070c30ee7">
