@@ -78,7 +78,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-**EC2 Instance Output (Standaloneredis)**
+**EC2 Instance Output (StandaloneRedisServer)**
 
 ![Screenshot 2024-03-05 132014](https://github.com/CodeOps-Hub/Documentation/assets/156057205/4b1a4184-de45-4010-a683-78bf94c50c92)
 
