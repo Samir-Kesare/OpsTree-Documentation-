@@ -191,21 +191,22 @@ pipeline {
 ***
 
 **EC2 Instance Output (StandaloneScyllaDBServer)**
-Deploys a Redis server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
+
+Deploys a ScyllaDB server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
 
 <img width="948" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8107530b-5fc6-4215-ab70-4a25b2c537e1">
 
 ***
 
 **Security Group for ScyllaDB(ScyllaDB-sg)**
- Defines a security group for Redis servers with specified ingress and egress rules.
+ Defines a security group for ScyllaDB server with specified ingress and egress rules.
  
 <img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/da009808-1368-475b-aac2-c911e9f36c71">
 
 ***
 
 **SSH Key Pair for ScyllaDB Server(scylladbKey.pem)**
-Creates an AWS key pair for SSH access to the Redis server.
+Creates an AWS key pair for SSH access to the ScyllaDB server.
 
 <img width="956" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4508af18-f1e8-4195-9137-f69a0a7c657a">
 
