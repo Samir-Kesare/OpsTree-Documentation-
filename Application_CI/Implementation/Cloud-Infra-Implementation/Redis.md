@@ -148,9 +148,11 @@ pipeline {
     post {
         success {
             echo 'Terraform operation successful!'
+            cleanWs()
         }
         failure {
             echo 'Terraform operation failed!'
+            cleanWs()
         }
     }
 }
