@@ -159,7 +159,7 @@ pipeline {
 
 This Jenkins pipeline automates the deployment of a Redis server infrastructure using Terraform. It's configured to perform the following actions:
 
-## Terraform Deployment Pipeline Overview
+### Terraform Deployment Pipeline Overview
 
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
