@@ -148,6 +148,7 @@ pipeline {
     post {
         success {
             echo 'Terraform operation successful!'
+            archiveArtifacts artifacts: '*Key.pem', followSymlinks: false
             cleanWs()
         }
         failure {
@@ -207,6 +208,12 @@ Deploys a Redis server EC2 instance using the specified AMI, instance type, subn
 Creates an AWS key pair for SSH access to the Redis server.
 
 ![Screenshot 2024-03-05 132123](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fbed8a49-6dfc-4513-9a4b-c50c32ccb7b4)
+
+***
+
+**Archive Artifact (SSH key pair)**
+
+<img width="957" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e3fc938a-7391-4a06-9205-0bbab97be329">
 
 ***
 
