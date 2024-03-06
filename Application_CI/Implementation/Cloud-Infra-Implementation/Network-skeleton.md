@@ -227,13 +227,6 @@ Deploys a VPC (dev-vpc) and configured it's resources
 
 ***
 
-**SSH Key Pair for Postgres Server(postgresKey.pem)**
-Creates an AWS key pair for SSH access to the ScyllaDB server.
-
-<img width="956" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4508af18-f1e8-4195-9137-f69a0a7c657a">
-
-***
-
 **Load Balancer for Network Skeleton**
 
 ![Screenshot 2024-03-06 220706](https://github.com/CodeOps-Hub/Documentation/assets/156057205/71f5ea2b-83e0-4154-836f-08b21a4122af)
