@@ -76,8 +76,42 @@ The state file is an artifact that you’re left with once an Infrastructure as 
 
 ```shell
 module "ASG" {
-    source                         = "./Autoscaling"
-    }
+source                              = "./auto_scaling"
+#--------------------------------Launch Template ----------------------------------#
+AMI_name                            = var.AMI-name
+AMI_Instance_ID                     = var.AMI-Instance-ID
+private_key_algorithm               = var.private-key-algorithm
+private_key_rsa_bits                = var.private-key-rsa-bits
+template_name                       = var.template-name
+template_description                = var.template-description
+instance_type                       = var.instance-type
+instance_keypair                    = var.instance-keypair
+security_group                      = var.security-group
+subnet_ID                           = var.subnet-ID
+#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+#--------------------------------- Target Group -----------------------------------#
+target_group_name                   = var.target-group-name
+target_group_port                   = var.target-group-port
+target_group_protocol               = var.target-group-protocol
+TG_vpc_id                           = var.TG-vpc-id
+health_check_path                   = var.health-check-path
+health_check_port                   = var.health-check-port
+health_check_interval               = var.health-check-interval
+health_check_timeout                = var.health-check-timeout
+health_check_healthy_threshold      = var.health-check-healthy-threshold
+health_check_unhealthy_threshold    = var.health-check-unhealthy-threshold
+#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+#--------------------------Configure Auto Scaling group ---------------------------#
+autoscaling_group_name              = var.autoscaling-group-name
+min_size                            = var.min-size
+max_size                            = var.max-size
+desired_capacity                    = var.desired-capacity
+subnet_ids                          = var.subnet-ids
+tag_key                             = var.tag-key
+tag_value                           = var.tag-value
+propagate_at_launch                 = var.propagate-at-launch
+#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+}
 ```
 
 ***
