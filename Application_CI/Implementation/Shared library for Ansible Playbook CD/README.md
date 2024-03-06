@@ -1,4 +1,4 @@
-# Shared library for Ansible Role CD
+# Shared library for Ansible Playbook CD
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/314f7657-1deb-4655-ab7b-9789d8853d6e)
 
