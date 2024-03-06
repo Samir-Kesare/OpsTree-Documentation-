@@ -179,41 +179,43 @@ pipeline {
 
 **Blue Ocean Output**
 
-<img width="947" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bfaaa291-14ab-4343-a2fa-37f13105e037">
+<img width="948" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/d630dce6-1a10-4053-96c3-ee799119937c">
 
 ***
 
 **Console Output**
 
-<img width="725" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e22caf42-f73a-4e27-9b69-046b731b8adf">
+<img width="678" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4b7c34af-09b5-4de4-8219-ba2f15f133d2">
 
 ***
 
 **EC2 Instance Output (StandalonePostgresServer)**
 
-Deploys a ScyllaDB server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
+Deploys a Postgres server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
 
-<img width="948" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8107530b-5fc6-4215-ab70-4a25b2c537e1">
+<img width="957" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e5de7024-4b35-456f-b12e-cd5215869746">
 
 ***
 
 **Security Group for Postgres(Postgres-sg)**
- Defines a security group for ScyllaDB server with specified ingress and egress rules.
+
+ Defines a security group for Postgres server with specified ingress and egress rules.
  
-<img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/da009808-1368-475b-aac2-c911e9f36c71">
+<img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f68e56d6-6463-421b-b9e3-6aab50e58431">
 
 ***
 
 **SSH Key Pair for Postgres Server(postgresKey.pem)**
-Creates an AWS key pair for SSH access to the ScyllaDB server.
 
-<img width="956" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4508af18-f1e8-4195-9137-f69a0a7c657a">
+Creates an AWS key pair for SSH access to the Postgres server.
+
+<img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f8970ab1-e58a-452c-9a34-8ffd56f61ec9">
 
 ***
 
 **Archive Artifact (SSH key pair)**
 
-<img width="944" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7130a5d3-2bde-4b31-b1af-099b8a1dac6c">
+<img width="949" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e3fbb391-c155-4f68-a31f-cf10a727e390">
 
 ***
 
