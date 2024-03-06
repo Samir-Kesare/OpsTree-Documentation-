@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Last Updated** | **Document Version** |
 | ---------- | -------------- | ---------------- | -------------------- |
-| **Shreya Jaiswal** | **05 March 2024** | **05 March 2024** | **v1** |
+| **Shreya Jaiswal** | **06 March 2024** | **06 March 2024** | **v1** |
 
 ***
 
@@ -166,7 +166,7 @@ pipeline {
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
-| **Copy Terraform Files**    | Copies Scylladb-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| **Copy Terraform Files**    | Copies Postgres-related Terraform configuration files to the Jenkins workspace. |                                                                                                
 | **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
 | **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
 | **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
@@ -189,7 +189,7 @@ pipeline {
 
 ***
 
-**EC2 Instance Output (StandaloneScyllaDBServer)**
+**EC2 Instance Output (StandalonePostgresServer)**
 
 Deploys a ScyllaDB server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
 
@@ -197,14 +197,14 @@ Deploys a ScyllaDB server EC2 instance using the specified AMI, instance type, s
 
 ***
 
-**Security Group for ScyllaDB(ScyllaDB-sg)**
+**Security Group for Postgres(Postgres-sg)**
  Defines a security group for ScyllaDB server with specified ingress and egress rules.
  
 <img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/da009808-1368-475b-aac2-c911e9f36c71">
 
 ***
 
-**SSH Key Pair for ScyllaDB Server(scylladbKey.pem)**
+**SSH Key Pair for Postgres Server(postgresKey.pem)**
 Creates an AWS key pair for SSH access to the ScyllaDB server.
 
 <img width="956" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4508af18-f1e8-4195-9137-f69a0a7c657a">
