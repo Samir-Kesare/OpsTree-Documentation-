@@ -14,7 +14,7 @@
 + [Why Ansible_CD](#Why-Ansible_CD)
 + [Flow Diagram](#Flow-Diagram)
 + [Pre-requisites](#Pre-requisites)
-+ [Setup](#Setup)
++ [Set Up](#Set-Up)
 + [Jenkinsfile](#Jenkinsfile)
 + [Conclusion](#Conclusion)
 + [Contact Information](#Contact-Information)
@@ -48,6 +48,7 @@ Continuous Deployment (CD) with Ansible involves automating the deployment proce
 ***
 ## Flow Diagram
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/e575b1e1-4218-4c39-b2ac-461f754e9a82)
 
 
 ***
@@ -59,7 +60,7 @@ Continuous Deployment (CD) with Ansible involves automating the deployment proce
 | Github Accounts | To store and manage the codes| 
 | Jenkins | To check our codes and to setup pipelines         |  
 
-## Runtime Prerequisites
+## Runtime Pre-requisites
 
 | Tool   | Description                          | 
 |--------|--------------------------------------|
