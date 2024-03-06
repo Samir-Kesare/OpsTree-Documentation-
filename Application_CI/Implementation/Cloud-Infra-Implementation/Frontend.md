@@ -189,24 +189,60 @@ pipeline {
 
 ***
 
-**EC2 Instance Output (StandaloneRedisServer)**
-Deploys a Redis server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
+**AMI Output (Dev-Frontend-AMI)**
 
-![Screenshot 2024-03-05 132014](https://github.com/CodeOps-Hub/Documentation/assets/156057205/4b1a4184-de45-4010-a683-78bf94c50c92)
+![Screenshot 2024-03-06 130025](https://github.com/CodeOps-Hub/Documentation/assets/156057205/8c71d8df-191c-4f8f-b6f3-4cd0b8c74adb)
 
 ***
 
-**Security Group for redis(Redis-sg)**
- Defines a security group for Redis servers with specified ingress and egress rules.
+**Security Group for Frontend(Dev-Frontend-sg)**
+ Defines a security group for Frontend with specified ingress and egress rules.
  
-![Screenshot 2024-03-05 132107](https://github.com/CodeOps-Hub/Documentation/assets/156057205/f9e9ef4d-689e-4415-bbb1-fdd076cd7be0)
+![Screenshot 2024-03-06 130526](https://github.com/CodeOps-Hub/Documentation/assets/156057205/0335446e-d0c0-4c50-b9ce-2f609f9bde53)
 
 ***
 
-**SSH Key Pair for redis server(redisKey.pem)**
-Creates an AWS key pair for SSH access to the Redis server.
+**SSH Key Pair for Frontend(Dev_Key)**
+Creates an AWS key pair for SSH access to the Frontend.
 
-![Screenshot 2024-03-05 132123](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fbed8a49-6dfc-4513-9a4b-c50c32ccb7b4)
+![Screenshot 2024-03-06 130558](https://github.com/CodeOps-Hub/Documentation/assets/156057205/3913273c-85ce-4b4b-91fe-f87042270027)
+
+***
+
+**Launch Template for Frontend (Dev-Frontend-template)**
+
+![Screenshot 2024-03-06 130619](https://github.com/CodeOps-Hub/Documentation/assets/156057205/30f74226-f39f-4acb-91eb-9dc17f411e88)
+
+***
+
+**Load Balancer for Frontend (Dev-ALB)**
+
+![Screenshot 2024-03-06 130413](https://github.com/CodeOps-Hub/Documentation/assets/156057205/43118be8-80e3-4c22-9096-72e30172e102)
+
+***
+
+**Listner Rules for Frontend**
+
+![Screenshot 2024-03-06 130428](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5a9296fb-9ad4-4667-b85a-bfa5ae692aa5)
+
+***
+
+**Auto Scaling Group for Frontend (Dev-Frontend-ASG)**
+
+![Screenshot 2024-03-06 130209](https://github.com/CodeOps-Hub/Documentation/assets/156057205/25916c23-07e6-4826-be38-bcc0c606c5f0)
+
+
+***
+
+**Auto Scaling Policy**
+
+![Screenshot 2024-03-06 130334](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5ea8554e-44f4-4bd5-a31c-019a97d9a9de)
+
+***
+
+**Target Group for Frontend(Dev-Frontend-TG)**
+
+![Screenshot 2024-03-06 130054](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fc3516be-e14e-4b6b-9677-2727a8aac764)
 
 ***
 
