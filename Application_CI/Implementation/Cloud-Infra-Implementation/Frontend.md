@@ -191,19 +191,23 @@ pipeline {
 
 **AMI Output (Dev-Frontend-AMI)**
 
+It uses the aws_ami_from_instance resource to create an AMI from an existing EC2 instance (source_instance_id variable specifies the instance ID).
+
 ![Screenshot 2024-03-06 130025](https://github.com/CodeOps-Hub/Documentation/assets/156057205/8c71d8df-191c-4f8f-b6f3-4cd0b8c74adb)
 
 ***
 
 **Security Group for Frontend(Dev-Frontend-sg)**
- Defines a security group for Frontend with specified ingress and egress rules.
  
+Defines a security group with inbound and outbound rules for controlling traffic to and from instances. It dynamically creates rules based on the provided inbound_ports and outbound_ports variables.
+  
 ![Screenshot 2024-03-06 130526](https://github.com/CodeOps-Hub/Documentation/assets/156057205/0335446e-d0c0-4c50-b9ce-2f609f9bde53)
 
 ***
 
 **SSH Key Pair for Frontend(Dev_Key)**
-Creates an AWS key pair for SSH access to the Frontend.
+
+It generates an SSH key pair using the tls_private_key and aws_key_pair resources.
 
 ![Screenshot 2024-03-06 130558](https://github.com/CodeOps-Hub/Documentation/assets/156057205/3913273c-85ce-4b4b-91fe-f87042270027)
 
@@ -211,11 +215,15 @@ Creates an AWS key pair for SSH access to the Frontend.
 
 **Launch Template for Frontend (Dev-Frontend-template)**
 
+Creates a launch template for EC2 instances with configurations such as AMI, instance type, key pair, security group, and user data script.
+
 ![Screenshot 2024-03-06 130619](https://github.com/CodeOps-Hub/Documentation/assets/156057205/30f74226-f39f-4acb-91eb-9dc17f411e88)
 
 ***
 
 **Load Balancer for Frontend (Dev-ALB)**
+
+Configures an Application Load Balancer (ALB) with a listener and default action forwarding requests to the target group.
 
 ![Screenshot 2024-03-06 130413](https://github.com/CodeOps-Hub/Documentation/assets/156057205/43118be8-80e3-4c22-9096-72e30172e102)
 
@@ -229,18 +237,23 @@ Creates an AWS key pair for SSH access to the Frontend.
 
 **Auto Scaling Group for Frontend (Dev-Frontend-ASG)**
 
-![Screenshot 2024-03-06 130209](https://github.com/CodeOps-Hub/Documentation/assets/156057205/25916c23-07e6-4826-be38-bcc0c606c5f0)
+Sets up an auto-scaling group with configurations such as launch template, minimum size, maximum size, desired capacity, VPC zone identifier, and target group ARN.
 
+![Screenshot 2024-03-06 130209](https://github.com/CodeOps-Hub/Documentation/assets/156057205/25916c23-07e6-4826-be38-bcc0c606c5f0)
 
 ***
 
 **Auto Scaling Policy**
+
+Defines an auto-scaling policy for the auto-scaling group. It uses target tracking scaling with predefined metric specifications.
 
 ![Screenshot 2024-03-06 130334](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5ea8554e-44f4-4bd5-a31c-019a97d9a9de)
 
 ***
 
 **Target Group for Frontend(Dev-Frontend-TG)**
+
+Defines a target group for routing requests to registered instances. It includes health check configurations.
 
 ![Screenshot 2024-03-06 130054](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fc3516be-e14e-4b6b-9677-2727a8aac764)
 
