@@ -76,9 +76,11 @@ node {
     def creds = '890c8a72-7383-4986-8573-519aacdeb7d2'
     def branch = 'main'
     def gitleaksVersion = '8.18.2'
-    def tagVersion = '1.0'
+    def tagVersion = '1.1'
+    def path  = 'https://username:${PASSWORD}@github.com/CodeOps-Hub/Jenkins-Playbook.git v1.1
+'
     
-    ansibleRole_CD.call(url, creds, branch, gitleaksVersion)
+    ansibleRole_CD.call(url, creds, branch, gitleaksVersion, tagVersion, path)
     
 }
 ```
@@ -93,7 +95,7 @@ node {
 
 Credential Scanning Stage: The pipeline should start by checking out for passwords, access tokens etc in  Ansible playbook code from the repository.
 ```shell
-package org.avengers.ansible_CD
+package org.avengers.ansibleRole_CD
 def call(String gitleaksVersion) {
   stage('Credential Scanning') {
             script {
@@ -111,7 +113,7 @@ def call(String gitleaksVersion) {
 
 Linting Stage: Use Ansible Lint or similar tools to perform linting on your Ansible playbook to ensure adherence to best practices and coding standards.
 ``shell
-package org.avengers.ansible_CD
+package org.avengers.ansibleRole_CD
 def call() {
     stage('Linting Stage') {
        
@@ -133,7 +135,7 @@ def call() {
 
 Syntax Checking Stage: Run ansible-playbook with the --syntax-check option to validate the syntax of the playbook
 ```shell
-package org.avengers.ansible_CD
+package org.avengers.ansibleRole_CD
 def call() {
   stage('Syntax Checking Stage') {
            
@@ -148,7 +150,6 @@ def call() {
                 }
             }
         }
-  
 ```
 
 
@@ -156,7 +157,7 @@ def call() {
 
 DryRun.groovy: 
 ```shell
-package org.avengers.ansible_CD
+package org.avengers.ansibleRole_CD
 def call() {
   stage('Dry Run Stage') {
             script {
