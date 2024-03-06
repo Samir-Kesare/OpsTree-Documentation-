@@ -6,7 +6,7 @@
 
 | **Author** | **Created on** | **Last Updated** | **Document Version** |
 | ---------- | -------------- | ---------------- | -------------------- |
-| **Shreya Jaiswal** | **04 March 2024** | **05 March 2024** | **v1** |
+| **Shreya Jaiswal** | **06 March 2024** | **06 March 2024** | **v1** |
 
 ***
 
@@ -166,7 +166,7 @@ This Jenkins pipeline automates the deployment of a Redis server infrastructure 
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
-| **Copy Terraform Files**    | Copies Redis-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| **Copy Terraform Files**    | Copies Frontend-related Terraform configuration files to the Jenkins workspace. |                                                                                                
 | **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
 | **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
 | **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
@@ -220,7 +220,7 @@ Creates an AWS key pair for SSH access to the Redis server.
 
 | **References** |
 | -------------- |
-| [Link](https://github.com/CodeOps-Hub/Terraform/blob/aakash/redis_server/Dev_Infra/EC2/main.tf) |
+| [Link](https://github.com/CodeOps-Hub/Terraform/blob/feature/vishal/frontend-ASG-Policy/Dev_Infra/Static_Tf/Frontend/main.tf) |
 
 ***
 
