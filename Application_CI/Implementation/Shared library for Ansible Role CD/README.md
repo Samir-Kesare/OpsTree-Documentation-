@@ -84,9 +84,11 @@ node {
     
 }
 ```
+
 ***
 ## Jenkins Job Output
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/c4f40316-7e9e-4597-bf75-3daabaadb902)
 
 
 ***
