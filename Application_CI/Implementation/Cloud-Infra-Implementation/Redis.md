@@ -220,7 +220,7 @@ Creates an AWS key pair for SSH access to the Redis server.
 
 | **References** |
 | -------------- |
-| [Link](https://github.com/CodeOps-Hub/Terraform/blob/aakash/redis_server/Dev_Infra/EC2/main.tf) |
+| [Link](https://github.com/CodeOps-Hub/Terraform/blob/main/Dev_Infra/Static_Tf/redis/main.tf) |
 
 ***
 
