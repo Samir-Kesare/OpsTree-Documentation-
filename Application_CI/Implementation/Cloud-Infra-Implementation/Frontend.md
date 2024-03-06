@@ -52,7 +52,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 # Flow Diagram
 
-<img width="500" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/de4fd94f-f1de-4486-ba61-5aa58d5de178">
+<img width="500" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/89a37268-8284-4cf3-ae14-4663f388fae3">
 
 ***
 
