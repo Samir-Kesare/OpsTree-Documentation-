@@ -177,28 +177,53 @@ pipeline {
 
 **Blue Ocean Output**
 
-<img width="947" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bfaaa291-14ab-4343-a2fa-37f13105e037">
+![Screenshot 2024-03-06 221415](https://github.com/CodeOps-Hub/Documentation/assets/156057205/67c0827f-567a-4563-9e0b-7818c359e67c)
 
 ***
 
 **Console Output**
 
-<img width="725" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e22caf42-f73a-4e27-9b69-046b731b8adf">
+![Screenshot 2024-03-06 221341](https://github.com/CodeOps-Hub/Documentation/assets/156057205/e5dbe5af-453e-4524-8a64-4db506107300)
 
 ***
 
-**EC2 Instance Output (StandalonePostgresServer)**
+**VPC and it's resource map (dev-vpc)**
 
-Deploys a ScyllaDB server EC2 instance using the specified AMI, instance type, subnet, security group, and tags.
+Deploys a VPC (dev-vpc) and configured it's resources
 
-<img width="948" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8107530b-5fc6-4215-ab70-4a25b2c537e1">
+![Screenshot 2024-03-06 220953](https://github.com/CodeOps-Hub/Documentation/assets/156057205/749d829f-6895-4340-b4a7-aabe712056f3)
 
 ***
 
-**Security Group for Postgres(Postgres-sg)**
- Defines a security group for ScyllaDB server with specified ingress and egress rules.
+**Elastic IP Address**
+
+![Screenshot 2024-03-06 221023](https://github.com/CodeOps-Hub/Documentation/assets/156057205/11d49387-f134-4085-9e05-7bbaa854376c)
+
+***
+
+**Frontend Nacl (dev-frontend-nacl-01)**
+
+![Screenshot 2024-03-06 221157](https://github.com/CodeOps-Hub/Documentation/assets/156057205/dd8fe6f2-77a1-48bc-b5cf-754feca1a294)
+
+***
+
+**Backend Nacl (dev-backend-nacl-01)**
+
+![Screenshot 2024-03-06 221231](https://github.com/CodeOps-Hub/Documentation/assets/156057205/8e085006-40f0-408a-be19-0b8829496276)
+
+***
+
+**Database Nacl (dev-db-nacl-01)**
+
+![Screenshot 2024-03-06 221211](https://github.com/CodeOps-Hub/Documentation/assets/156057205/ceec943d-5e5b-4125-9c20-41b0a831e1fe)
+
+***
+
+**Security Group for Network Skeleton Load Balancer(dev-alb-sg)**
+
+ Defines a security group for Network Skeleton Load Balancer with specified ingress and egress rules.
  
-<img width="959" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/da009808-1368-475b-aac2-c911e9f36c71">
+![Screenshot 2024-03-06 220803](https://github.com/CodeOps-Hub/Documentation/assets/156057205/b6f86400-f1b7-4f35-8ced-01877dd89173)
 
 ***
 
@@ -206,6 +231,12 @@ Deploys a ScyllaDB server EC2 instance using the specified AMI, instance type, s
 Creates an AWS key pair for SSH access to the ScyllaDB server.
 
 <img width="956" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4508af18-f1e8-4195-9137-f69a0a7c657a">
+
+***
+
+**Load Balancer for Network Skeleton**
+
+![Screenshot 2024-03-06 220706](https://github.com/CodeOps-Hub/Documentation/assets/156057205/71f5ea2b-83e0-4154-836f-08b21a4122af)
 
 ***
 
