@@ -165,21 +165,37 @@ def call() {
             }
         }
 }
-
+```
 
 ### Step 4:
 
-AnsibleRun.groovy: 
+gitTag.groovy: 
 ```shell
-package org.avengers.ansible_CD
-def call() {
-  stage('Ansible Run Stage') {
+package org.avengers.ansibleRole_CD
+def call(String tagVersion) {
+  stage('Git Tag Stage') {
             script {
-                // Run the ansible playbook
-                sh 'ansible-playbook /var/lib/jenkins/workspace/Ansible_CD/jenkins_playbook/install_debian.yml'
+                // Tag the version
+                sh 'git tag -a v${tagVersion} -m "Version ${tagVersion}"'
             }
         }
-    }
+}
+```
+### Step 5
+
+gitPushTag.groovy
+```shell
+package org.avengers.ansibleRole_CD
+def call(String path) {
+  stage('Git Push Version Stage') {
+            script {
+                // Push the tagged version to the remote repository
+                withCredentials([usernamePassword(credentialsId: 'f941d7e1-ff1a-4bca-835c-a458a1b3d96a', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh 'git push ${path}'
+                }
+            }
+        }
+```
 ***
 ## Conclusion 
 
