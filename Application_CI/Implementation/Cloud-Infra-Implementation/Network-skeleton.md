@@ -1,4 +1,4 @@
-# Postgres Infra Documentation
+# Ntework Skeleton Infra Documentation
 
 |<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
 
@@ -166,7 +166,7 @@ pipeline {
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
-| **Copy Terraform Files**    | Copies Network-Skelton-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| **Copy Terraform Files**    | Copies Network-Skeleton-related Terraform configuration files to the Jenkins workspace. |                                                                                                
 | **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
 | **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
 | **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
