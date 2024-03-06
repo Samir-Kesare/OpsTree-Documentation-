@@ -92,7 +92,7 @@ pipeline {
         stage('Copy Terraform Files') {
             steps {
                 // Copy or move specific files from the repository to Jenkins workspace
-                sh 'cp Dev_Infra/Static_Tf/scylladb/* .'
+                sh 'cp Dev_Infra/Static_Tf/EC2/* .'
             }
         }
         
