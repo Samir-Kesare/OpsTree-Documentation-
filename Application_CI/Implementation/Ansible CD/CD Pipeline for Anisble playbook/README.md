@@ -165,3 +165,17 @@ Dry Run: Finally we can do a dry of our Ansible playbook where it will check tha
 ## Conclusion 
 
 In summary, Ansible empowers organizations to implement robust and efficient CD pipelines by automating infrastructure provisioning, application deployment, and configuration management tasks. Its simplicity and versatility make it a popular choice for DevOps teams striving to achieve continuous delivery and deployment of software applications.
+
+***
+## Contact Information
+
+| Name | Email address |
+| ---- | ------------- |
+| Samir Kesare | samir.kesare.snaatak@mygurukulam.co |
+
+***
+## Resources and References
+
+|  **Description** |   **Source** |
+| ---------------- | ------------ |
+| How to run Ansible playbook from Jenkins pipeline job | [https://medium.com/globant/owasp-zap-integration-with-jenkins-795d65991404](https://www.youtube.com/watch?v=PRpEbFZi7nI)https://www.youtube.com/watch?v=PRpEbFZi7nI |
