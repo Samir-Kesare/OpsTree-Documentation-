@@ -1,1 +1,65 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                // Clean up workspace
+                deleteDir()
+            }
+        }
+        stage('Checkout Stage') {
+            steps {
+                // Checkout the latest version of the Ansible playbook code from the repository
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'f941d7e1-ff1a-4bca-835c-a458a1b3d96a', url: 'https://github.com/CodeOps-Hub/Jenkins-Playbook.git']])
+            }
+        }
+        stage('Credential Scanning') {
+            steps {
+                sh 'wget https://github.com/gitleaks/gitleaks/releases/download/v8.18.2/gitleaks_8.18.2_linux_x64.tar.gz'
+                // Extract Gitleaks
+                sh 'tar xvzf gitleaks_8.18.2_linux_x64.tar.gz'
+                sh './gitleaks detect -r credScanReport.json'
+            }
+        }
+        stage('Linting Stage') {
+            steps {
+                script {
+                    try {
+                        // Use Ansible Lint to perform linting on your Ansible playbook
+                        sh 'ansible-lint /var/lib/jenkins/workspace/Ansible_CD/jenkins_playbook/install_debian.yml -q > lint_report.txt'
+                    } catch (Exception e) {
+                        // Ignore linting errors
+                        echo 'Linting completed with errors. Ignoring...'
+                    }
+                }
+            }
+        }
+        stage('Syntax Checking Stage') {
+            steps {
+                script {
+                    try {
+                        // Run ansible-playbook with the --syntax-check option to validate playbook syntax
+                        sh 'ansible-playbook /var/lib/jenkins/workspace/Ansible_CD/jenkins_playbook/install_debian.yml --syntax-check > syntaxcheck_report.txt'
+                    } catch (Exception e) {
+                        // Ignore syntax check errors
+                        echo 'Syntax checking completed with errors. Ignoring...'
+                    }
+                }
+            }
+        }
+        stage('Dry Run Stage') {
+            steps {
+                // Perform a dry run 
+                sh 'ansible-playbook /var/lib/jenkins/workspace/Ansible_CD/jenkins_playbook/install_debian.yml --check'
+            }
+        }
+        stage('Ansible Run Stage') {
+            steps {
+                // Run the ansible playbook
+                sh 'ansible-playbook /var/lib/jenkins/workspace/Ansible_CD/jenkins_playbook/install_debian.yml'
+            }
+        }
+    }
+}
 
