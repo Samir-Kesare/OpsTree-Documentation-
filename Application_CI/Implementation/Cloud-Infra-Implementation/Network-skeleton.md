@@ -157,7 +157,7 @@ pipeline {
 
 ```
 
-**This Jenkins pipeline automates the deployment of a ScyllaDB server infrastructure using Terraform. It's configured to perform the following actions:**
+**This Jenkins pipeline automates the deployment of a Network Skeleton infrastructure using Terraform. It's configured to perform the following actions:**
 
 ### Terraform Deployment Pipeline Overview
 
