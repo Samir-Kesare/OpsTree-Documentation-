@@ -179,13 +179,13 @@ pipeline {
 
 **Blue Ocean Output**
 
-<img width="951" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/6a535d77-700c-4813-a2db-d293a59ef799">
+<img width="946" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8cb7e03f-d57f-4fc1-ae41-f3d73d52a3d6">
 
 ***
 
 **Console Output**
 
-<img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3f134493-6e49-4cca-bc8a-7c5070c30ee7">
+<img width="728" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a5eaffee-e414-42c8-b6d5-22bf67c6179f">
 
 ***
 
@@ -212,7 +212,7 @@ Creates an AWS key pair for SSH access to the Redis server.
 
 **Archive Artifact (SSH key pair)**
 
-<img width="957" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e3fc938a-7391-4a06-9205-0bbab97be329">
+<img width="950" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/57297b13-07f8-4707-9c91-e41f6e93d2d1">
 
 ***
 
