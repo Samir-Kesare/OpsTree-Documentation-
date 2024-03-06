@@ -221,7 +221,7 @@ Creates an AWS key pair for SSH access to the ScyllaDB server.
 
 | **References** |
 | -------------- |
-| [Link](https://github.com/CodeOps-Hub/Terraform/blob/shreya/scylladb_pipeline/Dev_Infra/Static_Tf/scylladb/main.tf) |
+| [Link](https://github.com/CodeOps-Hub/Terraform/blob/Vikram-EC2-PGSQL/Dev_Infra/EC2/main.tf) |
 
 ***
 
