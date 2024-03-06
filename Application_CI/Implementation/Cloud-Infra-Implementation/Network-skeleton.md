@@ -233,17 +233,11 @@ Deploys a VPC (dev-vpc) and configured it's resources
 
 ***
 
-**Archive Artifact (SSH key pair)**
-
-<img width="944" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7130a5d3-2bde-4b31-b1af-099b8a1dac6c">
-
-***
-
 # Related Works
 
 | **References** |
 | -------------- |
-| [Link](https://github.com/CodeOps-Hub/Terraform/blob/shreya/scylladb_pipeline/Dev_Infra/Static_Tf/scylladb/main.tf) |
+| [Link](https://github.com/CodeOps-Hub/Terraform/blob/main/Dev_Infra/Static_Tf/network/main.tf) |
 
 ***
 
