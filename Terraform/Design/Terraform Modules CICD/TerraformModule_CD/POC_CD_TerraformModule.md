@@ -347,9 +347,9 @@ node {
 ## [Terraform groovy template file](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/terraformCD/terraform_CD.groovy)
 
 <details>
-<summmary> Click here to see terraform_CD.groovy </summmary>
+<summary> Click here to see terraform_CD.groovy</summary>
 <br>
-
+  
 ```shell
 
 package org.avengers.template.terraformCD
