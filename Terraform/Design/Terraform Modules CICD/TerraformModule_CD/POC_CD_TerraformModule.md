@@ -18,7 +18,7 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 
 ## Implementation of CD checks on Terraform Module
 
-![Uploading image.png…]()
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c56d7ed0-7db0-49ce-aeb8-d35f53a0f993)
 
 
 | Tool             | Purpose                                                                                                                                                                  |
@@ -62,6 +62,8 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/f8013239-2848-4271-bbf1-c52087fb89e3)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c503a56d-aa9a-4b42-b58b-e4991fb4a5d6)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/04ee1e85-b439-4155-aa17-9b256b93b557)
 
 <details>
 <summary> Click here for Console Output</summary>
