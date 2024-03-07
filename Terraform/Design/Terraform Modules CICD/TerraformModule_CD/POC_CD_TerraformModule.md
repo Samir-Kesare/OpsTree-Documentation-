@@ -13,7 +13,9 @@
 - [Terraform Module](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md#terraform-module)
 - [Jenkinsfile](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md#jenkinsfile)
 - [Terraform groovy template file](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md#terraform-groovy-template-file)
-- [Shared Library src files](
+- [Shared Library src files](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md#shared-library-src-files)
+- [Contact Information](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md#contact-information)
+- [References](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md#references)
 
 ## Introduction
 Integrating Continuous Deployment (CD) practices into Continuous Integration/Continuous Deployment (CI/CD) pipelines for Terraform modules involves automating the deployment of infrastructure configurations.
