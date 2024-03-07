@@ -18,6 +18,9 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 
 ## Implementation of CD checks on Terraform Module
 
+![Uploading image.png…]()
+
+
 | Tool             | Purpose                                                                                                                                                                  |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | terraform plan  | The `terraform plan` command is used to create an execution plan for changes to your infrastructure. It compares the current state of your infrastructure, as defined by your Terraform configuration files, with the desired state specified in those files. It then generates an execution plan that describes what Terraform will do to achieve the desired state, including which resources will be created, modified, or destroyed. However, `terraform plan` does not make any actual changes to your infrastructure; it only previews the changes that Terraform would make. This allows you to review the proposed changes before applying them to your infrastructure. |
