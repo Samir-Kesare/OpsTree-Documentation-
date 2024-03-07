@@ -33,7 +33,8 @@ A well-designed cloud infrastructure for production environments encompasses var
 ***
 ## Infrastructure Diagram
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/1493920b-fdd3-4734-8cba-5c8865525b2e)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/68f7ae12-c1ce-43ae-9b2a-4a68e9637a5b)
+
 
 
 ---
@@ -67,88 +68,64 @@ A well-designed cloud infrastructure for production environments encompasses var
 | Database | Scylla-sg      | 22, 9042             | Backend-sg          |               
 
 ***
-
 ## NACL Rules
-
-### Public NACL Inbound Rules
-
-| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 0.0.0.0/0    | Allow      |
-| 110         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.16/28    | Allow      |
-| 120         | Custom TCP      | TCP      | 1194        | 0.0.0.0/0   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
-
-### Public NACL Outbound Rules
-
-| Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | 0.0.0.0/0   | Allow      |
-| *           | All traffic | All     | All       | 0.0.0.0/0    | Deny      |
 
 ### Frontend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28  | Allow      |
-| 130         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28, 10.0.1.0/27  | Allow      |
+| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/27, 10.0.1.64/27 | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Frontend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28 | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
-| 130         | Custom TCP| TCP      | 32768-65535| 10.0.1.0/28  | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.64/27 | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
-| 120         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/28    | Allow      |
-| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/28    | Allow      |
-| 140         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | SSH       | TCP      | 22         | 20.0.0.0/28, 10.0.1.0/27  | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/27, 10.0.1.64/27 | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.48/27 | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | 10.0.1.64/27 | Allow      |
+| 140         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535| 10.0.1.48/28 | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535| 10.0.1.64/28 | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 10.0.1.48/27 | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.64/27 | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
-| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
-| 140         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
+| 100         | SSH       | TCP         | 22               | 20.0.0.0/28, 10.0.1.0/27  | Allow      |
+| 110         | Custom TCP(Redis)       | TCP | 6379       | 10.0.1.32/27 | Allow      |
+| 120         | Custom TCP(Scylla)      | TCP | 9042       | 10.0.1.32/27 | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | 10.0.1.32/27 | Allow      |
 | *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
-| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/28 | Allow      |
-| 150         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28 | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/27 | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | 10.0.1.0/27  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ***
 ## Cloud Architecture Best Practices
