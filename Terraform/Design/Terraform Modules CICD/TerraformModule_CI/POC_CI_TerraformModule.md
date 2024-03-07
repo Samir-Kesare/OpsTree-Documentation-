@@ -43,7 +43,7 @@ Terraform module CI, or continuous integration, refers to the practice of automa
 **Step-1** Create a New Pipeline Job
 
 - Navigate to the Jenkins dashboard and click on New Item.
-- Enter a name for your job (e.g., "Declarative pipeline-Golang-Static-Code-Analysis").
+- Enter a name for your job (e.g., "Terraform.CI").
 - Select Pipeline and click OK.
 
 **Step-2** Configure Pipeline Script
