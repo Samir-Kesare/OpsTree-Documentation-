@@ -387,3 +387,17 @@ def call(String rootPath, String childPath) {
 
 ```
 </details>
+
+## Contact Information
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
+
+## References
+
+| Description                                   | References  
+| --------------------------------------------  | -------------------------------------------------|
+| Terraform Module | https://spacelift.io/blog/what-are-terraform-modules-and-how-do-they-work |
+| What is CD | https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment |
+| Terraform Module CI/CD | https://www.reddit.com/r/Terraform/comments/17ldr9i/cicd_for_creating_terraform_modules/ |
+
