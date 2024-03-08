@@ -1,16 +1,16 @@
-# Frontend API Infra Documentation
+# Attendance API Infra Documentation
 
 |<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
 
 ***
 
-| **Author** | **Created on** | **Last Updated** | **Document Version** |
-| ---------- | -------------- | ---------------- | -------------------- |
-| **Shreya Jaiswal** | **06 March 2024** | **06 March 2024** | **v1** |
+|   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
+| --------------- | --------------| -----------|----------------- | -------------- |
+| Khushi Malhotra | 06 March 2024 |  Version 1 | Khushi Malhotra  | 07 March 2024  |
 
 ***
 
-# Table of contents
+## Table of contents
 * [Introduction](#Introduction)
 * [What is DSL Pipeline](#What-is-DSL-Pipeline)
 * [Why DSL Pipeline](#Why-DSP-Pipeline)
@@ -25,13 +25,13 @@
 
 ***
 
-# Introduction
+## Introduction
 
 With the increasing complexity of modern networks and the need for agility in infrastructure management, Terraform has emerged as a powerful tool for automating the provisioning and configuration of network resources.This module is designed to provide a foundational framework for managing network infrastructure as code using Terraform. By leveraging this module, users can quickly establish a standardized and scalable network architecture within their cloud environment.As networks get more complicated and managing infrastructure becomes more important, specialized languages called Domain-Specific Languages (DSLs) have become really useful. They help simplify and automate different tasks.
 
 ***
 
-# What is DSL Pipeline?
+## What is DSL Pipeline?
 
 A Domain-Specific Language (DSL) is a programming language or specification language dedicated to a particular problem domain, a particular problem representation technique, and/or a particular solution technique.DSL Pipeline is a robust framework designed to facilitate the creation, deployment, and management of domain-specific languages within your software development projects. By employing DSLs, developers can express solutions in a concise, domain-specific syntax tailored to the problem at hand, thereby enhancing productivity and reducing the gap between domain experts and software implementation.
 
@@ -39,7 +39,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-# Why DSL Pipeline
+## Why DSL Pipeline
 
 | Key Features  | Description                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -50,13 +50,13 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-# Flow Diagram
+## Flow Diagram
 
 <img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4c30ca5b-e159-4ad2-8c86-8c96d30be55b">
 
 ***
 
-# Pre-requisites
+## Pre-requisites
 
 | **Pre-requisites** | **Description** |
 | ------------------ | ---------------- |
@@ -66,7 +66,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-# Jenkinsfile
+## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/khushi/Attendance_pipeline/Jenkinsfile)
 
 ```shell
 pipeline {
@@ -175,7 +175,7 @@ pipeline {
 | **Post**                    | Displays success or failure messages. |                                                                                                                                          
 ***
 
-# Output
+## Output
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/3d513f87-b0bf-4927-a2e8-b757c34e55f0)
 
@@ -1160,25 +1160,25 @@ Defines a target group for routing requests to registered instances. It includes
 
 | **References** |
 | -------------- |
-| [Link](https://github.com/CodeOps-Hub/Terraform/blob/feature/vishal/frontend-ASG-Policy/Dev_Infra/Static_Tf/Frontend/main.tf) |
+| [Attendance API Terraform Code](https://github.com/CodeOps-Hub/Terraform/tree/main/Dev_Infra/Static_Tf/Attendance) |
 
 ***
 
-# Conclusion
+## Conclusion
 
 In conclusion, our DSL Pipeline offers a powerful solution for creating and managing domain-specific languages, enabling developers to express complex ideas in a concise and understandable manner. By embracing DSLs, organizations can accelerate development cycles, improve collaboration between domain experts and developers, and ultimately deliver higher-quality software solutions. 
 
 ***
 
-# Contact Information
+## Contact Information
 
-| **Name** | **Email Address** |
-| -------- | ----------------- |
-| **Shreya Jaiswal** | shreya.jaiswal.snaatak@mygurukulam.co |
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
 
 ***
 
-# References
+## References
 
 | **Source** | **Description** |
 | ---------- | --------------- |
