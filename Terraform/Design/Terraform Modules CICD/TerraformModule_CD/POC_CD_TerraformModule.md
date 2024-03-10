@@ -79,9 +79,9 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 <details>
 <summary> Click here for Console Output</summary>
 <br>
-
+  
   ```shell
-  Started by user khushi
+ Started by user khushi
 Obtained SharedLibrary/Terraform_CD_JF/Jenkinsfile from git https://github.com/CodeOps-Hub/Jenkinsfile.git
 Loading library shared-library@main
 Attempting to resolve main from remote references...
@@ -89,7 +89,7 @@ Attempting to resolve main from remote references...
  > git --version # 'git version 2.34.1'
 using GIT_ASKPASS to set credentials khushi_pass_secret
  > git ls-remote -h -- https://github.com/CodeOps-Hub/SharedLibrary.git # timeout=10
-Found match: refs/heads/main revision cbddee0f57f0d8c78c5d3c348d351e9978881830
+Found match: refs/heads/main revision 258b73a9c2cc782bbf3d318edad3942a1937e306
 The recommended git tool is: NONE
 using credential khushi_pass_secret
  > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/terraform_module_CD@libs/9b45fc695856553d98bb823001a46a17146f4d25f13f1d010b47c5ae1c9c87b1/.git # timeout=10
@@ -101,11 +101,11 @@ Fetching upstream changes from https://github.com/CodeOps-Hub/SharedLibrary.git
  > git --version # 'git version 2.34.1'
 using GIT_ASKPASS to set credentials khushi_pass_secret
  > git fetch --no-tags --force --progress -- https://github.com/CodeOps-Hub/SharedLibrary.git +refs/heads/*:refs/remotes/origin/* # timeout=10
-Checking out Revision cbddee0f57f0d8c78c5d3c348d351e9978881830 (main)
+Checking out Revision 258b73a9c2cc782bbf3d318edad3942a1937e306 (main)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f cbddee0f57f0d8c78c5d3c348d351e9978881830 # timeout=10
+ > git checkout -f 258b73a9c2cc782bbf3d318edad3942a1937e306 # timeout=10
 Commit message: "Update deploy.groovy"
- > git rev-list --no-walk eaae312e38426559448bf0608bdf00307f0bb9aa # timeout=10
+ > git rev-list --no-walk f5e897050cd4ab95662513ff03664461155a3cce # timeout=10
 [Pipeline] Start of Pipeline
 [Pipeline] properties
 [Pipeline] node
@@ -250,6 +250,18 @@ guarantee to take exactly these actions if you run "terraform apply" now.
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
+[Pipeline] { (Approval For Apply)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] input
+Do you want to apply Terraform changes?
+Proceed or Abort
+Approved by khushi
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
 [Pipeline] { (Terraform Apply)
 [Pipeline] script
 [Pipeline] {
@@ -298,13 +310,13 @@ Terraform will perform the following actions:
 Changes to Outputs:
   [32m+[0m[0m vpc-id = (known after apply)
 [0m[1maws_vpc.dev-vpc: Creating...[0m[0m
-[0m[1maws_vpc.dev-vpc: Creation complete after 4s [id=vpc-02370d9be48c8b607][0m
+[0m[1maws_vpc.dev-vpc: Creation complete after 3s [id=vpc-027a7abf8eb64b088][0m
 [0m[1m[32m
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 [0m[0m[1m[32m
 Outputs:
 
-[0mvpc-id = "vpc-02370d9be48c8b607"
+[0mvpc-id = "vpc-027a7abf8eb64b088"
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
@@ -313,6 +325,7 @@ Outputs:
 [Pipeline] // node
 [Pipeline] End of Pipeline
 Finished: SUCCESS
+
 ```
 </details>
 
@@ -396,12 +409,20 @@ def call(String rootPath, String childPath) {
         }
     }
 
-    stage("Terraform Apply") {
-        script {
-            sh "cd ${rootPath}/${childPath} && terraform apply -auto-approve"
+    stage('Approval For Apply') {
+            script {
+                // Prompt for approval before applying changes
+                input "Do you want to apply Terraform changes?"
+            }
         }
-    }
-}
+    stage('Terraform Apply') {
+            script {
+                // Run Terraform apply
+                sh 'cd ${rootPath}/${childPath} && terraform apply -auto-approve'
+            }
+        }
+       
+   }
 
 ```
 </details>
