@@ -68,7 +68,7 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 - The console output will display the steps executed by the pipeline script, including code checkout and compilation.
 - Verify Successful Compilation.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d9849dc6-e67a-49f6-b98d-bf1a6d17c406)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/e5b2b9eb-3871-47f7-aae0-7bad6077a05e)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/f8013239-2848-4271-bbf1-c52087fb89e3)
 
@@ -77,7 +77,7 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/04ee1e85-b439-4155-aa17-9b256b93b557)
 
 <details>
-<summary> Click here for Console Output</summary>
+<summary> <b> Click here for Console Output </b> </summary>
 <br>
   
   ```shell
