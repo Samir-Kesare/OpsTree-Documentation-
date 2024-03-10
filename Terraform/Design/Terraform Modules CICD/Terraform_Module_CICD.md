@@ -56,6 +56,23 @@ For Terraform CD, I'm employing a streamlined approach to deployment using the t
 > [!IMPORTANT]  
 > For POC of Terraform Module CD [Click Here](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Terraform%20Modules%20CICD/TerraformModule_CD/POC_CD_TerraformModule.md).
 
+## Terraform best-practices when working with modules
+
+| Best Practice                                              | Description                                                                                                                                              |
+|------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Modularization                                            | Break down infrastructure into small, reusable modules to promote code reuse, simplify maintenance, and facilitate collaboration.                      |
+| Clear Module Purpose                                      | Ensure each module has a well-defined purpose, addressing a single concern (e.g., provisioning a specific service or configuring a component).         |
+| Input and Output Variables                                | Use input variables to parameterize modules and output variables to expose relevant information for customization based on different use cases.         |
+| Documentation                                             | Provide comprehensive documentation, including usage examples, input variable descriptions, and output variable details, to promote module adoption.    |
+| Versioning                                                | Manage Terraform modules using version control (e.g., Git) and version them appropriately with tools like version tags, following semantic versioning.   |
+| Testing                                                   | Implement automated testing to validate correctness and functionality using tools like Terratest or Kitchen-Terraform.                                  |
+| Linting and Formatting                                    | Integrate linting (e.g., tflint) and formatting (e.g., terraform fmt) tools into the development workflow to enforce code style conventions and detect errors. |
+| Dependency Management                                     | Explicitly declare dependencies between modules to ensure correct propagation of changes and prevent unintended side effects.                            |
+| Use Case Specific                                         | Design modules to be generic for reuse across projects but specific enough to address common use cases, avoiding overly generic or specific implementations. |
+| Continuous Integration/Continuous Deployment (CI/CD)      | Incorporate CI/CD pipelines to automate testing, validation, and deployment, ensuring thorough testing and controlled deployment of module changes.        |
+| State Management                                          | Consider using a centralized, versioned state management solution (e.g., Terraform Cloud) to store and manage Terraform state files securely and collaboratively. |
+
+
 ## Contact Information
 | Name            | Email Address                        |
 |-----------------|--------------------------------------|
