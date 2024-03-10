@@ -1285,7 +1285,8 @@ Defines a target group for routing requests to registered instances. It includes
 
 **Archive Artifact (SSH key pair - Dev_Key)**
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/15392855-a28b-48c2-a572-b7adc366f2a2)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/ef361bd0-305f-45ec-9acb-1053589fa866)
+
 
 ***
 
