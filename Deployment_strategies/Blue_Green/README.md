@@ -1,8 +1,6 @@
-
-
 # Deployment strategies ( Blue-Green Deployment )
 
-<img width="360" length="100" src="">
+<img width="360" length="100" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/1ac4fbe8-df4d-4334-a3f6-9b567fe24aef">
 
 ***
 
