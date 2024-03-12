@@ -43,8 +43,8 @@ Monitoring application logs is essential for maintaining the health and performa
 | Response Times                    | - Monitor response times for application components <br>- Identify slow-performing services <br>- Set thresholds and trigger alerts for unacceptable times     |
 | Request Volume	           | - Measure incoming request volume <br>- Analyze request patterns for peak usage times <br>- Dynamically scale infrastructure for volume fluctuations |
 | Resource Utilization	               | - Monitor CPU, memory, disk I/O, and network usage <br>- Detect resource-intensive operations <br>- Optimize resource allocation for better performance      |
-| Authentication/Authorization		               | - Log authentication and authorization events <br>- Monitor for unusual or unauthorized access attempts <br>- Implement audit trails for compliance/security      |
-| Application-specific Metrics			               | - Identify custom metrics relevant to application functionality <br>- Examples: transaction throughput, DB query performance, cache hit rates, etc.      |
+| Latency		               | Measure the time delay between initiating a request and receiving the first byte of the response. Low latency is essential for real-time or interactive applications  |
+| Throughput			               | Measure the number of transactions or requests processed per unit of time. It indicates how well the application can handle a high volume of concurrent requests      |
 
 # Tools for Log Monitoring
 
