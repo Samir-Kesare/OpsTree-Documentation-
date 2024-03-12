@@ -1,6 +1,6 @@
 
 
-# Deployment strategies ( Rolling Deployments )
+# Deployment strategies ( Blue-Green Deployment )
 
 <img width="360" length="100" src="">
 
