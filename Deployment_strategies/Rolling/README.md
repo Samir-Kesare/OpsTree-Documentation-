@@ -19,6 +19,7 @@
 * [Flow Diagram](#Flow-Diagram)
 * [Advantages of Rolling Deployments](#Advantages-of-Rolling-Deployments)
 * [Disadvantages of Rolling Deployments](#Disadvantages-of-Rolling-Deployments)
+* [Best Practices](#Best-Practices)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -89,6 +90,22 @@ The process involves sequentially updating or replacing instances of the applica
 
 ***
 
+## Best Practices
+
+| Best Practice              | Description                                                                                                                                                                                                                                   |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Start Small**                | Begin with a small subset of servers or instances to minimize the impact of any potential issues. This allows for easier troubleshooting and rollback if necessary.                                                                         |
+| **Monitor Health**             | Continuously monitor the health and performance of deployed instances during the rollout process. Automated monitoring tools can help detect any anomalies or failures early on.                                                            |
+| **Automate Testing**           | Implement automated testing procedures to ensure that each instance meets performance and functionality requirements before it is fully deployed.                                                                                             |
+| **Incremental Updates**        | Deploy updates incrementally, gradually replacing older versions with newer ones. This helps minimize risks and ensures a smoother transition.                                                                                               |
+| **Rollback Plan**              | Have a well-defined rollback plan in place in case of any issues or failures during the deployment process. This should include procedures for reverting to the previous version quickly and efficiently.                                       |
+| **Version Control**            | Maintain strict version control to track changes and updates accurately. This enables easier identification of issues and facilitates rollback if necessary.                                                                                  |
+| **Communication**              | Maintain clear communication channels among team members and stakeholders throughout the deployment process. This ensures everyone is aware of progress, potential issues, and any necessary actions.                                        |
+| **Post-Deployment Verification** | Perform thorough post-deployment verification to ensure that all instances are functioning correctly and meeting performance expectations.                                                                                                   |
+| **Documentation**              | Document all steps, configurations, and changes made during the deployment process. This documentation serves as a valuable reference for future deployments and troubleshooting.                                                              |
+| **Continuous Improvement**     | Continuously review and improve the deployment process based on feedback, lessons learned, and evolving best practices. This iterative approach helps optimize efficiency and reliability over time.                                        |
+
+***
 
 ## Conclusion
 
