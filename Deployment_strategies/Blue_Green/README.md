@@ -63,7 +63,10 @@ You release the new version to the green environment, and after thorough testing
 
 ## Flow Diagram
 
-<img src="https://miro.medium.com/v2/resize:fit:1400/1*3TgdE09sHY495W0DwRKEAQ.gif" width="500">
+
+Blue-Green deployment is a strategy where a new version of an application is deployed to a separate environment (Green) while the current version remains active in production (Blue). Once the new environment is validated, all traffic is redirected to it, allowing the old environment to become idle. This approach enables easy rollback in case of critical errors by simply redirecting traffic back to the original environment. The deployment procedure is considered complete once the old environment is terminated. This method ensures minimal downtime, seamless transition for end-users, and provides a reliable mechanism for ensuring application stability and availability.
+
+![Blue-Green GIF](https://www.encora.com/hs-fs/hubfs/blue-green-deployment.gif?width=540&name=blue-green-deployment.gif)
 
 ***
 
