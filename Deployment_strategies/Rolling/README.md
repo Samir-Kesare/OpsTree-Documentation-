@@ -38,7 +38,7 @@ Software deployment includes all of the steps, processes, and activities that ar
 
 ***
 
-## Why is software deployment important ?
+## Why is software deployment important?
 
 | Aspect                        | Description                                                                                                                                                                 |
 |-------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
