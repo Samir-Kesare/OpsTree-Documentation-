@@ -1,6 +1,6 @@
 # Deployment strategies ( Canary Deployment )
 
-<img width="360" length="100" src="">
+<img width="360" length="100" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/24ad8e64-67e6-4c50-80ae-4fd802f806fb">
 
 ***
 
