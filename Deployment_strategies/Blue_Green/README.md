@@ -94,8 +94,9 @@ Software deployment includes all of the steps, processes, and activities that ar
 
  | **Source** | **Description** |
  | ---------- | --------------- |
- | [Link]() | About Blue-Green deployments |
- | [Link]() | |
- | [Link](https://www.sumologic.com/glossary/software-deployment/) | Software deployment |
-
+ | [**Link**]() | About Blue-Green deployments |
+ | [**Link**]() | |
+ | [**Link**](https://www.sumologic.com/glossary/software-deployment/) | Software deployment |
+ | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Rolling/README.md) | Rolling Deployment_strategies |
+ | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md) | Canary Deployment_strategies |
  
