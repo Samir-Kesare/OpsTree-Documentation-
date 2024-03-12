@@ -1,7 +1,7 @@
 
 # Deployment strategies ( Rolling Deployments )
 
-<img width="360" length="100" src="">
+<img width="360" length="100" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/4520c3c2-6636-438b-928c-ea461f21c422">
 
 ***
 
