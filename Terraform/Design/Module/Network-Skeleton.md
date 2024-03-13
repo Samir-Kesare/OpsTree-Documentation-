@@ -72,6 +72,10 @@ A Terraform module is a container for organizing and reusing Terraform code to m
 
 **The `main.tf` file contains the configuration for creating various AWS resources such as VPC, subnets, internet gateway, NAT gateway, route tables, network ACLs, security groups, ALB, Route 53 zone, and records.**
 
+<details>
+<summary> Click here to see main.tf file</summary>
+<br>
+  
 ```shell
 /*--------------- VPC ---------------*/
 
@@ -348,12 +352,18 @@ resource "aws_route53_record" "dev_route53_record" {
   }
 }
 ```
+</details>
+
 ***
 
 ### variables.tf file
 
 **The `variables.tf` file defines input variables used in the `main.tf` file to parameterize the configuration. These variables include VPC settings, subnet details, internet gateway tags, NAT gateway tags, route table tags, network ACLs, ALB security group settings, ALB configuration, Route 53 zone tags, and record settings.**
 
+<details>
+<summary> Click here to see variables.tf file</summary>
+<br>
+  
 ```shell
 variable "region" {
   type    = string
@@ -689,11 +699,17 @@ variable "route53_zone_name" {
   default = "example.com"
 }
 ```
+</details>
+
 ***
 
 ### output.tf file
 
 **The `output.tf` file specifies the outputs of the Terraform configuration. It includes the IDs of various resources created such as VPC, subnets, internet gateway, NAT gateway, route tables, network ACLs, ALB security group, ALB DNS name, Route 53 zone name servers, and Route 53 record name.**
+
+<details>
+<summary> Click here to see output.tf file</summary>
+<br>
 
 ```shell
 output "vpc-id" {
@@ -752,6 +768,8 @@ output "dev-route53-record" {
   value = aws_route53_record.dev_route53_record.name
 }
 ```
+</details>
+
 ***
 
 # Output
