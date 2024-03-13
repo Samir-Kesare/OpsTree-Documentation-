@@ -758,6 +758,7 @@ output "dev-route53-record" {
 
 ## Terminal Output
 
+<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bd9a27e6-97e7-467b-b3ac-ad2cd7df65e6">
 
 ***
 
