@@ -53,6 +53,17 @@ Performance metrics are essential in API monitoring for several reasons:
 |**Latency**| measures the time for a data packet to travel to and from the server, affected by physical distance, network congestion, routing, and transmission medium. High latency can degrade user experience and reduce throughput.
 | **Availability, or uptime,** | represents the operational time of an API. Strategies to maximize it include redundancy, regular maintenance, proactive monitoring, and load balancing.
 | **Data throughput** | indicates the API's data handling capacity over time. Influenced by network bandwidth, server capacity, data compression, concurrency, and network latency, optimizing it enhances user experience and resource utilization. |
+Certainly! Here's the revised table with the best practices and insights removed and transferred to another section:
+
+| Metric                    | Description                                                                                                                                                                               |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Request per Minute (RPM)  | - Measures application throughput handled by the application manager. - Serves as an upper bound for an application interface. - Engineering to reduce API calls is crucial.       |
+| Average and Max Latency   | - Tracks customer experience through API latency. - Correlates to user responsiveness in an upscaled infrastructure. - Monitoring latency breakdowns is important.                  |
+| Errors per Minute (EPM)   | - Measures API calls with non-200 status codes per minute. - Indicates error-prone and critical API calls.                                                                               |
+| API Usage Growth          | - Measures adoption of API in application interface. - DevOps ensure error-free API usage.                                                                                                |
+| Uptime or Availability   | - Includes basic performance metrics of SLA(Service Level Agreement). - Indicated by uptime and downtime in a set of 9s.                                                                                           |
+| CPU Usage                 | - Vital for API responsiveness. - Used for resource planning and assessing API health.                                                                                                    |
+| Memory Usage              | - Measures allocated resources to the application interface. - Indicative of server overloading and memory usage.|
 ***
 ## Tools
 Here's a condensed overview of the best API monitoring tools in a tabular format:
@@ -94,20 +105,20 @@ These tools offer a range of features to monitor, analyze, and optimize API perf
 ***
 
 # Best Practices
-Here are concise best practices for API metrics monitoring:
 
-| Best Practices          | Description                                                                                                  |
-|-------------------------|--------------------------------------------------------------------------------------------------------------|
-| Clear Objectives        | Define goals aligned with business objectives and user needs.                                       |
-| Relevant Metrics        | Select metrics like response time, error rate, and throughput that provide actionable insights.              |
-| Establish Baselines     | Set baseline metrics to detect anomalies and issues early.                                                    |
-| Thresholds and Alerts   | Define thresholds and configure alerts for timely response to issues.                                         |
-| Real-Time Monitoring    | Monitor APIs in real-time to address performance issues promptly.                                              |
-| Data Analysis           | Analyze metric data to identify trends and optimize performance.                                               |
-| Global Monitoring       | Monitor APIs from multiple locations for consistent performance worldwide.                                     |
-| Security Monitoring     | Include security-related metrics to detect and respond to threats.                                             |
-| Regular Review          | Conduct regular reviews to optimize performance and user experience.                                           |
-| Continuous Improvement  | Continuously refine monitoring strategy based on feedback and evolving needs.                                  |
+1. Batching page structure reduces API calls for improved RPM.
+2. Understanding latency changes aids in identifying API performance issues.
+3. Prototyping APIs with proper HTTP status codes aids in understanding error types.
+4. Track API usage over longer intervals (e.g., months).
+5. Use a 28-day period to remove biases due to weekends and weekdays.
+6. Configure probes to run at fixed intervals for backup or service maintenance without disruption.
+7. Synthetic testing aids in understanding user experience.
+8. Monitor CPU usage for balanced application threading.
+9. Cryptographic protocols can monitor CPU usage.
+10. Configure APIs with appropriate memory allocation.
+11. High memory usage may indicate database management issues or excessive page thrashing.
+
+These insights provide additional context and guidance for optimizing and monitoring the listed metrics.
 ***
 ##  Conclusion
 In conclusion, effective API monitoring is essential for ensuring the reliability and performance of digital services. By leveraging key performance metrics and robust monitoring practices, organizations can proactively identify and address issues, optimize resource allocation, and enhance user satisfaction. With a diverse range of monitoring tools available, coupled with clear objectives and regular review processes, businesses can ensure seamless operations and drive continuous improvement in their digital ecosystems. Prioritizing API monitoring is crucial for delivering exceptional digital experiences and staying competitive in today's fast-paced landscape.
