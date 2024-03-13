@@ -18,6 +18,8 @@
   + [Response Time](#Response-Time)
   + [Deadlocks](#Deadlocks)
 + [Tools for Database Monitoring](#Tools-for-Database-Monitoring)
++ [Companies who uses these Tools](#Companies-who-uses-these-Tools)
++ [Advantages and Disadvantges of Database Monitoring](#Advantages-and-Disadvantges-of-Database-Monitoring)
 + [Best practice](#Best-practice)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
@@ -140,6 +142,24 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 | **Grafana**       | Grafana is an open-source analytics and monitoring solution that allows you to query, visualize, alert on, and understand your metrics. It supports various data sources, including Prometheus, and offers a rich set of visualization options, including graphs, charts, and tables. Grafana is highly customizable, making it suitable for creating dashboards tailored to specific monitoring needs. |
 | **Datadog**       | Datadog is a cloud-based monitoring and analytics platform that provides infrastructure monitoring, application performance monitoring (APM), and log management. It supports a wide range of integrations and provides comprehensive visibility into the performance and health of your infrastructure and applications. Datadog offers features such as anomaly detection, distributed tracing, and customizable dashboards. |
 | **AppDynamics**   | AppDynamics is an application performance monitoring (APM) solution that provides real-time insights into the performance of your applications and infrastructure. It automatically discovers and maps application dependencies, allowing you to quickly identify performance bottlenecks and optimize application performance. AppDynamics offers features such as code-level diagnostics, business transaction monitoring, and end-user monitoring. |
+
+## Companies who uses these Tools
+| Tool         | Companies Using                                                                                     |
+|--------------|-----------------------------------------------------------------------------------------------------|
+| Prometheus   | SoundCloud, DigitalOcean, Weaveworks                                                               |
+| Grafana      | eBay, PayPal, Booking.com                                                                          |
+| Datadog      | Airbnb, Spotify, Samsung                                                                           |
+| AppDynamics  | Cisco, Expedia, NASDAQ                                                                             |
+
+
+## Advantages and Disadvantges of Database Monitoring
+| Advantages of Database Monitoring | Disadvantages of Database Monitoring                                                                                           |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Proactive Maintenance             | Overemphasis on Data: Focusing too much on data, numbers, and facts can slow down decision-making processes due to the overwhelming amount of information                                    |
+| Historical Record                 | Data Privacy Concerns: Monitoring requires careful handling of personal data to prevent privacy violations, necessitating the need for maintenance contracts and responsible use        |
+| Performance Insights              | Complexity: Database monitoring can involve complex systems and processes, potentially wasting time and increasing frustration for IT teams                                                 |
+| Avoiding Service Disruptions     | Resource Intensive: Monitoring tools may add an extra layer of security and functionality, but they can also increase server loads and software and hardware costs                       |
+| Security and Compliance           | Dependency on Monitoring Tools: Over-reliance on monitoring tools can lead to a lack of understanding of the underlying systems and processes, potentially causing issues when the tools are unavailable or malfunctioning |
 
 
 ## Best practice
