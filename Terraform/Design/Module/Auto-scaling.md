@@ -631,19 +631,20 @@ output "Autoscaling_policy_name" {
 
 # Outputs 
 
-| Name | Description |
-|------|-------------|
-| **AMI_ID** | The ID of the Amazon Machine Image (AMI) used by the Auto Scaling Group |
-| **key_pair_name** | The name of the key pair associated with the Auto Scaling Group instances |
-| **launch_template_id** | The ID of the Launch Template used by the Auto Scaling Group |
-| **Target_group_id** | The ID of the Target Group associated with the Auto Scaling Group |
-| **Autoscaling_group_id** | The ID of the Auto Scaling Group |
+| Name                 | Description                                       |
+|----------------------|---------------------------------------------------|
+| **Security_Group_ID**   | Output for the ID of the created security group   |
+| **key_pair_name**       | Output for the key pair name                      |
+| **launch_template_id**  | Output for the ID of the created launch template  |
+| **Target_group_id**     | Output for the ID of the created target group     |
+| **Autoscaling_group_id**| Output for the ID of the created auto-scaling group |
+| **Autoscaling_policy_name** | Output for the name of the created auto-scaling policy |
 
 ***
 
 ## Terminal Output
 
-<img width="500" alt="image" src="">
+<img width="500" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7b5aa214-14c0-4834-9e41-753225a2bebe">
 
 ***
 
