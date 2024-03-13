@@ -70,9 +70,9 @@ In this document it will guide through the steps to achieve the setup of wrapper
 
 ## Configuration Files
 
-### main.tf
-
 This Terraform configuration defines infrastructure components for an AWS environment, including  Security Group,Launch Template,Target Group,Configure Listener rule of ALB,Configure Auto Scaling group,Auto Scaling Policies and various input variables defined in separate files for customization. The output file specifies the IDs of created resources, facilitating reference in other configurations. Provider and Terraform configuration files ensure the correct provider version and AWS region settings. The terraform.tfvars file provides default values for variables, while allowing for customization as needed.
+
+### main.tf
 
 <details>
 <summary><strong>Click here to see main.tf file</strong></summary>
