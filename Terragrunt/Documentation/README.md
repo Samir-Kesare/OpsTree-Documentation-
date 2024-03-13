@@ -16,7 +16,7 @@
 
 ***
 ## Introduction
-<img src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/78aa81a8-604e-4178-ab80-3549f4a0c804" width="400">
+<img src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/78aa81a8-604e-4178-ab80-3549f4a0c804" width="600">
 
 
 Terragrunt is an open-source tool designed to make working with Terraform easier. Terraform itself is a widely-used infrastructure-as-code tool created by HashiCorp, used for building, changing, and versioning infrastructure safely and efficiently. While Terraform provides a powerful way to manage infrastructure, it can become complex to manage complex configurations across multiple environments and projects. Terragrunt simplifies this process to make your configurations less complex. 
