@@ -196,7 +196,7 @@ terraform {
 
 * To simplify and streamline your Terraform configurations, you can leverage Terragrunt by creating terragrunt.hcl files. These files serve as a central location for defining common configurations, reducing the overall complexity of your infrastructure codebase.
 
-<img width="1535" alt="Screenshot 2024-03-13 at 9 12 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/bb4b2bba-74ed-4a9b-bd77-dfbd56f882e9">
+<img width="465" alt="Screenshot 2024-03-13 at 9 50 46 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3d467cad-b013-484e-ad87-75e231b27232">
 
 * To create a common configuration for `backend.tf` and `provider.tf` , you need to create a global terragrunt.hcl file that can be used in both the environnments (dev and prod). This would create our backend and provider automatically in both the environment saving us time and manual efforts. 
 
