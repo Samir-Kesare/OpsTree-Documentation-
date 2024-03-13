@@ -72,6 +72,7 @@ In this document it will guide through the steps to achieve the setup of wrapper
 <details>
 <summary> <b> Click here for main.tf file </b> </summary>
 <br>
+    
 ```shell
 module "network" {
     source                         = "./networking"
