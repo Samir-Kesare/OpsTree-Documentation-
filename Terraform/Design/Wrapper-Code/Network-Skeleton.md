@@ -121,6 +121,10 @@ module "network" {
 
 ### variables.tf file
 
+<details>
+<summary> <b> Click here for variables.tf file </b> </summary>
+<br>
+
 ```shell
 variable "region" {
   type    = string
@@ -456,9 +460,15 @@ variable "route53_zone_name" {
   default = "example.com"
 }
 ```
+</details>
+
 ***
 
 ### output.tf file
+
+<details>
+<summary> <b> Click here for output.tf file </b> </summary>
+<br>
 
 ```shell
 output "vpc-id" {
@@ -517,10 +527,16 @@ output "dev-route53-record" {
   value = module.network.dev-route53-record
 }
 ```
+</details>
+
 ***
 
 ### provider.tf file
 
+<details>
+<summary> <b> Click here for provider.tf file </b> </summary>
+<br>
+    
 ```shell
 terraform {
   required_providers {
@@ -536,10 +552,16 @@ provider "aws" {
   region =  var.region
 }
 ```
+</details>
+
 ***
 
 ### terraform.tfvars
 
+<details>
+<summary> Click here to see terraform.tfvars file</summary>
+<br>
+    
 ```shell
 region = "us-east-2"
 /*--------------- VPC ---------------*/
@@ -900,6 +922,8 @@ route53_zone_tags = {
 route53_zone_name = "example.com"
 
 ```
+</details>
+
 ***
 
 # Output
