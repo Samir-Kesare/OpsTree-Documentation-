@@ -39,8 +39,7 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 ***
 ## Proof of Concept (POC) Guide:
 
- * It is highly recommended to gain hands-on experience through our detailed Proof of Concept (POC) guide for [Dependency-Check](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Dependency%20Scanning%20POC/README.md). This comprehensive document walks you through a practical demonstration, providing step-by-step instructions on setting up Dependency-Check for a sample project. The POC guide delves into essential concepts into identifying vulnerabilities within project dependencies.
-
+ * Gain practical experience with Terragrunt by following our detailed Proof of Concept (POC) guide available [here](). This comprehensive document provides step-by-step instructions for setting up and utilizing Terragrunt in a sample project. Explore essential concepts and learn how to effectively implement Terragrunt in your infrastructure workflows.
 
 ***
 ## Best Practices
