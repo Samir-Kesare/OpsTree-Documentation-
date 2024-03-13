@@ -28,6 +28,21 @@ API monitoring is the process of continuously checking for both the availability
 > If you want to run SonarQube as a Cluster, it is only possible with a [Data Center Edition](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server-as-a-cluster/)<br>
 > Below, is an alternative approach with Sonarqube+AWS to provide HA.
 
+## Performance Metrics
+
+| Metric | Description |
+| ----- | ----------- |
+| **Response time** | is crucial for measuring API efficiency, indicating how quickly requests are processed. Factors affecting it include server performance, network delays, data payload, concurrent requests, and third-party dependencies.
+
+| **Request rate** | reflects the load on an API within a timeframe, helping anticipate demand and prepare infrastructure. Peaks may stem from user behavior, scheduled operations, new feature releases, or outages.
+
+| **Error rate** |measured by failed requests as a percentage of total, highlights issues like capacity overloads, buggy releases, infrastructure problems, or invalid client requests.
+
+|**Latency**| measures the time for a data packet to travel to and from the server, affected by physical distance, network congestion, routing, and transmission medium. High latency can degrade user experience and reduce throughput.
+
+| **Availability, or uptime,** | represents the operational time of an API. Strategies to maximize it include redundancy, regular maintenance, proactive monitoring, and load balancing.
+
+| **Data throughput** | indicates the API's data handling capacity over time. Influenced by network bandwidth, server capacity, data compression, concurrency, and network latency, optimizing it enhances user experience and resource utilization.
 ##  Conclusion
 ## Contact Information
 
