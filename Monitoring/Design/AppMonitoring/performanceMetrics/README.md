@@ -87,24 +87,20 @@ These tools offer a range of features to monitor, analyze, and optimize API perf
 
 # Best Practices
 Here are concise best practices for API metrics monitoring:
+Here's the list of best practices for API metrics monitoring in a tabular format:
 
-1. **Clear Objectives**: Define goals and KPIs aligned with business objectives and user needs.
-
-2. **Relevant Metrics**: Select metrics like response time, error rate, and throughput that provide actionable insights.
-
-3. **Establish Baselines**: Set baseline metrics to detect anomalies and issues early.
-
-4. **Thresholds and Alerts**: Define thresholds and configure alerts for timely response to issues.
-
-5. **Real-Time Monitoring**: Monitor APIs in real-time to address performance issues promptly.
-
-6. **Data Analysis**: Analyze metric data to identify trends and optimize performance.
-
-7. **Security Monitoring**: Include security-related metrics to detect and respond to threats.
-
-8. **Regular Review**: Conduct regular reviews to optimize performance and user experience.
-
-9. **Continuous Improvement**: Continuously refine monitoring strategy based on feedback and evolving needs.
+| Best Practices          | Description                                                                                                  |
+|-------------------------|--------------------------------------------------------------------------------------------------------------|
+| Clear Objectives        | Define goals aligned with business objectives and user needs.                                       |
+| Relevant Metrics        | Select metrics like response time, error rate, and throughput that provide actionable insights.              |
+| Establish Baselines     | Set baseline metrics to detect anomalies and issues early.                                                    |
+| Thresholds and Alerts   | Define thresholds and configure alerts for timely response to issues.                                         |
+| Real-Time Monitoring    | Monitor APIs in real-time to address performance issues promptly.                                              |
+| Data Analysis           | Analyze metric data to identify trends and optimize performance.                                               |
+| Global Monitoring       | Monitor APIs from multiple locations for consistent performance worldwide.                                     |
+| Security Monitoring     | Include security-related metrics to detect and respond to threats.                                             |
+| Regular Review          | Conduct regular reviews to optimize performance and user experience.                                           |
+| Continuous Improvement  | Continuously refine monitoring strategy based on feedback and evolving needs.                                  |
 ***
 ##  Conclusion
 Overall, performance metrics play a critical role in API monitoring by ensuring a seamless user experience, maintaining system reliability, improving operational efficiency, enabling proactive problem identification, and facilitating data-driven decision making.
