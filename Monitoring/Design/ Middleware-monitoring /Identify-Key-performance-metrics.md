@@ -11,7 +11,7 @@
 + [Key Metrics for middleware Monitoring](#Key-Metrics-for-middleware-Monitoring)
 + [Advantages of Middleware Monitoring](#Advantages-of-Middleware-Monitoring)
 + [Disadvantages of Middleware Monitoring](#Disadvantages-of-Middleware-Monitoring)
-+ [Tools for key- mitrics Monitoring](#Tools-for-key-mitrics-Monitoring)
++ [Tools for Key Metrics Monitoring](#Tools-for-Key-Metrics-Monitoring)
 + [Best Practices](#Best-Practices)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
@@ -68,7 +68,7 @@ Middleware monitoring plays a critical role in ensuring the optimal performance,
 | **Datadog** | Datadog is a cloud-based monitoring and analytics platform that provides comprehensive monitoring, alerting, and visualization features for infrastructure and applications. |
 | **Commercial Monitoring Platforms** | Commercial monitoring platforms such as New Relic, AppDynamics, and Dynatrace offer advanced monitoring capabilities tailored for enterprise-level middleware architectures. |
 ***
-## Best Practices of middleware monitoring?
+## Best Practices
 |**Steps**| **Description**  |
 |-------|--------------|
 |**Prioritize Integrations**	|- Prioritize integrations based on occurrence, giving precedence to those that happen more frequently. - Arrange important notifications in descending order, ensuring that critical alerts are addressed first in case of failures.|
