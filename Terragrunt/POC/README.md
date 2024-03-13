@@ -1,6 +1,6 @@
 # Proof of Concept (POC) of Terragrunt
 
-<img src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ab3f6879-1856-4581-9791-5caaa0d52d87" width="800">
+<img src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ab3f6879-1856-4581-9791-5caaa0d52d87" width="700">
 
 
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
