@@ -253,6 +253,7 @@ include "root"{
 
 * Recheck your Terragrunt configuration and initialize your Terraform setup using the `terragrunt init` command. Afterwards, proceed with planning and applying the changes using `terragrunt plan` and `terragrunt apply` commands, respectively. These steps ensure that your infrastructure configuration is properly set up and any changes are carefully planned and applied using Terragrunt.
 
+***
 ## Conclusion
 
 In conclusion, This POC (Proof of Concept) demonstrates how Terragrunt streamlines Terraform configurations, reducing complexity and duplicacy by consolidating common settings into a single shared terragrunt.hcl file. It has provided valuable insights into the capabilities and benefits of integrating Terragrunt into our infrastructure management workflows. Throughout the POC, we have successfully demonstrated how Terragrunt simplifies the management of Terraform configurations, promotes code reuse, and enhances the consistency and reliability of our infrastructure deployments. 
