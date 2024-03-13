@@ -1,5 +1,5 @@
 # Key Performance Metrics for App Monitoring
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1cbc91b5-6f65-4f04-8f5e-9d1c090b4e83)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/5de4a29a-7d24-4dd5-9202-b86c32acce0b)
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
