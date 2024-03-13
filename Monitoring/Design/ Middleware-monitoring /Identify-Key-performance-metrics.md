@@ -34,7 +34,7 @@ Middleware monitoring plays a critical role in ensuring the optimal performance,
 
 
 ***
-## Key Metrics for Middleware Monitoring
+## Resource Performance Metrics for Middleware Monitoring
 
 | **Performance Metric** | **Description**   |
 |------------------------|-------------------|
