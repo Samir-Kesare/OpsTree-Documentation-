@@ -32,8 +32,9 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 *** 
 ## Key Points
 
+* Terragrunt acts as a thin wrapper around Terraform, providing additional functionality and enhancements to streamline Terraform configuration and management. It builds upon Terraform's core features while introducing new capabilities to simplify common workflows and address limitations.
 
-
+* Terragrunt follows the `DRY (Don't Repeat Yourself)` principle, aiming to reduce code duplication and promote reusability across Terraform configurations. It allows you to define common configurations and modules once and reuse them across multiple environments or projects. This way, Instead of duplicating infrastructure configuration for each environment (e.g., dev, staging, prod), Terragrunt enables you to define shared modules or configurations and inherit them in environment-specific configurations, eliminating the need to duplicate code.
 
 ***
 ## Proof of Concept (POC) Guide:
@@ -43,12 +44,6 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
 ***
 ## Best Practices
-
-1. **Regular Scanning Frequency** - Regular scanning of project dependencies is essential for maintaining a secure development environment. Conduct dependency scans at key points in the development lifecycle, such as during the build process, before major releases, and after significant changes.
-   
-2. **Integration with Other Security Tools** - Enhance the effectiveness of your security strategy by integrating OWASP Dependency-Check with other security tools. This synergistic approach provides a more comprehensive security analysis. (eg, DAST , Container security )
-   
-3. **Handling False Positives** - False positives in dependency scanning results can occasionally occur. Here's how to handle them effectively. Leverage Dependency-Check's suppression mechanism to manage false positives, ensuring accurate reporting and engage with the Dependency-Check community to share and verify findings, improving the accuracy of future scans.
 
 ***
 ## Contact Information
