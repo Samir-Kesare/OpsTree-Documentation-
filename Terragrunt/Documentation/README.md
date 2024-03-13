@@ -8,7 +8,7 @@
 ## Table of Contents 
 + [Introduction](#Introduction)
 + [Challenges Faced in Terraform](#challenges-faced-in-terraform)
-+ [Difference b/w terraform and terragrunt](#difference-b/w-terraform-and-terragrunt)
++ [Difference b/w terraform and terragrunt](#difference-between-terraform-and-terragrunt)
 + [Key Benefits of Terragrunt](#key-benefits-of-terragrunt)
 + [Flow Diagram](#flow-diagram)
 + [POC Guide](#Proof-of-Concept-(POC)-Guide)
@@ -25,7 +25,7 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
 
 ***
-## Difference B/w terraform and terragrunt
+## Difference between terraform and terragrunt
 
 | Feature                | Terraform                                                                                          | Terragrunt                                                                                                                             |
 |------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
