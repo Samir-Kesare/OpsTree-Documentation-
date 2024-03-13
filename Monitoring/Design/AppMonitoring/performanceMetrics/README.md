@@ -14,7 +14,7 @@
 5. [Tools](#Tools)
 6. [Advantages](#Advantages)
 7. [Disadvantages](#Disadvantages)
-8. [Best Practices](#BestPractices)
+8. [Best Practices](#Best-Practices)
 9. [Conclusion](#conclusion)
 10. [Contact Information](#Contact-Information)
 11. [References](#References)
