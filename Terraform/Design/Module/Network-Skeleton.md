@@ -51,6 +51,11 @@ A Terraform module is a container for organizing and reusing Terraform code to m
 
 # Pre-requisites
 
+| **Pre-requisite** | **Description** |
+| ----------------- | --------------- |
+| **AWS Account**   | Access to the AWS Management Console with credentials configured. |
+| **Hashicrop Terraform** | Terraform **(v1.7.4)** for configuration of AWS resources. |
+
 ***
 
 # Directory Structure
