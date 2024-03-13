@@ -724,5 +724,6 @@ Terraform wrapper code enhances the capabilities of Terraform by automating task
  | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
  | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Modules |
  | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | ASG-Module |
+ | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | Cloud Infra Design Dev |
 
  
