@@ -90,7 +90,7 @@ In the conclusion, the document summarizes the key points discussed throughout t
 
 |  Source                                                                                 |        Description    |
 | ------------                                                                            | ----------------------|
-| [link](https://www.motadata.com/blog/how-important-is-middleware-monitoring-for-organizations/)  middleware monitring  |
+| [link](https://www.motadata.com/blog/how-important-is-middleware-monitoring-for-organizations/) | middleware monitring  |
       
 
 
