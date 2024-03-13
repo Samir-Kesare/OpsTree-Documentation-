@@ -1,5 +1,8 @@
 # Proof of Concept (POC) of Terragrunt
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/ab3f6879-1856-4581-9791-5caaa0d52d87)
+
+
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
 | -----------------| --------------| -----------|---------------- | -------------- |
 | Vidhi Yadav      | 13 March 2024   |     v1     | Vidhi Yadav     | 13 March 2024    |
