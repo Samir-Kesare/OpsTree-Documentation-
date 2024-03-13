@@ -120,6 +120,4 @@ Effective log monitoring is a critical aspect of maintaining the performance, se
 |  Source                                                                                 |        Description    |
 | ------------                                                                            | ----------------------|
 | [link](https://www.techtarget.com/searchapparchitecture/tip/5-application-performance-metrics-all-dev-teams-should-track)          |      application performance metrics        |
-      
-
-
+| [link](https://www.metricfire.com/blog/introduction-to-performance-monitoring-metrics/#:~:text=A%20good%20monitoring%20system%20involves,%2C%20performance%2C%20or%20user%20behavior)          |      Metrics Overview        |
