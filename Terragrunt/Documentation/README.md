@@ -76,10 +76,12 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
   
 ***
-Conclusion
+## Conclusion
 
 In conclusion, Terragrunt serves as a powerful complement to Terraform, enhancing its capabilities and simplifying infrastructure management. By leveraging Terragrunt alongside Terraform, users can achieve greater modularity, flexibility, and consistency in their infrastructure configurations.
 
+
+***
 ## Contact Information
 
 |Vidhi Yadav                     | vidhi.yadhav.snaatak@mygurukulam.co                                                                                      
