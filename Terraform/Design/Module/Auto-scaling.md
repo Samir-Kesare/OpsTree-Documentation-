@@ -73,28 +73,44 @@ The state file is an artifact that you’re left with once an Infrastructure as 
 
 ***
 
-# Configuration Files
+## Configuration Files
+
+### main.tf
 
 The `main.tf` file contains the configuration for creating various AWS resources such as Security Group,Launch Template,Target Group,Configure Listener rule of ALB,Configure Auto Scaling group,Auto Scaling Policies.
 
 <details>
-<summary><strong style="color: red;">Click here to see main.tf file</strong></summary>
+<summary><strong>Click here to see main.tf file</strong></summary>
 <br>
 
 ```shell
 
-Helo
-defklf
-tgtg
-tg
 
 ```
 </details>
 
+***
+### variables.tf file
+
+The `variables.tf` file defines input variables used in the `main.tf` file to parameterize the configuration. These variables include Security Group,Launch Template,Target Group,Configure Listener rule of ALB,Configure Auto Scaling group,Auto Scaling Policies.
+
+<details>
+<summary><strong>Click here to see variables.tf file</strong></summary>
+<br>
+
+```shell
+
+
+```
+</details>
+
+***
+### output.tf file
+
+The `output.tf` file specifies the outputs of the Terraform configuration. It includes the IDs of various resources created such as Security_Group_ID,key_pair_name,launch_template_id,Target_group_id,Autoscaling_group_id,
 
 
 ***
-
 # Tags
 * Tags are assigned to resources with name variable as prefix.
 * Additial tags can be assigned by tags variables as defined above.
