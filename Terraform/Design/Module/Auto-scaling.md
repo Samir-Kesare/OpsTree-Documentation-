@@ -644,26 +644,41 @@ output "Autoscaling_policy_name" {
 
 ## Terminal Output
 
-<img width="500" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7b5aa214-14c0-4834-9e41-753225a2bebe">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7b5aa214-14c0-4834-9e41-753225a2bebe">
 
 ***
 
 ## Console Output
 
+### Security Group
+
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c28e472c-e87a-4624-b480-7c280ba8d9af"> 
+
+***
 ### Launch Template
 
-<img width="700" alt="image" src=""> 
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6c6ab63f-b752-4bfc-9954-aa1555d24eba"> 
 
 ***
 
 ### Target Group
 
-<img width="700" alt="image" src="">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/61dce999-2c85-419b-994e-6118879e045e">
+
+***
+### Listener rule of ALB
+
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/883ac05a-38b7-41e3-b24a-d3b2fbf9126d">
 
 ***
 ### Auto Scaling Group
 
-<img width="700" alt="image" src="">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/f6f0f968-8aed-4e72-8f25-f988860e3f95">
+
+***
+### Auto Scaling Group Policies
+
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/48ede5ce-51be-4828-8a31-0d3066a297c5">
 
 ***
 
