@@ -27,21 +27,19 @@
 
 # Introduction
 
-<img width="400" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/643d0c30-6c1e-4088-bba3-5b1c91be9253">
-
-A Terraform module is a container for organizing and reusing Terraform code to manage related resources. It encapsulates a set of resources and configurations into a single unit that can be easily shared, reused, and versioned. Modules promote code reusability, maintainability, and scalability in Terraform projects.
+In this document it will guide through the steps to achieve the setup of wrapper code for Network_Skeleton module which involves the child modules.According to the value passed through the root module/wrapper code we can manage/build the infra structure setup accordingly. Which involves the managing of different terraform state files for managing respective environments.
 
 ***
 
 # Why Terraform Wrapper Code
 
-| Benefit           | Description                                                                                                      |
-| ----------------  | ---------------------------------------------------------------------------------------------------------------- |
-| **Reusability**   | Define reusable components for different Terraform configurations or projects.                                   |
-| **Abstraction**   | Abstract the complexity of infrastructure components, making them easier to manage and understand.               |
-| **Consistency**   | Enforce consistency by providing a standardized way to create and manage resources, reducing configuration drift.|
-| **Collaboration** | Enable collaboration by allowing teams to share infrastructure components as reusable building blocks.           |
-| **Versioning**    | Version modules to track changes and ensure consistent deployments across environments.                          |
+| Feature                | Description                    |
+|------------------------|---------------------------------------------------------------------------------------------------------------------|
+| **Automation**             | Automates repetitive tasks like initialization, applying changes, and destroying resources, saving time and
+effort. |
+| **Enhanced Functionality** | Extends Terraform's capabilities by integrating with other tools, implementing custom logic, or enforcing specific workflows.|
+| **Standardization**        | Enforces standardized practices across Terraform projects, ensuring consistency and reducing the risk of errors.|
+| **Integration**            | Facilitates integration with CI/CD pipelines, version control systems, and infrastructure management platforms for seamless deployment. |
 
 ***
 
@@ -73,280 +71,46 @@ A Terraform module is a container for organizing and reusing Terraform code to m
 **The `main.tf` file contains the configuration for creating various AWS resources such as VPC, subnets, internet gateway, NAT gateway, route tables, network ACLs, security groups, ALB, Route 53 zone, and records.**
 
 ```shell
-/*--------------- VPC ---------------*/
-
-resource "aws_vpc" "dev_vpc" {
-  cidr_block           = var.vpc_cidr
-  enable_dns_support   = var.vpc_enable_dns_support
-  enable_dns_hostnames = var.vpc_enable_dns_hostnames
-  tags = var.vpc_tags
-}
-
-/*--------------- Public Subnets ---------------*/
-
-resource "aws_subnet" "dev_public_subnets" {
-  count                   = length(var.public_subnets_cidr)
-  vpc_id                  = aws_vpc.dev_vpc.id
-  cidr_block              = var.public_subnets_cidr[count.index]
-  availability_zone       = var.public_subnets_az[count.index]
-  map_public_ip_on_launch = var.enable_map_public_ip_on_launch
-  tags                    = var.public_subnets_tags[count.index]
-}
-
-/*--------------- Private Subnets ---------------*/
-
-resource "aws_subnet" "dev_private_subnets" {
-  count             = length(var.private_subnets_cidr)
-  vpc_id            = aws_vpc.dev_vpc.id
-  cidr_block        = var.private_subnets_cidr[count.index]
-  availability_zone = var.private_subnets_az
-  tags              = var.private_subnets_tags[count.index]
-}
-
-/*--------------- # Internet Gateway ---------------*/
-
-resource "aws_internet_gateway" "dev_igw" {
-  vpc_id = aws_vpc.dev_vpc.id
-  tags = var.igw_tags
-}
-
-/*--------------- Elastic IP ---------------*/
-
-resource "aws_eip" "dev_elastic_ip" {
-  domain = "vpc"
-}
-
-/*--------------- NAT Gateway ---------------*/
-
-resource "aws_nat_gateway" "dev_nat" {
-  allocation_id = aws_eip.dev_elastic_ip.id
-  subnet_id     = aws_subnet.dev_public_subnets[0].id
-  tags = var.nat_tags
-  depends_on = [aws_eip.dev_elastic_ip]
-}
-
-/*--------------- Public Route Table ---------------*/
-
-resource "aws_route_table" "dev_public_rtb" {
-  vpc_id = aws_vpc.dev_vpc.id
-  route {
-    cidr_block = var.vpc_cidr
-    gateway_id = "local"
-  }
-  route {
-    cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.dev_igw.id
-  }
-  tags = var.public_route_table_tags
-}
-
-/*--------------- Public RTB Association ---------------*/
-
-resource "aws_route_table_association" "dev_public_route_association01" {
-  count = length(aws_subnet.dev_public_subnets.*.id)
-  subnet_id      = aws_subnet.dev_public_subnets[count.index].id
-  route_table_id = aws_route_table.dev_public_rtb.id
-}
-/*--------------- Private RTB ---------------*/
-
-resource "aws_route_table" "dev_private_rtb" {
-  vpc_id = aws_vpc.dev_vpc.id
-  route {
-    cidr_block = var.vpc_cidr
-    gateway_id = "local"
-  }
-  route {
-    cidr_block     = "0.0.0.0/0"
-    nat_gateway_id = aws_nat_gateway.dev_nat.id
-  }
-  tags = var.private_route_table_tags
-  depends_on = [aws_nat_gateway.dev_nat]
-}
-
-/*--------------- Private RTB Association ---------------*/
-
-resource "aws_route_table_association" "dev_private_route_association01" {
-
-  count = length(aws_subnet.dev_private_subnets.*.id)
-  subnet_id      = aws_subnet.dev_private_subnets[count.index].id
-  route_table_id = aws_route_table.dev_private_rtb.id
-  depends_on     = [aws_route_table.dev_private_rtb]
-}
-
-/*--------------- Frontend NACL ---------------*/
-
-resource "aws_network_acl" "dev_frontend_nacl" {
-  vpc_id = aws_vpc.dev_vpc.id
-
-  dynamic "ingress" {
-    for_each = var.frontend_nacl_ingress
-    content {
-      protocol   = ingress.value.protocol
-      rule_no    = ingress.value.rule_no
-      action     = ingress.value.action
-      cidr_block = ingress.value.cidr_block
-      from_port  = ingress.value.from_port
-      to_port    = ingress.value.to_port
-    }
-  }
-  dynamic "egress" {
-    for_each = var.frontend_nacl_egress
-    content {
-      protocol   = egress.value.protocol
-      rule_no    = egress.value.rule_no
-      action     = egress.value.action
-      cidr_block = egress.value.cidr_block
-      from_port  = egress.value.from_port
-      to_port    = egress.value.to_port
-    }
-  }
-  tags = var.frontend_nacl_tags
-}
-/*--------------- Frontend NACL Subnet Association ---------------*/
-
-resource "aws_network_acl_association" "dev_frontend_nacl" {
-  network_acl_id = aws_network_acl.dev_frontend_nacl.id
-  subnet_id      = aws_subnet.dev_private_subnets[0].id
-}
-
-/*--------------- Backend NACL ---------------*/
-
-resource "aws_network_acl" "dev_backend_nacl" {
-  vpc_id = aws_vpc.dev_vpc.id
-
-  dynamic "ingress" {
-    for_each = var.backend_nacl_ingress
-    content {
-      protocol   = ingress.value.protocol
-      rule_no    = ingress.value.rule_no
-      action     = ingress.value.action
-      cidr_block = ingress.value.cidr_block
-      from_port  = ingress.value.from_port
-      to_port    = ingress.value.to_port
-    }
-  }
-  dynamic "egress" {
-    for_each = var.backend_nacl_egress
-    content {
-      protocol   = egress.value.protocol
-      rule_no    = egress.value.rule_no
-      action     = egress.value.action
-      cidr_block = egress.value.cidr_block
-      from_port  = egress.value.from_port
-      to_port    = egress.value.to_port
-    }
-  }
-  tags = var.backend_nacl_tags
-}
-/*--------------- Backend NACL Subnet Association ---------------*/
-
-resource "aws_network_acl_association" "dev_backend_nacl_assc" {
-  network_acl_id = aws_network_acl.dev_backend_nacl.id
-  subnet_id      = aws_subnet.dev_private_subnets[1].id
-}
-
-/*--------------- Database NACL ---------------*/
-
-resource "aws_network_acl" "dev_db_nacl" {
-  vpc_id = aws_vpc.dev_vpc.id
-
-  dynamic "ingress" {
-    for_each = var.db_nacl_ingress
-    content {
-      protocol   = ingress.value.protocol
-      rule_no    = ingress.value.rule_no
-      action     = ingress.value.action
-      cidr_block = ingress.value.cidr_block
-      from_port  = ingress.value.from_port
-      to_port    = ingress.value.to_port
-    }
-  }
-  dynamic "egress" {
-    for_each = var.db_nacl_egress
-    content {
-      protocol   = egress.value.protocol
-      rule_no    = egress.value.rule_no
-      action     = egress.value.action
-      cidr_block = egress.value.cidr_block
-      from_port  = egress.value.from_port
-      to_port    = egress.value.to_port
-    }
-  }
-  tags = var.db_nacl_tags
-}
-/*--------------- Database NACL Subnet Association ---------------*/
-
-resource "aws_network_acl_association" "dev_db_nacl_assc" {
-  network_acl_id = aws_network_acl.dev_db_nacl.id
-  subnet_id      = aws_subnet.dev_private_subnets[2].id
-}
-
-/*--------------- ALB Security Group ---------------*/
-
-
-resource "aws_security_group" "dev_alb_sg" {
-  name        = var.alb_sg_name
-  description = var.alb_sg_description
-  vpc_id      = aws_vpc.dev_vpc.id
-
-  dynamic "ingress" {
-    for_each = var.alb_sg_inbound_rules
-    content {
-      from_port   = ingress.value.port
-      to_port     = ingress.value.port
-      protocol    = ingress.value.protocol
-      cidr_blocks = [ingress.value.source]
-    }
-  }
-
-  dynamic "egress" {
-    for_each = var.alb_sg_outbound_rules
-    content {
-      from_port       = egress.value.port
-      to_port         = egress.value.port
-      protocol        = egress.value.protocol
-      cidr_blocks     = [egress.value.source]
-    }
-  }
-  tags = var.alb_sg_tags
-}
-
-/*--------------- ALB ---------------*/
-
-resource "aws_lb" "dev_alb" {
-  name               = var.alb_name
-  internal           = var.alb_internal
-  load_balancer_type = var.alb_type
-  security_groups    = [aws_security_group.dev_alb_sg.id]
-  subnets            = [for subnet in aws_subnet.dev_public_subnets : subnet.id]
-
-  enable_deletion_protection = var.alb_deletion_protection
-
-  tags = var.alb_tags
-}
-
-/*--------------- Route 53   ---------------*/
-
-resource "aws_route53_zone" "dev_route53_zone" {
- name = var.route53_zone_name
- vpc {
-   vpc_id = aws_vpc.dev_vpc.id
-   vpc_region = var.region
- }
- tags = var.route53_zone_tags
-}
-
-resource "aws_route53_record" "dev_route53_record" {
-  zone_id = aws_route53_zone.dev_route53_zone.id
-  name    = "example.com"
-  type    = "A"
-
-  alias {
-    name                   = aws_lb.dev_alb.dns_name
-    zone_id                = aws_lb.dev_alb.zone_id
-    evaluate_target_health = true
-  }
-}
+module "network" {
+    source                         = "./networking"
+    region                         = var.region
+    vpc_cidr                       = var.vpc_cidr
+    vpc_tags                       = var.vpc_tags
+    vpc_enable_dns_support         = var.vpc_enable_dns_support
+    vpc_enable_dns_hostnames       = var.vpc_enable_dns_hostnames
+    public_subnets_cidr            = var.public_subnets_cidr
+    public_subnets_az              = var.public_subnets_az
+    enable_map_public_ip_on_launch = var.enable_map_public_ip_on_launch
+    public_subnets_tags            = var.public_subnets_tags
+    private_subnets_cidr           = var.private_subnets_cidr
+    private_subnets_az             = var.private_subnets_az
+    private_subnets_tags           = var.private_subnets_tags
+    igw_tags                       = var.igw_tags
+    nat_tags                       = var.nat_tags
+    public_route_table_tags        = var.public_route_table_tags
+    private_route_table_tags       = var.private_route_table_tags
+    frontend_nacl_ingress          = var.frontend_nacl_ingress
+    frontend_nacl_egress           = var.frontend_nacl_egress
+    frontend_nacl_tags             = var.frontend_nacl_tags
+    backend_nacl_ingress           = var.backend_nacl_ingress
+    backend_nacl_egress            = var.backend_nacl_egress
+    backend_nacl_tags              = var.backend_nacl_tags
+    db_nacl_ingress                = var.db_nacl_ingress
+    db_nacl_egress                 = var.db_nacl_egress
+    db_nacl_tags                   = var.db_nacl_tags
+    alb_sg_name                    = var.alb_sg_name
+    alb_sg_description             = var.alb_sg_description
+    alb_sg_inbound_rules           = var.alb_sg_inbound_rules
+    alb_sg_outbound_rules          = var.alb_sg_outbound_rules
+    alb_sg_tags                    = var.alb_tags
+    alb_name                       = var.alb_name
+    alb_internal                   = var.alb_internal
+    alb_type                       = var.alb_type
+    alb_deletion_protection        = var.alb_deletion_protection
+    alb_tags                       = var.alb_tags
+    route53_zone_tags              = var.route53_zone_tags
+    route53_zone_name              = var.route53_zone_name
+}    
 ```
 ***
 
@@ -697,64 +461,451 @@ variable "route53_zone_name" {
 
 ```shell
 output "vpc-id" {
-  value = aws_vpc.dev_vpc.id
+  value = module.network.vpc-id
 }
 
 output "public-subnets-id" {
-  value = aws_subnet.dev_public_subnets.*.id
+  value = module.network.public-subnets-id
 }
 
 
 output "private-subnets-id" {
-  value = aws_subnet.dev_private_subnets.*.id
+  value = module.network.private-subnets-id
 }
 
 output "dev-igw-id" {
-  value = aws_internet_gateway.dev_igw.id
+  value = module.network.dev-igw-id
 }
 
 output "dev-nat-id" {
-  value = aws_nat_gateway.dev_nat.id
+  value = module.network.dev-nat-id
 }
 
 output "dev-public-RTB-id" {
-  value = aws_route_table.dev_public_rtb.id
+  value = module.network.dev-public-RTB-id
 }
 
 output "dev-private-RTB-id" {
-  value = aws_route_table.dev_private_rtb.id
+  value = module.network.dev-private-RTB-id
 }
 
 output "dev-frontend-nacl-id" {
-  value = aws_network_acl.dev_frontend_nacl.id
+  value = module.network.dev-frontend-nacl-id
 }
 
 output "dev-backend-nacl-id" {
-  value = aws_network_acl.dev_backend_nacl.id
+  value = module.network.dev-backend-nacl-id
 }
 
 output "dev-db-nacl-id" {
-  value = aws_network_acl.dev_db_nacl.id
+  value = module.network.dev-db-nacl-id
 }
 
 output "alb-sg-id" {
-  value = aws_security_group.dev_alb_sg.id  
+  value = module.network.alb-sg-id  
 }
 
 output "dev-alb-dns" {
-  value = aws_lb.dev_alb.dns_name
+  value = module.network.dev-alb-dns
 }
 
 output "dev-route53-zone" {
-  value = aws_route53_zone.dev_route53_zone.name_servers
+  value = module.network.dev-route53-zone
 }
 output "dev-route53-record" {
-  value = aws_route53_record.dev_route53_record.name
+  value = module.network.dev-route53-record
 }
 ```
 ***
 
+### provider.tf file
+
+```shell
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.38.0"
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region =  var.region
+}
+```
+***
+
+### terraform.tfvars
+
+```shell
+region = "us-east-2"
+/*--------------- VPC ---------------*/
+vpc_tags = {
+    Name = "dev-vpc"
+    Enviroment = "dev"
+    Owner = "shreya"
+}
+
+/*--------------- Public Subnets ---------------*/
+public_subnets_cidr = ["10.0.1.0/28", "10.0.1.64/28"]
+
+public_subnets_az = ["us-east-2a", "us-east-2b"]
+
+enable_map_public_ip_on_launch = true
+
+public_subnets_tags  = [{
+    Name = "public-subnet-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+    }, {
+    Name = "public-subnet-02"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }]
+
+
+/*--------------- Private Subnets ---------------*/
+
+private_subnets_cidr = ["10.0.1.16/28", "10.0.1.32/28", "10.0.1.48/28"]
+
+private_subnets_az = "us-east-2a"
+
+private_subnets_tags = [{
+    Name = "frontend-subnet"
+    Enviroment = "dev"
+    Owner = "shreya"
+    }, {
+    Name = "backend-subnet"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }, {
+    Name = "database-subnet"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }]
+
+/*--------------- IGW ---------------*/
+
+igw_tags = {
+    Name = "dev-igw-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+/*--------------- NAT Gateway ---------------*/
+
+nat_tags = {
+    Name = "dev-nat-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+/*--------------- # Route Table ---------------*/
+
+public_route_table_tags = {
+    Name = "dev-public-RTB-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+private_route_table_tags  = {
+    Name = "dev-private-RTB-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+/*--------------- Frontend NACL ---------------*/
+
+frontend_nacl_ingress = [{
+    rule_no = 100
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 22
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 110
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 3000	
+    to_port = 3000
+    action = "allow"
+    }, {
+    rule_no = 120
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"
+    from_port = 22	
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 130
+    protocol = "tcp"
+    cidr_block = "10.0.1.64/28"	
+    from_port = 3000
+    to_port = 3000
+    action = "allow"
+    }]
+
+frontend_nacl_egress = [{
+    rule_no = 100
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 1024 
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 110
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 120
+    protocol = "tcp"
+    cidr_block = "10.0.1.64/28"	
+    from_port = 1024
+    to_port =  65535
+    action = "allow"
+    }]
+
+frontend_nacl_tags  = {
+    Name = "dev-frontend-nacl-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+/*--------------- Backend NACL ---------------*/
+
+# ingress rules
+
+backend_nacl_ingress = [{
+    rule_no = 100
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 22
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 110
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 8080
+    to_port = 8080
+    action = "allow"
+    }, {
+    rule_no = 120
+    protocol = "tcp"
+    cidr_block = "10.0.1.48/28"
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 130
+    protocol = "tcp"
+    cidr_block = "10.0.1.64/28"	
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 140
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 22
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 150
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 160
+    protocol = "tcp"
+    cidr_block = "10.0.1.64/28"	
+    from_port = 8080
+    to_port = 8080
+    action = "allow"
+    }]
+
+# egress rules
+
+backend_nacl_egress = [{
+    rule_no = 100
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 22
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 110
+    protocol = "tcp"
+    cidr_block = "10.0.1.48/28"	
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 120
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 1024
+    to_port =  65535
+    action = "allow"
+    }, {
+    rule_no = 130
+    protocol = "tcp"
+    cidr_block = "10.0.1.64/28"	
+    from_port = 1024
+    to_port =  65535
+    action = "allow"
+    }, {
+    rule_no = 140
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 1024
+    to_port =  65535
+    action = "allow"
+    }]
+
+backend_nacl_tags  = {
+    Name = "dev-backend-nacl-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+/*--------------- Database NACL ---------------*/
+
+# ingress rules
+# private_subnets_cidr = ["10.0.0.96/27", "10.0.0.128/26", "10.0.0.192/26"]
+
+db_nacl_ingress = [{
+    rule_no = 100
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 22
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 110
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 22
+    to_port = 22
+    action = "allow"
+    }, {
+    rule_no = 120
+    protocol = "tcp"
+    cidr_block = "10.0.1.32/28"
+    from_port = 6379
+    to_port = 6379
+    action = "allow"
+    }, {
+    rule_no = 130
+    protocol = "tcp"
+    cidr_block = "10.0.1.32/28"	
+    from_port = 9042
+    to_port = 9042
+    action = "allow"
+    }, {
+    rule_no = 140
+    protocol = "tcp"
+    cidr_block = "10.0.1.32/28"	
+    from_port = 5432
+    to_port = 5432
+    action = "allow"
+    }]
+
+# egress rules
+
+db_nacl_egress = [{
+    rule_no = 100
+    protocol = "tcp"
+    cidr_block = "20.0.0.0/28"	
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 110
+    protocol = "tcp"
+    cidr_block = "10.0.1.32/28"	
+    from_port = 1024
+    to_port = 65535
+    action = "allow"
+    }, {
+    rule_no = 120
+    protocol = "tcp"
+    cidr_block = "10.0.1.0/28"	
+    from_port = 1024
+    to_port =  65535
+    action = "allow"
+    }]
+
+db_nacl_tags  = {
+    Name = "dev-db-nacl-01"
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+
+/*--------------- ALB Security Group ---------------*/
+
+alb_sg_name = "dev-alb-sg"
+
+alb_sg_description = "Security group for Dev-ALB"
+
+alb_sg_inbound_rules  = [{
+      port     = 80
+      source   = "0.0.0.0/0" 
+      protocol = "tcp"  
+    }, {
+      port     = 443
+      source   = "0.0.0.0/0" 
+      protocol = "tcp"  
+    }]
+
+alb_sg_outbound_rules  = [
+    {
+      port     = 0  
+      source   = "0.0.0.0/0"
+      protocol = "-1"  
+    }
+  ]
+
+alb_sg_tags = {
+    Environment = "dev"
+    Owner       = "shreya"
+  }
+
+/*--------------- ALB ---------------*/
+
+ alb_deletion_protection = false
+ alb_name = "dev-alb"
+
+ alb_type = "application"
+ alb_internal = false
+ alb_tags = {
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+  /*--------------- Route 53 ---------------*/
+
+route53_zone_tags = {
+    Enviroment = "dev"
+    Owner = "shreya"
+  }
+route53_zone_name = "example.com"
+
+```
+***
+
 # Result
+
+<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bd9a27e6-97e7-467b-b3ac-ad2cd7df65e6">
+
+***
 
 ### VPC & it's resources
 
@@ -808,23 +959,21 @@ output "dev-route53-record" {
 
 # Best Practices
 
-| Practice              | Description                                                                                                        |
-|-----------------------|------------------------------------------------------------------------------------------------------------------- |
-| **Atomicity**         | Keep modules small and focused on a single concern or resource type to promote reusability and maintainability.    |
-| **Input Validation**  | Validate input variables to ensure they meet expected requirements and constraints.                                |
-| **Documentation**     | Provide clear documentation, including usage examples, input variables, and outputs.                               |
-| **Testing**           | Implement automated tests to validate functionality and prevent regressions.                                       |
-| **Versioning**        | Follow semantic versioning to manage changes and dependencies effectively.                                         |
-| **Error Handling**    | Implement error handling and logging mechanisms for troubleshooting.                                               |
-| **Idempotency**       | Ensure modules are idempotent, allowing multiple applications without unintended changes.                          |
-| **State Management**  | Avoid storing sensitive information in Terraform state files and leverage remote state management for better security.|
-| **Separation of Concerns**| Separate infrastructure concerns into reusable modules based on functionality or lifecycle.                       |
+| Practice           | Description                                                                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Modularity**         | Design wrapper scripts in a modular way, with separate functions for each Terraform command or task.                                          |
+| **Error Handling**     | Implement robust error handling mechanisms to gracefully handle failures and provide informative error messages.                             |
+| **Logging**            | Include logging functionality to capture relevant information and debug issues during Terraform execution.                                    |
+| **Version Control**    | Store wrapper scripts alongside Terraform configurations in version control repositories for versioning, collaboration, and auditability.  |
+| **Documentation**      | Provide comprehensive documentation for wrapper scripts, including usage instructions, dependencies, and troubleshooting tips.               |
+| **Security**           | Follow security best practices to protect sensitive information such as credentials and API keys used by wrapper scripts.                   |
+
 
 ***
 
 # Conclusion
 
-Terraform modules are a fundamental building block for creating reusable and maintainable infrastructure as code. By following best practices and principles such as modularity, abstraction, and versioning, teams can leverage modules to efficiently manage complex infrastructure deployments at scale. Investing in well-designed modules promotes consistency, collaboration, and agility in Terraform projects, ultimately leading to more reliable and manageable infrastructure.
+Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments.
 
 ***
 
@@ -841,5 +990,5 @@ Terraform modules are a fundamental building block for creating reusable and mai
 | **Source** | **Description** |
 | ---------- | --------------- |
 | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
-| [Link](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
+| [Link](https://medium.com/@brandon.wagner/a-wrapper-for-terraform-61a125b27ffc) | Terraform Wrapper Code Concept. |
 | [Link](https://medium.com/@selvamraju007/terraform-modules-explanation-726ba4a0b98e) | Reference Link For Terraform Modules. |
