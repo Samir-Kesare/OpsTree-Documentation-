@@ -17,7 +17,7 @@
 * [Pre-requisites](#Pre-requisites)
 * [Directory Structure](#Directory-Structure)
 * [Configuration Files](#Configuration-Files)
-* [Result](#Result)
+* [Output](#Output)
 * [Best Practices](#Best-Practices)
 * [Conclusion](#Conclusion)
 * [Contact Information](#Contact-Information)
@@ -754,7 +754,7 @@ output "dev-route53-record" {
 ```
 ***
 
-# Result
+# Output
 
 ### VPC & it's resources
 
