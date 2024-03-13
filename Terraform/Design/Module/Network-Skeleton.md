@@ -756,6 +756,13 @@ output "dev-route53-record" {
 
 # Output
 
+## Terminal Output
+
+
+***
+
+## Console Output
+
 ### VPC & it's resources
 
 ![Screenshot 2024-03-13 101153](https://github.com/CodeOps-Hub/Documentation/assets/156057205/742b3b6c-d16a-4189-a168-8d0b85d1f761)
