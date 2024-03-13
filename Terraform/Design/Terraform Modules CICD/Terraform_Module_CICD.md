@@ -6,6 +6,17 @@
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056460/44f80ab7-909e-48c2-8b1e-ea004054137e)
 
+## Table of Contents
+- [What is Terraform Module?](#What-is-Terraform-Module?)
+- [what is CI/CD?](#what-is-CI/CD?)
+- [Terraform CI](#Terraform-CI)
+- [Terraform CD](#Terraform-CD)
+- [Terraform best-practices when working with modules](#Terraform-best-practices-when-working-with-modules)
+- [Conclusion](#Conclusion)
+- [Contact Information](#Contact-Information)
+- [References](#References)
+***
+
 ## What is Terraform Module?
 A Terraform module is a collection of standard configuration files stored in a dedicated directory. Modules encapsulate groups of resources dedicated to specific tasks, reducing the amount of code needed for similar infrastructure components.
 Modules are containers for multiple resources used together in a configuration. They package and reuse resource configurations, making it easier to manage and scale infrastructure as it grows.
