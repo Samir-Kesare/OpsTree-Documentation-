@@ -92,7 +92,9 @@ Measured in various units:
 | Measurement Unit       | Typically in milliseconds (ms) or seconds, measures query submission to result retrieval time.                                           |
 | Query Execution        | Directly reflects query efficiency; lower response time indicates faster processing and database responsiveness.                          |
 | Performance Indicators | High response times suggest performance issues like poorly optimized queries or inefficient indexing.                                      |
-| Influencing Factors    | - Query Complexity: Complex queries may lengthen response time. - Indexing: Inefficient or missing indexes affect response time. - Hardware Resources: Adequate CPU, memory, and disk I/O improve response time. |
+| Influencing Factors    | - Query Complexity: Complex queries may lengthen response time.                                                                            |
+|                        | - Indexing: Inefficient or missing indexes affect response time.                                                                           |
+|                        | - Hardware Resources: Adequate CPU, memory, and disk I/O improve response time.                                                            |
 
 ### Deadlocks
 
