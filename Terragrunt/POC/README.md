@@ -80,6 +80,115 @@ resource "aws_security_group" "terragrunt_sg" {
 ```
 </details>
 
+* Configure variables based on your preference
+
+<details>
+<summary> <b> Click here for variable.tf </b> </summary>
+<br>
+  
+```shell
+variable "security_group_name" {
+  description = "security group name"
+  type            = string
+  default         = "terragrunt-sg"
+}
+
+variable "description" {
+  description = "security group for Attendance API"
+  type            = string
+  default         = "Security group for practice"
+}
+
+variable "vpc_id" {
+  description = "The ID of the VPC"
+  type = string
+  default = "vpc-0d744158f7f47f419"
+}
+variable "inbound_rules" {
+  description = "List of inbound rules for the security group"
+  type = list(map(any))
+  default = [
+    {
+      port     = 22
+      source   = "0.0.0.0/0"   //open for all
+      protocol = "tcp"  
+    },
+    {
+      port     = 8080
+      source   = "0.0.0.0/0" 
+      protocol = "tcp"  
+    }
+  ]
+}
+
+variable "outbound_rules" {
+  description = "List of outbound rules for the security group"
+  type = list(object({
+    port     = number
+    source   = string
+    protocol = string
+  }))
+  default = [
+    {
+      port     = 0 // allow all ports 
+      source   = "0.0.0.0/0"
+      protocol = "-1"  // all protocols
+    }
+  ]
+}
+
+variable "sg_tags" {
+  description = "Tag for Attedance sg"
+  type        = map(string)
+  default     = {
+    Name = "terragrunt-sg"
+    Environment = "Dev"
+    Owner         = "Vidhi"
+  }
+}
+```
+
+</details>
+
+<details>
+<summary> <b> Click here for provider.tf </b> </summary>
+<br>
+  
+```shell
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.38.0"  # Using a minimum version constraint
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-1"
+}
+
+```
+</details>
+
+<details>
+<summary> <b> Click here for backend.tf </b> </summary>
+<br>
+  
+```shell
+terraform {
+  backend "s3" {
+    bucket  = "bucket-terragrunt-001"
+    key     = "dev/terraform.tfstate"
+    region  = "us-east-1" 
+    encrypt = true
+  }
+}
+
+```
+</details>
+
 ***
 ## Conclusion
 
