@@ -56,11 +56,12 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 ***
 ## Best Practices
 
-* Modularization: Break down your infrastructure code into reusable modules to promote code reusability and maintainability. Terragrunt supports module reuse across different projects and environments.
+| Best Practice           | Description                                                                                                                                                             |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Modularization**      | Break down your infrastructure code into reusable modules to promote code reusability and maintainability. Terragrunt supports module reuse across different projects and environments. |
+| **Configuration Inheritance** | Leverage Terragrunt's configuration inheritance feature to define common settings and configurations in a shared parent configuration file. This reduces duplication and promotes consistency across environments. |
+| **Parameterization**    | Use Terragrunt variables to parameterize your configurations and make them more flexible. Parameterization allows you to customize configurations for different environments or pass inputs to Terraform modules. |
 
-* Configuration Inheritance: Leverage Terragrunt's configuration inheritance feature to define common settings and configurations in a shared parent configuration file. This reduces duplication and promotes consistency across environments.
-
-* Parameterization: Use Terragrunt variables to parameterize your configurations and make them more flexible. Parameterization allows you to customize configurations for different environments or pass inputs to Terraform modules.
   
 ***
 ## Contact Information
