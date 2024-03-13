@@ -8,7 +8,7 @@
 # Table of Contents 
 + [Introduction](#Introduction)
 + [Why middleware Monitor ?](#Whymiddleware-Monitor)
-+ [Resource Performance Metrics for middleware Monitoring](#ResourcePerformance-Metrics-for-middleware-Monitoring)
++ [Key Metrics for middleware Monitoring](#Key-Metrics-for-middleware-Monitoring)
 + [Advantages of Middleware Monitoring](#AdvantagesofMiddlewareMonitoring)
 + [Disadvantages of Middleware Monitoring](#DisadvantagesofMiddlewareMonitoring)
 + [Tools for key- mitrics Monitoring](#Tools-for-key-mitrics-Monitoring)
@@ -34,7 +34,7 @@ Middleware monitoring plays a critical role in ensuring the optimal performance,
 
 
 ***
-## Resource Performance Metrics for Middleware Monitoring
+## Key Metrics for Middleware Monitoring
 
 | **Performance Metric** | **Description**   |
 |------------------------|-------------------|
