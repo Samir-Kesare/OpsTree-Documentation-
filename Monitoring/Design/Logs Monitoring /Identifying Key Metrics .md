@@ -1,6 +1,6 @@
 # Monitoring Application Logs: Identifying Key Metrics
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/1aac5b1e-9629-456a-a5bc-70a6442ab7d2)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/6ca19e28-ea8b-44e8-a8fc-6184ee02183e)
 
 
 |   Author     |  Created on   |  Version   | Last updated by | Last edited on |
