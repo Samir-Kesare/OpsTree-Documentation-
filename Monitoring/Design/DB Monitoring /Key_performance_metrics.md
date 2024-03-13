@@ -102,5 +102,6 @@ Measured in various units:
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Blocked Transactions   | Each transaction holds a resource with a lock and waits to acquire additional locked resources, creating a circular dependency.                                   |
 | Circular Dependency    | The core characteristic of a deadlock is the circular waiting condition. Transaction A is waiting for a resource held by Transaction B, and Transaction B is waiting for a resource held by Transaction A. This circular dependency forms a deadlock. |
-| Resolution Mechanisms  | - Timeouts: Transactions may give up and release locks if resources aren't obtained within a specified time. - Detection and Resolution: Database systems detect deadlocks and may cancel involved transactions to break the deadlock.                 |
+| Resolution Mechanisms  | - Timeouts: Transactions may give up and release locks if resources aren't obtained within a specified time.                              |
+|                        | - Detection and Resolution: Database systems detect deadlocks and may cancel involved transactions to break the deadlock.                 |
 
