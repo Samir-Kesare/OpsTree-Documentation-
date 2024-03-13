@@ -39,11 +39,17 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 ***
 ## Proof of Concept (POC) Guide:
 
- * Gain practical experience with Terragrunt by following our detailed Proof of Concept (POC) guide available [here](). This comprehensive document provides step-by-step instructions for setting up and utilizing Terragrunt in a sample project. Explore essential concepts and learn how to effectively implement Terragrunt in your infrastructure workflows.
+ * Gain practical experience with Terragrunt by following our detailed Proof of Concept (POC) guide available [here](https://github.com/CodeOps-Hub/Documentation/blob/main/Terragrunt/POC/README.md). This comprehensive document provides step-by-step instructions for setting up and utilizing Terragrunt in a sample project. Explore essential concepts and learn how to effectively implement Terragrunt in your infrastructure workflows.
 
 ***
 ## Best Practices
 
+* Modularization: Break down your infrastructure code into reusable modules to promote code reusability and maintainability. Terragrunt supports module reuse across different projects and environments.
+
+* Configuration Inheritance: Leverage Terragrunt's configuration inheritance feature to define common settings and configurations in a shared parent configuration file. This reduces duplication and promotes consistency across environments.
+
+* Parameterization: Use Terragrunt variables to parameterize your configurations and make them more flexible. Parameterization allows you to customize configurations for different environments or pass inputs to Terraform modules.
+  
 ***
 ## Contact Information
 
@@ -55,10 +61,7 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
 | Title                                      | URL                                           |
 |--------------------------------------------|-----------------------------------------------|
-| Dependency-Check User Guide           | [link](https://jeremylong.github.io/DependencyCheck/)    |
-| OWASP Dependency-Check GitHub Repository    | https://github.com/jeremylong/DependencyCheck  |
-| OWASP Dependency-Check benefits                 | https://medium.com/@sudheer.barakers/integrate-owasp-dependency-check-in-jenkins-pipeline-748d8aefc2b7 |
-| Installation                                 | https://www.youtube.com/watch?v=bImOWD4b6o8 |
+| Terragrunt official Doc           | [link](https://terragrunt.gruntwork.io/)    |
 
 
 
