@@ -24,17 +24,6 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 ***
 ## Challenges Faced in Terraform
 
-* Challenge 1 
-* Repeatability -  Repeatability is a common challenge in Terraform configurations, as they often need to be repeated across multiple environments. However, managing this repetition can become complex, particularly in cases where terraform configurations are complex.
-
-* Solution - Terragrunt simplifies the management of repeated configurations by providing features like dependency management, configuration inheritance, and environment-specific configurations. By abstracting common configurations into shared modules and promoting code reuse, Terragrunt helps ensure consistency and reliability across deployments.
-
-* Challenge 2
-* Managing Multiple Environments: Terraform supports multiple environments through workspace management and variable files, but managing environment-specific configurations and dependencies can still be complex, especially as the number of environments (e.g., development, staging, production) grows.
-
-* Solution - Terragrunt helps in manaing our workspace by creating a common configurations and parameterization which makes it easier to manage settings that are different to each environmen while sharing the common configuration across those environments. 
-
-
 | Challenge                 | Solution                                                                                                                                                                              |
 |---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Repeatability** - Repeatability is a common challenge in Terraform configurations, as they often need to be repeated across multiple environments. However, managing this repetition can become complex, particularly in cases where terraform configurations are complex.                          | Terragrunt simplifies the management of repeated configurations by providing features like dependency management, configuration inheritance, and environment-specific configurations. By abstracting common configurations into shared modules and promoting code reuse, Terragrunt helps ensure consistency and reliability across deployments. |
