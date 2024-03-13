@@ -1,4 +1,4 @@
-# High Availability in Sonarqube
+# Key Performance Metrics for App Monitoring
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
 | ---------------------------------------------------------------- | ----------- | ---------- | --------------- | --------------- |
