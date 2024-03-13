@@ -16,14 +16,13 @@
 ***
 
 ## Introduction 
-This doc will tell us what is HA and why we use it. Sonarqube provides HA in its Data Center Edition, in this doc we have to make a alternative HA of Sonarqube Community Edition. 
+Performance monitoring is critical for ensuring the optimal operation of applications. This documentation aims to identify key performance metrics and requirements essential for monitoring the performance of applications.
 ***
 ## What
-
+API monitoring is the process of continuously checking for both the availability of your endpoints and the validity of their data exchanges. While monitoring your APIs, you also gain visibility into how your APIs operate in terms of performance (e.g., time to respond to a request made from various locations or to queries of increasing complexity).
 ***
 ## Why 
 
-### [**HA Reference DOC **](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/DevOps%20Practices/High%20Availability/README.md), to know more about HA.
 ***
 > [!IMPORTANT]
 > If you want to run SonarQube as a Cluster, it is only possible with a [Data Center Edition](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server-as-a-cluster/)<br>
