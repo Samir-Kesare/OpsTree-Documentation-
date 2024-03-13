@@ -19,11 +19,15 @@
 * [Pre-requisites](#Pre-requisites)
 * [Flow Diagram](#Flow-Diagram)
 * [Directory Structure](#Directory-Structure)
-* [Usage](#Usage)
+* [Configuration Files](#Configuration-Files)
+  * [main.tf](#main.tf)
+  * [variables.tf](#variables.tf)
+  * [output.tf](#output.tf)
 * [Tags](#Tags)
 * [Inputs](#Inputs)
 * [Outputs](#Outputs)
-* [Result](#Result)
+* [Terminal Output](#Terminal-Output)
+* [Console Output](#Console-Output)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -245,7 +249,7 @@ resource "aws_autoscaling_policy" "ASG_Policy" {
 </details>
 
 ***
-### variables.tf file
+### variables.tf
 
 The `variables.tf` file defines input variables used in the `main.tf` file to parameterize the configuration. These variables include Security Group,Launch Template,Target Group,Configure Listener rule of ALB,Configure Auto Scaling group,Auto Scaling Policies.
 
@@ -516,7 +520,7 @@ variable "target_value" {
 
 ***
 
-### output.tf file
+### output.tf
 
 The `output.tf` file specifies the outputs of the Terraform configuration. It includes the IDs of various resources created such as Security_Group_ID,key_pair_name,launch_template_id,Target_group_id,Autoscaling_group_id,Autoscaling_policy_name.
 
@@ -625,9 +629,7 @@ output "Autoscaling_policy_name" {
 
 ***
 
-## Output
-
-### Terminal Output
+## Terminal Output
 
 <img width="500" alt="image" src="">
 
