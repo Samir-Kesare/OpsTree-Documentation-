@@ -8,7 +8,8 @@
 ## Table of Contents 
 + [Introduction](#Introduction)
 + [Challenges Faced in Terraform](#challenges-faced-in-terraform)
-+ [Key Benefits of Terragrunt](#key-benefits)
++ [Difference b/w terraform and terragrunt](#difference-b/w-terraform-and-terragrunt)
++ [Key Benefits of Terragrunt](#key-benefits-of-terragrunt)
 + [Flow Diagram](#flow-diagram)
 + [POC Guide](#Proof-of-Concept-(POC)-Guide)
 + [Best Practices](#best-practices)
@@ -24,6 +25,17 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
 
 ***
+## Difference B/w terraform and terragrunt
+
+| Feature                | Terraform                                                                                          | Terragrunt                                                                                                                             |
+|------------------------|----------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **Purpose**            | Infrastructure as Code (IaC) tool for defining, provisioning, and managing infrastructure        | Thin wrapper for Terraform that adds extra functionality and simplifies Terraform configurations                                       |
+| **Configuration**      | Uses HCL (HashiCorp Configuration Language) for defining infrastructure configurations             | Inherits Terraform configurations and adds features like configuration inheritance, parameterization, and environment management      |
+| **Modularity**         | Supports module-based approach for organizing and reusing configurations                           | Enhances modularity with additional features like dependency management and module reuse across projects and environments              |
+| **Environment**        | Offers workspace management for handling multiple environments                                      | Provides environment-specific configurations and management through inheritance                                   |                |
+| **State Management**   | Stores state files locally or remotely in supported backends                                       | Integrates with Terraform's state management mechanism, offering enhanced features for remote state storage and locking mechanisms      |                                 |
+
+
 ## Challenges Faced in Terraform
 
 | Challenge                 | Solution                                                                                                                                                                              |
@@ -32,7 +44,7 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 | **Managing Multiple Environments** - Terraform supports multiple environments through workspace management and variable files, but managing environment-specific configurations and dependencies can still be complex, especially as the number of environments (e.g., development, staging, production) grows. | Terragrunt helps in managing our workspace by creating a common configurations and parameterization which makes it easier to manage settings that are different to each environment while sharing the common configuration across those environments. |
 
 *** 
-## Key Benefits
+## Key Benefits of Terragrunt
 
 * Terragrunt acts as a thin wrapper around Terraform, providing additional functionality and enhancements to streamline Terraform configuration and management. It builds upon Terraform's core features while introducing new capabilities to simplify common workflows and address limitations.
 
@@ -64,6 +76,10 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
   
 ***
+Conclusion
+
+In conclusion, Terragrunt serves as a powerful complement to Terraform, enhancing its capabilities and simplifying infrastructure management. By leveraging Terragrunt alongside Terraform, users can achieve greater modularity, flexibility, and consistency in their infrastructure configurations.
+
 ## Contact Information
 
 |Vidhi Yadav                     | vidhi.yadhav.snaatak@mygurukulam.co                                                                                      
