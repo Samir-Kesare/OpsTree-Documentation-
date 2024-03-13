@@ -8,7 +8,8 @@
 ## Table of Contents
 + [Introduction](#Introduction)
 + [Flow Diagram](#flow-diagram-of-poc)
-+ [Proof of Concept](#Pre-requisite)
++ [Pre-Requisites](#pre-requisites)
++ [Proof of Concept](#Proof-of-concept-(POC)-setup)
 + [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
 + [References](#references)
@@ -26,13 +27,13 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 <img width="1535" alt="Screenshot 2024-03-13 at 9 12 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0b29d791-3e94-42ab-aeba-8e01594788f9">
 
 ***
-
-## Proof of Concept (PoC)
-### Pre-requisites
+## Pre-requisites
 |   Tool        |  Description   |
 | -----------------| --------------|
 | Terraform     | Terragrunt is a thin wrapper around Terraform, so you'll need to have Terraform installed on your system. |   
 
+***
+## Proof of Concept (PoC) setup
 
 ### 1. Setup Terragrunt
 
