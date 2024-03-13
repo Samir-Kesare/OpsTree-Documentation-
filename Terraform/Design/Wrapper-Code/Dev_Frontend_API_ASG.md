@@ -25,6 +25,7 @@
 * [Outputs](#Outputs)
 * [Terminal Output](#Terminal-Output)
 * [Console Output](#Console-Output)
+* [Best Practices](#Best-Practices)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -592,48 +593,47 @@ npm start
 
 | Name                             | Description                                              | Type          | Default                        |
 | -------------------------------- | -------------------------------------------------------- | ------------- | ------------------------------ |
-| **security_name**                | Name tag for the security group                          | `string`      | `Security-Group`               |
-| **Security_description**         | Description for the security group                       | `string`      | `Security group for Dev-Frontend-API` |
-| **SG_vpc_id**                    | ID of the VPC for instances                              | `string`      | `vpc-0383f4dc3af051efa`        |
-| **inbound_ports**                | List of inbound ports and protocols and cidr block & Security_group_ids | `list(map(any))` | See below |
-| **outbound_ports**               | List of outbound ports and protocols and Cidr block      | `list(map(any))` | See below |
-| **Sg_tags**                      | Tags for Security Group                                  | `map(string)` | See below |
-| **private_key_algorithm**        | Algorithm to use for generating the private key          | `string`      | `RSA`                          |
-| **private_key_rsa_bits**         | Number of bits for the RSA private key                   | `number`      | `4096`                         |
-| **template_name**                | Launch Template Name                                     | `string`      | `Template`                     |
-| **template_description**         | Launch Template Description                              | `string`      | `Template for XXXX`            |
-| **AMI_ID**                       | Instance AMI ID                                          | `string`      | `ami-0c335502f397b30c6`       |
-| **instance_type**                | Launch Template Instance Type                            | `string`      | `t2.micro`                     |
-| **instance_keypair**             | Launch Template Instance Type keypair name               | `string`      | `MasterKey`                    |
-| **subnet_ID**                    | Launch Template Subnet ID                                | `string`      | `subnet-04c0c823118f48202`     |
-| **user_data_script_path**        | Path to the user data script file                        | `string`      | `./script.sh`                  |
-| **target_group_name**            | Name of the target group                                 | `string`      | `Target-Group`                 |
-| **target_group_port**            | Port for the target group                                | `number`      | `80`                           |
-| **target_group_protocol**        | Protocol for the target group                            | `string`      | `HTTP`                         |
-| **TG_vpc_id**                    | ID of the VPC                                            | `string`      | `vpc-0383f4dc3af051efa`        |
-| **health_check_path**            | The destination for the health check request             | `string`      | `/health`                      |
-| **health_check_port**            | The port to use to connect with the target for health checking | `string` | `traffic-port`                 |
-| **health_check_interval**        | The approximate amount of time between health checks of an individual target | `number` | `30`                          |
-| **health_check_timeout**         | The amount of time during which no response means a failed health check | `number` | `5`                           |
-| **health_check_healthy_threshold** | The number of consecutive health check successes required before considering an unhealthy target healthy | `number` | `2`                    |
-| **health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2`                     |
-| **listener_arn**                 | ARN of the existing listener where the rule will be added | `string`  | `arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be` |
-| **path_pattern**                 | Path pattern for the listener rule                        | `string`      | `/`                            |
-| **action_type**                  | Path pattern for the listener rule                        | `string`      | `forward`                      |
-| **priority**                     | Priority                                                 | `number`      | `100`                          |
-| **autoscaling_group_name**       | The name of the Auto Scaling Group                       | `string`      | `ASG`                          |
-| **ASG_version**                  | Select Version                                           | `string`      | `$Latest`                      |
-| **min_size**                     | The minimum number of instances in the ASG               | `number`      | `1`                            |
-| **max_size**                     | The maximum number of instances in the ASG               | `number`      | `2`                            |
-| **desired_capacity**             | The desired number of instances in the ASG               | `number`      | `1`                            |
-| **subnet_ids**                   | The list of subnet IDs where the instances will be launched | `list(string)` | `["subnet-04c0c823118f48202"]` |
-| **tag_key**                      | The key for the tag to be applied to the ASG and instances | `string`   | `Name`                         |
-| **tag_value**                    | The value for the tag to be applied to the ASG and instances | `string` | `ASG`                          |
-| **propagate_at_launch**          | Whether the tag should be propagated to instances launched by the ASG | `bool` | `true`                      |
-| **scaling_policy_name**          | The name of the scaling policy                           | `string`      | `target-tracking-policy`       |
-| **policy_type**                  | The type of adjustment to make                           | `string`      | `TargetTrackingScaling`        |
-| **predefined_metric_type**       | The predefined metric type for tracking                  | `string`      | `ASGAverageCPUUtilization`     |
-| **target_value**                 | The target value for the predefined metric               | `number`      | `50.0`                         |
+| **Dev_security_name**            | Name tag for the security group                          | `string`      | `Dev-Frontend-sg`             |
+| **Dev_security_description**     | Description for the security group                       | `string`      | `Security group for Dev-Frontend-API` |
+| **Dev_SG_vpc_id**                | ID of the VPC for instances                              | `string`      | `vpc-0383f4dc3af051efa`       |
+| **Dev_inbound_ports**            | List of inbound ports and protocols and cidr block       | `list(map(any))` | See default values |
+| **Dev_outbound_ports**           | List of outbound ports and protocols and Cidr block      | `list(map(any))` | See default values |
+| **Dev_Sg_tags**                  | Tags for Security Group                                  | `map(string)` | See default values |
+| **Dev_private_key_algorithm**    | private_key_algorithm                                    | `string`      | `RSA`                          |
+| **Dev_private_key_rsa_bits**     | private_key_rsa_bits                                     | `number`      | `4096`                         |
+| **Dev_template_name**            | Launch Template Name                                     | `string`      | `Dev-Frontend-template`        |
+| **Dev_template_description**     | Launch Template Description                              | `string`      | `Template for Dev-Frontend`    |
+| **Dev_AMI_ID**                   | Instance AMI ID                                          | `string`      | `ami-0c335502f397b30c6`       |
+| **Dev_instance_type**            | Launch Template Instance Type                            | `string`      | `t2.micro`                     |
+| **Dev_instance_keypair**         | Launch Template Instance Type keypair name               | `string`      | `Dev_Key`                      |
+| **Dev_subnet_ID**                | Launch Template Subnet ID                                | `string`      | `subnet-04c0c823118f48202`    |
+| **Dev_user_data_script_path**    | Path to the user data script file                        | `string`      | `./script.sh`                  |
+| **Dev_target_group_name**        | Name of the target group                                 | `string`      | `Dev-Frontend-TG`              |
+| **Dev_target_group_port**        | Port for the target group                                | `number`      | `3000`                         |
+| **Dev_target_group_protocol**    | Protocol for the target group                            | `string`      | `HTTP`                         |
+| **Dev_TG_vpc_id**                | ID of the VPC                                             | `string`      | `vpc-0383f4dc3af051efa`       |
+| **Dev_health_check_path**        | The destination for the health check request             | `string`      | `/health`                      |
+| **Dev_health_check_port**        | The port to use to connect with the target for health checking | `string`  | `traffic-port`                 |
+| **Dev_health_check_interval**    | The approximate amount of time, in seconds, between health checks of an individual target | `number` | `30`          |
+| **Dev_health_check_timeout**     | The amount of time, in seconds, during which no response means a failed health check | `number` | `5`                          |
+| **Dev_health_check_healthy_threshold** | The number of consecutive health checks successes required before considering an unhealthy target healthy | `number` | `2`   |
+| **Dev_health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2` |
+| **Dev_listener_arn**             | ARN of the existing listener where the rule will be added | `string`  | `arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be` |
+| **Dev_path_pattern**             | Path pattern for the listener rule                       | `string`  | `*`                            |
+| **Dev_action_type**              | Path pattern for the listener rule                        | `string` | `forward`                     |
+| **Dev_priority**                 | priority                                                  | `number` | `100`                         |
+| **Dev_autoscaling_group_name**   | The name of the Auto Scaling Group                        | `string` | `Dev_Frontend_ASG`            |
+| **Dev_min_size**                 | The minimum number of instances in the ASG               | `number` | `1`                           |
+| **Dev_max_size**                 | The maximum number of instances in the ASG               | `number` | `2`                           |
+| **Dev_desired_capacity**         | The desired number of instances in the ASG               | `number` | `1`                           |
+| **Dev_subnet_ids**               | The list of subnet IDs where the instances will be launched | `list(string)` | See default values |
+| **Dev_tag_key**                  | The key for the tag to be applied to the ASG and instances | `string` | `Name`                        |
+| **Dev_tag_value**                | The value for the tag to be applied to the ASG and instances | `string` | `Dev_Frontend_ASG`            |
+| **Dev_propagate_at_launch**      | Whether the tag should be propagated to instances launched by the ASG | `bool` | `true`                     |
+| **Dev_scaling_policy_name**      | The name of the scaling policy                           | `string` | `target-tracking-policy`      |
+| **Dev_policy_type**              | The type of adjustment to make                           | `string` | `TargetTrackingScaling`       |
+| **Dev_predefined_metric_type**   | The predefined metric type for tracking                  | `string` | `ASGAverageCPUUtilization`    |
+| **Dev_target_value**             | The target value for the predefined metric               | `number` | `50.0`                        |
 
 ***
 
@@ -690,9 +690,22 @@ npm start
 
 ***
 
+# Best Practices
+
+| Practice           | Description                                                                                                                                   |
+|--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Modularity**         | Design wrapper scripts in a modular way, with separate functions for each Terraform command or task.                                          |
+| **Error Handling**     | Implement robust error handling mechanisms to gracefully handle failures and provide informative error messages.                             |
+| **Logging**            | Include logging functionality to capture relevant information and debug issues during Terraform execution.                                    |
+| **Version Control**    | Store wrapper scripts alongside Terraform configurations in version control repositories for versioning, collaboration, and auditability.  |
+| **Documentation**      | Provide comprehensive documentation for wrapper scripts, including usage instructions, dependencies, and troubleshooting tips.               |
+| **Security**           | Follow security best practices to protect sensitive information such as credentials and API keys used by wrapper scripts.                   |
+
+***
+
 ## Conclusion
 
-In conclusion, the design module documentation serves as a valuable resource for understanding the architecture, configuration, and deployment considerations of an auto-scalable system, empowering stakeholders to design, implement, and maintain resilient, scalable, and cost-effective cloud infrastructures.
+Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments.
 
 ***
  ## Contact Information
