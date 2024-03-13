@@ -1,4 +1,3 @@
-<img width="465" alt="Screenshot 2024-03-13 at 9 50 46 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3d467cad-b013-484e-ad87-75e231b27232">
 # Proof of Concept (POC) of Terragrunt
 
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
