@@ -35,8 +35,7 @@ In this document it will guide through the steps to achieve the setup of wrapper
 
 | Feature                | Description                    |
 |------------------------|---------------------------------------------------------------------------------------------------------------------|
-| **Automation**             | Automates repetitive tasks like initialization, applying changes, and destroying resources, saving time and
-effort.|
+| **Automation**      | Automates repetitive tasks like initialization, applying changes, and destroying resources, saving time and effort.|
 | **Enhanced Functionality** | Extends Terraform's capabilities by integrating with other tools, implementing custom logic, or enforcing specific workflows.|
 | **Standardization**        | Enforces standardized practices across Terraform projects, ensuring consistency and reducing the risk of errors.|
 | **Integration**            | Facilitates integration with CI/CD pipelines, version control systems, and infrastructure management platforms for seamless deployment. |
