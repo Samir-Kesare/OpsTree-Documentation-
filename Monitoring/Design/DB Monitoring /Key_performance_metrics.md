@@ -34,11 +34,10 @@ Measured in various units:
                                                                                   
 ### Transaction Rate
 
-**Definition:** Measures the frequency at which the database completes transactions within a specific time period, typically expressed as Transactions per Second (TPS).
-
-**Focus:** Emphasizes the system's capacity to handle workload.
-
-**Logical Unit of Work:** A transaction represents a set of database operations treated as a single unit.
+| Key Points             | Description                                                                                                              |
+|------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| Focus                  | Emphasizes the system's capacity to handle workload.                                                                    |
+| Logical Unit of Work   | A transaction represents a set of database operations treated as a single unit.                                         |
 
 **ACID Properties**
 
