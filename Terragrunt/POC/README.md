@@ -256,6 +256,8 @@ include "root"{
 
 ## Conclusion
 
+In conclusion, This POC (Proof of Concept) demonstrates how Terragrunt streamlines Terraform configurations, reducing complexity and duplicacy by consolidating common settings into a single shared terragrunt.hcl file. It has provided valuable insights into the capabilities and benefits of integrating Terragrunt into our infrastructure management workflows. Throughout the POC, we have successfully demonstrated how Terragrunt simplifies the management of Terraform configurations, promotes code reuse, and enhances the consistency and reliability of our infrastructure deployments. 
+
 
 ***
 ## Contact Information
@@ -268,8 +270,8 @@ include "root"{
 
 | Title                                      | URL                                           |
 |--------------------------------------------|-----------------------------------------------|
-| Official Terraform documentation          |     |
-
+| Official Terraform documentation          | [link](https://terragrunt.gruntwork.io/docs/#getting-started)    |
+| Terragrunt documentation                  | [link](https://github.com/CodeOps-Hub/Documentation/blob/main/Terragrunt/Documentation/README.md#best-practices) |
 
 
 
