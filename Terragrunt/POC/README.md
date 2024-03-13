@@ -38,10 +38,14 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 ### 1. Setup Terragrunt
 
 * Visit terragrunt [website](https://terragrunt.gruntwork.io/docs/getting-started/install/) and follow the instructions provided on the website for your operating system.
-  
+
+### 2. Terraform Configuration
+
 * When working with Terragrunt, it's important to follow a consistent directory structure to ensure smooth execution and management of your infrastructure code.
- 
-<img width="469" alt="Screenshot 2024-03-13 at 9 32 44 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/37775314-a848-4286-a35c-dc88b3414b4b">
+
+
+ <img width="440" alt="Screenshot 2024-03-13 at 9 47 46 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3ecd0b67-f134-4f6d-9d8b-e9c8c0525265">
+
 
 * Your terraform configuration initially should look like this
 
@@ -189,7 +193,10 @@ terraform {
 ```
 </details>
 
-***
+### 3. Create terragrunt.hcl files
+
+* To simplify and streamline your Terraform configurations, you can leverage Terragrunt by creating terragrunt.hcl files. These files serve as a central location for defining common configurations, reducing the overall complexity of your infrastructure codebase.
+
 ## Conclusion
 
 * In conclusion, ZAP to check the security of our Java application, and it helped us find and fix some problems. But, it's important to know that keeping the application secure is an ongoing task. The information we got from this test is like a good starting point to make the application even more secure. It is advised to treat these findings seriously and implement appropriate remediation measures for overall security of our application.
