@@ -1,4 +1,4 @@
-
+<img width="465" alt="Screenshot 2024-03-13 at 9 50 46 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3d467cad-b013-484e-ad87-75e231b27232">
 # Proof of Concept (POC) of Terragrunt
 
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
@@ -197,11 +197,65 @@ terraform {
 
 * To simplify and streamline your Terraform configurations, you can leverage Terragrunt by creating terragrunt.hcl files. These files serve as a central location for defining common configurations, reducing the overall complexity of your infrastructure codebase.
 
+<img width="1535" alt="Screenshot 2024-03-13 at 9 12 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/bb4b2bba-74ed-4a9b-bd77-dfbd56f882e9">
+
+* To create a common configuration for `backend.tf` and `provider.tf` , you need to create a global terragrunt.hcl file that can be used in both the environnments (dev and prod). This would create our backend and provider automatically in both the environment saving us time and manual efforts. 
+
+Global **terragrunt.hcl** 
+
+```shell
+generate "provider" {
+  path      = "provider.tf"
+  if_exists = "overwrite"
+  contents  = <<EOF
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.38.0"  # Using a minimum version constraint
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = "us-east-1"
+}
+EOF
+}
+
+generate "backend" {
+  path      = "backend.tf"
+  if_exists = "overwrite"
+  contents  = <<EOF
+terraform {
+  backend "s3" {
+    bucket  = "bucket-terragrunt-001"
+    key     = "${path_relative_to_include()}/terraform.tfstate"   // path change based on the folder
+    region  = "us-east-1" 
+    encrypt = true
+  }
+}
+EOF
+}
+```
+
+* Now that we have created the global terragrunt.hcl file, the next step is to ensure that both the dev and prod environments utilize this shared configuration. To achieve this, we need to create separate terragrunt.hcl files within each of these environments. These files will serve the sole purpose of including the global Terragrunt configuration from their respective folders.
+
+**terragrunt.hcl** in environment folders 
+
+```shell
+include "root"{
+    path = find_in_parent_folders()
+}
+```
+
+### 4. Execute changes using terragrunt
+
+* Recheck your Terragrunt configuration and initialize your Terraform setup using the `terragrunt init` command. Afterwards, proceed with planning and applying the changes using `terragrunt plan` and `terragrunt apply` commands, respectively. These steps ensure that your infrastructure configuration is properly set up and any changes are carefully planned and applied using Terragrunt.
+
 ## Conclusion
 
-* In conclusion, ZAP to check the security of our Java application, and it helped us find and fix some problems. But, it's important to know that keeping the application secure is an ongoing task. The information we got from this test is like a good starting point to make the application even more secure. It is advised to treat these findings seriously and implement appropriate remediation measures for overall security of our application.
-
-* Since, security risks are always changing, it's really important to keep paying attention and regularly test and fix any issues in our applications. This ongoing effort is key to making sure our application stays strong and secure.
 
 ***
 ## Contact Information
