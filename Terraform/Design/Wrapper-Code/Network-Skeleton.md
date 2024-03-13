@@ -66,9 +66,9 @@ effort. |
 
 # Configuration Files
 
-### main.tf file
+**This Terraform configuration defines infrastructure components for an AWS environment, including VPC, subnets, internet gateway, NAT gateway, route tables, network ACLs, ALB, Route 53 zone, and records. It utilizes modularization with a main module for network setup and various input variables defined in separate files for customization. The output file specifies the IDs of created resources, facilitating reference in other configurations. Provider and Terraform configuration files ensure the correct provider version and AWS region settings. The terraform.tfvars file provides default values for variables, while allowing for customization as needed.**
 
-**The `main.tf` file contains the configuration for creating various AWS resources such as VPC, subnets, internet gateway, NAT gateway, route tables, network ACLs, security groups, ALB, Route 53 zone, and records.**
+### main.tf file
 
 ```shell
 module "network" {
@@ -115,8 +115,6 @@ module "network" {
 ***
 
 ### variables.tf file
-
-**The `variables.tf` file defines input variables used in the `main.tf` file to parameterize the configuration. These variables include VPC settings, subnet details, internet gateway tags, NAT gateway tags, route table tags, network ACLs, ALB security group settings, ALB configuration, Route 53 zone tags, and record settings.**
 
 ```shell
 variable "region" {
@@ -456,8 +454,6 @@ variable "route53_zone_name" {
 ***
 
 ### output.tf file
-
-**The `output.tf` file specifies the outputs of the Terraform configuration. It includes the IDs of various resources created such as VPC, subnets, internet gateway, NAT gateway, route tables, network ACLs, ALB security group, ALB DNS name, Route 53 zone name servers, and Route 53 record name.**
 
 ```shell
 output "vpc-id" {
