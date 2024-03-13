@@ -64,7 +64,7 @@ The state file is an artifact that you’re left with once an Infrastructure as 
 
 ## Flow Diagram
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156057205/9b5ae612-95d9-4cf4-9612-d9874fcfd843)
+<img src="https://devopscube.com/wp-content/uploads/2023/08/alb-asg-workflow.gif" width="700">
 
 ***
 
