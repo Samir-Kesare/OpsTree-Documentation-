@@ -17,7 +17,7 @@
 * [Pre-requisites](#Pre-requisites)
 * [Directory Structure](#Directory-Structure)
 * [Configuration Files](#Configuration-Files)
-* [Result](#Result)
+* [Output](#Output)
 * [Best Practices](#Best-Practices)
 * [Conclusion](#Conclusion)
 * [Contact Information](#Contact-Information)
@@ -896,11 +896,15 @@ route53_zone_name = "example.com"
 ```
 ***
 
-# Result
+# Output
+
+## Terminal Output
 
 <img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bd9a27e6-97e7-467b-b3ac-ad2cd7df65e6">
 
 ***
+
+## Console Output
 
 ### VPC & it's resources
 
