@@ -18,7 +18,7 @@
   + [Response Time](#Response-Time)
   + [Deadlocks](#Deadlocks)
 + [Tools for Database Monitoring](#Tools-for-Database-Monitoring)
-+ [Best practices](#Best-practices)
++ [Best practice](#Best-practice)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
 + [References](#References)
