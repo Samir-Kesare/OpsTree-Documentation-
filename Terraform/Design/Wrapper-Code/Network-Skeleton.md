@@ -69,6 +69,9 @@ In this document it will guide through the steps to achieve the setup of wrapper
 
 ### main.tf file
 
+<details>
+<summary> <b> Click here for main.tf file </b> </summary>
+<br>
 ```shell
 module "network" {
     source                         = "./networking"
@@ -111,6 +114,8 @@ module "network" {
     route53_zone_name              = var.route53_zone_name
 }    
 ```
+</details>
+
 ***
 
 ### variables.tf file
