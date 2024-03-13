@@ -21,15 +21,8 @@
 
 Terragrunt is an open-source tool designed to make working with Terraform easier. Terraform itself is a widely-used infrastructure-as-code tool created by HashiCorp, used for building, changing, and versioning infrastructure safely and efficiently. While Terraform provides a powerful way to manage infrastructure, it can become complex to manage complex configurations across multiple environments and projects. Terragrunt simplifies this process to make your configurations less complex. 
 
+
 ***
-## Flow Diagram 
-
-<img width="1517" alt="Screenshot 2024-03-13 at 8 15 29 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/e9810d24-4d1a-44bb-8cff-9f546a9ba8e9">
-
-* The folder structure in "Before" shows how to separate the code for each environment (dev, prod) and for each type of infrastructure (apps, databases, VPCs). However, the downside is that it isn’t DRY. The .tf files will contain a LOT of duplication.
-
-* Now, to reduce duplication we would create the same folder structure you had before for all of your environments, but instead of lots of copy/pasted .tf files for each module, you have just a single `terragrunt.hcl` file. This file now calls your module and include the global terragrunt.hcl file which contains `backend.tf` and `provider.tf` which would almost be same for all environments. 
-
 ## Challenges Faced in Terraform
 
 | Challenge                 | Solution                                                                                                                                                                              |
@@ -44,6 +37,16 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 
 * Terragrunt follows the `DRY (Don't Repeat Yourself)` principle, aiming to reduce code duplication and promote reusability across Terraform configurations. It allows you to define common configurations and modules once and reuse them across multiple environments or projects. This way, Instead of duplicating infrastructure configuration for each environment (e.g., dev, staging, prod), Terragrunt enables you to define shared modules or configurations and inherit them in environment-specific configurations, eliminating the need to duplicate code.
 
+***
+## Flow Diagram
+
+<img width="1517" alt="Screenshot 2024-03-13 at 8 15 29 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/e9810d24-4d1a-44bb-8cff-9f546a9ba8e9">
+
+* The folder structure in "Before" shows how to separate the code for each environment (dev, prod) and for each type of infrastructure (apps, databases, VPCs). However, the downside is that it isn’t DRY. The .tf files will contain a LOT of duplication.
+
+* Now, to reduce duplication we would create the same folder structure you had before for all of your environments, but instead of lots of copy/pasted .tf files for each module, you have just a single `terragrunt.hcl` file. This file now calls your module and include the global terragrunt.hcl file which contains `backend.tf` and `provider.tf` which would almost be same for all environments.
+
+  
 ***
 ## Proof of Concept (POC) Guide:
 
