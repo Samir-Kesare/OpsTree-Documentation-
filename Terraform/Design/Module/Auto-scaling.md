@@ -572,13 +572,14 @@ output "Autoscaling_policy_name" {
 
 ***
 
-# Tags
+## Tags
+
 * Tags are assigned to resources with name variable as prefix.
 * Additial tags can be assigned by tags variables as defined above.
   
 ***
 
-# Inputs
+## Inputs
 
 | Name | Description | Type | Default | 
 | ---- | ----------- | ---- | ------- | 
@@ -624,11 +625,16 @@ output "Autoscaling_policy_name" {
 
 ***
 
-# Result
+## Output
 
-<img width="500" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/bf7c2df5-04cb-43ef-8151-ab504a4d9214">
+### Terminal Output
+
+<img width="500" alt="image" src="">
 
 ***
+
+## Console Output
+
 ### Launch Template
 
 <img width="700" alt="image" src=""> 
