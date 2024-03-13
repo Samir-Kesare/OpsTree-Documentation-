@@ -26,9 +26,11 @@ Performance monitoring is critical for ensuring the optimal operation of applica
 ***
 ## What
 API monitoring is the process of continuously checking for both the availability of your endpoints and the validity of their data exchanges. While monitoring your APIs, you also gain visibility into how your APIs operate in terms of performance (e.g., time to respond to a request made from various locations or to queries of increasing complexity).
+
+As with any critical infrastructure, APIs require careful monitoring to ensure optimal performance. Their efficiency directly affects user satisfaction, system reliability, and operational effectiveness. Neglecting monitoring can result in outages, congestion, and subpar service quality. Therefore, it's essential for organizations relying on APIs to prioritize understanding the key metrics that drive their performance.
 ***
 ## Why 
-As with any critical infrastructure, APIs require careful monitoring to ensure optimal performance. Their efficiency directly affects user satisfaction, system reliability, and operational effectiveness. Neglecting monitoring can result in outages, congestion, and subpar service quality. Therefore, it's essential for organizations relying on APIs to prioritize understanding the key metrics that drive their performance. Performance metrics are essential in API monitoring for several reasons:
+Performance metrics are essential in API monitoring for several reasons:
 
 1. **User Experience**: The performance of an API directly impacts the experience of end-users. Metrics such as response time and latency reflect how quickly requests are processed, influencing user satisfaction.
 
