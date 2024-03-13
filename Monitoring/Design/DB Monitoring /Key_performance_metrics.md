@@ -4,15 +4,45 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Khushi Malhotra |  07 Feb 2024  |  Version 1 | Khushi Malhotra  | 13 Feb 2024    |
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/1aac5b1e-9629-456a-a5bc-70a6442ab7d2)
+
+## Table of Contents
++ [Introduction](#Introduction)
++ [Why we need Database Monitoring?](#Why-we-need-Database-Monitoring?)
++ [Key Database Performance Metrics You Must Track Regularly](#Key-Database-Performance-Metrics-You-Must-Track-Regularly)
+  + [Transaction Rate](#Transaction-Rate)
+  + [Queries per Second](#Queries-per-Second)
+  + [Data volume per second](#Data-volume-per-second)
+  + [Locks](#Locks)
+  + [Database Connections](#Database-Connections)
+  + [Response Time](#Response-Time)
+  + [Deadlocks](#Deadlocks)
++ [Tools for Database Monitoring](#Tools-for-Database-Monitoring)
++ [Best practices](#Best-practices)
++ [Conclusion](#Conclusion)
++ [Contact Information](#contact-information)
++ [References](#References)
+
 ## Introduction
 Key performance metrics in database monitoring are crucial for optimizing database performance and ensuring smooth operations.
 Monitoring key metrics in database management is essential for ensuring optimal performance, identifying potential issues and making informed decisions regarding system resources. Several key metrics play a crucial role in this monitoring process, each providing unique insights into the database's health and efficiency. Let's explore some of these key metrics:
+***
+
+## Why we need Database Monitoring?
+
+Database monitoring is crucial for organizations to ensure optimal performance, data integrity, and security. Here are some key reasons why database monitoring is essential:
+**Performance Optimization:** Monitoring database performance allows organizations to identify bottlenecks, optimize queries, and allocate resources efficiently to enhance overall system performance.
+
+**Issue Identification and Resolution:** By tracking key metrics, database monitoring helps in identifying and addressing performance issues promptly, minimizing downtime, and ensuring uninterrupted operations.
+
+**Resource Utilization:** Monitoring database resources like memory usage, CPU performance, and disk space helps in optimizing resource allocation, preventing overutilization, and ensuring smooth operations.
+
+**Security and Compliance:** Database monitoring tools provide features for auditing, tracking user activity, detecting unauthorized access attempts, and ensuring data protection to meet regulatory requirements and maintain data security.
+
+**Proactive Maintenance:** Database monitoring enables proactive maintenance by alerting teams to potential issues before they impact operations, reducing mean time to recovery (MTTR), and enhancing system reliability.
+***
 
 ## Key Database Performance Metrics You Must Track Regularly
-**Database Throughput**
-Database throughput is one of the most important database performance metrics. It is the volume of work done by your database server over a unit of time such as per second, or per hour. It is usually measured as number of queries executed per second.
-Focuses on processing speed: Throughput emphasizes the database's capacity to handle incoming requests and complete operations.
-Measured in various units:
 
 | Key Points               | Description                                                                                                                                                                                                                      |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
@@ -49,7 +79,7 @@ Measured in various units:
 | Durability   | Committed transactions are persisted permanently, ensuring data remains intact even in case of system failures.         |
 
 
-### Queries per Second (QPS)
+### Queries per Second
 
 
 | Key Points           | Description                                                                                                                                       |
@@ -105,3 +135,37 @@ Measured in various units:
 | Resolution Mechanisms  | - Timeouts: Transactions may give up and release locks if resources aren't obtained within a specified time.                              |
 |                        | - Detection and Resolution: Database systems detect deadlocks and may cancel involved transactions to break the deadlock.                 |
 
+## Tools for Database Monitoring 
+| Tool          | Description                                                                                                                                                                                                                                  |
+|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Prometheus    | Prometheus is an open-source monitoring and alerting toolkit designed for reliability and scalability. It collects metrics from monitored targets by scraping HTTP endpoints, allowing for flexible and powerful querying. It is often used in conjunction with Grafana for visualization and alerting. |
+| Grafana       | Grafana is an open-source analytics and monitoring solution that allows you to query, visualize, alert on, and understand your metrics. It supports various data sources, including Prometheus, and offers a rich set of visualization options, including graphs, charts, and tables. Grafana is highly customizable, making it suitable for creating dashboards tailored to specific monitoring needs. |
+| Datadog       | Datadog is a cloud-based monitoring and analytics platform that provides infrastructure monitoring, application performance monitoring (APM), and log management. It supports a wide range of integrations and provides comprehensive visibility into the performance and health of your infrastructure and applications. Datadog offers features such as anomaly detection, distributed tracing, and customizable dashboards. |
+| AppDynamics   | AppDynamics is an application performance monitoring (APM) solution that provides real-time insights into the performance of your applications and infrastructure. It automatically discovers and maps application dependencies, allowing you to quickly identify performance bottlenecks and optimize application performance. AppDynamics offers features such as code-level diagnostics, business transaction monitoring, and end-user monitoring. |
+
+
+## Best practice
+
+| Step                                | Description                                                                                                                                         |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. Choose Meaningful Metrics       | - Align with app functionality and user experience. - Consider database type (e.g., MySQL, PostgreSQL) and its specific metrics. - Include a balanced mix:   - Resource usage (CPU, memory, disk I/O) - Throughput (QPS, TPS) - Database-specific metrics (locks, waits) - Operational metrics (active users, errors) |
+| 2. Set Baselines and Alerts        | - Track historical data to establish performance benchmarks. - Define acceptable ranges and trigger alerts for abnormal values.                           |
+| 3. Leverage Monitoring Tools       | - Use built-in functionalities offered by most databases. - Explore advanced tools for deeper insights, historical analysis, and visualizations.         |
+| 4. Proactive Analysis and Optimization | - Investigate alerts promptly to identify root causes. - Analyze how metrics correlate to pinpoint bottlenecks. - Perform regular performance tuning (e.g., indexing, caching) to improve efficiency. |
+
+## Conclusion
+
+Monitoring key metrics is vital for PostgreSQL database health. Metrics like QPS, Transaction Rate, Locks, Disk I/O, Connections, Response Time, Deadlocks, CPU Usage, and Memory Usage provide insights into workload, efficiency, and potential issues. Proactive monitoring, using tools like Prometheus and Grafana, ensures early issue detection, scalability planning, and overall system health. This approach enables informed decision-making, contributing to optimal PostgreSQL database performance.
+
+## Contact Information
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
+
+## References
+
+| Description                                   | References  
+| --------------------------------------------  | -------------------------------------------------|
+| Key Metrics | https://blogs.manageengine.com/application-performance-2/appmanager/2020/04/27/key-metrics-for-postgresql-performance-monitoring.html |
+| Metrics | https://ubiq.co/analytics-blog/key-database-performance-metrics-must-track-regularly/ |
+| Types of Metrics | https://scoutapm.com/blog/database-performance-metrics |
