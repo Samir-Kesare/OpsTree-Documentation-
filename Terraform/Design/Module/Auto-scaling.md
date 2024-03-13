@@ -78,7 +78,7 @@ The state file is an artifact that you’re left with once an Infrastructure as 
 The `main.tf` file contains the configuration for creating various AWS resources such as Security Group,Launch Template,Target Group,Configure Listener rule of ALB,Configure Auto Scaling group,Auto Scaling Policies.
 
 <details>
-<summary> <a href="main.tf" style="color: red;"> <strong>Click here to see main.tf file</strong> </a> </summary>
+<summary><strong style="color: red;">Click here to see main.tf file</strong></summary>
 <br>
 
 ```shell
