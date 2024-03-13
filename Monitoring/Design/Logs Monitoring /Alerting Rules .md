@@ -60,11 +60,7 @@ Alerting rules define conditions that trigger alerts based on log data. These co
 | **Improved Scalability**                      | - Supports scalability by automatically monitoring application performance and resource utilization, allowing organizations to identify scalability issues early and plan for additional resources or infrastructure changes as needed.                                                                                     |
 | **Enhanced Security**                        | - Contributes to enhanced security by detecting and alerting on security-related events or anomalies in application logs, such as unauthorized access attempts, unusual behavior, or potential security breaches.                                                                                                                  |
 | **Continuous Improvement**                   | - Promotes continuous improvement by facilitating regular review and refinement of alerting rules, allowing organizations to adapt to changing requirements, optimize performance, and enhance the effectiveness of their monitoring systems over time.                                                                                   |
-
-
-
 # Disadvatages
-
 
 | **Disadvantage**                                | **Explanation**                                                                                                                                                                                                                                                             |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -72,14 +68,17 @@ Alerting rules define conditions that trigger alerts based on log data. These co
 | **Complexity**                                  | - Managing and maintaining a large number of alerting rules can become complex and cumbersome, especially in dynamic environments with frequent changes in application behavior or infrastructure                                                                    |
 | **Dependency on Configuration**                 | - Alerting rules are highly dependent on accurate configuration settings, including thresholds, conditions, and notification channels. Any misconfiguration or oversight can compromise the effectiveness of the alerting system                              |
 | **Single Point of Failure**                    | - Depending solely on alerting rules for monitoring and incident detection can create a single point of failure, leaving organizations vulnerable to missed alerts or service disruptions if the alerting system experiences downtime or malfunctions               |
-| **Complexity in Alert Correlation**            | - Correlating alerts from multiple sources or systems to identify underlying issues can be complex, especially when dealing with diverse alerting formats, systems, or environments, leading to delays or inefficiencies in incident response                         |
+| **Complexity in Alert Correlation**            | - Correlating alerts from multiple sources or systems to identify underlying issues can be complex, especially when dealing with diverse alerting formats, systems, or environments, leading to delays or inefficiencies in incident response |
 
 # Best Practices
 
-*Start Simple: Begin with basic alerting rules and gradually refine them based on observed patterns and requirements.
-*Collaboration: Involve relevant stakeholders (developers, DevOps engineers, etc.) in defining alerting rules to ensure they align with operational needs.
-*Thresholds: Set thresholds carefully to avoid alert fatigue. Fine-tune thresholds based on historical data and real-world observations.
-*Regular Review: Periodically review and update alerting rules to adapt to changes in application behavior and performance.
+* **Start Simple**: Begin with basic alerting rules and gradually refine them based on observed patterns and requirements
+
+* **Collaboration**: Involve relevant stakeholders (developers, DevOps engineers, etc.) in defining alerting rules to ensure they align with operational needs
+
+* **Thresholds**: Set thresholds carefully to avoid alert fatigue. Fine-tune thresholds based on historical data and real-world observations
+
+* **Regular Review**: Periodically review and update alerting rules to adapt to changes in application behavior and performance
   
 # Conclusion
 
