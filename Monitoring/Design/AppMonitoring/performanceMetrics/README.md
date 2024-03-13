@@ -22,12 +22,8 @@ Performance monitoring is critical for ensuring the optimal operation of applica
 API monitoring is the process of continuously checking for both the availability of your endpoints and the validity of their data exchanges. While monitoring your APIs, you also gain visibility into how your APIs operate in terms of performance (e.g., time to respond to a request made from various locations or to queries of increasing complexity).
 ***
 ## Why 
-
+As with any critical infrastructure, APIs require careful monitoring to ensure optimal performance. Their efficiency directly affects user satisfaction, system reliability, and operational effectiveness. Neglecting monitoring can result in outages, congestion, and subpar service quality. Therefore, it's essential for organizations relying on APIs to prioritize understanding the key metrics that drive their performance. 
 ***
-> [!IMPORTANT]
-> If you want to run SonarQube as a Cluster, it is only possible with a [Data Center Edition](https://docs.sonarsource.com/sonarqube/latest/setup-and-upgrade/install-the-server-as-a-cluster/)<br>
-> Below, is an alternative approach with Sonarqube+AWS to provide HA.
-
 ## Performance Metrics
 
 | Metric | Description |
