@@ -7,8 +7,9 @@
 ***
 ## Table of Contents 
 + [Introduction](#Introduction)
-+ [Key Benefits of Terragrunt](#key-benefits)
 + [Challenges Faced in Terraform](#challenges-faced-in-terraform)
++ [Key Benefits of Terragrunt](#key-benefits)
++ [Flow Diagram](#flow-diagram)
 + [POC Guide](#Proof-of-Concept-(POC)-Guide)
 + [Best Practices](#best-practices)
 + [Contact Information](#contact-information)
