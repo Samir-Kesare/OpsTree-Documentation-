@@ -13,6 +13,7 @@
 + [Flow Diagram](#flow-diagram)
 + [POC Guide](#Proof-of-Concept-(POC)-Guide)
 + [Best Practices](#best-practices)
++ [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
 + [References](#references)
 
