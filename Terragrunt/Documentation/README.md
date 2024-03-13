@@ -32,7 +32,7 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
 | **Managing Multiple Environments** - Terraform supports multiple environments through workspace management and variable files, but managing environment-specific configurations and dependencies can still be complex, especially as the number of environments (e.g., development, staging, production) grows. | Terragrunt helps in managing our workspace by creating a common configurations and parameterization which makes it easier to manage settings that are different to each environment while sharing the common configuration across those environments. |
 
 *** 
-## Key Points
+## Key Benefits
 
 * Terragrunt acts as a thin wrapper around Terraform, providing additional functionality and enhancements to streamline Terraform configuration and management. It builds upon Terraform's core features while introducing new capabilities to simplify common workflows and address limitations.
 
