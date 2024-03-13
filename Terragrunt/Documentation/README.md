@@ -7,25 +7,30 @@
 ***
 ## Table of Contents 
 + [Introduction](#Introduction)
-+ [Key Benefits](#key-benefits)
-+ [POC Guide](#POC-guide)
++ [Key Benefits of Terragrunt](#key-benefits)
++ [Challenges Faced in Terraform](#challenges-faced-in-terraform)
++ [POC Guide](#Proof-of-Concept-(POC)-Guide)
 + [Best Practices](#best-practices)
 + [Contact Information](#contact-information)
 + [References](#references)
 
 ***
 ## Introduction
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/78aa81a8-604e-4178-ab80-3549f4a0c804)
 
+Terragrunt is an open-source tool designed to make working with Terraform easier. Terraform itself is a widely-used infrastructure-as-code tool created by HashiCorp, used for building, changing, and versioning infrastructure safely and efficiently. While Terraform provides a powerful way to manage infrastructure, it can become complex to manage complex configurations across multiple environments and projects. Terragrunt simplifies this process to make your configurations less complex. 
 
 *** 
 ## Key Points
 
 
 ***
+## Challenges Faced in Terraform
 
-  
+
+
 ***
-## Proof of Concept (POC) for Dependency-Check:
+## Proof of Concept (POC) Guide:
 
  * It is highly recommended to gain hands-on experience through our detailed Proof of Concept (POC) guide for [Dependency-Check](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/03-%20Java%20CI%20checks/Dependency%20Scanning%20POC/README.md). This comprehensive document walks you through a practical demonstration, providing step-by-step instructions on setting up Dependency-Check for a sample project. The POC guide delves into essential concepts into identifying vulnerabilities within project dependencies.
 
@@ -38,15 +43,6 @@
 2. **Integration with Other Security Tools** - Enhance the effectiveness of your security strategy by integrating OWASP Dependency-Check with other security tools. This synergistic approach provides a more comprehensive security analysis. (eg, DAST , Container security )
    
 3. **Handling False Positives** - False positives in dependency scanning results can occasionally occur. Here's how to handle them effectively. Leverage Dependency-Check's suppression mechanism to manage false positives, ensuring accurate reporting and engage with the Dependency-Check community to share and verify findings, improving the accuracy of future scans.
-
-***
-## Security and Compliance
-
-1. **Security Measures**  - Set appropriate vulnerability thresholds to trigger alerts or fail the build based on severity levels.
-  
-2. **Compliance Standards** - Identify and understand compliance standards relevant to your industry and project.
-   
-3. **Continuous Monitoring** - Implement tools and processes for automated monitoring of dependencies to ensure ongoing compliance. You may also conduct periodic audits to review and validate compliance measures, making adjustments as necessary.
 
 ***
 ## Contact Information
