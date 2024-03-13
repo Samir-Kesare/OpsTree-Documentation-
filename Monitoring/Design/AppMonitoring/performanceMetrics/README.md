@@ -10,9 +10,14 @@
 1. [Introduction](#Introduction)
 2. [What](#What)
 3. [Why](#Why)
-4. [Conclusion](#conclusion)
-5. [Contact Information](#Contact-Information)
-6. [References](#References)
+4. [Performance Metrics](#PerformanceMetrics)
+5. [Tools](#Tools)
+6. [Advantages](#Advantages)
+7. [Disadvantages](#Disadvantages)
+8. [Best Practices](#BestPractices)
+9. [Conclusion](#conclusion)
+10. [Contact Information](#Contact-Information)
+11. [References](#References)
 ***
 
 ## Introduction 
@@ -87,7 +92,6 @@ These tools offer a range of features to monitor, analyze, and optimize API perf
 
 # Best Practices
 Here are concise best practices for API metrics monitoring:
-Here's the list of best practices for API metrics monitoring in a tabular format:
 
 | Best Practices          | Description                                                                                                  |
 |-------------------------|--------------------------------------------------------------------------------------------------------------|
