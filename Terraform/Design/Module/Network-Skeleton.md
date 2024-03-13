@@ -31,11 +31,11 @@
 
 # Flow Diagram
 
-<img width="400" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/9b5ae612-95d9-4cf4-9612-d9874fcfd843">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/9b5ae612-95d9-4cf4-9612-d9874fcfd843">
 
 ***
 
-# Pre-requisiutes
+# Pre-requisites
 
 # Directory Structure
 
