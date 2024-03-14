@@ -47,11 +47,11 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 ***
 ## Best Practices 
 
-1. **Automation with Configuration Management Tools:** Utilize configuration management tools such as Ansible, Chef, or Puppet to automate the provisioning and management of infrastructure components. Automating repetitive tasks helps ensure consistency, reduces errors, and improves efficiency.
-
-2. **Version Control:** Maintain version control for configuration files, scripts, and other infrastructure artifacts using a version control system like Git. This allows for tracking changes over time, rollback to previous versions if necessary, and collaboration among team members.
-
-3. **Testing:** Implement testing practices, such as unit testing, integration testing, and end-to-end testing, to validate changes before deploying them to production. Automated testing pipelines can help streamline the testing process and ensure the reliability of infrastructure changes.
+| Best Practice                                   | Description                                                                                                                                  |
+|------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| Automation with Configuration Management Tools | Utilize configuration management tools such as Ansible, Chef, or Puppet to automate the provisioning and management of infrastructure components. Automating repetitive tasks helps ensure consistency, reduces errors, and improves efficiency. |
+| Version Control                                | Maintain version control for configuration files, scripts, and other infrastructure artifacts using a version control system like Git. This allows for tracking changes over time, rollback to previous versions if necessary, and collaboration among team members. |
+| Testing                                        | Implement testing practices, such as unit testing, integration testing, and end-to-end testing, to validate changes before deploying them to production. Automated testing pipelines can help streamline the testing process and ensure the reliability of infrastructure changes. |
 
 ***
 ## Conclusion 
