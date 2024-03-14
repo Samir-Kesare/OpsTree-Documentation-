@@ -41,10 +41,9 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 
 | Advantages                         | Disadvantages                                                                                                   |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| **Granular Control:**             | **Inability to Rollback:** Rollback to a previous version or state can be challenging or impossible in mutable infrastructure setups, especially if changes are applied incrementally and not properly versioned or tracked. |
-| Administrators have fine-grained control over individual components and configurations, allowing for targeted updates and customizations as needed. | **Complexity:** Managing mutable infrastructure can be complex, especially in large or heterogeneous environments, requiring careful coordination and documentation of changes to ensure consistency and reliability.  |
-| **Incremental Updates:**          |                                                                                                                 |
-| Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  |                                                                                                                 |
+| Your IT team does not need to build servers from scratch every time a change is required.            | **Inability to Rollback:** Rollback to a previous version or state can be challenging or impossible in mutable infrastructure setups, especially if changes are applied incrementally and not properly versioned or tracked. |
+|Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  | **Complexity:** Managing mutable infrastructure can be complex, especially in large or heterogeneous environments, requiring careful coordination and documentation of changes to ensure consistency and reliability.  |
+                                                                                                                                                                                           
 ***
 ## Best Practices 
 
