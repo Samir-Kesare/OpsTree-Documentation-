@@ -1,4 +1,4 @@
-# Frontend API Infra Documentation
+# DSL Jenkins pipeline for Frontend setup in dev env Documentation
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
 
@@ -77,8 +77,6 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 </details>
 
 **This Jenkins pipeline automates the deployment of a Frontend infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
-
-***
 
 ### Terraform Deployment Pipeline Overview
 
