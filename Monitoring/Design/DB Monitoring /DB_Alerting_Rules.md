@@ -78,30 +78,36 @@ Alerting rules in the context of database monitoring refer to predefined conditi
 
 ## Scenarios Where Alerting Rules play a role in Database Monitoring
 
-- **Performance Degradation**
-Metrics: Monitor database query execution times, slow query logs, and overall response times.
-Alert Conditions: Trigger alerts if average query execution time exceeds a threshold (e.g., 5 seconds) or the number of slow queries spikes significantly.
-Benefits: Early detection of performance issues allows for investigating slow queries, optimizing indexes, or scaling resources to prevent impacting user experience.
+| Alert Category          | Performance Degradation                                                                                                                     |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Metrics**             | Monitor database query execution times, slow query logs, and overall response times.                                                      |
+| **Alert Conditions**    | Trigger alerts if average query execution time exceeds a threshold (e.g., 5 seconds) or the number of slow queries spikes significantly.  |
+| **Benefits**            | Early detection of performance issues allows for investigating slow queries, optimizing indexes, or scaling resources to prevent impacting user experience.  |
 
-- **High Resource Consumption**
-Metrics: Track CPU usage, memory consumption, and disk I/O activity of the database server.
-Alert Conditions: Set alerts if CPU usage consistently exceeds a certain level (e.g., 80%) or available memory falls below a predefined threshold.
-Benefits: Alerts help identify potential bottlenecks due to excessive resource utilization, enabling proactive actions like scaling up resources or optimizing database queries.
+| Alert Category          | High Resource Consumption                                                                                                                  |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Metrics**             | Track CPU usage, memory consumption, and disk I/O activity of the database server.                                                         |
+| **Alert Conditions**    | Set alerts if CPU usage consistently exceeds a certain level (e.g., 80%) or available memory falls below a predefined threshold.           |
+| **Benefits**            | Alerts help identify potential bottlenecks due to excessive resource utilization, enabling proactive actions like scaling up resources or optimizing database queries. |
 
-- **Connection Issues**
-Metrics: Monitor the number of active connections, failed connection attempts, and connection pool size.
-Alert Conditions: Trigger alerts if the number of active connections reaches the connection pool limit or failed connection attempts surge.
-Benefits: Alerts notify administrators about potential connection overload or database server inaccessibility, allowing them to investigate the root cause and take corrective measures.
+| Alert Category          | Connection Issues                                                                                                                          |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Metrics**             | Monitor the number of active connections, failed connection attempts, and connection pool size.                                           |
+| **Alert Conditions**    | Trigger alerts if the number of active connections reaches the connection pool limit or failed connection attempts surge.                  |
+| **Benefits**            | Alerts notify administrators about potential connection overload or database server inaccessibility, allowing them to investigate the root cause and take corrective measures. |
 
-- **Security Threats**
-Metrics: Monitor failed login attempts, suspicious activity logs, and access patterns.
-Alert Conditions: Set alerts for unauthorized login attempts, unusual access patterns exceeding user baselines, or specific database commands indicating potential malicious activity.
-Benefits: Early detection of security breaches allows for immediate action such as blocking suspicious IP addresses or resetting compromised user credentials.
+| Alert Category          | Security Threats                                                                                                                          |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Metrics**             | Monitor failed login attempts, suspicious activity logs, and access patterns.                                                              |
+| **Alert Conditions**    | Set alerts for unauthorized login attempts, unusual access patterns exceeding user baselines, or specific database commands indicating potential malicious activity.  |
+| **Benefits**            | Early detection of security breaches allows for immediate action such as blocking suspicious IP addresses or resetting compromised user credentials. |
 
-- **Storage Capacity**
-Metrics: Track available disk space on the database server and the rate of data growth.
-Alert Conditions: Trigger alerts when available disk space falls below a specific threshold (e.g., 10%) or the rate of data growth indicates potential storage exhaustion.
-Benefits: Alerts provide a proactive warning to plan for additional storage allocation or data archiving strategies to prevent the database from running out of space.
+| Alert Category          | Storage Capacity                                                                                                                           |
+|-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **Metrics**             | Track available disk space on the database server and the rate of data growth.                                                              |
+| **Alert Conditions**    | Trigger alerts when available disk space falls below a specific threshold (e.g., 10%) or the rate of data growth indicates potential storage exhaustion.  |
+| **Benefits**            | Alerts provide a proactive warning to plan for additional storage allocation or data archiving strategies to prevent the database from running out of space. |
+
 ***
 
 ## Best Practices
