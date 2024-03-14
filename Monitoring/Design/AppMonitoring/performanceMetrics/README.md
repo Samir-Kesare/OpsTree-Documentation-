@@ -104,9 +104,8 @@ These tools offer a range of features to monitor, analyze, and optimize App perf
 6. Configure probes to run at fixed intervals for backup or service maintenance without disruption.
 7. Synthetic testing aids in understanding user experience.
 8. Monitor CPU usage for balanced application threading.
-9. Cryptographic protocols can monitor CPU usage.
-10. Configure Apps with appropriate memory allocation.
-11. High memory usage may indicate database management issues or excessive page thrashing.
+9. Configure Apps with appropriate memory allocation.
+10. High memory usage may indicate database management issues or excessive page thrashing.
 
 These insights provide additional context and guidance for optimizing and monitoring the listed metrics.
 ***
