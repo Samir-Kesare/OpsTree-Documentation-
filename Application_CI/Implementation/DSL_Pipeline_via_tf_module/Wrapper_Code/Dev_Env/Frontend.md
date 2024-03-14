@@ -125,33 +125,33 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ### Security Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c28e472c-e87a-4624-b480-7c280ba8d9af"> 
+<img width="700"  src=""> 
 
 ***
 ### Launch Template
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6c6ab63f-b752-4bfc-9954-aa1555d24eba"> 
+<img width="700"  src=""> 
 
 ***
 
 ### Target Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/61dce999-2c85-419b-994e-6118879e045e">
+<img width="700"  src="">
 
 ***
 ### Listener rule of ALB
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/883ac05a-38b7-41e3-b24a-d3b2fbf9126d">
+<img width="700" alt="">
 
 ***
 ### Auto Scaling Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/f6f0f968-8aed-4e72-8f25-f988860e3f95">
+<img width="700" alt="">
 
 ***
 ### Auto Scaling Group Policies
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/48ede5ce-51be-4828-8a31-0d3066a297c5">
+<img width="700"  src="">
 
 ***
 
