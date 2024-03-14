@@ -54,6 +54,15 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 3. **Testing:** Implement testing practices, such as unit testing, integration testing, and end-to-end testing, to validate changes before deploying them to production. Automated testing pipelines can help streamline the testing process and ensure the reliability of infrastructure changes.
 
 ***
+## Conclusion 
+
+Mutable infrastructure can be a suitable choice for organizations with traditional deployment practices. It offers granular control over individual components and configurations, allowing for targeted updates and customizations. 
+
+However, Mutable infrastructure might not be the best fit for all scenarios. If you're making changes to several machines, it takes a lot of time. Also, the cleanup process is hectic. If you're continually deploying upgrades, a mutable infrastructure might not suit your operations.
+
+Ultimately, the decision to use mutable infrastructure should be based on your organization's specific requirements, preferences, and operational constraints. In cloud environments, you may come across immutable infrastructure more frequently due to its scalability and reliability feature. Therefore, consider your infrastructure needs and objectives carefully before determining the most suitable approach for your organization.
+
+***
 ## Contact Information
 
 |Vidhi Yadav                     | vidhi.yadhav.snaatak@mygurukulam.co                                                                                      
