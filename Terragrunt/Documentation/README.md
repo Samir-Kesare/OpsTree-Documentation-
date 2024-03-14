@@ -12,6 +12,7 @@
 + [Key Benefits of Terragrunt](#key-benefits-of-terragrunt)
 + [Flow Diagram](#flow-diagram)
 + [POC Guide](#Proof-of-Concept-(POC)-Guide)
++ [Advantages and Disadvantages](#advantages-and-disadvantages)
 + [Best Practices](#best-practices)
 + [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
