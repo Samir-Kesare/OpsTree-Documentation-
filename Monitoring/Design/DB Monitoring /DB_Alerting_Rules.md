@@ -6,6 +6,17 @@
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/ee6a5612-6889-42de-889a-3e08ff668b1d)
 ***
+# Table of Contents 
++ [Introduction](#Introduction)
++ [Components of Alerting Rules](#Components-of-Alerting-Rules)
++ [Tools where we can define alerting rules](#Tools-where-we-can-define-alerting-rules)
++ [Advantages of Alerting Rules](#Advantages-of-Alerting-Rules)
++ [Disadvatages of Alerting Rules](#Disadvatages-of-Alerting-Rules)
++ [Scenarios Where Alerting Rules play a role in Database Monitoring](#Scenarios-Where-Alerting-Rules-play-a-role-in-Database-Monitoring)
++ [Best Practices](#Best-Practices)
++ [Conclusion](#Conclusion)
++ [Contact Information](#contact-information)
++ [References](#References)
 
 ## Introduction
 Alerting rules in the context of database monitoring refer to predefined conditions or criteria set within a monitoring system to trigger alerts when specific thresholds or events occur. These rules are essential for proactive monitoring and timely response to potential issues. 
@@ -43,7 +54,7 @@ Alerting rules in the context of database monitoring refer to predefined conditi
 | **Datadog**             | Provides a comprehensive monitoring and alerting solution with support for defining alerting rules based on metrics, logs, and traces. | Supports various notification channels.                  |
 ***
 
-## Advatages of Alerting Rules
+## Advantages of Alerting Rules
 
 | Advantage                             | Description                                                                                                                                                       |
 |---------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -93,25 +104,19 @@ Alert Conditions: Trigger alerts when available disk space falls below a specifi
 Benefits: Alerts provide a proactive warning to plan for additional storage allocation or data archiving strategies to prevent the database from running out of space.
 ***
 
-## Best Practice
+## Best Practices
 
-**Clear Goals:** Each rule should have a specific purpose: what it monitors and what action it triggers.
-
-**Actionable Alerts:** Notifications must provide enough context for recipients to understand the issue and take action.
-
-**Prioritize:** Categorize alerts by severity (critical, high, etc.) to focus on urgent issues first.
-
-**Reduce Noise:** Suppress repetitive alerts and group similar ones for a consolidated view.
-
-**Smart Thresholds:** Set thresholds based on historical data and consider dynamic adjustments.
-
-**Combine Conditions:** Use logical operators (AND, OR) for more specific triggers.
-
-**Documentation:** Clearly document rules' purpose, logic, and thresholds for future reference.
-
-**Regular Testing:** Test rules with simulations to ensure they function correctly.
-
-**Continuous Improvement:** Monitor effectiveness and update rules as needed.
+| Key Pointer            | Description                                                                                         |
+|------------------------|-----------------------------------------------------------------------------------------------------|
+| **Clear Goals:**       | Each rule should have a specific purpose: what it monitors and what action it triggers.             |
+| **Actionable Alerts:** | Notifications must provide enough context for recipients to understand the issue and take action.   |
+| **Prioritize:**        | Categorize alerts by severity (critical, high, etc.) to focus on urgent issues first.               |
+| **Reduce Noise:**      | Suppress repetitive alerts and group similar ones for a consolidated view.                           |
+| **Smart Thresholds:**  | Set thresholds based on historical data and consider dynamic adjustments.                            |
+| **Combine Conditions:**| Use logical operators (AND, OR) for more specific triggers.                                         |
+| **Documentation:**     | Clearly document rules' purpose, logic, and thresholds for future reference.                         |
+| **Regular Testing:**   | Test rules with simulations to ensure they function correctly.                                       |
+| **Continuous Improvement:** | Monitor effectiveness and update rules as needed.                                                |
 ***
 
 ## Conclusion
@@ -124,7 +129,7 @@ With well-defined alerts, you can get notified only when there's a serious issue
 | Khushi Malhotra | khushi.malhotra.snaatak@mygurukulam.co |
 ***
 
-## Reference 
+## References 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
 | Alerting Rules | https://www.ibm.com/docs/en/cloud-paks/cloudpak-data-system/2.0?topic=alerts-alert-rules |
