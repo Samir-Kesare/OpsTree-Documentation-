@@ -134,7 +134,7 @@ variable "region" {
 
 variable "vpc_cidr" {
   type    = string
-  default = "10.0.1.0/25"
+  default = "10.0.1.128/25"
 }
 
 variable "vpc_enable_dns_support" {
@@ -161,7 +161,7 @@ variable "vpc_tags" {
 variable "public_subnets_cidr" {
   description = "public subnet cidr block"
   type        = list(string)
-  default     = ["10.0.1.0/28", "10.0.1.64/28"]
+  default     = ["10.0.1.128/28", "10.0.1.144/28"]
 
 }
 
@@ -194,7 +194,7 @@ variable "public_subnets_tags" {
 variable "private_subnets_cidr" {
   description = "private subnet cidr block"
   type        = list(string)
-  default     = ["10.0.1.16/28", "10.0.1.32/28", "10.0.1.48/28"]
+  default     = ["10.0.1.160/28", "10.0.1.176/28", "10.0.1.192/28"]
 
 }
 
@@ -572,7 +572,7 @@ vpc_tags = {
 }
 
 /*--------------- Public Subnets ---------------*/
-public_subnets_cidr = ["10.0.1.0/28", "10.0.1.64/28"]
+public_subnets_cidr = ["10.0.1.128/28", "10.0.1.144/28"]
 
 public_subnets_az = ["us-east-2a", "us-east-2b"]
 
@@ -591,7 +591,7 @@ public_subnets_tags  = [{
 
 /*--------------- Private Subnets ---------------*/
 
-private_subnets_cidr = ["10.0.1.16/28", "10.0.1.32/28", "10.0.1.48/28"]
+private_subnets_cidr = ["10.0.1.160/28", "10.0.1.176/28", "10.0.1.192/28"]
 
 private_subnets_az = "us-east-2a"
 
@@ -651,21 +651,21 @@ frontend_nacl_ingress = [{
     }, {
     rule_no = 110
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 3000	
     to_port = 3000
     action = "allow"
     }, {
     rule_no = 120
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"
+    cidr_block = "10.0.1.128/28"
     from_port = 22	
     to_port = 22
     action = "allow"
     }, {
     rule_no = 130
     protocol = "tcp"
-    cidr_block = "10.0.1.64/28"	
+    cidr_block = "10.0.1.144/28"	
     from_port = 3000
     to_port = 3000
     action = "allow"
@@ -681,14 +681,14 @@ frontend_nacl_egress = [{
     }, {
     rule_no = 110
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 1024
     to_port = 65535
     action = "allow"
     }, {
     rule_no = 120
     protocol = "tcp"
-    cidr_block = "10.0.1.64/28"	
+    cidr_block = "10.0.1.144/28"	
     from_port = 1024
     to_port =  65535
     action = "allow"
@@ -714,42 +714,42 @@ backend_nacl_ingress = [{
     }, {
     rule_no = 110
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 8080
     to_port = 8080
     action = "allow"
     }, {
     rule_no = 120
     protocol = "tcp"
-    cidr_block = "10.0.1.48/28"
+    cidr_block = "10.0.1.192/28"
     from_port = 1024
     to_port = 65535
     action = "allow"
     }, {
     rule_no = 130
     protocol = "tcp"
-    cidr_block = "10.0.1.64/28"	
+    cidr_block = "10.0.1.144/28"	
     from_port = 1024
     to_port = 65535
     action = "allow"
     }, {
     rule_no = 140
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 22
     to_port = 22
     action = "allow"
     }, {
     rule_no = 150
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 1024
     to_port = 65535
     action = "allow"
     }, {
     rule_no = 160
     protocol = "tcp"
-    cidr_block = "10.0.1.64/28"	
+    cidr_block = "10.0.1.144/28"	
     from_port = 8080
     to_port = 8080
     action = "allow"
@@ -767,7 +767,7 @@ backend_nacl_egress = [{
     }, {
     rule_no = 110
     protocol = "tcp"
-    cidr_block = "10.0.1.48/28"	
+    cidr_block = "10.0.1.192/28"	
     from_port = 1024
     to_port = 65535
     action = "allow"
@@ -781,14 +781,14 @@ backend_nacl_egress = [{
     }, {
     rule_no = 130
     protocol = "tcp"
-    cidr_block = "10.0.1.64/28"	
+    cidr_block = "10.0.1.144/28"	
     from_port = 1024
     to_port =  65535
     action = "allow"
     }, {
     rule_no = 140
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 1024
     to_port =  65535
     action = "allow"
@@ -814,28 +814,28 @@ db_nacl_ingress = [{
     }, {
     rule_no = 110
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 22
     to_port = 22
     action = "allow"
     }, {
     rule_no = 120
     protocol = "tcp"
-    cidr_block = "10.0.1.32/28"
+    cidr_block = "10.0.1.176/28"
     from_port = 6379
     to_port = 6379
     action = "allow"
     }, {
     rule_no = 130
     protocol = "tcp"
-    cidr_block = "10.0.1.32/28"	
+    cidr_block = "10.0.1.176/28"	
     from_port = 9042
     to_port = 9042
     action = "allow"
     }, {
     rule_no = 140
     protocol = "tcp"
-    cidr_block = "10.0.1.32/28"	
+    cidr_block = "10.0.1.176/28"	
     from_port = 5432
     to_port = 5432
     action = "allow"
@@ -853,14 +853,14 @@ db_nacl_egress = [{
     }, {
     rule_no = 110
     protocol = "tcp"
-    cidr_block = "10.0.1.32/28"	
+    cidr_block = "10.0.1.176/28"	
     from_port = 1024
     to_port = 65535
     action = "allow"
     }, {
     rule_no = 120
     protocol = "tcp"
-    cidr_block = "10.0.1.0/28"	
+    cidr_block = "10.0.1.128/28"	
     from_port = 1024
     to_port =  65535
     action = "allow"
