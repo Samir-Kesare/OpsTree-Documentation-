@@ -176,7 +176,7 @@ variable "QA_Frontend_Sg_tags" {
   type            = map(string)
   default         = {
     Name          = "QA-Frontend-sg"
-    Enviroment    = "QA_Frontend"
+    Enviroment    = "QA-Frontend"
     Owner         = "Vishal"
   }
 }
@@ -317,7 +317,7 @@ variable "QA_Frontend_priority" {
 variable "QA_Frontend_autoscaling_group_name" {
   description     = "The name of the Auto Scaling Group"
   type            = string
-  default         = "QA_Frontend_Frontend_ASG"
+  default         = "QA_Frontend_ASG"
 }
 
 variable "QA_Frontend_min_size" {
@@ -353,7 +353,7 @@ variable "QA_Frontend_tag_key" {
 variable "QA_Frontend_tag_value" {
   description     = "The value for the tag to be applied to the ASG and instances"
   type            = string
-  default         = "QA_Frontend_Frontend_ASG"
+  default         = "QA_Frontend_ASG"
 }
 
 variable "QA_Frontend_propagate_at_launch" {
