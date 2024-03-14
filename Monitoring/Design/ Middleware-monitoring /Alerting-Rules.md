@@ -9,6 +9,7 @@
 + [Introduction](#Introduction)
 + [Components of Alerting Rules](#Components-of-Alerting-Rules)
 + [Tools where we can define alerting rules](#Tools-where-we-can-define-alerting-rules)
++ [Middleware Monitring Alerting Rule Type](#Middleware-Monitring-Alerting-Rule-Type)
 + [Advantages](#Advantages)
 + [Disadvatages](#Disadvatages)
 + [Best Practices](#Best-Practices)
@@ -41,6 +42,15 @@ databases, and other infrastructure elements that facilitate communication and d
 
 
 ***
+## Middleware Monitring Alerting Rule Type
+| Alert Type	| Description   |
+|------------|---------------|
+| **Threshold-based Alerts**	| Alerts triggered when predefined thresholds for performance metrics (e.g., response time, CPU utilization, memory usage, disk space, throughput, error rates) are exceeded. Example: Alert generated if CPU utilization exceeds 90% for more than 5 minutes.|
+|**Anomaly Detection**|Alerts triggered by detecting unusual patterns or deviations from normal behavior using anomaly detection techniques. Example: Alert generated if the number of requests suddenly spikes or drops significantly compared to historical data.|
+| **Event Correlation**| Alerts triggered based on correlated events across multiple middleware components. Example: Alert generated if a database outage coincides with a spike in error rates in an application server, indicating a potential correlation between the two events.|
+| **Dependency Failures** | Alerts triggered when dependencies between middleware components fail. Example: Alert generated if an application server fails to connect to a backend database or message queue, indicating a dependency failure.|
+| **Security Events**	| Alerts generated for security-related events such as unauthorized access attempts, suspicious activities, or security policy violations. Example: Alert generated if multiple failed login attempts are logged within a short period, indicating a potential security threat.|
+
 ## Advantages
 | **Advantage**                               | **Explanation**    |
 |---------------------------------------------|--------------------|
