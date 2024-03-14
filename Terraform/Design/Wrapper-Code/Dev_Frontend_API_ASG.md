@@ -81,53 +81,52 @@ This Terraform configuration defines infrastructure components for an AWS enviro
 
 ```shell
 
-module "ASG" {
+module "Dev_Frontend_ASG" {
 source                              = "git::https://github.com/CodeOps-Hub/Terraform-modules/tree/main/Auto_Sacling_Module"
 #---------------------------------Security Group ----------------------------------#
-security_name                       = var.Dev_security_name
-Security_description                = var.Dev_security_description
-SG_vpc_id                           = var.Dev_SG_vpc_id
-inbound_ports                       = var.Dev_inbound_ports
-outbound_ports                      = var.Dev_outbound_ports
-Sg_tags                             = var.Dev_Sg_tags
+security_name                       = var.Dev_Frontend_security_name
+Security_description                = var.Dev_Frontend_security_description
+SG_vpc_id                           = var.Dev_Frontend_SG_vpc_id
+inbound_ports                       = var.Dev_Frontend_inbound_ports
+outbound_ports                      = var.Dev_Frontend_outbound_ports
+Sg_tags                             = var.Dev_Frontend_Sg_tags
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------Launch Template ----------------------------------
-private_key_algorithm               = var.Dev_private_key_algorithm
-private_key_rsa_bits                = var.Dev_private_key_rsa_bits
-template_name                       = var.Dev_template_name
-template_description                = var.Dev_template_description
-AMI_ID                              = var.Dev_AMI_ID
-instance_type                       = var.Dev_instance_type
-instance_keypair                    = var.Dev_instance_keypair
-subnet_ID                           = var.Dev_subnet_ID
-user_data_script_path               = var.Dev_user_data_script_path
+private_key_algorithm               = var.Dev_Frontend_private_key_algorithm
+private_key_rsa_bits                = var.Dev_Frontend_private_key_rsa_bits
+template_name                       = var.Dev_Frontend_template_name
+template_description                = var.Dev_Frontend_template_description
+AMI_ID                              = var.Dev_Frontend_AMI_ID
+instance_type                       = var.Dev_Frontend_instance_type
+instance_keypair                    = var.Dev_Frontend_instance_keypair
+subnet_ID                           = var.Dev_Frontend_subnet_ID
+user_data_script_path               = var.Dev_Frontend_user_data_script_path
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
-target_group_name                   = var.Dev_target_group_name
-target_group_port                   = var.Dev_target_group_port
-target_group_protocol               = var.Dev_target_group_protocol
-TG_vpc_id                           = var.Dev_TG_vpc_id
-health_check_path                   = var.Dev_health_check_path
-health_check_port                   = var.Dev_health_check_port
-health_check_interval               = var.Dev_health_check_interval
-health_check_timeout                = var.Dev_health_check_timeout
-health_check_healthy_threshold      = var.Dev_health_check_healthy_threshold
-health_check_unhealthy_threshold    = var.Dev_health_check_unhealthy_threshold
+target_group_name                   = var.Dev_Frontend_target_group_name
+target_group_port                   = var.Dev_Frontend_target_group_port
+target_group_protocol               = var.Dev_Frontend_target_group_protocol
+TG_vpc_id                           = var.Dev_Frontend_TG_vpc_id
+health_check_path                   = var.Dev_Frontend_health_check_path
+health_check_port                   = var.Dev_Frontend_health_check_port
+health_check_interval               = var.Dev_Frontend_health_check_interval
+health_check_timeout                = var.Dev_Frontend_health_check_timeout
+health_check_healthy_threshold      = var.Dev_Frontend_health_check_healthy_threshold
+health_check_unhealthy_threshold    = var.Dev_Frontend_health_check_unhealthy_threshold
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #------------------------------- Listener rule of ALB -----------------------------#
-listener_arn                         = var.Dev_listener_arn
-path_pattern                         = var.Dev_path_pattern
-action_type                          = var.Dev_action_type
-priority                             = var.Dev_priority
+listener_arn                         = var.Dev_Frontend_listener_arn
+path_pattern                         = var.Dev_Frontend_path_pattern
+action_type                          = var.Dev_Frontend_action_type
+priority                             = var.Dev_Frontend_priority
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
-autoscaling_group_name              = var.Dev_autoscaling_group_name
-min_size                            = var.Dev_min_size
-max_size                            = var.Dev_max_size
-desired_capacity                    = var.Dev_desired_capacity
+autoscaling_group_name              = var.Dev_Frontend_autoscaling_group_name
+min_size                            = var.Dev_Frontend_min_size
+max_size                            = var.Dev_Frontend_max_size
+desired_capacity                    = var.Dev_Frontend_desired_capacity
 }
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-
 ```
 </details>
 
@@ -141,22 +140,22 @@ desired_capacity                    = var.Dev_desired_capacity
 ```shell
 #---------------------------------Security Group ----------------------------------#
 
-variable "Dev_security_name" {
+variable "Dev_Frontend_security_name" {
   description     = "Name tag for the security group"
   type            = string
   default         = "Dev-Frontend-sg"
 }
-variable "Dev_security_description" {
+variable "Dev_Frontend_security_description" {
   description     = "Description for the security group"
   type            = string
   default         = "Security group for Dev-Frontend-API"
 }
-variable "Dev_SG_vpc_id" {
+variable "Dev_Frontend_SG_vpc_id" {
   description     = "ID of the VPC for instances"
   type            = string
-  default         = "vpc-0383f4dc3af051efa"   # Dev-VPC ID
+  default         = "vpc-0383f4dc3af051efa"   # Dev_Frontend-VPC ID
 }
-variable "Dev_inbound_ports" {
+variable "Dev_Frontend_inbound_ports" {
   description     = "List of inbound ports and protocols and cidr block"
   type            = list(map(any))
   default         = [
@@ -165,19 +164,19 @@ variable "Dev_inbound_ports" {
     { port = 3000, protocol = "tcp", security_group_ids = "sg-0b426399b2b19b0ae" }, #  Dev-Frontend-lb-sg ID 
   ]
 }
-variable "Dev_outbound_ports" {
+variable "Dev_Frontend_outbound_ports" {
   description     = "List of outbound ports and protocols and Cidr block "
   type            = list(map(any))
   default         = [
     { port = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0", },
   ]
 }
-variable "Dev_Sg_tags" {
+variable "Dev_Frontend_Sg_tags" {
   description     = "Tags for Security Group"
   type            = map(string)
   default         = {
     Name          = "Dev-Frontend-sg"
-    Enviroment    = "dev"
+    Enviroment    = "Dev_Frontend"
     Owner         = "Vishal"
   }
 }
@@ -187,48 +186,48 @@ variable "Dev_Sg_tags" {
 
 # Key Generate
 
-variable "Dev_private_key_algorithm" {
+variable "Dev_Frontend_private_key_algorithm" {
   description     = "private_key_algorithm"
   type            = string
   default         = "RSA"
 }
-variable "Dev_private_key_rsa_bits" {
+variable "Dev_Frontend_private_key_rsa_bits" {
   description     = "private_key_rsa_bits"
   type            = number
   default         = 4096
 }
 
-variable "Dev_template_name" {
+variable "Dev_Frontend_template_name" {
   description     = "Launch Template Name"
   type            = string
   default         = "Dev-Frontend-template"  
 }
-variable "Dev_template_description" {
+variable "Dev_Frontend_template_description" {
   description     = "Launch Template Description"
   type            = string
   default         = "Template for Dev-Frontend"  
 }
-variable "Dev_AMI_ID" {
+variable "Dev_Frontend_AMI_ID" {
   description     = "Instance AMI ID"
   type            = string
   default         = "ami-0c335502f397b30c6" # Dev-Frontend Setup AMI ID
 }
-variable "Dev_instance_type" {
+variable "Dev_Frontend_instance_type" {
   description     = "Launch Template Instance Type"
   type            = string
   default         = "t2.micro"  
 }
-variable "Dev_instance_keypair" {
+variable "Dev_Frontend_instance_keypair" {
   description     = "Launch Template Instance Type keypair name"
   type            = string
-  default         = "Dev_Key"  
+  default         = "Dev_Frontend_Key"  
 }
-variable "Dev_subnet_ID" {
+variable "Dev_Frontend_subnet_ID" {
   description     = "Launch Template Subnet ID"
   type            = string
   default         = "subnet-04c0c823118f48202"  
 }
-variable "Dev_user_data_script_path" {
+variable "Dev_Frontend_user_data_script_path" {
   description = "Path to the user data script file"
   type        = string
   default     = "./script.sh"  # Path Dev-Frontend User data Script
@@ -237,52 +236,52 @@ variable "Dev_user_data_script_path" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
 
-variable "Dev_target_group_name" {
+variable "Dev_Frontend_target_group_name" {
   description     = "Name of the target group"
   type            = string
   default         = "Dev-Frontend-TG"
 }
-variable "Dev_target_group_port" {
+variable "Dev_Frontend_target_group_port" {
   description     = "Port for the target group"
   type            = number 
   default         = 3000
 }
-variable "Dev_target_group_protocol" {
+variable "Dev_Frontend_target_group_protocol" {
   description     = "Protocol for the target group"
   type            = string
   default         = "HTTP"
 }
-variable "Dev_TG_vpc_id" {
+variable "Dev_Frontend_TG_vpc_id" {
   description     = "ID of the VPC"
   type            = string
-  default         = "vpc-0383f4dc3af051efa"    #  Dev-VPC ID 
+  default         = "vpc-0383f4dc3af051efa"    #  Dev_Frontend-VPC ID 
 }
-variable "Dev_health_check_path" {
+variable "Dev_Frontend_health_check_path" {
   description     = "The destination for the health check request"
   type            = string
   default         = "/health"
 }
-variable "Dev_health_check_port" {
+variable "Dev_Frontend_health_check_port" {
   description     = "The port to use to connect with the target for health checking"
   type            = string
   default         = "traffic-port"
 }
-variable "Dev_health_check_interval" {
+variable "Dev_Frontend_health_check_interval" {
   description     = "The approximate amount of time, in seconds, between health checks of an individual target"
   type            = number
   default         = 30
 }
-variable "Dev_health_check_timeout" {
+variable "Dev_Frontend_health_check_timeout" {
   description     = "The amount of time, in seconds, during which no response means a failed health check"
   type            = number
   default         = 5
 }
-variable "Dev_health_check_healthy_threshold" {
+variable "Dev_Frontend_health_check_healthy_threshold" {
   description     = "The number of consecutive health checks successes required before considering an unhealthy target healthy"
   type            = number
   default         = 2
 }
-variable "Dev_health_check_unhealthy_threshold" {
+variable "Dev_Frontend_health_check_unhealthy_threshold" {
   description     = "The number of consecutive health check failures required before considering a target unhealthy"
   type            = number
   default         = 2
@@ -291,22 +290,22 @@ variable "Dev_health_check_unhealthy_threshold" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #------------------------------- Listener rule of ALB -----------------------------#
 
-variable "Dev_listener_arn" {
+variable "Dev_Frontend_listener_arn" {
   description       = "ARN of the existing listener where the rule will be added"
   type              = string
   default           = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be"
 }
-variable "Dev_path_pattern" {
+variable "Dev_Frontend_path_pattern" {
   description       = "Path pattern for the listener rule"
   type              = string
   default           = "*"   # Give your Path 
 }
-variable "Dev_action_type" {
+variable "Dev_Frontend_action_type" {
   description       = "Path pattern for the listener rule"
   type              = string
   default           = "forward"
 }
-variable "Dev_priority" {
+variable "Dev_Frontend_priority" {
   description       = "priority"
   type              = number
   default           = 100 
@@ -315,49 +314,49 @@ variable "Dev_priority" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 
-variable "Dev_autoscaling_group_name" {
+variable "Dev_Frontend_autoscaling_group_name" {
   description     = "The name of the Auto Scaling Group"
   type            = string
-  default         = "Dev_Frontend_ASG"
+  default         = "Dev-Frontend_ASG"
 }
 
-variable "Dev_min_size" {
+variable "Dev_Frontend_min_size" {
   description     = "The minimum number of instances in the ASG"
   type            = number
   default         = 1
 }
 
-variable "Dev_max_size" {
+variable "Dev_Frontend_max_size" {
   description     = "The maximum number of instances in the ASG"
   type            = number
   default         = 2
 }
 
-variable "Dev_desired_capacity" {
+variable "Dev_Frontend_desired_capacity" {
   description     = "The desired number of instances in the ASG"
   type            = number
   default         = 1
 }
 
-variable "Dev_subnet_ids" {
+variable "Dev_Frontend_subnet_ids" {
   description     = "The list of subnet IDs where the instances will be launched"
   type            = list(string)
   default         = [ "subnet-04c0c823118f48202" ]    #Frontend-Pvt-Subnet ID
 }
 
-variable "Dev_tag_key" {
+variable "Dev_Frontend_tag_key" {
   description     = "The key for the tag to be applied to the ASG and instances"
   type            = string
   default         = "Name"
 }
 
-variable "Dev_tag_value" {
+variable "Dev_Frontend_tag_value" {
   description     = "The value for the tag to be applied to the ASG and instances"
   type            = string
-  default         = "Dev_Frontend_ASG"
+  default         = "Dev-Frontend_ASG"
 }
 
-variable "Dev_propagate_at_launch" {
+variable "Dev_Frontend_propagate_at_launch" {
   description     = "Whether the tag should be propagated to instances launched by the ASG"
   type            = bool
   default         = true
@@ -366,22 +365,22 @@ variable "Dev_propagate_at_launch" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #---------------------------- Auto Scaling Policies -------------------------------#
 
-variable "Dev_scaling_policy_name" {
+variable "Dev_Frontend_scaling_policy_name" {
   description     = "The name of the scaling policy"
   type            = string
   default         = "target-tracking-policy"
 }
-variable "Dev_policy_type" {
+variable "Dev_Frontend_policy_type" {
   description     = "The type of adjustment to make"
   type            = string
   default         = "TargetTrackingScaling"
 }
-variable "Dev_predefined_metric_type" {
+variable "Dev_Frontend_predefined_metric_type" {
   description     = "The predefined metric type for tracking"
   type            = string
   default         = "ASGAverageCPUUtilization"
 }
-variable "Dev_target_value" {
+variable "Dev_Frontend_target_value" {
   description     = "The target value for the predefined metric"
   type            = number
   default         = 50.0
@@ -403,77 +402,77 @@ variable "Dev_target_value" {
 ```shell
 #---------------------------------Security Group ----------------------------------#
 
-Dev_security_name                       = "Dev-Frontend-sg"
-Dev_security_description                = "Security group for Dev-Frontend-API"
-Dev_SG_vpc_id                           = "vpc-0383f4dc3af051efa"    #Dev-VPC-ID
-Dev_inbound_ports                       = [
+Dev_Frontend_security_name                       = "Dev-Frontend-sg"
+Dev_Frontend_security_description                = "Security group for Dev-Frontend-API"
+Dev_Frontend_SG_vpc_id                           = "vpc-0383f4dc3af051efa"    #Dev_Frontend-VPC-ID
+Dev_Frontend_inbound_ports                       = [
   { port                                = 22, protocol = "tcp", cidr_blocks = "20.0.0.0/28" },                     # Management VPC Cidr Block
   { port                                = 22, protocol = "tcp", security_group_ids = "sg-0f470a22a92136557" },     #  Dev-Frontend-lb-sg ID
   { port                                = 3000, protocol = "tcp", security_group_ids = "sg-0b426399b2b19b0ae" },   # OpenVPN-SG
 ]
-Dev_outbound_ports                      = [
+Dev_Frontend_outbound_ports                      = [
   { port                                = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0" }
 ]
-Dev_Sg_tags                             = {
+Dev_Frontend_Sg_tags                             = {
   Name                                  = "Dev-Frontend-sg"
-  Enviroment                            = "dev"
+  Enviroment                            = "Dev_Frontend"
   Owner                                 = "Vishal"
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------Launch Template ----------------------------------#
 
-Dev_private_key_algorithm               = "RSA"
-Dev_private_key_rsa_bits                = 4096
-Dev_template_name                       = "Dev-Frontend-template"
-Dev_template_description                = "Template for Dev-Frontend"
-Dev_AMI_ID                              = "ami-0c335502f397b30c6"
-Dev_instance_type                       = "t2.micro"
-Dev_instance_keypair                    = "Dev_Key"
-Dev_subnet_ID                           = "subnet-04c0c823118f48202"
-Dev_user_data_script_path               = "./script.sh"
+Dev_Frontend_private_key_algorithm               = "RSA"
+Dev_Frontend_private_key_rsa_bits                = 4096
+Dev_Frontend_template_name                       = "Dev-Frontend-template"
+Dev_Frontend_template_description                = "Template for Dev-Frontend"
+Dev_Frontend_AMI_ID                              = "ami-0c335502f397b30c6"
+Dev_Frontend_instance_type                       = "t2.micro"
+Dev_Frontend_instance_keypair                    = "Dev_Frontend_Key"
+Dev_Frontend_subnet_ID                           = "subnet-04c0c823118f48202"
+Dev_Frontend_user_data_script_path               = "./script.sh"
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
 
-Dev_target_group_name                   = "Dev-Frontend-TG"
-Dev_target_group_port                   = 3000
-Dev_target_group_protocol               = "HTTP"
-Dev_TG_vpc_id                           = "vpc-0383f4dc3af051efa"   #Dev-VPC-ID
-Dev_health_check_path                   = "/health"
-Dev_health_check_port                   = "traffic-port"
-Dev_health_check_interval               = 30
-Dev_health_check_timeout                = 5
-Dev_health_check_healthy_threshold      = 2
-Dev_health_check_unhealthy_threshold    = 2
+Dev_Frontend_target_group_name                   = "Dev-Frontend-TG"
+Dev_Frontend_target_group_port                   = 3000
+Dev_Frontend_target_group_protocol               = "HTTP"
+Dev_Frontend_TG_vpc_id                           = "vpc-0383f4dc3af051efa"   #Dev_Frontend-VPC-ID
+Dev_Frontend_health_check_path                   = "/health"
+Dev_Frontend_health_check_port                   = "traffic-port"
+Dev_Frontend_health_check_interval               = 30
+Dev_Frontend_health_check_timeout                = 5
+Dev_Frontend_health_check_healthy_threshold      = 2
+Dev_Frontend_health_check_unhealthy_threshold    = 2
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #------------------------------- Listener rule of ALB -----------------------------#
 
-Dev_listener_arn                          = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be"
-Dev_path_pattern                          = "*"
-Dev_action_type                           = "forward"
-Dev_priority                              = 100
+Dev_Frontend_listener_arn                          = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be"
+Dev_Frontend_path_pattern                          = "*"
+Dev_Frontend_action_type                           = "forward"
+Dev_Frontend_priority                              = 100
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 
-Dev_autoscaling_group_name              = "Dev_Frontend_ASG"
-Dev_min_size                            = 1
-Dev_max_size                            = 2
-Dev_desired_capacity                    = 1
-Dev_subnet_ids                          = ["subnet-04c0c823118f48202"]   #Dev-Frontend Pvt ID
-Dev_tag_key                             = "Name"
-Dev_tag_value                           = "Dev_Frontend_ASG"
-Dev_propagate_at_launch                 = true
+Dev_Frontend_autoscaling_group_name              = "Dev-Frontend_ASG"
+Dev_Frontend_min_size                            = 1
+Dev_Frontend_max_size                            = 2
+Dev_Frontend_desired_capacity                    = 1
+Dev_Frontend_subnet_ids                          = ["subnet-04c0c823118f48202"]   #Dev-Frontend Pvt ID
+Dev_Frontend_tag_key                             = "Name"
+Dev_Frontend_tag_value                           = "Dev-Frontend_ASG"
+Dev_Frontend_propagate_at_launch                 = true
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #---------------------------- Auto Scaling Policies -------------------------------#
 
-Dev_scaling_policy_name                 = "target-tracking-policy"
-Dev_policy_type                         = "TargetTrackingScaling"
-Dev_predefined_metric_type              = "ASGAverageCPUUtilization"
-Dev_target_value                        = 50.0
+Dev_Frontend_scaling_policy_name                 = "target-tracking-policy"
+Dev_Frontend_policy_type                         = "TargetTrackingScaling"
+Dev_Frontend_predefined_metric_type              = "ASGAverageCPUUtilization"
+Dev_Frontend_target_value                        = 50.0
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 
@@ -591,49 +590,49 @@ npm start
 
 ## Inputs
 
-| Name                             | Description                                              | Type          | Default                        |
-| -------------------------------- | -------------------------------------------------------- | ------------- | ------------------------------ |
-| **Dev_security_name**            | Name tag for the security group                          | `string`      | `Dev-Frontend-sg`             |
-| **Dev_security_description**     | Description for the security group                       | `string`      | `Security group for Dev-Frontend-API` |
-| **Dev_SG_vpc_id**                | ID of the VPC for instances                              | `string`      | `vpc-0383f4dc3af051efa`       |
-| **Dev_inbound_ports**            | List of inbound ports and protocols and cidr block       | `list(map(any))` | See default values |
-| **Dev_outbound_ports**           | List of outbound ports and protocols and Cidr block      | `list(map(any))` | See default values |
-| **Dev_Sg_tags**                  | Tags for Security Group                                  | `map(string)` | See default values |
-| **Dev_private_key_algorithm**    | private_key_algorithm                                    | `string`      | `RSA`                          |
-| **Dev_private_key_rsa_bits**     | private_key_rsa_bits                                     | `number`      | `4096`                         |
-| **Dev_template_name**            | Launch Template Name                                     | `string`      | `Dev-Frontend-template`        |
-| **Dev_template_description**     | Launch Template Description                              | `string`      | `Template for Dev-Frontend`    |
-| **Dev_AMI_ID**                   | Instance AMI ID                                          | `string`      | `ami-0c335502f397b30c6`       |
-| **Dev_instance_type**            | Launch Template Instance Type                            | `string`      | `t2.micro`                     |
-| **Dev_instance_keypair**         | Launch Template Instance Type keypair name               | `string`      | `Dev_Key`                      |
-| **Dev_subnet_ID**                | Launch Template Subnet ID                                | `string`      | `subnet-04c0c823118f48202`    |
-| **Dev_user_data_script_path**    | Path to the user data script file                        | `string`      | `./script.sh`                  |
-| **Dev_target_group_name**        | Name of the target group                                 | `string`      | `Dev-Frontend-TG`              |
-| **Dev_target_group_port**        | Port for the target group                                | `number`      | `3000`                         |
-| **Dev_target_group_protocol**    | Protocol for the target group                            | `string`      | `HTTP`                         |
-| **Dev_TG_vpc_id**                | ID of the VPC                                             | `string`      | `vpc-0383f4dc3af051efa`       |
-| **Dev_health_check_path**        | The destination for the health check request             | `string`      | `/health`                      |
-| **Dev_health_check_port**        | The port to use to connect with the target for health checking | `string`  | `traffic-port`                 |
-| **Dev_health_check_interval**    | The approximate amount of time, in seconds, between health checks of an individual target | `number` | `30`          |
-| **Dev_health_check_timeout**     | The amount of time, in seconds, during which no response means a failed health check | `number` | `5`                          |
-| **Dev_health_check_healthy_threshold** | The number of consecutive health checks successes required before considering an unhealthy target healthy | `number` | `2`   |
-| **Dev_health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2` |
-| **Dev_listener_arn**             | ARN of the existing listener where the rule will be added | `string`  | `arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be` |
-| **Dev_path_pattern**             | Path pattern for the listener rule                       | `string`  | `*`                            |
-| **Dev_action_type**              | Path pattern for the listener rule                        | `string` | `forward`                     |
-| **Dev_priority**                 | priority                                                  | `number` | `100`                         |
-| **Dev_autoscaling_group_name**   | The name of the Auto Scaling Group                        | `string` | `Dev_Frontend_ASG`            |
-| **Dev_min_size**                 | The minimum number of instances in the ASG               | `number` | `1`                           |
-| **Dev_max_size**                 | The maximum number of instances in the ASG               | `number` | `2`                           |
-| **Dev_desired_capacity**         | The desired number of instances in the ASG               | `number` | `1`                           |
-| **Dev_subnet_ids**               | The list of subnet IDs where the instances will be launched | `list(string)` | See default values |
-| **Dev_tag_key**                  | The key for the tag to be applied to the ASG and instances | `string` | `Name`                        |
-| **Dev_tag_value**                | The value for the tag to be applied to the ASG and instances | `string` | `Dev_Frontend_ASG`            |
-| **Dev_propagate_at_launch**      | Whether the tag should be propagated to instances launched by the ASG | `bool` | `true`                     |
-| **Dev_scaling_policy_name**      | The name of the scaling policy                           | `string` | `target-tracking-policy`      |
-| **Dev_policy_type**              | The type of adjustment to make                           | `string` | `TargetTrackingScaling`       |
-| **Dev_predefined_metric_type**   | The predefined metric type for tracking                  | `string` | `ASGAverageCPUUtilization`    |
-| **Dev_target_value**             | The target value for the predefined metric               | `number` | `50.0`                        |
+| Name                                   | Description                                              | Type            | Default                        |
+| -------------------------------------- | -------------------------------------------------------- | --------------- | ------------------------------ |
+| **Dev_Frontend_security_name**         | Name tag for the security group                          | `string`        | `Dev-Frontend-sg`             |
+| **Dev_Frontend_security_description**  | Description for the security group                       | `string`        | `Security group for Dev-Frontend-API` |
+| **Dev_Frontend_SG_vpc_id**             | ID of the VPC for instances                              | `string`        | `vpc-0383f4dc3af051efa`       |
+| **Dev_Frontend_inbound_ports**         | List of inbound ports and protocols and cidr block       | `list(map(any))` | See default values |
+| **Dev_Frontend_outbound_ports**        | List of outbound ports and protocols and Cidr block      | `list(map(any))` | See default values |
+| **Dev_Frontend_Sg_tags**               | Tags for Security Group                                  | `map(string)`   | See default values |
+| **Dev_Frontend_private_key_algorithm** | private_key_algorithm                                    | `string`        | `RSA`                          |
+| **Dev_Frontend_private_key_rsa_bits**  | private_key_rsa_bits                                     | `number`        | `4096`                         |
+| **Dev_Frontend_template_name**         | Launch Template Name                                     | `string`        | `Dev-Frontend-template`        |
+| **Dev_Frontend_template_description**  | Launch Template Description                              | `string`        | `Template for Dev-Frontend`    |
+| **Dev_Frontend_AMI_ID**                | Instance AMI ID                                          | `string`        | `ami-0c335502f397b30c6`       |
+| **Dev_Frontend_instance_type**         | Launch Template Instance Type                            | `string`        | `t2.micro`                     |
+| **Dev_Frontend_instance_keypair**      | Launch Template Instance Type keypair name               | `string`        | `Dev_Frontend_Key`                      |
+| **Dev_Frontend_subnet_ID**             | Launch Template Subnet ID                                | `string`        | `subnet-04c0c823118f48202`    |
+| **Dev_Frontend_user_data_script_path** | Path to the user data script file                        | `string`        | `./script.sh`                  |
+| **Dev_Frontend_target_group_name**     | Name of the target group                                 | `string`        | `Dev-Frontend-TG`              |
+| **Dev_Frontend_target_group_port**     | Port for the target group                                | `number`        | `3000`                         |
+| **Dev_Frontend_target_group_protocol** | Protocol for the target group                            | `string`        | `HTTP`                         |
+| **Dev_Frontend_TG_vpc_id**             | ID of the VPC                                             | `string`        | `vpc-0383f4dc3af051efa`       |
+| **Dev_Frontend_health_check_path**     | The destination for the health check request             | `string`        | `/health`                      |
+| **Dev_Frontend_health_check_port**     | The port to use to connect with the target for health checking | `string`    | `traffic-port`                 |
+| **Dev_Frontend_health_check_interval** | The approximate amount of time, in seconds, between health checks of an individual target | `number` | `30`          |
+| **Dev_Frontend_health_check_timeout**  | The amount of time, in seconds, during which no response means a failed health check | `number` | `5`                          |
+| **Dev_Frontend_health_check_healthy_threshold** | The number of consecutive health checks successes required before considering an unhealthy target healthy | `number` | `2`   |
+| **Dev_Frontend_health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2` |
+| **Dev_Frontend_listener_arn**         | ARN of the existing listener where the rule will be added | `string`      | `arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be` |
+| **Dev_Frontend_path_pattern**         | Path pattern for the listener rule                       | `string`      | `*`                            |
+| **Dev_Frontend_action_type**          | Path pattern for the listener rule                        | `string`      | `forward`                     |
+| **Dev_Frontend_priority**             | priority                                                  | `number`      | `100`                         |
+| **Dev_Frontend_autoscaling_group_name** | The name of the Auto Scaling Group                     | `string`      | `Dev_Frontend_ASG`            |
+| **Dev_Frontend_min_size**             | The minimum number of instances in the ASG               | `number`      | `1`                           |
+| **Dev_Frontend_max_size**             | The maximum number of instances in the ASG               | `number`      | `2`                           |
+| **Dev_Frontend_desired_capacity**     | The desired number of instances in the ASG               | `number`      | `1`                           |
+| **Dev_Frontend_subnet_ids**           | The list of subnet IDs where the instances will be launched | `list(string)` | See default values |
+| **Dev_Frontend_tag_key**              | The key for the tag to be applied to the ASG and instances | `string`      | `Name`                        |
+| **Dev_Frontend_tag_value**            | The value for the tag to be applied to the ASG and instances | `string`      | `Dev_Frontend_ASG`            |
+| **Dev_Frontend_propagate_at_launch**  | Whether the tag should be propagated to instances launched by the ASG | `bool`     | `true`                     |
+| **Dev_Frontend_scaling_policy_name**  | The name of the scaling policy                           | `string`      | `target-tracking-policy`      |
+| **Dev_Frontend_policy_type**          | The type of adjustment to make                           | `string`      | `TargetTrackingScaling`       |
+| **Dev_Frontend_predefined_metric_type** | The predefined metric type for tracking                | `string`      | `ASGAverageCPUUtilization`    |
+| **Dev_Frontend_target_value**         | The target value for the predefined metric               | `number`      | `50.0`                        |
 
 ***
 
