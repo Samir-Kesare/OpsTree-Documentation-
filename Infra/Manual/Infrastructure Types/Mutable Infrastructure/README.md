@@ -41,8 +41,8 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 
 | Advantages                         | Disadvantages                                                                                                   |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| Your IT team does not need to build servers from scratch every time a change is required.            | **Inability to Rollback:** Rollback to a previous version or state can be challenging or impossible in mutable infrastructure setups, especially if changes are applied incrementally and not properly versioned or tracked. |
-|Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  | **Complexity:** Debugging is time consuming due to update tracking problems. You could end up with several versions of an update without any insight into the problem.  |
+| **Reuse existing configurations:** Your IT team does not need to build servers from scratch every time a change is required.            | **Inability to Rollback:** Rollback to a previous version or state can be challenging or impossible in mutable infrastructure setups, especially if changes are applied incrementally and not properly versioned or tracked. |
+|**Incremental updates:** Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  | **Complexity:** Debugging is time consuming due to update tracking problems. You could end up with several versions of an update without any insight into the problem.  |
                                                                                                                                                                                            
 ***
 ## Best Practices 
