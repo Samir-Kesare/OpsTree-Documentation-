@@ -294,7 +294,7 @@ variable "QA_health_check_unhealthy_threshold" {
 variable "QA_listener_arn" {
   description       = "ARN of the existing listener where the rule will be added"
   type              = string
-  default           = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/QA-ALB/75bc9b1a35dbe964/761653fb399a30be"
+  default           = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/QA-ALB/28944ea6f074d63f/4f0525f30ddcc2a5"
 }
 variable "QA_path_pattern" {
   description       = "Path pattern for the listener rule"
@@ -450,7 +450,7 @@ QA_health_check_unhealthy_threshold    = 2
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #------------------------------- Listener rule of ALB -----------------------------#
 
-QA_listener_arn                          = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/QA-ALB/75bc9b1a35dbe964/761653fb399a30be"
+QA_listener_arn                          = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/QA-ALB/28944ea6f074d63f/4f0525f30ddcc2a5"
 QA_path_pattern                          = "*"
 QA_action_type                           = "forward"
 QA_priority                              = 100
@@ -567,7 +567,7 @@ provider "aws" {
 ```shell
 #!/bin/bash
 
-ALB_DNS="QA-ALB-394440977.ap-northeast-1.elb.amazonaws.com"
+ALB_DNS="QA-ALB-1428988738.ap-northeast-1.elb.amazonaws.com"
 # Modify package.json with the ALB DNS placeholder
 sed -i 's/"homepage": "https:\/\/opstree.github.io",/"homepage": "http:\/\/${ALB_DNS}",/' /home/ubuntu/Frontend/package.json
 sed -i '/"proxy": "http:\/\/localhost:3000"/d' /home/ubuntu/Frontend/package.json
@@ -618,7 +618,7 @@ npm start
 | **QA_health_check_timeout**     | The amount of time, in seconds, during which no response means a failed health check | `number` | `5`                          |
 | **QA_health_check_healthy_threshold** | The number of consecutive health checks successes required before considering an unhealthy target healthy | `number` | `2`   |
 | **QA_health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2` |
-| **QA_listener_arn**             | ARN of the existing listener where the rule will be added | `string`  | `arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/QA-ALB/75bc9b1a35dbe964/761653fb399a30be` |
+| **QA_listener_arn**             | ARN of the existing listener where the rule will be added | `string`  | `arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/QA-ALB/28944ea6f074d63f/4f0525f30ddcc2a5` |
 | **QA_path_pattern**             | Path pattern for the listener rule                       | `string`  | `*`                            |
 | **QA_action_type**              | Path pattern for the listener rule                        | `string` | `forward`                     |
 | **QA_priority**                 | priority                                                  | `number` | `100`                         |
@@ -652,7 +652,7 @@ npm start
 
 ## Terminal Output
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7b5aa214-14c0-4834-9e41-753225a2bebe">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/b7f45009-65bd-4c0f-a3c5-963dd4df36be">
 
 ***
 
@@ -660,33 +660,33 @@ npm start
 
 ### Security Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c28e472c-e87a-4624-b480-7c280ba8d9af"> 
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/61f3feea-ab60-4e1e-8997-9323a831f30a"> 
 
 ***
 ### Launch Template
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6c6ab63f-b752-4bfc-9954-aa1555d24eba"> 
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/d8e01224-9d3a-4109-8feb-669e4d30f244"> 
 
 ***
 
 ### Target Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/61dce999-2c85-419b-994e-6118879e045e">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0be7e641-505d-4933-9be0-5e54b6576ca4">
 
 ***
 ### Listener rule of ALB
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/883ac05a-38b7-41e3-b24a-d3b2fbf9126d">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/b9d7c429-9282-486b-b1f3-cc84871cc827">
 
 ***
 ### Auto Scaling Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/f6f0f968-8aed-4e72-8f25-f988860e3f95">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/a8e30987-c1ee-4d1e-bb6f-5f582470f0e2">
 
 ***
 ### Auto Scaling Group Policies
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/48ede5ce-51be-4828-8a31-0d3066a297c5">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0072a186-7f22-4069-b271-761dfb5de8a3">
 
 ***
 
