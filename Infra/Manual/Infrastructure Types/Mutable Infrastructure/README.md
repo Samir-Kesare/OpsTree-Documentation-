@@ -42,7 +42,7 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 | Advantages                         | Disadvantages                                                                                                   |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | Your IT team does not need to build servers from scratch every time a change is required.            | **Inability to Rollback:** Rollback to a previous version or state can be challenging or impossible in mutable infrastructure setups, especially if changes are applied incrementally and not properly versioned or tracked. |
-|Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  | **Complexity:** Managing mutable infrastructure can be complex, especially in large or heterogeneous environments, requiring careful coordination and documentation of changes to ensure consistency and reliability.  |
+|Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  | **Complexity:** Debugging is time consuming due to update tracking problems. You could end up with several versions of an update without any insight into the problem.  |
                                                                                                                                                                                            
 ***
 ## Best Practices 
@@ -65,5 +65,5 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 | Title                                      | URL                                           |
 |--------------------------------------------|-----------------------------------------------|
 | Mutable and immutable infrastructure           | [link](https://devopscube.com/immutable-infrastructure/)    |
-|
+| pros and cons  | [Link](https://www.bridge-global.com/blog/mutable-vs-immutable-infrastructure/)https://www.bridge-global.com/blog/mutable-vs-immutable-infrastructure/
 
