@@ -1,4 +1,4 @@
-# VM Module Doc
+# Generic Doc for VM Module (Standalone Server)
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f95dfc00-7217-45b6-b770-c0f2af907cec">
 
