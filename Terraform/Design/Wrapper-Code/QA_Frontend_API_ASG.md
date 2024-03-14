@@ -82,7 +82,7 @@ This Terraform configuration defines infrastructure components for an AWS enviro
 ```shell
 
 module "QA_Frontend_ASG" {
-source                              = "git::https://github.com/CodeOps-Hub/Terraform-modules/tree/main/Auto_Sacling_Module"
+source                              = "git::https://<username>:<token>@github.com/CodeOps-Hub/Terraform-modules.git//Auto_Sacling_Module?ref=main"
 #---------------------------------Security Group ----------------------------------#
 security_name                       = var.QA_Frontend_security_name
 Security_description                = var.QA_Frontend_security_description
