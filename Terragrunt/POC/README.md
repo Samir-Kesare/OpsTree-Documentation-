@@ -27,7 +27,13 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 ***
 ## Flow Diagram of POC
 
-<img width="1535" alt="Screenshot 2024-03-13 at 9 12 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/0b29d791-3e94-42ab-aeba-8e01594788f9">
+<img width="1270" alt="Screenshot 2024-03-14 at 12 12 52 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8a779bfd-2773-4d40-a19c-db540b14fd9d">
+
+1) The initial directory structure illustrates how your Terraform configuration would appear, featuring two environments: "dev" and "prod." Both environments utilize the same configuration for backend.tf and provider.tf files.
+
+2) To avoid redundancy of these files across both environments, Terragrunt can be employed.
+
+3) In the "After" scenario, you will create a global terragrunt.hcl file. This file will automatically generate backend.tf and provider.tf files across all your environments, significantly reducing manual effort.
 
 ***
 ## Pre-requisites
