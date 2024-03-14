@@ -26,7 +26,7 @@ databases, and other infrastructure elements that facilitate communication and d
 |---------------------------------|-------------------------------------|
 |  **Thresholds**           |  Setting thresholds for various performance metrics such as response times, throughput, CPU usage, memory utilization, etc. When these metrics exceed predefined thresholds, alerts are triggered.|
 |**Anomaly Detection**  |    Implementing algorithms to detect unusual patterns or deviations from normal behavior, which may indicate potential issues or performance degradation.
-Event Correlation: Correlating events and metrics across different middleware components to identify root causes and dependencies accurately.|
+|  **Event Correlation**   | Correlating events and metrics across different middleware components to identify root causes and dependencies accurately.|
 | **Notification Channels**  |  Defining how alerts are communicated to relevant stakeholders, including email, SMS, instant messaging, or integration with incident management systems.|
 
 ***
