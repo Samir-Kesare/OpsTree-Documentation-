@@ -77,11 +77,11 @@ Event Correlation: Correlating events and metrics across different middleware co
 
 # References
 
-|  Source                                                                                 |        Description    |
-| ------------                                                                            | ----------------------|
-| [Link]([https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/))  |      Alerting Rules   |
-| [Link]([https://prometheus.io/docs/alerting/latest/overview/](https://www.tencentcloud.com/document/product/1116/43193))   |  Alerting Overview    |
-      
+| Source                                                                                               | Description          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------|
+| [Link](https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/) | Documentation on defining alerting rules in Grafana  |
+| [Link](https://prometheus.io/docs/alerting/latest/overview/)                  | Overview of alerting concepts in Prometheus        |
+
 
 
 
