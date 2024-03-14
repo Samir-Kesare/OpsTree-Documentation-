@@ -18,7 +18,8 @@
 * [Flow Diagram](#Flow-Diagram)
 * [Pre-requisites](#Pre-requisites)
 * [Jenkinsfile](#Jenkinsfile)
-* [Output](#Output)
+* [Jenkins Output](#Jenkins-Output)
+* [AWS Console Output](#AWS-Console-Output)
 * [Conclusion](#Conclusion)
 * [Contact Information](#Contact-Information)
 * [References](#References)
@@ -93,9 +94,21 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 | **Post**                    | Displays success or failure messages. |                                                                                                                                          
 ***
 
-# Output
+## Jenkins Output
 
-**Console Output**
+### Pipeline view
+
+<img width="700"  src="">
+
+***
+
+### Archive Artifact (SSH key pair)
+
+<img width="700"  src="">
+
+***
+
+### Console Output
 
 <details>
 <summary><strong>Click here to see Console output</strong></summary>
@@ -108,79 +121,37 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-**AMI Output (Dev-Frontend-AMI)**
+## AWS Console Output 
 
-It uses the aws_ami_from_instance resource to create an AMI from an existing EC2 instance (source_instance_id variable specifies the instance ID).
+### Security Group
 
-![Screenshot 2024-03-06 130025](https://github.com/CodeOps-Hub/Documentation/assets/156057205/8c71d8df-191c-4f8f-b6f3-4cd0b8c74adb)
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/c28e472c-e87a-4624-b480-7c280ba8d9af"> 
+
+***
+### Launch Template
+
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6c6ab63f-b752-4bfc-9954-aa1555d24eba"> 
 
 ***
 
-**Security Group for Frontend(Dev-Frontend-sg)**
- 
-Defines a security group with inbound and outbound rules for controlling traffic to and from instances. It dynamically creates rules based on the provided inbound_ports and outbound_ports variables.
-  
-![Screenshot 2024-03-06 130526](https://github.com/CodeOps-Hub/Documentation/assets/156057205/0335446e-d0c0-4c50-b9ce-2f609f9bde53)
+### Target Group
+
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/61dce999-2c85-419b-994e-6118879e045e">
 
 ***
+### Listener rule of ALB
 
-**SSH Key Pair for Frontend(Dev_Key)**
-
-It generates an SSH key pair using the tls_private_key and aws_key_pair resources.
-
-![Screenshot 2024-03-06 130558](https://github.com/CodeOps-Hub/Documentation/assets/156057205/3913273c-85ce-4b4b-91fe-f87042270027)
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/883ac05a-38b7-41e3-b24a-d3b2fbf9126d">
 
 ***
+### Auto Scaling Group
 
-**Launch Template for Frontend (Dev-Frontend-template)**
-
-Creates a launch template for EC2 instances with configurations such as AMI, instance type, key pair, security group, and user data script.
-
-![Screenshot 2024-03-06 130619](https://github.com/CodeOps-Hub/Documentation/assets/156057205/30f74226-f39f-4acb-91eb-9dc17f411e88)
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/f6f0f968-8aed-4e72-8f25-f988860e3f95">
 
 ***
+### Auto Scaling Group Policies
 
-**Load Balancer for Frontend (Dev-ALB)**
-
-Configures an Application Load Balancer (ALB) with a listener and default action forwarding requests to the target group.
-
-![Screenshot 2024-03-06 130413](https://github.com/CodeOps-Hub/Documentation/assets/156057205/43118be8-80e3-4c22-9096-72e30172e102)
-
-***
-
-**Listner Rules for Frontend**
-
-![Screenshot 2024-03-06 130428](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5a9296fb-9ad4-4667-b85a-bfa5ae692aa5)
-
-***
-
-**Auto Scaling Group for Frontend (Dev-Frontend-ASG)**
-
-Sets up an auto-scaling group with configurations such as launch template, minimum size, maximum size, desired capacity, VPC zone identifier, and target group ARN.
-
-![Screenshot 2024-03-06 130209](https://github.com/CodeOps-Hub/Documentation/assets/156057205/25916c23-07e6-4826-be38-bcc0c606c5f0)
-
-***
-
-**Auto Scaling Policy**
-
-Defines an auto-scaling policy for the auto-scaling group. It uses target tracking scaling with predefined metric specifications.
-
-![Screenshot 2024-03-06 130334](https://github.com/CodeOps-Hub/Documentation/assets/156057205/5ea8554e-44f4-4bd5-a31c-019a97d9a9de)
-
-***
-
-**Target Group for Frontend(Dev-Frontend-TG)**
-
-Defines a target group for routing requests to registered instances. It includes health check configurations.
-
-![Screenshot 2024-03-06 130054](https://github.com/CodeOps-Hub/Documentation/assets/156057205/fc3516be-e14e-4b6b-9677-2727a8aac764)
-
-***
-
-**Archive Artifact (SSH key pair)**
-
-<img width="950" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/57297b13-07f8-4707-9c91-e41f6e93d2d1">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/48ede5ce-51be-4828-8a31-0d3066a297c5">
 
 ***
 
