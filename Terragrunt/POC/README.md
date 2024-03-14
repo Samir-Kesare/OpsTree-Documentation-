@@ -29,6 +29,8 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 
 <img width="1270" alt="Screenshot 2024-03-14 at 12 12 52 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8a779bfd-2773-4d40-a19c-db540b14fd9d">
 
+### Explanation
+
 1) The initial directory structure illustrates how your Terraform configuration would appear, featuring two environments: "dev" and "prod." Both environments utilize the same configuration for backend.tf and provider.tf files.
 
 2) To avoid redundancy of these files across both environments, Terragrunt can be employed.
