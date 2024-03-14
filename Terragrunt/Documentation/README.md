@@ -67,6 +67,15 @@ Terragrunt is an open-source tool designed to make working with Terraform easier
  * Gain practical experience with Terragrunt by following our detailed Proof of Concept (POC) guide available [here](https://github.com/CodeOps-Hub/Documentation/blob/main/Terragrunt/POC/README.md). This comprehensive document provides step-by-step instructions for setting up and utilizing Terragrunt in a sample project. Explore essential concepts and learn how to effectively implement Terragrunt in your infrastructure workflows.
 
 ***
+## Advantages and Disadvantages
+
+| Advantages                                                     | Disadvantages                                                  |
+| -------------------------------------------------------------- | --------------------------------------------------------------- |
+| 1. DRY Principle (Don't Repeat Yourself): Terragrunt allows you to abstract common Terraform configurations into reusable modules, reducing duplication across multiple environments or projects. | 1. Learning Curve: Terragrunt introduces additional complexity and a learning curve compared to raw Terraform, especially for beginners or teams unfamiliar with its concepts and syntax. |
+| 2. Simplified Configuration: Terragrunt provides a simplified configuration syntax compared to raw Terraform, enhancing readability and maintainability of infrastructure code.                                            | 2. Compared to Terraform, Terragrunt has a smaller user base and community support, leading to fewer resources, tutorials, and troubleshooting assistance. |
+                        
+
+***
 ## Best Practices
 
 | Best Practice           | Description                                                                                                                                                             |
