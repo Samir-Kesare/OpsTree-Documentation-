@@ -17,6 +17,7 @@
 + [Tools where we can define alerting rules](#Tools-where-we-can-define-alerting-rules)
 + [Advantages](#Advantages)
 + [Disadvatages](#Disadvatages)
++ [Scenerio/Examples](#Scenerio/Examples)
 + [Best Practices](#Best-Practices)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
@@ -69,6 +70,20 @@ Alerting rules define conditions that trigger alerts based on log data. These co
 | **Dependency on Configuration**                 | - Alerting rules are highly dependent on accurate configuration settings, including thresholds, conditions, and notification channels. Any misconfiguration or oversight can compromise the effectiveness of the alerting system                              |
 | **Single Point of Failure**                    | - Depending solely on alerting rules for monitoring and incident detection can create a single point of failure, leaving organizations vulnerable to missed alerts or service disruptions if the alerting system experiences downtime or malfunctions               |
 | **Complexity in Alert Correlation**            | - Correlating alerts from multiple sources or systems to identify underlying issues can be complex, especially when dealing with diverse alerting formats, systems, or environments, leading to delays or inefficiencies in incident response |
+
+# Scenerio/Examples
+
+some generic scenerio of alerting rules.
+
+| Alerting Rule Name | Description | Condition | Severity | Action |
+|--------------------|-------------|-----------|----------|--------|
+| High CPU Usage     | Alert when CPU usage exceeds a certain threshold. | CPU usage > 90% for 5 minutes | Critical | Send email notification to DevOps team |
+| Memory         | Alert when memory usage continuously increases. | Memory increase rate > 10% per hour | High | Trigger automated restart of affected service |
+| Disk Space  | Alert when disk space falls below a critical level. | Disk space < 10% for 10 minutes | Critical | Execute script to clean up old logs and temporary files |
+| Network Latency Spike | Alert when network latency exceeds normal levels. | Network latency > 200 ms for 3 consecutive pings | High | Log incident in monitoring system and notify network engineering team |
+| Application Error Rate | Alert when the rate of errors from the application surpasses a threshold. | Error rate > 5% for 15 minutes | Medium | Create ticket in issue tracking system for developers to investigate |
+| SSL Certificate Expiry | Alert when SSL certificate is about to expire. | SSL certificate expiry date within 7 days | Low | Send notification to security team to renew certificate |
+| Web Server Response Time | Alert when the response time of the web server exceeds acceptable limits. | Response time > 500 ms for 10 minutes | Medium | Page on-call engineer and log incident for further investigation |
 
 # Best Practices
 
