@@ -10,7 +10,8 @@
 
 ***
 
-# Table of contents
+## Table of contents
+
 * [Introduction](#Introduction)
 * [What is DSL Pipeline](#What-is-DSL-Pipeline)
 * [Why DSL Pipeline](#Why-DSP-Pipeline)
@@ -24,13 +25,13 @@
 
 ***
 
-# Introduction
+## Introduction
 
 With the increasing complexity of modern networks and the need for agility in infrastructure management, Terraform has emerged as a powerful tool for automating the provisioning and configuration of network resources.This module is designed to provide a foundational framework for managing network infrastructure as code using Terraform. By leveraging this module, users can quickly establish a standardized and scalable network architecture within their cloud environment.As networks get more complicated and managing infrastructure becomes more important, specialized languages called Domain-Specific Languages (DSLs) have become really useful. They help simplify and automate different tasks.
 
 ***
 
-# What is DSL Pipeline?
+## What is DSL Pipeline?
 
 A Domain-Specific Language (DSL) is a programming language or specification language dedicated to a particular problem domain, a particular problem representation technique, and/or a particular solution technique.DSL Pipeline is a robust framework designed to facilitate the creation, deployment, and management of domain-specific languages within your software development projects. By employing DSLs, developers can express solutions in a concise, domain-specific syntax tailored to the problem at hand, thereby enhancing productivity and reducing the gap between domain experts and software implementation.
 
@@ -38,7 +39,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-# Why DSL Pipeline
+## Why DSL Pipeline
 
 | Key Features  | Description                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -49,26 +50,26 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-# Flow Diagram
+## Flow Diagram
 
 <img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4c30ca5b-e159-4ad2-8c86-8c96d30be55b">
 
 ***
 
-# Pre-requisites
+## Pre-requisites
 
 | **Pre-requisites** | **Description** |
 | ------------------ | ---------------- |
 | **AWS Account**    | Access to the AWS Management Console with credentials configured. |
 | **Jenkins**        | To integrate infra through DSL Pipeline. |
-| **Terraform**      | Terraform HCL (v1.7.4) | ****
+| **Terraform**      | Terraform HCL (v1.7.4) |
 
 ***
 
-# Jenkinsfile
+## Jenkinsfile
 
 <details>
-<summary><strong>Click here to see Jenkinsfile file</strong></summary>
+<summary><strong>Click here to see Jenkinsfile</strong></summary>
 <br>
 
 ```shell
@@ -96,7 +97,14 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 **Console Output**
 
-<img width="728" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/a5eaffee-e414-42c8-b6d5-22bf67c6179f">
+<details>
+<summary><strong>Click here to see Console output</strong></summary>
+<br>
+
+```shell
+
+```
+</details>
 
 ***
 
