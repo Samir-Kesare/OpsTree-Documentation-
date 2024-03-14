@@ -272,7 +272,7 @@ data "aws_ami" "ubuntu" {
 
 ## Terminal Output
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1c3b58fa-2136-4ad6-92de-24790585fbc2">
+<img width="900" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1c3b58fa-2136-4ad6-92de-24790585fbc2">
 
 ***
 
@@ -280,19 +280,19 @@ data "aws_ami" "ubuntu" {
 
 ### Security Group
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/60879fc6-f6c5-4794-8147-0476470d4a03">
+<img width="900" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/60879fc6-f6c5-4794-8147-0476470d4a03">
 
 ***
 
 ### Private Key
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cd56aa74-2a0f-4fd1-a2e4-848805eb627b">
+<img width="900" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cd56aa74-2a0f-4fd1-a2e4-848805eb627b">
 
 ***
 
 ### EC2 Instance
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/0e1d3c60-eada-4a04-92a6-bb4fff18b064">
+<img width="900" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/0e1d3c60-eada-4a04-92a6-bb4fff18b064">
 
 ***
 
