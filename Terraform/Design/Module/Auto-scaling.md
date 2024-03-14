@@ -684,7 +684,7 @@ output "Autoscaling_policy_name" {
 
 ## Conclusion
 
-In conclusion, the design module documentation serves as a valuable resource for understanding the architecture, configuration, and deployment considerations of an auto-scalable system, empowering stakeholders to design, implement, and maintain resilient, scalable, and cost-effective cloud infrastructures.
+The autoscaling setup module streamlines the deployment of scalable infrastructure by defining configurations for auto-scaling groups, launch configurations, and related resources. This modular approach enhances infrastructure management, ensuring efficient scaling based on demand while maintaining high availability and optimal resource utilization.
 
 ***
  ## Contact Information
