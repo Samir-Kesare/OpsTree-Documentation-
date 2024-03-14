@@ -103,6 +103,10 @@ The best practices for dashboard designing include:
 | **Customizable Insights:** Dashboards can be tailored to display metrics most relevant to specific user roles, allowing database administrators and other stakeholders to focus on information crucial to their tasks. | **Maintenance Overhead:** Designing and maintaining effective dashboards requires ongoing effort to ensure the displayed information remains relevant and up-to-date. |
 ***
 
+## Illustration of Dasboard Designing in Excalidraw
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/d8dc19ac-beb1-4b8c-942b-13fa5e6e5610)
+***
+
 ## Conclusion
 Dashboards are powerful tools for database monitoring, offering real-time insights and promoting data-driven decisions. However, clarity and focus are crucial. Prioritize key metrics, avoid information overload, and integrate with other tools for comprehensive monitoring. Effective dashboards empower proactive problem detection and ensure optimal database performance.
 ***
@@ -120,3 +124,4 @@ Dashboards are powerful tools for database monitoring, offering real-time insigh
 | Dashboard Designing | https://www.finereport.com/en/dashboard-tools/dashboard-monitoring-tool.html |
 | Why we need Dashboard Designing  | https://community.sisense.com/t5/knowledge/planning-executing-and-monitoring-your-dashboard/ta-p/1971 |
 | How Dashboard Designing helps Decision Making | https://www.opendatasoft.com/en/blog/choosing-the-right-data-dashboard-to-improve-decision-making-in-your-organization/ |
+***
