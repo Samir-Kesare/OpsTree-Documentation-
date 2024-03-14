@@ -64,6 +64,6 @@ Changes or Updates are applied incrementally, meaning that only the specific com
 
 | Title                                      | URL                                           |
 |--------------------------------------------|-----------------------------------------------|
-| Mutable and immutable infrastructure           | [link](https://devopscube.com/immutable-infrastructure/)    |
+| Mutable and immutable infrastructure           | [Link](https://devopscube.com/immutable-infrastructure/)    |
 | pros and cons  | [Link](https://www.bridge-global.com/blog/mutable-vs-immutable-infrastructure/)
 
