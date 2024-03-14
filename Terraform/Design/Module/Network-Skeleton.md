@@ -373,7 +373,7 @@ variable "region" {
 
 variable "vpc_cidr" {
   type    = string
-  default = "10.0.1.0/25"
+  default = "10.0.1.128/25"
 }
 
 variable "vpc_enable_dns_support" {
@@ -389,8 +389,8 @@ variable "vpc_enable_dns_hostnames" {
 variable "vpc_tags" {
   type    = map(string)
   default = {
-    Name = "dev-vpc"
-    Enviroment = "dev"
+    Name = "QA-vpc"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -400,7 +400,7 @@ variable "vpc_tags" {
 variable "public_subnets_cidr" {
   description = "public subnet cidr block"
   type        = list(string)
-  default     = ["10.0.1.0/28", "10.0.1.64/28"]
+  default     = ["10.0.1.128/28", "10.0.1.144/28"]
 
 }
 
@@ -419,11 +419,11 @@ variable "public_subnets_tags" {
   type        = list(map(string))
   default = [{
     Name = "public-subnet-01"
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
     }, {
     Name = "public-subnet-02"
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
   }]
 }
@@ -433,7 +433,7 @@ variable "public_subnets_tags" {
 variable "private_subnets_cidr" {
   description = "private subnet cidr block"
   type        = list(string)
-  default     = ["10.0.1.16/28", "10.0.1.32/28", "10.0.1.48/28"]
+  default     = ["10.0.1.160/28", "10.0.1.176/28", "10.0.1.192/28"]
 
 }
 
@@ -449,15 +449,15 @@ variable "private_subnets_tags" {
   type        = list(map(string))
   default = [{
     Name = "frontend-subnet"
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
     }, {
     Name = "backend-subnet"
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
   }, {
     Name = "database-subnet"
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
   }]
 }
@@ -467,8 +467,8 @@ variable "private_subnets_tags" {
 variable "igw_tags" {
   type    = map(string)
   default = {
-    Name = "dev-igw-01"
-    Enviroment = "dev"
+    Name = "QA-igw-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -478,8 +478,8 @@ variable "igw_tags" {
 variable "nat_tags" {
   type    = map(string)
   default = {
-    Name = "dev-nat-01"
-    Enviroment = "dev"
+    Name = "QA-nat-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -489,8 +489,8 @@ variable "nat_tags" {
 variable "public_route_table_tags" {
   type    = map(string)
   default = {
-    Name = "dev-public-RTB-01"
-    Enviroment = "dev"
+    Name = "QA-public-RTB-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -498,8 +498,8 @@ variable "public_route_table_tags" {
 variable "private_route_table_tags" {
   type    = map(string)
   default = {
-    Name = "dev-private-RTB-01"
-    Enviroment = "dev"
+    Name = "QA-private-RTB-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -531,8 +531,8 @@ variable "frontend_nacl_egress" {
 variable "frontend_nacl_tags" {
   type    = map(string)
   default = {
-    Name = "dev-frontend-nacl-01"
-    Enviroment = "dev"
+    Name = "QA-frontend-nacl-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -564,8 +564,8 @@ variable "backend_nacl_egress" {
 variable "backend_nacl_tags" {
   type    = map(string)
   default = {
-    Name = "dev-backend-nacl-01"
-    Enviroment = "dev"
+    Name = "QA-backend-nacl-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -597,8 +597,8 @@ variable "db_nacl_egress" {
 variable "db_nacl_tags" {
   type    = map(string)
   default = {
-    Name = "dev-db-nacl-01"
-    Enviroment = "dev"
+    Name = "QA-db-nacl-01"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -608,13 +608,13 @@ variable "db_nacl_tags" {
 variable "alb_sg_name" {
   description = "security group name"
   type            = string
-  default         = "dev-alb-sg"
+  default         = "QA-alb-sg"
 }
 
 variable "alb_sg_description" {
   description = "security group for Attendance API"
   type            = string
-  default         = "Security group for Dev-ALB"
+  default         = "Security group for QA-ALB"
 }
 
 variable "alb_sg_inbound_rules" {
@@ -655,7 +655,7 @@ variable "alb_sg_tags" {
   description = "Tag for Attedance sg"
   type        = map(string)
   default     = {
-    Environment = "dev"
+    Environment = "QA"
     Owner       = "shreya"
   }
 }
@@ -663,7 +663,7 @@ variable "alb_sg_tags" {
 /*--------------- ALB ---------------*/
 variable "alb_name" {
   type = string
-  default = "dev-alb"
+  default = "QA-alb"
 }
 variable "alb_internal" {
   type = bool
@@ -680,7 +680,7 @@ variable "alb_deletion_protection" {
 variable "alb_tags" {
   type    = map(string)
   default = {
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
@@ -690,7 +690,7 @@ variable "alb_tags" {
 variable "route53_zone_tags" {
   type    = map(string)
   default = {
-    Enviroment = "dev"
+    Enviroment = "QA"
     Owner = "shreya"
   }
 }
