@@ -47,13 +47,13 @@ Performance metrics are essential in API monitoring for several reasons:
 
 | Metric                    | Description                                                                                                                                                                               |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Request per Minute (RPM)  | - Measures application throughput handled by the application manager. - Serves as an upper bound for an application interface. - Engineering to reduce API calls is crucial.       |
-| Average and Max Latency   | - Tracks customer experience through API latency. - Correlates to user responsiveness in an upscaled infrastructure. - Monitoring latency breakdowns is important.                  |
-| Errors per Minute (EPM)   | - Measures API calls with non-200 status codes per minute. - Indicates error-prone and critical API calls.                                                                               |
-| API Usage Growth          | - Measures adoption of API in application interface. - DevOps ensure error-free API usage.                                                                                                |
-| Uptime or Availability   | - Includes basic performance metrics of SLA(Service Level Agreement). - Indicated by uptime and downtime in a set of 9s.                                                                                           |
-| CPU Usage                 | - Vital for API responsiveness. - Used for resource planning and assessing API health.                                                                                                    |
-| Memory Usage              | - Measures allocated resources to the application interface. - Indicative of server overloading and memory usage.|
+| Request per Minute (RPM)  | - Measures application throughput handled by the application manager. <br>- Serves as an upper bound for an application interface.<br> - Engineering to reduce API calls is crucial.       |
+| Average and Max Latency   | - Tracks customer experience through API latency. <br>- Correlates to user responsiveness in an upscaled infrastructure.<br> - Monitoring latency breakdowns is important.                  |
+| Errors per Minute (EPM)   | - Measures API calls with non-200 status codes per minute.<br> - Indicates error-prone and critical API calls.                                                                               |
+| API Usage Growth          | - Measures adoption of API in application interface.<br> - DevOps ensure error-free API usage.                                                                                                |
+| Uptime or Availability   | - Includes basic performance metrics of SLA(Service Level Agreement). <br>- Indicated by uptime and downtime in a set of 9s.                                                                                           |
+| CPU Usage                 | - Vital for API responsiveness.<br> - Used for resource planning and assessing API health.                                                                                                    |
+| Memory Usage              | - Measures allocated resources to the application interface. <br>- Indicative of server overloading and memory usage.|
 ***
 ## Tools
 Here's a condensed overview of the best API monitoring tools in a tabular format:
