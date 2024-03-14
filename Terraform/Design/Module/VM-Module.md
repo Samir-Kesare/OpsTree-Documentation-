@@ -314,7 +314,7 @@ data "aws_ami" "ubuntu" {
 
 # Conclusion
 
-Terraform modules are a fundamental building block for creating reusable and maintainable infrastructure as code. By following best practices and principles such as modularity, abstraction, and versioning, teams can leverage modules to efficiently manage complex infrastructure deployments at scale. Investing in well-designed modules promotes consistency, collaboration, and agility in Terraform projects, ultimately leading to more reliable and manageable infrastructure.
+Terraform modules are a fundamental building block for creating reusable and maintainable infrastructure as code. By following best practices and principles such as modularity, abstraction, and versioning, teams can leverage modules to efficiently manage complex infrastructure deployments at scale.The VM module, housed within the network directory, defines resources for provisioning virtual machines. It includes configurations for specifying the Amazon Machine Image (AMI), instance type, key pair, subnet, and security groups. This modular approach enhances code organization and facilitates easier management of virtual machine deployments within the larger infrastructure setup.
 
 ***
 
