@@ -59,7 +59,7 @@ In this document it will guide through the steps to achieve the setup of wrapper
 
 ## Flow Diagram
 
-<img src="https://QAopscube.com/wp-content/uploads/2023/08/alb-asg-workflow.gif" width="700">
+<img src="https://Devopscube.com/wp-content/uploads/2023/08/alb-asg-workflow.gif" width="700">
 
 ***
 
