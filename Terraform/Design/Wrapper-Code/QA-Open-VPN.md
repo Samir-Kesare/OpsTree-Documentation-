@@ -238,13 +238,13 @@ server-name         = "qa-openvpn-Server"
 
 ***
 
-### Security Group (openvpn-sg)
+### Security Group (qa-openvpn-sg)
 
 <img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/aa25f60a-7257-4a60-86ba-908c65a91c96">
 
 ***
 
-### EC2 Instance (Openvpn-server)
+### EC2 Instance (qa-Openvpn-server)
 
 <img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7657c7d7-11d5-4079-9b30-b0eaede59d91">
 
