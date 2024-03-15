@@ -71,7 +71,8 @@
  | Vidhi     | 29-02-2024| No Present | 1  |     5   |
  | khushi    | 1-03-2024 | Status mail| 1  |     5   |
  | Santanu   | 1-03-2024 | Status mail| 1  |     5   |
- | Parasharam | 1-03-2024 | Status mail| 1 |     5  |
+ | Parasharam | 1-03-2024 | Status mail| 1 |     5   |
+***
 
 ## Sprint-4
  | Name      | Date    | Reason      | Count| Amount |
