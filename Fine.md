@@ -73,3 +73,8 @@
  | Santanu   | 1-03-2024 | Status mail| 1  |     5   |
  | Parasharam | 1-03-2024 | Status mail| 1 |     5  |
 
+## Sprint-4
+ | Name      | Date    | Reason      | Count| Amount |
+ |-----------|--------|--------------|-----|---------|
+ | Shantanu  | 15-03-2024| No Present | 1  |     5   |
+ | Aakash    | 15-03-2024 | No Present | 1 | 5 |
