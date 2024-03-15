@@ -30,7 +30,7 @@ Dashboard designing for database monitoring involves creating visual interfaces 
 Dashboard designing is essential for effective monitoring and visualization of data in various fields, including database monitoring. The purpose of dashboard designing is to create visually appealing and informative displays that present data effectively for analysis and decision-making. 
 ***
 
-## Key Concepts of Dashobard Designing 
+## Key Concepts of Dashboard Designing 
 
 | Key Consideration        | Description                                                                                                                |
 |--------------------------|----------------------------------------------------------------------------------------------------------------------------|
@@ -39,9 +39,6 @@ Dashboard designing is essential for effective monitoring and visualization of d
 | **Selecting Data Graphics** | Choosing appropriate visualizations, such as line charts, bar charts, or pie charts, helps represent data effectively.     |
 | **Connecting to Data Sources** | Integrating data from relevant sources ensures that the dashboard displays accurate and up-to-date information.           |
 | **Grouping Related Metrics** | Organizing metrics into related groups makes it easier for users to find and understand the information they need.       |
-| **Being Consistent**    | Using the same visualizations and layouts between groups helps create patterns and visual flow, making the dashboard easier to read and understand. |
-| **Showing Hierarchy**    | Using size and position to emphasize important information and downplay less important metrics helps users quickly identify what's most relevant. |
-| **Giving Context**       | Including past data, average or previous highs and lows, or target values helps users understand if a number is good, bad, or normal. |
 | **Using Clear Labels**   | Self-explanatory and unambiguous labels help users quickly understand the meaning of each metric or chart.               |
 | **Remembering the Human Factor** | Designing dashboards that engage users and encourage interaction can lead to better decision-making and problem-solving. |
 ***
