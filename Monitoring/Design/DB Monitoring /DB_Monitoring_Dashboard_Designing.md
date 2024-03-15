@@ -14,8 +14,8 @@
 2. [Why we need Dashboard Designing](#why-we-need-dashboard-designing)
 3. [Key Concepts of Dashboard Designing](#key-concepts-of-dashboard-designing)
 4. [How can a dashboard help in decision-making](#how-can-a-dashboard-help-in-decision-making)
-5. [Here's a real-world scenario highlighting how dashboards aid decision-making](#Here's-a-real-world-scenario-highlighting-how-dashboards-aid-decision-making)
-6. [Best Practice of Dashboard Designing](#best-practice-of-dashboard-designing)
+5. [Here a real-world scenario highlighting how dashboards aid decision-making](#Here-a-real-world-scenario-highlighting-how-dashboards-aid-decision-making)
+6. [Best Practices of Dashboard Designing](#best-practices-of-dashboard-designing)
 7. [Advantages and Disadvantages of Dashboard Designing in Database Monitoring](#advantages-and-disadvantages-of-dashboard-designing-in-database-monitoring)
 8. [Conclusion](#conclusion)
 9. [Contact Information](#contact-information)
@@ -54,7 +54,7 @@ Dashboard designing is essential for effective monitoring and visualization of d
 | **Improved communication** | Share dashboards among teams and stakeholders to foster a data-driven culture and promote transparency in decision-making processes. |
 ***
 
-### Here's a real-world scenario highlighting how dashboards aid decision-making
+### Here a real-world scenario highlighting how dashboards aid decision-making
 
 | Dashboard Functionality                           | Description                                                                                                   |
 |--------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
@@ -70,19 +70,15 @@ Dashboard designing is essential for effective monitoring and visualization of d
 | **Facilitate comparisons and informed choices**  | Dashboards facilitate comparisons between metrics, aiding in making informed choices and strategic decisions. |
 ***
 
-## Best Practice of Dashboard Designing 
+## Best Practices of Dashboard Designing 
 
 The best practices for dashboard designing include:
-
-- **Empathize with User Types:** Understand the goals and needs of your users, and design the dashboard to convey a clear story that helps them make informed decisions.
 
 - **Logical Layout:** Organize the dashboard layout in a logical and intuitive manner, with a clear hierarchy of information.
 
 - **Minimalism:** Keep the design simple and minimal, focusing on the most relevant data and avoiding clutter.
 
 - **Choosing Data Visualization:** Select appropriate data visualization techniques that effectively communicate the desired information.
-
-- **Know Your Audience:** Understand the target audience, their needs, and expectations, and tailor the dashboard accordingly.
 
 - **Choose the Right Dashboard Type:** Select the appropriate dashboard type based on the purpose, such as operational, strategic, analytical, or tactical.
 
@@ -95,7 +91,6 @@ The best practices for dashboard designing include:
 |---------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | **Enhanced Monitoring:** Dashboards provide a centralized view of key database metrics, enabling quick identification of potential issues like performance bottlenecks, high resource consumption, or connection problems. | **Information Overload:** Overcrowded dashboards with excessive data points can be overwhelming and hinder critical info.    |
 | **Improved Decision-Making:** Visual representations of data trends and anomalies allow for faster analysis and informed decisions regarding database resource allocation, capacity planning, and optimization strategies. | **Potential for Misinterpretation:** Overly complex visualizations or unclear presentation of data can lead to misinterpretations and hinder effective decision-making. |
-| **Increased Awareness:** Real-time dashboards keep database administrators and stakeholders constantly informed about the health and performance of the database, facilitating proactive problem detection and preventing critical outages. | **Alert Fatigue:** Constant notifications from dashboards can lead to alert fatigue, causing crucial alerts to be overlooked amidst less critical information. |
 | **Streamlined Communication:** Dashboards can be shared among teams, fostering a data-driven culture and promoting transparency in communication regarding database health and performance. | **Limited Functionality:** While dashboards offer valuable insights, they might not provide in-depth analysis capabilities, requiring additional database management tools for detailed problem diagnosis and resolution. |
 | **Customizable Insights:** Dashboards can be tailored to display metrics most relevant to specific user roles, allowing database administrators and other stakeholders to focus on information crucial to their tasks. | **Maintenance Overhead:** Designing and maintaining effective dashboards requires ongoing effort to ensure the displayed information remains relevant and up-to-date. |
 ***
