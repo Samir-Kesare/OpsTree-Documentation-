@@ -86,6 +86,7 @@ pipeline {
                 script {
                     sh 'go install'
                     sh "go list -f '{{.Target}}'"
+                    sh "go build"
                 }
             }
         }
