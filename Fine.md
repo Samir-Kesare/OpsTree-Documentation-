@@ -77,5 +77,6 @@
 ## Sprint-4
  | Name      | Date    | Reason      | Count| Amount |
  |-----------|--------|--------------|-----|---------|
+ | Khushi | 14-03-2024 | No Present | 1     | 5      |
  | Shantanu  | 15-03-2024| No Present | 1  |     5   |
- | Aakash    | 15-03-2024 | No Present | 1 | 5 |
+ 
