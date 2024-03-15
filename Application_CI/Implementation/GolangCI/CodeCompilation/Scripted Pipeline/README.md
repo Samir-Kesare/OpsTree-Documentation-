@@ -72,7 +72,7 @@ node {
     
     stage('Code Compilation') {
         // Compile the Go code
-        sh "${goHome}/bin/go build -o myapp main.go" // Replace 'main.go' with the main file of your Go API
+        sh "${goHome}/bin/go build -o myapp main.go" 
     }
 }
 ```
