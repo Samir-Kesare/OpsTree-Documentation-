@@ -189,7 +189,6 @@ pipeline {
 ***
 
 ### Archive Artifact (SSH key pair)
-![Screenshot from 2024-03-15 11-14-13]()
 
 <img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/b3729786-b439-4caf-a088-70c3f551ffa3">
 
