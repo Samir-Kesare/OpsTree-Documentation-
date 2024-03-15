@@ -234,19 +234,19 @@ server-name         = "openvpn-Server"
 
 ### Private Key (snaatak.pem)
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/919b9aaf-ece5-4ee6-ac69-e7f81f2093a2">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/919b9aaf-ece5-4ee6-ac69-e7f81f2093a2">
 
 ***
 
 ### Security Group (openvpn-sg)
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/74631c1e-4e63-4241-b338-9cc1d4949a17">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/74631c1e-4e63-4241-b338-9cc1d4949a17">
 
 ***
 
 ### EC2 Instance (Openvpn-server)
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ed950340-7dc9-40c1-a501-6c7a6308088c">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ed950340-7dc9-40c1-a501-6c7a6308088c">
 
 ***
 
