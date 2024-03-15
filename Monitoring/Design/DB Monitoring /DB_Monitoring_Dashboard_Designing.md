@@ -2,7 +2,7 @@
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
-| Khushi Malhotra |  13 March 2024  |  Version 1 | Khushi Malhotra  | 13 March 2024    |
+| Khushi Malhotra |  15 March 2024  |  Version 1 | Khushi Malhotra  | 15 March 2024    |
 ***
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/ca7abd90-165c-42ef-bdb4-19b04e5b37a9)
