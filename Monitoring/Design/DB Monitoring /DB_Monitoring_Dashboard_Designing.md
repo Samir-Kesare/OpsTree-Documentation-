@@ -14,7 +14,7 @@
 2. [Why we need Dashboard Designing](#why-we-need-dashboard-designing)
 3. [Key Concepts of Dashboard Designing](#key-concepts-of-dashboard-designing)
 4. [How can a dashboard help in decision-making](#how-can-a-dashboard-help-in-decision-making)
-5. [Real-world Scenario](#real-world-scenario)
+5. [Here's a real-world scenario highlighting how dashboards aid decision-making](#Here's-a-real-world-scenario-highlighting-how-dashboards-aid-decision-making)
 6. [Best Practice of Dashboard Designing](#best-practice-of-dashboard-designing)
 7. [Advantages and Disadvantages of Dashboard Designing in Database Monitoring](#advantages-and-disadvantages-of-dashboard-designing-in-database-monitoring)
 8. [Conclusion](#conclusion)
