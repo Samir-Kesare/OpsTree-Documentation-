@@ -27,7 +27,7 @@
 
 # Introduction
 
-In this document it will guide through the steps to achieve the setup of wrapper code for Network_Skeleton module which involves the child modules.According to the value passed through the root module/wrapper code we can manage/build the infra structure setup accordingly. Which involves the managing of different terraform state files for managing respective environments.
+In this document it will guide through the steps to achieve the setup of wrapper code for Openvpn server which involves the configuration files.According to the value passed through the root module/wrapper code we can manage/build the infra structure setup accordingly. Which involves the managing of different terraform state files for managing respective environments.
 
 ***
 
