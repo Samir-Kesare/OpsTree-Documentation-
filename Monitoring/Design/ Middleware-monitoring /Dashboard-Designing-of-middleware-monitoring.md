@@ -10,6 +10,7 @@
 + [Introduction](#Introduction)
 + [Why Dashboard Designing](#Why-Dashboard-Designing)
 + [Features of Dashboard Designing](#Features-of-Dashboard-Designing)
++ [Dashboard Design in Excelidraw](#Dashboard-Design-in-Excelidraw)
 + [ Advantages of Dashboard Designing](#Advantages-of-Dashboard-Designing)
 + [Disadvantages of Dashboard Designing](#Disadvantages-of-Dashboard-Designing)
 + [Best Practices](#Best-Practices)
@@ -24,26 +25,45 @@ Dashboard designing is a critical aspect of middleware monitoring, providing a v
 Middleware systems are complex, comprising various components and dependencies. Dashboard designing allows users to aggregate and visualize data from these components in real-time, enabling quick identification of performance issues, resource utilization trends, and potential bottlenecks. It provides stakeholders with actionable insights to ensure optimal system performance and reliability.
 ***
 ## Features of Dashboard Designing
-Customizable Widgets: Dashboards offer customizable widgets for displaying metrics such as CPU usage, memory consumption, request latency, and error rates.
-Real-time Updates: Dashboards provide real-time updates, ensuring that users have access to the latest performance data.
-Alerting Mechanisms: Integration with alerting mechanisms allows users to set up thresholds and receive notifications for critical events.
-Historical Data Analysis: Dashboards often include features for analyzing historical data trends, facilitating capacity planning and trend analysis.
-Interactive Visualization: Interactive charts and graphs enable users to drill down into specific metrics and explore data in more detail.
+| Feature |	Description |
+|---------|-------------|
+|**Customizable Widgets**|	Dashboards offer customizable widgets for displaying various metrics such as CPU usage, memory consumption, request latency, and error rates.|
+|**Real-time Updates** |	Dashboards provide real-time updates, ensuring users have access to the latest performance data without delays.|
+| **Alerting Mechanisms** |	Integration with alerting mechanisms allows users to set up thresholds and receive notifications for critical events, ensuring timely response to issues.|
+| **Historical Data Analysis** |	Dashboards often include features for analyzing historical data trends, facilitating capacity planning, and trend analysis for better future decision-making.|
+| **Interactive Visualization** | Interactive charts and graphs enable users to drill down into specific metrics, explore data in more detail, and gain deeper insights for effective analysis.|
 ***
-## Advantages of Dashboard Designing
-Improved Visibility: Dashboards offer a centralized view of middleware performance metrics, providing stakeholders with comprehensive visibility into system health.
-Enhanced Decision-making: Visual representations of data enable stakeholders to make informed decisions quickly, leading to more effective resource allocation and optimization.
-Streamlined Monitoring: Dashboards streamline the monitoring process by aggregating relevant data in one place, reducing the need for manual data collection and analysis.
-Increased Efficiency: By highlighting critical metrics and trends, dashboards help users prioritize tasks and allocate resources efficiently, leading to improved system efficiency.
-Faster Issue Resolution: Real-time updates and alerting mechanisms enable users to identify and address performance issues promptly, minimizing downtime and business impact.
+## Dashboard Design in Excelidraw
+![Screenshot from 2024-03-15 18-05-59](https://github.com/CodeOps-Hub/Documentation/assets/156056746/d9446171-ea29-4701-8547-daae53baef33)
+
 ***
 
-## Disadvantages of Dashboard Designing
-Complexity: Designing and maintaining dashboards can be complex, requiring expertise in data visualization and dashboard development tools.
-Data Overload: Poorly designed dashboards may overwhelm users with excessive data or irrelevant metrics, leading to confusion and decreased usability.
-Resource Intensive: Dashboards that continuously update in real-time may consume significant resources, impacting system performance.
-Alert Fatigue: Over-reliance on dashboards and alerting mechanisms may lead to alert fatigue, where users become desensitized to notifications due to a high volume of false positives.
+## Advantages of Dashboard Designing
+| Advantage |	Description  |
+|-----------|------------------|
+|**Improved Visibility**	| Dashboards offer a centralized view of middleware performance metrics, providing stakeholders with comprehensive visibility into system health.|
+|**Enhanced Decision-making**	| Visual representations of data enable stakeholders to make informed decisions quickly, leading to more effective resource allocation and optimization.|
+| **Streamlined Monitoring**|	Dashboards streamline the monitoring process by aggregating relevant data in one place, reducing the need for manual data collection and analysis.|
+| **Increased Efficiency**	| By highlighting critical metrics and trends, dashboards help users prioritize tasks and allocate resources efficiently, leading to improved system efficiency.|
+|**Faster Issue Resolution** | Real-time updates and alerting mechanisms enable users to identify and address performance issues promptly, minimizing downtime and business impact.|
 ***
+## Disadvantages of Dashboard Designing
+| Disadvantage |	Description |
+|--------------|---------------|
+|**Complexity**| Designing and maintaining dashboards can be complex, requiring expertise in data visualization and dashboard development tools.|
+|**Data Overload**|	Poorly designed dashboards may overwhelm users with excessive data or irrelevant metrics, leading to confusion and decreased usability.|
+|**Resource Intensive** |	Dashboards that continuously update in real-time may consume significant resources, impacting system performance.|
+| **Alert Fatigue** |	Over-reliance on dashboards and alerting mechanisms may lead to alert fatigue, where users become desensitized to notifications due to a high volume of false positives.|
+***
+## Best Practices
+* **Focus on Key Metrics**: Identify and prioritize the most critical metrics relevant to your middleware environment, such as CPU utilization, memory usage, response times, and error rates. Avoid overwhelming users with unnecessary data and prioritize metrics that directly impact system performance and reliability.
+* **Clear Visualization**: Use clear and intuitive visualizations such as line charts, bar graphs, and pie charts to represent data effectively. Choose visualizations that make it easy for users to understand trends, patterns, and anomalies at a glance. Ensure that visualizations are appropriately scaled and labeled for clarity.
+* **Customization Options**: Provide users with customization options to tailor the dashboard to their specific needs and preferences. Allow them to select which metrics to display, adjust time ranges, and set thresholds for alerts. Customization empowers users to focus on the information most relevant to their tasks and responsibilities.
+* **Real-time Monitoring and Alerts**: Implement real-time monitoring capabilities to provide users with up-to-date insights into the performance and health of middleware components. Set up alerting mechanisms to notify users promptly of critical issues or deviations from expected behavior. Ensure that alerts are actionable and provide sufficient context for troubleshooting.
+* **Responsive Design and Accessibility**: Design the dashboard with a responsive layout that adapts to different screen sizes and devices, including desktops, tablets, and mobile phones. Prioritize accessibility features to ensure that the dashboard is usable by individuals with disabilities. Consider factors such as color contrast, keyboard navigation, and screen reader compatibility to maximize accessibility for all users.
+
+  ***
+  
 ## Conclusion
 Dashboard designing plays a crucial role in middleware monitoring, offering stakeholders a comprehensive view of system performance and health. While dashboards provide numerous benefits, they also present challenges such as complexity and alert fatigue. By understanding the features, advantages, and disadvantages of dashboard designing, organizations can implement effective monitoring solutions and optimize middleware performance effectively.
 
@@ -58,5 +78,5 @@ Dashboard designing plays a crucial role in middleware monitoring, offering stak
 
 |  Source                                                                                 |        Description    |
 | ------------                                                                            | ----------------------|
-| [link](https://www.motadata.com/blog/how-important-is-middleware-monitoring-for-organizations/) | middleware monitring  |
+| [link](https://middleware.io/blog/real-user-monitoring-with-middleware/) | Middleware Monitring Dashboard |
       
