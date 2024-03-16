@@ -1,5 +1,5 @@
 # Rollout Immutable Infrastructure using Rolling Startegy
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1143df7b-945c-421e-9884-72f471636797)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/de21aea5-4b4c-4416-b18c-0a68788cfcce)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
@@ -88,7 +88,9 @@ Here's the information presented in a table format:
 ***
 
 ## Conclusion
+Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
 ***
+
 ## Contact Information
 
 |     Name         | Email  |
