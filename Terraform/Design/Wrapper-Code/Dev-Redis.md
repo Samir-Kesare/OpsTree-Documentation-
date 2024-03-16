@@ -241,13 +241,14 @@ inbound-ports = [ {
 
 ## Terminal Output
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cd8fbfc7-52ef-4b35-b8dd-76398cd5d9fa">
+<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/360ebb9e-ad9c-49a7-b405-43522df2550b">
+
 
 ***
 
 ## Console Output
 
-### Private Key (snaatak.pem)
+### Private Key (redisKey.pem)
 
 <img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/919b9aaf-ece5-4ee6-ac69-e7f81f2093a2">
 
