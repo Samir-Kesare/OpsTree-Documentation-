@@ -51,10 +51,7 @@ Determining the specific alert rules for your application depends on various fac
 | HTTP Status Codes         | Consistently returns errors<br>- e.g., Consistently > 5xx codes | Notify relevant team members for investigation           |
 | Security Events           | Anomalous activities detected<br>- e.g., brute force attacks | Notify security team for immediate action                 |
 ***
-## Dashboard Design in Excallidraw
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4fef00ea-0f94-42d7-95ec-106f6852969e)
 
-***
 ## Advantages
 
 | Advantages                  | Description                                                                                                    |
@@ -79,20 +76,21 @@ Determining the specific alert rules for your application depends on various fac
 
 ## Best Practices
 
-| Best Practices                     | Description                                                                                       |
-|------------------------------------|---------------------------------------------------------------------------------------------------|
-| Identify Key Metrics              | Determine the most critical metrics for monitoring app performance.                               |
-| Keep it Simple                    | Avoid clutter and focus on presenting only the essential information.                               |
-| Use Visualizations Wisely         | Choose appropriate charts and graphs to effectively convey data insights.                           |
-| Ensure Real-time Updates          | Implement mechanisms for real-time or near-real-time data updates.                                  |
-| Enable Customization              | Allow users to customize the dashboard to their specific needs.                                     |
-| Provide Contextual Information    | Include descriptions or tooltips to provide context for metrics and data.                           |
-| Prioritize User Experience        | Design the dashboard with a user-centric approach, ensuring ease of use and readability.            |
-| Incorporate Proactive Alerting    | Integrate alerting mechanisms to notify users of critical issues promptly.                          |
-| Regularly Review and Refine       | Continuously evaluate and refine the dashboard based on user feedback and evolving requirements.   | 
+| Best Practice                     | Description                                                                                       |
+|----------------------------------|---------------------------------------------------------------------------------------------------|
+| Start with Clear Objectives      | Clearly define the purpose of your alerting system and what you aim to achieve with it.          |
+| Understand Your System           | Have a deep understanding of your application's architecture, dependencies, and normal behavior.  |
+| Identify Key Metrics             | Determine the most critical metrics for monitoring your application's health and performance.     |
+| Set Realistic Thresholds         | Establish thresholds for each metric that indicate abnormal behavior or potential issues.         |
+| Prioritize Alerts                | Focus on critical alerts for issues that require immediate attention, based on impact and urgency.|
+| Avoid Alert Fatigue              | Strike a balance by setting up alerts only for significant issues and avoiding unnecessary notifications.|
+| Use Hysteresis                   | Incorporate hysteresis or "bounce" thresholds to prevent alert flapping caused by minor fluctuations.|
+| Implement Escalation Policies    | Define escalation policies to ensure that alerts are handled promptly and effectively.            |
+| Regularly Review and Refine      | Monitor the effectiveness of your alert rules regularly and refine them based on feedback and evolving requirements.|
+| Document and Communicate         | Document alert rules comprehensively and communicate them effectively to all stakeholders.       |
 ***
 ## Conclusion
-Creating a well-designed dashboard for app monitoring is crucial for keeping track of system health and swiftly addressing any issues. By following the principles and best practices outlined in this document, you can build a dashboard that meets your users' needs and boosts operational efficiency.
+
 ***
 ## Contact Information
 
@@ -105,4 +103,6 @@ Creating a well-designed dashboard for app monitoring is crucial for keeping tra
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Dashboard Overview | https://grafana.com/docs/grafana/latest/fundamentals/dashboards-overview/ |
+| Alerting Overview | https://prometheus.io/docs/alerting/latest/overview/ |
+| Alert Rules | https://samber.github.io/awesome-prometheus-alerts/rules.html |
+|| https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/ |
