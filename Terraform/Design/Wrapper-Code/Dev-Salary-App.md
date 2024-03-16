@@ -1,7 +1,7 @@
 
 # Salary-App Terraform Wrapper Code Doc For DEV 
 
-<img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7bebcb9c-e68b-4251-9974-9752be51b3b3">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/54c1b29e-1fc9-42f1-886e-60bfb929fa15)
 
 
 ***
@@ -636,12 +636,13 @@ provider "aws" {
 ***
 
 ## Terminal Output
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/5feb200b-87a2-4dd8-a2c5-1e6c3c47c5dd)
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7b5aa214-14c0-4834-9e41-753225a2bebe">
 
 ***
 
 ## Console Output
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/bd0610b3-528e-4bdc-946c-2e2cc3605755)
 
 ### Security Group
 
@@ -650,28 +651,30 @@ provider "aws" {
 ***
 ### Launch Template
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6c6ab63f-b752-4bfc-9954-aa1555d24eba"> 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/09368547-f79b-45d8-bb40-1f892f1eb022)
+
 
 ***
 
 ### Target Group
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/76171e13-aa16-42fc-bf83-81133fbeb355)
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/61dce999-2c85-419b-994e-6118879e045e">
 
 ***
 ### Listener rule of ALB
-
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/883ac05a-38b7-41e3-b24a-d3b2fbf9126d">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/7f41c671-01ee-48bb-a71b-a8990bc2332d)
 
 ***
 ### Auto Scaling Group
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/f6f0f968-8aed-4e72-8f25-f988860e3f95">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/f949bd0b-b776-4168-8039-4ac3bfc112b6)
+
 
 ***
 ### Auto Scaling Group Policies
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/48ede5ce-51be-4828-8a31-0d3066a297c5">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/d87f43bd-1f91-4345-a176-0037f5d6dc40)
+
 
 ***
 
@@ -697,7 +700,7 @@ Terraform wrapper code enhances the capabilities of Terraform by automating task
 
  | **Name** | **Email Address** |
  | -------- | ----------------- |
- | **Vishal Kumar Kesharwani** | vishal.kumar.kesharwani.snaatak@mygurukulam.co |
+ | **Shikha Tripathi** | shikha.tripathi.snaatak@mygurukulam.co |
 
  ***
  
@@ -708,7 +711,6 @@ Terraform wrapper code enhances the capabilities of Terraform by automating task
  | [**Link**](https://medium.com/@brandon.wagner/a-wrapper-for-terraform-61a125b27ffc) | Terraform Wrapper Code Concept. |
  | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
  | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Modules |
- | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | ASG-Module |
  | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | Cloud Infra Design Dev |
 
  
