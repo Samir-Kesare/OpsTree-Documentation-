@@ -6,7 +6,7 @@
 ***
 ***
 
-# Table of Contents 
+## Table of Contents 
 
 + [Introduction](#Introduction)
 + [Why](#Why)
@@ -22,7 +22,7 @@
 ***
 
 
-# Introduction
+## Introduction
 
 This document outlines the design considerations for creating a dashboard for application monitoring. A well-designed dashboard provides insights into system health, performance, and potential issues, helping users to effectively monitor logs and troubleshoot problems.
 
@@ -30,7 +30,7 @@ A dashboard for application monitoring metrics ensures that engineering teams ca
 
 The dashboard also provides you with an in-depth analysis of crash trends on a weekly basis. With the added functionality of applying filters on widgets, you can easily narrow your search and gain valuable insights into your application's performance.
 ***
-# Why
+## Why
 1. Enhanced Comprehension: Visual representation aids in understanding complex data quickly and intuitively.
 
 2. Prompt Issue Resolution: Real-time updates enable immediate responses to emerging issues, minimizing downtime.
@@ -41,7 +41,7 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 
 5. Informed Decision-Making: Historical data analysis provides insights into long-term trends, guiding strategic planning and optimization efforts.
 ***
-# Components
+## Components
 
 | Component       | Description |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -53,7 +53,7 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations). |
 
 ***
-# Design Principle
+## Design Principle
 
 | Principle                  | Description |
 |----------------------------|--------------------------------------------------------------------------------------- |
@@ -66,11 +66,11 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | Clear Labels               | Use concise and descriptive labels to aid audience understanding. |
 | Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
 ***
-# Dashboard Design in Excallidraw
+## Dashboard Design in Excallidraw
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/51508947-abe7-4781-b029-a85ee9a1ae6e)
 ***
-# Advantages
+## Advantages
 
 | Advantages           | Description                                                                                              |
 |----------------------|----------------------------------------------------------------------------------------------------------|
@@ -80,7 +80,7 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | Proactive Alerting   | Includes alerting capabilities to notify users of threshold breaches, enabling proactive issue resolution.|
 | Historical Analysis  | Offers historical data for trend analysis, aiding in decision-making for capacity planning and optimization.|
 ***
-# Disadvantages
+## Disadvantages
 
 | Disadvantages             | Description                                                                                                 |
 |---------------------------|-------------------------------------------------------------------------------------------------------------|
@@ -90,7 +90,7 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | Cost                      | Developing and maintaining dashboards can incur costs in terms of software, infrastructure, and personnel.   |
 | False Sense of Security   | Relying solely on dashboards for monitoring can lead to a false sense of security if important issues are overlooked.|
 ***
-# Best Practices
+## Best Practices
 | Best Practices                     | Description                                                                                       |
 |------------------------------------|---------------------------------------------------------------------------------------------------|
 | Identify Key Metrics              | Determine the most critical metrics for monitoring app performance.                               |
@@ -103,11 +103,10 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | Incorporate Proactive Alerting    | Integrate alerting mechanisms to notify users of critical issues promptly.                          |
 | Regularly Review and Refine       | Continuously evaluate and refine the dashboard based on user feedback and evolving requirements.   | 
 ***
-# Conclusion
+## Conclusion
 
 A well-designed dashboard for app monitoring is essential for maintaining system health and ensuring timely response to issues. By following the principles and best practices outlined in this document, you can create an effective dashboard that meets the needs of your users and enhances operational efficiency.
-
-
+***
 ## Contact Information
 
 |     Name         | Email  |
