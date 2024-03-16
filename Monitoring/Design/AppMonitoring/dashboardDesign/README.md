@@ -91,19 +91,18 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | False Sense of Security   | Relying solely on dashboards for monitoring can lead to a false sense of security if important issues are overlooked.|
 ***
 # Best Practices
-Certainly, here's the summary organized into a table format:
-
-| Principle                  | Description |
-|----------------------------|--------------------------------------------------------------------------------------- |
-| Clarity of Purpose         | Clearly define the purpose of the dashboard to guide its design and content.|
-| Relevance                  | Include only essential information that supports the dashboard's intent. |
-| Efficient Visualization    | Choose visualizations that convey information quickly and effectively. |
-| Grouping Metrics           | Organize related metrics together for easy navigation and comparison. |
-| Consistency                | Maintain uniformity in visualizations and layouts to facilitate comparison. |
-| Hierarchy                  | Use size and position to indicate the importance of data elements. |
-| Clear Labels               | Use concise and descriptive labels to aid audience understanding. |
-| Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
-***  
+| Best Practices                     | Description                                                                                       |
+|------------------------------------|---------------------------------------------------------------------------------------------------|
+| Identify Key Metrics              | Determine the most critical metrics for monitoring app performance.                               |
+| Keep it Simple                    | Avoid clutter and focus on presenting only the essential information.                               |
+| Use Visualizations Wisely         | Choose appropriate charts and graphs to effectively convey data insights.                           |
+| Ensure Real-time Updates          | Implement mechanisms for real-time or near-real-time data updates.                                  |
+| Enable Customization              | Allow users to customize the dashboard to their specific needs.                                     |
+| Provide Contextual Information    | Include descriptions or tooltips to provide context for metrics and data.                           |
+| Prioritize User Experience        | Design the dashboard with a user-centric approach, ensuring ease of use and readability.            |
+| Incorporate Proactive Alerting    | Integrate alerting mechanisms to notify users of critical issues promptly.                          |
+| Regularly Review and Refine       | Continuously evaluate and refine the dashboard based on user feedback and evolving requirements.   | 
+***
 # Conclusion
 
 A well-designed dashboard for app monitoring is essential for maintaining system health and ensuring timely response to issues. By following the principles and best practices outlined in this document, you can create an effective dashboard that meets the needs of your users and enhances operational efficiency.
