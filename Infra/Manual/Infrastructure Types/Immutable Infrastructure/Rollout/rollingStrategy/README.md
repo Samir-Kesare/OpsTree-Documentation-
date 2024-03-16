@@ -41,25 +41,45 @@ To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps
 
 Rolling out immutable infrastructure using a rolling deployment strategy involves deploying updates or changes to your infrastructure in a phased manner while maintaining high availability and minimizing downtime. Here's a general outline of how you could approach it:
 
-1. **Version Control**: Ensure that your infrastructure configurations are version controlled, preferably using a tool like Git. This allows you to track changes and roll back if necessary.
+**Step 1: Version Control**
 
-2. **Immutable Infrastructure Definition**: Define your infrastructure as code using tools like Terraform, AWS CloudFormation, or similar. This ensures that your infrastructure is consistent, repeatable, and versioned.
+Ensure that your infrastructure configurations are version controlled, preferably using a tool like Git. This allows you to track changes and roll back if necessary.
 
-3. **Build and Test Immutable Images**: Create immutable images or machine images (AMIs, VM images, Docker containers, etc.) that represent your desired infrastructure state. Automate the build and testing of these images to ensure they are reliable and ready for deployment.
+**Step 2: Immutable Infrastructure Definition**
 
-4. **Blue-Green Deployment Environment**: Set up a blue-green deployment environment where you have two identical production environments: one currently serving traffic (blue), and the other ready to receive updates (green).
+Define your infrastructure as code using tools like Terraform, AWS CloudFormation, or similar. This ensures that your infrastructure is consistent, repeatable, and versioned.
 
-5. **Gradual Rollout**: Start by deploying the new immutable images to the green environment. This could be done gradually, for example, by rolling out updates to a small subset of servers or instances first to ensure everything is working as expected.
+**Step 3: Build and Test Immutable Images**
 
-6. **Health Checks and Monitoring**: Implement health checks and monitoring to ensure that the new green environment is functioning correctly. This could include automated tests, system health checks, and performance monitoring.
+Create immutable images or machine images (AMIs, VM images, Docker containers, etc.) that represent your desired infrastructure state. Automate the build and testing of these images to ensure they are reliable and ready for deployment.
 
-7. **Traffic Shifting**: Once you're confident that the green environment is stable and performing well, gradually shift traffic from the blue environment to the green environment. This could be done using load balancer settings or DNS changes.
+**Step 4: Blue-Green Deployment Environment**
 
-8. **Rollback Plan**: Have a rollback plan in place in case any issues arise during the deployment. This could involve automatically shifting traffic back to the blue environment or rolling back to a previous version of the immutable images.
+Set up a blue-green deployment environment where you have two identical production environments: one currently serving traffic (blue), and the other ready to receive updates (green).
 
-9. **Post-Deployment Verification**: After the deployment is complete, perform thorough post-deployment verification to ensure that everything is working as expected in the green environment.
+**Step 5: Gradual Rollout**
 
-10. **Cleanup**: Once the deployment is successful and you're confident in the new green environment, clean up any resources associated with the blue environment to avoid unnecessary costs and complexity.
+Start by deploying the new immutable images to the green environment. This could be done gradually, for example, by rolling out updates to a small subset of servers or instances first to ensure everything is working as expected.
+
+**Step 6: Health Checks and Monitoring**
+
+Implement health checks and monitoring to ensure that the new green environment is functioning correctly. This could include automated tests, system health checks, and performance monitoring.
+
+**Step 7: Traffic Shifting**
+
+Once you're confident that the green environment is stable and performing well, gradually shift traffic from the blue environment to the green environment. This could be done using load balancer settings or DNS changes.
+
+**Step 8: Rollback Plan**
+
+Have a rollback plan in place in case any issues arise during the deployment. This could involve automatically shifting traffic back to the blue environment or rolling back to a previous version of the immutable images.
+
+**Step 9: Post-Deployment Verification**
+
+After the deployment is complete, perform thorough post-deployment verification to ensure that everything is working as expected in the green environment.
+
+**Step 10: Cleanup**
+
+Once the deployment is successful and you're confident in the new green environment, clean up any resources associated with the blue environment to avoid unnecessary costs and complexity.
 ***
 
 ## Advantages
