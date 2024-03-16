@@ -136,10 +136,13 @@ policy_type                         = var.Dev_Frontend_policy_type
 predefined_metric_type              = var.Dev_Frontend_predefined_metric_type
 target_value                        = var.Dev_Frontend_target_value
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-}```
+}
+
+```
 </details>
 
 ***
+
 ### variables.tf
 
 <details>
