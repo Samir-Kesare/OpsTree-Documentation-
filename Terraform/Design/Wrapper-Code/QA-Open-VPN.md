@@ -72,7 +72,7 @@ In this document it will guide through the steps to achieve the setup of wrapper
 <br>
     
 ```shell
-module "network" {
+module "openvpn" {
     source                         = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/VM-Module?ref=main"  
     vpc_id                         = var.vpc-id 
     subnet_id                      = var.subnet-id         
@@ -169,10 +169,10 @@ variable "server-name" {
 
 ```shell
 output "Security_Group_ID" {
-  value = module.network.Security_Group_ID
+  value = module.openvpn.Security_Group_ID
 }
 output "server_id" {
-  value = module.network.server_id
+  value = module.openvpn.server_id
 }
 ```
 </details>
