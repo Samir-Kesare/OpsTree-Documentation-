@@ -23,6 +23,11 @@
 Alert rules in app monitoring are predefined conditions or thresholds set up within a monitoring system to trigger notifications or alerts when certain criteria are met. These rules are essential for proactively identifying and addressing issues in an application or system.
 
 Alert rules are pivotal in app monitoring systems, offering proactive issue detection and ensuring timely responses. By promptly triggering notifications upon meeting predefined conditions, these rules mitigate risks, minimize downtime, and optimize resource allocation. They streamline monitoring efforts by focusing on critical metrics, enhancing operational efficiency, and bolstering user experience. In essence, alert rules play a crucial role in maintaining system stability and reliability by swiftly identifying and resolving issues before they escalate.
+
+Below diagram show how alert is sent via Prometheus:
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/be2c7151-c3e3-4135-adf9-53c0fff6ea74)
+
 ***
 
 ## Components of Alerting Rules
