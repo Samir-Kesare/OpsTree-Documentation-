@@ -52,14 +52,13 @@ Determining the specific alert rules for your application depends on various fac
 
 | Metric                    | Threshold/Condition                                      | Alert Action                                             |
 |---------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| Response Time             | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
-| Error Rate                | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
-| Server CPU Utilization    | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
-| Memory Usage              | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
-| Disk Space                | Reaches a critical level                                  | Notify relevant team members for investigation           |
-| Network Latency           | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
-| Database Connection Pool  | Reaches a critical level or exceeds a limit              | Notify relevant team members for investigation           |
-| HTTP Status Codes         | Consistently returns errors (e.g., 5xx codes)            | Notify relevant team members for investigation           |
+| Response Time             | Exceeds a predefined threshold(> 500 milliseconds (or as per your application's SLA)) | Notify relevant team members for investigation           |
+| Error Rate                | Exceeds a predefined threshold(> 1% of requests (or as per acceptable error rate)) | Notify relevant team members for investigation           |
+| Server CPU Utilization    | Exceeds a predefined threshold(> 70% for sustained period)| Notify relevant team members for investigation           |
+| Memory Usage              | Exceeds a predefined threshold(	> 80% for sustained period) | Notify relevant team members for investigation           |
+| Disk Space                | Reaches a critical level(< 20% remaining capacity) | Notify relevant team members for investigation           |
+| Network Latency           | Exceeds a predefined threshold(	> 100 milliseconds (or as per your application's SLA)) | Notify relevant team members for investigation           |
+| HTTP Status Codes         | Consistently returns errors (Consistently > 5xx codes) | Notify relevant team members for investigation           |
 | Security Events           | Anomalous activities detected (e.g., brute force attacks) | Notify security team for immediate action                 |
 ***
 ## Dashboard Design in Excallidraw
