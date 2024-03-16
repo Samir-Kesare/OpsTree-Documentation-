@@ -12,7 +12,7 @@
 ***
 ## Table of Contents 
 + [Introduction](#Introduction)
-+ [Key Benefits](#key-benefits-of-terragrunt)
++ [Key Benefits](#key-benefits)
 + [Advantages and Disadvantages](#advantages-and-disadvantages)
 + [Best Practices](#best-practices)
 + [Conclusion](#conclusion)
