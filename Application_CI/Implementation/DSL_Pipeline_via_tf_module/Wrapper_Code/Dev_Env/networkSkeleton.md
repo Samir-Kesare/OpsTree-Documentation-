@@ -1,15 +1,12 @@
 # DSL Jenkins Pipeline for Network Skeleton in Dev Env
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
-
 ***
 
-| **Author** | **Created On** | **Last Updated** | **Document version** |
-| ---------- | -------------- | ---------------- | -------------------- |
-| **Vishal Kumar Kesharwani** | **14 March 2024** | **15 March 2024** | **v1** |
-
+|   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
+| --------------- | --------------| -----------|----------------- | -------------- |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 16 March 2024 |  Version 1 | Harshit Singh     | 16 March 2024  |
 ***
-
 ## Table of contents
 
 * [Introduction](#Introduction)
