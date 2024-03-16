@@ -36,17 +36,14 @@ The purpose of the dashboard is to:
 
 # Components
 
-This table provides a structured overview of the components along with their respective descriptions.
-
-
-| Component                   | Description                                                                                          |
-|-----------------------------|------------------------------------------------------------------------------------------------------|
-| 1. Data Sources            | - Define the sources of log data (e.g., application logs, server logs, security logs).<br>- Specify the format and structure of log data.     |
-| 2. Visualization Widgets   | - Graphs: Line charts, bar charts, pie charts to visualize log trends and distribution.<br>- Tables: Tabular representation of log entries for detailed analysis.<br>- Alerts: Visual indicators or notifications for critical events or anomalies.<br>- Heatmaps: Visualization of log frequency over time or across different parameters. |
-| 3. Filters and Search      | - Allow users to filter logs based on criteria such as time range, severity level, keywords, or custom attributes.<br>- Provide a robust search functionality for finding specific log entries efficiently.     |
-| 4. Dashboard Layout        | - Design a clear and intuitive layout with organized widgets.<br>- Prioritize essential information and avoid clutter.<br>- Ensure responsiveness for viewing on different devices.     |
-| 5. Customization and Personalization | - Allow users to customize the dashboard layout, widget placement, and data visualization preferences.<br>- Support user-specific dashboards or saved views.   |
-
+| Component       | Description                                                                                                                                                               |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Data Sources    | Entities containing data, such as SQL databases, Grafana Loki, Grafana Mimir, JSON-based APIs, or CSV files. Allows visualization of various data sources in one view. |
+| Plugins         | Extend Grafana's capabilities. Data source plugins reconcile data from the source to Grafana dashboards using a unified data structure called a data frame.          |
+| Queries         | Reduce data to a specific dataset for visualization. Each data source has its query language (e.g., PromQL, LogQL, SQL) to extract relevant information.                    |
+| Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations).                            |
+| Panels          | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations.                  |
+***
 # Design Principle
 
 | Design Principle | Description |
