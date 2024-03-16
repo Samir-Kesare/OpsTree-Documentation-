@@ -73,7 +73,7 @@ outlining the advantages and disadvantages of dashboard design for log monitorin
 
 # Dashboard Design in Excelidraw
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/f213f12a-d11e-4c31-84cf-0088145e952f)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/51508947-abe7-4781-b029-a85ee9a1ae6e)
 
 # Best Practices
 
