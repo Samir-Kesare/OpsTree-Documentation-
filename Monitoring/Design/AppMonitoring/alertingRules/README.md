@@ -47,18 +47,20 @@ Alert rules in app monitoring are predefined conditions or thresholds set up wit
 | Customization        | Allows tailoring of alerting behavior, including adjusting thresholds and configuring multiple conditions.          |
 ***
 
-## Design Principle
+## Rules
+Determining the specific alert rules for your application depends on various factors such as the type of application, its critical functionalities, expected user behavior, and the underlying infrastructure. However, here are some common alert rules that you may consider implementing:
 
-| Principle                  | Description |
-|----------------------------|--------------------------------------------------------------------------------------- |
-| Clarity of Purpose         | Clearly define the purpose of the dashboard to guide its design and content.|
-| Relevance                  | Include only essential information that supports the dashboard's intent. |
-| Efficient Visualization    | Choose visualizations that convey information quickly and effectively. |
-| Grouping Metrics           | Organize related metrics together for easy navigation and comparison. |
-| Consistency                | Maintain uniformity in visualizations and layouts to facilitate comparison. |
-| Hierarchy                  | Use size and position to indicate the importance of data elements. |
-| Clear Labels               | Use concise and descriptive labels to aid audience understanding. |
-| Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
+| Metric                    | Threshold/Condition                                      | Alert Action                                             |
+|---------------------------|----------------------------------------------------------|----------------------------------------------------------|
+| Response Time             | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
+| Error Rate                | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
+| Server CPU Utilization    | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
+| Memory Usage              | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
+| Disk Space                | Reaches a critical level                                  | Notify relevant team members for investigation           |
+| Network Latency           | Exceeds a predefined threshold                           | Notify relevant team members for investigation           |
+| Database Connection Pool  | Reaches a critical level or exceeds a limit              | Notify relevant team members for investigation           |
+| HTTP Status Codes         | Consistently returns errors (e.g., 5xx codes)            | Notify relevant team members for investigation           |
+| Security Events           | Anomalous activities detected (e.g., brute force attacks) | Notify security team for immediate action                 |
 ***
 ## Dashboard Design in Excallidraw
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4fef00ea-0f94-42d7-95ec-106f6852969e)
