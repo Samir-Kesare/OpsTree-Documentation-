@@ -80,33 +80,37 @@ A Terraform module is a container for organizing and reusing Terraform code to m
 
 # Security Group #
 locals {
-  inbound_ports         = var.inbound_ports
-  outbound_ports        = var.outbound_ports
+  inbound_ports  = var.inbound_ports
+  outbound_ports = var.outbound_ports
 }
+
 resource "aws_security_group" "sec_grp" {
-  name                  = var.sec_grp_name
-  description           = var.Sec_grp_description
-  vpc_id                = var.vpc_id
+  name        = var.sec_grp_name
+  description = var.Sec_grp_description
+  vpc_id      = var.vpc_id
 
   dynamic "ingress" {
-  for_each              = local.inbound_ports
-  content {
-   from_port            = ingress.value.port
-   to_port              = ingress.value.port
-   protocol             = ingress.value.protocol
-   cidr_blocks          = [ingress.value.cidr_blocks]
+    for_each = local.inbound_ports
+    content {
+      from_port       = ingress.value.port
+      to_port         = ingress.value.port
+      protocol        = ingress.value.protocol
+      cidr_blocks      = contains(keys(ingress.value), "cidr_blocks") ? [ingress.value.cidr_blocks] : null
+      security_groups  = contains(keys(ingress.value), "security_group_ids") ? [ingress.value.security_group_ids] : null
+    }
   }
- }
- dynamic "egress" {
-  for_each              = local.outbound_ports
-  content {
-   from_port            = egress.value.port
-   to_port              = egress.value.port
-   protocol             = egress.value.protocol
-   cidr_blocks          = [egress.value.cidr_blocks]
+
+  dynamic "egress" {
+    for_each = local.outbound_ports
+    content {
+      from_port   = egress.value.port
+      to_port     = egress.value.port
+      protocol    = egress.value.protocol
+      cidr_blocks = [egress.value.cidr_blocks]
+    }
   }
- }
-  tags                  = var.Sec_grp_tags
+
+  tags = var.Sec_grp_tags
 }
 
 /*------------Genrate-Key--------------*/
@@ -175,7 +179,8 @@ variable "inbound_ports" {
   description     = "List of inbound ports, protocols and cidr block"
   type            = list(map(any))
   default         = [
-    { port = 22, protocol = "tcp",cidr_blocks = "20.0.0.0/28" }, 
+    { port = 22, protocol = "tcp",cidr_blocks = "20.0.0.0/28" },
+    { port = 22, protocol = "TCP", security_group_ids = "sg-051aa66773d7b86c9" },
   ]
 }
 
