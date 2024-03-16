@@ -250,19 +250,22 @@ inbound-ports = [ {
 
 ### Private Key (redisKey.pem)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/919b9aaf-ece5-4ee6-ac69-e7f81f2093a2">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5e0ce8b5-abf8-4367-a975-601da15a8cdc">
+
+**Key Download**
+![Screenshot 2024-03-16 231757](https://github.com/CodeOps-Hub/Documentation/assets/156056344/3747ee27-b355-42e4-9fa9-a1db976521bf)
 
 ***
 
-### Security Group (openvpn-sg)
+### Security Group (redis-sg)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/74631c1e-4e63-4241-b338-9cc1d4949a17">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/aa4cf4de-8b20-47a2-8f6d-6a3690c740f1">
 
 ***
 
-### EC2 Instance (Openvpn-server)
+### EC2 Instance (Redis-Server)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ed950340-7dc9-40c1-a501-6c7a6308088c">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/42353603-eb1b-490a-a749-bdc9d0e7c2d5">
 
 ***
 
@@ -290,7 +293,7 @@ Terraform wrapper code enhances the capabilities of Terraform by automating task
 
 | **Name** | **Email Address** |
 | -------- | ----------------- |
-| **Shreya Jaiswal** | shreya.jaiswal.snaatak@mygurukulam.co |
+| **Aakash Tripathi** | aakash.tripathi.snaatak@mygurukulam.co |
 
 ***
 
