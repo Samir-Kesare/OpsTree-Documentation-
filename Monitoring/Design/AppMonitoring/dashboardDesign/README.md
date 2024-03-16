@@ -9,7 +9,7 @@
 # Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Purpose](#Purpose)
++ [Why](#Why)
 + [Components](#Components)
 + [Design Principle](#Design-Principle)
 + [Dashboard Design in Excallidraw](#Dashboard-Design-in-Excallidraw)
