@@ -90,7 +90,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'shreya/openvpn-wrapper-code', credentialsId: 'shreya PAT', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+                git branch: 'shreya/openvpn-wrapper-code-qa', credentialsId: 'shreya PAT', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
             }
         }
         
