@@ -38,12 +38,12 @@ The purpose of the dashboard is to:
 
 | Component       | Description |
 |-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Dashboard Layout        | Design a clear and intuitive layout with organized widgets. Prioritize essential information and avoid complexity. |
+| Panels and Panel Options | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations. |
 | Data Sources    | Entities containing data, such as SQL databases, Grafana Loki, Grafana Mimir, JSON-based APIs, or CSV files. Allows visualization of various data sources in one view. |
 | Plugins         | Extend dashboard capabilities. Data source plugins that will collect the data from the source to dashboards using a unified data structure. |
 | Queries         | Reduce data to a specific dataset for visualization. Each data source has its query language (e.g., PromQL, LogQL, SQL) to extract relevant information. |
 | Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations). |
-| Panels and Panel Options | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations. |
-| Dashboard Layout        | Design a clear and intuitive layout with organized widgets. Prioritize essential information and avoid complexity. |
 
 ***
 # Design Principle
