@@ -23,18 +23,22 @@
 
 # Introduction
 
-This document outlines the design considerations for creating a dashboard for log monitoring. A well-designed dashboard provides insights into system health, performance, and potential issues, helping users to effectively monitor logs and troubleshoot problems.
+This document outlines the design considerations for creating a dashboard for application monitoring. A well-designed dashboard provides insights into system health, performance, and potential issues, helping users to effectively monitor logs and troubleshoot problems.
 
-# Purpose
 A dashboard for application monitoring metrics ensures that engineering teams can monitor the health, throughput, and performance of on-premise, hybrid, and cloud applications.
+
 The dashboard also provides you with an in-depth analysis of crash trends on a weekly basis. With the added functionality of applying filters on widgets, you can easily narrow your search and gain valuable insights into your application's performance.
-The purpose of the dashboard is to:
-
-* Provide real-time visibility into log data.
-* Identify trends and anomalies.
-* Facilitate quick detection and resolution of issues.
-* Enable efficient monitoring of system performance.
-
+***
+# Why 
+A dashboard in app monitoring serves several important purposes:
+| Purpose                | Description |
+|------------------------|----------------------------------------------------------------------------------------------------------------------------------------- |
+| Data Visualization     | Present complex data visually with charts and graphs for easy understanding of app performance metrics. |
+| Real-time Monitoring   | Provides real-time or near-real-time updates on app health and performance, enabling quick issue identification and response. |
+| Customization          | Users can customize dashboards to display relevant metrics tailored to their needs, enhancing focus and relevance. |
+| Alerting               | Includes alerting capabilities to notify users when certain thresholds or conditions are met, facilitating proactive issue resolution. |
+| Historical Analysis    | Offers historical data for trend analysis, enabling insights into app performance over time and aiding in decision-making for capacity planning and optimization. |
+***
 # Components
 
 | Component       | Description |
