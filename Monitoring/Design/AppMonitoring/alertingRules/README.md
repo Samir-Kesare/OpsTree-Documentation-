@@ -1,5 +1,5 @@
 # Alerting Rules for App Monitoring
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/fc8a11e8-6366-436f-80eb-5d8d2d58ddd5)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/1143df7b-945c-421e-9884-72f471636797)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
