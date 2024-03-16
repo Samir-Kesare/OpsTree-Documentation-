@@ -12,8 +12,9 @@
 + [Purpose](#Purpose)
 + [Components](#Components)
 + [Design Principle](#Design-Principle)
-+ [Advantages and Disadvantages](#Advantages-and-Disadvantages)
-+ [Dashboard Design in Excelidraw](#Dashboard-Design-in-Excelidraw)
++ [Dashboard Design in Excallidraw](#Dashboard-Design-in-Excallidraw)
++ [Advantages](#Advantages)
++ [Disadvantages](#Disadvantages)
 + [Best Practices](#Best-Practices)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
@@ -29,15 +30,16 @@ A dashboard for application monitoring metrics ensures that engineering teams ca
 
 The dashboard also provides you with an in-depth analysis of crash trends on a weekly basis. With the added functionality of applying filters on widgets, you can easily narrow your search and gain valuable insights into your application's performance.
 ***
-# Why 
-A dashboard in app monitoring serves several important purposes:
-| Purpose                | Description |
-|------------------------|----------------------------------------------------------------------------------------------------------------------------------------- |
-| Data Visualization     | Present complex data visually with charts and graphs for easy understanding of app performance metrics. |
-| Real-time Monitoring   | Provides real-time or near-real-time updates on app health and performance, enabling quick issue identification and response. |
-| Customization          | Users can customize dashboards to display relevant metrics tailored to their needs, enhancing focus and relevance. |
-| Alerting               | Includes alerting capabilities to notify users when certain thresholds or conditions are met, facilitating proactive issue resolution. |
-| Historical Analysis    | Offers historical data for trend analysis, enabling insights into app performance over time and aiding in decision-making for capacity planning and optimization. |
+# Why
+1. Enhanced Comprehension: Visual representation aids in understanding complex data quickly and intuitively.
+
+2. Prompt Issue Resolution: Real-time updates enable immediate responses to emerging issues, minimizing downtime.
+
+3. Relevant Insights: Customization ensures that users can prioritize and focus on metrics pertinent to their objectives.
+
+4. Preventive Action: Proactive alerting allows teams to address issues before they escalate, maintaining optimal performance.
+
+5. Informed Decision-Making: Historical data analysis provides insights into long-term trends, guiding strategic planning and optimization efforts.
 ***
 # Components
 
@@ -64,25 +66,30 @@ A dashboard in app monitoring serves several important purposes:
 | Clear Labels               | Use concise and descriptive labels to aid audience understanding. |
 | Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
 ***
-
-# Advantages and Disadvantages
-
-outlining the advantages and disadvantages of dashboard design for log monitoring:
-
-| Advantages                            | Disadvantages                                  |
-|--------------------------------------|------------------------------------------------|
-| Provides real-time visibility        | Requires proper setup and configuration        |
-| Facilitates quick issue detection    | May overwhelm users with excessive data        |
-| Enables trend identification         | Requires expertise for meaningful analysis     |
-| Enhances operational efficiency      | Potential for data overload and false alarms   |
-| Supports proactive problem-solving  | Dependency on accurate and timely log data     |
-| Customizable for user preferences    | Initial development and maintenance effort     |
-| Can be tailored for different users  | Limited by the quality and quantity of logs    |
-
 # Dashboard Design in Excallidraw
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/51508947-abe7-4781-b029-a85ee9a1ae6e)
+***
+# Advantages
 
+| Advantages           | Description                                                                                              |
+|----------------------|----------------------------------------------------------------------------------------------------------|
+| Data Visualization   | Presents complex data in visually comprehensible formats for easier understanding.                      |
+| Real-time Updates   | Provides real-time or near-real-time updates on app performance, aiding quick issue identification.       |
+| Customization        | Allows customization to display relevant metrics tailored to specific needs, enhancing focus.            |
+| Proactive Alerting   | Includes alerting capabilities to notify users of threshold breaches, enabling proactive issue resolution.|
+| Historical Analysis  | Offers historical data for trend analysis, aiding in decision-making for capacity planning and optimization.|
+***
+# Disadvantages
+
+| Disadvantages             | Description                                                                                                 |
+|---------------------------|-------------------------------------------------------------------------------------------------------------|
+| Information Overload      | Too many metrics or data points can overwhelm users, making it difficult to focus on key insights.          |
+| Design Complexity         | Designing effective dashboards requires expertise in data visualization and user experience design.        |
+| Maintenance Overhead      | Dashboards require ongoing maintenance to ensure that data sources are accurate and up-to-date.             |
+| Cost                      | Developing and maintaining dashboards can incur costs in terms of software, infrastructure, and personnel.   |
+| False Sense of Security   | Relying solely on dashboards for monitoring can lead to a false sense of security if important issues are overlooked.|
+***
 # Best Practices
 Certainly, here's the summary organized into a table format:
 
@@ -99,7 +106,7 @@ Certainly, here's the summary organized into a table format:
 ***  
 # Conclusion
 
-A well-designed dashboard for log monitoring is essential for maintaining system health and ensuring timely response to issues. By following the principles and best practices outlined in this document, you can create an effective dashboard that meets the needs of your users and enhances operational efficiency.
+A well-designed dashboard for app monitoring is essential for maintaining system health and ensuring timely response to issues. By following the principles and best practices outlined in this document, you can create an effective dashboard that meets the needs of your users and enhances operational efficiency.
 
 
 ## Contact Information
