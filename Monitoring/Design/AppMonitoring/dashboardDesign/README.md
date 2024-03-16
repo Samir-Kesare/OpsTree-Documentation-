@@ -36,13 +36,13 @@ The purpose of the dashboard is to:
 
 # Components
 
-| Component       | Description                                                                                                                                                               |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Component       | Description |
+|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Data Sources    | Entities containing data, such as SQL databases, Grafana Loki, Grafana Mimir, JSON-based APIs, or CSV files. Allows visualization of various data sources in one view. |
-| Plugins         | Extend Grafana's capabilities. Data source plugins reconcile data from the source to Grafana dashboards using a unified data structure called a data frame.          |
-| Queries         | Reduce data to a specific dataset for visualization. Each data source has its query language (e.g., PromQL, LogQL, SQL) to extract relevant information.                    |
-| Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations).                            |
-| Panels          | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations.                  |
+| Plugins         | Extend dashboard capabilities. Data source plugins that will collect the data from the source to dashboards using a unified data structure. |
+| Queries         | Reduce data to a specific dataset for visualization. Each data source has its query language (e.g., PromQL, LogQL, SQL) to extract relevant information. |
+| Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations). |
+| Panels and Panel Options | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations. |
 ***
 # Design Principle
 
