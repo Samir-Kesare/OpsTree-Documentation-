@@ -167,13 +167,13 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/5a6d206e-31de-468a-900c-c167e39f5904">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3290c566-f6e4-4769-9bb6-c4b4339f17e7">
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/23879352-5dfe-429b-9eee-187ffc19491a">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7f1c57b7-5d15-4058-ba9b-3203fd49f351">
 
 ***
 
@@ -185,10 +185,10 @@ pipeline {
 
 ```shell
 Started by user shreya-snaatak
-Obtained Openvpn/Dev-Env/Jenkinsfile from git https://github.com/CodeOps-Hub/Jenkinsfile.git
+Obtained Openvpn/QA-Env/Jenkinsfile from git https://github.com/CodeOps-Hub/Jenkinsfile.git
 [Pipeline] Start of Pipeline
 [Pipeline] node
-Running on Jenkins in /var/lib/jenkins/workspace/Dev-Openvpn-Pipeline
+Running on Jenkins in /var/lib/jenkins/workspace/QA-Openvpn-Pipeline
 [Pipeline] {
 [Pipeline] stage
 [Pipeline] { (Declarative: Checkout SCM)
@@ -198,7 +198,7 @@ The recommended git tool is: NONE
 using credential shreya PAT
 Cloning the remote Git repository
 Cloning repository https://github.com/CodeOps-Hub/Jenkinsfile.git
- > git init /var/lib/jenkins/workspace/Dev-Openvpn-Pipeline # timeout=10
+ > git init /var/lib/jenkins/workspace/QA-Openvpn-Pipeline # timeout=10
 Fetching upstream changes from https://github.com/CodeOps-Hub/Jenkinsfile.git
  > git --version # timeout=10
  > git --version # 'git version 2.34.1'
@@ -207,12 +207,12 @@ using GIT_ASKPASS to set credentials Github personal access token for shreya
  > git config remote.origin.url https://github.com/CodeOps-Hub/Jenkinsfile.git # timeout=10
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
- > git rev-parse refs/remotes/origin/shreya/openvpn-pipeline^{commit} # timeout=10
-Checking out Revision 5341c08c59f63d24caee2002a532c965b207d9ff (refs/remotes/origin/shreya/openvpn-pipeline)
+ > git rev-parse refs/remotes/origin/shreya/openvpn-pipeline-qa^{commit} # timeout=10
+Checking out Revision 70cd9db070a23002b755cbb40dd61c191b14dd60 (refs/remotes/origin/shreya/openvpn-pipeline-qa)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 5341c08c59f63d24caee2002a532c965b207d9ff # timeout=10
+ > git checkout -f 70cd9db070a23002b755cbb40dd61c191b14dd60 # timeout=10
 Commit message: "Update Jenkinsfile"
- > git rev-list --no-walk 47d03ab453d967d9758655cf3d41056cc39630fa # timeout=10
+First time build. Skipping changelog.
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] withEnv
@@ -229,7 +229,7 @@ Masking supported pattern matches of $AWS_ACCESS_KEY_ID or $AWS_SECRET_ACCESS_KE
 [Pipeline] git
 The recommended git tool is: NONE
 using credential shreya PAT
- > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/Dev-Openvpn-Pipeline/.git # timeout=10
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/QA-Openvpn-Pipeline/.git # timeout=10
 Fetching changes from the remote Git repository
  > git config remote.origin.url https://github.com/CodeOps-Hub/Terraform-modules.git # timeout=10
 Fetching upstream changes from https://github.com/CodeOps-Hub/Terraform-modules.git
@@ -237,20 +237,20 @@ Fetching upstream changes from https://github.com/CodeOps-Hub/Terraform-modules.
  > git --version # 'git version 2.34.1'
 using GIT_ASKPASS to set credentials Github personal access token for shreya
  > git fetch --tags --force --progress -- https://github.com/CodeOps-Hub/Terraform-modules.git +refs/heads/*:refs/remotes/origin/* # timeout=10
- > git rev-parse refs/remotes/origin/shreya/openvpn-wrapper-code^{commit} # timeout=10
-Checking out Revision d0beafab7f49be51629d1ba6783d1680e4e95705 (refs/remotes/origin/shreya/openvpn-wrapper-code)
+ > git rev-parse refs/remotes/origin/shreya/openvpn-wrapper-code-qa^{commit} # timeout=10
+Checking out Revision 4dad29a84985c559d3b27d676bab3865759892b6 (refs/remotes/origin/shreya/openvpn-wrapper-code-qa)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f d0beafab7f49be51629d1ba6783d1680e4e95705 # timeout=10
+ > git checkout -f 4dad29a84985c559d3b27d676bab3865759892b6 # timeout=10
  > git branch -a -v --no-abbrev # timeout=10
- > git checkout -b shreya/openvpn-wrapper-code d0beafab7f49be51629d1ba6783d1680e4e95705 # timeout=10
-Commit message: "Delete wrapperCode/QA-Openvpn-Wrapper-Code/main.tf"
+ > git checkout -b shreya/openvpn-wrapper-code-qa 4dad29a84985c559d3b27d676bab3865759892b6 # timeout=10
+Commit message: "Create terraform.tfvars"
 First time build. Skipping changelog.
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
 [Pipeline] { (Copy Terraform Files)
 [Pipeline] sh
-+ cp wrapperCode/Openvpn-wrapper-code/Dev-Env/main.tf wrapperCode/Openvpn-wrapper-code/Dev-Env/output.tf wrapperCode/Openvpn-wrapper-code/Dev-Env/provider.tf wrapperCode/Openvpn-wrapper-code/Dev-Env/terraform.tfvars wrapperCode/Openvpn-wrapper-code/Dev-Env/variables.tf .
++ cp wrapperCode/Openvpn-wrapper-code/QA-Env/main.tf wrapperCode/Openvpn-wrapper-code/QA-Env/output.tf wrapperCode/Openvpn-wrapper-code/QA-Env/provider.tf wrapperCode/Openvpn-wrapper-code/QA-Env/terraform.tfvars wrapperCode/Openvpn-wrapper-code/QA-Env/variables.tf .
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
@@ -301,7 +301,7 @@ commands will detect it and remind you to do so if necessary.[0m
 [Pipeline] sh
 + terraform plan
 [0m[1mmodule.network.data.aws_ami.ubuntu: Reading...[0m[0m
-[0m[1mmodule.network.data.aws_ami.ubuntu: Read complete after 1s [id=ami-0f8b8f874036055b1][0m
+[0m[1mmodule.network.data.aws_ami.ubuntu: Read complete after 0s [id=ami-0f8b8f874036055b1][0m
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -348,11 +348,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m spot_instance_request_id             = (known after apply)
       [32m+[0m[0m subnet_id                            = "subnet-009e342da70d1d460"
       [32m+[0m[0m tags                                 = {
-          [32m+[0m[0m "Name" = "openvpn-Server"
+          [32m+[0m[0m "Name" = "qa-openvpn-Server"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tags_all                             = {
-          [32m+[0m[0m "Name" = "openvpn-Server"
+          [32m+[0m[0m "Name" = "qa-openvpn-Server"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tenancy                              = (known after apply)
@@ -378,7 +378,7 @@ Terraform will perform the following actions:
 [1m  # module.network.aws_security_group.sec_grp[0m will be created
 [0m  [32m+[0m[0m resource "aws_security_group" "sec_grp" {
       [32m+[0m[0m arn                    = (known after apply)
-      [32m+[0m[0m description            = "Security group for Open Vpn in Dev Env"
+      [32m+[0m[0m description            = "Security group for Open Vpn in QA Env"
       [32m+[0m[0m egress                 = [
           [32m+[0m[0m {
               [32m+[0m[0m cidr_blocks      = [
@@ -423,18 +423,18 @@ Terraform will perform the following actions:
               [32m+[0m[0m to_port          = 22
             },
         ]
-      [32m+[0m[0m name                   = "dev-openvpn-sg"
+      [32m+[0m[0m name                   = "qa-openvpn-sg"
       [32m+[0m[0m name_prefix            = (known after apply)
       [32m+[0m[0m owner_id               = (known after apply)
       [32m+[0m[0m revoke_rules_on_delete = false
       [32m+[0m[0m tags                   = {
-          [32m+[0m[0m "Enviroment" = "dev"
-          [32m+[0m[0m "Name"       = "openvpn-sg"
+          [32m+[0m[0m "Enviroment" = "qa"
+          [32m+[0m[0m "Name"       = "qa-openvpn-sg"
           [32m+[0m[0m "Owner"      = "shreya"
         }
       [32m+[0m[0m tags_all               = {
-          [32m+[0m[0m "Enviroment" = "dev"
-          [32m+[0m[0m "Name"       = "openvpn-sg"
+          [32m+[0m[0m "Enviroment" = "qa"
+          [32m+[0m[0m "Name"       = "qa-openvpn-sg"
           [32m+[0m[0m "Owner"      = "shreya"
         }
       [32m+[0m[0m vpc_id                 = "vpc-0a744f2efc4febb2a"
@@ -550,11 +550,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m spot_instance_request_id             = (known after apply)
       [32m+[0m[0m subnet_id                            = "subnet-009e342da70d1d460"
       [32m+[0m[0m tags                                 = {
-          [32m+[0m[0m "Name" = "openvpn-Server"
+          [32m+[0m[0m "Name" = "qa-openvpn-Server"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tags_all                             = {
-          [32m+[0m[0m "Name" = "openvpn-Server"
+          [32m+[0m[0m "Name" = "qa-openvpn-Server"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tenancy                              = (known after apply)
@@ -580,7 +580,7 @@ Terraform will perform the following actions:
 [1m  # module.network.aws_security_group.sec_grp[0m will be created
 [0m  [32m+[0m[0m resource "aws_security_group" "sec_grp" {
       [32m+[0m[0m arn                    = (known after apply)
-      [32m+[0m[0m description            = "Security group for Open Vpn in Dev Env"
+      [32m+[0m[0m description            = "Security group for Open Vpn in QA Env"
       [32m+[0m[0m egress                 = [
           [32m+[0m[0m {
               [32m+[0m[0m cidr_blocks      = [
@@ -625,18 +625,18 @@ Terraform will perform the following actions:
               [32m+[0m[0m to_port          = 22
             },
         ]
-      [32m+[0m[0m name                   = "dev-openvpn-sg"
+      [32m+[0m[0m name                   = "qa-openvpn-sg"
       [32m+[0m[0m name_prefix            = (known after apply)
       [32m+[0m[0m owner_id               = (known after apply)
       [32m+[0m[0m revoke_rules_on_delete = false
       [32m+[0m[0m tags                   = {
-          [32m+[0m[0m "Enviroment" = "dev"
-          [32m+[0m[0m "Name"       = "openvpn-sg"
+          [32m+[0m[0m "Enviroment" = "qa"
+          [32m+[0m[0m "Name"       = "qa-openvpn-sg"
           [32m+[0m[0m "Owner"      = "shreya"
         }
       [32m+[0m[0m tags_all               = {
-          [32m+[0m[0m "Enviroment" = "dev"
-          [32m+[0m[0m "Name"       = "openvpn-sg"
+          [32m+[0m[0m "Enviroment" = "qa"
+          [32m+[0m[0m "Name"       = "qa-openvpn-sg"
           [32m+[0m[0m "Owner"      = "shreya"
         }
       [32m+[0m[0m vpc_id                 = "vpc-0a744f2efc4febb2a"
@@ -683,27 +683,26 @@ Changes to Outputs:
     ]
 [0m[1mmodule.network.tls_private_key.rsa_4096: Creating...[0m[0m
 [0m[1mmodule.network.aws_security_group.sec_grp: Creating...[0m[0m
-[0m[1mmodule.network.aws_security_group.sec_grp: Creation complete after 2s [id=sg-0452a3a41a8f275dd][0m
-[0m[1mmodule.network.tls_private_key.rsa_4096: Creation complete after 4s [id=053583506418e20961e643333a69acc4f927e4d8][0m
+[0m[1mmodule.network.tls_private_key.rsa_4096: Creation complete after 2s [id=b7f4ca87c3280c2a456cbd1b0122865ce17fc7a6][0m
 [0m[1mmodule.network.aws_key_pair.key_pair: Creating...[0m[0m
 [0m[1mmodule.network.local_file.private_key: Creating...[0m[0m
-[0m[1mmodule.network.local_file.private_key: Creation complete after 0s [id=8c93100ef31dddb84227f30590e483cc5fe6acbb][0m
-[0m[1mmodule.network.aws_key_pair.key_pair: Creation complete after 1s [id=snaatak.pem][0m
+[0m[1mmodule.network.local_file.private_key: Creation complete after 0s [id=54dbfad2c14dd2b5d8bd8100e08e320c1875351b][0m
+[0m[1mmodule.network.aws_key_pair.key_pair: Creation complete after 0s [id=snaatak.pem][0m
+[0m[1mmodule.network.aws_security_group.sec_grp: Creation complete after 2s [id=sg-07051f961aec13633][0m
 [0m[1mmodule.network.aws_instance.standalone_server: Creating...[0m[0m
 [0m[1mmodule.network.aws_instance.standalone_server: Still creating... [10s elapsed][0m[0m
 [0m[1mmodule.network.aws_instance.standalone_server: Still creating... [20s elapsed][0m[0m
-[0m[1mmodule.network.aws_instance.standalone_server: Still creating... [30s elapsed][0m[0m
-[0m[1mmodule.network.aws_instance.standalone_server: Creation complete after 31s [id=i-08e6e1931075abf4e][0m
+[0m[1mmodule.network.aws_instance.standalone_server: Creation complete after 22s [id=i-06f8b56eaad92f2e2][0m
 [0m[1m[32m
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 [0m[0m[1m[32m
 Outputs:
 
 [0mSecurity_Group_ID = [
-  "sg-0452a3a41a8f275dd",
+  "sg-07051f961aec13633",
 ]
 server_id = [
-  "i-08e6e1931075abf4e",
+  "i-06f8b56eaad92f2e2",
 ]
 [Pipeline] }
 [Pipeline] // script
@@ -737,7 +736,7 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="800"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/862a2245-3dfc-4532-94a9-eab3b3095939"> 
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ad21300e-fa84-42dd-85e3-dce4532a7d67">
 
 ***
 ### SSH Key
@@ -748,7 +747,7 @@ Finished: SUCCESS
 
 ### EC2 Instance
 
-<img width="800"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4e92b753-883a-4414-bfe1-247b8ead7b1d">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/71a9e22f-539d-48b3-8b78-4af82a3a07d1">
 
 ***
 
