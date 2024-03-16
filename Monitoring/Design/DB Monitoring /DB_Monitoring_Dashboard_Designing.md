@@ -61,9 +61,6 @@ Dashboard designing is essential for effective monitoring and visualization of d
 | **Identify sudden drops in traffic**            | Monitor metrics like visitor numbers in real-time to detect sudden decreases and investigate potential causes. |
 | **Compare the performance of marketing campaigns** | Analyze conversion rates and other metrics to compare the effectiveness of different marketing campaigns.     |
 | **Allocate resources effectively**               | Use real-time data on popular pages and features to allocate resources towards areas with higher engagement.  |
-
-| Benefits of Dashboards                          | Description                                                                                                   |
-|--------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
 | **Simplify complex information**                 | Dashboards simplify complex data by presenting it in an easy-to-understand format, aiding decision-making.    |
 | **Highlight crucial insights**                   | Key metrics like conversion rates are highlighted, allowing stakeholders to focus on important insights.      |
 | **Enable real-time monitoring and analysis**     | Real-time data updates empower immediate action and analysis, enabling timely responses to changing trends.  |
