@@ -46,8 +46,7 @@ A Domain-Specific Language (DSL) is a programming language or specification lang
 ***
 
 ## Flow Diagram
-
-<img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4c30ca5b-e159-4ad2-8c86-8c96d30be55b">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/eba3a9a6-999c-4e25-8c5b-294d676a18c0)
 
 ***
 
