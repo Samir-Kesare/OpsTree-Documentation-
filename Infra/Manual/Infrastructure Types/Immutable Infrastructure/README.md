@@ -35,7 +35,7 @@ In immutable infrastructure, updates and changes are applied by replacing entire
 
 * **Scalability and Agility:** Immutable infrastructure supports rapid scaling to changing workloads and requirements. New instances can be provisioned quickly from pre-configured images, allowing for seamless scaling out or rolling updates. This scalability and agility support dynamic and elastic applications and services, ensuring that infrastructure resources can efficiently meet demand fluctuations.
 
-* Minimized Resource Waste: By replacing entire server instances or components with new ones, immutable infrastructure minimizes resource waste associated with maintaining outdated or unused configurations. Old server instances are destroyed, freeing up resources for other workloads and preventing resource hoarding.
+* **Minimized Resource Waste:** By replacing entire server instances or components with new ones, immutable infrastructure minimizes resource waste associated with maintaining outdated or unused configurations. Old server instances are destroyed, freeing up resources for other workloads and preventing resource hoarding.
 
 ***
 ## Advantages and Disadvantages 
