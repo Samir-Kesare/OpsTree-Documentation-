@@ -9,11 +9,9 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Components of Alerting Rules](#Components-of-Alerting-Rules)
-+ [Some Common Alert Rules for App](#Some-Common-Alert-Rules-for-App)
++ [Steps to rollout](#Steps-to-rollout)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
-+ [Best Practices](#Best-Practices)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
 + [References](#References)
@@ -35,6 +33,8 @@ In a rolling deployment:
 4. **Easy Rollback**: If any problems occur during the deployment, it's relatively straightforward to roll back to the previous version since only a fraction of the infrastructure has been updated.
 
 5. **Automated Orchestration**: Rolling deployments are often automated using deployment orchestration tools or continuous integration/continuous deployment (CI/CD) pipelines to manage the process efficiently.
+
+To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling)
 ***
 
 ## Steps to rollout
