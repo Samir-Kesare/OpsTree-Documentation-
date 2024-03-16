@@ -23,17 +23,8 @@
 
 ## Introduction
 Alert rules in app monitoring are predefined conditions or thresholds set up within a monitoring system to trigger notifications or alerts when certain criteria are met. These rules are essential for proactively identifying and addressing issues in an application or system.
-***
 
-## Why
-
-| Aspect               | Description                                                                                                         |
-|----------------------|---------------------------------------------------------------------------------------------------------------------|
-| Proactive Monitoring | Alert rules enable proactive monitoring by triggering notifications when specific conditions or thresholds are met. |
-| Timely Issue Response | They ensure timely responses to potential issues, allowing teams to address problems before they escalate.         |
-| Prevent Downtime     | By promptly notifying about anomalies or deviations from expected behavior, alert rules help prevent downtime.       |
-| Resource Optimization| Alert rules help optimize resource allocation by identifying underutilized or overutilized resources in real-time.   |
-| Enhanced Reliability | They contribute to maintaining system reliability and performance by identifying and resolving issues promptly.    |
+Alert rules are pivotal in app monitoring systems, offering proactive issue detection and ensuring timely responses. By promptly triggering notifications upon meeting predefined conditions, these rules mitigate risks, minimize downtime, and optimize resource allocation. They streamline monitoring efforts by focusing on critical metrics, enhancing operational efficiency, and bolstering user experience. In essence, alert rules play a crucial role in maintaining system stability and reliability by swiftly identifying and resolving issues before they escalate.
 ***
 
 ## Components
@@ -67,25 +58,28 @@ Determining the specific alert rules for your application depends on various fac
 ***
 ## Advantages
 
-| Advantages           | Description                                                                                              |
-|----------------------|----------------------------------------------------------------------------------------------------------|
-| Data Visualization   | Presents complex data in visually comprehensible formats for easier understanding.                      |
-| Real-time Updates   | Provides real-time or near-real-time updates on app performance, aiding quick issue identification.       |
-| Customization        | Allows customization to display relevant metrics tailored to specific needs, enhancing focus.            |
-| Proactive Alerting   | Includes alerting capabilities to notify users of threshold breaches, enabling proactive issue resolution.|
-| Historical Analysis  | Offers historical data for trend analysis, aiding in decision-making for capacity planning and optimization.|
+| Advantages                  | Description                                                                                                    |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------|
+| Proactive Issue Detection   | Alert rules enable the proactive detection of issues by triggering notifications when predefined conditions are met.|
+| Timely Response             | They facilitate timely responses to potential problems, helping to minimize downtime and mitigate risks.        |
+| Improved System Reliability | Alert rules contribute to improved system reliability by identifying and addressing issues before they escalate.|
+| Resource Optimization       | By alerting to resource constraints or anomalies, alert rules aid in optimizing resource allocation and utilization.|
+| Focus on Critical Metrics   | They allow teams to focus on critical metrics and key performance indicators (KPIs), enhancing operational efficiency.|
 ***
+
 ## Disadvantages
 
-| Disadvantages             | Description                                                                                                 |
-|---------------------------|-------------------------------------------------------------------------------------------------------------|
-| Information Overload      | Too many metrics or data points can overwhelm users, making it difficult to focus on key insights.          |
-| Design Complexity         | Designing effective dashboards requires expertise in data visualization and user experience design.        |
-| Maintenance Overhead      | Dashboards require ongoing maintenance to ensure that data sources are accurate and up-to-date.             |
-| Cost                      | Developing and maintaining dashboards can incur costs in terms of software, infrastructure, and personnel.   |
-| False Sense of Security   | Relying solely on dashboards for monitoring can lead to a false sense of security if important issues are overlooked.|
+| Disadvantages               | Description                                                                                                    |
+|-----------------------------|----------------------------------------------------------------------------------------------------------------|
+| Alert Fatigue               | Too many alerts or false positives can lead to alert fatigue, causing users to ignore or overlook important notifications.|
+| Configuration Complexity    | Setting up and maintaining alert rules can be complex, requiring expertise in defining thresholds and conditions.  |
+| Over-reliance on Automation | Over-reliance on automated alerting may lead to complacency, reducing the effectiveness of human monitoring and intervention.|
+| Lack of Context             | Alerts triggered solely based on predefined rules may lack context, requiring additional investigation to understand the underlying cause.|
+| Potential for False Positives | Alert rules may generate false positives, triggering unnecessary alerts and wasting resources on investigating non-issues.|
 ***
+
 ## Best Practices
+
 | Best Practices                     | Description                                                                                       |
 |------------------------------------|---------------------------------------------------------------------------------------------------|
 | Identify Key Metrics              | Determine the most critical metrics for monitoring app performance.                               |
