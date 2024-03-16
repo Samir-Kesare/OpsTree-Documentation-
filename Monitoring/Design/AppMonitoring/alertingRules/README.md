@@ -24,7 +24,9 @@
 ## Introduction
 Alert rules in app monitoring are predefined conditions or thresholds set up within a monitoring system to trigger notifications or alerts when certain criteria are met. These rules are essential for proactively identifying and addressing issues in an application or system.
 ***
+
 ## Why
+
 | Aspect               | Description                                                                                                         |
 |----------------------|---------------------------------------------------------------------------------------------------------------------|
 | Proactive Monitoring | Alert rules enable proactive monitoring by triggering notifications when specific conditions or thresholds are met. |
@@ -32,10 +34,10 @@ Alert rules in app monitoring are predefined conditions or thresholds set up wit
 | Prevent Downtime     | By promptly notifying about anomalies or deviations from expected behavior, alert rules help prevent downtime.       |
 | Resource Optimization| Alert rules help optimize resource allocation by identifying underutilized or overutilized resources in real-time.   |
 | Enhanced Reliability | They contribute to maintaining system reliability and performance by identifying and resolving issues promptly.    |
-
-These aspects highlight the importance of alert rules in app monitoring for maintaining system health, reliability, and performance.
 ***
+
 ## Components
+
 | Component            | Description                                                                                                         |
 |----------------------|---------------------------------------------------------------------------------------------------------------------|
 | Alert rules          | Define conditions triggering notifications when specific criteria are met.                                |
@@ -44,6 +46,7 @@ These aspects highlight the importance of alert rules in app monitoring for main
 | Escalation Policies  | Define actions if alerts remain unresolved, such as escalating to higher-level personnel or initiating remediation.|
 | Customization        | Allows tailoring of alerting behavior, including adjusting thresholds and configuring multiple conditions.          |
 ***
+
 ## Design Principle
 
 | Principle                  | Description |
