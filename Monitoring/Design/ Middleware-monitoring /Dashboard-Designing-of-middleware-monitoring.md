@@ -56,12 +56,13 @@ Middleware systems are complex, comprising various components and dependencies. 
 | **Alert Fatigue** |	Over-reliance on dashboards and alerting mechanisms may lead to alert fatigue, where users become desensitized to notifications due to a high volume of false positives.|
 ***
 ## Best Practices
-* **Focus on Key Metrics**: Identify and prioritize the most critical metrics relevant to your middleware environment, such as CPU utilization, memory usage, response times, and error rates. Avoid overwhelming users with unnecessary data and prioritize metrics that directly impact system performance and reliability.
-* **Clear Visualization**: Use clear and intuitive visualizations such as line charts, bar graphs, and pie charts to represent data effectively. Choose visualizations that make it easy for users to understand trends, patterns, and anomalies at a glance. Ensure that visualizations are appropriately scaled and labeled for clarity.
-* **Customization Options**: Provide users with customization options to tailor the dashboard to their specific needs and preferences. Allow them to select which metrics to display, adjust time ranges, and set thresholds for alerts. Customization empowers users to focus on the information most relevant to their tasks and responsibilities.
-* **Real-time Monitoring and Alerts**: Implement real-time monitoring capabilities to provide users with up-to-date insights into the performance and health of middleware components. Set up alerting mechanisms to notify users promptly of critical issues or deviations from expected behavior. Ensure that alerts are actionable and provide sufficient context for troubleshooting.
-* **Responsive Design and Accessibility**: Design the dashboard with a responsive layout that adapts to different screen sizes and devices, including desktops, tablets, and mobile phones. Prioritize accessibility features to ensure that the dashboard is usable by individuals with disabilities. Consider factors such as color contrast, keyboard navigation, and screen reader compatibility to maximize accessibility for all users.
-
+| Best Practice	| Description |
+|---------------|-------------|
+| **Focus on Key Metrics**| Identify and prioritize critical metrics such as CPU utilization, memory usage, response times, and error rates, which directly impact system performance and reliability.|
+| **Clear Visualization** |	Use clear and intuitive visualizations like line charts, bar graphs, and pie charts to represent data effectively. Ensure proper scaling and labeling for clarity and understanding.|
+|**Customization Options**| Provide users with customization options to tailor the dashboard to their specific needs. Allow adjustments for displayed metrics, time ranges, and alert thresholds.|
+| **Real-time Monitoring and Alerts**	| Implement real-time monitoring capabilities to provide up-to-date insights into middleware performance. Set up alerting mechanisms for prompt notification of critical issues.|
+| **Responsive Design and Accessibility**	| Design a responsive layout adaptable to different devices and prioritize accessibility features for users with disabilities, such as color contrast and keyboard navigation.|
   ***
   
 ## Conclusion
