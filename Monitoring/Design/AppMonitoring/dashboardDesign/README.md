@@ -67,8 +67,8 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 | Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
 ***
 ## Dashboard Design in Excallidraw
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4fef00ea-0f94-42d7-95ec-106f6852969e)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/51508947-abe7-4781-b029-a85ee9a1ae6e)
 ***
 ## Advantages
 
