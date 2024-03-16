@@ -22,12 +22,7 @@
 
 
 ## Introduction
-
-This document outlines the design considerations for creating a dashboard for application monitoring. A well-designed dashboard provides insights into system health, performance, and potential issues, helping users to effectively monitor logs and troubleshoot problems.
-
-A dashboard for application monitoring metrics ensures that engineering teams can monitor the health, throughput, and performance of on-premise, hybrid, and cloud applications.
-
-The dashboard also provides you with an in-depth analysis of crash trends on a weekly basis. With the added functionality of applying filters on widgets, you can easily narrow your search and gain valuable insights into your application's performance.
+Alert rules in app monitoring are predefined conditions or thresholds set up within a monitoring system to trigger notifications or alerts when certain criteria are met. These rules are essential for proactively identifying and addressing issues in an application or system.
 ***
 ## Why
 1. Enhanced Comprehension: Visual representation aids in understanding complex data quickly and intuitively.
@@ -41,16 +36,13 @@ The dashboard also provides you with an in-depth analysis of crash trends on a w
 5. Informed Decision-Making: Historical data analysis provides insights into long-term trends, guiding strategic planning and optimization efforts.
 ***
 ## Components
-
-| Component       | Description |
-|-----------------|--------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Dashboard Layout        | Design a clear and intuitive layout with organized widgets. Prioritize essential information and avoid complexity. |
-| Panels and Panel Options | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations. |
-| Data Sources    | Entities containing data, such as SQL databases, Grafana Loki, Grafana Mimir, JSON-based APIs, or CSV files. Allows visualization of various data sources in one view. |
-| Plugins         | Extend dashboard capabilities. Data source plugins that will collect the data from the source to dashboards using a unified data structure. |
-| Queries         | Reduce data to a specific dataset for visualization. Each data source has its query language (e.g., PromQL, LogQL, SQL) to extract relevant information. |
-| Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations). |
-
+| Component            | Description                                                                                                         |
+|----------------------|---------------------------------------------------------------------------------------------------------------------|
+| Alert rules          | Define conditions triggering notifications when specific criteria are met.                                |
+| Thresholds           | Specifies limits for metrics. Crossing these thresholds triggers alerts.                                             |
+| Notification         | Alerts prompt notifications via email, SMS, or other channels to designated individuals or teams.                   |
+| Escalation Policies  | Define actions if alerts remain unresolved, such as escalating to higher-level personnel or initiating remediation.|
+| Customization        | Allows tailoring of alerting behavior, including adjusting thresholds and configuring multiple conditions.          |
 ***
 ## Design Principle
 
