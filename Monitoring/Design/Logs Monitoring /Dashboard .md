@@ -14,7 +14,7 @@
 + [Components](#Components)
 + [Design Principle](#Design-Principle)
 + [Advantages and Disadvantages](#Advantages-and-Disadvantages)
-+ [Dashboard Design in Excelidraw](#Dashboard-Design-in-Excelidraw)
++ [Dashboard Design in Excalidraw](#Dashboard-Design-in-Excalidraw)
 + [Best Practices](#Best-Practices)
 + [Conclusion](#Conclusion)
 + [Contact Information](#contact-information)
@@ -71,7 +71,7 @@ outlining the advantages and disadvantages of dashboard design for log monitorin
 | Customizable for user preferences    | Initial development and maintenance effort     |
 | Can be tailored for different users  | Limited by the quality and quantity of logs    |
 
-# Dashboard Design in Excelidraw
+# Dashboard Design in Excalidraw
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/51508947-abe7-4781-b029-a85ee9a1ae6e)
 
