@@ -22,7 +22,7 @@
 ## Introduction
 A rolling deployment strategy is a method used in software deployment where updates or changes are gradually applied to a subset of servers or instances in a systematic and controlled manner, while the remaining servers continue to handle production traffic. This approach ensures continuous availability of the application and reduces the risk associated with deploying changes.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/203d801b-9f2e-4d46-b24a-97e83ab1ad69)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ddf2dbea-9e4e-413c-83f1-2323ce5133e0)
 
 In a rolling deployment:
 
@@ -87,25 +87,7 @@ Here's the information presented in a table format:
 | Dependency Management    | Handling dependencies between different components of the application stack can be complex and may require additional testing and validation. |
 ***
 
-## Best Practices
-
-| Best Practice                     | Description                                                                                       |
-|----------------------------------|---------------------------------------------------------------------------------------------------|
-| Start with Clear Objectives      | Clearly define the purpose of your alerting system and what you aim to achieve with it.          |
-| Understand Your System           | Have a deep understanding of your application's architecture, dependencies, and normal behavior.  |
-| Identify Key Metrics             | Determine the most critical metrics for monitoring your application's health and performance.     |
-| Set Realistic Thresholds         | Establish thresholds for each metric that indicate abnormal behavior or potential issues.         |
-| Prioritize Alerts                | Focus on critical alerts for issues that require immediate attention, based on impact and urgency.|
-| Avoid Alert Fatigue              | Strike a balance by setting up alerts only for significant issues and avoiding unnecessary notifications.|
-| Use Hysteresis                   | Incorporate hysteresis or "bounce" thresholds to prevent alert flapping caused by minor fluctuations.|
-| Implement Escalation Policies    | Define escalation policies to ensure that alerts are handled promptly and effectively.            |
-| Regularly Review and Refine      | Monitor the effectiveness of your alert rules regularly and refine them based on feedback and evolving requirements.|
-| Document and Communicate         | Document alert rules comprehensively and communicate them effectively to all stakeholders.       |
-***
-
 ## Conclusion
-
-In conclusion, alerting rules are like watchdogs for your app, helping catch problems early and responding quickly. They're great for keeping your app reliable and using resources wisely, but too many alerts or false alarms can be annoying. By following some smart steps, like setting clear goals and checking alerts regularly, you can make sure they work well. It's important to talk about alerts with your team and write down how they should be handled so everyone knows what to do. This way, you can keep your app running smoothly and fix any issues fast.
 ***
 ## Contact Information
 
@@ -118,6 +100,5 @@ In conclusion, alerting rules are like watchdogs for your app, helping catch pro
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Alerting Overview | https://prometheus.io/docs/alerting/latest/overview/ |
-| Alert Rules | https://samber.github.io/awesome-prometheus-alerts/rules.html |
-|| https://grafana.com/docs/grafana/latest/alerting/fundamentals/alert-rules/ |
+| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling |
+| Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
