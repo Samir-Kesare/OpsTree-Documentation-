@@ -75,7 +75,99 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 <br>
 
 ```shell
-
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('aws-cred-vishal-self')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-cred-vishal-self')
+        TF_CLI_ARGS           = '-input=false'
+    }
+    
+    parameters {
+        choice(name: 'ACTION', choices: ['Apply', 'Destroy'], description: 'Choose to apply or destroy the infrastructure')
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', credentialsId: 'Vishal-PAT-DSL', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+            }
+        }
+        
+        stage('Copy Terraform Files') {
+            steps {
+                // Copy or move specific files from the repository to Jenkins workspace
+                sh 'cp wrapperCode/Frontend_Wrapper_Code/QA_Env/* .'
+            }
+        }
+        
+        stage('Terraform Init') {
+            steps {
+                script {
+                    sh 'terraform init'
+                }
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                script {
+                    sh 'terraform plan'
+                }
+            }
+        }
+        
+        stage('Review and Approve Apply') {
+            when {
+                expression { params.ACTION == 'Apply' }
+            }
+            steps {
+                // Prompt for approval before applying changes
+                input "Do you want to apply Terraform changes?"
+            }
+        }
+        
+        stage('Review and Approve Destroy') {
+            when {
+                expression { params.ACTION == 'Destroy' }
+            }
+            steps {
+                // Prompt for approval before destroying resources
+                input "Do you want to destroy Terraform resources?"
+            }
+        }
+        
+        stage('Apply or Destroy') {
+            steps {
+                script {
+                    if (params.ACTION == 'Apply') {
+                        sh 'terraform apply -auto-approve'
+                    } else if (params.ACTION == 'Destroy') {
+                        sh 'terraform destroy -auto-approve'
+                    }
+                }
+            }
+        }
+    }
+    
+     post {
+        success {
+            script {
+                if (fileExists('*.pem')) {
+                    echo 'Terraform operation successful!'
+                    archiveArtifacts artifacts: '*.pem', followSymlinks: false
+                } else {
+                    echo 'Infra Destoryed and .pem kye cleared'
+                }
+            }
+        }
+        failure {
+            echo 'Terraform operation failed!'
+            cleanWs()
+        }
+    }
+}
 ```
 </details>
 
