@@ -16,7 +16,7 @@
 * [Pre-requisites](#Pre-requisites)
 * [Jenkinsfile](#Jenkinsfile)
 * [Jenkins Output](#Jenkins-Output)
-* [AWS Console Output](#AWS-Console-Output)
+* [AWS UI Output](#AWS-UI-Output)
 * [Conclusion](#Conclusion)
 * [Contact Information](#Contact-Information)
 * [References](#References)
@@ -144,25 +144,24 @@ pipeline {
 ```
 </details>
 
-**This Jenkins pipeline automates the deployment of a Frontend infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
+This Jenkins pipeline automates the deployment of a Frontend infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:
 
 ### Terraform Deployment Pipeline Overview
 
 | Stage                   | Description                                                                                                                                                                      |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
-| **Copy Terraform Files**    | Copies Frontend-related Terraform configuration files to the Jenkins workspace. |                                                                                                
-| **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
-| **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
-| **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
-| **Review and Approve Destroy** | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |                                                                            
-| **Apply or Destroy**        | Executes Terraform apply or destroy based on the selected action. |                                                                                                               
-| **Post**                    | Displays success or failure messages. |                                                                                                                                          
+| **git Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |
+| **Terraform Init**          | Initializes Terraform in the workspace directory. |
+| **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |
+| **Apply Approval** | Asks for approval before applying Terraform changes if the selected action is "Apply". |
+| **Destroy Approval** | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |
+| **Apply or Destroy**        | Executes Terraform apply or destroy based on the selected action. |
 ***
 
 ## Jenkins Output
 
 ### Pipeline view
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a061f26f-07e1-43df-9999-8f041a0b7038)
 
 ### Console Output
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ac3377af-1728-4ce2-8344-f1fa92eb2478)
@@ -180,8 +179,6 @@ pipeline {
 ***
 
 # Conclusion
-
-
 In conclusion, our DSL Pipeline offers a powerful solution for creating and managing domain-specific languages, enabling developers to express complex ideas in a concise and understandable manner. By embracing DSLs, organizations can accelerate development cycles, improve collaboration between domain experts and developers, and ultimately deliver higher-quality software solutions. 
 
 ***
@@ -190,7 +187,7 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 
 | **Name** | **Email Address** |
 | -------- | ----------------- |
-| **Vishal Kumar Kesharwani** | vishal.kumar.kesharwani.snaatak@mygurukulam.co |
+| **Harshit Singh** | harshit.singh.snaatak@mygurukulam.co |
 
 ***
 
@@ -201,5 +198,5 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [**Link**](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | ASG Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/Dev_Frontend_API_ASG.md) | Dev Frontend Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/main/Modules/Network_Skeleton_Module) | Network Skeleton Doc |
+| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/main/wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code) | Network Skeleton Wrapper Code |
