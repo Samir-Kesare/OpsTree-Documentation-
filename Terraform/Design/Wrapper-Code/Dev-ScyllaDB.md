@@ -245,36 +245,36 @@ inbound-ports = [ {
 
 ## Terminal Output
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5710f47b-d84d-4215-a052-1f85e77a6d7b">
+<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/de3fba11-19fd-4649-a97b-597e209e3365">
+
 
 
 ***
 
 ## Console Output
 
-### Private Key (scyllaDBQAKey.pem)
+### Private Key (scyllaDBKeyDev.pem)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/61ab6ddc-8ede-4668-b24c-1db8a58e19f1">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/13bbaae8-4f79-4ab8-908b-7f6a8fb29e0e">
 
 **Key Download**
 
-![Screenshot 2024-03-17 014043](https://github.com/CodeOps-Hub/Documentation/assets/156056344/c1218aa7-4f34-46b2-b3f7-51b72b6c9c36)
+![Screenshot 2024-03-17 020724](https://github.com/CodeOps-Hub/Documentation/assets/156056344/8f3916ef-e919-4349-8f3e-0689cc15a121)
+
 
 
 ***
 
-### Security Group (scylladb-qa-sg)
+### Security Group (scylladb-dev-sg)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5ab77f14-55a5-4da7-bfa5-e7ca737727e7">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5036f839-69fa-43f3-a5f2-e9b2de8a694a">
 
 
 ***
 
 ### EC2 Instance (ScyllaDB-Server-QA)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/1b71a0e8-843b-4c3f-9af1-85bf60e14086">
-
-
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5c4dfb6c-f4bf-469a-8853-3f139a276c8b">
 
 
 ***
