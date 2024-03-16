@@ -161,7 +161,7 @@ This Jenkins pipeline automates the deployment of a Frontend infrastructure usin
 ## Jenkins Output
 
 ### Pipeline view
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a061f26f-07e1-43df-9999-8f041a0b7038)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/115c647e-0d41-4e6e-bbf0-72b98e2f885b)
 
 ### Console Output
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ac3377af-1728-4ce2-8344-f1fa92eb2478)
