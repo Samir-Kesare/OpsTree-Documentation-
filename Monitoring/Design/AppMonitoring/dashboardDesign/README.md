@@ -2,7 +2,7 @@
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
-| Harshit Singh    | 16 March 2024 |  Version 1 | Harshit Singh     | 16 March 2024  |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 16 March 2024 |  Version 1 | Harshit Singh     | 16 March 2024  |
 ***
 ***
 
