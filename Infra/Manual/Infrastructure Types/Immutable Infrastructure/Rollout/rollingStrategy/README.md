@@ -73,14 +73,16 @@ Rolling out immutable infrastructure using a rolling deployment strategy involve
 ***
 
 ## Disadvantages
+Here's the information presented in a table format:
 
-| Disadvantages               | Description                                                                                                    |
-|-----------------------------|----------------------------------------------------------------------------------------------------------------|
-| Alert Fatigue               | Too many alerts or false positives can lead to alert fatigue, causing users to ignore or overlook important notifications.|
-| Configuration Complexity    | Setting up and maintaining alert rules can be complex, requiring expertise in defining thresholds and conditions.  |
-| Over-reliance on Automation | Over-reliance on automated alerting may lead to complacency, reducing the effectiveness of human monitoring and intervention.|
-| Lack of Context             | Alerts triggered solely based on predefined rules may lack context, requiring additional investigation to understand the underlying cause.|
-| Potential for False Positives | Alert rules may generate false positives, triggering unnecessary alerts and wasting resources on investigating non-issues.|
+| Disadvantage              | Description |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Increased Complexity     | Implementing rolling deployments requires careful orchestration and coordination, adding complexity to the deployment process. |
+| Resource Intensive        | Rolling deployments may require additional resources such as extra server capacity or automation tools, increasing operational costs and resource consumption. |
+| Extended Deployment Time | Rolling deployments may take longer to complete compared to other deployment strategies due to incremental updates applied to a subset of servers. |
+| Potential Service Degradation | There is a risk of service degradation if updated code introduces unexpected bugs or performance issues, impacting a subset of users or transactions. |
+| Version Drift            | Managing version consistency across a large number of servers can be challenging, leading to version drift and potential compatibility issues. |
+| Dependency Management    | Handling dependencies between different components of the application stack can be complex and may require additional testing and validation. |
 ***
 
 ## Best Practices
