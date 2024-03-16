@@ -14,6 +14,7 @@
 + [Introduction](#Introduction)
 + [Key Benefits](#key-benefits)
 + [Advantages and Disadvantages](#advantages-and-disadvantages)
++ [Use Cases](#use-cases)
 + [Best Practices](#best-practices)
 + [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
@@ -44,6 +45,15 @@ In immutable infrastructure, updates and changes are applied by replacing entire
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
 | **Simpler deployment process:** With immutable infrastructure, replacing server is simpler compared to incremental updates, reducing the risk of errors or disruptions during deployment.          | **Cannot modify existing elements:** Servers cannot be modified or updated in place. Instead, updates are applied by replacing entire instances with new ones. This limitation can be challenging for applications that require persistent state or have complex dependencies. |
 | **Rollback to older versions:** Since each server is immutable, rolling back to a previous version is straightforward. | **Externalising Data:** some organizations may perceive it as a limitation because it requires additional planning, configuration, and potentially additional costs for managing and maintaining separate data storage services.  |
+
+***
+## Use Cases
+
+1. **Cloud-Native Applications:** Immutable infrastructure is well-suited for cloud-native applications built using containerization and orchestration technologies such as Kubernetes. Immutable container images can be deployed and managed at scale, enabling efficient resource utilization, high availability, and automated scaling.
+
+2. **Highly Dynamic Workloads:** Immutable infrastructure is ideal for workloads with dynamic scaling requirements or fluctuating demand. By enabling rapid provisioning and deployment of immutable artifacts, organizations can scale resources up or down in response to changing workload conditions, ensuring optimal performance and cost efficiency.
+
+3. **Microservices Architecture:** Immutable infrastructure aligns with the principles of microservices architecture, where applications are composed of independently deployable services. Each microservice can be deployed as an immutable artifact, allowing for rapid and independent scaling, updating, and rollback.
 
                                                                                                                                                                                            
 ***
