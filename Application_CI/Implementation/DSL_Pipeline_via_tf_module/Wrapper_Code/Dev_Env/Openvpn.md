@@ -737,18 +737,18 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/862a2245-3dfc-4532-94a9-eab3b3095939"> 
+<img width="800"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/862a2245-3dfc-4532-94a9-eab3b3095939"> 
 
 ***
 ### SSH Key
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cec695bb-205e-453e-9d05-55316b70a50c"> 
+<img width="800"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cec695bb-205e-453e-9d05-55316b70a50c"> 
 
 ***
 
 ### EC2 Instance
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4e92b753-883a-4414-bfe1-247b8ead7b1d">
+<img width="800"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4e92b753-883a-4414-bfe1-247b8ead7b1d">
 
 ***
 
