@@ -1,4 +1,4 @@
-#  Terraform Wrapper Code For Redis Server in Development Environment 
+#  Terraform Wrapper Code For Redis Server in QA Environment 
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f95dfc00-7217-45b6-b770-c0f2af907cec">
 
@@ -219,10 +219,16 @@ provider "aws" {
     
 ```shell
 vpc-id              = "vpc-0b4c152fb02b0af32"
-key-name            = "redisKey.pem"
+key-name            = "redisKeyQA.pem"
 server-type         = "t2.medium"
 subnet-id           = "subnet-0eb88feb4f7ec9f95"
-server-name         = "Redis-Server"
+sec-grp-name = "redis-qa-sg"
+sec-grp-tags = {
+    Name          = "redis-qa-sg"
+    Enviroment    = "QA"
+    Owner         = "Aakash"
+}
+server-name         = "Redis-Server-QA"
 inbound-ports = [ {
   port = 22 , protocol = "tcp" , security_group_ids = "sg-0367b8b3d6b6b36c9" 
 },
@@ -241,31 +247,36 @@ inbound-ports = [ {
 
 ## Terminal Output
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/360ebb9e-ad9c-49a7-b405-43522df2550b">
+<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bcc2b5ea-6410-470b-8b5e-946520bee029">
 
 
 ***
 
 ## Console Output
 
-### Private Key (redisKey.pem)
+### Private Key (redisQAKey.pem)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5e0ce8b5-abf8-4367-a975-601da15a8cdc">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/422c13bf-e082-4e43-a35b-69fa1cf7c9b2">
 
 **Key Download**
-![Screenshot 2024-03-16 231757](https://github.com/CodeOps-Hub/Documentation/assets/156056344/3747ee27-b355-42e4-9fa9-a1db976521bf)
+
+![Screenshot 2024-03-17 011413](https://github.com/CodeOps-Hub/Documentation/assets/156056344/98105739-59c8-4a9f-9261-261a219a3fd9)
 
 ***
 
-### Security Group (redis-sg)
+### Security Group (redis-qa-sg)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/aa4cf4de-8b20-47a2-8f6d-6a3690c740f1">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/41ccb92b-c463-44f1-aa78-33dddfae3ba3">
+
+
 
 ***
 
-### EC2 Instance (Redis-Server)
+### EC2 Instance (Redis-Server-QA)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/42353603-eb1b-490a-a749-bdc9d0e7c2d5">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/13bfce62-e667-4b4d-8587-f75f8219fcab">
+
+
 
 ***
 
