@@ -117,6 +117,4 @@ Creating a well-designed dashboard for app monitoring is crucial for keeping tra
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| App Monitoring | https://apitoolkit.io/blog/the-most-important-metric/ |
-| Performance Metrics | https://www.site24x7.com/help/internet-service-metrics/rest-api.html |
-| Tools | https://sematext.com/blog/api-monitoring-tools/ |
+| Dashboard Overview | https://grafana.com/docs/grafana/latest/fundamentals/dashboards-overview/ |
