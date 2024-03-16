@@ -58,10 +58,13 @@ In this document it will guide through the steps to achieve the setup of wrapper
 ***
 
 # Directory Structure
+
 **Module**
+
 <img width="400" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/dd404ad4-9fc5-4fa5-a9ab-38f2ada7dea5">
 
 **Wrapper Code**
+
 <img width="400" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/34c6ec17-de67-433f-9a8f-d04c5826f354">
 
 ***
@@ -75,19 +78,20 @@ In this document it will guide through the steps to achieve the setup of wrapper
 <br>
     
 ```shell
-module "openvpn" {
+module "redis" {
     source                         = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/VM-Module?ref=main"  
     vpc_id                         = var.vpc-id 
     subnet_id                      = var.subnet-id         
     sec_grp_name                   = var.sec-grp-name
-    Sec_grp_description            = var.Sec-grp-description
+    Sec_grp_description            = var.sec-grp-description
     inbound_ports                  = var.inbound-ports
     outbound_ports                 = var.outbound-ports
-    Sec_grp_tags                   = var.Sec-grp-tags
+    Sec_grp_tags                   = var.sec-grp-tags
     key_name                       = var.key-name
     server_type                    = var.server-type
     server_name                    = var.server-name
-}    
+}
+   
 ```
 </details>
 
@@ -103,12 +107,12 @@ module "openvpn" {
 variable "sec-grp-name" {
   description     = "Name of the security group"
   type            = string
-  default         = "dev-openvpn-sg"
+  default         = "redis-sg"
 }
-variable "Sec-grp-description" {
+variable "sec-grp-description" {
   description     = "Description for the security group"
   type            = string
-  default         = "Security group for Open Vpn in Dev Env"
+  default         = "Security group for Redis in Dev Env"
 }
 variable "vpc-id" {
   description     = "ID of the VPC for instances"
@@ -125,18 +129,18 @@ variable "inbound-ports" {
 }
 
 variable "outbound-ports" {
-  description     = "List of outbound ports, protocols and Cidr block "
+  description     = "List of outbound ports, protocols and CIDR block "
   type            = list(map(any))
   default         = [
     { port = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0", },
   ]
 }
-variable "Sec-grp-tags" {
+variable "sec-grp-tags" {
   type            = map(string)
   default         = {
-    Name          = "openvpn-sg"
-    Enviroment    = "dev"
-    Owner         = "shreya"
+    Name          = "redis-sg"
+    Enviroment    = "Dev"
+    Owner         = "Aakash"
   }
 }
 
@@ -146,17 +150,17 @@ variable "key-name" {
 }
 
 variable "server-type" {
-  description = "Instance type for openvpn server"
+  description = "Instance type for redis server"
   type        = string
 }
 
 variable "subnet-id" {
-  description = "ID of the subnet for the openvpn server"
+  description = "Id of the subnet for the redis server"
   type        = string
 }
 
 variable "server-name" {
-  description = "Name tag for the openvpn server"
+  description = "Name tag for the redis server"
   type        = string
 }
 ```
@@ -172,10 +176,10 @@ variable "server-name" {
 
 ```shell
 output "Security_Group_ID" {
-  value = module.openvpn.Security_Group_ID
+  value = module.redis.Security_Group_ID
 }
 output "server_id" {
-  value = module.openvpn.server_id
+  value = module.redis.server_id
 }
 ```
 </details>
@@ -214,12 +218,20 @@ provider "aws" {
 <br>
     
 ```shell
-vpc-id              = "vpc-0a744f2efc4febb2a"
-key-name            = "snaatak.pem"
-server-type         = "t2.micro"
-subnet-id           = "subnet-009e342da70d1d460"
-server-name         = "openvpn-Server"
-
+vpc-id              = "vpc-0b4c152fb02b0af32"
+key-name            = "redisKey.pem"
+server-type         = "t2.medium"
+subnet-id           = "subnet-0eb88feb4f7ec9f95"
+server-name         = "Redis-Server"
+inbound-ports = [ {
+  port = 22 , protocol = "tcp" , security_group_ids = "sg-0367b8b3d6b6b36c9" 
+},
+{
+ port = 6379 , protocol = "tcp" , security_group_ids = "sg-0b1982ff2c211d41a"
+},
+{
+ port = 22 , protocol = "tcp" , cidr_blocks = "20.0.0.0/28"
+} ]
 ```
 </details>
 
