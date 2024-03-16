@@ -43,6 +43,8 @@ The purpose of the dashboard is to:
 | Queries         | Reduce data to a specific dataset for visualization. Each data source has its query language (e.g., PromQL, LogQL, SQL) to extract relevant information. |
 | Transformations | Manipulate data returned by queries to meet specific requirements (e.g., combining fields, parsing data types, performing SQL-like operations). |
 | Panels and Panel Options | Containers displaying visualizations with controls for customization. Panel options vary based on visualization type, allowing tailored visualizations. |
+| Dashboard Layout        | Design a clear and intuitive layout with organized widgets. Prioritize essential information and avoid complexity. |
+
 ***
 # Design Principle
 
