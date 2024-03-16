@@ -31,28 +31,35 @@ In immutable infrastructure, updates and changes are applied by replacing entire
 ***
 ## Key Benefits
 
+* **Rollback Capability:** Immutable infrastructure enables easy rollback to a previous known state in the event of issues or failures. Since updates are applied by replacing entire server instances or components, rolling back to a previous version is straightforward, allowing for quick recovery and minimizing downtime. 
+
+* **Scalability and Agility:** Immutable infrastructure supports rapid scaling to changing workloads and requirements. New instances can be provisioned quickly from pre-configured images, allowing for seamless scaling out or rolling updates. This scalability and agility support dynamic and elastic applications and services, ensuring that infrastructure resources can efficiently meet demand fluctuations.
+
+* Minimized Resource Waste: By replacing entire server instances or components with new ones, immutable infrastructure minimizes resource waste associated with maintaining outdated or unused configurations. Old server instances are destroyed, freeing up resources for other workloads and preventing resource hoarding.
 
 ***
 ## Advantages and Disadvantages 
 
 | Advantages                         | Disadvantages                                                                                                   |
 |-----------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| **Reuse existing configurations:** Your IT team does not need to build servers from scratch every time a change is required.            | **Inability to Rollback:** Rollback to a previous version or state can be challenging or impossible in mutable infrastructure setups, especially if changes are applied incrementally and not properly versioned or tracked. |
-|**Incremental updates:** Updates and changes can be applied incrementally, reducing the risk of unintended consequences or disruptions to services.  | **Complexity:** Debugging is time consuming due to update tracking problems. You could end up with several versions of an update without any insight into the problem.  |
+| **Simpler deployment process:** With immutable infrastructure, replacing server is simpler compared to incremental updates, reducing the risk of errors or disruptions during deployment.          | **Can't change existing components:** Servers cannot be modified or updated in place. Instead, updates are applied by replacing entire instances with new ones. This limitation can be challenging for applications that require persistent state or have complex dependencies. |
+| **Rollback to older versions:** Since each server is immutable, rolling back to a previous version is straightforward. | **Externalising Data:** some organizations may perceive it as a limitation because it requires additional planning, configuration, and potentially additional costs for managing and maintaining separate data storage services.  |
+
                                                                                                                                                                                            
 ***
 ## Best Practices 
 
 | Best Practice                                   | Description                                                                                                                                  |
 |------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| Automation with Configuration Management Tools | Utilize configuration management tools such as Ansible, Chef, or Puppet to automate the provisioning and management of infrastructure components. Automating repetitive tasks helps ensure consistency, reduces errors, and improves efficiency. |
-| Version Control                                | Maintain version control for configuration files, scripts, and other infrastructure artifacts using a version control system like Git. This allows for tracking changes over time, rollback to previous versions if necessary, and collaboration among team members. |
-| Testing                                        | Implement testing practices, such as unit testing, integration testing, and end-to-end testing, to validate changes before deploying them to production. Automated testing pipelines can help streamline the testing process and ensure the reliability of infrastructure changes. |
+| **Immutable Images** |  Use immutable images to define the desired state of server instances or containers. These images should be versioned, tested, and treated as disposable artifacts that are never modified after deployment. Tools like Packer or Docker facilitate the creation and management of immutable images. |
+| **Deployment Strategies**                               | Use deployment strategies to minimize downtime and mitigate risks during updates or upgrades. |
+| **Monitoring and Alerting**                                       | Implement robust monitoring and alerting mechanisms to track the health, performance, and availability of infrastructure components. Tools like Prometheus, Grafana, or AWS CloudWatch enable you to monitor metrics and set up alerts to proactively identify and address issues. |
 
 
 ***
 ## Conclusion 
 
+Overall, by treating instances or containers as disposable artifacts and automating deployment processes, immutable infrastructure offers benefits such as enhanced predictability and simplified rollback capabilities. While it may require adjustments and considerations, immutable infrastructure provides organizations with the tools to streamline operations, minimize downtime, and adapt to evolving technology landscapes effectively.
 
 ***
 ## Contact Information
@@ -66,6 +73,6 @@ In immutable infrastructure, updates and changes are applied by replacing entire
 | Title                                      | URL                                           |
 |--------------------------------------------|-----------------------------------------------|
 | Mutable and immutable infrastructure           | [Link](https://devopscube.com/immutable-infrastructure/)    |
-| pros and cons  | [Link]()
+| pros and cons  | [Link](https://tech.jumia.com/immutable-infrastructure-gitops/)
 
 
