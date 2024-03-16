@@ -69,89 +69,76 @@ A Domain-Specific Language (DSL) is a programming language or specification lang
 ```shell
 pipeline {
     agent any
-    
-    environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws-cred-vishal-self')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-cred-vishal-self')
-        TF_CLI_ARGS           = '-input=false'
-    }
-    
     parameters {
-        choice(name: 'ACTION', choices: ['Apply', 'Destroy'], description: 'Choose to apply or destroy the infrastructure')
+        choice choices: ['apply', 'destroy'], name: 'ACTION', description: 'Choose terraform ACTION to perform'
     }
-    
+
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', credentialsId: 'Vishal-PAT-DSL', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
-            }
+        stage('git checkout') {
+              steps {
+                checkout scmGit(branches: [[name: 'main']], extensions: [], userRemoteConfigs: [[credentialsId: 'Harshit-Github-PAT', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git']])
+              }
         }
-        
-        stage('Copy Terraform Files') {
+        stage('Terraform init') {
             steps {
-                // Copy or move specific files from the repository to Jenkins workspace
-                sh 'cp wrapperCode/Frontend_Wrapper_Code/Dev_Env/* .'
-            }
-        }
-        
-        stage('Terraform Init') {
-            steps {
-                script {
-                    sh 'terraform init'
+                script{
+                    sh '''
+                        cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
+                        terraform init
+                    '''                    
                 }
+                
             }
         }
-        
-        stage('Terraform Plan') {
+        stage('Terraform plan') {
             steps {
-                script {
-                    sh 'terraform plan'
-                }
-            }
-        }
-        
-        stage('Review and Approve Apply') {
-            when {
-                expression { params.ACTION == 'Apply' }
-            }
-            steps {
-                // Prompt for approval before applying changes
-                input "Do you want to apply Terraform changes?"
-            }
-        }
-        
-        stage('Review and Approve Destroy') {
-            when {
-                expression { params.ACTION == 'Destroy' }
-            }
-            steps {
-                // Prompt for approval before destroying resources
-                input "Do you want to destroy Terraform resources?"
-            }
-        }
-        
-        stage('Apply or Destroy') {
-            steps {
-                script {
-                    if (params.ACTION == 'Apply') {
-                        sh 'terraform apply -auto-approve'
-                    } else if (params.ACTION == 'Destroy') {
-                        sh 'terraform destroy -auto-approve'
+                withAWS(credentials: 'HARSHIT_AWS_CREDS') {
+                    script{
+                        sh '''
+                            cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
+                            terraform plan
+                        '''                    
                     }
                 }
             }
         }
-    }
-    
-    post {
-        success {
-            echo 'Terraform operation successful!'
-            archiveArtifacts artifacts: '*.pem', followSymlinks: false
+        stage('Apply Approval') {
+            when {
+                expression { params.ACTION == 'apply' }
+            }
+            steps {
+                input 'Do you want to apply Terraform plan?'
+            }
         }
-        failure {
-            echo 'Terraform operation failed!'
-            cleanWs()
+        stage('Destroy Approval') {
+            when {
+                expression { params.ACTION == 'destroy' }
+            }
+            steps {
+                input 'Do you want to perform Terraform destroy?'
+            }
         }
+        stage('Terraform apply or destroy') {
+            steps {
+                withAWS(credentials: 'HARSHIT_AWS_CREDS') {
+                    script{
+                        if (params.ACTION == 'apply') {
+                            sh '''
+                                cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
+                                terraform apply --auto-approve
+                                '''
+                        } 
+                        else if (params.ACTION == 'destroy') {
+                        sh '''
+                            cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
+                            terraform destroy --auto-approve
+                            '''
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 ```
