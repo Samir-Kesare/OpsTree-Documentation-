@@ -26,7 +26,8 @@
 This document outlines the design considerations for creating a dashboard for log monitoring. A well-designed dashboard provides insights into system health, performance, and potential issues, helping users to effectively monitor logs and troubleshoot problems.
 
 # Purpose
-
+A dashboard for application monitoring metrics ensures that engineering teams can monitor the health, throughput, and performance of on-premise, hybrid, and cloud applications.
+The dashboard also provides you with an in-depth analysis of crash trends on a weekly basis. With the added functionality of applying filters on widgets, you can easily narrow your search and gain valuable insights into your application's performance.
 The purpose of the dashboard is to:
 
 * Provide real-time visibility into log data.
@@ -48,12 +49,17 @@ The purpose of the dashboard is to:
 ***
 # Design Principle
 
-| Design Principle | Description |
-|---|---|
-| Simplicity | - Keep the interface clean and clutter-free to avoid information overload.<br>- Use intuitive visualizations and navigation to enhance usability. |
-| Consistency | - Maintain consistency in design elements, color schemes, and terminology across the dashboard.<br>- Ensure a consistent user experience across different sections and functionalities. |
-| Relevance | - Display only relevant information based on user roles and responsibilities.<br>- Customize dashboards to meet the specific needs of different user groups. |
-| Performance | - Optimize dashboard performance for fast loading and smooth interaction.<br>- Minimize latency in data retrieval and visualization updates. |
+| Principle                  | Description |
+|----------------------------|--------------------------------------------------------------------------------------- |
+| Clarity of Purpose         | Clearly define the purpose of the dashboard to guide its design and content.|
+| Relevance                  | Include only essential information that supports the dashboard's intent. |
+| Efficient Visualization    | Choose visualizations that convey information quickly and effectively. |
+| Grouping Metrics           | Organize related metrics together for easy navigation and comparison. |
+| Consistency                | Maintain uniformity in visualizations and layouts to facilitate comparison. |
+| Hierarchy                  | Use size and position to indicate the importance of data elements. |
+| Clear Labels               | Use concise and descriptive labels to aid audience understanding. |
+| Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
+***
 
 # Advantages and Disadvantages
 
@@ -69,17 +75,24 @@ outlining the advantages and disadvantages of dashboard design for log monitorin
 | Customizable for user preferences    | Initial development and maintenance effort     |
 | Can be tailored for different users  | Limited by the quality and quantity of logs    |
 
-# Dashboard Design in Excelidraw
+# Dashboard Design in Excallidraw
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/51508947-abe7-4781-b029-a85ee9a1ae6e)
 
 # Best Practices
+Certainly, here's the summary organized into a table format:
 
-* Collaborate with stakeholders to understand their monitoring requirements.
-* Prototype and iterate the dashboard design based on user feedback.
-* Conduct usability testing to identify and address usability issues.
-* Regularly update the dashboard based on changing monitoring needs and system dynamics.
-  
+| Principle                  | Description |
+|----------------------------|--------------------------------------------------------------------------------------- |
+| Clarity of Purpose         | Clearly define the purpose of the dashboard to guide its design and content.|
+| Relevance                  | Include only essential information that supports the dashboard's intent. |
+| Efficient Visualization    | Choose visualizations that convey information quickly and effectively. |
+| Grouping Metrics           | Organize related metrics together for easy navigation and comparison. |
+| Consistency                | Maintain uniformity in visualizations and layouts to facilitate comparison. |
+| Hierarchy                  | Use size and position to indicate the importance of data elements. |
+| Clear Labels               | Use concise and descriptive labels to aid audience understanding. |
+| Continuous Improvement     | Regularly review and update dashboards to ensure they drive desired behavior and outcomes. |
+***  
 # Conclusion
 
 A well-designed dashboard for log monitoring is essential for maintaining system health and ensuring timely response to issues. By following the principles and best practices outlined in this document, you can create an effective dashboard that meets the needs of your users and enhances operational efficiency.
