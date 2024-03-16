@@ -1,9 +1,9 @@
 # Alerting Rules for App Monitoring
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/fc8a11e8-6366-436f-80eb-5d8d2d58ddd5)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
 | **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 16 March 2024 |  Version 1 | Harshit Singh     | 16 March 2024  |
-***
 ***
 
 ## Table of Contents 
@@ -18,7 +18,6 @@
 + [Contact Information](#contact-information)
 + [References](#References)
 ***
-
 
 ## Introduction
 Alert rules in app monitoring are predefined conditions or thresholds set up within a monitoring system to trigger notifications or alerts when certain criteria are met. These rules are essential for proactively identifying and addressing issues in an application or system.
@@ -89,8 +88,10 @@ Determining the specific alert rules for your application depends on various fac
 | Regularly Review and Refine      | Monitor the effectiveness of your alert rules regularly and refine them based on feedback and evolving requirements.|
 | Document and Communicate         | Document alert rules comprehensively and communicate them effectively to all stakeholders.       |
 ***
+
 ## Conclusion
 
+In conclusion, alerting rules are like watchdogs for your app, helping catch problems early and responding quickly. They're great for keeping your app reliable and using resources wisely, but too many alerts or false alarms can be annoying. By following some smart steps, like setting clear goals and checking alerts regularly, you can make sure they work well. It's important to talk about alerts with your team and write down how they should be handled so everyone knows what to do. This way, you can keep your app running smoothly and fix any issues fast.
 ***
 ## Contact Information
 
