@@ -9,9 +9,8 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Why](#Why)
-+ [Components](#Components)
-+ [Design Principle](#Design-Principle)
++ [Components of Alerting Rules](#Components-of-Alerting-Rules)
++ [Rules](#Rules)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
 + [Best Practices](#Best-Practices)
@@ -27,7 +26,7 @@ Alert rules in app monitoring are predefined conditions or thresholds set up wit
 Alert rules are pivotal in app monitoring systems, offering proactive issue detection and ensuring timely responses. By promptly triggering notifications upon meeting predefined conditions, these rules mitigate risks, minimize downtime, and optimize resource allocation. They streamline monitoring efforts by focusing on critical metrics, enhancing operational efficiency, and bolstering user experience. In essence, alert rules play a crucial role in maintaining system stability and reliability by swiftly identifying and resolving issues before they escalate.
 ***
 
-## Components
+## Components of Alerting Rules
 
 | Component            | Description                                                                                                         |
 |----------------------|---------------------------------------------------------------------------------------------------------------------|
