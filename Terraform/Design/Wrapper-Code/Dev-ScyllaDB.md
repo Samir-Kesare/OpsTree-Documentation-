@@ -1,4 +1,4 @@
-#  Terraform Wrapper Code For Redis Server in QA Environment 
+#  Terraform Wrapper Code For ScyllaDB Server in QA Environment 
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/f95dfc00-7217-45b6-b770-c0f2af907cec">
 
@@ -78,7 +78,7 @@ In this document it will guide through the steps to achieve the setup of wrapper
 <br>
     
 ```shell
-module "redis" {
+module "scylladb" {
     source                         = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/VM-Module?ref=main"  
     vpc_id                         = var.vpc-id 
     subnet_id                      = var.subnet-id         
@@ -91,6 +91,7 @@ module "redis" {
     server_type                    = var.server-type
     server_name                    = var.server-name
 }
+
    
 ```
 </details>
@@ -107,12 +108,12 @@ module "redis" {
 variable "sec-grp-name" {
   description     = "Name of the security group"
   type            = string
-  default         = "redis-sg"
+  default         = "scylladb-sg"
 }
 variable "sec-grp-description" {
   description     = "Description for the security group"
   type            = string
-  default         = "Security group for Redis in Dev Env"
+  default         = "Security group for ScyllaDB in Dev Env"
 }
 variable "vpc-id" {
   description     = "ID of the VPC for instances"
@@ -122,10 +123,6 @@ variable "vpc-id" {
 variable "inbound-ports" {
   description     = "List of inbound ports, protocols and cidr block"
   type            = list(map(any))
-  default         = [
-    { port = 22, protocol = "TCP",cidr_blocks = "20.0.0.0/28" },  
-    { port = 1194, protocol = "UDP",cidr_blocks = "0.0.0.0/0"},
-  ]
 }
 
 variable "outbound-ports" {
@@ -138,7 +135,7 @@ variable "outbound-ports" {
 variable "sec-grp-tags" {
   type            = map(string)
   default         = {
-    Name          = "redis-sg"
+    Name          = "scylla-sg"
     Enviroment    = "Dev"
     Owner         = "Aakash"
   }
@@ -150,17 +147,17 @@ variable "key-name" {
 }
 
 variable "server-type" {
-  description = "Instance type for redis server"
+  description = "Instance type for scylladb server"
   type        = string
 }
 
 variable "subnet-id" {
-  description = "Id of the subnet for the redis server"
+  description = "Id of the subnet for the scylladb server"
   type        = string
 }
 
 variable "server-name" {
-  description = "Name tag for the redis server"
+  description = "Name tag for the scylladb server"
   type        = string
 }
 ```
@@ -176,11 +173,12 @@ variable "server-name" {
 
 ```shell
 output "Security_Group_ID" {
-  value = module.redis.Security_Group_ID
+  value = module.scylladb.Security_Group_ID
 }
 output "server_id" {
-  value = module.redis.server_id
+  value = module.scylladb.server_id
 }
+
 ```
 </details>
 
@@ -219,21 +217,21 @@ provider "aws" {
     
 ```shell
 vpc-id              = "vpc-0b4c152fb02b0af32"
-key-name            = "redisKeyQA.pem"
+key-name            = "scyllaDBKeyQA.pem"
 server-type         = "t2.medium"
 subnet-id           = "subnet-0eb88feb4f7ec9f95"
-sec-grp-name = "redis-qa-sg"
+sec-grp-name = "scylladb-qa-sg"
 sec-grp-tags = {
-    Name          = "redis-qa-sg"
+    Name          = "scylladb-qa-sg"
     Enviroment    = "QA"
     Owner         = "Aakash"
 }
-server-name         = "Redis-Server-QA"
+server-name         = "ScyllaDB-Server-QA"
 inbound-ports = [ {
   port = 22 , protocol = "tcp" , security_group_ids = "sg-0367b8b3d6b6b36c9" 
 },
 {
- port = 6379 , protocol = "tcp" , security_group_ids = "sg-0b1982ff2c211d41a"
+ port = 9042 , protocol = "tcp" , security_group_ids = "sg-0b1982ff2c211d41a"
 },
 {
  port = 22 , protocol = "tcp" , cidr_blocks = "20.0.0.0/28"
@@ -247,34 +245,35 @@ inbound-ports = [ {
 
 ## Terminal Output
 
-<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bcc2b5ea-6410-470b-8b5e-946520bee029">
+<img width="524" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5710f47b-d84d-4215-a052-1f85e77a6d7b">
 
 
 ***
 
 ## Console Output
 
-### Private Key (redisQAKey.pem)
+### Private Key (scyllaDBQAKey.pem)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/422c13bf-e082-4e43-a35b-69fa1cf7c9b2">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/61ab6ddc-8ede-4668-b24c-1db8a58e19f1">
 
 **Key Download**
 
-![Screenshot 2024-03-17 011413](https://github.com/CodeOps-Hub/Documentation/assets/156056344/98105739-59c8-4a9f-9261-261a219a3fd9)
-
-***
-
-### Security Group (redis-qa-sg)
-
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/41ccb92b-c463-44f1-aa78-33dddfae3ba3">
-
+![Screenshot 2024-03-17 014043](https://github.com/CodeOps-Hub/Documentation/assets/156056344/c1218aa7-4f34-46b2-b3f7-51b72b6c9c36)
 
 
 ***
 
-### EC2 Instance (Redis-Server-QA)
+### Security Group (scylladb-qa-sg)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/13bfce62-e667-4b4d-8587-f75f8219fcab">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5ab77f14-55a5-4da7-bfa5-e7ca737727e7">
+
+
+***
+
+### EC2 Instance (ScyllaDB-Server-QA)
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/1b71a0e8-843b-4c3f-9af1-85bf60e14086">
+
 
 
 
