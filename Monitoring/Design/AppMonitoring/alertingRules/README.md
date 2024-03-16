@@ -52,14 +52,14 @@ Determining the specific alert rules for your application depends on various fac
 
 | Metric                    | Threshold/Condition                                      | Alert Action                                             |
 |---------------------------|----------------------------------------------------------|----------------------------------------------------------|
-| Response Time             | Exceeds a predefined threshold(> 500 milliseconds (or as per your application's SLA)) | Notify relevant team members for investigation           |
-| Error Rate                | Exceeds a predefined threshold(> 1% of requests (or as per acceptable error rate)) | Notify relevant team members for investigation           |
-| Server CPU Utilization    | Exceeds a predefined threshold(> 70% for sustained period)| Notify relevant team members for investigation           |
-| Memory Usage              | Exceeds a predefined threshold(	> 80% for sustained period) | Notify relevant team members for investigation           |
-| Disk Space                | Reaches a critical level(< 20% remaining capacity) | Notify relevant team members for investigation           |
-| Network Latency           | Exceeds a predefined threshold(	> 100 milliseconds (or as per your application's SLA)) | Notify relevant team members for investigation           |
-| HTTP Status Codes         | Consistently returns errors (Consistently > 5xx codes) | Notify relevant team members for investigation           |
-| Security Events           | Anomalous activities detected (e.g., brute force attacks) | Notify security team for immediate action                 |
+| Response Time             | Exceeds a predefined threshold <br>- e.g., 500 milliseconds (or as per your application's SLA) | Notify relevant team members for investigation           |
+| Error Rate                | Exceeds a predefined threshold<br>- e.g., 1% of requests (or as per acceptable error rate) | Notify relevant team members for investigation           |
+| Server CPU Utilization    | Exceeds a predefined threshold<br>- e.g., 70% for sustained period| Notify relevant team members for investigation           |
+| Memory Usage              | Exceeds a predefined threshold<br>- e.g., 80% for sustained period | Notify relevant team members for investigation           |
+| Disk Space                | Reaches a critical level<br>- e.g., 20% remaining capacity | Notify relevant team members for investigation           |
+| Network Latency           | Exceeds a predefined threshold<br>- e.g., 100 milliseconds (or as per your application's SLA) | Notify relevant team members for investigation           |
+| HTTP Status Codes         | Consistently returns errors<br>- e.g., Consistently > 5xx codes | Notify relevant team members for investigation           |
+| Security Events           | Anomalous activities detected<br>- e.g., brute force attacks | Notify security team for immediate action                 |
 ***
 ## Dashboard Design in Excallidraw
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/4fef00ea-0f94-42d7-95ec-106f6852969e)
