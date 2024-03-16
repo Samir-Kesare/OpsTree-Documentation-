@@ -33,6 +33,9 @@ In a rolling deployment:
 4. **Easy Rollback**: If any problems occur during the deployment, it's relatively straightforward to roll back to the previous version since only a fraction of the infrastructure has been updated.
 
 5. **Automated Orchestration**: Rolling deployments are often automated using deployment orchestration tools or continuous integration/continuous deployment (CI/CD) pipelines to manage the process efficiently.
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8eeca7fd-b4f0-48a3-95c4-08a6115818d7)
+
 ***
 
 ## Steps to rollout
