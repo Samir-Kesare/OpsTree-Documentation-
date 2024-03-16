@@ -81,9 +81,8 @@ This Terraform configuration defines infrastructure components for an AWS enviro
 
 ```shell
 
-module "Dev_Frontend_ASG" {
-source                              = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"
-#---------------------------------Security Group ----------------------------------#
+module "Dev_Frontend" {
+source                              = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"#---------------------------------Security Group ----------------------------------#
 security_name                       = var.Dev_Frontend_security_name
 Security_description                = var.Dev_Frontend_security_description
 SG_vpc_id                           = var.Dev_Frontend_SG_vpc_id
@@ -122,12 +121,22 @@ priority                             = var.Dev_Frontend_priority
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 autoscaling_group_name              = var.Dev_Frontend_autoscaling_group_name
+ASG_version                         = var.Dev_Frontend_ASG_vserion
+subnet_ids                          = var.Dev_Frontend_subnet_ids
+tag_key                             = var.Dev_Frontend_tag_key
+tag_value                           = var.Dev_Frontend_tag_value
+propagate_at_launch                 = var.Dev_Frontend_propagate_at_launch
 min_size                            = var.Dev_Frontend_min_size
 max_size                            = var.Dev_Frontend_max_size
 desired_capacity                    = var.Dev_Frontend_desired_capacity
-}
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-```
+#---------------------------- Auto Scaling Policies -------------------------------#
+scaling_policy_name                 = var.Dev_Frontend_scaling_policy_name
+policy_type                         = var.Dev_Frontend_policy_type
+predefined_metric_type              = var.Dev_Frontend_predefined_metric_type
+target_value                        = var.Dev_Frontend_target_value
+#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+}```
 </details>
 
 ***
@@ -319,6 +328,11 @@ variable "Dev_Frontend_autoscaling_group_name" {
   type            = string
   default         = "Dev-Frontend_ASG"
 }
+variable "Dev_Frontend_ASG_vserion" {
+  description     = "Give the Version"
+  type            = string
+  default         = "$Latest"
+}
 
 variable "Dev_Frontend_min_size" {
   description     = "The minimum number of instances in the ASG"
@@ -387,7 +401,6 @@ variable "Dev_Frontend_target_value" {
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-
 ```
 </details>
 
@@ -458,6 +471,7 @@ Dev_Frontend_priority                              = 100
 #--------------------------Configure Auto Scaling group ---------------------------#
 
 Dev_Frontend_autoscaling_group_name              = "Dev-Frontend_ASG"
+Dev_Frontend_ASG_vserion                         = "$Latest"
 Dev_Frontend_min_size                            = 1
 Dev_Frontend_max_size                            = 2
 Dev_Frontend_desired_capacity                    = 1
@@ -475,7 +489,6 @@ Dev_Frontend_predefined_metric_type              = "ASGAverageCPUUtilization"
 Dev_Frontend_target_value                        = 50.0
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-
 ```
 </details>
 
@@ -490,7 +503,7 @@ Dev_Frontend_target_value                        = 50.0
 #---------------------------------Security Group ----------------------------------#
 
 output "Security_Group_ID" {
-  value = [module.Dev_Frontend_ASG.Security_Group_ID]
+  value = [module.Dev_Frontend.Security_Group_ID]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
@@ -498,32 +511,32 @@ output "Security_Group_ID" {
 
 # Priavte Key
 output "key_pair_name" {
-  value       = [module.Dev_Frontend_ASG.key_pair_name]
+  value       = [module.Dev_Frontend.key_pair_name]
 }
 
 # Template
 output "launch_template_id" {
-  value = [module.Dev_Frontend_ASG.launch_template_id]
+  value = [module.Dev_Frontend.launch_template_id]
 }
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
 
 output "Target_group_id" {
-  value = [module.Dev_Frontend_ASG.Target_group_id]
+  value = [module.Dev_Frontend.Target_group_id]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 
 output "Autoscaling_group_id" {
-  value = [module.Dev_Frontend_ASG.Autoscaling_group_id]
+  value = [module.Dev_Frontend.Autoscaling_group_id]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #---------------------------- Auto Scaling Policies -------------------------------#
 
 output "Autoscaling_policy_name" {
-  value       = [module.Dev_Frontend_ASG.Autoscaling_policy_name]
+  value       = [module.Dev_Frontend.Autoscaling_policy_name]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
