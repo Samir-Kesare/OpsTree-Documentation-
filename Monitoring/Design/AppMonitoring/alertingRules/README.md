@@ -25,15 +25,15 @@
 Alert rules in app monitoring are predefined conditions or thresholds set up within a monitoring system to trigger notifications or alerts when certain criteria are met. These rules are essential for proactively identifying and addressing issues in an application or system.
 ***
 ## Why
-1. Enhanced Comprehension: Visual representation aids in understanding complex data quickly and intuitively.
+| Aspect               | Description                                                                                                         |
+|----------------------|---------------------------------------------------------------------------------------------------------------------|
+| Proactive Monitoring | Alert rules enable proactive monitoring by triggering notifications when specific conditions or thresholds are met. |
+| Timely Issue Response | They ensure timely responses to potential issues, allowing teams to address problems before they escalate.         |
+| Prevent Downtime     | By promptly notifying about anomalies or deviations from expected behavior, alert rules help prevent downtime.       |
+| Resource Optimization| Alert rules help optimize resource allocation by identifying underutilized or overutilized resources in real-time.   |
+| Enhanced Reliability | They contribute to maintaining system reliability and performance by identifying and resolving issues promptly.    |
 
-2. Prompt Issue Resolution: Real-time updates enable immediate responses to emerging issues, minimizing downtime.
-
-3. Relevant Insights: Customization ensures that users can prioritize and focus on metrics pertinent to their objectives.
-
-4. Preventive Action: Proactive alerting allows teams to address issues before they escalate, maintaining optimal performance.
-
-5. Informed Decision-Making: Historical data analysis provides insights into long-term trends, guiding strategic planning and optimization efforts.
+These aspects highlight the importance of alert rules in app monitoring for maintaining system health, reliability, and performance.
 ***
 ## Components
 | Component            | Description                                                                                                         |
