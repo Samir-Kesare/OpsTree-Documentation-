@@ -147,6 +147,8 @@ pipeline {
 ```
 </details>
 
+
+
 **This Jenkins pipeline automates the deployment of a Openvpn Server using Terraform module and Wrapper code. It's configured to perform the following actions:**
 
 ### Terraform Deployment Pipeline Overview
@@ -167,13 +169,13 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3290c566-f6e4-4769-9bb6-c4b4339f17e7">
+<img width="850" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/3290c566-f6e4-4769-9bb6-c4b4339f17e7">
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7f1c57b7-5d15-4058-ba9b-3203fd49f351">
+<img width="850" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7f1c57b7-5d15-4058-ba9b-3203fd49f351">
 
 ***
 
@@ -736,18 +738,18 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ad21300e-fa84-42dd-85e3-dce4532a7d67">
+<img width="850" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ad21300e-fa84-42dd-85e3-dce4532a7d67">
 
 ***
 ### SSH Key
 
-<img width="800"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cec695bb-205e-453e-9d05-55316b70a50c"> 
+<img width="850"  src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/cec695bb-205e-453e-9d05-55316b70a50c"> 
 
 ***
 
 ### EC2 Instance
 
-<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/71a9e22f-539d-48b3-8b78-4af82a3a07d1">
+<img width="750" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/71a9e22f-539d-48b3-8b78-4af82a3a07d1">
 
 ***
 
