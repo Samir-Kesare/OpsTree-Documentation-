@@ -10,7 +10,7 @@
 
 + [Introduction](#Introduction)
 + [Components of Alerting Rules](#Components-of-Alerting-Rules)
-+ [Rules](#Rules)
++ [Some Common Alert Rules for App](#Some-Common-Alert-Rules-for-App)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
 + [Best Practices](#Best-Practices)
@@ -37,7 +37,7 @@ Alert rules are pivotal in app monitoring systems, offering proactive issue dete
 | Customization        | Allows tailoring of alerting behavior, including adjusting thresholds and configuring multiple conditions.          |
 ***
 
-## Rules
+## Some Common Alert Rules for App
 Determining the specific alert rules for your application depends on various factors such as the type of application, its critical functionalities, expected user behavior, and the underlying infrastructure. However, here are some common alert rules that you may consider implementing:
 
 | Metric                    | Threshold/Condition                                      | Alert Action                                             |
