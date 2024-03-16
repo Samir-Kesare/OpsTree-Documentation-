@@ -26,6 +26,8 @@ Immutable infrastructure is a modern approach to managing IT environments that e
 
 In immutable infrastructure, updates and changes are applied by replacing entire server instances or components with new ones that incorporate the desired changes, rather than modifying existing instances in place.
 
+<img width="492" alt="Screenshot 2024-03-16 at 2 27 06 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/d6bca5c8-bfab-4deb-9d22-a1ab7cc9d274">
+
 ***
 ## Key Benefits
 
