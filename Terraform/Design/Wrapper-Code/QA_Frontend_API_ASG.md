@@ -81,7 +81,7 @@ This Terraform configuration defines infrastructure components for an AWS enviro
 
 ```shell
 
-module "QA_Frontend_ASG" {
+module "QA_Frontend" {
 source                              = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"
 #---------------------------------Security Group ----------------------------------#
 security_name                       = var.QA_Frontend_security_name
@@ -122,11 +122,23 @@ priority                             = var.QA_Frontend_priority
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 autoscaling_group_name              = var.QA_Frontend_autoscaling_group_name
+ASG_version                         = var.QA_Frontend_ASG_vserion
+subnet_ids                          = var.QA_Frontend_subnet_ids
+tag_key                             = var.QA_Frontend_tag_key
+tag_value                           = var.QA_Frontend_tag_value
+propagate_at_launch                 = var.QA_Frontend_propagate_at_launch
 min_size                            = var.QA_Frontend_min_size
 max_size                            = var.QA_Frontend_max_size
 desired_capacity                    = var.QA_Frontend_desired_capacity
-}
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+#---------------------------- Auto Scaling Policies -------------------------------#
+scaling_policy_name                 = var.QA_Frontend_scaling_policy_name
+policy_type                         = var.QA_Frontend_policy_type
+predefined_metric_type              = var.QA_Frontend_predefined_metric_type
+target_value                        = var.QA_Frontend_target_value
+#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+}
+
 ```
 </details>
 
@@ -138,6 +150,7 @@ desired_capacity                    = var.QA_Frontend_desired_capacity
 <br>
 
 ```shell
+
 #---------------------------------Security Group ----------------------------------#
 
 variable "QA_Frontend_security_name" {
@@ -320,6 +333,11 @@ variable "QA_Frontend_autoscaling_group_name" {
   default         = "QA_Frontend_ASG"
 }
 
+variable "QA_Frontend_ASG_vserion" {
+  description     = "Give the Version"
+  type            = string
+  default         = "$Latest"
+}
 variable "QA_Frontend_min_size" {
   description     = "The minimum number of instances in the ASG"
   type            = number
@@ -400,6 +418,7 @@ variable "QA_Frontend_target_value" {
 <br>
 
 ```shell
+
 #---------------------------------Security Group ----------------------------------#
 
 QA_Frontend_security_name                       = "QA-Frontend-sg"
@@ -458,6 +477,7 @@ QA_Frontend_priority                              = 100
 #--------------------------Configure Auto Scaling group ---------------------------#
 
 QA_Frontend_autoscaling_group_name              = "QA-Frontend-ASG"
+QA_Frontend_ASG_vserion                         = "$Latest"
 QA_Frontend_min_size                            = 1
 QA_Frontend_max_size                            = 2
 QA_Frontend_desired_capacity                    = 1
@@ -476,6 +496,7 @@ QA_Frontend_target_value                        = 50.0
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 
+
 ```
 </details>
 
@@ -487,10 +508,11 @@ QA_Frontend_target_value                        = 50.0
 <br>
 
 ```shell
+
 #---------------------------------Security Group ----------------------------------#
 
 output "Security_Group_ID" {
-  value = [module.QA_Frontend_ASG.Security_Group_ID]
+  value = [module.QA_Frontend.Security_Group_ID]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
@@ -498,32 +520,32 @@ output "Security_Group_ID" {
 
 # Priavte Key
 output "key_pair_name" {
-  value       = [module.QA_Frontend_ASG.key_pair_name]
+  value       = [module.QA_Frontend.key_pair_name]
 }
 
 # Template
 output "launch_template_id" {
-  value = [module.QA_Frontend_ASG.launch_template_id]
+  value = [module.QA_Frontend.launch_template_id]
 }
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
 
 output "Target_group_id" {
-  value = [module.QA_Frontend_ASG.Target_group_id]
+  value = [module.QA_Frontend.Target_group_id]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 
 output "Autoscaling_group_id" {
-  value = [module.QA_Frontend_ASG.Autoscaling_group_id]
+  value = [module.QA_Frontend.Autoscaling_group_id]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #---------------------------- Auto Scaling Policies -------------------------------#
 
 output "Autoscaling_policy_name" {
-  value       = [module.QA_Frontend_ASG.Autoscaling_policy_name]
+  value       = [module.QA_Frontend.Autoscaling_policy_name]
 }
 
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
