@@ -57,7 +57,7 @@ This document provides a step-by-step guide for setting up wrapper code for an A
 
 ## Flow Diagram
 
-<img width="1841" alt="Screenshot 2024-03-17 at 5 02 57 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/120fbd6e-e173-4fae-a793-94d8c66f190b">
+<img width="1725" alt="Screenshot 2024-03-17 at 5 05 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/e07ae01e-6088-4124-9742-f51a11d2159a">
 
 ***
 
