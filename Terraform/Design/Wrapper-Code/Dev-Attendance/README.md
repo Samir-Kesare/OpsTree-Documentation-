@@ -802,8 +802,8 @@ provider "aws" {
 
 ## Terminal Output
 
-<img width="1239" alt="Screenshot 2024-03-17 at 3 52 18 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/aa91c843-ba4a-4b47-9c66-4b87edc759ba">
 
+<img width="1095" alt="Screenshot 2024-03-17 at 4 14 40 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/5ca35267-dc43-4f05-8c7f-bb74dfa1b293">
 
 
 ***
