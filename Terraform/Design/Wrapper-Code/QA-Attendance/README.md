@@ -1,5 +1,5 @@
 
-# Terrafrom Wrapper Code for Attendance API (QA)
+# Terraform Wrapper Code for Attendance API (QA)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/54c1b29e-1fc9-42f1-886e-60bfb929fa15)
 
