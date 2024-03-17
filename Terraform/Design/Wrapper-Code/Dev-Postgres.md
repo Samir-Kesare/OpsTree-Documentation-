@@ -245,7 +245,7 @@ inbound-ports = [ {
 
 ## Console Output
 
-### Private Key (scyllaDBKeyDev.pem)
+### Private Key (Postgres.pem)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/175584b9-f67a-42bd-97fe-4fad1bec5a81)
 
