@@ -609,7 +609,7 @@ gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
 
 ### Private Key (QA_Attendance_Key.pem)
 
-<img width="1098" alt="Screenshot 2024-03-17 at 4 15 55 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/92341244-222d-4c1e-8ef9-0ce6640a28ce">
+<img width="1664" alt="Screenshot 2024-03-17 at 6 41 07 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/549c6be9-a0f5-4551-948b-b6ae37996430">
 
 
 **Key Download**
