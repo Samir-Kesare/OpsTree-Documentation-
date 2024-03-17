@@ -119,8 +119,12 @@ In your CI/CD pipeline, set up stages for testing and releasing. Use feature tog
 ***
 ## Conclusion:
 
-Choosing the right deployment strategy depends on various factors such as application requirements, deployment goals, testing needs, and infrastructure setup. By carefully evaluating these considerations and understanding the strengths and weaknesses of each deployment strategy, you can select the most suitable approach to ensure a smooth and successful deployment process for your project.
+Deployment strategies within a pipeline are crucial for efficient and reliable software delivery. By incorporating methods like canary releases, feature toggles, and incremental rollouts, teams can minimize risks, detect issues early, and maintain a seamless deployment process. Continuous monitoring, automated testing, and a well-defined rollback plan further enhance the pipeline's effectiveness, ensuring successful and controlled software releases.
+For our Infra we are going with **Rolling Deployment Strategy**.
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/0bb22c51-3a84-4bd5-9b28-aa7bbbb64ee7)
+
+for more information about [Rolling Update Stratery](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Rolling/README.md)
 
 
 ***
@@ -129,7 +133,7 @@ Choosing the right deployment strategy depends on various factors such as applic
 
  | **Name** | **Email Address** |
  | -------- | ----------------- |
- | **Vishal Kumar Kesharwani** | vishal.kumar.kesharwani.snaatak@mygurukulam.co |
+ | **Samir Kesare** | samir.kesare.snaatak@mygurukulam.co |
 
  ***
  
