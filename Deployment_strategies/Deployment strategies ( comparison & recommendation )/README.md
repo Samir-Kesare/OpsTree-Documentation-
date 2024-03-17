@@ -142,7 +142,6 @@ for more information about [Rolling Update Stratery](https://github.com/CodeOps-
  | **Source** | **Description** |
  | ---------- | --------------- |
  | [**Link**](https://www.encora.com/insights/zero-downtime-deployment-techniques-rolling-update) | Rolling deployments |
- | [**Link**](https://blog.devops.dev/microsevices-deployment-patterns-rolling-vs-blue-green-vs-canary-e35440e794ed) | Advantages and Disadvantages of rolling deployments |
  | [**Link**](https://www.sumologic.com/glossary/software-deployment/) | Software deployment |
  | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md) | Blue-Green Deployment_strategies |
  | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md) | Canary Deployment_strategies |
