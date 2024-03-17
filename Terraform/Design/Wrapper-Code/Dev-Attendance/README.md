@@ -20,8 +20,6 @@
 * [Flow Diagram](#Flow-Diagram)
 * [Directory Structure](#Directory-Structure)
 * [Configuration Files](#Configuration-Files)
-* [Tags](#Tags)
-* [Inputs](#Inputs)
 * [Outputs](#Outputs)
 * [Terminal Output](#Terminal-Output)
 * [Console Output](#Console-Output)
