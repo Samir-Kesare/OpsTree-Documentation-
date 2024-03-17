@@ -9,10 +9,9 @@
 ***
 ## Table of Contents 
 + [Introduction](#Introduction)
-+ [Key Benefits](#key-benefits)
-+ [Advantages and Disadvantages](#advantages-and-disadvantages)
-+ [Use Cases](#use-cases)
-+ [Best Practices](#best-practices)
++ [Comparison of Mutable and Immutable Infrastructure](#Comparison-of-Mutable-and-Immutable-Infrastructure)
++ [Selecting the Appropriate Infrastructure Type](#Selecting-the-Appropriate-Infrastructure-Type)
++ [Best Practices for Infrastructure Types](#Best-Practices-for-Infrastructure-Types)
 + [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
 + [References](#references)
