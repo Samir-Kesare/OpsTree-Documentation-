@@ -1,5 +1,6 @@
 # Documentation on Identify Key performance metrics and requirements For Infra Monitoring
-![5985256](https://github.com/CodeOps-Hub/Documentation/assets/156056570/fb226944-189f-45af-a756-b0fad4a0b853)
+![5985256-Photoroom png-Photoroom](https://github.com/CodeOps-Hub/Documentation/assets/156056570/d3545724-6c00-4352-8401-0784465a664d)
+
 
 
 | Author                                                           | Created on  | Version    | Last Updated by | Last Updated on |
