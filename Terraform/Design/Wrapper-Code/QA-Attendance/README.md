@@ -157,46 +157,7 @@ target_value                        = var.target_value
 <br>
 
 ```shell
-#---------------------------------Security Group ----------------------------------#
 
-variable "security_name" {
-  description     = "Name tag for the security group"
-  type            = string
-  default         = "attendance-sg"
-}
-variable "security_description" {
-  description     = "Description for the security group"
-  type            = string
-  default         = "Security group for Dev Attendance API"
-}
-variable "vpc_id" {
-  description     = "ID of the VPC for instances"
-  type            = string
-  default         = "vpc-0d744158f7f47f419"   # Dev_Salary-VPC ID
-}
-variable "inbound_ports" {
-  description     = "List of inbound ports and protocols and cidr block"
-  type            = list(map(any))
-  default         = [
-    { port = 22, protocol = "tcp",cidr_blocks = "20.0.0.0/28" }, # Management VPC Cidr Block
-    { port = 22, protocol = "tcp", security_group_ids = "sg-0add0279237c66ee0" },    # OpenVPN-SG
-    { port = 8080, protocol = "tcp", security_group_ids = "sg-0add0279237c66ee0" }, #  Dev-Attendance-lb-sg ID 
-  ]
-}
-variable "outbound_ports" {
-  description     = "List of outbound ports and protocols and Cidr block "
-  type            = list(map(any))
-  default         = [
-    { port = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0", },
-  ]
-}
-variable "Sg_tags" {
-  description     = "Tags for Security Group"
-  type            = map(string)
-  default         = {
-    Name          = "Dev-Attendance-sg"
-    Enviroment    = "Dev_Attendance"
-    Owner         = "Vidhi"
   }
 }
 
