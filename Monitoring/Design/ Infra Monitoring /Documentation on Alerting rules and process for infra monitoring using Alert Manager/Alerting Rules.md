@@ -60,64 +60,15 @@ Alerting rules in Alert Manager follow a simple yet powerful syntax for defining
 ## Alerting Rules for Infrastructure Monitoring
 
 Alerting rules are crucial for infrastructure monitoring, allowing organizations to detect and respond to potential issues before they escalate. Below are some common alerting rules used in infrastructure monitoring:
-
-### High CPU Usage
-
-**Rule**: Trigger an alert when CPU usage exceeds a predefined threshold for a sustained period.
-
-**Threshold**: CPU utilization > 90% for 5 minutes.
-
-**Action**: Send a critical alert to the operations team for investigation and remediation.
-
-### Memory Exhaustion
-
-**Rule**: Trigger an alert when available memory falls below a certain threshold.
-
-**Threshold**: Available memory < 10% for 5 minutes.
-
-**Action**: Notify the relevant team to investigate and optimize memory usage.
-
-### Disk Space Utilization
-
-**Rule**: Generate an alert when disk space utilization reaches a critical level.
-
-**Threshold**: Disk usage > 90% for 10 minutes.
-
-**Action**: Alert the operations team to free up disk space or provision additional storage capacity.
-
-### Network Connectivity Issues
-
-**Rule**: Raise an alert when there are network connectivity issues or packet loss.
-
-**Threshold**: Packet loss > 5% for 2 minutes.
-
-**Action**: Notify network administrators to troubleshoot and resolve connectivity issues.
-
-### Service Availability
-
-**Rule**: Trigger an alert when critical services or applications become unavailable.
-
-**Threshold**: Service response time > 5 seconds or HTTP status code indicating service failure.
-
-**Action**: Alert the appropriate team to investigate and restore service availability.
-
-### Database Latency
-
-**Rule**: Generate an alert when database query latency exceeds acceptable limits.
-
-**Threshold**: Database response time > 500 milliseconds for 5 minutes.
-
-**Action**: Notify database administrators to optimize queries or allocate additional resources.
-
-### Security Breaches
-
-**Rule**: Raise an alert when security breaches or unauthorized access attempts are detected.
-
-**Threshold**: Anomaly detection based on unusual login patterns or suspicious activity.
-
-**Action**: Immediately notify the security team for investigation and mitigation.
-
-These alerting rules are examples of proactive measures that help ensure the stability, performance, and security of the infrastructure. Organizations can customize these rules based on their specific requirements and priorities to effectively monitor their infrastructure and respond to incidents promptly.
+| Alert Type              | Rule                                 | Threshold                      | Action                                                           |
+|-------------------------|--------------------------------------|--------------------------------|------------------------------------------------------------------|
+| High CPU Usage          | CPU utilization > 90%                | CPU > 90% for 5 minutes        | Send critical alert to operations team for investigation        |
+| Memory Exhaustion       | Available memory < 10%               | Memory < 10% for 5 minutes      | Notify relevant team to investigate and optimize memory usage    |
+| Disk Space Utilization  | Disk usage > 90%                    | Disk > 90% for 10 minutes       | Alert operations team to free up disk space or provision storage |
+| Network Connectivity    | Packet loss > 5%                    | Packet loss > 5% for 2 minutes | Notify network administrators to troubleshoot connectivity      |
+| Service Availability    | Service response time > 5 seconds    | Response time > 5s               | Alert appropriate team to investigate and restore service      |
+| Database Latency        | Database response time > 500ms       | Response time > 500ms for 5 min | Notify database administrators to optimize queries              |
+| Security Breaches       | Anomaly detection                    | Unusual login patterns          | Immediately notify security team for investigation              |
 
 
 
