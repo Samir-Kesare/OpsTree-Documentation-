@@ -619,29 +619,29 @@ make run-migrations
 ***
 
 # Terminal Output
-![Screenshot 2024-03-17 at 7 07 12 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/effc826d-99ab-4148-be49-42b000d6fe25)
+![Screenshot 2024-03-17 at 11 51 18 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/b86b2062-3e8c-47b4-8e09-67332349661b)
 
 ***
 
 # Console Output
 
 ### Security Group
-![Screenshot 2024-03-17 at 7 09 22 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/0bc10ec3-56fd-4c4f-98f7-1e53563abe83)
+![Screenshot 2024-03-17 at 11 52 00 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/00ae8692-7868-406d-92ee-40e1adff4473)
 
 ***
 
 ### Launch Template
-![Screenshot 2024-03-17 at 7 10 49 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/4256eaf6-6e5c-40c3-b31c-8cc96d75241f)
+![Screenshot 2024-03-17 at 11 52 42 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/94b9c863-20b0-46b1-9f24-0134e0906109)
 
 ***
 
 ### Listener Rule of ALB
-![Screenshot 2024-03-17 at 7 15 40 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/f6241515-b374-40ee-9959-d8e082508af2)
+![Screenshot 2024-03-17 at 11 53 22 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/186ba647-44bb-42ed-9ff5-46c25b441e00)
 
 ***
 
 ### ASG Policies
-![Screenshot 2024-03-17 at 7 17 14 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/44715c37-3d9f-4704-96bc-944de55546a1)
+![Screenshot 2024-03-17 at 11 54 26 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/0d9a544f-d77b-42bd-8023-e9f32b29a1e5)
 
 ***
 
