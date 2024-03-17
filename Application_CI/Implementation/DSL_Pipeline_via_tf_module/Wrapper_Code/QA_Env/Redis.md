@@ -77,31 +77,31 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 ```shell
 pipeline {
     agent any
-    
+
     environment {
         AWS_ACCESS_KEY_ID     = credentials('aakash_aws_creds')
         AWS_SECRET_ACCESS_KEY = credentials('aakash_aws_creds')
         TF_CLI_ARGS           = '-input=false'
     }
-    
+
     parameters {
         choice(name: 'ACTION', choices: ['Apply', 'Destroy'], description: 'Choose to apply or destroy the infrastructure')
     }
-    
+
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'aakash/redis_dev', credentialsId: 'aakashgithub', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+                git branch: 'aakash/redis_qa', credentialsId: 'aakashgithub', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
             }
         }
-        
+
         stage('Copy Terraform Files') {
             steps {
                 // Copy or move specific files from the repository to Jenkins workspace
-                sh 'cp wrapperCode/Redis_Server_Wrapper_Code/Dev/* .'
+                sh 'cp wrapperCode/Redis_Server_Wrapper_Code/QA/* .'
             }
         }
-        
+
         stage('Terraform Init') {
             steps {
                 script {
@@ -109,7 +109,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Terraform Plan') {
             steps {
                 script {
@@ -117,7 +117,7 @@ pipeline {
                 }
             }
         }
-        
+
         stage('Review and Approve Apply') {
             when {
                 expression { params.ACTION == 'Apply' }
@@ -127,7 +127,7 @@ pipeline {
                 input "Do you want to apply Terraform changes?"
             }
         }
-        
+
         stage('Review and Approve Destroy') {
             when {
                 expression { params.ACTION == 'Destroy' }
@@ -137,7 +137,7 @@ pipeline {
                 input "Do you want to destroy Terraform resources?"
             }
         }
-        
+
         stage('Apply or Destroy') {
             steps {
                 script {
@@ -150,7 +150,7 @@ pipeline {
             }
         }
     }
-    
+
      post {
         success {
             script {
@@ -187,13 +187,14 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/d526853a-2f9c-4d9b-aea1-f85fd5e7b4d9">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/a5dc9544-7bdc-472f-a09b-b8385f592088">
+
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/968506f9-daa1-4c46-989f-522fcc605f86">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/69ff3eb3-1c31-4cb0-afb4-b63d1a803d83">
 
 ***
 
@@ -207,7 +208,7 @@ pipeline {
 Started by user aakashtripathi-snaatak
 [Pipeline] Start of Pipeline
 [Pipeline] node
-Running on Jenkins in /var/lib/jenkins/workspace/Redis_Development_Infra
+Running on Jenkins in /var/lib/jenkins/workspace/Redis_QA_Infra
 [Pipeline] {
 [Pipeline] withCredentials
 WARNING: Unknown parameter(s) found for class type 'com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding': keyIdVariable,secretVariable
@@ -223,7 +224,7 @@ The recommended git tool is: NONE
 using credential aakashgithub
 Cloning the remote Git repository
 Cloning repository https://github.com/CodeOps-Hub/Terraform-modules.git
- > git init /var/lib/jenkins/workspace/Redis_Development_Infra # timeout=10
+ > git init /var/lib/jenkins/workspace/Redis_QA_Infra # timeout=10
 Fetching upstream changes from https://github.com/CodeOps-Hub/Terraform-modules.git
  > git --version # timeout=10
  > git --version # 'git version 2.34.1'
@@ -232,20 +233,20 @@ using GIT_ASKPASS to set credentials aakashgithub
  > git config remote.origin.url https://github.com/CodeOps-Hub/Terraform-modules.git # timeout=10
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
- > git rev-parse refs/remotes/origin/aakash/redis_dev^{commit} # timeout=10
-Checking out Revision e4bef9e51b3644632b738d455dfb4333646a6115 (refs/remotes/origin/aakash/redis_dev)
+ > git rev-parse refs/remotes/origin/aakash/redis_qa^{commit} # timeout=10
+Checking out Revision 12c6122e74ad53db7decf2e4ac3783da866d6089 (refs/remotes/origin/aakash/redis_qa)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f e4bef9e51b3644632b738d455dfb4333646a6115 # timeout=10
+ > git checkout -f 12c6122e74ad53db7decf2e4ac3783da866d6089 # timeout=10
  > git branch -a -v --no-abbrev # timeout=10
- > git checkout -b aakash/redis_dev e4bef9e51b3644632b738d455dfb4333646a6115 # timeout=10
-Commit message: "Adding Redis Server Dev Wrapper Code"
- > git rev-list --no-walk e4bef9e51b3644632b738d455dfb4333646a6115 # timeout=10
+ > git checkout -b aakash/redis_qa 12c6122e74ad53db7decf2e4ac3783da866d6089 # timeout=10
+Commit message: "Adding Redis QA Server Wrapper Code"
+First time build. Skipping changelog.
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
 [Pipeline] { (Copy Terraform Files)
 [Pipeline] sh
-+ cp wrapperCode/Redis_Server_Wrapper_Code/Dev/main.tf wrapperCode/Redis_Server_Wrapper_Code/Dev/output.tf wrapperCode/Redis_Server_Wrapper_Code/Dev/provider.tf wrapperCode/Redis_Server_Wrapper_Code/Dev/terraform.tfvars wrapperCode/Redis_Server_Wrapper_Code/Dev/variable.tf .
++ cp wrapperCode/Redis_Server_Wrapper_Code/QA/main.tf wrapperCode/Redis_Server_Wrapper_Code/QA/output.tf wrapperCode/Redis_Server_Wrapper_Code/QA/provider.tf wrapperCode/Redis_Server_Wrapper_Code/QA/terraform.tfvars wrapperCode/Redis_Server_Wrapper_Code/QA/variable.tf .
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
@@ -262,14 +263,14 @@ Downloading git::ssh://git@github.com/CodeOps-Hub/Terraform-modules.git?ref=main
 
 [0m[1mInitializing provider plugins...[0m
 - Finding latest version of hashicorp/tls...
-- Finding latest version of hashicorp/local...
 - Finding hashicorp/aws versions matching ">= 5.38.0"...
-- Installing hashicorp/tls v4.0.5...
-- Installed hashicorp/tls v4.0.5 (signed by HashiCorp)
-- Installing hashicorp/local v2.5.1...
-- Installed hashicorp/local v2.5.1 (signed by HashiCorp)
+- Finding latest version of hashicorp/local...
 - Installing hashicorp/aws v5.41.0...
 - Installed hashicorp/aws v5.41.0 (signed by HashiCorp)
+- Installing hashicorp/local v2.5.1...
+- Installed hashicorp/local v2.5.1 (signed by HashiCorp)
+- Installing hashicorp/tls v4.0.5...
+- Installed hashicorp/tls v4.0.5 (signed by HashiCorp)
 
 Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
 selections it made above. Include this file in your version control repository
@@ -326,7 +327,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m instance_type                        = "t2.medium"
       [32m+[0m[0m ipv6_address_count                   = (known after apply)
       [32m+[0m[0m ipv6_addresses                       = (known after apply)
-      [32m+[0m[0m key_name                             = "redisKey.pem"
+      [32m+[0m[0m key_name                             = "redisKeyQA.pem"
       [32m+[0m[0m monitoring                           = (known after apply)
       [32m+[0m[0m outpost_arn                          = (known after apply)
       [32m+[0m[0m password_data                        = (known after apply)
@@ -343,11 +344,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m spot_instance_request_id             = (known after apply)
       [32m+[0m[0m subnet_id                            = "subnet-0eb88feb4f7ec9f95"
       [32m+[0m[0m tags                                 = {
-          [32m+[0m[0m "Name" = "Redis-Server"
+          [32m+[0m[0m "Name" = "Redis-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tags_all                             = {
-          [32m+[0m[0m "Name" = "Redis-Server"
+          [32m+[0m[0m "Name" = "Redis-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tenancy                              = (known after apply)
@@ -362,7 +363,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m arn             = (known after apply)
       [32m+[0m[0m fingerprint     = (known after apply)
       [32m+[0m[0m id              = (known after apply)
-      [32m+[0m[0m key_name        = "redisKey.pem"
+      [32m+[0m[0m key_name        = "redisKeyQA.pem"
       [32m+[0m[0m key_name_prefix = (known after apply)
       [32m+[0m[0m key_pair_id     = (known after apply)
       [32m+[0m[0m key_type        = (known after apply)
@@ -431,18 +432,18 @@ Terraform will perform the following actions:
               [32m+[0m[0m to_port          = 6379
             },
         ]
-      [32m+[0m[0m name                   = "redis-sg"
+      [32m+[0m[0m name                   = "redis-qa-sg"
       [32m+[0m[0m name_prefix            = (known after apply)
       [32m+[0m[0m owner_id               = (known after apply)
       [32m+[0m[0m revoke_rules_on_delete = false
       [32m+[0m[0m tags                   = {
-          [32m+[0m[0m "Enviroment" = "Dev"
-          [32m+[0m[0m "Name"       = "redis-sg"
+          [32m+[0m[0m "Enviroment" = "QA"
+          [32m+[0m[0m "Name"       = "redis-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m tags_all               = {
-          [32m+[0m[0m "Enviroment" = "Dev"
-          [32m+[0m[0m "Name"       = "redis-sg"
+          [32m+[0m[0m "Enviroment" = "QA"
+          [32m+[0m[0m "Name"       = "redis-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m vpc_id                 = "vpc-0b4c152fb02b0af32"
@@ -459,7 +460,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m content_sha512       = (known after apply)
       [32m+[0m[0m directory_permission = "0777"
       [32m+[0m[0m file_permission      = "0777"
-      [32m+[0m[0m filename             = "redisKey.pem"
+      [32m+[0m[0m filename             = "redisKeyQA.pem"
       [32m+[0m[0m id                   = (known after apply)
     }
 
@@ -546,7 +547,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m instance_type                        = "t2.medium"
       [32m+[0m[0m ipv6_address_count                   = (known after apply)
       [32m+[0m[0m ipv6_addresses                       = (known after apply)
-      [32m+[0m[0m key_name                             = "redisKey.pem"
+      [32m+[0m[0m key_name                             = "redisKeyQA.pem"
       [32m+[0m[0m monitoring                           = (known after apply)
       [32m+[0m[0m outpost_arn                          = (known after apply)
       [32m+[0m[0m password_data                        = (known after apply)
@@ -563,11 +564,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m spot_instance_request_id             = (known after apply)
       [32m+[0m[0m subnet_id                            = "subnet-0eb88feb4f7ec9f95"
       [32m+[0m[0m tags                                 = {
-          [32m+[0m[0m "Name" = "Redis-Server"
+          [32m+[0m[0m "Name" = "Redis-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tags_all                             = {
-          [32m+[0m[0m "Name" = "Redis-Server"
+          [32m+[0m[0m "Name" = "Redis-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tenancy                              = (known after apply)
@@ -582,7 +583,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m arn             = (known after apply)
       [32m+[0m[0m fingerprint     = (known after apply)
       [32m+[0m[0m id              = (known after apply)
-      [32m+[0m[0m key_name        = "redisKey.pem"
+      [32m+[0m[0m key_name        = "redisKeyQA.pem"
       [32m+[0m[0m key_name_prefix = (known after apply)
       [32m+[0m[0m key_pair_id     = (known after apply)
       [32m+[0m[0m key_type        = (known after apply)
@@ -651,18 +652,18 @@ Terraform will perform the following actions:
               [32m+[0m[0m to_port          = 6379
             },
         ]
-      [32m+[0m[0m name                   = "redis-sg"
+      [32m+[0m[0m name                   = "redis-qa-sg"
       [32m+[0m[0m name_prefix            = (known after apply)
       [32m+[0m[0m owner_id               = (known after apply)
       [32m+[0m[0m revoke_rules_on_delete = false
       [32m+[0m[0m tags                   = {
-          [32m+[0m[0m "Enviroment" = "Dev"
-          [32m+[0m[0m "Name"       = "redis-sg"
+          [32m+[0m[0m "Enviroment" = "QA"
+          [32m+[0m[0m "Name"       = "redis-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m tags_all               = {
-          [32m+[0m[0m "Enviroment" = "Dev"
-          [32m+[0m[0m "Name"       = "redis-sg"
+          [32m+[0m[0m "Enviroment" = "QA"
+          [32m+[0m[0m "Name"       = "redis-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m vpc_id                 = "vpc-0b4c152fb02b0af32"
@@ -679,7 +680,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m content_sha512       = (known after apply)
       [32m+[0m[0m directory_permission = "0777"
       [32m+[0m[0m file_permission      = "0777"
-      [32m+[0m[0m filename             = "redisKey.pem"
+      [32m+[0m[0m filename             = "redisKeyQA.pem"
       [32m+[0m[0m id                   = (known after apply)
     }
 
@@ -709,27 +710,27 @@ Changes to Outputs:
     ]
 [0m[1mmodule.redis.tls_private_key.rsa_4096: Creating...[0m[0m
 [0m[1mmodule.redis.aws_security_group.sec_grp: Creating...[0m[0m
-[0m[1mmodule.redis.tls_private_key.rsa_4096: Creation complete after 2s [id=04c22331d0fa83aeb1f2f5414e02baa711d03b4c][0m
+[0m[1mmodule.redis.tls_private_key.rsa_4096: Creation complete after 2s [id=b2be4c01d9610a554a9d2e9955c4a79d4734ac18][0m
 [0m[1mmodule.redis.aws_key_pair.key_pair: Creating...[0m[0m
 [0m[1mmodule.redis.local_file.private_key: Creating...[0m[0m
-[0m[1mmodule.redis.local_file.private_key: Creation complete after 0s [id=429e8508d21967f50c319ad06fe15b1d03cca574][0m
-[0m[1mmodule.redis.aws_key_pair.key_pair: Creation complete after 1s [id=redisKey.pem][0m
-[0m[1mmodule.redis.aws_security_group.sec_grp: Creation complete after 5s [id=sg-0de1f30f390fc0e2d][0m
+[0m[1mmodule.redis.local_file.private_key: Creation complete after 0s [id=98427b2027735006140ef2d87416df8005569e12][0m
+[0m[1mmodule.redis.aws_key_pair.key_pair: Creation complete after 1s [id=redisKeyQA.pem][0m
+[0m[1mmodule.redis.aws_security_group.sec_grp: Creation complete after 5s [id=sg-08c453810355ddefa][0m
 [0m[1mmodule.redis.aws_instance.standalone_server: Creating...[0m[0m
 [0m[1mmodule.redis.aws_instance.standalone_server: Still creating... [10s elapsed][0m[0m
 [0m[1mmodule.redis.aws_instance.standalone_server: Still creating... [20s elapsed][0m[0m
 [0m[1mmodule.redis.aws_instance.standalone_server: Still creating... [30s elapsed][0m[0m
-[0m[1mmodule.redis.aws_instance.standalone_server: Creation complete after 35s [id=i-0d748af8149c7bbca][0m
+[0m[1mmodule.redis.aws_instance.standalone_server: Creation complete after 34s [id=i-0f926862bd819a173][0m
 [0m[1m[32m
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 [0m[0m[1m[32m
 Outputs:
 
 [0mSecurity_Group_ID = [
-  "sg-0de1f30f390fc0e2d",
+  "sg-08c453810355ddefa",
 ]
 server_id = [
-  "i-0d748af8149c7bbca",
+  "i-0f926862bd819a173",
 ]
 [Pipeline] }
 [Pipeline] // script
@@ -755,6 +756,7 @@ Archiving artifacts
 [Pipeline] // node
 [Pipeline] End of Pipeline
 Finished: SUCCESS
+
 ```
 </details>
 
@@ -764,19 +766,18 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/c76c9386-69d7-4a0f-a079-aabfa36d4a74"> 
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/78ab5913-60d5-40e0-a4fb-7314f4390250"> 
 
 ***
 ### Redis Server
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bfbb37db-70de-41bd-b211-763cd1ed2162"> 
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bb529379-2800-4208-bff4-38b4c5b21231"> 
 
 ***
 
 ### Key Pair
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/10e76a50-7434-4312-b244-275cc9328a51">
-
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5ee3f6fc-651d-4498-857c-9599066742d0">
 
 ***
 
@@ -802,4 +803,4 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [**Link**](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/VM-Module.md) | VM Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/Dev-Redis.md) | Dev Redis Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/QA-Redis.md) | QA Redis Wrapper-Code |
