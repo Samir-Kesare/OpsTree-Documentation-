@@ -613,8 +613,8 @@ gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
 
 
 **Key Download**
-<img width="723" alt="Screenshot 2024-03-17 at 4 16 58 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1bbf7b0a-3895-4850-ad83-8d683da470bf">
 
+<img width="712" alt="Screenshot 2024-03-17 at 6 39 14 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8a361cbc-a3d7-46c1-9aca-b08e5186b970">
 
 
 
@@ -652,7 +652,8 @@ gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
 ***
 ### Auto Scaling Group Policy 
 
-<img width="730" alt="Screenshot 2024-03-17 at 4 25 20 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8c0db7dc-3e78-45f5-8850-ea6c724cd924">
+<img width="669" alt="Screenshot 2024-03-17 at 6 38 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/65ae0a42-ba97-49f8-9e17-e07572c41f5b">
+
 
 ***
 
