@@ -801,5 +801,5 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [**Link**](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | VM Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/Dev_Frontend_API_ASG.md) | Dev Redis Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/VM-Module.md) | VM Module Doc |
+| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/Dev-Redis.md) | Dev Redis Wrapper-Code |
