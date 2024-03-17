@@ -36,19 +36,8 @@ In a rolling deployment:
 
 To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling)
 ***
-```mermaid
-graph TD
-A[Version Control] --> B[Immutable Infrastructure Definition]
-B --> C[Build and Test Immutable Images]
-C --> D[Blue-Green Deployment Environment]
-D --> E[Gradual Rollout]
-E --> F[Health Checks and Monitoring]
-F --> G[Traffic Shifting]
-G --> H[Post-Deployment Verification]
-H --> I[Rollback Plan]
-I --> J[Cleanup]
-```
 ## Steps to rollout
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8f9a29c6-0ef5-4b9c-b485-5ba6efc4a015)
 
 Rolling out immutable infrastructure using a rolling deployment strategy involves deploying updates or changes to your infrastructure in a phased manner while maintaining high availability and minimizing downtime. Here's a general outline of how you could approach it:
 
