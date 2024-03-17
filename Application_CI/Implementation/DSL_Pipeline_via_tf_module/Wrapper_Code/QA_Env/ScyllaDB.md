@@ -77,31 +77,31 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 ```shell
 pipeline {
     agent any
-
+    
     environment {
         AWS_ACCESS_KEY_ID     = credentials('aakash_aws_creds')
         AWS_SECRET_ACCESS_KEY = credentials('aakash_aws_creds')
         TF_CLI_ARGS           = '-input=false'
     }
-
+    
     parameters {
         choice(name: 'ACTION', choices: ['Apply', 'Destroy'], description: 'Choose to apply or destroy the infrastructure')
     }
-
+    
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'aakash/redis_qa', credentialsId: 'aakashgithub', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+                git branch: 'aakash/scylladb_qa', credentialsId: 'aakashgithub', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
             }
         }
-
+        
         stage('Copy Terraform Files') {
             steps {
                 // Copy or move specific files from the repository to Jenkins workspace
-                sh 'cp wrapperCode/Redis_Server_Wrapper_Code/QA/* .'
+                sh 'cp wrapperCode/ScyllaDB_Wrapper_Code/QA/* .'
             }
         }
-
+        
         stage('Terraform Init') {
             steps {
                 script {
@@ -109,7 +109,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Terraform Plan') {
             steps {
                 script {
@@ -117,7 +117,7 @@ pipeline {
                 }
             }
         }
-
+        
         stage('Review and Approve Apply') {
             when {
                 expression { params.ACTION == 'Apply' }
@@ -127,7 +127,7 @@ pipeline {
                 input "Do you want to apply Terraform changes?"
             }
         }
-
+        
         stage('Review and Approve Destroy') {
             when {
                 expression { params.ACTION == 'Destroy' }
@@ -137,7 +137,7 @@ pipeline {
                 input "Do you want to destroy Terraform resources?"
             }
         }
-
+        
         stage('Apply or Destroy') {
             steps {
                 script {
@@ -150,7 +150,7 @@ pipeline {
             }
         }
     }
-
+    
      post {
         success {
             script {
@@ -769,7 +769,7 @@ Finished: SUCCESS
 <img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/78ab5913-60d5-40e0-a4fb-7314f4390250"> 
 
 ***
-### Redis Server
+### ScyllaDB Server
 
 <img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bb529379-2800-4208-bff4-38b4c5b21231"> 
 
