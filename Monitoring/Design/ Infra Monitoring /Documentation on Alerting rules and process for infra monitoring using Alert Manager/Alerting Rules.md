@@ -40,17 +40,15 @@ Alerting rules in Alert Manager follow a simple yet powerful syntax for defining
 ***
 ## Process for Infrastructure Monitoring with Alert Manager
 
-1. **Define Alerting Rules**: Begin by defining alerting rules in Alert Manager configuration files. These rules specify the conditions and thresholds for triggering alerts based on the metrics collected by Prometheus.
+| Step                    | Description                                                                                                             |
+|-------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| 1. Define Alerting Rules| Begin by defining alerting rules in Alert Manager configuration files. These rules specify conditions and thresholds for triggering alerts based on metrics collected by Prometheus. |
+| 2. Monitor Targets      | Configure Prometheus to monitor infrastructure targets, such as servers, databases, or services, and collect relevant metrics using exporters or instrumented applications. |
+| 3. Evaluate Metrics     | Prometheus continuously evaluates metrics based on defined alerting rules. When metrics meet specified conditions or thresholds, Prometheus generates alerts and forwards them to Alert Manager. |
+| 4. Alert Processing     | Alert Manager receives alerts from Prometheus and processes them according to configured routing and inhibition rules. It groups, deduplicates, and filters alerts before forwarding them to notification channels. |
+| 5. Alert Notifications | Alert Manager sends notifications to configured notification channels, such as email, Slack, PagerDuty, or custom webhooks, to notify relevant stakeholders about detected issues or anomalies. |
+| 6. Alert Handling       | Stakeholders receive alert notifications and take appropriate actions to investigate and resolve underlying issues, ensuring timely response and resolution. |
 
-2. **Monitor Targets**: Configure Prometheus to monitor infrastructure targets, such as servers, databases, or services, and collect relevant metrics using exporters or instrumented applications.
-
-3. **Evaluate Metrics**: Prometheus continuously evaluates metrics based on the defined alerting rules. When metrics meet the specified conditions or thresholds, Prometheus generates alerts and forwards them to Alert Manager.
-
-4. **Alert Processing**: Alert Manager receives alerts from Prometheus and processes them according to configured routing and inhibition rules. It groups, deduplicates, and filters alerts before forwarding them to notification channels.
-
-5. **Alert Notifications**: Alert Manager sends notifications to configured notification channels, such as email, Slack, PagerDuty, or custom webhooks, to notify relevant stakeholders about detected issues or anomalies.
-
-6. **Alert Handling**: Stakeholders receive alert notifications and take appropriate actions to investigate and resolve the underlying issues, ensuring timely response and resolution.
 
 ***
 ## Flow Diagram
