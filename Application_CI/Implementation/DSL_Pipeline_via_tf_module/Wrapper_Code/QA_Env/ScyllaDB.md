@@ -187,14 +187,13 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/a5dc9544-7bdc-472f-a09b-b8385f592088">
-
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/29e1a4e9-2636-4b60-bbc2-43da8560443f">
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/69ff3eb3-1c31-4cb0-afb4-b63d1a803d83">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/0f0e60bc-71cc-4549-94ad-f83c07861d7a">
 
 ***
 
@@ -208,7 +207,7 @@ pipeline {
 Started by user aakashtripathi-snaatak
 [Pipeline] Start of Pipeline
 [Pipeline] node
-Running on Jenkins in /var/lib/jenkins/workspace/Redis_QA_Infra
+Running on Jenkins in /var/lib/jenkins/workspace/ScyllaDB_QA_Infra
 [Pipeline] {
 [Pipeline] withCredentials
 WARNING: Unknown parameter(s) found for class type 'com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding': keyIdVariable,secretVariable
@@ -224,7 +223,7 @@ The recommended git tool is: NONE
 using credential aakashgithub
 Cloning the remote Git repository
 Cloning repository https://github.com/CodeOps-Hub/Terraform-modules.git
- > git init /var/lib/jenkins/workspace/Redis_QA_Infra # timeout=10
+ > git init /var/lib/jenkins/workspace/ScyllaDB_QA_Infra # timeout=10
 Fetching upstream changes from https://github.com/CodeOps-Hub/Terraform-modules.git
  > git --version # timeout=10
  > git --version # 'git version 2.34.1'
@@ -233,20 +232,20 @@ using GIT_ASKPASS to set credentials aakashgithub
  > git config remote.origin.url https://github.com/CodeOps-Hub/Terraform-modules.git # timeout=10
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
- > git rev-parse refs/remotes/origin/aakash/redis_qa^{commit} # timeout=10
-Checking out Revision 12c6122e74ad53db7decf2e4ac3783da866d6089 (refs/remotes/origin/aakash/redis_qa)
+ > git rev-parse refs/remotes/origin/aakash/scylladb_qa^{commit} # timeout=10
+Checking out Revision 2fc570ad3944ba740b63e99ee10a223085bc2e3c (refs/remotes/origin/aakash/scylladb_qa)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 12c6122e74ad53db7decf2e4ac3783da866d6089 # timeout=10
+ > git checkout -f 2fc570ad3944ba740b63e99ee10a223085bc2e3c # timeout=10
  > git branch -a -v --no-abbrev # timeout=10
- > git checkout -b aakash/redis_qa 12c6122e74ad53db7decf2e4ac3783da866d6089 # timeout=10
-Commit message: "Adding Redis QA Server Wrapper Code"
+ > git checkout -b aakash/scylladb_qa 2fc570ad3944ba740b63e99ee10a223085bc2e3c # timeout=10
+Commit message: "Update terraform.tfvars"
 First time build. Skipping changelog.
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
 [Pipeline] { (Copy Terraform Files)
 [Pipeline] sh
-+ cp wrapperCode/Redis_Server_Wrapper_Code/QA/main.tf wrapperCode/Redis_Server_Wrapper_Code/QA/output.tf wrapperCode/Redis_Server_Wrapper_Code/QA/provider.tf wrapperCode/Redis_Server_Wrapper_Code/QA/terraform.tfvars wrapperCode/Redis_Server_Wrapper_Code/QA/variable.tf .
++ cp wrapperCode/ScyllaDB_Wrapper_Code/QA/main.tf wrapperCode/ScyllaDB_Wrapper_Code/QA/output.tf wrapperCode/ScyllaDB_Wrapper_Code/QA/provider.tf wrapperCode/ScyllaDB_Wrapper_Code/QA/terraform.tfvars wrapperCode/ScyllaDB_Wrapper_Code/QA/variable.tf .
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
@@ -258,19 +257,19 @@ First time build. Skipping changelog.
 
 [0m[1mInitializing the backend...[0m
 [0m[1mInitializing modules...[0m
-Downloading git::ssh://git@github.com/CodeOps-Hub/Terraform-modules.git?ref=main for redis...
-- redis in .terraform/modules/redis/Modules/VM-Module
+Downloading git::ssh://git@github.com/CodeOps-Hub/Terraform-modules.git?ref=main for scylladb...
+- scylladb in .terraform/modules/scylladb/Modules/VM-Module
 
 [0m[1mInitializing provider plugins...[0m
-- Finding latest version of hashicorp/tls...
 - Finding hashicorp/aws versions matching ">= 5.38.0"...
+- Finding latest version of hashicorp/tls...
 - Finding latest version of hashicorp/local...
 - Installing hashicorp/aws v5.41.0...
 - Installed hashicorp/aws v5.41.0 (signed by HashiCorp)
-- Installing hashicorp/local v2.5.1...
-- Installed hashicorp/local v2.5.1 (signed by HashiCorp)
 - Installing hashicorp/tls v4.0.5...
 - Installed hashicorp/tls v4.0.5 (signed by HashiCorp)
+- Installing hashicorp/local v2.5.1...
+- Installed hashicorp/local v2.5.1 (signed by HashiCorp)
 
 Terraform has created a lock file [1m.terraform.lock.hcl[0m to record the provider
 selections it made above. Include this file in your version control repository
@@ -296,8 +295,8 @@ commands will detect it and remind you to do so if necessary.[0m
 [Pipeline] {
 [Pipeline] sh
 + terraform plan
-[0m[1mmodule.redis.data.aws_ami.ubuntu: Reading...[0m[0m
-[0m[1mmodule.redis.data.aws_ami.ubuntu: Read complete after 1s [id=ami-04491d9c87554d23d][0m
+[0m[1mmodule.scylladb.data.aws_ami.ubuntu: Reading...[0m[0m
+[0m[1mmodule.scylladb.data.aws_ami.ubuntu: Read complete after 1s [id=ami-04491d9c87554d23d][0m
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -305,7 +304,7 @@ plan. Resource actions are indicated with the following symbols:
 
 Terraform will perform the following actions:
 
-[1m  # module.redis.aws_instance.standalone_server[0m will be created
+[1m  # module.scylladb.aws_instance.standalone_server[0m will be created
 [0m  [32m+[0m[0m resource "aws_instance" "standalone_server" {
       [32m+[0m[0m ami                                  = "ami-04491d9c87554d23d"
       [32m+[0m[0m arn                                  = (known after apply)
@@ -327,7 +326,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m instance_type                        = "t2.medium"
       [32m+[0m[0m ipv6_address_count                   = (known after apply)
       [32m+[0m[0m ipv6_addresses                       = (known after apply)
-      [32m+[0m[0m key_name                             = "redisKeyQA.pem"
+      [32m+[0m[0m key_name                             = "scyllaDBKeyQA.pem"
       [32m+[0m[0m monitoring                           = (known after apply)
       [32m+[0m[0m outpost_arn                          = (known after apply)
       [32m+[0m[0m password_data                        = (known after apply)
@@ -344,11 +343,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m spot_instance_request_id             = (known after apply)
       [32m+[0m[0m subnet_id                            = "subnet-0eb88feb4f7ec9f95"
       [32m+[0m[0m tags                                 = {
-          [32m+[0m[0m "Name" = "Redis-Server-QA"
+          [32m+[0m[0m "Name" = "ScyllaDB-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tags_all                             = {
-          [32m+[0m[0m "Name" = "Redis-Server-QA"
+          [32m+[0m[0m "Name" = "ScyllaDB-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tenancy                              = (known after apply)
@@ -358,12 +357,12 @@ Terraform will perform the following actions:
       [32m+[0m[0m vpc_security_group_ids               = (known after apply)
     }
 
-[1m  # module.redis.aws_key_pair.key_pair[0m will be created
+[1m  # module.scylladb.aws_key_pair.key_pair[0m will be created
 [0m  [32m+[0m[0m resource "aws_key_pair" "key_pair" {
       [32m+[0m[0m arn             = (known after apply)
       [32m+[0m[0m fingerprint     = (known after apply)
       [32m+[0m[0m id              = (known after apply)
-      [32m+[0m[0m key_name        = "redisKeyQA.pem"
+      [32m+[0m[0m key_name        = "scyllaDBKeyQA.pem"
       [32m+[0m[0m key_name_prefix = (known after apply)
       [32m+[0m[0m key_pair_id     = (known after apply)
       [32m+[0m[0m key_type        = (known after apply)
@@ -371,10 +370,10 @@ Terraform will perform the following actions:
       [32m+[0m[0m tags_all        = (known after apply)
     }
 
-[1m  # module.redis.aws_security_group.sec_grp[0m will be created
+[1m  # module.scylladb.aws_security_group.sec_grp[0m will be created
 [0m  [32m+[0m[0m resource "aws_security_group" "sec_grp" {
       [32m+[0m[0m arn                    = (known after apply)
-      [32m+[0m[0m description            = "Security group for Redis in Dev Env"
+      [32m+[0m[0m description            = "Security group for ScyllaDB in Dev Env"
       [32m+[0m[0m egress                 = [
           [32m+[0m[0m {
               [32m+[0m[0m cidr_blocks      = [
@@ -421,7 +420,7 @@ Terraform will perform the following actions:
           [32m+[0m[0m {
               [32m+[0m[0m cidr_blocks      = []
               [32m+[0m[0m description      = ""
-              [32m+[0m[0m from_port        = 6379
+              [32m+[0m[0m from_port        = 9042
               [32m+[0m[0m ipv6_cidr_blocks = []
               [32m+[0m[0m prefix_list_ids  = []
               [32m+[0m[0m protocol         = "tcp"
@@ -429,27 +428,27 @@ Terraform will perform the following actions:
                   [32m+[0m[0m "sg-0b1982ff2c211d41a",
                 ]
               [32m+[0m[0m self             = false
-              [32m+[0m[0m to_port          = 6379
+              [32m+[0m[0m to_port          = 9042
             },
         ]
-      [32m+[0m[0m name                   = "redis-qa-sg"
+      [32m+[0m[0m name                   = "scylladb-qa-sg"
       [32m+[0m[0m name_prefix            = (known after apply)
       [32m+[0m[0m owner_id               = (known after apply)
       [32m+[0m[0m revoke_rules_on_delete = false
       [32m+[0m[0m tags                   = {
           [32m+[0m[0m "Enviroment" = "QA"
-          [32m+[0m[0m "Name"       = "redis-qa-sg"
+          [32m+[0m[0m "Name"       = "scylladb-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m tags_all               = {
           [32m+[0m[0m "Enviroment" = "QA"
-          [32m+[0m[0m "Name"       = "redis-qa-sg"
+          [32m+[0m[0m "Name"       = "scylladb-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m vpc_id                 = "vpc-0b4c152fb02b0af32"
     }
 
-[1m  # module.redis.local_file.private_key[0m will be created
+[1m  # module.scylladb.local_file.private_key[0m will be created
 [0m  [32m+[0m[0m resource "local_file" "private_key" {
       [32m+[0m[0m content              = (sensitive value)
       [32m+[0m[0m content_base64sha256 = (known after apply)
@@ -460,11 +459,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m content_sha512       = (known after apply)
       [32m+[0m[0m directory_permission = "0777"
       [32m+[0m[0m file_permission      = "0777"
-      [32m+[0m[0m filename             = "redisKeyQA.pem"
+      [32m+[0m[0m filename             = "scyllaDBKeyQA.pem"
       [32m+[0m[0m id                   = (known after apply)
     }
 
-[1m  # module.redis.tls_private_key.rsa_4096[0m will be created
+[1m  # module.scylladb.tls_private_key.rsa_4096[0m will be created
 [0m  [32m+[0m[0m resource "tls_private_key" "rsa_4096" {
       [32m+[0m[0m algorithm                     = "RSA"
       [32m+[0m[0m ecdsa_curve                   = "P224"
@@ -516,8 +515,8 @@ Stage "Review and Approve Destroy" skipped due to when conditional
 [Pipeline] {
 [Pipeline] sh
 + terraform apply -auto-approve
-[0m[1mmodule.redis.data.aws_ami.ubuntu: Reading...[0m[0m
-[0m[1mmodule.redis.data.aws_ami.ubuntu: Read complete after 1s [id=ami-04491d9c87554d23d][0m
+[0m[1mmodule.scylladb.data.aws_ami.ubuntu: Reading...[0m[0m
+[0m[1mmodule.scylladb.data.aws_ami.ubuntu: Read complete after 1s [id=ami-04491d9c87554d23d][0m
 
 Terraform used the selected providers to generate the following execution
 plan. Resource actions are indicated with the following symbols:
@@ -525,7 +524,7 @@ plan. Resource actions are indicated with the following symbols:
 
 Terraform will perform the following actions:
 
-[1m  # module.redis.aws_instance.standalone_server[0m will be created
+[1m  # module.scylladb.aws_instance.standalone_server[0m will be created
 [0m  [32m+[0m[0m resource "aws_instance" "standalone_server" {
       [32m+[0m[0m ami                                  = "ami-04491d9c87554d23d"
       [32m+[0m[0m arn                                  = (known after apply)
@@ -547,7 +546,7 @@ Terraform will perform the following actions:
       [32m+[0m[0m instance_type                        = "t2.medium"
       [32m+[0m[0m ipv6_address_count                   = (known after apply)
       [32m+[0m[0m ipv6_addresses                       = (known after apply)
-      [32m+[0m[0m key_name                             = "redisKeyQA.pem"
+      [32m+[0m[0m key_name                             = "scyllaDBKeyQA.pem"
       [32m+[0m[0m monitoring                           = (known after apply)
       [32m+[0m[0m outpost_arn                          = (known after apply)
       [32m+[0m[0m password_data                        = (known after apply)
@@ -564,11 +563,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m spot_instance_request_id             = (known after apply)
       [32m+[0m[0m subnet_id                            = "subnet-0eb88feb4f7ec9f95"
       [32m+[0m[0m tags                                 = {
-          [32m+[0m[0m "Name" = "Redis-Server-QA"
+          [32m+[0m[0m "Name" = "ScyllaDB-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tags_all                             = {
-          [32m+[0m[0m "Name" = "Redis-Server-QA"
+          [32m+[0m[0m "Name" = "ScyllaDB-Server-QA"
           [32m+[0m[0m "Type" = "dev"
         }
       [32m+[0m[0m tenancy                              = (known after apply)
@@ -578,12 +577,12 @@ Terraform will perform the following actions:
       [32m+[0m[0m vpc_security_group_ids               = (known after apply)
     }
 
-[1m  # module.redis.aws_key_pair.key_pair[0m will be created
+[1m  # module.scylladb.aws_key_pair.key_pair[0m will be created
 [0m  [32m+[0m[0m resource "aws_key_pair" "key_pair" {
       [32m+[0m[0m arn             = (known after apply)
       [32m+[0m[0m fingerprint     = (known after apply)
       [32m+[0m[0m id              = (known after apply)
-      [32m+[0m[0m key_name        = "redisKeyQA.pem"
+      [32m+[0m[0m key_name        = "scyllaDBKeyQA.pem"
       [32m+[0m[0m key_name_prefix = (known after apply)
       [32m+[0m[0m key_pair_id     = (known after apply)
       [32m+[0m[0m key_type        = (known after apply)
@@ -591,10 +590,10 @@ Terraform will perform the following actions:
       [32m+[0m[0m tags_all        = (known after apply)
     }
 
-[1m  # module.redis.aws_security_group.sec_grp[0m will be created
+[1m  # module.scylladb.aws_security_group.sec_grp[0m will be created
 [0m  [32m+[0m[0m resource "aws_security_group" "sec_grp" {
       [32m+[0m[0m arn                    = (known after apply)
-      [32m+[0m[0m description            = "Security group for Redis in Dev Env"
+      [32m+[0m[0m description            = "Security group for ScyllaDB in Dev Env"
       [32m+[0m[0m egress                 = [
           [32m+[0m[0m {
               [32m+[0m[0m cidr_blocks      = [
@@ -641,7 +640,7 @@ Terraform will perform the following actions:
           [32m+[0m[0m {
               [32m+[0m[0m cidr_blocks      = []
               [32m+[0m[0m description      = ""
-              [32m+[0m[0m from_port        = 6379
+              [32m+[0m[0m from_port        = 9042
               [32m+[0m[0m ipv6_cidr_blocks = []
               [32m+[0m[0m prefix_list_ids  = []
               [32m+[0m[0m protocol         = "tcp"
@@ -649,27 +648,27 @@ Terraform will perform the following actions:
                   [32m+[0m[0m "sg-0b1982ff2c211d41a",
                 ]
               [32m+[0m[0m self             = false
-              [32m+[0m[0m to_port          = 6379
+              [32m+[0m[0m to_port          = 9042
             },
         ]
-      [32m+[0m[0m name                   = "redis-qa-sg"
+      [32m+[0m[0m name                   = "scylladb-qa-sg"
       [32m+[0m[0m name_prefix            = (known after apply)
       [32m+[0m[0m owner_id               = (known after apply)
       [32m+[0m[0m revoke_rules_on_delete = false
       [32m+[0m[0m tags                   = {
           [32m+[0m[0m "Enviroment" = "QA"
-          [32m+[0m[0m "Name"       = "redis-qa-sg"
+          [32m+[0m[0m "Name"       = "scylladb-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m tags_all               = {
           [32m+[0m[0m "Enviroment" = "QA"
-          [32m+[0m[0m "Name"       = "redis-qa-sg"
+          [32m+[0m[0m "Name"       = "scylladb-qa-sg"
           [32m+[0m[0m "Owner"      = "Aakash"
         }
       [32m+[0m[0m vpc_id                 = "vpc-0b4c152fb02b0af32"
     }
 
-[1m  # module.redis.local_file.private_key[0m will be created
+[1m  # module.scylladb.local_file.private_key[0m will be created
 [0m  [32m+[0m[0m resource "local_file" "private_key" {
       [32m+[0m[0m content              = (sensitive value)
       [32m+[0m[0m content_base64sha256 = (known after apply)
@@ -680,11 +679,11 @@ Terraform will perform the following actions:
       [32m+[0m[0m content_sha512       = (known after apply)
       [32m+[0m[0m directory_permission = "0777"
       [32m+[0m[0m file_permission      = "0777"
-      [32m+[0m[0m filename             = "redisKeyQA.pem"
+      [32m+[0m[0m filename             = "scyllaDBKeyQA.pem"
       [32m+[0m[0m id                   = (known after apply)
     }
 
-[1m  # module.redis.tls_private_key.rsa_4096[0m will be created
+[1m  # module.scylladb.tls_private_key.rsa_4096[0m will be created
 [0m  [32m+[0m[0m resource "tls_private_key" "rsa_4096" {
       [32m+[0m[0m algorithm                     = "RSA"
       [32m+[0m[0m ecdsa_curve                   = "P224"
@@ -708,29 +707,29 @@ Changes to Outputs:
   [32m+[0m[0m server_id         = [
       [32m+[0m[0m (known after apply),
     ]
-[0m[1mmodule.redis.tls_private_key.rsa_4096: Creating...[0m[0m
-[0m[1mmodule.redis.aws_security_group.sec_grp: Creating...[0m[0m
-[0m[1mmodule.redis.tls_private_key.rsa_4096: Creation complete after 2s [id=b2be4c01d9610a554a9d2e9955c4a79d4734ac18][0m
-[0m[1mmodule.redis.aws_key_pair.key_pair: Creating...[0m[0m
-[0m[1mmodule.redis.local_file.private_key: Creating...[0m[0m
-[0m[1mmodule.redis.local_file.private_key: Creation complete after 0s [id=98427b2027735006140ef2d87416df8005569e12][0m
-[0m[1mmodule.redis.aws_key_pair.key_pair: Creation complete after 1s [id=redisKeyQA.pem][0m
-[0m[1mmodule.redis.aws_security_group.sec_grp: Creation complete after 5s [id=sg-08c453810355ddefa][0m
-[0m[1mmodule.redis.aws_instance.standalone_server: Creating...[0m[0m
-[0m[1mmodule.redis.aws_instance.standalone_server: Still creating... [10s elapsed][0m[0m
-[0m[1mmodule.redis.aws_instance.standalone_server: Still creating... [20s elapsed][0m[0m
-[0m[1mmodule.redis.aws_instance.standalone_server: Still creating... [30s elapsed][0m[0m
-[0m[1mmodule.redis.aws_instance.standalone_server: Creation complete after 34s [id=i-0f926862bd819a173][0m
+[0m[1mmodule.scylladb.tls_private_key.rsa_4096: Creating...[0m[0m
+[0m[1mmodule.scylladb.aws_security_group.sec_grp: Creating...[0m[0m
+[0m[1mmodule.scylladb.tls_private_key.rsa_4096: Creation complete after 4s [id=378f20befc5794a296e7448a92102fe23bc359c3][0m
+[0m[1mmodule.scylladb.aws_key_pair.key_pair: Creating...[0m[0m
+[0m[1mmodule.scylladb.local_file.private_key: Creating...[0m[0m
+[0m[1mmodule.scylladb.local_file.private_key: Creation complete after 0s [id=665457720c7befe75ee2ffa1d1cec50dfb762710][0m
+[0m[1mmodule.scylladb.aws_key_pair.key_pair: Creation complete after 2s [id=scyllaDBKeyQA.pem][0m
+[0m[1mmodule.scylladb.aws_security_group.sec_grp: Creation complete after 5s [id=sg-051b7ddf418a352e4][0m
+[0m[1mmodule.scylladb.aws_instance.standalone_server: Creating...[0m[0m
+[0m[1mmodule.scylladb.aws_instance.standalone_server: Still creating... [10s elapsed][0m[0m
+[0m[1mmodule.scylladb.aws_instance.standalone_server: Still creating... [20s elapsed][0m[0m
+[0m[1mmodule.scylladb.aws_instance.standalone_server: Still creating... [30s elapsed][0m[0m
+[0m[1mmodule.scylladb.aws_instance.standalone_server: Creation complete after 34s [id=i-0c4e49d66a5278bee][0m
 [0m[1m[32m
 Apply complete! Resources: 5 added, 0 changed, 0 destroyed.
 [0m[0m[1m[32m
 Outputs:
 
 [0mSecurity_Group_ID = [
-  "sg-08c453810355ddefa",
+  "sg-051b7ddf418a352e4",
 ]
 server_id = [
-  "i-0f926862bd819a173",
+  "i-0c4e49d66a5278bee",
 ]
 [Pipeline] }
 [Pipeline] // script
@@ -757,6 +756,7 @@ Archiving artifacts
 [Pipeline] End of Pipeline
 Finished: SUCCESS
 
+
 ```
 </details>
 
@@ -766,18 +766,18 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/78ab5913-60d5-40e0-a4fb-7314f4390250"> 
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/ed30d3e6-8703-412d-acf0-f3bd6f5042d2"> 
 
 ***
 ### ScyllaDB Server
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bb529379-2800-4208-bff4-38b4c5b21231"> 
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5c89a37e-f884-4ed1-9f90-11973d0d2455"> 
 
 ***
 
 ### Key Pair
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5ee3f6fc-651d-4498-857c-9599066742d0">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5cbbca86-1d8a-4648-964f-18d2bd2a98af">
 
 ***
 
@@ -803,4 +803,4 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [**Link**](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/VM-Module.md) | VM Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/QA-Redis.md) | QA Redis Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/QA-ScyllaDB.md) | QA Scylla Wrapper-Code |
