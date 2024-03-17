@@ -54,9 +54,9 @@ settings. The terraform.tfvars file sets default values for variables while acco
 ```shell
 
 module "Dev_Employee" {
-source                              = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"
+source                              ="git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"
 
-----------------------------------Security Group -----------------------------------
+#----------------------------------Security Group -----------------------------------#
 security_name                       = var.Dev_Employee_security_name
 Security_description                = var.Dev_Employee_security_description
 SG_vpc_id                           = var.Dev_Employee_SG_vpc_id
@@ -64,7 +64,7 @@ inbound_ports                       = var.Dev_Employee_inbound_ports
 outbound_ports                      = var.Dev_Employee_outbound_ports
 Sg_tags                             = var.Dev_Employee_Sg_tags
 
---------------------------------Launch Template ----------------------------------
+#--------------------------------Launch Template ----------------------------------#
 private_key_algorithm               = var.Dev_Employee_private_key_algorithm
 private_key_rsa_bits                = var.Dev_Employee_private_key_rsa_bits
 template_name                       = var.Dev_Employee_template_name
@@ -75,25 +75,25 @@ instance_keypair                    = var.Dev_Employee_instance_keypair
 subnet_ID                           = var.Dev_Employee_subnet_ID
 user_data_script_path               = var.Dev_Employee_user_data_script_path
 
----------------------------------- Target Group -----------------------------------
-target_group_name                   = var.Dev_Frontend_target_group_name
-target_group_port                   = var.Dev_Frontend_target_group_port
-target_group_protocol               = var.Dev_Frontend_target_group_protocol
-TG_vpc_id                           = var.Dev_Frontend_TG_vpc_id
-health_check_path                   = var.Dev_Frontend_health_check_path
-health_check_port                   = var.Dev_Frontend_health_check_port
-health_check_interval               = var.Dev_Frontend_health_check_interval
-health_check_timeout                = var.Dev_Frontend_health_check_timeout
-health_check_healthy_threshold      = var.Dev_Frontend_health_check_healthy_threshold
-health_check_unhealthy_threshold    = var.Dev_Frontend_health_check_unhealthy_threshold
+#---------------------------------- Target Group -----------------------------------#
+target_group_name                   = var.Dev_Employee_target_group_name
+target_group_port                   = var.Dev_Employee_target_group_port
+target_group_protocol               = var.Dev_Employee_target_group_protocol
+TG_vpc_id                           = var.Dev_Employee_TG_vpc_id
+health_check_path                   = var.Dev_Employee_health_check_path
+health_check_port                   = var.Dev_Employee_health_check_port
+health_check_interval               = var.Dev_Employee_health_check_interval
+health_check_timeout                = var.Dev_Employee_health_check_timeout
+health_check_healthy_threshold      = var.Dev_Employee_health_check_healthy_threshold
+health_check_unhealthy_threshold    = var.Dev_Employee_health_check_unhealthy_threshold
 
--------------------------------- Listener rule of ALB ------------------------------
+#-------------------------------- Listener rule of ALB ------------------------------#
 listener_arn                         = var.Dev_Employee_listener_arn
 path_pattern                         = var.Dev_Employee_path_pattern
 action_type                          = var.Dev_Employee_action_type
 priority                             = var.Dev_Employee_priority
 
----------------------------Configure Auto Scaling group ----------------------------
+#---------------------------Configure Auto Scaling group ----------------------------#
 autoscaling_group_name              = var.Dev_Employee_autoscaling_group_name
 ASG_version                         = var.Dev_Employee_ASG_vserion
 subnet_ids                          = var.Dev_Employee_subnet_ids
@@ -104,7 +104,7 @@ min_size                            = var.Dev_Employee_min_size
 max_size                            = var.Dev_Employee_max_size
 desired_capacity                    = var.Dev_Employee_desired_capacity
 
------------------------------ Auto Scaling Policies --------------------------------
+#----------------------------- Auto Scaling Policies --------------------------------#
 scaling_policy_name                 = var.Dev_Employee_scaling_policy_name
 policy_type                         = var.Dev_Employee_policy_type
 predefined_metric_type              = var.Dev_Employee_predefined_metric_type
@@ -123,14 +123,14 @@ target_value                        = var.Dev_Employee_target_value
 <br>
 
 ```shell
-----------------------------------Security Group -----------------------------------
+#----------------------------------Security Group -----------------------------------#
 
 variable "Dev_Employee_security_name" {
   description     = "Name tag for the security group"
   type            = string
   default         = "Dev-Employee-sg"
 }
-variable "Dev_Frontend_security_description" {
+variable "Dev_Employee_security_description" {
   description     = "Description for the security group"
   type            = string
   default         = "Security group for Dev-Employee-API"
@@ -138,15 +138,15 @@ variable "Dev_Frontend_security_description" {
 variable "Dev_Employee_SG_vpc_id" {
   description     = "ID of the VPC for instances"
   type            = string
-  default         = "vpc-0383f4dc3af051efa"   # Dev_Employee-VPC ID
+  default         = "vpc-037273df63a16de65"   # Dev_Employee-VPC ID
 }
 variable "Dev_Employee_inbound_ports" {
   description     = "List of inbound ports and protocols and cidr block"
   type            = list(map(any))
   default         = [
     { port = 22, protocol = "tcp",cidr_blocks = "20.0.0.0/28" }, # Management VPC Cidr Block
-    { port = 22, protocol = "tcp", security_group_ids = "sg-0f470a22a92136557" },    # OpenVPN-SG
-    { port = 8080, protocol = "tcp", security_group_ids = "sg-0b426399b2b19b0ae" }, #  Dev-Employee-lb-sg ID 
+    { port = 22, protocol = "tcp", security_group_ids = "sg-04b7eb5f6320a1aa6" },    # OpenVPN-SG
+    { port = 8080, protocol = "tcp", security_group_ids = "sg-04b7eb5f6320a1aa6" }, #  Dev-Employee-lb-sg ID 
   ]
 }
 variable "Dev_Employee_outbound_ports" {
@@ -166,7 +166,7 @@ variable "Dev_Employee_Sg_tags" {
   }
 }
 
----------------------------------Launch Template -----------------------------------
+#---------------------------------Launch Template -----------------------------------#
 
 # Key Generate
 
@@ -189,17 +189,17 @@ variable "Dev_Employee_template_name" {
 variable "Dev_Employee_template_description" {
   description     = "Launch Template Description"
   type            = string
-  default         = "Template for Dev-Frontend"  
+  default         = "Template for Dev-Employee"  
 }
 variable "Dev_Employee_AMI_ID" {
   description     = "Instance AMI ID"
   type            = string
-  default         = "ami-0c335502f397b30c6" # Dev-Employee Setup AMI ID
+  default         = "ami-08e4b984abde34a4f" # Dev-Employee Setup AMI ID
 }
 variable "Dev_Employee_instance_type" {
   description     = "Launch Template Instance Type"
   type            = string
-  default         = "t2.micro"  
+  default         = "t2.medium"  
 }
 variable "Dev_Employee_instance_keypair" {
   description     = "Launch Template Instance Type keypair name"
@@ -209,7 +209,7 @@ variable "Dev_Employee_instance_keypair" {
 variable "Dev_Employee_subnet_ID" {
   description     = "Launch Template Subnet ID"
   type            = string
-  default         = "subnet-04c0c823118f48202"  
+  default         = "subnet-0abcfc7a31b6687b4"  
 }
 variable "Dev_Employee_user_data_script_path" {
   description = "Path to the user data script file"
@@ -217,7 +217,7 @@ variable "Dev_Employee_user_data_script_path" {
   default     = "./script.sh"  # Path Dev-Employee User data Script
 }
 
----------------------------------- Target Group ------------------------------------
+#---------------------------------- Target Group ------------------------------------#
 
 variable "Dev_Employee_target_group_name" {
   description     = "Name of the target group"
@@ -237,7 +237,7 @@ variable "Dev_Employee_target_group_protocol" {
 variable "Dev_Employee_TG_vpc_id" {
   description     = "ID of the VPC"
   type            = string
-  default         = "vpc-0383f4dc3af051efa"    #  Dev_Employee-VPC ID 
+  default         = "vpc-037273df63a16de65"    #  Dev_Employee-VPC ID 
 }
 variable "Dev_Employee_health_check_path" {
   description     = "The destination for the health check request"
@@ -270,7 +270,7 @@ variable "Dev_Employee_health_check_unhealthy_threshold" {
   default         = 2
 }
 
--------------------------------- Listener rule of ALB ------------------------------
+#-------------------------------- Listener rule of ALB ------------------------------#
 
 variable "Dev_Employee_listener_arn" {
   description       = "ARN of the existing listener where the rule will be added"
@@ -293,7 +293,7 @@ variable "Dev_Employee_priority" {
   default           = 100 
 }
 
----------------------------Configure Auto Scaling group ----------------------------
+#---------------------------Configure Auto Scaling group ----------------------------#
 
 variable "Dev_Employee_autoscaling_group_name" {
   description     = "The name of the Auto Scaling Group"
@@ -327,7 +327,7 @@ variable "Dev_Employee_desired_capacity" {
 variable "Dev_Employee_subnet_ids" {
   description     = "The list of subnet IDs where the instances will be launched"
   type            = list(string)
-  default         = [ "subnet-04c0c823118f48202" ]    #Employee-Pvt-Subnet ID
+  default         = [ "subnet-0abcfc7a31b6687b4" ]    #Employee-Pvt-Subnet ID
 }
 
 variable "Dev_Employee_tag_key" {
@@ -348,7 +348,7 @@ variable "Dev_Employee_propagate_at_launch" {
   default         = true
 }
 
------------------------------ Auto Scaling Policies --------------------------------
+#----------------------------- Auto Scaling Policies --------------------------------#
 
 variable "Dev_Employee_scaling_policy_name" {
   description     = "The name of the scaling policy"
@@ -370,7 +370,6 @@ variable "Dev_Employee_target_value" {
   type            = number
   default         = 50.0
 }
-
 ```
 </details>
 
@@ -383,15 +382,15 @@ variable "Dev_Employee_target_value" {
 <br>
 
 ```shell
-----------------------------------Security Group -----------------------------------
+#----------------------------------Security Group -----------------------------------#
 
 Dev_Employee_security_name                       = "Dev-Employee-sg"
 Dev_Employee_security_description                = "Security group for Dev-Employee-API"
-Dev_Employee_SG_vpc_id                           = "vpc-00631f1bf6539cb88"    #Dev_Employee-VPC-ID
+Dev_Employee_SG_vpc_id                           = "vpc-037273df63a16de65"    #Dev_Employee-VPC-ID
 Dev_Employee_inbound_ports                       = [
   { port                                = 22, protocol = "tcp", cidr_blocks = "20.0.0.0/28" },                     # Management VPC Cidr Block
-  { port                                = 22, protocol = "tcp", security_group_ids = "sg-00a65bcd92abcee70" },     #  Dev-Employee-lb-sg ID
-  { port                                = 8080, protocol = "tcp", security_group_ids = "sg-0d2e3609a8b620d52" },   # OpenVPN-SG
+  { port                                = 22, protocol = "tcp", security_group_ids = "sg-04b7eb5f6320a1aa6" },     #  Dev-Employee-lb-sg ID
+  { port                                = 8080, protocol = "tcp", security_group_ids = "sg-04b7eb5f6320a1aa6" },   # OpenVPN-SG
 ]
 Dev_Employee_outbound_ports                      = [
   { port                                = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0" }
@@ -402,24 +401,24 @@ Dev_Employee_Sg_tags                             = {
   Owner                                 = "Employee"
 }
 
----------------------------------Launch Template -----------------------------------
+#---------------------------------Launch Template -----------------------------------#
 
 Dev_Employee_private_key_algorithm               = "RSA"
 Dev_Employee_private_key_rsa_bits                = 4096
 Dev_Employee_template_name                       = "Dev-Employee-template"
 Dev_Employee_template_description                = "Template for Dev-Employee"
-Dev_Employee_AMI_ID                              = "ami-0b8b44ec9a8f90422"
+Dev_Employee_AMI_ID                              = "ami-08e4b984abde34a4f"
 Dev_Employee_instance_type                       = "t2.medium"
 Dev_Employee_instance_keypair                    = "Dev_Employee_Key"
-Dev_Employee_subnet_ID                           = "subnet-03e34296260c1c84d"
+Dev_Employee_subnet_ID                           = "subnet-0abcfc7a31b6687b4"
 Dev_Employee_user_data_script_path               = "./script.sh"
 
----------------------------------- Target Group ------------------------------------
+#---------------------------------- Target Group ------------------------------------#
 
 Dev_Employee_target_group_name                   = "Dev-Employee-TG"
 Dev_Employee_target_group_port                   = 8080
 Dev_Employee_target_group_protocol               = "HTTP"
-Dev_Employee_TG_vpc_id                           = "vpc-00631f1bf6539cb88"   #Dev_Employee-VPC-ID
+Dev_Employee_TG_vpc_id                           = "vpc-037273df63a16de65"   #Dev_Employee-VPC-ID
 Dev_Employee_health_check_path                   = "/health"
 Dev_Employee_health_check_port                   = "traffic-port"
 Dev_Employee_health_check_interval               = 30
@@ -427,32 +426,31 @@ Dev_Employee_health_check_timeout                = 5
 Dev_Employee_health_check_healthy_threshold      = 2
 Dev_Employee_health_check_unhealthy_threshold    = 2
 
--------------------------------- Listener rule of ALB ------------------------------
+#-------------------------------- Listener rule of ALB ------------------------------#
 
-Dev_Employee_listener_arn                          = "arn:aws:elasticloadbalancing:us-east-2:975050171850:listener/app/alb/78ba193068ecdac7/e91f6155c19050d5"
+Dev_Employee_listener_arn                          = "arn:aws:elasticloadbalancing:ap-southeast-1:441247711986:listener/app/Dev-Employee/c13ae07d35f81b0c/1af6e0a2492db2a9"
 Dev_Employee_path_pattern                          = "/api/v1/employee/*"
 Dev_Employee_action_type                           = "forward"
 Dev_Employee_priority                              = 100
 
----------------------------Configure Auto Scaling group ----------------------------
+#---------------------------Configure Auto Scaling group ----------------------------#
 
 Dev_Employee_autoscaling_group_name              = "Dev-Employee_ASG"
 Dev_Employee_ASG_vserion                         = "$Latest"
 Dev_Employee_min_size                            = 1
 Dev_Employee_max_size                            = 2
 Dev_Employee_desired_capacity                    = 1
-Dev_Employee_subnet_ids                          = ["subnet-03e34296260c1c84d"]   #Dev-Employee Pvt ID
+Dev_Employee_subnet_ids                          = ["subnet-0abcfc7a31b6687b4"]   #Dev-Employee Pvt ID
 Dev_Employee_tag_key                             = "Name"
 Dev_Employee_tag_value                           = "Dev-Employee_ASG"
 Dev_Employee_propagate_at_launch                 = true
 
------------------------------ Auto Scaling Policies --------------------------------
+#----------------------------- Auto Scaling Policies --------------------------------#
 
 Dev_Employee_scaling_policy_name                 = "target-tracking-policy"
 Dev_Employee_policy_type                         = "TargetTrackingScaling"
 Dev_Employee_predefined_metric_type              = "ASGAverageCPUUtilization"
 Dev_Employee_target_value                        = 50.0
-
 ```
 </details>
 
@@ -465,13 +463,13 @@ Dev_Employee_target_value                        = 50.0
 <br>
 
 ```shell
-----------------------------------Security Group -----------------------------------
+#----------------------------------Security Group -----------------------------------#
 
 output "Security_Group_ID" {
   value = [module.Dev_Employee.Security_Group_ID]
 }
 
----------------------------------Launch Template -----------------------------------
+#---------------------------------Launch Template -----------------------------------#
 
 # Priavte Key
 output "key_pair_name" {
@@ -482,19 +480,19 @@ output "key_pair_name" {
 output "launch_template_id" {
   value = [module.Dev_Employee.launch_template_id]
 }
----------------------------------- Target Group ------------------------------------
+#---------------------------------- Target Group ------------------------------------#
 
 output "Target_group_id" {
   value = [module.Dev_Employee.Target_group_id]
 }
 
----------------------------Configure Auto Scaling group ----------------------------
+#---------------------------Configure Auto Scaling group ----------------------------#
 
 output "Autoscaling_group_id" {
   value = [module.Dev_Employee.Autoscaling_group_id]
 }
 
------------------------------ Auto Scaling Policies --------------------------------
+#----------------------------- Auto Scaling Policies --------------------------------#
 
 output "Autoscaling_policy_name" {
   value       = [module.Dev_Employee.Autoscaling_policy_name]
@@ -523,10 +521,8 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-2"  
+  region = "ap-southeast-1"  
 } 
-
-
 ```
 </details>
 
@@ -539,9 +535,13 @@ provider "aws" {
 <br>
 
 ```shell
-
- #!/bin/bash  
- java -jar Employee-API/target/Employee-0.1.0-RELEASE.jar
+#!/bin/bash
+cd employee-api/
+make build
+go test $(go list ./... | grep -v docs | grep -v model | grep -v main.go) -coverprofile cover.out
+go tool cover -html=cover.out
+make run-migrations
+./employee-api
 ```
 </details>
 
@@ -583,7 +583,7 @@ provider "aws" {
 | **Dev_Employee_health_check_timeout**    | The amount of time, in seconds, during which no response means a failed health check | `number` | `5`                          |
 | **Dev_Employee_health_check_healthy_threshold** | The number of consecutive health checks successes required before considering an unhealthy target healthy | `number` | `2`   |
 | **Dev_Employee_health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2` |
-| **Dev_Employee_listener_arn**            | ARN of the existing listener where the rule will be added | `string`      | `arn:aws:elasticloadbalancing:us-east-2:975050171850:listener/app/alb/78ba193068ecdac7/e91f6155c19050d5` |
+| **Dev_Employee_listener_arn**            | ARN of the existing listener where the rule will be added | `string`      | `arn:aws:elasticloadbalancing:ap-southeast-1:441247711986:listener/app/Dev-Employee/c13ae07d35f81b0c/1af6e0a2492db2a9` |
 | **Dev_Employee_path_pattern**            | Path pattern for the listener rule                       | `string`      | `/api/v1/Employee/*`                            |
 | **Dev_Employee_action_type**             | Path pattern for the listener rule                        | `string`      | `forward`                     |
 | **Dev_Employee_priority**                | priority                                                  | `number`      | `100`                         |
@@ -615,24 +615,29 @@ provider "aws" {
 ***
 
 # Terminal Output
+![Screenshot 2024-03-17 at 7 07 12 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/effc826d-99ab-4148-be49-42b000d6fe25)
 
 ***
 
 # Console Output
 
 ### Security Group
+![Screenshot 2024-03-17 at 7 09 22 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/0bc10ec3-56fd-4c4f-98f7-1e53563abe83)
 
 ***
 
 ### Launch Template
+![Screenshot 2024-03-17 at 7 10 49 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/4256eaf6-6e5c-40c3-b31c-8cc96d75241f)
 
 ***
 
 ### Listener Rule of ALB
+![Screenshot 2024-03-17 at 7 15 40 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/f6241515-b374-40ee-9959-d8e082508af2)
 
 ***
 
 ### ASG Policies
+![Screenshot 2024-03-17 at 7 17 14 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/44715c37-3d9f-4704-96bc-944de55546a1)
 
 ***
 
