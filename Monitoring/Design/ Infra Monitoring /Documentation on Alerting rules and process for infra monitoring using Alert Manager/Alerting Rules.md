@@ -9,9 +9,12 @@
 
 ## Table of Contents 
 
-+ [Introduction](#Introduction)
-+ [Components of Alerting Rules](#Components-of-Alerting-Rules)
-+ [Some Common Alert Rules for App](#Some-Common-Alert-Rules-for-App)
++ [Introduction to Alerting Rules and Process with Alert Manager](#Introduction-to-Alerting-Rules-and-Process-with-Alert-Manager)
++ [Alerting Rules](#Alerting-Rules)
++ [Process for Infrastructure Monitoring with Alert Manager:](#Process-for-Infrastructure-Monitoring-with-Alert-Manager:)
++ [Alerting Rules](#Alerting-Rules)
++ [Flow Diagram](#Flow-Diagram)
++ [Alerting Rules for Infrastructure Monitoring](#Alerting-Rules-for-Infrastructure-Monitoring)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
 + [Best Practices](#Best-Practices)
@@ -25,7 +28,7 @@
 Alert Manager is a powerful open-source alerting tool that integrates seamlessly with monitoring systems like Prometheus to facilitate effective infrastructure monitoring. Alerting rules in Alert Manager define conditions for triggering alerts based on metrics collected from monitored targets. This introduction provides an overview of alerting rules and the process for infrastructure monitoring using Alert Manager.
 
 ***
-## Alerting Rules:
+## Alerting Rules
 
 Alerting rules in Alert Manager follow a simple yet powerful syntax for defining conditions and thresholds that, when met, generate alerts. These rules typically include:
 
@@ -36,7 +39,7 @@ Alerting rules in Alert Manager follow a simple yet powerful syntax for defining
 - **Labels and Annotations**: Labels provide metadata to categorize alerts, while annotations offer additional context and information about the alert, such as timestamps, severity levels, or affected components.
 
 ***
-## Process for Infrastructure Monitoring with Alert Manager:
+## Process for Infrastructure Monitoring with Alert Manager
 
 1. **Define Alerting Rules**: Begin by defining alerting rules in Alert Manager configuration files. These rules specify the conditions and thresholds for triggering alerts based on the metrics collected by Prometheus.
 
