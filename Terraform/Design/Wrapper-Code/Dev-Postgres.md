@@ -267,7 +267,7 @@ inbound-ports = [ {
 
 ***
 
-### EC2 Instance (ScyllaDB-Server-QA)
+### EC2 Instance (Postgres-Dev)
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/91dfcc27-0894-43f9-98c1-05fe2a63a0d7)
 
@@ -291,7 +291,7 @@ inbound-ports = [ {
 
 # Conclusion
 
-Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments.The Postgres wrapper code makes it easier to set up and manage Postgres by simplifying complex tasks into easy steps. It helps improve security and makes it simpler to expand and maintain the VPN. With this wrapper, you can easily connect Postgres with your existing systems and automate tasks, making it faster to deploy and monitor your VPN across different setups.
+Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments. It helps improve security and makes it simpler to expand and maintain the VPN. With this wrapper, you can easily connect Postgres with your existing systems and automate tasks, making it faster to deploy and monitor your VPN across different setups.
 
 ***
 
@@ -309,4 +309,3 @@ Terraform wrapper code enhances the capabilities of Terraform by automating task
 | ---------- | --------------- |
 | [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [Link](https://medium.com/@brandon.wagner/a-wrapper-for-terraform-61a125b27ffc) | Terraform Wrapper Code Concept. |
-| [Link
