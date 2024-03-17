@@ -140,8 +140,8 @@ target_value                        = var.Dev_Salary_target_value
 ```
 </details>
 ***
-### variables.tf
 
+### variables.tf
 <details>
 <summary><strong>Click here to see variables.tf file</strong></summary>
 <br>
