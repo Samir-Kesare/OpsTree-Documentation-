@@ -32,7 +32,7 @@
 
  ## Introduction
 
-In this document it will guide through the steps to achieve the setup of wrapper code for Autoscaling module which involves the child modules.According to the value passed through the root module/wrapper code we can manage/build the infra structure setup accordingly. Which involves the managing of different terraform state files for managing respective environments.
+This document provides a step-by-step guide for setting up wrapper code for an Attendance API, including the configuration files. Depending on the parameters passed through the wrapper code, we can dynamically adjust the infrastructure setup. This includes managing separate Terraform state files for each environment to effectively handle their respective configurations.
 
 ***
 
@@ -41,7 +41,7 @@ In this document it will guide through the steps to achieve the setup of wrapper
 | Feature                | Description                    |
 |------------------------|---------------------------------------------------------------------------------------------------------------------|
 | **Automation**      | Automates repetitive tasks like initialization, applying changes, and destroying resources, saving time and effort.|
-| **Enhanced Functionality** | Extends Terraform's capabilities by integrating with other tools, implementing custom logic, or enforcing specific workflows.|
+| **Environment managementy** | It facilitates environment-specific configuration management by utilizing separate Terraform state files for different environments, such as development, staging, and production.|
 | **Standardization**        | Enforces standardized practices across Terraform projects, ensuring consistency and reducing the risk of errors.|
 | **Integration**            | Facilitates integration with CI/CD pipelines, version control systems, and infrastructure management platforms for seamless deployment. |
 
@@ -640,7 +640,7 @@ gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
 <img width="1076" alt="Screenshot 2024-03-17 at 4 22 27 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a609687b-262e-46a6-8d58-6217bb01f9a4">
 
 ***
-### Listner Rule 
+### Listener Rule 
 
 <img width="1070" alt="Screenshot 2024-03-17 at 4 23 25 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a44288c1-3ca8-41e0-ac51-213691a958ea">
 
@@ -662,7 +662,6 @@ gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
 | **Modularity**         | Design wrapper scripts in a modular way, with separate functions for each Terraform command or task.                                          |
 | **Error Handling**     | Implement robust error handling mechanisms to gracefully handle failures and provide informative error messages.                             |
-| **Logging**            | Include logging functionality to capture relevant information and debug issues during Terraform execution.                                    |
 | **Version Control**    | Store wrapper scripts alongside Terraform configurations in version control repositories for versioning, collaboration, and auditability.  |
 | **Documentation**      | Provide comprehensive documentation for wrapper scripts, including usage instructions, dependencies, and troubleshooting tips.               |
 | **Security**           | Follow security best practices to protect sensitive information such as credentials and API keys used by wrapper scripts.                   |
@@ -672,7 +671,9 @@ gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
 
 # Conclusion
 
-Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments.The OpenVPN wrapper code makes it easier to set up and manage OpenVPN by simplifying complex tasks into easy steps. It helps improve security and makes it simpler to expand and maintain the VPN. With this wrapper, you can easily connect OpenVPN with your existing systems and automate tasks, making it faster to deploy and monitor your VPN across different setups.
+In conclusion, the wrapper code serves as a crucial layer of organising and managing Terraform configurations. By encapsulating complex infrastructure setups and providing additional functionality such as environment management, parameterization, and error handling, wrapper code enhances the maintainability, and reliability of infrastructure deployments.
+
+By leveraging wrapper code effectively, organizations can streamline their deployment processes, mitigate risks, and adapt to evolving requirements with ease.
 
 ***
 
