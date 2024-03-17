@@ -12,7 +12,6 @@
 + [Introduction to Alerting Rules and Process with Alert Manager](#Introduction-to-Alerting-Rules-and-Process-with-Alert-Manager)
 + [Alerting Rules](#Alerting-Rules)
 + [Process for Infrastructure Monitoring with Alert Manager](#Process-for-Infrastructure-Monitoring-with-Alert-Manager)
-+ [Alerting Rules](#Alerting-Rules)
 + [Flow Diagram](#Flow-Diagram)
 + [Alerting Rules for Infrastructure Monitoring](#Alerting-Rules-for-Infrastructure-Monitoring)
 + [Advantages](#Advantages)
