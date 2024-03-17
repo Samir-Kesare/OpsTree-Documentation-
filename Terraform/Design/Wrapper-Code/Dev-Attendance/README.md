@@ -63,9 +63,16 @@ In this document it will guide through the steps to achieve the setup of wrapper
 
 ***
 
-## Directory Structure
+# Directory Structure
 
-<img width="242" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/13a20fce-0900-4467-ab59-a24772f89a56">
+**Module**
+
+<img width="388" alt="Screenshot 2024-03-17 at 4 10 14 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/865c5f99-c984-47d6-80d0-5c3aa2884be8">
+
+
+**Wrapper Code**
+
+<img width="429" alt="Screenshot 2024-03-17 at 4 06 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1ded4f38-ae50-4e25-8143-15b1c5f23060">
 
 ***
 
