@@ -34,6 +34,7 @@ This process includes handling various Terraform state files to manage different
 ***
 
 # Directory Structure
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/9308025a-2c08-44da-b08e-a7c465e1635f)
 
 ***
 
