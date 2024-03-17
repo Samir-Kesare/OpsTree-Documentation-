@@ -31,6 +31,9 @@ This process includes handling various Terraform state files to manage different
 
 # Flow Diagram
 
+<img src="https://devopscube.com/wp-content/uploads/2023/08/alb-asg-workflow.gif" width="700">
+
+
 ***
 
 # Directory Structure
