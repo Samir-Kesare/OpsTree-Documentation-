@@ -560,7 +560,7 @@ make run-migrations
 | -------------------------------------- | -------------------------------------------------------- | --------------- | ------------------------------ |
 | **Dev_Employee_security_name**           | Name tag for the security group                          | `string`        | `Dev-Employee-sg`               |
 | **Dev_Employee_security_description**    | Description for the security group                       | `string`        | `Security group for Dev-Employee-API` |
-| **Dev_Employee_SG_vpc_id**               | ID of the VPC for instances                              | `string`        | `vpc-vpc-00631f1bf6539cb88`       |
+| **Dev_Employee_SG_vpc_id**               | ID of the VPC for instances                              | `string`        | `vpc-037273df63a16de65`       |
 | **Dev_Employee_inbound_ports**           | List of inbound ports and protocols and cidr block       | `list(map(any))` | See default values |
 | **Dev_Employee_outbound_ports**          | List of outbound ports and protocols and Cidr block      | `list(map(any))` | See default values |
 | **Dev_Employee_Sg_tags**                 | Tags for Security Group                                  | `map(string)`   | See default values |
@@ -568,15 +568,15 @@ make run-migrations
 | **Dev_Employee_private_key_rsa_bits**    | private_key_rsa_bits                                     | `number`        | `4096`                         |
 | **Dev_Employee_template_name**           | Launch Template Name                                     | `string`        | `Dev-Employee-template`        |
 | **Dev_Employee_template_description**    | Launch Template Description                              | `string`        | `Template for Dev-Employee`    |
-| **Dev_Employee_AMI_ID**                  | Instance AMI ID                                          | `string`        | `ami-0b8b44ec9a8f90422`       |
-| **Dev_Employee_instance_type**           | Launch Template Instance Type                            | `string`        | `t2.micro`                     |
+| **Dev_Employee_AMI_ID**                  | Instance AMI ID                                          | `string`        | `ami-08e4b984abde34a4f`       |
+| **Dev_Employee_instance_type**           | Launch Template Instance Type                            | `string`        | `t2.medium`                     |
 | **Dev_Employee_instance_keypair**        | Launch Template Instance Type keypair name               | `string`        | `Dev_Employee_Key`                      |
-| **Dev_Employee_subnet_ID**               | Launch Template Subnet ID                                | `string`        | `subnet-03e34296260c1c84d`    |
+| **Dev_Employee_subnet_ID**               | Launch Template Subnet ID                                | `string`        | `subnet-0abcfc7a31b6687b4`    |
 | **Dev_Employee_user_data_script_path**   | Path to the user data script file                        | `string`        | `./script.sh`                  |
 | **Dev_Employee_target_group_name**       | Name of the target group                                 | `string`        | `Dev-Employee-TG`              |
 | **Dev_Employee_target_group_port**       | Port for the target group                                | `number`        | `8080`                         |
 | **Dev_Employee_target_group_protocol**   | Protocol for the target group                            | `string`        | `HTTP`                         |
-| **Dev_Employee_TG_vpc_id**               | ID of the VPC                                             | `string`        | `vpc-00631f1bf6539cb88`       |
+| **Dev_Employee_TG_vpc_id**               | ID of the VPC                                             | `string`        | `vpc-037273df63a16de65`       |
 | **Dev_Employee_health_check_path**       | The destination for the health check request             | `string`        | `/health`                      |
 | **Dev_Employee_health_check_port**       | The port to use to connect with the target for health checking | `string`    | `traffic-port`                 |
 | **Dev_Employee_health_check_interval**   | The approximate amount of time, in seconds, between health checks of an individual target | `number` | `30`          |
