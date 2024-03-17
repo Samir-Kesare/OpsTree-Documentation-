@@ -157,5 +157,4 @@ In summary, performance metrics are essential for ensuring the smooth operation 
 | --------------------------------------------  | -------------------------------------------------|
 | What is Performance Metrics and Infra Monitoring | https://www.dynatrace.com/news/blog/what-is-infrastructure-monitoring-2/ |
 | Performance Metrics | https://www.site24x7.com/help/internet-service-metrics/rest-api.html |
-| Tools | http://www.datadog.io/ |
 | Tools | https://prometheus.io/ |
