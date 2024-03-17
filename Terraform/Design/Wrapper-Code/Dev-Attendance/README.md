@@ -85,61 +85,67 @@ In this document it will guide through the steps to achieve the setup of wrapper
 <br>
 
 ```shell
-module "Dev_Salary" {
-source                              = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"#---------------------------------Security Group ----------------------------------#
-security_name                       = var.Dev_Salary_security_name
-Security_description                = var.Dev_Salary_security_description
-SG_vpc_id                           = var.Dev_Salary_SG_vpc_id
-inbound_ports                       = var.Dev_Salary_inbound_ports
-outbound_ports                      = var.Dev_Salary_outbound_ports
-Sg_tags                             = var.Dev_Salary_Sg_tags
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+
+#---------------------------------Security Group ----------------------------------#
+module "Dev_Attendance" {
+source                              = "git@github.com:CodeOps-Hub/Terraform-modules.git//Modules/Auto_Sacling_Module?ref=main"
+security_name                       = var.security_name
+Security_description                = var.security_description
+SG_vpc_id                           = var.vpc_id
+inbound_ports                       = var.inbound_ports
+outbound_ports                      = var.outbound_ports
+Sg_tags                             = var.Sg_tags
+
+
 #--------------------------------Launch Template ----------------------------------
-private_key_algorithm               = var.Dev_Salary_private_key_algorithm
-private_key_rsa_bits                = var.Dev_Salary_private_key_rsa_bits
-template_name                       = var.Dev_Salary_template_name
-template_description                = var.Dev_Salary_template_description
-AMI_ID                              = var.Dev_Salary_AMI_ID
-instance_type                       = var.Dev_Salary_instance_type
-instance_keypair                    = var.Dev_Salary_instance_keypair
-subnet_ID                           = var.Dev_Salary_subnet_ID
-user_data_script_path               = var.Dev_Salary_user_data_script_path
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+private_key_algorithm               = var.private_key_algorithm
+private_key_rsa_bits                = var.private_key_rsa_bits
+template_name                       = var.template_name
+template_description                = var.template_description
+AMI_ID                              = var.AMI_ID
+instance_type                       = var.instance_type
+instance_keypair                    = var.instance_keypair
+subnet_ID                           = var.subnet_ID
+user_data_script_path               = var.user_data_script_path
+
+
 #--------------------------------- Target Group -----------------------------------#
-target_group_name                   = var.Dev_Salary_target_group_name
-target_group_port                   = var.Dev_Salary_target_group_port
-target_group_protocol               = var.Dev_Salary_target_group_protocol
-TG_vpc_id                           = var.Dev_Salary_TG_vpc_id
-health_check_path                   = var.Dev_Salary_health_check_path
-health_check_port                   = var.Dev_Salary_health_check_port
-health_check_interval               = var.Dev_Salary_health_check_interval
-health_check_timeout                = var.Dev_Salary_health_check_timeout
-health_check_healthy_threshold      = var.Dev_Salary_health_check_healthy_threshold
-health_check_unhealthy_threshold    = var.Dev_Salary_health_check_unhealthy_threshold
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+target_group_name                   = var.target_group_name
+target_group_port                   = var.target_group_port
+target_group_protocol               = var.target_group_protocol
+TG_vpc_id                           = var.TG_vpc_id
+health_check_path                   = var.health_check_path
+health_check_port                   = var.health_check_port
+health_check_interval               = var.health_check_interval
+health_check_timeout                = var.health_check_timeout
+health_check_healthy_threshold      = var.health_check_healthy_threshold
+health_check_unhealthy_threshold    = var.health_check_unhealthy_threshold
+
+
 #------------------------------- Listener rule of ALB -----------------------------#
-listener_arn                         = var.Dev_Salary_listener_arn
-path_pattern                         = var.Dev_Salary_path_pattern
-action_type                          = var.Dev_Salary_action_type
-priority                             = var.Dev_Salary_priority
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+listener_arn                         = var.listener_arn
+path_pattern                         = var.path_pattern
+action_type                          = var.action_type
+priority                             = var.priority
+
+
 #--------------------------Configure Auto Scaling group ---------------------------#
-autoscaling_group_name              = var.Dev_Salary_autoscaling_group_name
-ASG_version                         = var.Dev_Salary_ASG_vserion
-subnet_ids                          = var.Dev_Salary_subnet_ids
-tag_key                             = var.Dev_Salary_tag_key
-tag_value                           = var.Dev_Salary_tag_value
-propagate_at_launch                 = var.Dev_Salary_propagate_at_launch
-min_size                            = var.Dev_Salary_min_size
-max_size                            = var.Dev_Salary_max_size
-desired_capacity                    = var.Dev_Salary_desired_capacity
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+autoscaling_group_name              = var.autoscaling_group_name
+ASG_version                         = var.ASG_version
+subnet_ids                          = var.subnet_ids
+tag_key                             = var.tag_key
+tag_value                           = var.tag_value
+propagate_at_launch                 = var.propagate_at_launch
+min_size                            = var.min_size
+max_size                            = var.max_size
+desired_capacity                    = var.desired_capacity
+
+
 #---------------------------- Auto Scaling Policies -------------------------------#
-scaling_policy_name                 = var.Dev_Salary_scaling_policy_name
-policy_type                         = var.Dev_Salary_policy_type
-predefined_metric_type              = var.Dev_Salary_predefined_metric_type
-target_value                        = var.Dev_Salary_target_value
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+scaling_policy_name                 = var.scaling_policy_name
+policy_type                         = var.policy_type
+predefined_metric_type              = var.predefined_metric_type
+target_value                        = var.target_value
 }
 
 ```
@@ -155,148 +161,147 @@ target_value                        = var.Dev_Salary_target_value
 ```shell
 #---------------------------------Security Group ----------------------------------#
 
-variable "Dev_Salary_security_name" {
+variable "security_name" {
   description     = "Name tag for the security group"
   type            = string
-  default         = "Dev-Salary-sg"
+  default         = "attendance-sg"
 }
-variable "Dev_Salary_security_description" {
+variable "security_description" {
   description     = "Description for the security group"
   type            = string
-  default         = "Security group for Dev-Salary-API"
+  default         = "Security group for Dev Attendance API"
 }
-variable "Dev_Salary_SG_vpc_id" {
+variable "vpc_id" {
   description     = "ID of the VPC for instances"
   type            = string
-  default         = "vpc-00631f1bf6539cb88"   # Dev_Salary-VPC ID
+  default         = "vpc-0d744158f7f47f419"   # Dev_Salary-VPC ID
 }
-variable "Dev_Salary_inbound_ports" {
+variable "inbound_ports" {
   description     = "List of inbound ports and protocols and cidr block"
   type            = list(map(any))
   default         = [
     { port = 22, protocol = "tcp",cidr_blocks = "20.0.0.0/28" }, # Management VPC Cidr Block
-    { port = 22, protocol = "tcp", security_group_ids = "sg-00a65bcd92abcee70" },    # OpenVPN-SG
-    { port =8080, protocol = "tcp", security_group_ids = "sg-0d2e3609a8b620d52" }, #  Dev-Salary-lb-sg ID 
+    { port = 22, protocol = "tcp", security_group_ids = "sg-0add0279237c66ee0" },    # OpenVPN-SG
+    { port = 8080, protocol = "tcp", security_group_ids = "sg-0add0279237c66ee0" }, #  Dev-Attendance-lb-sg ID 
   ]
 }
-variable "Dev_Salary_outbound_ports" {
+variable "outbound_ports" {
   description     = "List of outbound ports and protocols and Cidr block "
   type            = list(map(any))
   default         = [
     { port = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0", },
   ]
 }
-variable "Dev_Salary_Sg_tags" {
+variable "Sg_tags" {
   description     = "Tags for Security Group"
   type            = map(string)
   default         = {
-    Name          = "Dev-Salary-sg"
-    Enviroment    = "Dev_Salary"
-    Owner         = "Shikha"
+    Name          = "Dev-Attendance-sg"
+    Enviroment    = "Dev_Attendance"
+    Owner         = "Vidhi"
   }
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+
 #--------------------------------Launch Template ----------------------------------#
 
 # Key Generate
 
-variable "Dev_Salary_private_key_algorithm" {
+variable "private_key_algorithm" {
   description     = "private_key_algorithm"
   type            = string
   default         = "RSA"
 }
-variable "Dev_Salary_private_key_rsa_bits" {
+variable "private_key_rsa_bits" {
   description     = "private_key_rsa_bits"
   type            = number
   default         = 4096
 }
 
-variable "Dev_Salary_template_name" {
+variable "template_name" {
   description     = "Launch Template Name"
   type            = string
-  default         = "Dev-Salary-template"  
+  default         = "Dev-Attendance-Launch-Template"  
 }
-variable "Dev_Salary_template_description" {
+variable "template_description" {
   description     = "Launch Template Description"
   type            = string
-  default         = "Template for Dev-Salary"  
+  default         = "Template for Dev-Attendance"  
 }
-variable "Dev_Salary_AMI_ID" {
+variable "AMI_ID" {
   description     = "Instance AMI ID"
   type            = string
-  default         =  "ami-0b8b44ec9a8f90422"# Dev-Salary Setup AMI ID
+  default         =  "ami-0b622ae4dff08c413"# Dev-Attendance Setup AMI ID
 }
-variable "Dev_Salary_instance_type" {
+variable "instance_type" {
   description     = "Launch Template Instance Type"
   type            = string
   default         = "t2.micro"  
 }
-variable "Dev_Salary_instance_keypair" {
+variable "instance_keypair" {
   description     = "Launch Template Instance Type keypair name"
   type            = string
-  default         = "Dev_Salary_Key"  
+  default         = "Dev_Attendance_Key"  
 }
-variable "Dev_Salary_subnet_ID" {
+variable "subnet_ID" {
   description     = "Launch Template Subnet ID"
   type            = string
   default         = "subnet-03e34296260c1c84d"  
 }
-variable "Dev_Salary_user_data_script_path" {
+variable "user_data_script_path" {
   description = "Path to the user data script file"
   type        = string
   default     = "./script.sh"  # Path Dev-Salary User data Script
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
 
-variable "Dev_Salary_target_group_name" {
+variable "target_group_name" {
   description     = "Name of the target group"
   type            = string
-  default         = "Dev-Salary-TG"
+  default         = "Dev-Attendance-TG"
 }
-variable "Dev_Salary_target_group_port" {
+variable "target_group_port" {
   description     = "Port for the target group"
   type            = number 
   default         = 8080
 }
-variable "Dev_Salary_target_group_protocol" {
+variable "target_group_protocol" {
   description     = "Protocol for the target group"
   type            = string
   default         = "HTTP"
 }
-variable "Dev_Salary_TG_vpc_id" {
+variable "TG_vpc_id" {
   description     = "ID of the VPC"
   type            = string
   default         = "vpc-00631f1bf6539cb88"    #  Dev_Salary-VPC ID 
 }
-variable "Dev_Salary_health_check_path" {
+variable "health_check_path" {
   description     = "The destination for the health check request"
   type            = string
   default         = "/health"
 }
-variable "Dev_Salary_health_check_port" {
+variable "health_check_port" {
   description     = "The port to use to connect with the target for health checking"
   type            = string
   default         = "traffic-port"
 }
-variable "Dev_Salary_health_check_interval" {
+variable "health_check_interval" {
   description     = "The approximate amount of time, in seconds, between health checks of an individual target"
   type            = number
   default         = 30
 }
-variable "Dev_Salary_health_check_timeout" {
+variable "health_check_timeout" {
   description     = "The amount of time, in seconds, during which no response means a failed health check"
   type            = number
   default         = 5
 }
-variable "Dev_Salary_health_check_healthy_threshold" {
+variable "health_check_healthy_threshold" {
   description     = "The number of consecutive health checks successes required before considering an unhealthy target healthy"
   type            = number
   default         = 2
 }
-variable "Dev_Salary_health_check_unhealthy_threshold" {
+variable "health_check_unhealthy_threshold" {
   description     = "The number of consecutive health check failures required before considering a target unhealthy"
   type            = number
   default         = 2
@@ -305,22 +310,22 @@ variable "Dev_Salary_health_check_unhealthy_threshold" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #------------------------------- Listener rule of ALB -----------------------------#
 
-variable "Dev_Salary_listener_arn" {
+variable "listener_arn" {
   description       = "ARN of the existing listener where the rule will be added"
   type              = string
   default           = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be"
 }
-variable "Dev_Salary_path_pattern" {
+variable "path_pattern" {
   description       = "Path pattern for the listener rule"
   type              = string
-  default           = "/api/v1/salary/*"   # Give your Path 
+  default           = "/api/v1/attendance/*"   # Give your Path 
 }
-variable "Dev_Salary_action_type" {
+variable "action_type" {
   description       = "Path pattern for the listener rule"
   type              = string
   default           = "forward"
 }
-variable "Dev_Salary_priority" {
+variable "priority" {
   description       = "priority"
   type              = number
   default           = 100 
@@ -329,54 +334,54 @@ variable "Dev_Salary_priority" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------Configure Auto Scaling group ---------------------------#
 
-variable "Dev_Salary_autoscaling_group_name" {
+variable "autoscaling_group_name" {
   description     = "The name of the Auto Scaling Group"
   type            = string
-  default         = "Dev-Salary_ASG"
+  default         = "Dev-Attendance_ASG"
 }
-variable "Dev_Salary_ASG_vserion" {
+variable "ASG_version" {
   description     = "Give the Version"
   type            = string
-  default         = "$Latest"
+  default         = "$Default"
 }
 
-variable "Dev_Salary_min_size" {
+variable "min_size" {
   description     = "The minimum number of instances in the ASG"
   type            = number
   default         = 1
 }
 
-variable "Dev_Salary_max_size" {
+variable "max_size" {
   description     = "The maximum number of instances in the ASG"
   type            = number
   default         = 2
 }
 
-variable "Dev_Salary_desired_capacity" {
+variable "desired_capacity" {
   description     = "The desired number of instances in the ASG"
   type            = number
   default         = 1
 }
 
-variable "Dev_Salary_subnet_ids" {
+variable "subnet_ids" {
   description     = "The list of subnet IDs where the instances will be launched"
   type            = list(string)
   default         = [ "subnet-03e34296260c1c84d" ]    #Salary-Pvt-Subnet ID
 }
 
-variable "Dev_Salary_tag_key" {
+variable "tag_key" {
   description     = "The key for the tag to be applied to the ASG and instances"
   type            = string
   default         = "Name"
 }
 
-variable "Dev_Salary_tag_value" {
+variable "tag_value" {
   description     = "The value for the tag to be applied to the ASG and instances"
   type            = string
-  default         = "Dev-Salary_ASG"
+  default         = "Dev-Attendance_ASG"
 }
 
-variable "Dev_Salary_propagate_at_launch" {
+variable "propagate_at_launch" {
   description     = "Whether the tag should be propagated to instances launched by the ASG"
   type            = bool
   default         = true
@@ -385,232 +390,31 @@ variable "Dev_Salary_propagate_at_launch" {
 #-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #---------------------------- Auto Scaling Policies -------------------------------#
 
-variable "Dev_Salary_scaling_policy_name" {
+variable "scaling_policy_name" {
   description     = "The name of the scaling policy"
   type            = string
   default         = "target-tracking-policy"
 }
-variable "Dev_Salary_policy_type" {
+variable "policy_type" {
   description     = "The type of adjustment to make"
   type            = string
   default         = "TargetTrackingScaling"
 }
-variable "Dev_Salary_predefined_metric_type" {
+variable "predefined_metric_type" {
   description     = "The predefined metric type for tracking"
   type            = string
   default         = "ASGAverageCPUUtilization"
 }
-variable "Dev_Salary_target_value" {
+variable "target_value" {
   description     = "The target value for the predefined metric"
   type            = number
   default         = 50.0
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 
-#--------------------------------Launch Template ----------------------------------#
 
-# Key Generate
 
-variable "Dev_Salary_private_key_algorithm" {
-  description     = "private_key_algorithm"
-  type            = string
-  default         = "RSA"
-}
-variable "Dev_Salary_private_key_rsa_bits" {
-  description     = "private_key_rsa_bits"
-  type            = number
-  default         = 4096
-}
 
-variable "Dev_Salary_template_name" {
-  description     = "Launch Template Name"
-  type            = string
-  default         = "Dev-Salary-template"  
-}
-variable "Dev_Salary_template_description" {
-  description     = "Launch Template Description"
-  type            = string
-  default         = "Template for Dev-Salary"  
-}
-variable "Dev_Salary_AMI_ID" {
-  description     = "Instance AMI ID"
-  type            = string
-  default         = "ami-0b8b44ec9a8f90422" # Dev-Salary Setup AMI ID
-}
-variable "Dev_Salary_instance_type" {
-  description     = "Launch Template Instance Type"
-  type            = string
-  default         = "t2.micro"  
-}
-variable "Dev_Salary_instance_keypair" {
-  description     = "Launch Template Instance Type keypair name"
-  type            = string
-  default         = "Dev_Salary_Key"  
-}
-variable "Dev_Salary_subnet_ID" {
-  description     = "Launch Template Subnet ID"
-  type            = string
-  default         = "subnet-03e34296260c1c84d"  
-}
-variable "Dev_Salary_user_data_script_path" {
-  description = "Path to the user data script file"
-  type        = string
-  default     = "./script.sh"  # Path Dev-Salary User data Script
-}
-
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#--------------------------------- Target Group -----------------------------------#
-
-variable "Dev_Salary_target_group_name" {
-  description     = "Name of the target group"
-  type            = string
-  default         = "Dev-Salary-TG"
-}
-variable "Dev_Salary_target_group_port" {
-  description     = "Port for the target group"
-  type            = number 
-  default         = 8080
-}
-variable "Dev_Salary_target_group_protocol" {
-  description     = "Protocol for the target group"
-  type            = string
-  default         = "HTTP"
-}
-variable "Dev_Salary_TG_vpc_id" {
-  description     = "ID of the VPC"
-  type            = string
-  default         = "vpc-00631f1bf6539cb88"    #  Dev_Salary-VPC ID 
-}
-variable "Dev_Salary_health_check_path" {
-  description     = "The destination for the health check request"
-  type            = string
-  default         = "/health"
-}
-variable "Dev_Salary_health_check_port" {
-  description     = "The port to use to connect with the target for health checking"
-  type            = string
-  default         = "traffic-port"
-}
-variable "Dev_Salary_health_check_interval" {
-  description     = "The approximate amount of time, in seconds, between health checks of an individual target"
-  type            = number
-  default         = 30
-}
-variable "Dev_Salary_health_check_timeout" {
-  description     = "The amount of time, in seconds, during which no response means a failed health check"
-  type            = number
-  default         = 5
-}
-variable "Dev_Salary_health_check_healthy_threshold" {
-  description     = "The number of consecutive health checks successes required before considering an unhealthy target healthy"
-  type            = number
-  default         = 2
-}
-variable "Dev_Salary_health_check_unhealthy_threshold" {
-  description     = "The number of consecutive health check failures required before considering a target unhealthy"
-  type            = number
-  default         = 2
-}
-
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#------------------------------- Listener rule of ALB -----------------------------#
-
-variable "Dev_Salary_listener_arn" {
-  description       = "ARN of the existing listener where the rule will be added"
-  type              = string
-  default           = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be"
-}
-variable "Dev_Salary_path_pattern" {
-  description       = "Path pattern for the listener rule"
-  type              = string
-  default           = "/api/v1/salary/*"   # Give your Path 
-}
-variable "Dev_Salary_action_type" {
-  description       = "Path pattern for the listener rule"
-  type              = string
-  default           = "forward"
-}
-variable "Dev_Salary_priority" {
-  description       = "priority"
-  type              = number
-  default           = 100 
-}
-
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#--------------------------Configure Auto Scaling group ---------------------------#
-
-variable "Dev_Salary_autoscaling_group_name" {
-  description     = "The name of the Auto Scaling Group"
-  type            = string
-  default         = "Dev-Salary_ASG"
-}
-
-variable "Dev_Salary_min_size" {
-  description     = "The minimum number of instances in the ASG"
-  type            = number
-  default         = 1
-}
-
-variable "Dev_Salary_max_size" {
-  description     = "The maximum number of instances in the ASG"
-  type            = number
-  default         = 2
-}
-
-variable "Dev_Salary_desired_capacity" {
-  description     = "The desired number of instances in the ASG"
-  type            = number
-  default         = 1
-}
-
-variable "Dev_Salary_subnet_ids" {
-  description     = "The list of subnet IDs where the instances will be launched"
-  type            = list(string)
-  default         = [ "subnet-03e34296260c1c84d" ]    #Salary-Pvt-Subnet ID
-}
-
-variable "Dev_Salary_tag_key" {
-  description     = "The key for the tag to be applied to the ASG and instances"
-  type            = string
-  default         = "Name"
-}
-
-variable "Dev_Salary_tag_value" {
-  description     = "The value for the tag to be applied to the ASG and instances"
-  type            = string
-  default         = "Dev-Salary_ASG"
-}
-
-variable "Dev_Salary_propagate_at_launch" {
-  description     = "Whether the tag should be propagated to instances launched by the ASG"
-  type            = bool
-  default         = true
-}
-
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#---------------------------- Auto Scaling Policies -------------------------------#
-
-variable "Dev_Salary_scaling_policy_name" {
-  description     = "The name of the scaling policy"
-  type            = string
-  default         = "target-tracking-policy"
-}
-variable "Dev_Salary_policy_type" {
-  description     = "The type of adjustment to make"
-  type            = string
-  default         = "TargetTrackingScaling"
-}
-variable "Dev_Salary_predefined_metric_type" {
-  description     = "The predefined metric type for tracking"
-  type            = string
-  default         = "ASGAverageCPUUtilization"
-}
-variable "Dev_Salary_target_value" {
-  description     = "The target value for the predefined metric"
-  type            = number
-  default         = 50.0
-}
 ```
 </details>
 
@@ -623,82 +427,82 @@ variable "Dev_Salary_target_value" {
 <br>
 
 ```shell
+
 #---------------------------------Security Group ----------------------------------#
 
-Dev_Salary_security_name                       = "Dev-Salary-sg"
-Dev_Salary_security_description                = "Security group for Dev-Salary-API"
-Dev_Salary_SG_vpc_id                           = "vpc-00631f1bf6539cb88"    #Dev_Salary-VPC-ID
-Dev_Salary_inbound_ports                       = [
+security_name                       = "Dev-Attendance-sg"
+security_description                = "Security group for Dev Attendance API"
+vpc_id                           = "vpc-0d744158f7f47f419"    #Dev_Salary-VPC-ID
+inbound_ports                       = [
   { port                                = 22, protocol = "tcp", cidr_blocks = "20.0.0.0/28" },                     # Management VPC Cidr Block
-  { port                                = 22, protocol = "tcp", security_group_ids = "sg-00a65bcd92abcee70" },     #  Dev-Salary-lb-sg ID
-  { port                                = 8080, protocol = "tcp", security_group_ids = "sg-0d2e3609a8b620d52" },   # OpenVPN-SG
+  { port                                = 22, protocol = "tcp", security_group_ids = "sg-061f905ed2cbb0652" },     #  Dev-Salary-lb-sg ID
+  { port                                = 8080, protocol = "tcp", security_group_ids = "sg-061f905ed2cbb0652" },   # OpenVPN-SG
 ]
-Dev_Salary_outbound_ports                      = [
+outbound_ports                      = [
   { port                                = 0, protocol = "-1", cidr_blocks = "0.0.0.0/0" }
 ]
-Dev_Salary_Sg_tags                             = {
-  Name                                  = "Dev-Salary-sg"
-  Enviroment                            = "Dev_Salary"
-  Owner                                 = "Salary"
+Sg_tags                             = {
+  Name                                  = "Dev-Attendance-sg"
+  Enviroment                            = "Dev_Attendance"
+  Owner                                 = "Vidhi"
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------Launch Template ----------------------------------#
 
-Dev_Salary_private_key_algorithm               = "RSA"
-Dev_Salary_private_key_rsa_bits                = 4096
-Dev_Salary_template_name                       = "Dev-Salary-template"
-Dev_Salary_template_description                = "Template for Dev-Salary"
-Dev_Salary_AMI_ID                              = "ami-0b8b44ec9a8f90422"
-Dev_Salary_instance_type                       = "t2.micro"
-Dev_Salary_instance_keypair                    = "Dev_Salary_Key"
-Dev_Salary_subnet_ID                           = "subnet-03e34296260c1c84d"
-Dev_Salary_user_data_script_path               = "./script.sh"
+private_key_algorithm               = "RSA"
+private_key_rsa_bits                = 4096
+template_name                       = "Dev-Attendance-Launch-Template"
+template_description                = "Template for Attendance"
+AMI_ID                              = "ami-0b622ae4dff08c413"
+instance_type                       = "t2.micro"
+instance_keypair                    = "Dev_Attendance_Key"
+subnet_ID                           = "subnet-0a712151efeb16f4f"
+user_data_script_path               = "./script.sh"
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #--------------------------------- Target Group -----------------------------------#
 
-Dev_Salary_target_group_name                   = "Dev-Salary-TG"
-Dev_Salary_target_group_port                   = 8080
-Dev_Salary_target_group_protocol               = "HTTP"
-Dev_Salary_TG_vpc_id                           = "vpc-00631f1bf6539cb88"   #Dev_Salary-VPC-ID
-Dev_Salary_health_check_path                   = "/health"
-Dev_Salary_health_check_port                   = "traffic-port"
-Dev_Salary_health_check_interval               = 30
-Dev_Salary_health_check_timeout                = 5
-Dev_Salary_health_check_healthy_threshold      = 2
-Dev_Salary_health_check_unhealthy_threshold    = 2
+target_group_name                   = "Dev-Attendance-TG"
+target_group_port                   = 8080
+target_group_protocol               = "HTTP"
+TG_vpc_id                           = "vpc-0d744158f7f47f419"   #Dev_Attendance-VPC-ID
+health_check_path                   = "/health"
+health_check_port                   = "traffic-port"
+health_check_interval               = 30
+health_check_timeout                = 5
+health_check_healthy_threshold      = 2
+health_check_unhealthy_threshold    = 2
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+
 #------------------------------- Listener rule of ALB -----------------------------#
 
-Dev_Salary_listener_arn                          = "arn:aws:elasticloadbalancing:us-east-2:975050171850:listener/app/alb/78ba193068ecdac7/e91f6155c19050d5"
-Dev_Salary_path_pattern                          = "/api/v1/salary/*"
-Dev_Salary_action_type                           = "forward"
-Dev_Salary_priority                              = 100
+listener_arn                          = "arn:aws:elasticloadbalancing:us-east-1:905418193488:listener/app/alb-heh/127dfdd55a957475/99ac24ae778e4e38"
+path_pattern                          = "/api/v1/attendance/*"
+action_type                           = "forward"
+priority                              = 90
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+
 #--------------------------Configure Auto Scaling group ---------------------------#
 
-Dev_Salary_autoscaling_group_name              = "Dev-Salary_ASG"
-Dev_Salary_ASG_vserion                         = "$Latest"
-Dev_Salary_min_size                            = 1
-Dev_Salary_max_size                            = 2
-Dev_Salary_desired_capacity                    = 1
-Dev_Salary_subnet_ids                          = ["subnet-03e34296260c1c84d"]   #Dev-Salary Pvt ID
-Dev_Salary_tag_key                             = "Name"
-Dev_Salary_tag_value                           = "Dev-Salary_ASG"
-Dev_Salary_propagate_at_launch                 = true
+autoscaling_group_name              = "Dev-Attendance_ASG"
+ASG_version                         = "$Latest"
+min_size                            = 1
+max_size                            = 2
+desired_capacity                    = 1
+subnet_ids                          = ["subnet-0a712151efeb16f4f"]   #Dev-Salary Pvt ID
+tag_key                             = "Name"
+tag_value                           = "Dev-Attendance_ASG"
+propagate_at_launch                 = false
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
 #---------------------------- Auto Scaling Policies -------------------------------#
 
-Dev_Salary_scaling_policy_name                 = "target-tracking-policy"
-Dev_Salary_policy_type                         = "TargetTrackingScaling"
-Dev_Salary_predefined_metric_type              = "ASGAverageCPUUtilization"
-Dev_Salary_target_value                        = 50.0
+scaling_policy_name                 = "target-tracking-policy"
+policy_type                         = "TargetTrackingScaling"
+predefined_metric_type              = "ASGAverageCPUUtilization"
+target_value                        = 50.0
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+
+
+
 ```
 </details>
 
@@ -710,46 +514,41 @@ Dev_Salary_target_value                        = 50.0
 <br>
 
 ```shell
-#---------------------------------Security Group ----------------------------------#
+# Security group
 
 output "Security_Group_ID" {
-  value = [module.Dev_Salary.Security_Group_ID]
+  value = [module.Dev_Attendance.Security_Group_ID]
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#--------------------------------Launch Template ----------------------------------#
-
-# Priavte Key
+# Private Key
 output "key_pair_name" {
-  value       = [module.Dev_Salary.key_pair_name]
+  value       = [module.Dev_Attendance.key_pair_name]
 }
 
 # Template
+
 output "launch_template_id" {
-  value = [module.Dev_Salary.launch_template_id]
+  value = [module.Dev_Attendance.launch_template_id]
 }
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#--------------------------------- Target Group -----------------------------------#
+
+#Target group id
 
 output "Target_group_id" {
-  value = [module.Dev_Salary.Target_group_id]
+  value = [module.Dev_Attendance.Target_group_id]
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#--------------------------Configure Auto Scaling group ---------------------------#
-
+# ASG
 output "Autoscaling_group_id" {
-  value = [module.Dev_Salary.Autoscaling_group_id]
+  value = [module.Dev_Attendance.Autoscaling_group_id]
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
-#---------------------------- Auto Scaling Policies -------------------------------#
+# ASG Policies
 
 output "Autoscaling_policy_name" {
-  value       = [module.Dev_Salary.Autoscaling_policy_name]
+  value       = [module.Dev_Attendance.Autoscaling_policy_name]
 }
 
-#-----------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -----------------------#
+
 ```
 </details>
 
@@ -772,7 +571,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-2"  
+  region = "us-east-1"  
 } 
 
 
@@ -788,8 +587,12 @@ provider "aws" {
 
 ```shell
 
- #!/bin/bash  
- java -jar Salary-API/target/salary-0.1.0-RELEASE.jar
+#!/bin/bash
+cd attendance
+cd attendance-api/
+poetry shell
+gunicorn app:app --log-config log.conf -b 0.0.0.0:8080
+
 ```
 </details>
 
@@ -810,29 +613,50 @@ provider "aws" {
 
 ## Console Output
 
-### Private Key (scyllaDBKeyDev.pem)
+### Private Key (Dev_Attendance_Key.pem)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/13bbaae8-4f79-4ab8-908b-7f6a8fb29e0e">
+<img width="1098" alt="Screenshot 2024-03-17 at 4 15 55 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/92341244-222d-4c1e-8ef9-0ce6640a28ce">
+
 
 **Key Download**
-
-![Screenshot 2024-03-17 020724](https://github.com/CodeOps-Hub/Documentation/assets/156056344/8f3916ef-e919-4349-8f3e-0689cc15a121)
-
+<img width="723" alt="Screenshot 2024-03-17 at 4 16 58 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/1bbf7b0a-3895-4850-ad83-8d683da470bf">
 
 
-***
-
-### Security Group (scylladb-dev-sg)
-
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5036f839-69fa-43f3-a5f2-e9b2de8a694a">
 
 
 ***
 
-### EC2 Instance (ScyllaDB-Server-QA)
+### Security Group (Dev-Attendance-sg)
 
-<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5c4dfb6c-f4bf-469a-8853-3f139a276c8b">
+<img width="1103" alt="Screenshot 2024-03-17 at 4 18 01 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2ca88b51-ce86-4adf-b763-09865cbbe764">
 
+
+***
+
+### Launch Template (Dev-Attendance-Launch-Template)
+
+<img width="1101" alt="Screenshot 2024-03-17 at 4 21 49 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/fcd43535-eff3-420f-a48b-177ec1d47325">
+
+***
+
+### Target Groups (Dev-Attendance-TG)
+
+<img width="1076" alt="Screenshot 2024-03-17 at 4 22 27 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a609687b-262e-46a6-8d58-6217bb01f9a4">
+
+***
+### Listner Rule 
+
+<img width="1070" alt="Screenshot 2024-03-17 at 4 23 25 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a44288c1-3ca8-41e0-ac51-213691a958ea">
+
+***
+### Auto Scaling Group (Dev-Attendance_ASG)
+
+<img width="1044" alt="Screenshot 2024-03-17 at 4 24 35 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/5f315b47-b9d3-4eff-a54c-1e5ed11791ec">
+
+***
+### Auto Scaling Group Policy 
+
+<img width="730" alt="Screenshot 2024-03-17 at 4 25 20 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8c0db7dc-3e78-45f5-8850-ea6c724cd924">
 
 ***
 
