@@ -78,8 +78,6 @@ In this document it will guide through the steps to achieve the setup of wrapper
 
 ## Configuration Files
 
-This Terraform configuration defines infrastructure components for an AWS environment, including  Security Group,Launch Template,Target Group,Configure Listener rule of ALB,Configure Auto Scaling group,Auto Scaling Policies and various input variables defined in separate files for customization. The output file specifies the IDs of created resources, facilitating reference in other configurations. Provider and Terraform configuration files ensure the correct provider version and AWS region settings. The terraform.tfvars file provides default values for variables, while allowing for customization as needed.
-
 ### main.tf
 
 <details>
@@ -798,112 +796,42 @@ provider "aws" {
 ***
 
 
-## Tags
-
-* Tags are assigned to resources with name variable as prefix.
-* Additial tags can be assigned by tags variables as defined above.
-  
 ***
 
-## Inputs
-
-| Name                                   | Description                                              | Type            | Default                        |
-| -------------------------------------- | -------------------------------------------------------- | --------------- | ------------------------------ |
-| **Dev_Salary_security_name**           | Name tag for the security group                          | `string`        | `Dev-Salary-sg`               |
-| **Dev_Salary_security_description**    | Description for the security group                       | `string`        | `Security group for Dev-Salary-API` |
-| **Dev_Salary_SG_vpc_id**               | ID of the VPC for instances                              | `string`        | `vpc-vpc-00631f1bf6539cb88`       |
-| **Dev_Salary_inbound_ports**           | List of inbound ports and protocols and cidr block       | `list(map(any))` | See default values |
-| **Dev_Salary_outbound_ports**          | List of outbound ports and protocols and Cidr block      | `list(map(any))` | See default values |
-| **Dev_Salary_Sg_tags**                 | Tags for Security Group                                  | `map(string)`   | See default values |
-| **Dev_Salary_private_key_algorithm**   | private_key_algorithm                                    | `string`        | `RSA`                          |
-| **Dev_Salary_private_key_rsa_bits**    | private_key_rsa_bits                                     | `number`        | `4096`                         |
-| **Dev_Salary_template_name**           | Launch Template Name                                     | `string`        | `Dev-Salary-template`        |
-| **Dev_Salary_template_description**    | Launch Template Description                              | `string`        | `Template for Dev-Salary`    |
-| **Dev_Salary_AMI_ID**                  | Instance AMI ID                                          | `string`        | `ami-0b8b44ec9a8f90422`       |
-| **Dev_Salary_instance_type**           | Launch Template Instance Type                            | `string`        | `t2.micro`                     |
-| **Dev_Salary_instance_keypair**        | Launch Template Instance Type keypair name               | `string`        | `Dev_Salary_Key`                      |
-| **Dev_Salary_subnet_ID**               | Launch Template Subnet ID                                | `string`        | `subnet-03e34296260c1c84d`    |
-| **Dev_Salary_user_data_script_path**   | Path to the user data script file                        | `string`        | `./script.sh`                  |
-| **Dev_Salary_target_group_name**       | Name of the target group                                 | `string`        | `Dev-Salary-TG`              |
-| **Dev_Salary_target_group_port**       | Port for the target group                                | `number`        | `8080`                         |
-| **Dev_Salary_target_group_protocol**   | Protocol for the target group                            | `string`        | `HTTP`                         |
-| **Dev_Salary_TG_vpc_id**               | ID of the VPC                                             | `string`        | `vpc-00631f1bf6539cb88`       |
-| **Dev_Salary_health_check_path**       | The destination for the health check request             | `string`        | `/health`                      |
-| **Dev_Salary_health_check_port**       | The port to use to connect with the target for health checking | `string`    | `traffic-port`                 |
-| **Dev_Salary_health_check_interval**   | The approximate amount of time, in seconds, between health checks of an individual target | `number` | `30`          |
-| **Dev_Salary_health_check_timeout**    | The amount of time, in seconds, during which no response means a failed health check | `number` | `5`                          |
-| **Dev_Salary_health_check_healthy_threshold** | The number of consecutive health checks successes required before considering an unhealthy target healthy | `number` | `2`   |
-| **Dev_Salary_health_check_unhealthy_threshold** | The number of consecutive health check failures required before considering a target unhealthy | `number` | `2` |
-| **Dev_Salary_listener_arn**            | ARN of the existing listener where the rule will be added | `string`      | `arn:aws:elasticloadbalancing:us-east-2:975050171850:listener/app/alb/78ba193068ecdac7/e91f6155c19050d5` |
-| **Dev_Salary_path_pattern**            | Path pattern for the listener rule                       | `string`      | `/api/v1/salary/*`                            |
-| **Dev_Salary_action_type**             | Path pattern for the listener rule                        | `string`      | `forward`                     |
-| **Dev_Salary_priority**                | priority                                                  | `number`      | `100`                         |
-| **Dev_Salary_autoscaling_group_name** | The name of the Auto Scaling Group                     | `string`      | `Dev_Salary_ASG`            |
-| **Dev_Salary_min_size**             | The minimum number of instances in the ASG               | `number`      | `1`                           |
-| **Dev_Salary_max_size**             | The maximum number of instances in the ASG               | `number`      | `2`                           |
-| **Dev_Salary_desired_capacity**     | The desired number of instances in the ASG               | `number`      | `1`                           |
-| **Dev_Salary_subnet_ids**           | The list of subnet IDs where the instances will be launched | `list(string)` | See default values |
-| **Dev_Salary_tag_key**              | The key for the tag to be applied to the ASG and instances | `string`      | `Name`                        |
-| **Dev_Salary_tag_value**            | The value for the tag to be applied to the ASG and instances | `string`      | `Dev_Salary_ASG`            |
-| **Dev_Salary_propagate_at_launch**  | Whether the tag should be propagated to instances launched by the ASG | `bool`     | `true`                     |
-| **Dev_Salary_scaling_policy_name**  | The name of the scaling policy                           | `string`      | `target-tracking-policy`      |
-| **Dev_Salary_policy_type**          | The type of adjustment to make                           | `string`      | `TargetTrackingScaling`       |
-| **Dev_Salary_predefined_metric_type** | The predefined metric type for tracking                | `string`      | `ASGAverageCPUUtilization`    |
-| **Dev_Salary_target_value**         | The target value for the predefined metric               | `number`      | `50.0`                        |
-
-
-## Outputs 
-
-| Name                 | Description                                       |
-|----------------------|---------------------------------------------------|
-| **Security_Group_ID**   | Output for the ID of the created security group   |
-| **key_pair_name**       | Output for the key pair name                      |
-| **launch_template_id**  | Output for the ID of the created launch template  |
-| **Target_group_id**     | Output for the ID of the created target group     |
-| **Autoscaling_group_id**| Output for the ID of the created auto-scaling group |
-| **Autoscaling_policy_name** | Output for the name of the created auto-scaling policy |
-
-***
+# Output
 
 ## Terminal Output
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/96ee8384-f5b3-46ae-b5c4-2021921fa4ed)
+
+<img width="1239" alt="Screenshot 2024-03-17 at 3 52 18 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/aa91c843-ba4a-4b47-9c66-4b87edc759ba">
+
 
 
 ***
 
 ## Console Output
-### Security Group
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/21e36862-2e26-47a0-b1c2-545ae3a944b8)
+### Private Key (scyllaDBKeyDev.pem)
 
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/13bbaae8-4f79-4ab8-908b-7f6a8fb29e0e">
 
-***
-### Launch Template
+**Key Download**
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/1c60c2b7-51cf-4d39-85c4-934c43ebdb1f)
+![Screenshot 2024-03-17 020724](https://github.com/CodeOps-Hub/Documentation/assets/156056344/8f3916ef-e919-4349-8f3e-0689cc15a121)
 
-***
-
-### Target Group
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/df783126-ab79-4a44-81b5-4c38471c7a56)
 
 
 ***
-### Listener rule of ALB
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/6aa0c788-cf90-4a07-85f8-49cf3b0190f4)
+
+### Security Group (scylladb-dev-sg)
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5036f839-69fa-43f3-a5f2-e9b2de8a694a">
 
 
 ***
-### Auto Scaling Group
 
+### EC2 Instance (ScyllaDB-Server-QA)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/f4042b78-1008-4f61-a032-930392ed3c48)
-
-
-***
-### Auto Scaling Group Policies
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/9af3057e-a5cb-4e88-b998-03dd610085ea)
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5c4dfb6c-f4bf-469a-8853-3f139a276c8b">
 
 
 ***
@@ -919,28 +847,27 @@ provider "aws" {
 | **Documentation**      | Provide comprehensive documentation for wrapper scripts, including usage instructions, dependencies, and troubleshooting tips.               |
 | **Security**           | Follow security best practices to protect sensitive information such as credentials and API keys used by wrapper scripts.                   |
 
-***
-
-## Conclusion
-
-Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments.
 
 ***
- ## Contact Information
 
- | **Name** | **Email Address** |
- | -------- | ----------------- |
- | **Shikha Tripathi** | shikha.tripathi.snaatak@mygurukulam.co |
+# Conclusion
 
- ***
- 
-## References
+Terraform wrapper code enhances the capabilities of Terraform by automating tasks, providing additional functionality, and enforcing best practices. By following best practices such as modularity, error handling, and documentation, wrapper scripts can streamline Terraform workflows, improve productivity, and ensure the reliability and security of infrastructure deployments.The OpenVPN wrapper code makes it easier to set up and manage OpenVPN by simplifying complex tasks into easy steps. It helps improve security and makes it simpler to expand and maintain the VPN. With this wrapper, you can easily connect OpenVPN with your existing systems and automate tasks, making it faster to deploy and monitor your VPN across different setups.
 
- | **Source** | **Description** |
- | ---------- | --------------- |
- | [**Link**](https://medium.com/@brandon.wagner/a-wrapper-for-terraform-61a125b27ffc) | Terraform Wrapper Code Concept. |
- | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
- | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Modules |
- | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Design/09-%20Cloud%20Infra%20Design/Cloud-Infra-Design-Dev.md) | Cloud Infra Design Dev |
+***
 
- 
+# Contact Information
+
+| **Name** | **Email Address** |
+| -------- | ----------------- |
+| **Vidhi Yadav** | vidhi.yadhav.snaatak@mygurukulam.co |
+
+***
+
+# References
+
+| **Source** | **Description** |
+| ---------- | --------------- |
+| [Link](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
+| [Link](https://medium.com/@brandon.wagner/a-wrapper-for-terraform-61a125b27ffc) | Terraform Wrapper Code Concept. |
+| [Link](https://medium.com/@selvamraju007/terraform-modules-explanation-726ba4a0b98e) | Reference Link For Terraform Modules. |
