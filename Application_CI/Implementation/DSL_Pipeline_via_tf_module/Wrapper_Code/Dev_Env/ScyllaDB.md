@@ -187,14 +187,14 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/a5dc9544-7bdc-472f-a09b-b8385f592088">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/13ec73e5-b3a2-4632-a8cf-b165e032b35d">
 
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/69ff3eb3-1c31-4cb0-afb4-b63d1a803d83">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/0608fb41-8897-4258-a84f-6aabe3cb8eec">
 
 ***
 
@@ -754,18 +754,21 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/78ab5913-60d5-40e0-a4fb-7314f4390250"> 
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/f44ee869-32df-46c5-8e14-666db5551de9"> 
+
 
 ***
-### Redis Server
+### ScyllaDB Server
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/bb529379-2800-4208-bff4-38b4c5b21231"> 
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/3abc0cd7-60aa-4b08-bab2-3e33fecc07be"> 
+
 
 ***
 
 ### Key Pair
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/5ee3f6fc-651d-4498-857c-9599066742d0">
+<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056344/406b51ef-e6dc-432c-a562-6912685e37bb">
+
 
 ***
 
