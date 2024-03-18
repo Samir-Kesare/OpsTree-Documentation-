@@ -32,7 +32,7 @@
 
  ## Introduction
 
-This document provides a step-by-step guide for setting up wrapper code for an Attendance API, including the configuration files. Depending on the parameters passed through the wrapper code, we can dynamically adjust the infrastructure setup. This includes managing separate Terraform state files for each environment to effectively handle their respective configurations.
+This document provides a step-by-step guide for setting up wrapper code for Attendance API, including the configuration files. Depending on the parameters passed through the wrapper code, we can dynamically adjust the infrastructure setup. This includes managing separate Terraform state files for each environment to effectively handle their respective configurations.
 
 ***
 
