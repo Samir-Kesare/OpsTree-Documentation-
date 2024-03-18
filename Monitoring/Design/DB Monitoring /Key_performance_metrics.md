@@ -46,23 +46,17 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 
 ## Key Database Performance Metrics You Must Track Regularly
 
-| Key Points               | Description                                                                                                                                                                                                                      |
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| **Transactions per Second (TPS)** | This is a common unit, particularly for transactional databases, indicating the number of transactions processed per second. |                                                                         |                               |                                                                                                                              |
-| **Queries per Second (QPS)**      | Often used interchangeably with TPS, especially for analytical databases, representing the number of queries executed per second.    |                                                                 |                               |                                                                                                                                      |
-| **Data volume per second**        | Data volume per second refers to the amount of data processed by a system within a one-second timeframe.   |      
-|                               |                                                                                                                                       |
-| **Locks**                         | Controls access to a resource, allowing only one transaction to modify or access it at a time.               |
-|                               |                                                                                                                          |
-| **Database Connections**          | Refers to active and concurrent connections between clients or applications and a database. |
-|                               |                                                                                                                          |
-| **Response Time**                 | Duration for query execution and result return, critical for performance assessment.   |
-|                               |                                                                                                                          |
-| **Deadlocks**                     | Occur when transactions mutually block each other due to holding locks needed by the other transaction, leading to system standstill.|
-
-
-                                                                                  
+- **Transactions per Second (TPS)**
+- **Queries per Second (QPS)**
+- **Data volume per second**
+- **Locks**
+- **Database Connections**
+- **Response Time**
+- **Deadlocks**
+                                                                   
 ### Transaction Rate
+
+This is a common unit, particularly for transactional databases, indicating the number of transactions processed per second.
 
 | Key Points             | Description                                                                                                              |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -81,6 +75,7 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 
 ### Queries per Second
 
+Often used interchangeably with TPS, especially for analytical databases, representing the number of queries executed per second.
 
 | Key Points           | Description                                                                                                                                       |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -92,6 +87,8 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 
 ### Data volume per second 
 
+Data volume per second refers to the amount of data processed by a system within a one-second timeframe.
+
 | Key Points         | Description                                                                                                                                |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | **Unit**               | Data volume per second is typically expressed in bytes per second (B/s) or its larger counterparts like megabytes per second (MB/s), gigabytes per second (GB/s), or even terabytes per second (TB/s) depending on the data volume being handled. |
@@ -99,6 +96,8 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 
 
 ### Locks
+
+Controls access to a resource, allowing only one transaction to modify or access it at a time.
 
 | Key Points         | Description                                                                                                                             |
 |--------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
@@ -109,6 +108,8 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 
 ### Database Connections
 
+Refers to active and concurrent connections between clients or applications and a database.
+
 | Key Points         | Description                                                                                                                                |
 |--------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | **Capacity Assessment** | Crucial for evaluating the database's ability to handle concurrent requests and understanding current load.                                 |
@@ -116,6 +117,8 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 | **Efficiency**         | Recommended to keep active connections below 90% of max_connections for efficient operation.                                             |
 
 ### Response Time
+
+Duration for query execution and result return, critical for performance assessment.
 
 | Key Points             | Description                                                                                                                                |
 |------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -127,6 +130,8 @@ Database monitoring is crucial for organizations to ensure optimal performance, 
 |                        | - Hardware Resources: Adequate CPU, memory, and disk I/O improve response time.                                                            |
 
 ### Deadlocks
+
+Occur when transactions mutually block each other due to holding locks needed by the other transaction, leading to system standstill.
 
 | Key Points              | Description                                                                                                                                                        |
 |-------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
