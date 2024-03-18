@@ -112,4 +112,4 @@ By following this approach, you can achieve a seamless deployment process with m
 | --------------------------------------------  | -------------------------------------------------|
 | Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md |
 | Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
-| How to Rollout | https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a |
+| Blue Green Strategy | https://docs.aws.amazon.com/whitepapers/latest/overview-deployment-options/bluegreen-deployments.html |
