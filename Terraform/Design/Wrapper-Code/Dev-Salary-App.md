@@ -34,7 +34,7 @@
 
  ## Introduction
 
-In this document, we will provide a comprehensive guide to setting up the "Dev Env Salary Wrapper" for the Autoscaling module in Terraform. This setup involves managing the child modules within the Autoscaling module. The purpose of this wrapper code is to facilitate the management and building of infrastructure setups based on the values passed through the root module or wrapper code. Additionally, this setup involves managing different Terraform state files to effectively handle respective environments.
+In this document, we will provide a comprehensive guide to setting up the "Salary Wrapper" for infrastructure provisioning using Terraform. This wrapper code is designed specifically for managing infrastructure setups related to salary management. It facilitates the organization and orchestration of various components within the infrastructure. The primary focus of this wrapper code is to enable efficient management and building of infrastructure setups, tailored to the requirements and specifications provided through the root module or wrapper code. Additionally, this setup entails the management of different Terraform state files to ensure proper isolation and handling of respective environments.
 
 ***
 
