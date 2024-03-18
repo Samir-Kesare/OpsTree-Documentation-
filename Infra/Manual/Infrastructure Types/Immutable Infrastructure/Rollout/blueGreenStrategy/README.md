@@ -9,7 +9,7 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Steps to rollout](#Steps-to-rollout)
++ [Steps to rollout](#steps-to-rollout-blue-green-strategy)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
 + [Conclusion](#Conclusion)
