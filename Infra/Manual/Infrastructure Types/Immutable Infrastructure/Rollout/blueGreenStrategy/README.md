@@ -1,9 +1,9 @@
 # Rollout Immutable Infrastructure using Blue-Green Strategy
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/5cc93cad-e34a-4f18-bb6a-770520dab569)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/a8d0626c-ee62-4343-8077-a8a1121000c0)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
-| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 16 March 2024 |  Version 1 | Harshit Singh     | 17 March 2024  |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 18 March 2024 |  Version 1 | Harshit Singh     | 18 March 2024  |
 ***
 
 ## Table of Contents 
@@ -18,6 +18,7 @@
 ***
 
 ## Introduction
+The blue-green deployment strategy is a technique used in software deployment to ensure seamless updates with minimal downtime. It involves maintaining two identical production environments, labeled "blue" and "green," with only one actively serving user traffic at a time. This approach allows for testing and validation of updates in the green environment before routing traffic to it, providing a safety net for quick rollbacks if issues arise. By using this strategy, organizations can achieve continuous deployment while minimizing the risk of disruptions for end-users.
 
 To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
 ***
@@ -69,31 +70,30 @@ By following this approach, you can achieve a seamless deployment process with m
 
 ## Advantages
 
-| Advantage                  | Description                                                                                                                                                      |
-|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Continuous Availability    | Rolling deployments ensure that your application remains available throughout the deployment process, minimizing downtime and maintaining service continuity.   |
-| Risk Mitigation            | Reduces the risk of deploying faulty updates by gradually updating a subset of instances, allowing for the detection and resolution of issues before affecting the entire infrastructure. |
-| Incremental Updates        | Enables the deployment of updates incrementally, facilitating the management of large-scale deployments and reducing the impact on system resources.              |
-| Easier Rollbacks           | Facilitates quick rollbacks to previous versions in case of issues, as changes are applied gradually, allowing for the identification and resolution of problems without disrupting the entire system. |
-| Scalability                | Provides scalability by allowing the rate of updates to be adjusted based on demand, ensuring that the infrastructure can handle changes without sacrificing performance or stability. |
-| Consistency                | Helps maintain consistency across the infrastructure by updating instances in a phased manner, ensuring that all instances run the same version of the application and reducing the risk of compatibility issues. |
+| Advantage         | Description |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Zero Downtime     | Ensures continuous availability of the application during deployment by seamlessly routing traffic between blue and green environments. |
+| Reduced Risk      | Mitigates the risk associated with deploying new versions by allowing issues to be identified and addressed in the green environment before impacting users. |
+| Quick Rollback    | Enables instant rollback to the stable blue environment in case of issues with the new version deployed in the green environment, minimizing user disruption. |
+| Increased Reliability | Promotes consistency and reliability in the release process by facilitating thorough testing and validation before deploying to production. |
+| Flexibility       | Offers flexible deployment options, such as gradual traffic shifting or all-at-once switchover, to accommodate varying organizational requirements and risk tolerance levels. |
+| Continuous Delivery | Facilitates faster time-to-market for new features and enhancements by enabling continuous deployment of updates, supporting agility and responsiveness to customer needs. |
+
 ***
 
 ## Disadvantages
-Here's the information presented in a table format:
 
-| Disadvantage              | Description |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Increased Complexity     | Implementing rolling deployments requires careful orchestration and coordination, adding complexity to the deployment process. |
-| Resource Intensive        | Rolling deployments may require additional resources such as extra server capacity or automation tools, increasing operational costs and resource consumption. |
-| Extended Deployment Time | Rolling deployments may take longer to complete compared to other deployment strategies due to incremental updates applied to a subset of servers. |
-| Potential Service Degradation | There is a risk of service degradation if updated code introduces unexpected bugs or performance issues, impacting a subset of users or transactions. |
-| Version Drift            | Managing version consistency across a large number of servers can be challenging, leading to version drift and potential compatibility issues. |
-| Dependency Management    | Handling dependencies between different components of the application stack can be complex and may require additional testing and validation. |
+| Disadvantages                                 | Description                                                                                                               |
+|-----------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| Potential for Increased Infrastructure Costs | Running two identical production environments simultaneously may lead to higher infrastructure costs.                      |
+| Complexity of Managing Dual Environments     | Managing and synchronizing configurations, databases, and dependencies between two environments can introduce complexity.   |
+| Increased Initial Setup and Configuration Effort | Setting up and configuring two identical production environments with proper automation and orchestration may require more upfront time and effort. |
+| Requires Sufficient Infrastructure Resources  | Running two complete production environments concurrently requires adequate resources, which may not be feasible for all organizations. |
+| Dependency on Automated Deployment Tools     | Blue-green deployments heavily rely on automation tools, introducing risks if these tools fail or are misconfigured.      |
+| Potential for Data Consistency Challenges     | Maintaining data consistency between the blue and green environments, especially for stateful components like databases, can be challenging. |
 ***
 
 ## Conclusion
-Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
 ***
 
 ## Contact Information
@@ -107,6 +107,6 @@ Rolling out immutable infrastructure using a rolling deployment strategy offers 
 
 | Description                                   | References  
 | --------------------------------------------  | -------------------------------------------------|
-| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling |
+| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md |
 | Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
 | How to Rollout | https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a |
