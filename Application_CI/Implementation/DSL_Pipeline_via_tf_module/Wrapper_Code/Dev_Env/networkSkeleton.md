@@ -70,7 +70,8 @@ A Domain-Specific Language (DSL) is a programming language or specification lang
 pipeline {
     agent any
     parameters {
-        choice choices: ['apply', 'destroy'], name: 'ACTION', description: 'Choose terraform ACTION to perform'
+        choice (choices: ['apply', 'destroy'], name: 'ACTION', description: 'Choose terraform ACTION to perform')
+        string (defaultValue: 'wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code', description: 'define path of wrapper code directory', name: 'WrapperPath')
     }
 
     stages {
@@ -81,12 +82,9 @@ pipeline {
         }
         stage('Terraform init') {
             steps {
-                script{
-                    sh '''
-                        cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
-                        terraform init
-                    '''                    
-                }
+                // script{
+                    sh "terraform -chdir='${params.WrapperPath}' init"                    
+                //  }
                 
             }
         }
@@ -94,10 +92,7 @@ pipeline {
             steps {
                 withAWS(credentials: 'HARSHIT_AWS_CREDS') {
                     script{
-                        sh '''
-                            cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
-                            terraform plan
-                        '''                    
+                        sh "terraform -chdir='${params.WrapperPath}' plan"                    
                     }
                 }
             }
@@ -123,16 +118,10 @@ pipeline {
                 withAWS(credentials: 'HARSHIT_AWS_CREDS') {
                     script{
                         if (params.ACTION == 'apply') {
-                            sh '''
-                                cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
-                                terraform apply --auto-approve
-                                '''
+                            sh "terraform -chdir='${params.WrapperPath}' apply --auto-approve"
                         } 
                         else if (params.ACTION == 'destroy') {
-                        sh '''
-                            cd wrapperCode/Network-Skeleton-Wrapper-Code/Dev-Network-Skeleton-Wrapper-Code/
-                            terraform destroy --auto-approve
-                            '''
+                            sh "terraform -chdir='${params.WrapperPath}' destroy --auto-approve"
                         }
                     }
                 }
@@ -159,6 +148,9 @@ This Jenkins pipeline automates the deployment of a Frontend infrastructure usin
 ***
 
 ## Jenkins Output
+
+### Parameter view
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/cbfd8525-ec52-4b3f-8d9b-05851f165f37)
 
 ### Pipeline view
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/115c647e-0d41-4e6e-bbf0-72b98e2f885b)
