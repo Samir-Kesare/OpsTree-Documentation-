@@ -73,7 +73,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/2fb508a3-dfae-42c3-a453-54cd62377fbd)
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c9acbc05-3e14-4bcc-9a54-a020ee7453ab)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/02922b8b-c2c5-40c1-9209-e9258ce4e6ec)
 
 <details>
 <summary> <b> Click here for Console Output </b> </summary>
