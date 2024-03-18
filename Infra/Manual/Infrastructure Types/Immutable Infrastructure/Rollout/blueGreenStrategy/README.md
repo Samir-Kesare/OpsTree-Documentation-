@@ -19,10 +19,13 @@
 
 ## Introduction
 The blue-green deployment strategy is a technique used in software deployment to ensure seamless updates with minimal downtime. It involves maintaining two identical production environments, labeled "blue" and "green," with only one actively serving user traffic at a time. This approach allows for testing and validation of updates in the green environment before routing traffic to it, providing a safety net for quick rollbacks if issues arise. By using this strategy, organizations can achieve continuous deployment while minimizing the risk of disruptions for end-users.
+![Blue-Green GIF](https://www.encora.com/hs-fs/hubfs/blue-green-deployment.gif?width=540&name=blue-green-deployment.gif)
 
 To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
 ***
 ## Steps to rollout
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/92377607-a6a0-45f9-a41c-1907616d87ef)
+
 Rolling out immutable infrastructure using a blue-green deployment strategy is a robust approach to ensure seamless updates with minimal downtime. Here's a high-level overview of how you can implement it:
 
 1. **Setup Infrastructure**: 
