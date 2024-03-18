@@ -58,10 +58,25 @@ By applying the Canary deployment strategy within an immutable infrastructure se
 
 ## Advantages
 
+| Advantages                               | Description                                                                                                       |
+|------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Early Issue Detection                    | Canary deployments allow for early detection of issues by exposing a small subset of users to new updates first.     |
+| Reduced Risk of Widespread Impact        | By initially deploying updates to a limited audience, the risk of widespread negative impact is significantly reduced. |
+| Faster Feedback Loop                     | Canary deployments enable faster feedback loops, allowing teams to gather user feedback and iterate on updates quickly. |
+| Smoother Rollouts                        | Gradual rollout to a subset of users ensures smoother transitions to new versions, minimizing disruption for the entire user base. |
+| Improved User Experience                 | Users in the canary group may experience improved performance or new features earlier, enhancing their overall experience. |
+| Incremental Deployment                   | Updates are incrementally deployed, enabling teams to validate changes in real-world scenarios before full rollout. |
 ***
 
 ## Disadvantages
 
+| Disadvantages                            | Description                                                                                                       |
+|------------------------------------------|-------------------------------------------------------------------------------------------------------------------|
+| Complexity of Implementation             | Implementing a Canary deployment strategy can be complex, requiring careful planning and coordination across teams. |
+| Increased Overhead for Monitoring        | Monitoring the performance and behavior of canary deployments requires additional overhead and resource allocation. |
+| Potential for Canary Bias                | There's a risk of biased results if the canary group differs significantly from the broader user base or environment. |
+| Requires Granular Control                | Canary deployments require granular control over deployment processes and infrastructure, which may not be feasible for all setups. |
+| Dependency on Automated Testing          | Successful implementation of Canary deployments relies heavily on automated testing and monitoring tools for validation. |
 ***
 
 ## Conclusion
