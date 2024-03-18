@@ -1,5 +1,5 @@
 
-# Autoscaling Terraform Wrapper Code Doc For QA
+# Salary-App Terraform Wrapper Code Doc For QA
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/7bebcb9c-e68b-4251-9974-9752be51b3b3">
 
