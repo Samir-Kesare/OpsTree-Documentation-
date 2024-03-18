@@ -79,3 +79,4 @@ By applying the Canary deployment strategy within an immutable infrastructure se
 | Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md |
 | Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
 | Canary Deployment | https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.canary-deployment.en.html |
+|| https://martinfowler.com/bliki/CanaryRelease.html?ref=wellarchitected |
