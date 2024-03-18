@@ -25,6 +25,8 @@ The Canary deployment strategy is a method of releasing software updates gradual
 To know more about Canary Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md)
 ***
 ## Steps to rollout
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ffc2d72a-3a60-496c-8506-cbf6aec79ae8)
+
 Rolling out the Canary deployment strategy in an immutable infrastructure involves implementing the same gradual update process, but within the context of immutable infrastructure principles. Here's how it can be done:
 
 1. **Immutable Infrastructure Setup**:
