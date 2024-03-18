@@ -25,6 +25,33 @@ The Canary deployment strategy is a method of releasing software updates gradual
 To know more about Canary Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md)
 ***
 ## Steps to rollout
+Rolling out the Canary deployment strategy in an immutable infrastructure involves implementing the same gradual update process, but within the context of immutable infrastructure principles. Here's how it can be done:
+
+1. **Immutable Infrastructure Setup**:
+   - Provision immutable infrastructure components such as virtual machines, containers, or serverless resources using automation tools like Terraform, AWS CloudFormation, or Kubernetes.
+
+2. **Deploy Initial Version (Baseline)**:
+   - Deploy the initial version of your application to the immutable infrastructure. This serves as the baseline version against which subsequent updates will be compared.
+
+3. **Create Canary Instances**:
+   - Create a subset of immutable instances, representing the canary group, where the new version of the application will be deployed. These instances should be identical to the baseline but configured to receive the new version.
+
+4. **Gradual Update Rollout**:
+   - Deploy the updated version of the application to the canary instances, while keeping the baseline instances unchanged. This allows for a controlled rollout of the update to a small subset of infrastructure.
+
+5. **Monitor and Validate**:
+   - Monitor the performance, metrics, and user feedback from the canary instances to assess the impact of the update. Use tools like Prometheus, Grafana, or AWS CloudWatch to track key metrics and identify any anomalies.
+
+6. **Incremental Expansion**:
+   - If the canary deployment performs well without significant issues, gradually expand the rollout to additional instances or clusters, following the same monitoring and validation process.
+
+7. **Full Rollout or Rollback**:
+   - Once the updated version has been validated and proven stable across the canary instances, proceed with rolling it out to the remaining infrastructure. Alternatively, if issues are detected, rollback the update to the baseline version to maintain system stability.
+
+8. **Post-Deployment Tasks**:
+   - Perform any necessary post-deployment tasks, such as updating documentation, notifying stakeholders, and conducting post-mortem analysis to learn from the deployment process.
+
+By applying the Canary deployment strategy within an immutable infrastructure setup, organizations can ensure a controlled and iterative approach to deploying updates while maintaining the reliability and consistency of their infrastructure.
 ***
 
 ## Advantages
