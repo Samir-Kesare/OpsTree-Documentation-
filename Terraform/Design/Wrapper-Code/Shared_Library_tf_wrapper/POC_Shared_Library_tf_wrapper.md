@@ -378,7 +378,7 @@ node {
 ## [Terraform groovy template file](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/terraformCD/terraform_CD.groovy)
 
 <details>
-  <summary> **Click here to see the terraform_CD.groovy file** </summary>
+  <summary> <b>Click here to see the terraform_CD.groovy file</b>b </summary>
 <br>
 
   ```shell
@@ -411,7 +411,7 @@ def call(String url, String creds, String branch, String rootPath, String childP
 
 ## [Shared Library src files](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/terraform_CICD)
 <details>
-<summary> Click here to see src files</summary>
+<summary> <b>Click here to see src files</b> </summary>
 <br>
 
   ```shell
