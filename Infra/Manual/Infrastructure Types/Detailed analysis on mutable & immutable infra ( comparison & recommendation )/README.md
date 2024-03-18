@@ -1,6 +1,6 @@
 # Detailed analysis on mutable & immutable infra ( comparison & recommendation )
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/1fa5b2cd-c8f7-4c2a-9908-8d8d5a5c9a28)
+
 
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
 | -----------------| --------------| -----------|---------------- | -------------- |
