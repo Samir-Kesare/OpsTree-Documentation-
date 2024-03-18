@@ -41,7 +41,7 @@ This document provides a step-by-step guide for setting up wrapper code for Atte
 | Feature                | Description                    |
 |------------------------|---------------------------------------------------------------------------------------------------------------------|
 | **Automation**      | Automates repetitive tasks like initialization, applying changes, and destroying resources, saving time and effort.|
-| **Environment managementy** | It facilitates environment-specific configuration management by utilizing separate Terraform state files for different environments, such as development, staging, and production.|
+| **Environment management** | It facilitates environment-specific configuration management by utilizing separate Terraform state files for different environments, such as development, staging, and production.|
 | **Standardization**        | Enforces standardized practices across Terraform projects, ensuring consistency and reducing the risk of errors.|
 | **Integration**            | Facilitates integration with CI/CD pipelines, version control systems, and infrastructure management platforms for seamless deployment. |
 
