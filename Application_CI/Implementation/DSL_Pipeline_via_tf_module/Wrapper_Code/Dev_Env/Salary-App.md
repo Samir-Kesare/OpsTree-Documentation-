@@ -155,7 +155,7 @@ pipeline {
 ```
 </details>
 
-**This Jenkins pipeline automates the deployment of a Frontend infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
+**This Jenkins pipeline automates the deployment of a Salary infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
 
 ### Terraform Deployment Pipeline Overview
 
