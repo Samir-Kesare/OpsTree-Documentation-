@@ -154,17 +154,12 @@ pipeline {
      post {
         success {
             script {
-                if (fileExists('*.pem')) {
                     echo 'Terraform operation successful!'
-                    archiveArtifacts artifacts: '*.pem', followSymlinks: false
-                } else {
-                    echo 'Infra Destoryed and .pem kye cleared'
-                }
+                    archiveArtifacts artifacts: '*.pem', allowEmptyArchive: true
             }
         }
         failure {
             echo 'Terraform operation failed!'
-            cleanWs()
         }
     }
 }
