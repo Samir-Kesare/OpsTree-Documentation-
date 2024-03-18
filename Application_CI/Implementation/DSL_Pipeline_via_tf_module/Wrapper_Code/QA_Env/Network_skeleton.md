@@ -1447,74 +1447,66 @@ pipeline {
 }
 ```
 
-<details>
-<summary> Click here to see terraform_CD.groovy</summary>
-<br>
-  
-```shell
-package org.avengers.template.terraformCD
+# Output
 
-import org.avengers.common.*
-import org.avengers.terraform_CICD.*
+## Terminal Output
 
-def call(String url, String creds, String branch, String rootPath, String childPath, String ACTION){
+<img width="600" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4751ccd6-698c-4984-a504-8fb021af505b">
 
-    variablization = new action()
-    gitCheckoutPrivate = new GitCheckoutPrivate()
-    initialization = new init()
-    deploying = new deploy()
-    destroy = new destroy()
-    keyarchive = new keyarchive()
-    
-  
+***
 
-    gitCheckoutPrivate.call(url, creds, branch)
-    variablization.call(rootPath, childPath)
-    initialization.call(rootPath, childPath)
-    deploying.call(rootPath, childPath, ACTION)
-    destroy.call(rootPath, childPath, ACTION)
-    keyarchive.call(rootPath, childPath)
+## Console Output
 
-}
-```
-```
-</details>
+### VPC & it's resources
 
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/bd03370b-9419-42a2-9c91-831176b8a8d3">
 
-## [Shared Library src files](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/terraform_CICD)
+***
 
-## [Shared Library src files](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/terraform_CICD)
-<details>
-<summary> Click here to see src files</summary>
-<br>
-package org.avengers.terraform_CICD
+### Elastic IP
 
-def call(String rootPath, String childPath, String ACTION) {
-    stage("Terraform Plan") {
-        script {
-            sh "cd ${rootPath}/${childPath} && terraform plan"
-        }
-    }
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/2b642830-7a6e-4c58-a20d-52ce3488b3c0">
 
-    if (ACTION == 'apply') {
-        stage('Approval For Apply') {
-            script {
-                // Prompt for approval before applying changes
-                input "Do you want to apply Terraform changes?"
-            }
-        }
-        stage('Terraform Apply') {
-            script {
-                // Run Terraform apply
-                sh 'cd ${rootPath}/${childPath} && terraform apply -auto-approve'
-            }
-        }
-    } else {
-        echo "Skipping Terraform apply since action is not set to 'apply'"
-    }
-}
-```
-</details>
+***
+
+### NACLs
+
+**Frontend NACL**
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/1bfe075f-c85e-49c2-ab89-668624ec2122">
+
+***
+
+**Backend NACL**
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/74b31c37-f664-4be3-bad3-e2eb6869cda3">
+
+***
+
+**DB NACL**
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7f538afe-31df-4f56-b25e-e73603188528">
+
+***
+
+### Security Group
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/b18405d2-68e8-4d8c-9944-b9fe037ac518">
+
+***
+
+### Load Balancer
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ee63527c-bd8a-4815-bc0e-744af1ba910e">
+
+***
+
+### Route53
+
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/2d563ec3-61ef-4032-b86c-2787f68f4bdc">
+
+***
+
 
 ## Contact Information
 | Name            | Email Address                        |
