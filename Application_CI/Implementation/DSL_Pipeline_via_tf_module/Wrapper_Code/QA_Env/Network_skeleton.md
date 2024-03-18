@@ -1449,12 +1449,6 @@ pipeline {
 
 # Output
 
-## Terminal Output
-
-<img width="600" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4751ccd6-698c-4984-a504-8fb021af505b">
-
-***
-
 ## Console Output
 
 ### VPC & it's resources
