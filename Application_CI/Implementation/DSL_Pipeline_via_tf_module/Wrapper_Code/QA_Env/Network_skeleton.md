@@ -1467,9 +1467,7 @@ pipeline {
 | **Post**                    | Displays success or failure messages. |                                                                                                                                          
 ***
 
-# Output
-
-## Console Output
+## Output
 
 ### VPC & it's resources
 
