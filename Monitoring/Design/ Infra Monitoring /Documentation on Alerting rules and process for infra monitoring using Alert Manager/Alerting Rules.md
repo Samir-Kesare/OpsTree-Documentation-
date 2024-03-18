@@ -31,8 +31,6 @@ Alert Manager is a powerful open-source alerting tool that integrates seamlessly
 
 Alerting rules in Alert Manager follow a simple yet powerful syntax for defining conditions and thresholds that, when met, generate alerts. These rules typically include:
 
-- **Expression**: A logical expression that evaluates metrics collected by Prometheus. It can involve mathematical operations, comparisons, and functions to define conditions for alerting.
-
 - **Thresholds**: Thresholds define the values or ranges of metrics that trigger alerts. These thresholds can be static or dynamic and are crucial for determining the severity of alerts.
 
 - **Labels and Annotations**: Labels provide metadata to categorize alerts, while annotations offer additional context and information about the alert, such as timestamps, severity levels, or affected components.
@@ -60,7 +58,7 @@ Alerting rules in Alert Manager follow a simple yet powerful syntax for defining
 Alerting rules are crucial for infrastructure monitoring, allowing organizations to detect and respond to potential issues before they escalate. Below are some common alerting rules used in infrastructure monitoring:
 | Alert Type              | Rule                                 | Threshold                      | Action                                                           |
 |-------------------------|--------------------------------------|--------------------------------|------------------------------------------------------------------|
-| High CPU Usage          | CPU utilization > 90%                | CPU > 90% for 5 minutes        | Send critical alert to operations team for investigation        |
+| High CPU Usage          | CPU utilization > 80%                | CPU > 80% for 5 minutes        | Send critical alert to operations team for investigation        |
 | Memory Exhaustion       | Available memory < 10%               | Memory < 10% for 5 minutes      | Notify relevant team to investigate and optimize memory usage    |
 | Disk Space Utilization  | Disk usage > 90%                    | Disk > 90% for 10 minutes       | Alert operations team to free up disk space or provision storage |
 | Network Connectivity    | Packet loss > 5%                    | Packet loss > 5% for 2 minutes | Notify network administrators to troubleshoot connectivity      |
