@@ -165,8 +165,7 @@ pipeline {
 | **Copy Terraform Files**    | Copies Frontend-related Terraform configuration files to the Jenkins workspace. |                                                                                                
 | **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
 | **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
-| **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
-| **Review and Approve Destroy** | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |                                                                            
+| **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                                                                                                  
 | **Apply or Destroy**        | Executes Terraform apply or destroy based on the selected action. |                                                                                                               
 | **Post**                    | Displays success or failure messages. |                                                                                                                                          
 ***
