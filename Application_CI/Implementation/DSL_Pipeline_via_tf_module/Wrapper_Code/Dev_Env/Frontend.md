@@ -150,14 +150,15 @@ pipeline {
         }
     }
     
-    post {
+   post {
         success {
-            echo 'Terraform operation successful!'
-            archiveArtifacts artifacts: '*.pem', followSymlinks: false
+            script {
+                    echo 'Terraform operation successful!'
+                    archiveArtifacts artifacts: '*.pem', allowEmptyArchive: true
+            }
         }
         failure {
             echo 'Terraform operation failed!'
-            cleanWs()
         }
     }
 }
