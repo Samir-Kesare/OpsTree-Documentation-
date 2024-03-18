@@ -1,5 +1,5 @@
-# Rollout Immutable Infrastructure using Rolling Startegy
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/de21aea5-4b4c-4416-b18c-0a68788cfcce)
+# Rollout Immutable Infrastructure using Blue-Green Strategy
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/5cc93cad-e34a-4f18-bb6a-770520dab569)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
@@ -18,26 +18,10 @@
 ***
 
 ## Introduction
-A rolling deployment strategy is a method used in software deployment where updates or changes are gradually applied to a subset of servers or instances in a systematic and controlled manner, while the remaining servers continue to handle production traffic. This approach ensures continuous availability of the application and reduces the risk associated with deploying changes.
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ddf2dbea-9e4e-413c-83f1-2323ce5133e0)
-
-In a rolling deployment:
-
-1. **Gradual Updates**: Updates are applied incrementally to a small portion of the infrastructure, such as one server or a group of servers, at a time.
-
-2. **Continuous Availability**: Throughout the deployment process, the application remains available to users as the updates are rolled out without causing downtime.
-
-3. **Fault Isolation**: By updating only a subset of servers at any given time, the impact of any potential issues or bugs is limited to a small portion of the infrastructure.
-
-4. **Easy Rollback**: If any problems occur during the deployment, it's relatively straightforward to roll back to the previous version since only a fraction of the infrastructure has been updated.
-
-5. **Automated Orchestration**: Rolling deployments are often automated using deployment orchestration tools or continuous integration/continuous deployment (CI/CD) pipelines to manage the process efficiently.
-
-To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling)
+To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
 ***
 ## Steps to rollout
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8f9a29c6-0ef5-4b9c-b485-5ba6efc4a015)
 Rolling out immutable infrastructure using a blue-green deployment strategy is a robust approach to ensure seamless updates with minimal downtime. Here's a high-level overview of how you can implement it:
 
 1. **Setup Infrastructure**: 
