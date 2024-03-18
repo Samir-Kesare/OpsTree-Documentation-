@@ -34,9 +34,7 @@
 
  ## Introduction
 
-In this document it will guide through the steps to achieve the setup of wrapper code for Autoscaling module which involves the child modules.According to the value passed through the root module/wrapper code we can manage/build the infra structure setup accordingly. Which involves the managing of different terraform state files for managing respective environments.
-
-***
+In this document, we will provide a comprehensive guide to setting up the "Qa Env Salary Wrapper" for the Autoscaling module in Terraform. This setup involves managing the child modules within the Autoscaling module. The purpose of this wrapper code is to facilitate the management and building of infrastructure setups based on the values passed through the root module or wrapper code. Additionally, this setup involves managing different Terraform state files to effectively handle respective environments.
 
 # Why Terraform Wrapper Code
 
