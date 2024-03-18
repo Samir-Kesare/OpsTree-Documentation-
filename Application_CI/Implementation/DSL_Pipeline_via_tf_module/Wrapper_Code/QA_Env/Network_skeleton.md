@@ -1354,7 +1354,10 @@ Finished: SUCCESS
 
 ## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/khushi/networkSkeleton_QA/Wrapper-Code/QA_Env/networkskeleton_QA/Jenkinsfile)
 
-```shell
+<details>
+  <summary>Click here to see Jenkins file</summary>
+
+  ```shell
 pipeline {
     agent any
     
@@ -1446,6 +1449,23 @@ pipeline {
     }
 }
 ```
+</details>
+
+**This Jenkins pipeline automates the deployment of a NetworkSkeleton_QA Server using Terraform module and Wrapper code. It's configured to perform the following actions:**
+
+### Terraform Deployment Pipeline Overview
+
+| Stage                   | Description                                                                                                                                                                      |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Checkout**            | Fetches the Terraform code from a GitHub repository branch (`main`). |                                                                                    
+| **Copy Terraform Files**    | Copies Frontend-related Terraform configuration files to the Jenkins workspace. |                                                                                                
+| **Terraform Init**          | Initializes Terraform in the workspace directory. |                                                                                                                                
+| **Terraform Plan**          | Generates a Terraform execution plan to preview the changes. |                                                                                                                     
+| **Review and Approve Apply** | Asks for approval before applying Terraform changes if the selected action is "Apply". |                                                                                       
+| **Review and Approve Destroy** | Asks for approval before destroying Terraform resources if the selected action is "Destroy". |                                                                            
+| **Apply or Destroy**        | Executes Terraform apply or destroy based on the selected action. |                                                                                                               
+| **Post**                    | Displays success or failure messages. |                                                                                                                                          
+***
 
 # Output
 
