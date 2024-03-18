@@ -55,7 +55,9 @@ The primary goal of dashboard design is to facilitate data exploration and analy
 ***
 
 ## Dashboard Design in Excallidraw
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/fca8fb52-7bfe-460f-b746-5d63f0db2b20)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/2b033e3e-e42b-44e7-88bf-c2a278dd447c)
+
 
 ***
 ## Tools for Dashboard Design in Infrastructure Monitoring
