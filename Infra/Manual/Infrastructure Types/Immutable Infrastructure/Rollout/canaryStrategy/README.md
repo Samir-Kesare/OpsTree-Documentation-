@@ -18,6 +18,10 @@
 ***
 
 ## Introduction
+[**Immutable infrastructure**](https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md) is a modern approach to managing IT environments that emphasizes the use of immutable components, where server instances, containers, or virtual machines are treated as disposable, immutable artifacts that are never modified after they are created.
+
+In immutable infrastructure, updates and changes are applied by replacing entire server instances or components with new ones that incorporate the desired changes, rather than modifying existing instances in place.
+
 The Canary deployment strategy is a method of releasing software updates gradually to a small subset of users or servers before rolling them out to the entire user base. This approach allows for early detection of issues and smoother transitions to new versions by monitoring performance metrics and gradually expanding the update's reach. It helps mitigate risks associated with deployments and enables faster feedback and iteration on software releases.
 
 ![Canary](https://www.encora.com/hs-fs/hubfs/GIF-canary-deployment.gif?width=720&name=GIF-canary-deployment.gif)
