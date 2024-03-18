@@ -19,8 +19,8 @@
 
 ## Introduction
 The Canary deployment strategy is a method of releasing software updates gradually to a small subset of users or servers before rolling them out to the entire user base. This approach allows for early detection of issues and smoother transitions to new versions by monitoring performance metrics and gradually expanding the update's reach. It helps mitigate risks associated with deployments and enables faster feedback and iteration on software releases.
-![Canary](https://www.encora.com/hs-fs/hubfs/GIF-canary-deployment.gif?width=720&name=GIF-canary-deployment.gif)
 
+![Canary](https://www.encora.com/hs-fs/hubfs/GIF-canary-deployment.gif?width=720&name=GIF-canary-deployment.gif)
 
 To know more about Canary Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md)
 ***
