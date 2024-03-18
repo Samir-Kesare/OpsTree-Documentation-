@@ -1,3 +1,43 @@
+# Rollout Immutable Infrastructure using Rolling Startegy
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/de21aea5-4b4c-4416-b18c-0a68788cfcce)
+
+|   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
+| --------------- | --------------| -----------|----------------- | -------------- |
+| **[Harshit Singh](https://github.com/Panu-S-Harshit-Ninja-07)**    | 16 March 2024 |  Version 1 | Harshit Singh     | 17 March 2024  |
+***
+
+## Table of Contents 
+
++ [Introduction](#Introduction)
++ [Steps to rollout](#Steps-to-rollout)
++ [Advantages](#Advantages)
++ [Disadvantages](#Disadvantages)
++ [Conclusion](#Conclusion)
++ [Contact Information](#contact-information)
++ [References](#References)
+***
+
+## Introduction
+A rolling deployment strategy is a method used in software deployment where updates or changes are gradually applied to a subset of servers or instances in a systematic and controlled manner, while the remaining servers continue to handle production traffic. This approach ensures continuous availability of the application and reduces the risk associated with deploying changes.
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/ddf2dbea-9e4e-413c-83f1-2323ce5133e0)
+
+In a rolling deployment:
+
+1. **Gradual Updates**: Updates are applied incrementally to a small portion of the infrastructure, such as one server or a group of servers, at a time.
+
+2. **Continuous Availability**: Throughout the deployment process, the application remains available to users as the updates are rolled out without causing downtime.
+
+3. **Fault Isolation**: By updating only a subset of servers at any given time, the impact of any potential issues or bugs is limited to a small portion of the infrastructure.
+
+4. **Easy Rollback**: If any problems occur during the deployment, it's relatively straightforward to roll back to the previous version since only a fraction of the infrastructure has been updated.
+
+5. **Automated Orchestration**: Rolling deployments are often automated using deployment orchestration tools or continuous integration/continuous deployment (CI/CD) pipelines to manage the process efficiently.
+
+To know more about Rolling Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling)
+***
+## Steps to rollout
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/8f9a29c6-0ef5-4b9c-b485-5ba6efc4a015)
 Rolling out immutable infrastructure using a blue-green deployment strategy is a robust approach to ensure seamless updates with minimal downtime. Here's a high-level overview of how you can implement it:
 
 1. **Setup Infrastructure**: 
@@ -41,3 +81,48 @@ Rolling out immutable infrastructure using a blue-green deployment strategy is a
     - Iterate on the process to make future deployments even smoother.
 
 By following this approach, you can achieve a seamless deployment process with minimal disruption to your users, while also ensuring the reliability and consistency of your infrastructure.
+***
+
+## Advantages
+
+| Advantage                  | Description                                                                                                                                                      |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Continuous Availability    | Rolling deployments ensure that your application remains available throughout the deployment process, minimizing downtime and maintaining service continuity.   |
+| Risk Mitigation            | Reduces the risk of deploying faulty updates by gradually updating a subset of instances, allowing for the detection and resolution of issues before affecting the entire infrastructure. |
+| Incremental Updates        | Enables the deployment of updates incrementally, facilitating the management of large-scale deployments and reducing the impact on system resources.              |
+| Easier Rollbacks           | Facilitates quick rollbacks to previous versions in case of issues, as changes are applied gradually, allowing for the identification and resolution of problems without disrupting the entire system. |
+| Scalability                | Provides scalability by allowing the rate of updates to be adjusted based on demand, ensuring that the infrastructure can handle changes without sacrificing performance or stability. |
+| Consistency                | Helps maintain consistency across the infrastructure by updating instances in a phased manner, ensuring that all instances run the same version of the application and reducing the risk of compatibility issues. |
+***
+
+## Disadvantages
+Here's the information presented in a table format:
+
+| Disadvantage              | Description |
+|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Increased Complexity     | Implementing rolling deployments requires careful orchestration and coordination, adding complexity to the deployment process. |
+| Resource Intensive        | Rolling deployments may require additional resources such as extra server capacity or automation tools, increasing operational costs and resource consumption. |
+| Extended Deployment Time | Rolling deployments may take longer to complete compared to other deployment strategies due to incremental updates applied to a subset of servers. |
+| Potential Service Degradation | There is a risk of service degradation if updated code introduces unexpected bugs or performance issues, impacting a subset of users or transactions. |
+| Version Drift            | Managing version consistency across a large number of servers can be challenging, leading to version drift and potential compatibility issues. |
+| Dependency Management    | Handling dependencies between different components of the application stack can be complex and may require additional testing and validation. |
+***
+
+## Conclusion
+Rolling out immutable infrastructure using a rolling deployment strategy offers numerous advantages, including continuous availability, risk mitigation, and scalability. However, it comes with challenges such as increased complexity, resource intensity, and potential service degradation. Despite these drawbacks, proper orchestration and adherence to best practices can ensure successful deployment and maintenance of a robust and reliable infrastructure.
+***
+
+## Contact Information
+
+|     Name         | Email  |
+| -----------------| ------------------------------------ |
+| Harshit Singh    | harshit.singh.snaatak@mygurukulam.co |
+***
+
+## References
+
+| Description                                   | References  
+| --------------------------------------------  | -------------------------------------------------|
+| Deployment Strategies Reference doc | https://github.com/CodeOps-Hub/Documentation/tree/main/Deployment_strategies/Rolling |
+| Immutable Infrastructure Reference doc | https://github.com/CodeOps-Hub/Documentation/blob/main/Infra/Manual/Infrastructure%20Types/Immutable%20Infrastructure/README.md |
+| How to Rollout | https://medium.com/@maheshwar.ramkrushna/chap-22-rollout-strategies-in-kubernetes-rolling-update-with-nginx-7b539e03495a |
