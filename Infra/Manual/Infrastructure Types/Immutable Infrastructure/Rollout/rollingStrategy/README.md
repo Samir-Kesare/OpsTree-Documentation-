@@ -9,7 +9,7 @@
 ## Table of Contents 
 
 + [Introduction](#Introduction)
-+ [Steps to rollout](#Steps-to-rollout)
++ [Steps to rollout](#steps-to-rollout-rolling-strategy)
 + [Advantages](#Advantages)
 + [Disadvantages](#Disadvantages)
 + [Conclusion](#Conclusion)
