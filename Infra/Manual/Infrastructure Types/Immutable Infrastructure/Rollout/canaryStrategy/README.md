@@ -1,4 +1,5 @@
 # Rollout Immutable Infrastructure using Canary Strategy
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/3e0c84bd-1113-491e-ad0a-92f30a599e95)
 
 |   Author        |  Created on   |  Version   | Last updated by  | Last edited on |
 | --------------- | --------------| -----------|----------------- | -------------- |
@@ -17,10 +18,11 @@
 ***
 
 ## Introduction
-The blue-green deployment strategy is a technique used in software deployment to ensure seamless updates with minimal downtime. It involves maintaining two identical production environments, labeled "blue" and "green," with only one actively serving user traffic at a time. This approach allows for testing and validation of updates in the green environment before routing traffic to it, providing a safety net for quick rollbacks if issues arise. By using this strategy, organizations can achieve continuous deployment while minimizing the risk of disruptions for end-users.
-![Blue-Green GIF](https://www.encora.com/hs-fs/hubfs/blue-green-deployment.gif?width=540&name=blue-green-deployment.gif)
+The Canary deployment strategy is a method of releasing software updates gradually to a small subset of users or servers before rolling them out to the entire user base. This approach allows for early detection of issues and smoother transitions to new versions by monitoring performance metrics and gradually expanding the update's reach. It helps mitigate risks associated with deployments and enables faster feedback and iteration on software releases.
+![Canary](https://www.encora.com/hs-fs/hubfs/GIF-canary-deployment.gif?width=720&name=GIF-canary-deployment.gif)
 
-To know more about Blue-Green Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Blue_Green/README.md)
+
+To know more about Canary Deployment Strategy, [**click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Deployment_strategies/Canary/README.md)
 ***
 ## Steps to rollout
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056444/92377607-a6a0-45f9-a41c-1907616d87ef)
