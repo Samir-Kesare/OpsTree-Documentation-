@@ -794,6 +794,7 @@ Finished: SUCCESS
 
 ### Security Group
 
+<img width="1110" alt="Screenshot 2024-03-20 at 12 15 09 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/ed76a8d9-af0a-49e2-8232-90177145bedc">
 
 ***
 ### Launch Template
