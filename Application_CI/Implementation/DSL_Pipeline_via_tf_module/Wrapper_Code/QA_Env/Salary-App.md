@@ -545,4 +545,4 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
 | [**Link**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/Shikha/QA-Salary-App/Wrapper-Code/QA_Env/Salary/Jenkinsfile)  | Jenkins DSL Pipeline Doc reference link. |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | ASG Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/Shikha/Salary-App-QA/Wrapper-Code-Salary-QA) | QA Salary Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/main/wrapperCode/Salary-wrapper-code/QA_Env) | QA Salary Wrapper-Code |
