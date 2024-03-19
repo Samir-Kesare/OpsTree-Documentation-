@@ -794,33 +794,31 @@ Finished: SUCCESS
 
 ### Security Group
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/358610dc-38fe-4178-bd59-94d5c27afd4d"> 
 
 ***
 ### Launch Template
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/88f6e58a-a000-49d9-aae1-c4012eb1d187"> 
-
+<img width="1075" alt="Screenshot 2024-03-19 at 11 07 44 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/4972f41b-e3f5-4f0a-8626-2851dc06588e">
 ***
 
 ### Target Group
+<img width="1063" alt="Screenshot 2024-03-19 at 11 07 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/4860e1fc-4cb2-44ec-8352-7c0e072bbd0a">
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ae53d546-b274-4582-8bb7-a8dcedc0e679">
 
 ***
 ### Listener rule of ALB
 
-<img width="700" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/898f8481-5bc9-4b91-8776-9c747a2612c0">
+<img width="1042" alt="Screenshot 2024-03-19 at 11 06 19 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/5ef0ae22-6f5d-4728-9fca-8a75de515d50">
 
 ***
 ### Auto Scaling Group
 
-<img width="700" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ec8ebaa1-f92f-48c7-9f85-daa0a7ce394c">
+<img width="1044" alt="Screenshot 2024-03-19 at 11 06 42 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/29dfb7fe-4d86-4ea1-a86c-2cf003231ec9">
 
 ***
 ### Auto Scaling Group Policies
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ad37d0cf-0ea4-4064-9da2-7a0105e8e449">
+<img width="568" alt="Screenshot 2024-03-19 at 11 07 02 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/30b21086-c08e-47c8-8dae-91b24aee4428">
 
 ***
 
@@ -834,7 +832,7 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 
 | **Name** | **Email Address** |
 | -------- | ----------------- |
-| **Vishal Kumar Kesharwani** | vishal.kumar.kesharwani.snaatak@mygurukulam.co |
+| **Vidhi Yadav** | vidhi.yadhav.snaatak@mygurukulam.co |
 
 ***
 
@@ -843,8 +841,6 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | **Source** | **Description** |
 | ---------- | --------------- |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
-| [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
-| [**Link**](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | ASG Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/Dev_Frontend_API_ASG.md) | Dev Frontend Wrapper-Code |
+| [**Link**](https://www.youtube.com/watch?v=iiF2iQV-3eM&t=776s)  | Credentials in AWS |
+| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/main/wrapperCode/Attendance-API) | Dev Attendance Wrapper-Code |
 
