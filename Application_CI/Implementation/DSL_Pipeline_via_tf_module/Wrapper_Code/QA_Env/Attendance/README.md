@@ -1,4 +1,4 @@
-# DSL Jenkins pipeline for Attendance setup (Dev)
+# DSL Jenkins pipeline for Attendance setup (QA)
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
 
@@ -537,5 +537,5 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | ---------- | --------------- |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [**Link**](https://www.youtube.com/watch?v=iiF2iQV-3eM&t=776s)  | Credentials in AWS |
-| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/main/wrapperCode/Attendance-API) | Dev Attendance Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/main/wrapperCode/Attendance-API) | QA Attendance Wrapper-Code |
 
