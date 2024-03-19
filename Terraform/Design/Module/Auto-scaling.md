@@ -573,6 +573,21 @@ output "Autoscaling_policy_name" {
 
 ***
 
+### script.sh
+
+<details>
+<summary><strong>Click here to see variables.tf file</strong></summary>
+<br>
+
+```shell
+
+#!/bin/bash
+#
+```
+</details>
+
+***
+
 ## Tags
 
 * Tags are assigned to resources with name variable as prefix.
