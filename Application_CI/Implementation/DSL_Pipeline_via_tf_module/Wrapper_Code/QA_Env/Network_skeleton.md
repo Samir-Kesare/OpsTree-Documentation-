@@ -2161,7 +2161,7 @@ Finished: SUCCESS
 ## [Jenkinsfile](https://github.com/CodeOps-Hub/Jenkinsfile/blob/khushi/networkSkeleton_QA/Wrapper-Code/QA_Env/networkskeleton_QA/Jenkinsfile)
 
 <details>
-  <summary>Click here to see Jenkins file</summary>
+  <summary> <b> Click here to see Jenkins file </b> </summary>
 
   ```shell
 pipeline {
