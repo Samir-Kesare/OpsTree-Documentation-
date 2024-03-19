@@ -1,5 +1,5 @@
 
-# DSL Jenkins pipeline for Frontend setup in QA Env Documentation
+# DSL Jenkins pipeline for Salary setup in QA Env Documentation
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
 
@@ -79,7 +79,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 ```
 </details>
 
-**This Jenkins pipeline automates the deployment of a Frontend infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
+**This Jenkins pipeline automates the deployment of a Salary infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
 
 ### Terraform Deployment Pipeline Overview
 
@@ -175,6 +175,6 @@ In conclusion, our DSL Pipeline offers a powerful solution for creating and mana
 | ---------- | --------------- |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Application_CI/Implementation/GenericDoc/Terraform/terraform.md) | Terraform Generic Doc Link. |
 | [**Link**](https://developer.hashicorp.com/terraform/language/modules) | Terraform Module Concept. |
-| [**Link**](https://medium.com/appgambit/terraform-with-jenkins-pipeline-439babe4095c)  | Jenkins DSL Pipeline Doc reference link. |
+| [**Link**](https://github.com/CodeOps-Hub/Jenkinsfile/blob/Shikha/QA-Salary-App/Wrapper-Code/QA_Env/Salary/Jenkinsfile)  | Jenkins DSL Pipeline Doc reference link. |
 | [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Module/Auto-scaling.md) | ASG Module Doc |
-| [**Link**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Design/Wrapper-Code/QA_Frontend_API_ASG.md) | QA Salary Wrapper-Code |
+| [**Link**](https://github.com/CodeOps-Hub/Terraform-modules/tree/Shikha/Salary-App-QA/Wrapper-Code-Salary-QA) | QA Salary Wrapper-Code |
