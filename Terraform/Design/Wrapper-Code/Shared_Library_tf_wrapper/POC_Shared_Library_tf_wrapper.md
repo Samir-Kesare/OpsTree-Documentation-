@@ -40,35 +40,13 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 
 **Step-1** Create a New Pipeline Job
 
-- Navigate to the Jenkins dashboard and click on New Item.
-- Enter a name for your job (e.g., "Terraform.CD").
-- Select Pipeline and click OK.
-
 **Step-2** Configure Pipeline Script
-
-- In the job configuration page, scroll down to the Pipeline section.
-- Select Pipeline script from SCM.
-- Give required repo url and enter your credentials.
 
 **Step-3** Save the Configuration
 
-- Click on Save to save the job configuration.
-
 **Step-4** Build the Pipeline
 
-- Once the pipeline configuration is saved, you can manually trigger the build by clicking on Build Now.
-
 **Step-5** View Build Console Output
-
-- After triggering the build, you can view the progress and console output of the build by clicking on the build number in the Jenkins dashboard.
-- The console output will display the steps executed by the pipeline script, including code checkout and compilation.
-- Verify Successful Compilation.
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/2c54d83e-f452-4d09-8a48-ea6d0f450bcf)
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/8a40dcc0-275e-404c-bdb5-c8487d829d89)
-
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/4e2ee4c3-d2ad-4442-b9c8-482051653eb0)
 
 <details>
 <summary> <b> Click here for Console Output </b> </summary>
@@ -478,6 +456,14 @@ def call(String rootPath, String childPath) {
 </details>
 
 ## Output
+
+### Jenkins Output
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/2c54d83e-f452-4d09-8a48-ea6d0f450bcf)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/8a40dcc0-275e-404c-bdb5-c8487d829d89)
+
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/4e2ee4c3-d2ad-4442-b9c8-482051653eb0)
 
 1. Security group
    ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056460/c92b5c62-9fac-4e3f-85b6-d54a642d56a1)
