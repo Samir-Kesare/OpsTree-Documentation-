@@ -356,21 +356,36 @@ Finished: SUCCESS
 
 def terraformCD = new org.avengers.template.terraformCD.terraform_CD()
 
-properties([
-    parameters([
-        string(name: 'branch', defaultValue: 'main', description: 'Enter the branch name'),
-        string(name: 'rootPath', defaultValue: 'wrapperCode', description: 'Enter the root directory path'),
-        string(name: 'childPath', defaultValue: 'Frontend_Wrapper_Code/Dev_Env', description: 'Enter the child directory path')
-    ])
-])
-
-node {
-    def url = 'https://github.com/CodeOps-Hub/Terraform-modules.git'
-    def creds = 'Khushi_PAT'
-
-    withEnv(['AWS_ACCESS_KEY_ID=shikha_cred', 'AWS_SECRET_ACCESS_KEY=shikha_cred', 'TF_CLI_ARGS=-input=false']) {
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('vishal_cred')
+        AWS_SECRET_ACCESS_KEY = credentials('vishal_cred')
+        TF_CLI_ARGS = '-input=false'
+    }
+    
+    stages {
         stage('Terraform') {
-            terraformCD.call(url, creds, params.branch, params.rootPath, params.childPath, params.ACTION)
+            steps {
+                script {
+
+                    properties([
+                        parameters([
+                            string(name: 'branch', defaultValue: 'main', description: 'Enter the branch name'),
+                            string(name: 'rootPath', defaultValue: 'wrapperCode', description: 'Enter the root directory path'),
+                            string(name: 'childPath', defaultValue: 'Frontend_Wrapper_Code/Dev_Env', description: 'Enter the child directory path'),
+                            choice(name: 'ACTION', choices: ['apply', 'destroy'], description: 'Select Terraform action (apply/destroy)')
+
+                        ])
+                    ])
+
+                    def url = 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+                    def creds = 'Khushi_PAT'
+
+                    terraformCD.call(url, creds, params.branch, params.rootPath, params.childPath, params.ACTION)
+                }
+            }
         }
     }
 }
