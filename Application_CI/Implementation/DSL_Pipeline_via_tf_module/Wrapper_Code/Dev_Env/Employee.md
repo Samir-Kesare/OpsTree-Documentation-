@@ -52,6 +52,7 @@ tools. Conversely, internal DSLs are integrated within a host programming langua
 
 # Flow Diagram
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056364/744d1427-8c16-4695-9754-2b94b89c8865)
 
 ***
 
