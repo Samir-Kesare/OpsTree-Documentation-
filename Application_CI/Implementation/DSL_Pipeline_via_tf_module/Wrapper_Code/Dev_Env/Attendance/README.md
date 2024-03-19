@@ -6,15 +6,15 @@
 
 | **Author** | **Created On** | **Last Updated** | **Document version** |
 | ---------- | -------------- | ---------------- | -------------------- |
-| **Vishal Kumar Kesharwani** | **14 March 2024** | **15 March 2024** | **v1** |
+| **Vidhi Yadav** | **19 March 2024** | **19 March 2024** | **v1** |
 
 ***
 
 ## Table of contents
 
 * [Introduction](#Introduction)
-* [What is DSL Pipeline](#What-is-DSL-Pipeline)
-* [Why DSL Pipeline](#Why-DSP-Pipeline)
+* [DSL Pipeline](#DSL-Pipeline)
+* [Key Benefits](#Key-Benefits-of-DSL-Pipeline)
 * [Flow Diagram](#Flow-Diagram)
 * [Pre-requisites](#Pre-requisites)
 * [Jenkinsfile](#Jenkinsfile)
@@ -32,7 +32,7 @@ With the increasing complexity of modern networks and the need for agility in in
 
 ***
 
-## What is DSL Pipeline?
+## DSL Pipeline?
 
 A Domain-Specific Language (DSL) is a programming language or specification language dedicated to a particular problem domain, a particular problem representation technique, and/or a particular solution technique.DSL Pipeline is a robust framework designed to facilitate the creation, deployment, and management of domain-specific languages within your software development projects. By employing DSLs, developers can express solutions in a concise, domain-specific syntax tailored to the problem at hand, thereby enhancing productivity and reducing the gap between domain experts and software implementation.
 
@@ -40,7 +40,7 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ***
 
-## Why DSL Pipeline
+## Key Benefits of DSL Pipeline
 
 | Key Features  | Description                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------|
@@ -74,12 +74,13 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 <br>
 
 ```shell
+
 pipeline {
     agent any
     
     environment {
-        AWS_ACCESS_KEY_ID     = credentials('aws-cred-vishal-self')
-        AWS_SECRET_ACCESS_KEY = credentials('aws-cred-vishal-self')
+        AWS_ACCESS_KEY_ID     = credentials('vidhi-aws-creds')
+        AWS_SECRET_ACCESS_KEY = credentials('vidhi-aws-creds')
         TF_CLI_ARGS           = '-input=false'
     }
     
@@ -90,14 +91,15 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'Vishal-PAT-DSL', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+                git branch: 'main', credentialsId: 'new-token', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
             }
         }
         
         stage('Copy Terraform Files') {
             steps {
                 // Copy or move specific files from the repository to Jenkins workspace
-                sh 'cp wrapperCode/Frontend_Wrapper_Code/Dev_Env/* .'
+                sh 'cp wrapperCode/Attendance-API/Dev/* .'
+
             }
         }
         
@@ -132,7 +134,7 @@ pipeline {
                 expression { params.ACTION == 'Destroy' }
             }
             steps {
-                // Prompt for approval before destroying resources
+                // Prompt for approval before destroying
                 input "Do you want to destroy Terraform resources?"
             }
         }
@@ -150,7 +152,7 @@ pipeline {
         }
     }
     
-   post {
+     post {
         success {
             script {
                     echo 'Terraform operation successful!'
@@ -162,6 +164,7 @@ pipeline {
         }
     }
 }
+
 ```
 </details>
 
@@ -185,7 +188,7 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/6156ef58-da03-42a7-9daa-42ca7e62dd0d">
+<img width="1031" alt="Screenshot 2024-03-19 at 10 52 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/07397370-0ff8-4966-9687-69be99ba59b4">
 
 ***
 
