@@ -28,7 +28,7 @@
 
 ## Introduction
 
-This document helps to set up and maintain your resource for Attendance API using Terraform and Jenkins. With this pipeline, you can quickly deploy and manage your infrastructure without manual intervention, making your development process smoother. It will walk you through each step, from setting up your AWS credentials to configuring Terraform and integrating it with Jenkins.
+This document helps to set up and maintain your resource for Attendance API using Terraform and Jenkins. With this pipeline, you can quickly deploy and manage your infrastructure without manual intervention, making your development and testing process smoother. It will walk you through each step, from setting up your AWS credentials to configuring Terraform and integrating it with Jenkins.
 
 ***
 
