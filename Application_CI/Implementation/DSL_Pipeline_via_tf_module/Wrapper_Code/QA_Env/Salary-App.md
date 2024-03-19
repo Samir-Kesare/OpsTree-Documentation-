@@ -54,7 +54,8 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ## Flow Diagram
 
-<img width="715" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/4c30ca5b-e159-4ad2-8c86-8c96d30be55b">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/44f23637-1927-4cb0-b047-e026f9901a4c)
+
 
 ***
 
@@ -76,6 +77,83 @@ There are two main types of DSLs: external DSLs and internal DSLs. External DSLs
 
 ```shell
 
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID     = credentials('shikha_cred')
+        AWS_SECRET_ACCESS_KEY = credentials('shikha_cred')
+        TF_CLI_ARGS           = '-input=false'
+    }
+    
+    parameters {
+        choice(name: 'ACTION', choices: ['Apply', 'Destroy'], description: 'Choose to apply or destroy the infrastructure')
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'Shikha/Salary-App-QA', credentialsId: 'shikha-PAT', url: 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+            }
+        }
+        
+        stage('Copy Terraform Files') {
+            steps {
+                sh 'cp Wrapper-Code-Salary-QA/* .'
+            }
+        }
+        
+        stage('Terraform Init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        
+        stage('Terraform Plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        
+        stage('Review and Approve Apply') {
+            when {
+                expression { params.ACTION == 'Apply' }
+            }
+            steps {
+                input "Do you want to apply Terraform changes?"
+            }
+        }
+        
+        stage('Review and Approve Destroy') {
+            when {
+                expression { params.ACTION == 'Destroy' }
+            }
+            steps {
+                input "Do you want to destroy Terraform resources?"
+            }
+        }
+        
+        stage('Apply or Destroy') {
+            steps {
+                script {
+                    sh "terraform ${params.ACTION.toLowerCase()} -auto-approve"
+                }
+            }
+        }
+    }
+    
+    post {
+        success {
+            script {
+                    echo 'Terraform operation successful!'
+                    archiveArtifacts artifacts: '*.pem', allowEmptyArchive: true
+            }
+        }
+        failure {
+            echo 'Terraform operation failed!'
+        }
+    }
+}
 ```
 </details>
 
