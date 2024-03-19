@@ -177,13 +177,14 @@ pipeline {
 
 ### Pipeline view
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0fe70450-ee14-4dcc-8e4e-c60a42506084">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/783fb559-18c0-4654-ba3a-fcd7c19e995f)
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/14942722-ff26-44e4-8474-ac104706ada2">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/11df713e-daeb-4fc5-bb0a-21e63b3db5ef)
+
 
 ***
 
@@ -487,33 +488,38 @@ Finished: SUCCESS
 ## AWS Console Output 
 
 ### Security Group
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/90aee43c-6e04-4697-b064-836b96692d73)
 
 
 ***
 ### Launch Template
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/8d4089ff-3aba-49d5-a132-c38f6db5b7ea"> 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/8c0a6dcb-7345-446c-bce0-c5329ed3365f)
+
 
 ***
 
 ### Target Group
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/34e4c65e-b99e-4150-8630-38f72d2b2b25)
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/4bcfd162-c83f-476e-ad7b-b69bff81fe61">
+
 
 ***
 ### Listener rule of ALB
 
-<img width="700" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/b25928a3-4913-4bf1-b099-d220c8a52e24">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/0b503df8-7fe6-4b0b-82a5-cfd530b60acd)
+
 
 ***
 ### Auto Scaling Group
 
-<img width="700" src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/ed4f9bf0-1643-4abc-b716-a4d80505360b">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/3497defc-4957-433c-85b1-b1334f47449e)
 
 ***
 ### Auto Scaling Group Policies
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/2a69f15d-05ca-4276-8c97-988b91a13cb8">
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056746/d3aee58d-cd95-4b6f-a8fe-1a6049afa289)
+
 
 ***
 
