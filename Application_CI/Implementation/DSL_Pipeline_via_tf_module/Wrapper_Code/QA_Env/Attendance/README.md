@@ -189,14 +189,14 @@ pipeline {
 ## Jenkins Output
 
 ### Pipeline view
+<img width="893" alt="Screenshot 2024-03-19 at 11 52 28 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/f3a83802-3d78-4def-9431-ac02ed86293a">
 
-<img width="1031" alt="Screenshot 2024-03-19 at 10 52 34 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/07397370-0ff8-4966-9687-69be99ba59b4">
 
 ***
 
 ### Archive Artifact (SSH key pair)
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/b3729786-b439-4caf-a088-70c3f551ffa3">
+<img width="461" alt="Screenshot 2024-03-20 at 12 06 34 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/021c4ca7-eee5-4302-8e1a-7e98f6d0c9bc">
 
 ***
 
@@ -493,27 +493,28 @@ Finished: SUCCESS
 ***
 ### Launch Template
 
-<img width="1075" alt="Screenshot 2024-03-19 at 11 07 44 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/4972f41b-e3f5-4f0a-8626-2851dc06588e">
+<img width="1115" alt="Screenshot 2024-03-20 at 12 07 16 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/7619d4ca-3f2a-4ac3-a715-ea4737199ef0">
+
 ***
 
 ### Target Group
-<img width="1063" alt="Screenshot 2024-03-19 at 11 07 23 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/4860e1fc-4cb2-44ec-8352-7c0e072bbd0a">
 
+<img width="1073" alt="Screenshot 2024-03-20 at 12 07 43 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3b49fe43-1e88-47dd-aad7-3693c08bc150">
 
 ***
 ### Listener rule of ALB
+<img width="1055" alt="Screenshot 2024-03-20 at 12 08 01 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a1786215-bded-48e8-b4e4-5b449470af1c">
 
-<img width="1042" alt="Screenshot 2024-03-19 at 11 06 19 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/5ef0ae22-6f5d-4728-9fca-8a75de515d50">
 
 ***
 ### Auto Scaling Group
+<img width="1054" alt="Screenshot 2024-03-20 at 12 08 22 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/197b31b8-5567-4fb7-a60d-95d6203ac095">
 
-<img width="1044" alt="Screenshot 2024-03-19 at 11 06 42 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/29dfb7fe-4d86-4ea1-a86c-2cf003231ec9">
 
 ***
 ### Auto Scaling Group Policies
 
-<img width="568" alt="Screenshot 2024-03-19 at 11 07 02 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/30b21086-c08e-47c8-8dae-91b24aee4428">
+<img width="638" alt="Screenshot 2024-03-20 at 12 08 40 AM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a19cedbf-a782-4edc-b2e6-3b8326677797">
 
 ***
 
