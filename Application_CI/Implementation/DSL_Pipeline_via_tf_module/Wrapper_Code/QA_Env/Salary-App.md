@@ -194,6 +194,291 @@ pipeline {
 <br>
 
 ```shell
+Started by user Shikha Tripathi
+Lightweight checkout support not available, falling back to full checkout.
+Checking out git https://github.com/CodeOps-Hub/Jenkinsfile.git into /var/lib/jenkins/jobs/QA-Salary-App/workspace@script/2c624e68d9ac93966b0a6ecea74a8a9f93dbab47b6fffa7f2ebbef857f80f0b1 to read Wrapper-Code/QA_Env/Salary/Jenkinsfile
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential shikha-PAT
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/jobs/QA-Salary-App/workspace@script/2c624e68d9ac93966b0a6ecea74a8a9f93dbab47b6fffa7f2ebbef857f80f0b1/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/CodeOps-Hub/Jenkinsfile.git # timeout=10
+Fetching upstream changes from https://github.com/CodeOps-Hub/Jenkinsfile.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_ASKPASS to set credentials shikha-PAT
+ > git fetch --tags --force --progress -- https://github.com/CodeOps-Hub/Jenkinsfile.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/Shikha/QA-Salary-App^{commit} # timeout=10
+ > git rev-parse Shikha/QA-Salary-App^{commit} # timeout=10
+Checking out Revision b66e80db6440a8ee2965dfa4eae95a27cb334dce (refs/remotes/origin/Shikha/QA-Salary-App)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b66e80db6440a8ee2965dfa4eae95a27cb334dce # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk b66e80db6440a8ee2965dfa4eae95a27cb334dce # timeout=10
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/jobs/QA-Salary-App/workspace
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential shikha-PAT
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/jobs/QA-Salary-App/workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/CodeOps-Hub/Jenkinsfile.git # timeout=10
+Fetching upstream changes from https://github.com/CodeOps-Hub/Jenkinsfile.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_ASKPASS to set credentials shikha-PAT
+ > git fetch --tags --force --progress -- https://github.com/CodeOps-Hub/Jenkinsfile.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/Shikha/QA-Salary-App^{commit} # timeout=10
+ > git rev-parse Shikha/QA-Salary-App^{commit} # timeout=10
+Checking out Revision b66e80db6440a8ee2965dfa4eae95a27cb334dce (refs/remotes/origin/Shikha/QA-Salary-App)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b66e80db6440a8ee2965dfa4eae95a27cb334dce # timeout=10
+Commit message: "Update Jenkinsfile"
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withCredentials
+WARNING: Unknown parameter(s) found for class type 'com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding': keyIdVariable,secretVariable
+WARNING: Unknown parameter(s) found for class type 'com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding': keyIdVariable,secretVariable
+Masking supported pattern matches of $AWS_ACCESS_KEY_ID or $AWS_SECRET_ACCESS_KEY
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] git
+The recommended git tool is: NONE
+using credential shikha-PAT
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/jobs/QA-Salary-App/workspace/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/CodeOps-Hub/Terraform-modules.git # timeout=10
+Fetching upstream changes from https://github.com/CodeOps-Hub/Terraform-modules.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+using GIT_ASKPASS to set credentials shikha-PAT
+ > git fetch --tags --force --progress -- https://github.com/CodeOps-Hub/Terraform-modules.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/Shikha/Salary-App-QA^{commit} # timeout=10
+Checking out Revision 08be076fd2862c7cd1408a00c3815790d5eaa342 (refs/remotes/origin/Shikha/Salary-App-QA)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 08be076fd2862c7cd1408a00c3815790d5eaa342 # timeout=10
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D Shikha/Salary-App-QA # timeout=10
+ > git checkout -b Shikha/Salary-App-QA 08be076fd2862c7cd1408a00c3815790d5eaa342 # timeout=10
+Commit message: "Update variables.tf"
+ > git rev-list --no-walk 8791bfbc05b77569c29c5e431682dcae0e4ec124 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Copy Terraform Files)
+[Pipeline] sh
++ cp Wrapper-Code-Salary-QA/main.tf Wrapper-Code-Salary-QA/output.tf Wrapper-Code-Salary-QA/provider.tf Wrapper-Code-Salary-QA/script.sh Wrapper-Code-Salary-QA/terraform.tfvars Wrapper-Code-Salary-QA/variables.tf .
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Init)
+[Pipeline] sh
++ terraform init
+
+[0m[1mInitializing the backend...[0m
+[0m[1mInitializing modules...[0m
+
+[0m[1mInitializing provider plugins...[0m
+- Reusing previous version of hashicorp/tls from the dependency lock file
+- Reusing previous version of hashicorp/local from the dependency lock file
+- Reusing previous version of hashicorp/aws from the dependency lock file
+- Using previously-installed hashicorp/local v2.5.1
+- Using previously-installed hashicorp/aws v5.41.0
+- Using previously-installed hashicorp/tls v4.0.5
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Terraform Plan)
+[Pipeline] sh
++ terraform plan
+[0m[1mmodule.QA_Salary.tls_private_key.private_key: Refreshing state... [id=df771620e398753643df969bb5a8b2651ff8b3dc][0m
+[0m[1mmodule.QA_Salary.local_file.private_key: Refreshing state... [id=d57fa1cd3996e82c9ecd490a5f6a2e6be7091a30][0m
+[0m[1mmodule.QA_Salary.aws_key_pair.key_pair: Refreshing state... [id=QA_Salary_Key][0m
+[0m[1mmodule.QA_Salary.aws_lb_target_group.Target_group: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:975050171850:targetgroup/QA-Salary-TG/1eccfb90d39b23d6][0m
+[0m[1mmodule.QA_Salary.aws_security_group.security_group: Refreshing state... [id=sg-03c1ca5efbd3e1be1][0m
+[0m[1mmodule.QA_Salary.aws_launch_template.Template: Refreshing state... [id=lt-03196e28466cc4d08][0m
+[0m[1mmodule.QA_Salary.aws_autoscaling_group.ASG: Refreshing state... [id=QA-Salary-ASG][0m
+[0m[1mmodule.QA_Salary.aws_autoscaling_policy.ASG_Policy: Refreshing state... [id=target-tracking-policy][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.QA_Salary.aws_lb_listener_rule.path_rule[0m will be created
+[0m  [32m+[0m[0m resource "aws_lb_listener_rule" "path_rule" {
+      [32m+[0m[0m arn          = (known after apply)
+      [32m+[0m[0m id           = (known after apply)
+      [32m+[0m[0m listener_arn = "arn:aws:elasticloadbalancing:us-east-2:975050171850:listener/app/QA-Salary-App/ac92eec3b47f02a1/736f0aca6a4d11a9"
+      [32m+[0m[0m priority     = 100
+      [32m+[0m[0m tags_all     = (known after apply)
+
+      [32m+[0m[0m action {
+          [32m+[0m[0m order            = (known after apply)
+          [32m+[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:us-east-2:975050171850:targetgroup/QA-Salary-TG/1eccfb90d39b23d6"
+          [32m+[0m[0m type             = "forward"
+        }
+
+      [32m+[0m[0m condition {
+          [32m+[0m[0m path_pattern {
+              [32m+[0m[0m values = [
+                  [32m+[0m[0m "/api/v1/salary/*",
+                ]
+            }
+        }
+    }
+
+[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Review and Approve Apply)
+[Pipeline] input
+Do you want to apply Terraform changes?
+Proceed or Abort
+Approved by Shikha Tripathi
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Review and Approve Destroy)
+Stage "Review and Approve Destroy" skipped due to when conditional
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Apply or Destroy)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
++ terraform apply -auto-approve
+[0m[1mmodule.QA_Salary.tls_private_key.private_key: Refreshing state... [id=df771620e398753643df969bb5a8b2651ff8b3dc][0m
+[0m[1mmodule.QA_Salary.local_file.private_key: Refreshing state... [id=d57fa1cd3996e82c9ecd490a5f6a2e6be7091a30][0m
+[0m[1mmodule.QA_Salary.aws_lb_target_group.Target_group: Refreshing state... [id=arn:aws:elasticloadbalancing:us-east-2:975050171850:targetgroup/QA-Salary-TG/1eccfb90d39b23d6][0m
+[0m[1mmodule.QA_Salary.aws_key_pair.key_pair: Refreshing state... [id=QA_Salary_Key][0m
+[0m[1mmodule.QA_Salary.aws_security_group.security_group: Refreshing state... [id=sg-03c1ca5efbd3e1be1][0m
+[0m[1mmodule.QA_Salary.aws_launch_template.Template: Refreshing state... [id=lt-03196e28466cc4d08][0m
+[0m[1mmodule.QA_Salary.aws_autoscaling_group.ASG: Refreshing state... [id=QA-Salary-ASG][0m
+[0m[1mmodule.QA_Salary.aws_autoscaling_policy.ASG_Policy: Refreshing state... [id=target-tracking-policy][0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+
+Terraform will perform the following actions:
+
+[1m  # module.QA_Salary.aws_lb_listener_rule.path_rule[0m will be created
+[0m  [32m+[0m[0m resource "aws_lb_listener_rule" "path_rule" {
+      [32m+[0m[0m arn          = (known after apply)
+      [32m+[0m[0m id           = (known after apply)
+      [32m+[0m[0m listener_arn = "arn:aws:elasticloadbalancing:us-east-2:975050171850:listener/app/QA-Salary-App/ac92eec3b47f02a1/736f0aca6a4d11a9"
+      [32m+[0m[0m priority     = 100
+      [32m+[0m[0m tags_all     = (known after apply)
+
+      [32m+[0m[0m action {
+          [32m+[0m[0m order            = (known after apply)
+          [32m+[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:us-east-2:975050171850:targetgroup/QA-Salary-TG/1eccfb90d39b23d6"
+          [32m+[0m[0m type             = "forward"
+        }
+
+      [32m+[0m[0m condition {
+          [32m+[0m[0m path_pattern {
+              [32m+[0m[0m values = [
+                  [32m+[0m[0m "/api/v1/salary/*",
+                ]
+            }
+        }
+    }
+
+[1mPlan:[0m 1 to add, 0 to change, 0 to destroy.
+[0m[0m[1mmodule.QA_Salary.aws_lb_listener_rule.path_rule: Creating...[0m[0m
+[0m[1mmodule.QA_Salary.aws_lb_listener_rule.path_rule: Creation complete after 0s [id=arn:aws:elasticloadbalancing:us-east-2:975050171850:listener-rule/app/QA-Salary-App/ac92eec3b47f02a1/736f0aca6a4d11a9/41b9dd811c4772f7][0m
+[0m[1m[32m
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0mAutoscaling_group_id = [
+  [
+    "QA-Salary-ASG",
+  ],
+]
+Autoscaling_policy_name = [
+  [
+    "target-tracking-policy",
+  ],
+]
+Security_Group_ID = [
+  [
+    "sg-03c1ca5efbd3e1be1",
+  ],
+]
+Target_group_id = [
+  [
+    "arn:aws:elasticloadbalancing:us-east-2:975050171850:targetgroup/QA-Salary-TG/1eccfb90d39b23d6",
+  ],
+]
+key_pair_name = [
+  [
+    "QA_Salary_Key",
+  ],
+]
+launch_template_id = [
+  [
+    "lt-03196e28466cc4d08",
+  ],
+]
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Terraform operation successful!
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
 ```
 </details>
 
@@ -203,7 +488,6 @@ pipeline {
 
 ### Security Group
 
-<img width="700"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/4dca4d40-bc9c-4490-b141-3f2bafa354a1"> 
 
 ***
 ### Launch Template
