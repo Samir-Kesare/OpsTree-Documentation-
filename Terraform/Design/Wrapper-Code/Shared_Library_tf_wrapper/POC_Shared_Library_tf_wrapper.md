@@ -53,6 +53,7 @@ Automated Deployment: CD in CI/CD pipelines automates the deployment of Terrafor
 <br>
   
   ```shell 
+
 Started by user Shikha Tripathi
 Obtained SharedLibrary/Terraform_CD_JF/Jenkinsfile from git https://github.com/CodeOps-Hub/Jenkinsfile.git
 Loading library snaatak-p7@main
@@ -61,14 +62,14 @@ Attempting to resolve main from remote references...
  > git --version # 'git version 2.34.1'
 using GIT_ASKPASS to set credentials Khushi_PAT
  > git ls-remote -h -- https://github.com/CodeOps-Hub/SharedLibrary.git # timeout=10
-Found match: refs/heads/main revision 206b5107ced1c26a3135bfacf5b3cc3f6442a235
+Found match: refs/heads/main revision 6ae25f76739a6b97ff6a0522c3728fe0be330bcd
 WARNING: ignoring request to compute changelog in clone mode
 The recommended git tool is: NONE
 using credential Khushi_PAT
 Cloning the remote Git repository
 Cloning with configured refspecs honoured and without tags
 Cloning repository https://github.com/CodeOps-Hub/SharedLibrary.git
- > git init /var/lib/jenkins/jobs/wrapper_code_execution/builds/24/libs/0b1d56fb27dae0ade66d5763d8e6b212a8fb941adabaab4c9ece1bd48fc7ec99 # timeout=10
+ > git init /var/lib/jenkins/jobs/wrapper_code_execution/builds/27/libs/0b1d56fb27dae0ade66d5763d8e6b212a8fb941adabaab4c9ece1bd48fc7ec99 # timeout=10
 Fetching upstream changes from https://github.com/CodeOps-Hub/SharedLibrary.git
  > git --version # timeout=10
  > git --version # 'git version 2.34.1'
@@ -77,10 +78,10 @@ using GIT_ASKPASS to set credentials Khushi_PAT
  > git config remote.origin.url https://github.com/CodeOps-Hub/SharedLibrary.git # timeout=10
  > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
 Avoid second fetch
-Checking out Revision 206b5107ced1c26a3135bfacf5b3cc3f6442a235 (main)
+Checking out Revision 6ae25f76739a6b97ff6a0522c3728fe0be330bcd (main)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 206b5107ced1c26a3135bfacf5b3cc3f6442a235 # timeout=10
-Commit message: "Update terraform_CD.groovy"
+ > git checkout -f 6ae25f76739a6b97ff6a0522c3728fe0be330bcd # timeout=10
+Commit message: "Update destroy.groovy"
 [Pipeline] Start of Pipeline
 [Pipeline] node
 Running on Jenkins in /var/lib/jenkins/jobs/wrapper_code_execution/workspace
@@ -104,7 +105,7 @@ Checking out Revision 63bf114811b8f0508f566fda0e3fb8e3d4594d44 (refs/remotes/ori
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 63bf114811b8f0508f566fda0e3fb8e3d4594d44 # timeout=10
 Commit message: "Update Jenkinsfile"
- > git rev-list --no-walk 2f8460f0f64483749291a4adee9a8ea513fb847c # timeout=10
+ > git rev-list --no-walk 63bf114811b8f0508f566fda0e3fb8e3d4594d44 # timeout=10
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] withEnv
@@ -171,12 +172,12 @@ Commit message: "Update main.tf"
 [0m[1mInitializing modules...[0m
 
 [0m[1mInitializing provider plugins...[0m
-- Reusing previous version of hashicorp/tls from the dependency lock file
 - Reusing previous version of hashicorp/aws from the dependency lock file
 - Reusing previous version of hashicorp/local from the dependency lock file
+- Reusing previous version of hashicorp/tls from the dependency lock file
+- Using previously-installed hashicorp/local v2.5.1
 - Using previously-installed hashicorp/tls v4.0.5
 - Using previously-installed hashicorp/aws v5.41.0
-- Using previously-installed hashicorp/local v2.5.1
 
 [0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
 [0m[32m
@@ -216,12 +217,14 @@ and found no differences, so no changes are needed.
 [Pipeline] // script
 [Pipeline] }
 [Pipeline] // stage
+[Pipeline] echo
+Skipping Terraform apply since action is not set to 'apply'
 [Pipeline] stage
-[Pipeline] { (Approval For Apply)
+[Pipeline] { (Approval For Destroy)
 [Pipeline] script
 [Pipeline] {
 [Pipeline] input
-Do you want to apply Terraform changes?
+Do you want to Destroy Terraform Infrastructure?
 Proceed or Abort
 Approved by Shikha Tripathi
 [Pipeline] }
@@ -229,12 +232,12 @@ Approved by Shikha Tripathi
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] stage
-[Pipeline] { (Terraform Apply)
+[Pipeline] { (Terraform destroy)
 [Pipeline] script
 [Pipeline] {
 [Pipeline] sh
 + cd wrapperCode/Frontend_Wrapper_Code/Dev_Env
-+ terraform apply -auto-approve
++ terraform destroy -auto-approve
 [0m[1mmodule.Dev_Frontend.tls_private_key.private_key: Refreshing state... [id=0386914e08d10646edc09f966ed5be1b839745d7][0m
 [0m[1mmodule.Dev_Frontend.local_file.private_key: Refreshing state... [id=bd4a0a9d111ff0b4e25673b777ca727b72f66652][0m
 [0m[1mmodule.Dev_Frontend.aws_key_pair.key_pair: Refreshing state... [id=Dev_Frontend_Key][0m
@@ -245,55 +248,406 @@ Approved by Shikha Tripathi
 [0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Refreshing state... [id=Dev-Frontend_ASG][0m
 [0m[1mmodule.Dev_Frontend.aws_autoscaling_policy.ASG_Policy: Refreshing state... [id=target-tracking-policy][0m
 
-[0m[1m[32mNo changes.[0m[1m Your infrastructure matches the configuration.[0m
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [31m-[0m destroy[0m
 
-[0mTerraform has compared your real infrastructure against your configuration
-and found no differences, so no changes are needed.
+Terraform will perform the following actions:
+
+[1m  # module.Dev_Frontend.aws_autoscaling_group.ASG[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_autoscaling_group" "ASG" {
+      [31m-[0m[0m arn                              = "arn:aws:autoscaling:ap-northeast-1:133673781875:autoScalingGroup:e2a30b2f-c651-4049-89d8-6d8627493540:autoScalingGroupName/Dev-Frontend_ASG" [90m-> null[0m[0m
+      [31m-[0m[0m availability_zones               = [
+          [31m-[0m[0m "ap-northeast-1a",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m capacity_rebalance               = false [90m-> null[0m[0m
+      [31m-[0m[0m default_cooldown                 = 300 [90m-> null[0m[0m
+      [31m-[0m[0m default_instance_warmup          = 0 [90m-> null[0m[0m
+      [31m-[0m[0m desired_capacity                 = 1 [90m-> null[0m[0m
+      [31m-[0m[0m enabled_metrics                  = [] [90m-> null[0m[0m
+      [31m-[0m[0m force_delete                     = false [90m-> null[0m[0m
+      [31m-[0m[0m force_delete_warm_pool           = false [90m-> null[0m[0m
+      [31m-[0m[0m health_check_grace_period        = 300 [90m-> null[0m[0m
+      [31m-[0m[0m health_check_type                = "EC2" [90m-> null[0m[0m
+      [31m-[0m[0m id                               = "Dev-Frontend_ASG" [90m-> null[0m[0m
+      [31m-[0m[0m ignore_failed_scaling_activities = false [90m-> null[0m[0m
+      [31m-[0m[0m load_balancers                   = [] [90m-> null[0m[0m
+      [31m-[0m[0m max_instance_lifetime            = 0 [90m-> null[0m[0m
+      [31m-[0m[0m max_size                         = 2 [90m-> null[0m[0m
+      [31m-[0m[0m metrics_granularity              = "1Minute" [90m-> null[0m[0m
+      [31m-[0m[0m min_size                         = 1 [90m-> null[0m[0m
+      [31m-[0m[0m name                             = "Dev-Frontend_ASG" [90m-> null[0m[0m
+      [31m-[0m[0m predicted_capacity               = 0 [90m-> null[0m[0m
+      [31m-[0m[0m protect_from_scale_in            = false [90m-> null[0m[0m
+      [31m-[0m[0m service_linked_role_arn          = "arn:aws:iam::133673781875:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling" [90m-> null[0m[0m
+      [31m-[0m[0m suspended_processes              = [] [90m-> null[0m[0m
+      [31m-[0m[0m target_group_arns                = [
+          [31m-[0m[0m "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m termination_policies             = [] [90m-> null[0m[0m
+      [31m-[0m[0m vpc_zone_identifier              = [
+          [31m-[0m[0m "subnet-04c0c823118f48202",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m wait_for_capacity_timeout        = "10m" [90m-> null[0m[0m
+      [31m-[0m[0m warm_pool_size                   = 0 [90m-> null[0m[0m
+
+      [31m-[0m[0m launch_template {
+          [31m-[0m[0m id      = "lt-016d6beee2e03d86b" [90m-> null[0m[0m
+          [31m-[0m[0m name    = "Dev-Frontend-template" [90m-> null[0m[0m
+          [31m-[0m[0m version = "$Latest" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m tag {
+          [31m-[0m[0m key                 = "Name" [90m-> null[0m[0m
+          [31m-[0m[0m propagate_at_launch = true [90m-> null[0m[0m
+          [31m-[0m[0m value               = "Dev-Frontend_ASG" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m traffic_source {
+          [31m-[0m[0m identifier = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3" [90m-> null[0m[0m
+          [31m-[0m[0m type       = "elbv2" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.Dev_Frontend.aws_autoscaling_policy.ASG_Policy[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_autoscaling_policy" "ASG_Policy" {
+      [31m-[0m[0m arn                       = "arn:aws:autoscaling:ap-northeast-1:133673781875:scalingPolicy:12919b44-1530-4823-a6ce-cca34c0be918:autoScalingGroupName/Dev-Frontend_ASG:policyName/target-tracking-policy" [90m-> null[0m[0m
+      [31m-[0m[0m autoscaling_group_name    = "Dev-Frontend_ASG" [90m-> null[0m[0m
+      [31m-[0m[0m cooldown                  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m enabled                   = true [90m-> null[0m[0m
+      [31m-[0m[0m estimated_instance_warmup = 0 [90m-> null[0m[0m
+      [31m-[0m[0m id                        = "target-tracking-policy" [90m-> null[0m[0m
+      [31m-[0m[0m min_adjustment_magnitude  = 0 [90m-> null[0m[0m
+      [31m-[0m[0m name                      = "target-tracking-policy" [90m-> null[0m[0m
+      [31m-[0m[0m policy_type               = "TargetTrackingScaling" [90m-> null[0m[0m
+      [31m-[0m[0m scaling_adjustment        = 0 [90m-> null[0m[0m
+
+      [31m-[0m[0m target_tracking_configuration {
+          [31m-[0m[0m disable_scale_in = false [90m-> null[0m[0m
+          [31m-[0m[0m target_value     = 50 [90m-> null[0m[0m
+
+          [31m-[0m[0m predefined_metric_specification {
+              [31m-[0m[0m predefined_metric_type = "ASGAverageCPUUtilization" [90m-> null[0m[0m
+            }
+        }
+    }
+
+[1m  # module.Dev_Frontend.aws_key_pair.key_pair[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_key_pair" "key_pair" {
+      [31m-[0m[0m arn         = "arn:aws:ec2:ap-northeast-1:133673781875:key-pair/Dev_Frontend_Key" [90m-> null[0m[0m
+      [31m-[0m[0m fingerprint = "ab:b9:68:06:25:01:8d:18:4c:c8:63:b6:bf:dd:40:80" [90m-> null[0m[0m
+      [31m-[0m[0m id          = "Dev_Frontend_Key" [90m-> null[0m[0m
+      [31m-[0m[0m key_name    = "Dev_Frontend_Key" [90m-> null[0m[0m
+      [31m-[0m[0m key_pair_id = "key-0df96f83c1beacc15" [90m-> null[0m[0m
+      [31m-[0m[0m key_type    = "rsa" [90m-> null[0m[0m
+      [31m-[0m[0m public_key  = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDfvdtloSJmIy7hGtsIJStXssmpn0lLzahKx9q7T4Me0Pq1xby6Ms0Fp3BpjGtaq61GA/tQN+YoRg+BFn3z2htJmyEMGIFannbVztSbRdf5HzWdgxH1fZKvb71XdWQCTx1IfBc8crA4KYYfrYNAbZs6l1sKpu1bOTlcCbqRJx6o/m1gHyJmHEW6e/5lDgN3jdiQH5VUyFl2bSwrWph7b5IktjExfPC1mVFcCerC1w8LMwNyfFfUYUlqnQNjIHVcJQeKc+nyjDLI+kLTTu6j8h7Xr+YCQqAd055Z2y0QKVN0gqzIyBXA9jWWOy06U7TJ/46UqKKKmWuhdgHSvCT9C5vgkFINBASSQBpNZAklzOzEcW7My6t7IZKyXnCBFP2GatV39WcDjLkQR4cGlbv9sfV5N+T/cvQqfRCPn3ZZR9RdVqr+UBdQM0vdiih7JZ6Ju+K7XT0AaJkUMGOUVlH5RZ0h2bohqZ1hotZTmVB+Kzyl6ETuTPf9NoIf1lBCtnVyFFW/uGgzqb2OrYNy1o7N+M8iIRpx3hxai+K9VtVv9FSK1zhMqDz6EsDcU6TXZeR9xpLOwWQNeKjlR5Ke7NUKLhv8U6W6sJjz0E4EKHyQJmcCsiU73ACmHp66HZrsJ02H3iLy368YcELILf5XJKl12C0LT2T40ef+zeFijvK/NjIvTQ==" [90m-> null[0m[0m
+      [31m-[0m[0m tags        = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all    = {} [90m-> null[0m[0m
+    }
+
+[1m  # module.Dev_Frontend.aws_launch_template.Template[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_launch_template" "Template" {
+      [31m-[0m[0m arn                     = "arn:aws:ec2:ap-northeast-1:133673781875:launch-template/lt-016d6beee2e03d86b" [90m-> null[0m[0m
+      [31m-[0m[0m default_version         = 1 [90m-> null[0m[0m
+      [31m-[0m[0m description             = "Template for Dev-Frontend" [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_stop        = false [90m-> null[0m[0m
+      [31m-[0m[0m disable_api_termination = false [90m-> null[0m[0m
+      [31m-[0m[0m id                      = "lt-016d6beee2e03d86b" [90m-> null[0m[0m
+      [31m-[0m[0m image_id                = "ami-0c335502f397b30c6" [90m-> null[0m[0m
+      [31m-[0m[0m instance_type           = "t2.micro" [90m-> null[0m[0m
+      [31m-[0m[0m key_name                = "Dev_Frontend_Key" [90m-> null[0m[0m
+      [31m-[0m[0m latest_version          = 1 [90m-> null[0m[0m
+      [31m-[0m[0m name                    = "Dev-Frontend-template" [90m-> null[0m[0m
+      [31m-[0m[0m security_group_names    = [] [90m-> null[0m[0m
+      [31m-[0m[0m tags                    = {
+          [31m-[0m[0m "Name" = "Dev-Frontend-template"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                = {
+          [31m-[0m[0m "Name" = "Dev-Frontend-template"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m user_data               = "IyEvYmluL2Jhc2gKCkFMQl9ETlM9IkRldi1BTEItMzk0NDQwOTc3LmFwLW5vcnRoZWFzdC0xLmVsYi5hbWF6b25hd3MuY29tIiAgIyBDaGFuZ2UgdGhlIEROUyBnaXZlIGFjdHVhbCBERVYtQUxCIEROUwojIE1vZGlmeSBwYWNrYWdlLmpzb24gd2l0aCB0aGUgQUxCIEROUyBwbGFjZWhvbGRlcgpzZWQgLWkgJ3MvImhvbWVwYWdlIjogImh0dHBzOlwvXC9vcHN0cmVlLmdpdGh1Yi5pbyIsLyJob21lcGFnZSI6ICJodHRwOlwvXC8ke0FMQl9ETlN9IiwvJyAvaG9tZS91YnVudHUvRnJvbnRlbmQvcGFja2FnZS5qc29uCnNlZCAtaSAnLyJwcm94eSI6ICJodHRwOlwvXC9sb2NhbGhvc3Q6MzAwMCIvZCcgL2hvbWUvdWJ1bnR1L0Zyb250ZW5kL3BhY2thZ2UuanNvbgoKIyBTdGFydCB5b3VyIGFwcGxpY2F0aW9uCmNkIC9ob21lL3VidW50dS9Gcm9udGVuZCAKbnBtIHN0YXJ0Cg==" [90m-> null[0m[0m
+      [31m-[0m[0m vpc_security_group_ids  = [] [90m-> null[0m[0m
+
+      [31m-[0m[0m network_interfaces {
+          [31m-[0m[0m device_index       = 0 [90m-> null[0m[0m
+          [31m-[0m[0m ipv4_address_count = 0 [90m-> null[0m[0m
+          [31m-[0m[0m ipv4_addresses     = [] [90m-> null[0m[0m
+          [31m-[0m[0m ipv4_prefix_count  = 0 [90m-> null[0m[0m
+          [31m-[0m[0m ipv4_prefixes      = [] [90m-> null[0m[0m
+          [31m-[0m[0m ipv6_address_count = 0 [90m-> null[0m[0m
+          [31m-[0m[0m ipv6_addresses     = [] [90m-> null[0m[0m
+          [31m-[0m[0m ipv6_prefix_count  = 0 [90m-> null[0m[0m
+          [31m-[0m[0m ipv6_prefixes      = [] [90m-> null[0m[0m
+          [31m-[0m[0m network_card_index = 0 [90m-> null[0m[0m
+          [31m-[0m[0m security_groups    = [
+              [31m-[0m[0m "sg-0d8bd79deeabf2448",
+            ] [90m-> null[0m[0m
+          [31m-[0m[0m subnet_id          = "subnet-04c0c823118f48202" [90m-> null[0m[0m
+        }
+    }
+
+[1m  # module.Dev_Frontend.aws_lb_listener_rule.path_rule[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb_listener_rule" "path_rule" {
+      [31m-[0m[0m arn          = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener-rule/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be/9c7e5be35a6432fc" [90m-> null[0m[0m
+      [31m-[0m[0m id           = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener-rule/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be/9c7e5be35a6432fc" [90m-> null[0m[0m
+      [31m-[0m[0m listener_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be" [90m-> null[0m[0m
+      [31m-[0m[0m priority     = 100 [90m-> null[0m[0m
+      [31m-[0m[0m tags         = {} [90m-> null[0m[0m
+      [31m-[0m[0m tags_all     = {} [90m-> null[0m[0m
+
+      [31m-[0m[0m action {
+          [31m-[0m[0m order            = 1 [90m-> null[0m[0m
+          [31m-[0m[0m target_group_arn = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3" [90m-> null[0m[0m
+          [31m-[0m[0m type             = "forward" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m condition {
+          [31m-[0m[0m path_pattern {
+              [31m-[0m[0m values = [
+                  [31m-[0m[0m "*",
+                ] [90m-> null[0m[0m
+            }
+        }
+    }
+
+[1m  # module.Dev_Frontend.aws_lb_target_group.Target_group[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_lb_target_group" "Target_group" {
+      [31m-[0m[0m arn                                = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3" [90m-> null[0m[0m
+      [31m-[0m[0m arn_suffix                         = "targetgroup/Dev-Frontend-TG/0232b25fc4609db3" [90m-> null[0m[0m
+      [31m-[0m[0m deregistration_delay               = "300" [90m-> null[0m[0m
+      [31m-[0m[0m id                                 = "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3" [90m-> null[0m[0m
+      [31m-[0m[0m ip_address_type                    = "ipv4" [90m-> null[0m[0m
+      [31m-[0m[0m lambda_multi_value_headers_enabled = false [90m-> null[0m[0m
+      [31m-[0m[0m load_balancer_arns                 = [
+          [31m-[0m[0m "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:loadbalancer/app/Dev-ALB/75bc9b1a35dbe964",
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_algorithm_type      = "round_robin" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_anomaly_mitigation  = "off" [90m-> null[0m[0m
+      [31m-[0m[0m load_balancing_cross_zone_enabled  = "use_load_balancer_configuration" [90m-> null[0m[0m
+      [31m-[0m[0m name                               = "Dev-Frontend-TG" [90m-> null[0m[0m
+      [31m-[0m[0m port                               = 3000 [90m-> null[0m[0m
+      [31m-[0m[0m protocol                           = "HTTP" [90m-> null[0m[0m
+      [31m-[0m[0m protocol_version                   = "HTTP1" [90m-> null[0m[0m
+      [31m-[0m[0m proxy_protocol_v2                  = false [90m-> null[0m[0m
+      [31m-[0m[0m slow_start                         = 0 [90m-> null[0m[0m
+      [31m-[0m[0m tags                               = {
+          [31m-[0m[0m "Name" = "Dev-Frontend-TG"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all                           = {
+          [31m-[0m[0m "Name" = "Dev-Frontend-TG"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m target_type                        = "instance" [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                             = "vpc-0383f4dc3af051efa" [90m-> null[0m[0m
+
+      [31m-[0m[0m health_check {
+          [31m-[0m[0m enabled             = true [90m-> null[0m[0m
+          [31m-[0m[0m healthy_threshold   = 2 [90m-> null[0m[0m
+          [31m-[0m[0m interval            = 30 [90m-> null[0m[0m
+          [31m-[0m[0m matcher             = "200" [90m-> null[0m[0m
+          [31m-[0m[0m path                = "/health" [90m-> null[0m[0m
+          [31m-[0m[0m port                = "traffic-port" [90m-> null[0m[0m
+          [31m-[0m[0m protocol            = "HTTP" [90m-> null[0m[0m
+          [31m-[0m[0m timeout             = 5 [90m-> null[0m[0m
+          [31m-[0m[0m unhealthy_threshold = 2 [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m stickiness {
+          [31m-[0m[0m cookie_duration = 86400 [90m-> null[0m[0m
+          [31m-[0m[0m enabled         = false [90m-> null[0m[0m
+          [31m-[0m[0m type            = "lb_cookie" [90m-> null[0m[0m
+        }
+
+      [31m-[0m[0m target_failover {}
+
+      [31m-[0m[0m target_health_state {}
+    }
+
+[1m  # module.Dev_Frontend.aws_security_group.security_group[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "security_group" {
+      [31m-[0m[0m arn                    = "arn:aws:ec2:ap-northeast-1:133673781875:security-group/sg-0d8bd79deeabf2448" [90m-> null[0m[0m
+      [31m-[0m[0m description            = "Security group for Dev-Frontend-API" [90m-> null[0m[0m
+      [31m-[0m[0m egress                 = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "0.0.0.0/0",
+                ]
+              [31m-[0m[0m description      = ""
+              [31m-[0m[0m from_port        = 0
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "-1"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 0
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m id                     = "sg-0d8bd79deeabf2448" [90m-> null[0m[0m
+      [31m-[0m[0m ingress                = [
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = [
+                  [31m-[0m[0m "20.0.0.0/28",
+                ]
+              [31m-[0m[0m description      = ""
+              [31m-[0m[0m from_port        = 22
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = []
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 22
+            },
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = []
+              [31m-[0m[0m description      = ""
+              [31m-[0m[0m from_port        = 22
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = [
+                  [31m-[0m[0m "sg-0f470a22a92136557",
+                ]
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 22
+            },
+          [31m-[0m[0m {
+              [31m-[0m[0m cidr_blocks      = []
+              [31m-[0m[0m description      = ""
+              [31m-[0m[0m from_port        = 3000
+              [31m-[0m[0m ipv6_cidr_blocks = []
+              [31m-[0m[0m prefix_list_ids  = []
+              [31m-[0m[0m protocol         = "tcp"
+              [31m-[0m[0m security_groups  = [
+                  [31m-[0m[0m "sg-0b426399b2b19b0ae",
+                ]
+              [31m-[0m[0m self             = false
+              [31m-[0m[0m to_port          = 3000
+            },
+        ] [90m-> null[0m[0m
+      [31m-[0m[0m name                   = "Dev-Frontend-sg" [90m-> null[0m[0m
+      [31m-[0m[0m owner_id               = "133673781875" [90m-> null[0m[0m
+      [31m-[0m[0m revoke_rules_on_delete = false [90m-> null[0m[0m
+      [31m-[0m[0m tags                   = {
+          [31m-[0m[0m "Enviroment" = "Dev_Frontend"
+          [31m-[0m[0m "Name"       = "Dev-Frontend-sg"
+          [31m-[0m[0m "Owner"      = "Vishal"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m tags_all               = {
+          [31m-[0m[0m "Enviroment" = "Dev_Frontend"
+          [31m-[0m[0m "Name"       = "Dev-Frontend-sg"
+          [31m-[0m[0m "Owner"      = "Vishal"
+        } [90m-> null[0m[0m
+      [31m-[0m[0m vpc_id                 = "vpc-0383f4dc3af051efa" [90m-> null[0m[0m
+    }
+
+[1m  # module.Dev_Frontend.local_file.private_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "local_file" "private_key" {
+      [31m-[0m[0m content              = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha256 = "JikBMSOoHjOGM97C6+3m4JvQetFqzERkdAPsNJJP5fk=" [90m-> null[0m[0m
+      [31m-[0m[0m content_base64sha512 = "M8xLdrlAAGLc/C5PfvMIfyrYm0Uqn5CXaSyCaEBZ83fOVUSFZhOO6WDoXPil1r7hIjwLWwCTRiGUIoTaP3+LsQ==" [90m-> null[0m[0m
+      [31m-[0m[0m content_md5          = "7fe676357ad83c8e3a810495965bd35f" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha1         = "bd4a0a9d111ff0b4e25673b777ca727b72f66652" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha256       = "2629013123a81e338633dec2ebede6e09bd07ad16acc44647403ec34924fe5f9" [90m-> null[0m[0m
+      [31m-[0m[0m content_sha512       = "33cc4b76b9400062dcfc2e4f7ef3087f2ad89b452a9f9097692c82684059f377ce55448566138ee960e85cf8a5d6bee1223c0b5b00934621942284da3f7f8bb1" [90m-> null[0m[0m
+      [31m-[0m[0m directory_permission = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m file_permission      = "0777" [90m-> null[0m[0m
+      [31m-[0m[0m filename             = "Dev_Frontend_Key.pem" [90m-> null[0m[0m
+      [31m-[0m[0m id                   = "bd4a0a9d111ff0b4e25673b777ca727b72f66652" [90m-> null[0m[0m
+    }
+
+[1m  # module.Dev_Frontend.tls_private_key.private_key[0m will be [1m[31mdestroyed[0m
+[0m  [31m-[0m[0m resource "tls_private_key" "private_key" {
+      [31m-[0m[0m algorithm                     = "RSA" [90m-> null[0m[0m
+      [31m-[0m[0m ecdsa_curve                   = "P224" [90m-> null[0m[0m
+      [31m-[0m[0m id                            = "0386914e08d10646edc09f966ed5be1b839745d7" [90m-> null[0m[0m
+      [31m-[0m[0m private_key_openssh           = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem               = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m private_key_pem_pkcs8         = (sensitive value) [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_md5    = "1f:ff:62:f9:7c:79:41:76:bd:e3:a4:22:02:be:3e:4d" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_fingerprint_sha256 = "SHA256:McOWjpVcplv+XOUkRYSWOZynbykcFG0LwqkzI20epgU" [90m-> null[0m[0m
+      [31m-[0m[0m public_key_openssh            = <<-EOT
+            ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDfvdtloSJmIy7hGtsIJStXssmpn0lLzahKx9q7T4Me0Pq1xby6Ms0Fp3BpjGtaq61GA/tQN+YoRg+BFn3z2htJmyEMGIFannbVztSbRdf5HzWdgxH1fZKvb71XdWQCTx1IfBc8crA4KYYfrYNAbZs6l1sKpu1bOTlcCbqRJx6o/m1gHyJmHEW6e/5lDgN3jdiQH5VUyFl2bSwrWph7b5IktjExfPC1mVFcCerC1w8LMwNyfFfUYUlqnQNjIHVcJQeKc+nyjDLI+kLTTu6j8h7Xr+YCQqAd055Z2y0QKVN0gqzIyBXA9jWWOy06U7TJ/46UqKKKmWuhdgHSvCT9C5vgkFINBASSQBpNZAklzOzEcW7My6t7IZKyXnCBFP2GatV39WcDjLkQR4cGlbv9sfV5N+T/cvQqfRCPn3ZZR9RdVqr+UBdQM0vdiih7JZ6Ju+K7XT0AaJkUMGOUVlH5RZ0h2bohqZ1hotZTmVB+Kzyl6ETuTPf9NoIf1lBCtnVyFFW/uGgzqb2OrYNy1o7N+M8iIRpx3hxai+K9VtVv9FSK1zhMqDz6EsDcU6TXZeR9xpLOwWQNeKjlR5Ke7NUKLhv8U6W6sJjz0E4EKHyQJmcCsiU73ACmHp66HZrsJ02H3iLy368YcELILf5XJKl12C0LT2T40ef+zeFijvK/NjIvTQ==
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m public_key_pem                = <<-EOT
+            -----BEGIN PUBLIC KEY-----
+            MIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA373bZaEiZiMu4RrbCCUr
+            V7LJqZ9JS82oSsfau0+DHtD6tcW8ujLNBadwaYxrWqutRgP7UDfmKEYPgRZ989ob
+            SZshDBiBWp521c7Um0XX+R81nYMR9X2Sr2+9V3VkAk8dSHwXPHKwOCmGH62DQG2b
+            OpdbCqbtWzk5XAm6kSceqP5tYB8iZhxFunv+ZQ4Dd43YkB+VVMhZdm0sK1qYe2+S
+            JLYxMXzwtZlRXAnqwtcPCzMDcnxX1GFJap0DYyB1XCUHinPp8owyyPpC007uo/Ie
+            16/mAkKgHdOeWdstEClTdIKsyMgVwPY1ljstOlO0yf+OlKiiiplroXYB0rwk/Qub
+            4JBSDQQEkkAaTWQJJczsxHFuzMureyGSsl5wgRT9hmrVd/VnA4y5EEeHBpW7/bH1
+            eTfk/3L0Kn0Qj592WUfUXVaq/lAXUDNL3YooeyWeibviu109AGiZFDBjlFZR+UWd
+            Idm6IamdYaLWU5lQfis8pehE7kz3/TaCH9ZQQrZ1chRVv7hoM6m9jq2DctaOzfjP
+            IiEacd4cWovivVbVb/RUitc4TKg8+hLA3FOk12XkfcaSzsFkDXio5UeSnuzVCi4b
+            /FOlurCY89BOBCh8kCZnArIlO9wAph6euh2a7CdNh94i8t+vGHBCyC3+VySpddgt
+            C09k+NHn/s3hYo7yvzYyL00CAwEAAQ==
+            -----END PUBLIC KEY-----
+        EOT [90m-> null[0m[0m
+      [31m-[0m[0m rsa_bits                      = 4096 [90m-> null[0m[0m
+    }
+
+[1mPlan:[0m 0 to add, 0 to change, 9 to destroy.
+[0m
+Changes to Outputs:
+  [31m-[0m[0m Autoscaling_group_id    = [
+      [31m-[0m[0m [
+          [31m-[0m[0m "Dev-Frontend_ASG",
+        ],
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m Autoscaling_policy_name = [
+      [31m-[0m[0m [
+          [31m-[0m[0m "target-tracking-policy",
+        ],
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m Security_Group_ID       = [
+      [31m-[0m[0m [
+          [31m-[0m[0m "sg-0d8bd79deeabf2448",
+        ],
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m Target_group_id         = [
+      [31m-[0m[0m [
+          [31m-[0m[0m "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3",
+        ],
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m key_pair_name           = [
+      [31m-[0m[0m [
+          [31m-[0m[0m "Dev_Frontend_Key",
+        ],
+    ] [90m-> null[0m[0m
+  [31m-[0m[0m launch_template_id      = [
+      [31m-[0m[0m [
+          [31m-[0m[0m "lt-016d6beee2e03d86b",
+        ],
+    ] [90m-> null[0m[0m
+[0m[1mmodule.Dev_Frontend.local_file.private_key: Destroying... [id=bd4a0a9d111ff0b4e25673b777ca727b72f66652][0m[0m
+[0m[1mmodule.Dev_Frontend.local_file.private_key: Destruction complete after 0s[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_policy.ASG_Policy: Destroying... [id=target-tracking-policy][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_lb_listener_rule.path_rule: Destroying... [id=arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:listener-rule/app/Dev-ALB/75bc9b1a35dbe964/761653fb399a30be/9c7e5be35a6432fc][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_lb_listener_rule.path_rule: Destruction complete after 1s[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_policy.ASG_Policy: Destruction complete after 1s[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Destroying... [id=Dev-Frontend_ASG][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 10s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 20s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 30s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 40s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 50s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 1m0s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 1m10s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Still destroying... [id=Dev-Frontend_ASG, 1m20s elapsed][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_autoscaling_group.ASG: Destruction complete after 1m29s[0m
+[0m[1mmodule.Dev_Frontend.aws_lb_target_group.Target_group: Destroying... [id=arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_launch_template.Template: Destroying... [id=lt-016d6beee2e03d86b][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_lb_target_group.Target_group: Destruction complete after 1s[0m
+[0m[1mmodule.Dev_Frontend.aws_launch_template.Template: Destruction complete after 1s[0m
+[0m[1mmodule.Dev_Frontend.aws_key_pair.key_pair: Destroying... [id=Dev_Frontend_Key][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_security_group.security_group: Destroying... [id=sg-0d8bd79deeabf2448][0m[0m
+[0m[1mmodule.Dev_Frontend.aws_key_pair.key_pair: Destruction complete after 0s[0m
+[0m[1mmodule.Dev_Frontend.tls_private_key.private_key: Destroying... [id=0386914e08d10646edc09f966ed5be1b839745d7][0m[0m
+[0m[1mmodule.Dev_Frontend.tls_private_key.private_key: Destruction complete after 0s[0m
+[0m[1mmodule.Dev_Frontend.aws_security_group.security_group: Destruction complete after 1s[0m
 [0m[1m[32m
-Apply complete! Resources: 0 added, 0 changed, 0 destroyed.
-[0m[0m[1m[32m
-Outputs:
-
-[0mAutoscaling_group_id = [
-  [
-    "Dev-Frontend_ASG",
-  ],
-]
-Autoscaling_policy_name = [
-  [
-    "target-tracking-policy",
-  ],
-]
-Security_Group_ID = [
-  [
-    "sg-0d8bd79deeabf2448",
-  ],
-]
-Target_group_id = [
-  [
-    "arn:aws:elasticloadbalancing:ap-northeast-1:133673781875:targetgroup/Dev-Frontend-TG/0232b25fc4609db3",
-  ],
-]
-key_pair_name = [
-  [
-    "Dev_Frontend_Key",
-  ],
-]
-launch_template_id = [
-  [
-    "lt-016d6beee2e03d86b",
-  ],
-]
-[Pipeline] }
-[Pipeline] // script
-[Pipeline] }
-[Pipeline] // stage
-[Pipeline] stage
-[Pipeline] { (Approval For Apply)
-[Pipeline] script
-[Pipeline] {
-[Pipeline] echo
-Skipping Terraform destroy since action is not set to 'destroy'
+Destroy complete! Resources: 9 destroyed.
+[0m
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
@@ -304,6 +658,8 @@ Skipping Terraform destroy since action is not set to 'destroy'
 [Pipeline] {
 [Pipeline] archiveArtifacts
 Archiving artifacts
+‘wrapperCode/Frontend_Wrapper_Code/Dev_Env/*.pem’ doesn’t match anything: ‘wrapperCode’ exists but not ‘wrapperCode/Frontend_Wrapper_Code/Dev_Env/*.pem’
+No artifacts found that match the file pattern "wrapperCode/Frontend_Wrapper_Code/Dev_Env/*.pem". Configuration error?
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
@@ -322,6 +678,7 @@ Archiving artifacts
 [Pipeline] // node
 [Pipeline] End of Pipeline
 Finished: SUCCESS
+
 ```
 </details>
 
