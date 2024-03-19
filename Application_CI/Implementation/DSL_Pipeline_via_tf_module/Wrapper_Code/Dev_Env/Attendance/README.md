@@ -28,7 +28,7 @@
 
 ## Introduction
 
-With the increasing complexity of modern networks and the need for agility in infrastructure management, Terraform has emerged as a powerful tool for automating the provisioning and configuration of network resources.This module is designed to provide a foundational framework for managing network infrastructure as code using Terraform. By leveraging this module, users can quickly establish a standardized and scalable network architecture within their cloud environment.As networks get more complicated and managing infrastructure becomes more important, specialized languages called Domain-Specific Languages (DSLs) have become really useful. They help simplify and automate different tasks.
+This document helps to set up and maintain your resource for Attendance API using Terraform and Jenkins. With this pipeline, you can quickly deploy and manage your infrastructure without manual intervention, making your development process smoother. It will walk you through each step, from setting up your AWS credentials to configuring Terraform and integrating it with Jenkins.
 
 ***
 
