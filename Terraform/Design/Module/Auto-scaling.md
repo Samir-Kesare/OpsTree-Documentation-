@@ -418,7 +418,7 @@ variable "listener_arn" {
 variable "path_pattern" {
   description       = "Path pattern for the listener rule"
   type              = string
-  default           = "/"   # Give your Path 
+  default           = "*"   # Give your Path 
 }
 variable "action_type" {
   description       = "Path pattern for the listener rule"
@@ -582,7 +582,7 @@ output "Autoscaling_policy_name" {
 ```shell
 
 #!/bin/bash
-#
+# Give your use data for template 
 ```
 </details>
 
