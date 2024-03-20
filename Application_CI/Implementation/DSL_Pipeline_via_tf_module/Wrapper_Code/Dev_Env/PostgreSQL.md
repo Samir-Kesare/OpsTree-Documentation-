@@ -1,5 +1,5 @@
 
-# DSL Jenkins Pipeline For PostgreSQL Server Setup in DEC Environment
+# DSL Jenkins Pipeline For PostgreSQL Server Setup in DEV Environment
 
 <img width="360" length="100" alt="Terraform" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/556e50dc-0c8b-4262-be16-2c384d2cfa8a">
 
