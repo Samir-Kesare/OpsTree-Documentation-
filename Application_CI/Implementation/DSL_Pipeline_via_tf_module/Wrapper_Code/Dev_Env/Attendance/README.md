@@ -14,7 +14,6 @@
 
 * [Introduction](#Introduction)
 * [DSL Pipeline](#DSL-Pipeline)
-* [Key Benefits](#Key-Benefits-of-DSL-Pipeline)
 * [Flow Diagram](#Flow-Diagram)
 * [Pre-requisites](#Pre-requisites)
 * [Jenkinsfile](#Jenkinsfile)
@@ -34,20 +33,9 @@ This document helps to set up and maintain your resource for Attendance API usin
 
 ## DSL Pipeline?
 
-A Domain-Specific Language (DSL) is a programming language or specification language dedicated to a particular problem domain, a particular problem representation technique, and/or a particular solution technique.DSL Pipeline is a robust framework designed to facilitate the creation, deployment, and management of domain-specific languages within your software development projects. By employing DSLs, developers can express solutions in a concise, domain-specific syntax tailored to the problem at hand, thereby enhancing productivity and reducing the gap between domain experts and software implementation.
+A Domain-Specific Language (DSL) is a programming language or domain dedicated to a particular domain. It is primarily based on Groovy. Groovy is a powerful and versatile programming language and it is widely used for scripting, dynamic programming, and as a general-purpose language. In the case of Jenkins Pipelines, both Declarative and Scripted syntaxes are specialized languages tailored to define continuous integration and continuous delivery (CI/CD) pipelines within the Jenkins ecosystem.
 
-There are two main types of DSLs: external DSLs and internal DSLs. External DSLs have their own syntax and are typically parsed by a separate compiler or interpreter. Internal DSLs, on the other hand, are embedded within a host programming language, leveraging its syntax and features to create a domain-specific syntax.
-
-***
-
-## Key Benefits of DSL Pipeline
-
-| Key Features  | Description                                                                                                              |
-|---------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Modularity**    | The DSL Pipeline offers a modular architecture, allowing developers to define and integrate custom DSL components seamlessly. |
-| **Extensibility** | Extend the capabilities of the DSL Pipeline by incorporating new DSL constructs, transformations, and integrations with existing tools and libraries. |
-| **Automation**    | Automate repetitive tasks in the development lifecycle through pipeline automation, including parsing, validation, transformation, and code generation. |
-| **Flexibility**   | Accommodate diverse DSL requirements with flexible configuration options, support for various syntax styles, and compatibility with multiple target platforms. |
+There are two main types of DSLs: **external DSLs** and **internal DSLs**. External DSLs have their own syntax and are typically parsed by a separate compiler or interpreter. Internal DSLs, on the other hand, are embedded within a host programming language, leveraging its syntax and features to create a domain-specific syntax.
 
 ***
 
