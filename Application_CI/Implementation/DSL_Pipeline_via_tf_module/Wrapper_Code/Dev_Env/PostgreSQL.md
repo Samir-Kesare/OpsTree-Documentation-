@@ -761,6 +761,7 @@ Archiving artifacts
 Finished: SUCCESS
 
 ```
+</details> 
 
 
 
