@@ -755,6 +755,8 @@ Archiving artifacts
 [Pipeline] End of Pipeline
 Finished: SUCCESS
 
+</details>
+
 ```
 
 
