@@ -81,6 +81,9 @@ deployment of Terraform modules, ensuring that changes are applied consistently 
 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/4cb6dac3-3cfc-4546-85ce-f49667281e21)
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/199afcc2-47a5-4824-803a-fc30639c27d6)
+
+
 
 
 <details>
