@@ -170,7 +170,7 @@ pipeline {
 
 </details>
 
-**This Jenkins pipeline automates the deployment of a Redis infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
+**This Jenkins pipeline automates the deployment of a Postgres infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
 
 ### Terraform Deployment Pipeline Overview
 
