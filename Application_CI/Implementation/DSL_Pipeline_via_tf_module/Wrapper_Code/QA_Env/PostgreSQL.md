@@ -166,7 +166,7 @@ pipeline {
 
 </details>
 
-**This Jenkins pipeline automates the deployment of a Redis infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
+**This Jenkins pipeline automates the deployment of a PostgreSQL infrastructure using Terraform module and Wrapper code. It's configured to perform the following actions:**
 
 ### Terraform Deployment Pipeline Overview
 
@@ -755,10 +755,9 @@ Archiving artifacts
 [Pipeline] End of Pipeline
 Finished: SUCCESS
 
-</details>
 
 ```
-
+</details>
 
 
 ## AWS Console Output 
