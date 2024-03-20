@@ -31,7 +31,7 @@ This document helps to set up and maintain your resource for Attendance API usin
 
 ***
 
-## DSL Pipeline?
+## DSL Pipeline
 
 A Domain-Specific Language (DSL) is a programming language or domain dedicated to a particular domain. It is primarily based on Groovy. Groovy is a powerful and versatile programming language and it is widely used for scripting, dynamic programming, and as a general-purpose language. In the case of Jenkins Pipelines, both Declarative and Scripted syntaxes are specialized languages tailored to define continuous integration and continuous delivery (CI/CD) pipelines within the Jenkins ecosystem.
 
