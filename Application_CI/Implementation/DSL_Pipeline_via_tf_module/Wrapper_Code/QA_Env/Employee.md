@@ -10,7 +10,7 @@
 
 * [Introduction](#Introduction)
 * [What is DSL Pipeline](#What-is-DSL-Pipeline)
-* [Why DSL Pipeline](#Why-DSP-Pipeline)
+* [Why DSL Pipeline](#Why-DSL-Pipeline)
 * [Flow Diagram](#Flow-Diagram)
 * [Pre-requisites](#Pre-requisites)
 * [Jenkinsfile](#Jenkinsfile)
@@ -40,7 +40,7 @@ DSLs come in two primary forms: external DSLs and internal DSLs. External DSLs p
 tools. Conversely, internal DSLs are integrated within a host programming language, leveraging its syntax and capabilities to create domain-specific syntax.
 ***
 
-# Why DSL Pipeline
+# Why DSL Pipeline?
 
 | Key Features  | Description                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------|
