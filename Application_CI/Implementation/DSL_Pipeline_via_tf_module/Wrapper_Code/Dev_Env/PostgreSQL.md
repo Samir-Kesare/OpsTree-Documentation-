@@ -190,7 +190,7 @@ pipeline {
 
 ### Pipeline view
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/7560fc24-838d-4f42-8cd0-d2f96c53a626)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/79625874/40e543d3-53e2-4ad5-a94d-8c7b8e0196bf)
 
 ***
 
