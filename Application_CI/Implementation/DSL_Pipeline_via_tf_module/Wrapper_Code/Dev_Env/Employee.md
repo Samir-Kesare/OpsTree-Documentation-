@@ -29,7 +29,7 @@ architectures in their cloud environments. With the growing complexity of networ
 Domain-Specific Languages (DSLs) have proven invaluable for simplifying and automating various tasks.
 ***
 
-# What is DSL Pipeline?
+# What is DSL Pipeline
 
 A Domain-Specific Language (DSL) is a specialized programming language tailored to address specific problem domains, representation techniques, or solution methods.
 DSL Pipeline is a robust framework crafted to simplify the development, deployment, and management of such languages within software projects. By utilizing DSLs, 
@@ -40,7 +40,7 @@ DSLs come in two primary forms: external DSLs and internal DSLs. External DSLs p
 tools. Conversely, internal DSLs are integrated within a host programming language, leveraging its syntax and capabilities to create domain-specific syntax.
 ***
 
-# Why DSL Pipeline?
+# Why DSL Pipeline
 
 | Key Features  | Description                                                                                                              |
 |---------------|--------------------------------------------------------------------------------------------------------------------------|
