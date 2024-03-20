@@ -24,7 +24,9 @@
 
 # Introduction
 
-In this document it will guide through the steps to achieve the setup of wrapper code for PostgreSQL server which involves the configuration files. According to the value passed through the root module/wrapper code we can manage/build the infra structure setup accordingly. Which involves the managing of different terraform state files for managing respective environments.
+This document will guide you through the steps to achieve the setup of Terraform wrapper code for PostgreSQL server. Setting up wrapper code for a PostgreSQL server involves configuring various files and managing infrastructure setups based on values passed through the root module or wrapper code. This guide will walk you through the steps required to achieve this setup efficiently, including the management of different Terraform state files for handling respective environments.
+
+Wraper Code: In Terraform, wrapper code refers to a set of configuration files and modules that encapsulate and manage the infrastructure deployment process. The primary purpose of wrapper code is to promote reusability and maintainability by encapsulating common infrastructure patterns, configurations, and best practices
 
 ***
 # Why Terraform Wrapper Code
