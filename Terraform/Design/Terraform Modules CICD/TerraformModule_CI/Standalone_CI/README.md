@@ -56,7 +56,7 @@ Continuous Integration (CI) is a pivotal practice in modern software development
 - In the job configuration page, scroll down to the Pipeline section.
 - Select Pipeline script from SCM.
 - Give required repo url and enter your credentials.
-- 
+
 ![Screenshot 2024-03-21 at 5 22 08 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/f05cd205-0465-4f01-99a8-a5a763e25e01)
 ***
 ![Screenshot 2024-03-21 at 5 22 41 PM](https://github.com/CodeOps-Hub/Documentation/assets/156056364/25cf111b-4493-4e2c-81be-dc7f95c271a6)
@@ -769,7 +769,8 @@ pipeline {
 </details>
 ***
 
-# Terraform groovy template file
+# **Terraform groovy template file**
+
 <details>
 <summary> terraform_CI.groovy </summary>
 <br>
@@ -795,10 +796,12 @@ def call(String url, String creds, String branch, String rootPath, String childP
 ```
 </details>
 
-## Shared Library Src file
+***
+
+# Shared Library Src file
 
 <details>
-<summary>scr files</summary>
+<summary>src files</summary>
 <br>
 action.grovvy
 
@@ -873,6 +876,7 @@ def call(String rootPath, String childPath, String tagVersion) {
 ```
 
 </details>
+
 ***
 
 # Contact Information
