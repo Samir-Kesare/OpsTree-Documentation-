@@ -67,17 +67,19 @@ In the modern software development landscape, microservices architecture has bec
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22                | Open-VPN-SG(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |      | Frontend | Frontend-sg         | 3000              | Frontend-lb-sg(sg-04d283934a64707a) |        
+| Frontend | Frontend-sg         | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |      
+| Frontend | Frontend-sg         | 3000              | Frontend-lb-sg(sg-04d283934a64707a) |        
 | Backend  | Attendance-sg       | 8080              | Frontend-lb-sg(sg-04d283934a64707a) | 
 | Backend  | Salary-sg           | 8080              | Frontend-lb-sg(sg-04d283934a64707a) |
 | Backend  | Employee-sg         | 8080              | Frontend-lb-sg(sg-04d283934a64707a) |
-| Database | Postgresql-sg       | 22                | Open-VPN-SG(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |      | Database | Postgresql-sg       | 5432              | Backend-sg(sg-0a4ecb0570e13e3) |       
-| Database | Redis-sg            | 22                | Open-VPN-SG(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |
+| Database | Postgresql-sg       | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |      
+| Database | Postgresql-sg       | 5432              | Backend-sg(sg-0a4ecb0570e13e3) |       
+| Database | Redis-sg            | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |
 | Database | Redis-sg            | 6379              | Backend-sg(sg-0a4ecb0570e13e3)     |
-| Database | Scylla-sg           | 22                | Open-VPN-SG(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) | 
+| Database | Scylla-sg           | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) | 
 | Database | Scylla-sg           | 9042              | Backend-sg(sg-0a4ecb0570e13e3)  |
-| OpenVPN  | Open-VPN-SG         | 22                | Management-vpc(20.0.0.0/28) |
-| OpenVPN  | Open-VPN-SG         | 1194              | 0.0.0.0/0    
+| OpenVPN  | Openvpn-sg          | 22                | Management-vpc(20.0.0.0/28) |
+| OpenVPN  | Openvpn-sg          | 1194              | 0.0.0.0/0    
 
 ***
 
