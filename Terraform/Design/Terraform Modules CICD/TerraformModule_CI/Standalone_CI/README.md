@@ -12,7 +12,6 @@
 - [Pre-requisites](#pre-requisites)
 - [Implementation of CI checks on Terraform Module](#implementation-of-ci-checks-on-terraform-module)
 - [Shared Library Jenkins File](#shared-library-jenkins-file)
-- [Terraform groovy template file](#terraform-groovy-template-file)
 - [Shared Library Src file](#shared-library-src-file)
 - [Contact Information](#contact-information)
 - [References](#references)
@@ -774,35 +773,6 @@ pipeline {
 
 ***
 
-# **Terraform groovy template file**
-
-<details>
-<summary> terraform_CI.groovy </summary>
-<br>
-
-```shell
-package org.avengers.template.asg_tfmodule_CICD
-
-
-import org.avengers.common.*
-import org.avengers.asg_tfmodule_CICD.*
-
-def call(String url, String creds, String branch, String rootPath, String childPath, String tagVersion, String gitpath){
-
-    
-    gitCheckoutPrivate = new GitCheckoutPrivate()
-    asg_tfmodule_CI = new asg_tfmodule_CI()
-    asg_tfmodule_CD = new asg_tfmodule_CD()
-    
-    gitCheckoutPrivate.call(url, creds, branch)
-    asg_tfmodule_CI.call(rootPath, childPath, tagVersion)
-    asg_tfmodule_CD.call(gitpath, creds, tagVersion)
-}
-```
-</details>
-
-***
-
 # Shared Library Src file
 
 <details>
@@ -811,7 +781,7 @@ def call(String url, String creds, String branch, String rootPath, String childP
 ci.grovvy
 
 ```shell
-package org.avengers.asg_tfmodule_CICD
+package org.avengers.Module_CI_CD
 
 def call(String rootPath, String childPath, String tagVersion) {
     stage("Terraform action") {
@@ -865,11 +835,11 @@ def call(String rootPath, String childPath, String tagVersion) {
             sh "cd ${rootPath}/${childPath} && /var/lib/jenkins/.local/bin/checkov -d . -s --output-file-path . --skip-path ./tflint_report.jsonֿ"
         }
     }
-    stage("Terraform Plan") {
-        script {
-            sh "cd ${rootPath}/${childPath} && terraform plan"
-        }
-    }
+    // stage("Terraform Plan") {
+    //     script {
+    //         sh "cd ${rootPath}/${childPath} && terraform plan"
+    //     }
+    // }
     
    stage('Git Tag Stage') {
         script {
@@ -878,6 +848,7 @@ def call(String rootPath, String childPath, String tagVersion) {
         }
     }
 }
+
 ```
 
 </details>
