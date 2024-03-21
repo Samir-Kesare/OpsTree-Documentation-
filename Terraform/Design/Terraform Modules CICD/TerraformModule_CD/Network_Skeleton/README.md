@@ -1,4 +1,4 @@
-# DSL Jenkins Pipeline for tf module CD of Standalone (Using Shared Library)
+# DSL Jenkins Pipeline for tf module CD of Network Skeleton (Using Shared Library)
 
 ![image](https://github.com/avengers-p7/Documentation/assets/156056460/44f80ab7-909e-48c2-8b1e-ea004054137e)
 
