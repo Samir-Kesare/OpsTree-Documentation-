@@ -84,8 +84,6 @@ deployment of Terraform modules, ensuring that changes are applied consistently 
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056570/199afcc2-47a5-4824-803a-fc30639c27d6)
 
 
-
-
 <details>
   <summary> Click here to see the Console Output</summary>
 <br>
@@ -458,3 +456,381 @@ Warning: Missing version constraint for provider "aws" in `required_providers` (
 
   on main.tf line 134:
  134: resource "aws_route_table_association" "private_route_association01" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_required_providers.md
+
+Warning: [Fixable] List items should be accessed using square brackets (terraform_deprecated_index)
+
+  on main.tf line 136:
+ 136:   count          = length(aws_subnet.private_subnets.*.id)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_deprecated_index.md
+
+Warning: [Fixable] List items should be accessed using square brackets (terraform_deprecated_index)
+
+  on output.tf line 6:
+   6:   value = aws_subnet.public_subnets.*.id
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_deprecated_index.md
+
+Warning: [Fixable] List items should be accessed using square brackets (terraform_deprecated_index)
+
+  on output.tf line 11:
+  11:   value = aws_subnet.private_subnets.*.id
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_deprecated_index.md
+
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archive)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Archive)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] archiveArtifacts
+Archiving artifacts
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
+```
+</details>
+
+<details>
+	<summary> Click here to see checkov output</summary>
+<br>
+	
+```shell
+	
+ terraform scan results:
+terraform scan results:
+
+Passed checks: 11, Failed checks: 2, Skipped checks: 0
+
+Check: CKV_AWS_260: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 80"
+	PASSED for resource: aws_security_group.security_group
+	File: /main.tf:7-33
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-aws-security-groups-do-not-allow-ingress-from-00000-to-port-80
+Check: CKV_AWS_24: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 22"
+	PASSED for resource: aws_security_group.security_group
+	File: /main.tf:7-33
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-1-port-security
+Check: CKV_AWS_25: "Ensure no security groups allow ingress from 0.0.0.0:0 to port 3389"
+	PASSED for resource: aws_security_group.security_group
+	File: /main.tf:7-33
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-2
+Check: CKV_AWS_277: "Ensure no security groups allow ingress from 0.0.0.0:0 to port -1"
+	PASSED for resource: aws_security_group.security_group
+	File: /main.tf:7-33
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-aws-security-group-does-not-allow-all-traffic-on-all-ports
+Check: CKV_AWS_341: "Ensure Launch template should not have a metadata response hop limit greater than 1"
+	PASSED for resource: aws_launch_template.Template
+	File: /main.tf:55-70
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-general-policies/bc-aws-341
+Check: CKV_AWS_46: "Ensure no hard-coded secrets exist in EC2 user data"
+	PASSED for resource: aws_launch_template.Template
+	File: /main.tf:55-70
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/secrets-policies/bc-aws-secrets-1
+Check: CKV_AWS_88: "EC2 instance should not have public IP."
+	PASSED for resource: aws_launch_template.Template
+	File: /main.tf:55-70
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/public-policies/public-12
+Check: CKV_AWS_261: "Ensure HTTP HTTPS Target group defines Healthcheck"
+	PASSED for resource: aws_lb_target_group.Target_group
+	File: /main.tf:75-94
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-general-policies/ensure-aws-kendra-index-server-side-encryption-uses-customer-managed-keys-cmks
+Check: CKV_AWS_315: "Ensure EC2 Auto Scaling groups use EC2 launch templates"
+	PASSED for resource: aws_autoscaling_group.ASG
+	File: /main.tf:118-136
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-general-policies/bc-aws-315
+Check: CKV_AWS_153: "Autoscaling groups should supply tags to launch configurations"
+	PASSED for resource: aws_autoscaling_group.ASG
+	File: /main.tf:118-136
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-general-policies/autoscaling-groups-should-supply-tags-to-launch-configurations
+Check: CKV2_AWS_5: "Ensure that Security Groups are attached to another resource"
+	PASSED for resource: aws_security_group.security_group
+	File: /main.tf:7-33
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/ensure-that-security-groups-are-attached-to-ec2-instances-or-elastic-network-interfaces-enis
+Check: CKV_AWS_23: "Ensure every security groups rule has a description"
+	FAILED for resource: aws_security_group.security_group
+	File: /main.tf:7-33
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-networking-policies/networking-31
+
+		[37m7  | [33mresource "aws_security_group" "security_group" {
+		[37m8  | [33m  name        = var.security_name
+		[37m9  | [33m  description = var.Security_description
+		[37m10 | [33m  vpc_id      = var.SG_vpc_id
+		[37m11 | [33m
+		[37m12 | [33m  dynamic "ingress" {
+		[37m13 | [33m    for_each = local.inbound_ports
+		[37m14 | [33m    content {
+		[37m15 | [33m      from_port = ingress.value.port
+		[37m16 | [33m      to_port   = ingress.value.port
+		[37m17 | [33m      protocol  = ingress.value.protocol
+		[37m18 |       # Conditionally apply CIDR block or security group rule based on type
+		[37m19 | [33m      cidr_blocks     = contains(keys(ingress.value), "cidr_blocks") ? [ingress.value.cidr_blocks] : null
+		[37m20 | [33m      security_groups = contains(keys(ingress.value), "security_group_ids") ? [ingress.value.security_group_ids] : null
+		[37m21 | [33m    }
+		[37m22 | [33m  }
+		[37m23 | [33m  dynamic "egress" {
+		[37m24 | [33m    for_each = local.outbound_ports
+		[37m25 | [33m    content {
+		[37m26 | [33m      from_port   = egress.value.port
+		[37m27 | [33m      to_port     = egress.value.port
+		[37m28 | [33m      protocol    = egress.value.protocol
+		[37m29 | [33m      cidr_blocks = [egress.value.cidr_blocks]
+		[37m30 | [33m    }
+		[37m31 | [33m  }
+		[37m32 | [33m  tags = var.Sg_tags
+		[37m33 | [33m}
+
+Check: CKV_AWS_79: "Ensure Instance Metadata Service Version 1 is not enabled"
+	FAILED for resource: aws_launch_template.Template
+	File: /main.tf:55-70
+	Guide: [1mhttps://docs.prismacloud.io/en/enterprise-edition/policy-reference/aws-policies/aws-general-policies/bc-aws-general-31
+
+		[37m55 | [33mresource "aws_launch_template" "Template" {
+		[37m56 | [33m  name          = var.template_name
+		[37m57 | [33m  description   = var.template_description
+		[37m58 | [33m  image_id      = var.AMI_ID
+		[37m59 | [33m  instance_type = var.instance_type
+		[37m60 | [33m  key_name      = aws_key_pair.key_pair.key_name
+		[37m61 | [33m  network_interfaces {
+		[37m62 | [33m    security_groups = [aws_security_group.security_group.id]
+		[37m63 | [33m    subnet_id       = var.subnet_ID
+		[37m64 | [33m  }
+		[37m65 |   # user_data = base64encode(templatefile(var.user_data_script_path, { varibale_name = Value (Fatch in Resources) })) if you need any variable pass in User data
+		[37m66 | [33m  user_data = filebase64(var.user_data_script_path)
+		[37m67 | [33m  tags = {
+		[37m68 | [33m    Name = var.template_name
+		[37m69 | [33m  }
+		[37m70 | [33m}
+
+terraform_plan scan results:
+
+Passed checks: 0, Failed checks: 0, Skipped checks: 0, Parsing errors: 1
+
+Error parsing file ./tflint_report.jsonÖ¿
+
+```
+
+</details>
+
+<details>
+	<summary> Click here to see tflint output </summary>
+	<br>
+
+ ```shell
+4 issue(s) found:
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on  line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_required_version.md
+
+Warning: Missing version constraint for provider "tls" in `required_providers` (terraform_required_providers)
+
+  on main.tf line 38:
+  38: resource "tls_private_key" "private_key" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_required_providers.md
+
+Warning: Missing version constraint for provider "local" in `required_providers` (terraform_required_providers)
+
+  on main.tf line 50:
+  50: resource "local_file" "private_key" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_required_providers.md
+
+Warning: Missing version constraint for provider "aws" in `required_providers` (terraform_required_providers)
+
+  on main.tf line 141:
+ 141: resource "aws_autoscaling_policy" "ASG_Policy" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.5.0/docs/rules/terraform_required_providers.md
+
+```
+</details>
+
+## [Terraform Module](https://github.com/CodeOps-Hub/Terraform-modules.git)
+
+## [Shared Library Jenkins File](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/asg_tfmodule_CICD/Jenkinsfile)
+
+```shell
+@Library('my-shared-library') _
+
+def asg = new org.avengers.template.asg_tfmodule_CICD.asgCICD()
+
+pipeline {
+    agent any
+    
+    environment {
+        AWS_ACCESS_KEY_ID = credentials('samir_aws_creds')
+        AWS_SECRET_ACCESS_KEY = credentials('samir_aws_creds')
+        TF_CLI_ARGS = '-input=false'
+    }
+    
+    stages {
+        stage('Terraform') {
+            steps {
+                script {
+                    properties([
+                        parameters([
+                            string(name: 'branch', defaultValue: 'main', description: 'Enter the branch name'),
+                            string(name: 'rootPath', defaultValue: 'Modules', description: 'Enter the root directory path'),
+                            string(name: 'childPath', defaultValue: 'Auto_Sacling_Module', description: 'Enter the child directory path'),
+                            string(name: 'tagVersion', defaultValue: 'null', description: 'Enter the correct version'),
+                            string(name: 'gitpath', defaultValue: 'CodeOps-Hub/Terraform-modules.git', description: 'Enter the correct GitHub repository path')
+                           
+                        ])
+                    ])
+
+                    def url = 'https://github.com/CodeOps-Hub/Terraform-modules.git'
+                    def creds = 'cfb1a43a-bdbe-4b72-9966-6f42f75e98b1'
+                    
+                    
+                    asg.call(url, creds, params.branch, params.rootPath, params.childPath, params.tagVersion, params.gitpath)
+                }
+            }
+        }
+    }
+}
+```
+## [Terraform groovy template file](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/terraformCI/terraform_CI.groovy)
+<details>
+<summary> terraform_CI.groovy </summary>
+<br>
+
+```shell
+package org.avengers.template.asg_tfmodule_CICD
+
+
+import org.avengers.common.*
+import org.avengers.asg_tfmodule_CICD.*
+
+def call(String url, String creds, String branch, String rootPath, String childPath, String tagVersion, String gitpath){
+
+    
+    gitCheckoutPrivate = new GitCheckoutPrivate()
+    asg_tfmodule_CI = new asg_tfmodule_CI()
+    asg_tfmodule_CD = new asg_tfmodule_CD()
+    
+    gitCheckoutPrivate.call(url, creds, branch)
+    asg_tfmodule_CI.call(rootPath, childPath, tagVersion)
+    asg_tfmodule_CD.call(gitpath, creds, tagVersion)
+}
+```
+</details>
+
+## [Shared Library Src file](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/terraform_CICD)
+
+<details>
+<summary>scr files</summary>
+<br>
+action.grovvy
+
+```shell
+package org.avengers.asg_tfmodule_CICD
+
+def call(String rootPath, String childPath, String tagVersion) {
+    stage("Terraform action") {
+        script {
+            sh "cd ${rootPath}/${childPath}"
+        }
+    }
+    stage('Terraform init') {
+        script {
+            // Initialize Terraform working directory
+            sh "cd ${rootPath}/${childPath} && terraform init"
+        }
+    }
+    stage('Terraform fmt') {
+        script {
+            // Stage to format Terraform files
+            sh "cd ${rootPath}/${childPath} && sudo terraform fmt"
+        }
+    }
+    stage('Terraform Validate') {
+        script {
+            // Validate Terraform configurations
+            sh "cd ${rootPath}/${childPath} && sudo terraform validate"
+        }
+    }
+      stage('Static Code Analysis') {
+        script {
+            // Install TFLint and run static code analysis
+            sh "curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | sudo bash"
+            sh "cd ${rootPath}/${childPath} && tflint --format default | tee tflint_report.json"
+        }
+    }
+
+    stage('checkov') {
+        script {
+
+            // Check if Checkov is installed
+           def checkovInstalled = sh(script: 'test -x /var/lib/jenkins/.local/bin/checkov && echo "Installed"', returnStatus: true)
+            if (checkovInstalled == 0) {
+               echo "Checkov is already installed."
+           } else {
+                echo "Checkov is not installed. Installing..."
+                sh "pip install checkov"
+                sh "python3 -m pip install checkov"
+                sh 'echo "export PATH=\"`python3 -m site --user-base`/bin:\$PATH\"" >> ~/.bashrc'
+                sh "sudo apt install pipenv -y"
+                sh "pip install checkov"
+                
+            }
+            // Stage to run Checkov for Terraform
+            sh "cd ${rootPath}/${childPath} && /var/lib/jenkins/.local/bin/checkov -d . -s --output-file-path . --skip-path ./tflint_report.jsonֿ"
+        }
+    }
+    stage("Terraform Plan") {
+        script {
+            sh "cd ${rootPath}/${childPath} && terraform plan"
+        }
+    }
+    
+   stage('Git Tag Stage') {
+        script {
+            // Tag the version
+            sh "git tag -a v${tagVersion} -m 'Version ${tagVersion}'"
+        }
+    }
+}
+```
+
+</details>
+
+## Contact Information
+| Name            | Email Address                        |
+|-----------------|--------------------------------------|
+| Samir Kesare | samir.kesare.snaatak@mygurukulam.co |
+
+## References
+
+| Description                                   | References  
+| --------------------------------------------  | -------------------------------------------------|
+| Terraform Module | https://spacelift.io/blog/what-are-terraform-modules-and-how-do-they-work |
+| Terraform Module CI/CD | https://www.reddit.com/r/Terraform/comments/17ldr9i/cicd_for_creating_terraform_modules/ |
+
+
+
+
