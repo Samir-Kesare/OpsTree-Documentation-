@@ -43,7 +43,9 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 
 
 ---
+
 # Description
+
 | Component                           | Details                                                                                           |
 | ----------------------------------- | ------------------------------------------------------------------------------------------------- |
 | **User Access**                     | Users connect to the infrastructure through the internet.                                          |
@@ -58,109 +60,118 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 | **Auto Scaling Group (ASG)**        | Dynamically adjusts frontend and API service instances based on demand for scalability.              |
 | **Region and Availability Zone**    | Deployed in US Esat region, specifically N.Virginia (us-east-1). Utilizes availability zones (us-east-1a) for redundancy and fault tolerance. |
 | **VPC (Virtual Private Cloud)**     | Created for Development environments, organizes components for scalability and availability.        |
-            
 
+***
 
+## Security Groups and Inbound Rules
 
-
-# Security Groups and Inbound Rules
+### Frontend Security Group
 
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22, 3000                | Frontend-lb-sg   |               
-| Backend  | Backend-sg          | 22, 8080             | Frontend-lb-sg     |               
-| Database | Postgresql-sg      | 22, 5432              | Backend-sg       |               
-| Database | Redis-sg         | 22, 6379              | Backend-sg       |            
-| Database | Scylla-sg      | 22, 9042             | Backend-sg          |               
+| Frontend | Frontend-sg         | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |      
+| Frontend | Frontend-sg         | 3000              | Frontend-lb-sg (sg-04d283934a64707a) | 
 
+***
 
+### Backend Security Group
 
-# NACL Rules
+| Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|----------|---------------------|-------------------|---------------------|
+| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg (sg-04d283934a64707a) | 
+| Backend  | Salary-sg           | 8080              | Frontend-lb-sg (sg-04d283934a64707a) |
+| Backend  | Employee-sg         | 8080              | Frontend-lb-sg (sg-04d283934a64707a) |
 
-## Public NACL Inbound Rules
+***
+
+### Database Security Group
+
+| Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|----------|---------------------|-------------------|---------------------|
+| Database | Postgresql-sg       | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |      
+| Database | Postgresql-sg       | 5432              | Backend-sg (sg-0a4ecb0570e13e3) |       
+| Database | Redis-sg            | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |
+| Database | Redis-sg            | 6379              | Backend-sg (sg-0a4ecb0570e13e3)     |
+| Database | Scylla-sg           | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) | 
+| Database | Scylla-sg           | 9042              | Backend-sg (sg-0a4ecb0570e13e3)  |
+
+***
+
+### Openvpn Security Group
+
+| Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
+|----------|---------------------|-------------------|---------------------|
+| OpenVPN  | Openvpn-sg          | 22                | Management-vpc (20.0.0.0/28) |
+| OpenVPN  | Openvpn-sg          | 1194              | 0.0.0.0/0 |
+
+***
+
+## NACL Rules
+
+### Frontend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 0.0.0.0/0    | Allow      |
-| 110         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.16/28    | Allow      |
-| 120         | Custom TCP      | TCP      | 1194        | 0.0.0.0/0   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), Dev-Public-Subnet-1 (10.0.1.0/28)      | Allow |
+| 110         | Custom TCP| TCP      | 3000       | Dev-Public-Subnet-1 (10.0.1.0/28), Dev-Public-Subnet-2 (10.0.1.64/28) | Allow |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
-## Public NACL Outbound Rules
+### Frontend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | 0.0.0.0/0   | Allow      |
-| *           | All traffic | All     | All       | 0.0.0.0/0    | Deny      |
+| 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)      | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-1 (10.0.1.0/28)  | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-2 (10.0.1.64/28) | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
-## Frontend NACL Inbound Rules
-
-| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28  | Allow      |
-| 130         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
-
-## Frontend NACL Outbound Rules
-
-| Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 3000       | 10.0.1.0/28 | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
-| 130         | Custom TCP| TCP      | 32768-65535| 10.0.1.0/28  | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
-
-## Backend NACL Inbound Rules
+### Backend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
-| 120         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.48/28    | Allow      |
-| 130         | Custom TCP      | TCP      | 1024-65535         | 10.0.1.64/28    | Allow      |
-| 140         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), Dev-Public-Subnet-1 (10.0.1.0/28)      | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | Dev-Public-Subnet-1 (10.0.1.0/28), Dev-Public-Subnet-2 (10.0.1.64/28) | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | Dev-DB-Pvt-Subnet (10.0.1.48/28)   | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-2 (10.0.1.64/28) | Allow      |
+| 140         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-1 (10.0.1.0/28)  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
-## Backend NACL Outbound Rules
-
-| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
-|-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | 10.0.1.0/28 | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28  | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535| 10.0.1.48/28 | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535| 10.0.1.64/28 | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
-
-## Database NACL Inbound Rules
+### Backend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
-| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
-| 140         | Custom TCP      | TCP      | 1194     | 10.0.1.0/28   | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)      | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | Dev-DB-Pvt-Subnet (10.0.1.48/28)   | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-2 (10.0.1.64/28) | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-1 (10.0.1.0/28)  | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
-## Database NACL Outbound Rules
+### Database NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | 20.0.0.0/28  | Allow      |
-| 110         | Custom TCP(Redis)| TCP      | 6379       | 10.0.1.32/28 | Allow      |
-| 120         | Custom TCP(Scylla)| TCP      | 9042       | 10.0.1.32/28 | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP| 5432    | 10.0.1.32/28 | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535 | 10.0.1.32/28 | Allow      |
-| 150         | Custom TCP| TCP      | 1024-65535 | 20.0.0.0/28 | Allow      |
-| *           | All traffic | All     | All        | 0.0.0.0/0    | Deny       |
+| 100         | SSH                     | TCP | 22         | Management-vpc (20.0.0.0/28), Dev-Public-Subnet-1 (10.0.1.0/28)  | Allow      |
+| 110         | Custom TCP(Redis)       | TCP | 6379       | Dev-Backend-Pvt-Subnet (10.0.1.32/28)                            | Allow      |
+| 120         | Custom TCP(Scylla)      | TCP | 9042       | Dev-Backend-Pvt-Subnet (10.0.1.32/28)                            | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | Dev-Backend-Pvt-Subnet (10.0.1.32/28)                            | Allow      |
+| *           | All traffic             | All | All        | 0.0.0.0/0                                                        | Deny       |
+
+### Database NACL Outbound Rules
+
+| Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
+|-------------|-----------|----------|------------|--------------|------------|
+| 100         | Custom TCP| TCP      | 1024-65535 | Dev-Backend-Pvt-Subnet (10.0.1.32/28) | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)          | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | Dev-Public-Subnet-1 (10.0.1.0/28)     | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0                             | Deny       |
+
+***
+
 # Cloud Architecture Best Practices
 
-| Aspect                 | Description                                                                                                                                                                                                                                                              |
-|------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Aspect | Description |
+| ------ |------------ |
 | Operational Excellence | Involves monitoring systems and continuously improving the cloud architecture and internal processes. Implement incremental changes, document procedures, and focus on troubleshooting.                                                                                   |
 | Cost Optimization      | A major concern for businesses moving to the cloud. Incorporate cloud cost optimization strategies to reduce overall spending. Analyze expenses, drop components with high operational costs, and use automation for cost-efficient alternatives.                     |
 | Performance Efficiency | Design cloud architecture with the right service provider to improve performance. Focus on structuring resources, selecting appropriate sizes/types, and utilizing automation and AI for optimization.                                                                     |
