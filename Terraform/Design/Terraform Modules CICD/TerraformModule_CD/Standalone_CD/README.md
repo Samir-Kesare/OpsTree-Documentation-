@@ -778,26 +778,21 @@ pipeline {
 # **Terraform groovy template file**
 
 <details>
-<summary> terraform_CI.groovy </summary>
+<summary> cd.groovy </summary>
 <br>
 
 ```shell
-package org.avengers.template.asg_tfmodule_CICD
+package org.avengers.Module_CI_CD
 
-
-import org.avengers.common.*
-import org.avengers.asg_tfmodule_CICD.*
-
-def call(String url, String creds, String branch, String rootPath, String childPath, String tagVersion, String gitpath){
-
-    
-    gitCheckoutPrivate = new GitCheckoutPrivate()
-    asg_tfmodule_CI = new asg_tfmodule_CI()
-    asg_tfmodule_CD = new asg_tfmodule_CD()
-    
-    gitCheckoutPrivate.call(url, creds, branch)
-    asg_tfmodule_CI.call(rootPath, childPath, tagVersion)
-    asg_tfmodule_CD.call(gitpath, creds, tagVersion)
+def call(String gitpath, String creds, String tagVersion) {
+  stage('Git Push Version Stage') {
+            script {
+                // Push the tagged version to the remote repository
+                withCredentials([usernamePassword(credentialsId: "${creds}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    sh "git push https://username:${PASSWORD}@github.com/${gitpath} v${tagVersion}"
+                }
+            }
+        }
 }
 ```
 </details>
