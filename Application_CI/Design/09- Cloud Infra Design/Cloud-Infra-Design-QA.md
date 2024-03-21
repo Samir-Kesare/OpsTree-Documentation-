@@ -67,18 +67,18 @@ In the modern software development landscape, microservices architecture has bec
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |      
-| Frontend | Frontend-sg         | 3000              | Frontend-lb-sg(sg-04d283934a64707a) |        
-| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg(sg-04d283934a64707a) | 
-| Backend  | Salary-sg           | 8080              | Frontend-lb-sg(sg-04d283934a64707a) |
-| Backend  | Employee-sg         | 8080              | Frontend-lb-sg(sg-04d283934a64707a) |
-| Database | Postgresql-sg       | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |      
-| Database | Postgresql-sg       | 5432              | Backend-sg(sg-0a4ecb0570e13e3) |       
-| Database | Redis-sg            | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) |
-| Database | Redis-sg            | 6379              | Backend-sg(sg-0a4ecb0570e13e3)     |
-| Database | Scylla-sg           | 22                | Openvpn-sg(sg-0ced15d988acdb94), Management-vpc(20.0.0.0/28) | 
-| Database | Scylla-sg           | 9042              | Backend-sg(sg-0a4ecb0570e13e3)  |
-| OpenVPN  | Openvpn-sg          | 22                | Management-vpc(20.0.0.0/28) |
+| Frontend | Frontend-sg         | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |      
+| Frontend | Frontend-sg         | 3000              | Frontend-lb-sg (sg-04d283934a64707a) |        
+| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg (sg-04d283934a64707a) | 
+| Backend  | Salary-sg           | 8080              | Frontend-lb-sg (sg-04d283934a64707a) |
+| Backend  | Employee-sg         | 8080              | Frontend-lb-sg (sg-04d283934a64707a) |
+| Database | Postgresql-sg       | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |      
+| Database | Postgresql-sg       | 5432              | Backend-sg (sg-0a4ecb0570e13e3) |       
+| Database | Redis-sg            | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |
+| Database | Redis-sg            | 6379              | Backend-sg (sg-0a4ecb0570e13e3)     |
+| Database | Scylla-sg           | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) | 
+| Database | Scylla-sg           | 9042              | Backend-sg (sg-0a4ecb0570e13e3)  |
+| OpenVPN  | Openvpn-sg          | 22                | Management-vpc (20.0.0.0/28) |
 | OpenVPN  | Openvpn-sg          | 1194              | 0.0.0.0/0    
 
 ***
@@ -89,58 +89,58 @@ In the modern software development landscape, microservices architecture has bec
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | Management-vpc(20.0.0.0/28), QA-Public-Subnet-1(10.0.1.0/27) | Allow |
-| 110         | Custom TCP| TCP      | 3000       | QA-Public-Subnet-1(10.0.1.0/27), QA-Public-Subnet-2(10.0.1.64/27) | Allow |
+| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.0.1.0/27)      | Allow |
+| 110         | Custom TCP| TCP      | 3000       | QA-Public-Subnet-1 (10.0.1.0/27), QA-Public-Subnet-2 (10.0.1.64/27) | Allow |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Frontend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc(20.0.0.0/28)  | Allow      |
-| 110         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1(10.0.1.0/27)  | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2(10.0.1.64/27) | Allow      |
+| 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)      | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | Management-vpc(20.0.0.0/28), QA-Public-Subnet-1(10.0.1.0/27)      | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | QA-Public-Subnet-1(10.0.1.0/27), QA-Public-Subnet-2(10.0.1.64/27) | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet(10.0.1.48/27)   | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2(10.0.1.64/27) | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1(10.0.1.0/27)  | Allow      |
+| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.0.1.0/27)      | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | QA-Public-Subnet-1 (10.0.1.0/27), QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet (10.0.1.48/27)   | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
+| 140         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc(20.0.0.0/28)      | Allow      |
-| 110         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet(10.0.1.48/27)   | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2(10.0.1.64/27) | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1(10.0.1.0/27)  | Allow      |
+| 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)      | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet (10.0.1.48/27)   | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH                     | TCP | 22         | Management-vpc(20.0.0.0/28), QA-Public-Subnet-1(10.0.1.0/27)  | Allow      |
-| 110         | Custom TCP(Redis)       | TCP | 6379       | QA-Backend-Pvt-Subnet(10.0.1.32/27)                           | Allow      |
-| 120         | Custom TCP(Scylla)      | TCP | 9042       | QA-Backend-Pvt-Subnet(10.0.1.32/27)                           | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | QA-Backend-Pvt-Subnet(10.0.1.32/27)                           | Allow      |
-| *           | All traffic             | All | All        | 0.0.0.0/0                                                     | Deny       |
+| 100         | SSH                     | TCP | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
+| 110         | Custom TCP(Redis)       | TCP | 6379       | QA-Backend-Pvt-Subnet (10.0.1.32/27)                            | Allow      |
+| 120         | Custom TCP(Scylla)      | TCP | 9042       | QA-Backend-Pvt-Subnet (10.0.1.32/27)                            | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | QA-Backend-Pvt-Subnet (10.0.1.32/27)                            | Allow      |
+| *           | All traffic             | All | All        | 0.0.0.0/0                                                       | Deny       |
 
 ### Database NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | QA-Backend-Pvt-Subnet(10.0.1.32/27) | Allow      |
-| 110         | Custom TCP| TCP      | 1024-65535 | Management-vpc(20.0.0.0/28)         | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1(10.0.1.0/27)     | Allow      |
-| *           | All traffic | All    | All        | 0.0.0.0/0                           | Deny       |
+| 100         | Custom TCP| TCP      | 1024-65535 | QA-Backend-Pvt-Subnet (10.0.1.32/27) | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)         | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)     | Allow      |
+| *           | All traffic | All    | All        | 0.0.0.0/0                            | Deny       |
 
 ***
 
