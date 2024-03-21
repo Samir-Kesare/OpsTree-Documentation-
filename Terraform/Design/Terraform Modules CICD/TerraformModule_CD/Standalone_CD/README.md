@@ -721,10 +721,13 @@ Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0
 ***
 
 # Shared Library Jenkins File
+
 <details>
 	<summary> Click here to see Jenkinsfile </summary>
 	<br>
+	
 ```shell
+
 @Library('my-shared-library') _
 
 def standalone = new org.avengers.template.Module_CI_CD.cicd()
@@ -765,8 +768,11 @@ pipeline {
         }
     }
 }
+
 ```
+
 </details>
+
 ***
 
 # **Terraform groovy template file**
