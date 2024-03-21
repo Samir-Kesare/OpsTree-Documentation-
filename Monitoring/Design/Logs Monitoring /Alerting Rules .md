@@ -73,19 +73,19 @@ In the context of log monitoring, alerting rules are predefined conditions or cr
 
 # Scenerio/Examples
 
+These scenarios provide a comprehensive overview of potential log monitoring scenarios and the corresponding alerts that can be configured to ensure proactive identification and resolution of issues within an environment.
 
-These below scenarios illustrate how alerting rules in log monitoring can be configured to proactively identify and respond to various issues, anomalies, and events:
-
-| Scenario                               | Description                                                                                                                                                               |
-|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Error Detection**                    | Alert triggered when a critical error message appears frequently in the logs within a short time frame.                                                                   |
-| **Performance Degradation**            | Alert triggered when response times exceed a predefined threshold, indicating potential performance issues.                                                                |
-| **Security Breaches**                  | Alert triggered when suspicious activity, such as unauthorized access attempts or unusual login patterns, is detected in the logs.                                        |
-| **Resource Exhaustion**                | Alert triggered when resource utilization metrics, such as CPU or memory usage, exceed predefined limits, indicating potential resource exhaustion.                     |
-| **Service Outages**                    | Alert triggered when the logs indicate service failures or unavailability, helping detect and respond to downtime incidents promptly.                                       |
-| **Anomalies and Patterns**             | Alert triggered when unexpected patterns or anomalies are detected in the logs, indicating potential system abnormalities or malicious activity.                           |
-| **Threshold Crossings**                | Alert triggered when log data crosses predefined thresholds, such as the number of failed login attempts or the volume of database queries exceeding a certain limit. |
-
+| Scenario                                   | Description                                                                                                    |
+|--------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| Excessive Error Logs                       | Trigger an alert when the number of error logs exceeds a certain threshold within a defined time window.      |
+| High Response Time                         | Raise an alert when the response time of certain critical API endpoints exceeds a predefined threshold.         |
+| Unusual User Activity                      | Alert when there is an unusual pattern in user activity, such as a sudden increase in failed login attempts.  |
+| Server Resource Exhaustion                 | Monitor server resource usage (CPU, memory, disk) and generate an alert if any resource exceeds safe limits.   |
+| Anomalous Request Patterns                 | Detect abnormal patterns in incoming requests, such as a spike in requests from a specific IP address.         |
+| Unauthorized Access Attempts               | Alert when there are repeated unauthorized access attempts detected, indicating a potential security threat.    |
+| Log File Absence                           | Raise an alert if log files are not generated or updated within a specified time interval, indicating a failure in logging mechanism. |
+| Database Connection Failures               | Monitor database connection logs and trigger an alert if there are failures or disruptions in database connectivity. |
+| Application Log Size Growth                | Alert when the size of application log files grows excessively, indicating potential issues with log rotation or disk space. |
 
 # Best Practices
 
