@@ -79,9 +79,12 @@ The Cloud Infra Design Dev documentation provides an in-depth overview of the de
 
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
-| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg (sg-04d283934a64707a) | 
-| Backend  | Salary-sg           | 8080              | Frontend-lb-sg (sg-04d283934a64707a) |
-| Backend  | Employee-sg         | 8080              | Frontend-lb-sg (sg-04d283934a64707a) |
+| Backend  | Attendance-sg       | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28)     |
+| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg (sg-04d283934a64707a)                               | 
+| Backend  | Salary-sg           | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28)     |
+| Backend  | Salary-sg           | 8080              | Frontend-lb-sg (sg-04d283934a64707a)                               |
+| Backend  | Employee-sg         | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28)     |
+| Backend  | Employee-sg         | 8080              | Frontend-lb-sg (sg-04d283934a64707a)                               |
 
 ***
 
