@@ -9,8 +9,8 @@
 
 # Table Of Contents
 - [Introduction](#introduction)
-- [Pre-requisites](https://github.com/avengers-p7/Documentation/blob/main/Terraform/Terraform_CI/Terraform_CI_POC.md#pre-requisites)
-- [Implementation of CI checks on Terraform Module](https://github.com/avengers-p7/Documentation/blob/main/Terraform/Terraform_CI/Terraform_CI_POC.md#implementation-of-ci-checks-on-terraform-module-1)
+- [Pre-requisites](#pre-requisites)
+- [Implementation of CI checks on Terraform Module](#implementation-of-ci-checks-on-terraform-module)
 - [Terraform Module](https://github.com/avengers-p7/Documentation/blob/main/Terraform/Terraform_CI/Terraform_CI_POC.md#terraform-module)
 - [Shared Library Jenkins File](https://github.com/avengers-p7/Documentation/blob/main/Terraform/Terraform_CI/Terraform_CI_POC.md#shared-library-jenkins-file)
 - [Terraform groovy template file](https://github.com/avengers-p7/Documentation/blob/main/Terraform/Terraform_CI/Terraform_CI_POC.md#terraform-groovy-template-file)
