@@ -12,7 +12,6 @@
 - [Pre-requisites](#pre-requisites)
 - [Implementation of CI checks on Terraform Module](#implementation-of-ci-checks-on-terraform-module)
 - [Shared Library Jenkins File](#shared-library-jenkins-file)
-- [Terraform groovy template file](#terraform-groovy-template-file)
 - [Shared Library Src file](#shared-library-src-file)
 - [Contact Information](#contact-information)
 - [References](#references)
@@ -775,30 +774,6 @@ pipeline {
 
 ***
 
-# **Terraform groovy template file**
-
-<details>
-<summary> cd.groovy </summary>
-<br>
-
-```shell
-package org.avengers.Module_CI_CD
-
-def call(String gitpath, String creds, String tagVersion) {
-  stage('Git Push Version Stage') {
-            script {
-                // Push the tagged version to the remote repository
-                withCredentials([usernamePassword(credentialsId: "${creds}", usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    sh "git push https://username:${PASSWORD}@github.com/${gitpath} v${tagVersion}"
-                }
-            }
-        }
-}
-```
-</details>
-
-***
-
 # Shared Library Src file
 
 <details>
@@ -820,6 +795,7 @@ def call(String gitpath, String creds, String tagVersion) {
             }
         }
 }
+
 ```
 
 </details>
