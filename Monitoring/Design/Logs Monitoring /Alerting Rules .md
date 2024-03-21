@@ -26,16 +26,16 @@
 
 
 # Introduction
-Alerting rules define conditions that trigger alerts based on log data. These conditions typically involve specific criteria such as log levels, keywords, patterns, or thresholds. Alerting rules play a crucial role in detecting anomalies, errors, and potential issues within applications by analyzing log data in real-time.
+In the context of log monitoring, alerting rules are predefined conditions or criteria set up to trigger notifications or alerts when certain events or patterns occur within log data. These rules are typically configured within a log monitoring system or tool to automate the process of detecting and responding to issues or anomalies in real-time.
 
-# Components of Alerting Rules
+# Components of Log Montoring
 
 |  Component                      |        Description                                                             |
 | ---------                       | ------------------------------------------------------------------------------ |
-| Log Source	                    | Identify the source(s) of application logs to be monitored, such as application servers, containers (e.g., Docker), cloud platforms (e.g., AWS CloudWatch), or custom log files  |  
-|  Metrics and Thresholds         | Determine metrics and thresholds for triggering alerts, such as the number of errors per minute/hour, response time exceeding a certain threshold, or CPU/memory usage spikes     |
+| Log Source	                    | These are the devices, systems, and applications that generate log data. Examples include servers, network devices, firewalls, databases, and applications like web servers, email servers, and authentication systems| 
 | Alerting Conditions	           | Define conditions that trigger alerts based on parsed log data and metrics, such as error rate surpassing a predefined threshold, critical keywords or patterns found in logs, or service downtime/unavailability.|
-| Resource Utilization	               | - Monitor CPU, memory, disk I/O, and network usage <br>- Detect resource-intensive operations <br>- Optimize resource allocation for better performance      |
+| Severity or Importance Level    | Assigns a severity level to the alert, indicating its importance or urgency |
+| Visualization                | Visualization tools can provide graphical representations of log data, such as charts, graphs, dashboards, and heatmaps, to facilitate understanding and decision-making      |
 | Notification Channels		               | Specify notification channels to receive alerts, including email, SMS, Slack, PagerDuty, or webhooks |
 
 # Tools where we can define alerting rules 
