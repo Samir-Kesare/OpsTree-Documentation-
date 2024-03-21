@@ -73,17 +73,19 @@ In the context of log monitoring, alerting rules are predefined conditions or cr
 
 # Scenerio/Examples
 
-some generic scenerio of alerting rules.
 
-| Alerting Rule Name | Description | Condition | Severity | Action |
-|--------------------|-------------|-----------|----------|--------|
-| High CPU Usage     | Alert when CPU usage exceeds a certain threshold. | CPU usage > 90% for 5 minutes | Critical | Send email notification to DevOps team |
-| Memory         | Alert when memory usage continuously increases. | Memory increase rate > 10% per hour | High | Trigger automated restart of affected service |
-| Disk Space  | Alert when disk space falls below a critical level. | Disk space < 10% for 10 minutes | Critical | Execute script to clean up old logs and temporary files |
-| Network Latency Spike | Alert when network latency exceeds normal levels. | Network latency > 200 ms for 3 consecutive pings | High | Log incident in monitoring system and notify network engineering team |
-| Application Error Rate | Alert when the rate of errors from the application surpasses a threshold. | Error rate > 5% for 15 minutes | Medium | Create ticket in issue tracking system for developers to investigate |
-| SSL Certificate Expiry | Alert when SSL certificate is about to expire. | SSL certificate expiry date within 7 days | Low | Send notification to security team to renew certificate |
-| Web Server Response Time | Alert when the response time of the web server exceeds acceptable limits. | Response time > 500 ms for 10 minutes | Medium | Page on-call engineer and log incident for further investigation |
+These below scenarios illustrate how alerting rules in log monitoring can be configured to proactively identify and respond to various issues, anomalies, and events:
+
+| Scenario                               | Description                                                                                                                                                               |
+|----------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Error Detection**                    | Alert triggered when a critical error message appears frequently in the logs within a short time frame.                                                                   |
+| **Performance Degradation**            | Alert triggered when response times exceed a predefined threshold, indicating potential performance issues.                                                                |
+| **Security Breaches**                  | Alert triggered when suspicious activity, such as unauthorized access attempts or unusual login patterns, is detected in the logs.                                        |
+| **Resource Exhaustion**                | Alert triggered when resource utilization metrics, such as CPU or memory usage, exceed predefined limits, indicating potential resource exhaustion.                     |
+| **Service Outages**                    | Alert triggered when the logs indicate service failures or unavailability, helping detect and respond to downtime incidents promptly.                                       |
+| **Anomalies and Patterns**             | Alert triggered when unexpected patterns or anomalies are detected in the logs, indicating potential system abnormalities or malicious activity.                           |
+| **Threshold Crossings**                | Alert triggered when log data crosses predefined thresholds, such as the number of failed login attempts or the volume of database queries exceeding a certain limit. |
+
 
 # Best Practices
 
