@@ -11,7 +11,6 @@
 - [Introduction](#introduction)
 - [Pre-requisites](#pre-requisites)
 - [Implementation of CI checks on Terraform Module](#implementation-of-ci-checks-on-terraform-module)
-- [Terraform Module](#terraform-module)
 - [Shared Library Jenkins File](#shared-library-jenkins-file)
 - [Terraform groovy template file](#terraform-groovy-template-file)
 - [Shared Library Src file](#shared-library-src-file)
