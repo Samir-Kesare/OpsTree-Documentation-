@@ -808,7 +808,7 @@ def call(String url, String creds, String branch, String rootPath, String childP
 <details>
 <summary>src files</summary>
 <br>
-action.grovvy
+ci.grovvy
 
 ```shell
 package org.avengers.asg_tfmodule_CICD
