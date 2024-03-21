@@ -670,9 +670,9 @@ Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0
 ```
 </details>
 
-## [Terraform Module](https://github.com/CodeOps-Hub/Terraform-modules.git)
 
-## [Shared Library Jenkins File](https://github.com/CodeOps-Hub/Jenkinsfile/blob/main/SharedLibrary/asg_tfmodule_CICD/Jenkinsfile)
+
+## Shared Library Jenkins File
 
 ```shell
 @Library('my-shared-library') _
@@ -714,7 +714,7 @@ pipeline {
     }
 }
 ```
-## [Terraform groovy template file](https://github.com/CodeOps-Hub/SharedLibrary/blob/main/src/org/avengers/template/terraformCI/terraform_CI.groovy)
+## Terraform groovy template file
 <details>
 <summary> terraform_CI.groovy </summary>
 <br>
@@ -740,7 +740,7 @@ def call(String url, String creds, String branch, String rootPath, String childP
 ```
 </details>
 
-## [Shared Library Src file](https://github.com/CodeOps-Hub/SharedLibrary/tree/main/src/org/avengers/terraform_CICD)
+## Shared Library Src file
 
 <details>
 <summary>scr files</summary>
