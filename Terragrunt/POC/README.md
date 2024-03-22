@@ -256,8 +256,17 @@ EOF
 **terragrunt.hcl** in environment folders 
 
 ```shell
-include "root"{
-    path = find_in_parent_folders()
+include {
+  path = find_in_parent_folders("common.hcl")
+}
+
+terraform {
+  source = "../module"
+}
+
+inputs = {
+  instance_type = "t2.micro"
+  instance_name = "Dev"
 }
 ```
 
