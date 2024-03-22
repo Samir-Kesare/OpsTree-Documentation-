@@ -45,6 +45,9 @@ Unit tests are small isolated tests that target a specific library or module.Ans
 
 # Flow Of Ansible Unit Test
 
+<img width="300" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/b18668bb-c56f-4021-a4f2-060a88d4cd87">
+
+
 | Step                   | Description                                                                                     |
 |------------------------|-------------------------------------------------------------------------------------------------|
 | **Identifying Test Scenarios** | Identify scenarios and behaviors that need testing, understand Ansible code requirements, and determine expected outcomes. |
@@ -52,8 +55,6 @@ Unit tests are small isolated tests that target a specific library or module.Ans
 | **Setting Up Test Environment** | Set up a test environment to simulate conditions under which Ansible code will run, using tools like Vagrant or Docker to create virtual machines or containers. |
 | **Executing Tests**        | Execute written test cases against the Ansible codebase, manually or as part of an automated process, with different inputs and configurations to validate behavior. |
 | **Analyzing Results**      | Analyze test results, including output, logs, and error messages, to identify failures or discrepancies between expected and actual outcomes. |
-| **Debugging and Fixing Issues** | Debug Ansible code to identify root causes of test failures, implement fixes, and rerun tests to ensure effectiveness of fixes. |
-| **Iterative Testing**      | Refine and expand test coverage over time, adding new test cases to cover additional scenarios, edge cases, or newly implemented features. |
 
 ***
 
