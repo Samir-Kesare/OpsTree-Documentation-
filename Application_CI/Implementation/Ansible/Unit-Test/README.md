@@ -16,8 +16,8 @@
 2. [Why Ansible Unit Test](#Why-Ansible-Unit-Test)
 3. [Flow of Ansible Unit Test](#Flow-of-Ansible-Unit-Test)
 4. [Tools For Ansible Unit Test](#Tools-For-Ansible-Unit-Test)
-5. [Advantages Of Ansible Unit Test](#Advantages-Of-Ansible-Unit-Test)
-6. [Disadvantages Of Ansible Unit Test](#Disadvantages-Of-Ansible-Unit-Test)
+5. [Advantages of Ansible Unit Test](#Advantages-of-Ansible-Unit-Test)
+6. [Disadvantages of Ansible Unit Test](#Disadvantages-of-Ansible-Unit-Test)
 7. [Best Practices](#Best-Practices)
 8. [Conclusion](#Conclusion)
 9. [Contact Information](#Contact-Information)
@@ -70,7 +70,7 @@ Unit tests are small isolated tests that target a specific library or module.Ans
 
 ***
 
-# Advantages Of Ansible Unit Test
+# Advantages of Ansible Unit Test
 
 | Advantage           | Description                                                                                          |
 | ---------------     | ---------------------------------------------------------------------------------------------------- |
@@ -81,7 +81,7 @@ Unit tests are small isolated tests that target a specific library or module.Ans
 
 ***
 
-# Disadvantages Of Ansible Unit Test
+# Disadvantages of Ansible Unit Test
 
 | **Disadvantages** | **Description**                                                                                        |
 | ----------------- | ------------------------------------------------------------------------------------------------------   |
