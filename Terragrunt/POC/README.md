@@ -27,7 +27,8 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 ***
 ## Flow Diagram of POC
 
-<img width="1270" alt="Screenshot 2024-03-14 at 12 12 52 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/8a779bfd-2773-4d40-a19c-db540b14fd9d">
+<img width="1144" alt="Screenshot 2024-03-22 at 4 50 04 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/f9574720-0d47-451e-98c6-bb97e20faf1d">
+
 
 ### Explanation
 
