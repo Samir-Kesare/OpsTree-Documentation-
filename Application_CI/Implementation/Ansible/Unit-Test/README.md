@@ -91,7 +91,7 @@ Unit tests are small isolated tests that target a specific library or module.Uni
 
 Ansible unit testing offers numerous advantages including early error detection, improved code quality, increased confidence in changes, and enhanced collaboration among team members. However, it comes with some drawbacks such as initial setup overhead, ongoing maintenance requirements, potential over-reliance, and the risk of false positives. By following best practices such as setting clear objectives, automating testing, using mocking, and integrating testing into CI pipelines, teams can effectively leverage unit testing to ensure the reliability and scalability of their Ansible playbooks.
 
-When considering tools for Ansible unit testing,**Molecule** is the best tool for testing Ansible roles because it's easy to use and works seamlessly with Ansible. It helps simplify testing by supporting different types of tests like checking for errors, syntax, and integration.It is compatible with popular testing tools like pytest, making it easy to write tests. Molecule also helps automate testing, so developers can run tests consistently across different systems.
+When considering tools for Ansible unit testing, **Molecule** is the best tool for testing Ansible roles because it's easy to use and works seamlessly with Ansible. It helps simplify testing by supporting different types of tests like checking for errors, syntax, and integration.It is compatible with popular testing tools like pytest, making it easy to write tests. Molecule also helps automate testing, so developers can run tests consistently across different systems.
 
 ***
 
