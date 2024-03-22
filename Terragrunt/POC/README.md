@@ -208,8 +208,6 @@ terraform {
 
 * To simplify and streamline your Terraform configurations, you can leverage Terragrunt by creating terragrunt.hcl files. These files serve as a central location for defining common configurations, reducing the overall complexity of your infrastructure codebase.
 
-<img width="465" alt="Screenshot 2024-03-13 at 9 50 46 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3d467cad-b013-484e-ad87-75e231b27232">
-
 * To create a common configuration for `backend.tf` and `provider.tf` , you need to create a global terragrunt.hcl file that can be used in both the environnments (dev and prod). This would create our backend and provider automatically in both the environment saving us time and manual efforts. 
 
 Global **terragrunt.hcl** 
@@ -251,9 +249,11 @@ EOF
 }
 ```
 
-* Now that we have created the global terragrunt.hcl file, the next step is to ensure that both the dev and prod environments utilize this shared configuration. To achieve this, we need to create separate terragrunt.hcl files within each of these environments. These files will serve the sole purpose of including the global Terragrunt configuration from their respective folders.
+* Now that we have created the global terragrunt.hcl file, the next step is to ensure that both the dev and prod environments utilize this shared configuration. Since we are also creating a resource through an ec2 instance `module` , we will also add this configuration directly in our terragrunt files. To achieve this, we need to create separate terragrunt.hcl files within each of these environments. These files will serve the sole purpose of including the global Terragrunt configuration from their respective folders.
 
 **terragrunt.hcl** in environment folders 
+
+#### Dev Environment 
 
 ```shell
 include {
@@ -267,6 +267,23 @@ terraform {
 inputs = {
   instance_type = "t2.micro"
   instance_name = "Dev"
+}
+```
+
+#### Prod Environment 
+
+```shell
+include {
+  path = find_in_parent_folders("common.hcl")
+}
+
+terraform {
+  source = "../module"
+}
+
+inputs = {
+  instance_type = "t2.medium"
+  instance_name = "Prod"
 }
 ```
 
