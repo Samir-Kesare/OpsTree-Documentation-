@@ -14,13 +14,14 @@
 
 1. [Introduction](#Introduction)
 2. [Why Ansible Unit Test](#Why-Ansible-Unit-Test)
-3. [Tools For Ansible Unit Test](#Tools-For-Ansible-Unit-Test)
-4. [Advantages Of Ansible Unit Test](#Advantages-Of-Ansible-Unit-Test)
-5. [Disadvantages Of Ansible Unit Test](#Disadvantages-Of-Ansible-Unit-Test)
-6. [Best Practices](#Best-Practices)
-7. [Conclusion](#Conclusion)
-8. [Contact Information](#Contact-Information)
-9. [References](#References)
+3. [Flow Of Ansible Unit Test](Flow-Of-Ansible-Unit-Test)
+4. [Tools For Ansible Unit Test](#Tools-For-Ansible-Unit-Test)
+5. [Advantages Of Ansible Unit Test](#Advantages-Of-Ansible-Unit-Test)
+6. [Disadvantages Of Ansible Unit Test](#Disadvantages-Of-Ansible-Unit-Test)
+7. [Best Practices](#Best-Practices)
+8. [Conclusion](#Conclusion)
+9. [Contact Information](#Contact-Information)
+10. [References](#References)
 
 ***
 
@@ -39,6 +40,20 @@ Unit tests are small isolated tests that target a specific library or module.Ans
 | **Improves code quality**                     | Writing tests encourages modular, reusable, and well-documented code.                         |
 | **Increases confidence in changes**           | Running tests gives confidence that changes won't introduce regressions or unexpected behavior.|
 | **Supports continuous integration/delivery**  | Automated testing enables seamless integration and delivery pipelines, ensuring stability.   |
+
+***
+
+# Flow Of Ansible Unit Test
+
+| Step                   | Description                                                                                     |
+|------------------------|-------------------------------------------------------------------------------------------------|
+| **Identifying Test Scenarios** | Identify scenarios and behaviors that need testing, understand Ansible code requirements, and determine expected outcomes. |
+| **Writing Test Cases**     | Write test cases using a testing framework like pytest, covering various aspects of Ansible code including tasks, modules, conditionals, and error handling. |
+| **Setting Up Test Environment** | Set up a test environment to simulate conditions under which Ansible code will run, using tools like Vagrant or Docker to create virtual machines or containers. |
+| **Executing Tests**        | Execute written test cases against the Ansible codebase, manually or as part of an automated process, with different inputs and configurations to validate behavior. |
+| **Analyzing Results**      | Analyze test results, including output, logs, and error messages, to identify failures or discrepancies between expected and actual outcomes. |
+| **Debugging and Fixing Issues** | Debug Ansible code to identify root causes of test failures, implement fixes, and rerun tests to ensure effectiveness of fixes. |
+| **Iterative Testing**      | Refine and expand test coverage over time, adding new test cases to cover additional scenarios, edge cases, or newly implemented features. |
 
 ***
 
