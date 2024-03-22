@@ -54,8 +54,7 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 
 * When working with Terragrunt, it's important to follow a consistent directory structure to ensure smooth execution and management of your infrastructure code.
 
-
- <img width="440" alt="Screenshot 2024-03-13 at 9 47 46 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/3ecd0b67-f134-4f6d-9d8b-e9c8c0525265">
+<img width="454" alt="Screenshot 2024-03-22 at 2 52 41 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a3cf8a0f-4953-4114-9921-6b848cb1bbd2">
 
 
 * Your terraform configuration initially should look like this
@@ -204,7 +203,7 @@ terraform {
 ```
 </details>
 
-### 3. Create terragrunt.hcl files
+### 2. Create terragrunt.hcl files
 
 * To simplify and streamline your Terraform configurations, you can leverage Terragrunt by creating terragrunt.hcl files. These files serve as a central location for defining common configurations, reducing the overall complexity of your infrastructure codebase.
 
