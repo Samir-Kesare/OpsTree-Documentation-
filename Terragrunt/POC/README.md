@@ -58,151 +58,32 @@ For a comprehensive explanation and a thorough exploration of Terragrunt, kindly
 <img width="454" alt="Screenshot 2024-03-22 at 2 52 41 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/a3cf8a0f-4953-4114-9921-6b848cb1bbd2">
 
 
-* Your terraform configuration initially should look like this
+* Your Terraform setup consists of .tf configuration files which utilize a `module` containing instance configurations.
 
-<details>
-<summary> <b> Click here for main.tf </b> </summary>
-<br>
-  
+#### main.tf 
+
 ```shell
-resource "aws_security_group" "terragrunt_sg" {
-  name        = var.security_group_name
-  description = var.description
-  vpc_id      = var.vpc_id
+resource "aws_instance" "web" {
+  ami           = "ami-0a931e3a8c9589ff9"
+  instance_type = var.instance_type
 
-  dynamic "ingress" {
-    for_each = var.inbound_rules
-    content {
-      from_port   = ingress.value.port
-      to_port     = ingress.value.port
-      protocol    = ingress.value.protocol
-      cidr_blocks      = [ingress.value.source]
-      
-    }
-  }
-
-  dynamic "egress" {
-    for_each = var.outbound_rules
-    content {
-      from_port       = egress.value.port
-      to_port         = egress.value.port
-      protocol        = egress.value.protocol
-      cidr_blocks     = [egress.value.source]
-    }
-  }
-  tags = var.sg_tags
-}
-```
-</details>
-
-* Configure variables based on your preference
-
-<details>
-<summary> <b> Click here for variable.tf </b> </summary>
-<br>
-  
-```shell
-variable "security_group_name" {
-  description = "security group name"
-  type            = string
-  default         = "terragrunt-sg"
-}
-
-variable "description" {
-  description = "security group for Attendance API"
-  type            = string
-  default         = "Security group for practice"
-}
-
-variable "vpc_id" {
-  description = "The ID of the VPC"
-  type = string
-  default = "vpc-0d744158f7f47f419"
-}
-variable "inbound_rules" {
-  description = "List of inbound rules for the security group"
-  type = list(map(any))
-  default = [
-    {
-      port     = 22
-      source   = "0.0.0.0/0"   //open for all
-      protocol = "tcp"  
-    },
-    {
-      port     = 8080
-      source   = "0.0.0.0/0" 
-      protocol = "tcp"  
-    }
-  ]
-}
-
-variable "outbound_rules" {
-  description = "List of outbound rules for the security group"
-  type = list(object({
-    port     = number
-    source   = string
-    protocol = string
-  }))
-  default = [
-    {
-      port     = 0 // allow all ports 
-      source   = "0.0.0.0/0"
-      protocol = "-1"  // all protocols
-    }
-  ]
-}
-
-variable "sg_tags" {
-  description = "Tag for Attedance sg"
-  type        = map(string)
-  default     = {
-    Name = "terragrunt-sg"
-    Environment = "Dev"
-    Owner         = "Vidhi"
+  tags = {
+    Name = var.instance_name
   }
 }
 ```
 
-</details>
+#### variable.tf
 
-<details>
-<summary> <b> Click here for provider.tf </b> </summary>
-<br>
-  
 ```shell
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.38.0"  # Using a minimum version constraint
-    }
-  }
+variable "instance_type" {
+  description = "The type of EC2 instance"
 }
 
-# Configure the AWS Provider
-provider "aws" {
-  region = "us-east-1"
+variable "instance_name" {
+  description = "Name tag for the EC2 instance"
 }
-
 ```
-</details>
-
-<details>
-<summary> <b> Click here for backend.tf </b> </summary>
-<br>
-  
-```shell
-terraform {
-  backend "s3" {
-    bucket  = "bucket-terragrunt-001"
-    key     = "dev/terraform.tfstate"
-    region  = "us-east-1" 
-    encrypt = true
-  }
-}
-
-```
-</details>
 
 ### 2. Create terragrunt.hcl files
 
@@ -210,7 +91,7 @@ terraform {
 
 * To create a common configuration for `backend.tf` and `provider.tf` , you need to create a global terragrunt.hcl file that can be used in both the environnments (dev and prod). This would create our backend and provider automatically in both the environment saving us time and manual efforts. 
 
-Global **terragrunt.hcl** 
+Global **common.hcl** 
 
 ```shell
 generate "provider" {
