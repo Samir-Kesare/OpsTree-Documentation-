@@ -42,10 +42,23 @@ With the release of Terraform v1.7.0, a native testing framework was introduced,
 ***
 ## How Unit Testing Functions
 
-The Terraform test mocking framework is designed to simulate resources, providers, and modules. By default, it operates with the `command = apply` , generating resources or infrastructure. However, it offers flexibility by allowing users to override this behavior with ` command = plan` . In this mode, it avoids connecting to the actual API and instead leverages a **community tool** to mimic the behavior of the cloud provider API. Overall, this tool serves to mitigate costs associated with resource creation and prevents potential slowdowns in real-time API interactions and environment related dependencies.
+The Terraform test mocking framework is designed to simulate resources, providers, and modules. By default, it operates with the `command = apply` , generating resources or infrastructure. However, it offers flexibility by allowing users to override this behavior with `command = plan` . In this mode, it avoids connecting to the actual API and instead leverages a **community tool** to mimic the behavior of the cloud provider API. Overall, this tool serves to mitigate costs associated with resource creation and prevents potential slowdowns in real-time API interactions and environment related dependencies.
 
 ***
 ## Comparing Terraform Unit Testing Framework with Traditional Unit Testing
+
+| Aspect                                   | Traditional Unit Testing                                   | Terraform Unit Testing                                        |
+|------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------|
+| **Language Support**                     | Uses any programming language capable of parsing Terraform files | Utilizes native Terraform testing framework                   |
+| **Parsing Limitations**                  | Faces difficulties in parsing variable interpolation and list iteration within Terraform configurations | Directly parses Terraform plan representation for comprehensive testing |
+| **Understanding Terraform Constructs**   | Lacks native support for Terraform-specific syntax and constructs | Understands Terraform-specific behaviors including variable interpolation and dynamic behaviors |
+| **Approach**                             | Relies on external tools or custom solutions               | Utilizes built-in functionality provided by Terraform         |
+| **Complexity**                           | May require additional setup and integration efforts        | Provides streamlined testing process with native support      |
+
+*** 
+## Essential Block Components
+
+<img width="688" alt="Screenshot 2024-03-31 at 10 35 19 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/bf56cfe1-a830-46d1-a1f2-f8b47b973085">
 
 
 
@@ -57,6 +70,7 @@ The Terraform test mocking framework is designed to simulate resources, provider
 
 ***
 ## Best Practices
+
 
 
 ***
