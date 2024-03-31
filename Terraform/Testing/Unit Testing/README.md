@@ -9,6 +9,8 @@
 + [Introduction](#Introduction)
 + [Key Components](#key-features)
 + [How Unit Testing Functions](#How-Unit-Testing-Functions)
++ [Comparing Terraform Testing Framework with Traditional Unit Testing](#Comparing-Terraform-Testing-Framework-with-Traditional-Unit-Testing)
++ [Essential Block Components](#Essential-Block-Components)
 + [Proof of Concept (POC)](Proof-of-Concept-(POC))
 + [Best Practices](#best-practices)
 + [Contact Information](#contact-information)
@@ -41,7 +43,7 @@ With the release of Terraform v1.7.0, a native testing framework was introduced,
 The Terraform test mocking framework is designed to simulate resources, providers, and modules. By default, it operates with the `command = apply` , generating resources or infrastructure. However, it offers flexibility by allowing users to override this behavior with `command = plan` . In this mode, it avoids connecting to the actual API and instead leverages a **community tool** to mimic the behavior of the cloud provider API. Overall, this tool serves to mitigate costs associated with resource creation and prevents potential slowdowns in real-time API interactions and environment related dependencies.
 
 ***
-## Comparing Terraform Unit Testing Framework with Traditional Unit Testing
+## Comparing Terraform Testing Framework with Traditional Unit Testing
 
 | Aspect                                   | Traditional Unit Testing                                   | Terraform Unit Testing                                        |
 |------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------|
