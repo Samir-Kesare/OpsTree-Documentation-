@@ -64,17 +64,17 @@ Each test file contains the following root level attributes and blocks:
 * Zero to one `variables` block.
 * Zero to many `provider` blocks.
 
-1. `run` Block
+1. **run** Block
 
 A run block in Terraform's testing framework defines a test case where Terraform commands are executed within the configuration directory. It specifies operations like apply or plan, along with options such as variables and providers. Assertions within the run block validate expected outcomes, helping ensure the correctness of Terraform configurations. Additionally, run blocks facilitate testing different scenarios by defining various configurations and assertions within a single test file.
 
-2. `variable` Block
+2. **variable** Block
 
 In Terraform's testing framework, the variables block allows you to define input variable values directly within test files, providing flexibility in configuring test scenarios. These variable values can be specified at both the root level of the test file and within individual run blocks. When Terraform executes tests, it passes all variable values from the test file into all run blocks within the file.
 
 The precedence of variable values within tests follows a hierarchy, with values defined in test files taking the highest precedence. This means that variable values specified within the test file will override values from other sources such as environment variables, variable files, or command-line input.
 
-4. `provider` Block
+4. **provider** Block
 
 In Terraform's testing framework, the providers block allows you to set or override provider configurations within your test files. This block resembles provider configurations in the main Terraform configuration and enables you to define provider settings specific to each run block or globally at the root level of the test file.
 
