@@ -18,6 +18,8 @@
 
 When running 'terraform apply', it's crucial to avoid any adverse impact on critical business applications. To mitigate this risk, we implement a unit testing strategy. Unit testing ensures that resources and configurations possess the accurate metadata by verifying attributes and settings. These tests are executed independently, without dependence on external resources or API calls, and they do not interact with live infrastructure or external services.
 
+With the release of Terraform v1.7.0, a native testing framework was introduced, enabling users to thoroughly test their Terraform resources
+
 <img width="1793" alt="Screenshot 2024-03-31 at 10 13 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/58453375-722a-4048-8235-4f8e36eaaa3c">
 
 *** 
