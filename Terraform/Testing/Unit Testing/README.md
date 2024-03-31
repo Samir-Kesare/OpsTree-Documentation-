@@ -8,7 +8,8 @@
 ## Table of Contents 
 + [Introduction](#Introduction)
 + [Key Components](#key-features)
-+ [Guide to Installation](#Installing-OWASP-Dependency-Check)
++ [How Unit Testing Functions](#How-Unit-Testing-Functions)
++ [Proof of Concept (POC)](Proof-of-Concept-(POC))
 + [Best Practices](#best-practices)
 + [Contact Information](#contact-information)
 + [References](#references)
@@ -79,7 +80,7 @@ The precedence of variable values within tests follows a hierarchy, with values 
 In Terraform's testing framework, the providers block allows you to set or override provider configurations within your test files. This block resembles provider configurations in the main Terraform configuration and enables you to define provider settings specific to each run block or globally at the root level of the test file.
 
 ***
-## Proof of Concept (POC):
+## Proof of Concept (POC)
 
  * It is highly recommended to gain hands-on experience through our detailed Proof of Concept (POC) guide for Terraform Unit Testing. This comprehensive document walks you through a practical demonstration, providing step-by-step instructions on how to test your Terraform components. The POC guide delves into essential concepts for identifying early issues through unit testing, utilizing each block discussed in this document. You can access the guide [here]().
 
