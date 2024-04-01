@@ -49,11 +49,11 @@ unit-testing/
 ├── output.tf
 ├── provider.tf
 ├── terraform.tfstate
-├── terraform.tfstate.backup
 └── variable.tf
 
-0 directories, 8 files
+0 directories, 7 files
 ```
+
 
 ***
 ## Conclusion
