@@ -139,6 +139,62 @@ provider "aws" {
 ```
 </details>
 
+### Unit Testing 
+
+The native unit testing framework consists of three blocks: 
+
+1. **Provider Block:** Defines the provider configuration used in the test. It specifies details such as the provider type (e.g., AWS) and any necessary configurations (e.g., region).
+
+2. **Variables Block:** Defines input variables for the test scenario. These variables can be referenced within the run block to customize test behavior.
+
+3. **Run Block:** Represents a single test scenario. It specifies the Terraform command to execute (e.g., plan or apply) and includes assertions to validate the expected behavior of the Terraform configuration.
+
+**Example Configuration:**
+
+```hcl
+
+variables {
+  instance_name = "test"
+}
+
+run "valid_instance" {
+
+  command = plan  // by default runs for apply
+
+  assert {
+    condition     = aws_instance.demo-instance.tags["Name"] == "test"
+    error_message = "Instance name didn't match"
+  }
+
+}
+```
+
+This example demonstrates a unit test scenario named `valid_instance`, which verifies that the value of the instance_name variable matches the expected value "test" when running a Terraform plan command. You may also try using provider block to run your testing configuration in a different region. 
+
+You can also utilize the provider block to execute your testing configuration in a different region, providing flexibility to test against various environments or regions.
+
+**Example configuration:**
+
+```hcl
+provider "aws" {
+ region = "us-east-2"
+}
+
+variables {
+  instance_name = "test-instance"
+}
+
+run "valid_instance" {
+
+  command = plan
+
+  assert {
+    condition     = var.instance_name == "test-instance"
+    error_message = "Instance name didn't match"
+  }
+
+}
+```
 ***
 ## Conclusion
 
