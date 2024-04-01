@@ -27,7 +27,7 @@ For more information on Terraform unit testing and to gain a detailed understand
 <img width="1793" alt="Screenshot 2024-03-31 at 10 13 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2f6cb3b9-90ab-4390-addc-96052375b063">
 
 ***
-## 1. Pre-requisite
+## Pre-requisite
 
  | Requirement | Recommendation |
  |-------------|----------------|
@@ -36,14 +36,27 @@ For more information on Terraform unit testing and to gain a detailed understand
 ***
 ## Proof of Concept (PoC) - Unit Testing
 
+1. **Setup: Creating a Terraform Configuration for Unit Testing**
 
+To set up a Terraform configuration for unit testing, start by organizing your project in a dedicated directory. Write your Terraform configuration files to define the infrastructure resources you intend to test, including any necessary input variables. Create unit test files with the `.tftest.hcl` extension in the same directory, and use Terraform's built-in testing framework to write tests that validate the behavior of your configuration. With your project organized and tests written, you're ready to execute the tests and ensure the reliability of your Terraform code.
 
+When setting up your Terraform project for unit testing, your directory structure might resemble the following:
 
+```shell
+unit-testing/
+├── data.tf
+├── main.tf
+├── output.tf
+├── provider.tf
+├── terraform.tfstate
+├── terraform.tfstate.backup
+└── variable.tf
+
+0 directories, 8 files
+```
 
 ***
 ## Conclusion
-
-* In conclusion, integrating OWASP Dependency-Check into your development process offers a proactive approach to identifying and mitigating potential security risks associated with third-party dependencies. By regularly scanning and analyzing your project dependencies, you can stay ahead of known vulnerabilities, ensuring the overall security and reliability of your software applications
 
 
 ***
