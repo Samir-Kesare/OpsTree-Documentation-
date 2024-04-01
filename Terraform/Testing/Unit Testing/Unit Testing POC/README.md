@@ -62,6 +62,77 @@ The Terraform configuration in this directory (`unit-testing/`) includes the fol
 - **`provider.tf`**: Specifies provider configurations required for interacting with external services during testing.
 - **`variable.tf`**: Defines input variables that are parameterized for testing different scenarios.
 
+**main.tf**
+
+<details>
+<summary> Click here to see ansible.cfg file</summary>
+<br>
+  
+```shell
+resource "aws_instance" "demo-instance" {
+  ami             = "ami-0b622ae4dff08c413"  
+  instance_type   = "t2.micro"               
+  key_name        = "vd"             # Key pair for SSH access
+  tags = {
+    Name = var.instance_name
+  }
+  }
+```
+**variable.tf**
+
+<details>
+<summary> Click here to see ansible.cfg file</summary>
+<br>
+  
+```shell
+// AWS region in provider.tf
+variable "region" {
+  description = "AWS region"
+  default     = "us-east-1"
+}
+
+variable "instance_name" {
+  description = "Instance Name"
+  default     = "demo-instance"
+}
+```
+
+**data.tf**
+
+<details>
+<summary> Click here to see ansible.cfg file</summary>
+<br>
+  
+```shell
+data "aws_key_pair" "existing_key_pair" {
+  key_name = "vd"
+}
+```
+
+**provider.tf**
+
+<details>
+<summary> Click here to see ansible.cfg file</summary>
+<br>
+  
+```shell
+//PROVIDER
+
+// required terraform configuration
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.38.0"  # Using a minimum version constraint
+    }
+  }
+}
+
+# Configure the AWS Provider
+provider "aws" {
+  region = var.region 
+}
+```
 
 ***
 ## Conclusion
