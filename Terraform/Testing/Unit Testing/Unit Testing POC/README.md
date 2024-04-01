@@ -78,6 +78,7 @@ resource "aws_instance" "demo-instance" {
   }
   }
 ```
+</details>
 
 **variable.tf**
 
@@ -97,6 +98,7 @@ variable "instance_name" {
   default     = "demo-instance"
 }
 ```
+</details>
 
 **data.tf**
 
@@ -109,6 +111,7 @@ data "aws_key_pair" "existing_key_pair" {
   key_name = "vd"
 }
 ```
+</details>
 
 **provider.tf**
 
@@ -134,6 +137,7 @@ provider "aws" {
   region = var.region 
 }
 ```
+</details>
 
 ***
 ## Conclusion
