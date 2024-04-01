@@ -15,7 +15,7 @@
 ## Table of Contents
 
 * [Introduction](#Introduction)
-* [What is Drift?](#What-is-Drift?)
+* [What is Drift?](#What-is-Drift-?)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -28,7 +28,7 @@ The concept of “Drift in Infrastructure as Code (IaC)” refers to the phenome
 
 ***
 
-## What is Drift?
+## What is Drift ?
 
 Drift occurs when the actual state of the infrastructure diverges from what’s defined in the Terraform configurations. This divergence can occur due to manual changes, external processes, or resource modifications. Since the possible implications of drift are potentially catastrophic, drift detection in IaC collaboration tools such as Digger is sometimes a hard compliance requirement for companies.
 
