@@ -1,8 +1,8 @@
+# Terraform Infra Divergence Management Understanding 
 
-# 
-
-<img width="360" src="">
-
+<p align="center">
+  <img src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/3a934c3f-4667-4f76-85be-573a8a911e01" height="200" width="380">
+</p>
 
 ***
 
