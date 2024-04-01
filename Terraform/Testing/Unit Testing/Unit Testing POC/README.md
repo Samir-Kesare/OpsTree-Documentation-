@@ -54,7 +54,15 @@ unit-testing/
 0 directories, 7 files
 ```
 
+The Terraform configuration in this directory (`unit-testing/`) includes the following resources used for testing purposes:
 
+- **`data.tf`**: Contains data sources used to fetch information required for testing scenarios.
+- **`main.tf`**: Defines the main infrastructure resources that are being tested.
+- **`output.tf`**: Specifies output values that are asserted during testing to ensure expected behavior.
+- **`provider.tf`**: Specifies provider configurations required for interacting with external services during testing.
+- **`variable.tf`**: Defines input variables that are parameterized for testing different scenarios.
+
+  
 ***
 ## Conclusion
 
