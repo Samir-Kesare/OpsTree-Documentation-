@@ -195,6 +195,40 @@ run "valid_instance" {
 
 }
 ```
+
+Similarly, you can explore unit testing scenarios involving list iteration, variable interpolation, and maps to ensure robustness and correctness in handling dynamic configurations and data structures.
+
+**Example Configuration:**
+```hcl
+
+provider "aws" {
+ region = "us-east-2"
+}
+
+variables {
+  bucket_config = {
+    name          = "example-bucket"
+    force_destroy = false
+  }
+}
+
+run "test_bucket_creation" {
+  command = plan // scope of this command is limited to this run block
+
+  assert {
+    condition     = aws_s3_bucket.demo_bucket.bucket == var.bucket_config.name
+    error_message = "Bucket name does not match the configured name"
+  }
+
+  assert {
+    condition     = aws_s3_bucket.demo_bucket.force_destroy == var.bucket_config.force_destroy
+    error_message = "Bucket force_destroy property does not match the configured value"
+  }
+}
+```
+
+### 3. Output 
+
 ***
 ## Conclusion
 
