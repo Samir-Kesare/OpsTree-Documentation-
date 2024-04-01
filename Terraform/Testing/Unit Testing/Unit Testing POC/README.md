@@ -36,7 +36,7 @@ For more information on Terraform unit testing and to gain a detailed understand
 ***
 ## Proof of Concept (PoC) - Unit Testing
 
-1. **Setup: Creating a Terraform Configuration for Unit Testing**
+### 1. Setup: Creating a Terraform Configuration for Unit Testing
 
 To set up a Terraform configuration for unit testing, start by organizing your project in a dedicated directory. Write your Terraform configuration files to define the infrastructure resources you intend to test, including any necessary input variables. Create unit test files with the `.tftest.hcl` extension in the same directory, and use Terraform's built-in testing framework to write tests that validate the behavior of your configuration. With your project organized and tests written, you're ready to execute the tests and ensure the reliability of your Terraform code.
 
