@@ -16,12 +16,15 @@
 
 ***
 ## Introduction 
-* Dependency scanning is a crucial aspect of modern software development, ensuring the security and reliability of your projects. This process involves identifying and managing the third-party libraries and frameworks your project depends on. By scanning for known vulnerabilities in these dependencies, you can proactively address potential security risks and keep your applications robust and secure. This document will guide you through a Proof of Concept (PoC) for setting up and utilizing OWASP Dependency-Check to perform comprehensive dependency scanning in your projects.
+Terraform stands out as a powerful tool for provisioning and managing cloud resources. However, as organizations scale their infrastructure, ensuring the reliability and correctness of Terraform configurations becomes increasingly important. This is where unit testing comes into play.
 
+One of the key benefits of Terraform unit testing is its ability to verify resource metadata, attributes, and settings without relying on external resources or API calls. This means tests can be executed quickly and independently, reducing the risk of unintended consequences on live infrastructure or external services. By isolating tests from external dependencies, developers can maintain a controlled environment for validation, leading to faster feedback loops and more reliable deployments.
+
+For more information on Terraform unit testing and to gain a detailed understanding of the topic, please follow this link: [Terraform Unit Testing Documentation](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Testing/Unit%20Testing/README.md).
 *** 
 ## Flow Diagram
 
-<img width="1168" alt="Screenshot 2024-02-02 at 3 41 52 PM" src="https://github.com/avengers-p7/Documentation/assets/156056349/52eb5029-c332-4395-8445-a4e8f55cb9f4">
+<img width="1793" alt="Screenshot 2024-03-31 at 10 13 26 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/2f6cb3b9-90ab-4390-addc-96052375b063">
 
 ***
 ## 1. Pre-requisite
