@@ -65,7 +65,7 @@ The Terraform configuration in this directory (`unit-testing/`) includes the fol
 **main.tf**
 
 <details>
-<summary> Click here to see ansible.cfg file</summary>
+<summary> Click here to see main.tf </summary>
 <br>
   
 ```shell
@@ -81,7 +81,7 @@ resource "aws_instance" "demo-instance" {
 **variable.tf**
 
 <details>
-<summary> Click here to see ansible.cfg file</summary>
+<summary> Click here to see variable.tf file</summary>
 <br>
   
 ```shell
@@ -100,7 +100,7 @@ variable "instance_name" {
 **data.tf**
 
 <details>
-<summary> Click here to see ansible.cfg file</summary>
+<summary> Click here to see data.tf file</summary>
 <br>
   
 ```shell
@@ -112,7 +112,7 @@ data "aws_key_pair" "existing_key_pair" {
 **provider.tf**
 
 <details>
-<summary> Click here to see ansible.cfg file</summary>
+<summary> Click here to see provider.tf file</summary>
 <br>
   
 ```shell
