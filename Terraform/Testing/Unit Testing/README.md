@@ -95,10 +95,10 @@ In Terraform's testing framework, the providers block allows you to set or overr
 
 | **Best Practices**      | **Description**                                                                                                             |
 |-------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| Clear Assertions        | Write clear and concise assertions in your unit tests to verify the expected behavior of your Terraform configurations. Use descriptive error messages to aid in debugging failures. |
-| Focus on Small Units    | Unit tests should focus on testing individual Terraform resources, modules, or configuration blocks in isolation. Keep the scope of each test small to ensure clarity and maintainability. |
-| Continuous Refinement   | Continuously refine and update your unit tests as your Terraform configurations evolve. Regularly review and refactor tests to maintain effectiveness and keep pace with changes in your infrastructure. |
-| Test Idempotency        | Verify that your Terraform configurations are idempotent by testing multiple apply operations and ensuring that the resulting infrastructure remains consistent. |
+| **Clear Assertions**        | Write clear and concise assertions in your unit tests to verify the expected behavior of your Terraform configurations. Use descriptive error messages to aid in debugging failures. |
+| **Focus on Small Units**    | Unit tests should focus on testing individual Terraform resources, modules, or configuration blocks in isolation. Keep the scope of each test small to ensure clarity and maintainability. |
+| **Continuous Refinement**   | Continuously refine and update your unit tests as your Terraform configurations evolve. Regularly review and refactor tests to maintain effectiveness and keep pace with changes in your infrastructure. |
+| **Test Idempotency**        | Verify that your Terraform configurations are idempotent by testing multiple apply operations and ensuring that the resulting infrastructure remains consistent. |
 
 
 ***
