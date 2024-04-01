@@ -229,9 +229,14 @@ run "test_bucket_creation" {
 
 ### 3. Output 
 
+Finally, if the unit test has passed successfully, you can expect an output similar to this: 
+
+<img width="715" alt="Screenshot 2024-04-01 at 1 18 03 PM" src="https://github.com/CodeOps-Hub/Documentation/assets/156056349/119f4090-991d-4e24-9096-615e68b73f19">
+
 ***
 ## Conclusion
 
+This Proof of Concept (POC) document has provided a practical demonstration of unit testing for Terraform configurations. By leveraging Terraform's built-in testing framework, users can ensure the reliability and correctness of their infrastructure code. We explored the use of three key blocks - provider, variables, and run - to define and execute unit tests for different aspects of Terraform configurations. Through examples and explanations, users have gained insights into structuring test scenarios, defining assertions, and interpreting overall test results.
 
 ***
 ## Contact Information
