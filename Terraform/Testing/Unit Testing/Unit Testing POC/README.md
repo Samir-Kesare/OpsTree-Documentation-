@@ -29,12 +29,12 @@ For more information on Terraform unit testing and to gain a detailed understand
 ***
 ## 1. Pre-requisite
 
-
+ | Requirement | Recommendation |
+ |-------------|----------------|
+ | Terraform |  version 1.7 or above |
+ 
 ***
 ## Proof of Concept (PoC) - Unit Testing
-
-
-
 
 
 
