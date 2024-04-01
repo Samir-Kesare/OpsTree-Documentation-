@@ -15,7 +15,7 @@
 ## Table of Contents
 
 * [Introduction](#Introduction)
-* [What is Drift?](#What-is-Drift?)
+* [What is Drift?](#What-is-Drift)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
