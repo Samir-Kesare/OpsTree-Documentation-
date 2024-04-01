@@ -4,7 +4,7 @@
 | -----------------| --------------| -----------|---------------- | -------------- |
 | Vidhi Yadav      | 31 March 2024   |     v1     | Vidhi Yadav     | 31 March 2024    |
 
-![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/5cc2f639-564c-47dc-83ff-eab07553d79e)
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056349/5cc2f639-564c-47dc-83ff-eab07553d79e){:height="50%" width="50%"}
 
 ## Table of Contents
 + [Introduction](#Introduction)
