@@ -88,7 +88,7 @@ In Terraform's testing framework, the providers block allows you to set or overr
 ***
 ## Proof of Concept (POC)
 
- * It is highly recommended to gain hands-on experience through our detailed Proof of Concept (POC) guide for Terraform Unit Testing. This comprehensive document walks you through a practical demonstration, providing step-by-step instructions on how to test your Terraform components. The POC guide delves into essential concepts for identifying early issues through unit testing, utilizing each block discussed in this document. You can access the guide [here]().
+ * It is highly recommended to gain hands-on experience through our detailed Proof of Concept (POC) guide for Terraform Unit Testing. This comprehensive document walks you through a practical demonstration, providing step-by-step instructions on how to test your Terraform components. The POC guide delves into essential concepts for identifying early issues through unit testing, utilizing each block discussed in this document. You can access the guide [here](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Testing/Unit%20Testing/Unit%20Testing%20POC/README.md).
 
 ***
 ## Best Practices
