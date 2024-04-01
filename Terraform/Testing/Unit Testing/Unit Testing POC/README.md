@@ -78,10 +78,11 @@ resource "aws_instance" "demo-instance" {
   }
   }
 ```
+
 **variable.tf**
 
 <details>
-<summary> Click here to see variable.tf file</summary>
+<summary> Click here to see variable.tf file </summary>
 <br>
   
 ```shell
@@ -100,7 +101,7 @@ variable "instance_name" {
 **data.tf**
 
 <details>
-<summary> Click here to see data.tf file</summary>
+<summary> Click here to see data.tf file </summary>
 <br>
   
 ```shell
@@ -112,7 +113,7 @@ data "aws_key_pair" "existing_key_pair" {
 **provider.tf**
 
 <details>
-<summary> Click here to see provider.tf file</summary>
+<summary> Click here to see provider.tf file </summary>
 <br>
   
 ```shell
