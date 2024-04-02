@@ -63,17 +63,6 @@ Think of it as a health check-up for your setup. It assesses how your current in
 Spot a mismatch? This command will point out the changes needed to bridge that gap.
 Regular checks, a few times a day or at least once a day, are a good habit. Itâ€™s like routine maintenance; catch the small issues before they snowball into bigger ones.
 
-***
-<details>
-<summary><strong>Click here to see variables.tf file</strong></summary>
-<br>
-
-```shell
-
-```
-</details>
-
-***
 
 ***
 
@@ -94,4 +83,4 @@ Regular checks, a few times a day or at least once a day, are a good habit. Itâ€
 
  | **Source** | **Description** |
  | ---------- | --------------- |
- | [**Link**]() |  |
+ | [**Link**](https://controlmonkey.io/blog/the-definitive-guide-for-terraform-drift-detection/) | Introduction of Drift |
