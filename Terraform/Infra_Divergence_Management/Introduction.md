@@ -37,21 +37,21 @@ Drift occurs when the actual state of the infrastructure diverges from what’s 
 
 ***
 ## Reasons for Terraform Drift
-### Lack of Automation
+* ### Lack of Automation
 
-Drift can arise when there’s an absence of systematic processes. When there’s no automation in place, infrastructure changes often happen manually, leading to potential errors and inconsistencies. Implementing a CI/CD (Continuous Integration/Continuous Deployment) system ensures changes are made consistently, tested, and deployed automatically. This minimizes drift by streamlining the creation, testing, and deployment of code. Furthermore, without a clear strategy for updating AWS infrastructure, ad hoc changes might go undocumented, laying the groundwork for drift.
+  Drift can arise when there’s an absence of systematic processes. When there’s no automation in place, infrastructure changes often happen         manually, leading to potential errors and inconsistencies. Implementing a CI/CD (Continuous Integration/Continuous Deployment) system ensures   changes are made consistently, tested, and deployed automatically. This minimizes drift by streamlining the creation, testing, and deployment of code. Furthermore, without a clear strategy for updating AWS infrastructure, ad hoc changes might go undocumented, laying the groundwork for drift.
 
-### Urgency of Hotfixes
+* ### Urgency of Hotfixes
 
-When urgent issues arise, hotfixes can be a quick solution. However, when these fixes are applied manually, especially directly through the AWS interface, they might bypass regular procedures. Such changes can introduce drift as they aren’t reflected in the Terraform state file. For example, this may occur if an on-call team member fixes a resource configuration directly from the AWS console to address a production bug reported at 2 am in the morning. 
+  When urgent issues arise, hotfixes can be a quick solution. However, when these fixes are applied manually, especially directly through the AWS interface, they might bypass regular procedures. Such changes can introduce drift as they aren’t reflected in the Terraform state file. For example, this may occur if an on-call team member fixes a resource configuration directly from the AWS console to address a production bug reported at 2 am in the morning. 
 
-### Insufficient Team Training
+* ### Insufficient Team Training
 
-A well-informed team is crucial for maintaining consistent infrastructure. If team members, unfamiliar with Terraform, opt to make updates directly through the AWS console, it creates a blind spot for Terraform. Since Terraform doesn’t recognize these console-based changes, drift can unintentionally be introduced.
+  A well-informed team is crucial for maintaining consistent infrastructure. If team members, unfamiliar with Terraform, opt to make updates directly through the AWS console, it creates a blind spot for Terraform. Since Terraform doesn’t recognize these console-based changes, drift can unintentionally be introduced.
 
-### Third-party Automation
+* ### Third-party Automation
 
-Not all automation tools are created equal, and using third-party automation software can be a Terraform drift culprit. For instance,  imagine a third-party security system that uses AWS CLI or AWS SDK to modify a rule in one of your AWS security groups. 
+  Not all automation tools are created equal, and using third-party automation software can be a Terraform drift culprit. For instance,  imagine a third-party security system that uses AWS CLI or AWS SDK to modify a rule in one of your AWS security groups. 
 These tools don’t have access to the Terraform configuration file and can’t really change the Terraform code, so the change is not updated in it. 
 In this situation, the Terraform state file won’t reflect the current condition of your infrastructure, thus causing a drift.
 
