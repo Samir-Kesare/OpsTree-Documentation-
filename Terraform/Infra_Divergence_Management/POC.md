@@ -17,6 +17,7 @@
 
 * [Introduction](#Introduction)
 * [What is Drift?](#What-is-Drift)
+* [Flow Diagram](#Flow-Diagram)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -25,6 +26,7 @@
 
  ## Introduction
 
+A Proof of Concept (POC) for drift detection is like a test drive for a drift detection tool. It's a small experiment where we create a simplified version of our cloud setup and intentionally make some changes to see if the tool can catch them. We use tools like Terraform plan to compare what we want our setup to be with what it actually is. This helps us decide if the drift detection tool works well enough to use it everywhere in our cloud system.
 
 ***
 
@@ -34,7 +36,11 @@ Drift occurs when the actual state of the infrastructure diverges from what’s 
 
 For More Information [**Click here**](https://github.com/CodeOps-Hub/Documentation/blob/main/Terraform/Infra_Divergence_Management/Introduction.md)
 ***
+## Flow Diagram
 
+![image](https://github.com/CodeOps-Hub/Documentation/assets/156056413/feff3544-67e4-4c94-a5d2-8c4aa125d1b7)
+
+***
 
 
 ## Conclusion
