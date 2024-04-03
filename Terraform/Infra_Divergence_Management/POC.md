@@ -390,6 +390,7 @@ fi
 *** 
 ## Conclusion
 
+The Terraform Infra Divergence Management POC used Terraform and Jenkins to detect drift in cloud infrastructure. By setting up a simple cloud environment, making intentional changes, and running periodic checks with Jenkins, we successfully identified drift and received alerts when changes were detected. 
 
 ***
 
