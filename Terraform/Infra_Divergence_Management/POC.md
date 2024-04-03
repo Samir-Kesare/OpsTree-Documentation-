@@ -18,6 +18,8 @@
 * [Introduction](#Introduction)
 * [What is Drift?](#What-is-Drift)
 * [Flow Diagram](#Flow-Diagram)
+* [Run Time Dependency](#Run-Time-Dependency)
+* [Proof of Concept](#Proof-of-Concept)
 * [Conclusion](#Conclusion) 
 * [Contact Information](#Contact-Information) 
 * [References](#References)
@@ -41,6 +43,21 @@ For More Information [**Click here**](https://github.com/CodeOps-Hub/Documentati
 ![image](https://github.com/CodeOps-Hub/Documentation/assets/156056413/feff3544-67e4-4c94-a5d2-8c4aa125d1b7)
 
 ***
+
+## Run Time Dependency
+
+* Configured Infra via Terraform.
+* **v1.txt File** -  Once applied `terraform apply` command, then when we run the `terraform plan` again, it's output will be there in this `v1.txt` File.
+   
+***
+## Proof of Concept
+
+**Step-1**
+
+Pushed all the configuration files in a repository in github.
+
+
+ 
 
 
 ## Conclusion
