@@ -304,8 +304,88 @@ fi
 
   * Create a Pipeline and configure `Build periodically` method, I have configured this as, the pipeline will run every hours, you can change it as per your requirement.
 
-    <img src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0474d322-1ac2-412e-9580-aa45db93a9d4" height="500" width="380">
-      
+     <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0474d322-1ac2-412e-9580-aa45db93a9d4"> 
+
+  * Configure the pipeline, ther apply and save it.
+    <details>
+    <summary><strong>Click here to see Pipeline file</strong></summary>
+    <br>
+
+    ```shell
+    pipeline {
+    agent any
+
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+        stage('Clone Repository') {
+            steps {
+                script {
+                    // Clone the Git repository
+                    git branch: 'Terraform', url: 'https://github.com/vishalkk2805/test.git'
+                    sh 'chmod +x drift.sh'
+                }
+            }
+        }
+        stage('Check Drift') {
+            steps {
+                script {
+                    // Run the shell script
+                    def scriptOutput = sh(script: './drift.sh', returnStdout: true).trim()
+                    // Check if the message contains the specified text
+                    if (scriptOutput.contains("Something has been changed manually")) {
+                        echo "Manual change detected. Sending email notification."
+                        sendEmailNotification()
+                    }
+                    else {
+                        echo "No manual changes and can't detected any dirft."
+                    }
+                }
+            }
+        }
+    }
+    
+    post {
+        always {
+            cleanWs()
+        }
+      }
+    }
+
+    def sendEmailNotification() {
+    def fileContent = readFile('v2.txt')
+    
+    emailext (
+        subject: "Manual change detected in Terraform",
+        body: "The detected a manual change in Terraform. Please review and take necessary actions.\n\n${fileContent}",
+        to: "vishal.kesarwani.snaatak@mygurukulam.co",  // Update with actual email addresses
+        from: "vishal.kesarwani.snaatak@mygurukulam.co",  // Update with Jenkins email address
+        replyTo: "vishal.kesarwani.snaatak@mygurukulam.co"
+      )
+    }
+  
+    ```
+    </details>
+
+  * Now, Build the Pipeline.
+       
+      <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0db41cde-f6d2-4773-964f-6fbba2ef5d7f"> 
+
+  *  Jenkins Console Output `When Drift Deduct`.
+    
+     <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/09b6d0e2-5720-4836-8c39-6963f622817b"> 
+
+  * Email notification `When Drift Deduct`.
+    
+   <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/8e4daa78-bc57-44c1-912b-0df41f357bf6">   
+    
+  *  Jenkins Console Output `When there is no Drift` .
+ 
+    <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/82a3c62a-ff22-42b6-9ea0-ee525b72be24">  
+
 
 *** 
 ## Conclusion
