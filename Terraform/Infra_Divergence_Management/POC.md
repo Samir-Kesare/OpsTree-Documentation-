@@ -300,7 +300,7 @@ fi
 
 * **Step-2**
 
-  - Setup the jenkins Environment
+  **Setup the jenkins Environment**
 
   * Create a Pipeline and configure `Build periodically` method, I have configured this as, the pipeline will run every hours, you can change it as per your requirement.
 
