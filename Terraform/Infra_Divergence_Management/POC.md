@@ -1,5 +1,5 @@
 
-# Terraform Infra Divergence Management Understanding 
+# Terraform Infra Divergence Management POC
 
 <p align="center">
   <img src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/072662dd-f2ef-4010-b2e8-385fe9b393b7" height="200" width="380">
