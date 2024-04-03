@@ -51,9 +51,9 @@ For More Information [**Click here**](https://github.com/CodeOps-Hub/Documentati
 ***
 ## Proof of Concept
 
-**Step-1**
+* **Step-1**
 
-Pushed all the configuration files in a repository in github.
+  Pushed all the configuration files in a repository in github.
 
 <details>
 <summary><strong>Click here to see main.tf file</strong></summary>
@@ -298,6 +298,16 @@ fi
  
 ***
 
+* **Step-2**
+
+  - Setup the jenkins Environment
+
+  * Create a Pipeline and configure `Build periodically` method, I have configured this as, the pipeline will run every hours, you can change it as per your requirement.
+
+    <img src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0474d322-1ac2-412e-9580-aa45db93a9d4" height="500" width="380">
+      
+
+*** 
 ## Conclusion
 
 
