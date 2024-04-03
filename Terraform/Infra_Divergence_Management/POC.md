@@ -372,19 +372,19 @@ fi
 
   * Now, Build the Pipeline.
        
-      <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0db41cde-f6d2-4773-964f-6fbba2ef5d7f"> 
+      <img width="760"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/0db41cde-f6d2-4773-964f-6fbba2ef5d7f"> 
 
-  *  Jenkins Console Output `When Drift Deduct`.
+  * Jenkins Console Output `When Drift Deduct`.
     
-     <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/09b6d0e2-5720-4836-8c39-6963f622817b"> 
+     <img width="760"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/09b6d0e2-5720-4836-8c39-6963f622817b"> 
 
   * Email notification `When Drift Deduct`.
     
-   <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/8e4daa78-bc57-44c1-912b-0df41f357bf6">   
+     <img width="760"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/8e4daa78-bc57-44c1-912b-0df41f357bf6">   
     
-  *  Jenkins Console Output `When there is no Drift` .
+  * Jenkins Console Output `When there is no Drift` .
  
-    <img width="660"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/82a3c62a-ff22-42b6-9ea0-ee525b72be24">  
+    <img width="760"  src="https://github.com/CodeOps-Hub/Documentation/assets/156056413/82a3c62a-ff22-42b6-9ea0-ee525b72be24">  
 
 
 *** 
