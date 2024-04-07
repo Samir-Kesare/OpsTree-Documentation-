@@ -28,13 +28,14 @@ This role is designed to automate the installation and configuration of Kibana o
 ## Flow Diagram
 
 * This diagram should help you visualize the sequence of tasks in the Ansible role for setting up Kibana.
-![Screenshot 2024-02-19 221431](https://github.com/CodeOps-Hub/redis-ansiblerole/assets/156056344/7545e86d-43be-4571-b9b4-ca2e02bf2b00)
+![Screenshot 2024-04-07 170428](https://github.com/CodeOps-Hub/Documentation/assets/156056344/4186264e-ec9e-4e14-9b15-f866f19eafb0)
+
 
 
 ***
 ## Pre-requisites
 
-Before using this Ansible role to set up Redis, ensure that the following prerequisites are met:
+Before using this Ansible role to set up Kibana, ensure that the following prerequisites are met:
 
 1. **Ansible:**
    - Ansible must be installed on the control machine from which you plan to run the playbook. If Ansible is not installed, you can install it using this [link](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) . Version used for POC : ansible 2.10.8
@@ -47,7 +48,7 @@ Ansible is an open-source automation tool that simplifies and accelerates IT inf
 
 
 2. **SSH Access to Target Servers:**
-   - Ensure that you have SSH access to the target servers where Redis will be installed.
+   - Ensure that you have SSH access to the target servers where Kibana will be installed.
 
 3. **Elasticsearch**
    - Ensure that the correct version of Elasticsearch is installed on running on the server.
@@ -65,10 +66,10 @@ Kibana provides a user-friendly interface for performing various tasks such as:
 
 Overall, Kibana plays a crucial role in the Elastic Stack ecosystem by providing users with the tools they need to analyze and visualize their data effectively.
 
-Please refer [*Kibana Documentation*](https://www.elastic.co/guide/en/kibana/current/index.html) for better understanding of Redis
+Please refer [*Kibana Documentation*](https://www.elastic.co/guide/en/kibana/current/index.html) for better understanding of Kibana
 
 # Steps 
-* Before going further check  [*Ansible Role For Kibana Installation*](https://github.com/CodeOps-Hub/redis-ansiblerole/tree/main/roles/kibana)
+* Before going further check  [*Ansible Role For Kibana Installation*](https://github.com/CodeOps-Hub/ansible/tree/main/roles/kibana)
 * For more information on [Ansible Roles](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/DevOps%20Practices/Ansible/Ansible%20Role.md)
 
 **Step 1: Dynamic Inventory Setup** 
@@ -220,7 +221,7 @@ kibana_port: "5601"
 We need to create jinja2 template :
 * To configure Kibana
 
-1. `kibana.yml.j2` template includes parameteters to configure Redis
+1. `kibana.yml.j2` template includes parameteters to configure Kibana
 
 ```yaml
 # For more configuration options see the configuration guide for Kibana in
@@ -441,7 +442,7 @@ ansible-playbook -i aws_ec2.yml kibana_playbook.yml
 ***
 ## Conclusion 
 
-* This guide illustrates the process of deploying redis through Ansible. By adhering to these instructions, you can effectively provision and set up redis within your AWS infrastructure.
+* This guide illustrates the process of deploying Kibana through Ansible. By adhering to these instructions, you can effectively provision and set up redis within your AWS infrastructure.
 
 ***
 ## Contact Information
