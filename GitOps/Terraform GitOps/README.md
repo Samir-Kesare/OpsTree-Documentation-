@@ -1,8 +1,26 @@
 # GitOps with Terraform 
 ![image-396](https://github.com/CodeOps-Hub/Documentation/assets/156056344/cf2dfb82-f792-4558-938b-a0223525cada)
 
+| Author | Created On | Last Updated | Document Version | Last Updated By |
+| ------ | ---------- | ------------ | ---------------- | --------------- |
+| Vishal Kumar Kesarwani, Aakash Tripathi | 19-01-2024 | 22-01-2024   | v1 | Aakash Tripathi |
+***
+# Table of Contents
+
++ [Introduction](#introduction)
++ [Why GitOps](#gitops)
++ [How to GitOps your Terraform](#how-to-gitops-your-terraform)
++ [Advantages](#advantages)
++ [Drawbacks](#drawbacks)
++ [Conclusion](#conclusion)
++ [Contact Information](#contact-information)
++ [References](#references)
+
+***
 ## Introduction
 The fusion of GitOps principles with Terraform technology marks a significant advancement in infrastructure management. GitOps emphasizes declarative infrastructure as code (IaC) stored in Git repositories, seamlessly integrating with Terraform's provisioning capabilities. This document explores how this symbiotic relationship enhances automation, scalability, and reliability in infrastructure workflows, offering insights into implementation strategies and best practices.
+
+***
 
 ## GitOps
 
@@ -16,6 +34,8 @@ The key principles of GitOps include:
 - Observability and Monitoring: GitOps encourages the use of observability tools and monitoring solutions to gain insights into the health and performance of infrastructure and applications. This helps in detecting and resolving issues quickly.
 
 Overall, GitOps simplifies the management of complex systems, improves collaboration between development and operations teams, and enhances the reliability and scalability of cloud-native applications and infrastructure.
+
+***
 
 ## How to GitOps your Terraform
 There are several approaches to GitOps with Terraform, each offering unique benefits and considerations. Here are some common ways to implement GitOps for managing Terraform infrastructure:
@@ -46,3 +66,19 @@ There are several approaches to GitOps with Terraform, each offering unique bene
 
 Each of these approaches offers its own advantages and trade-offs in terms of complexity, scalability, flexibility, and level of automation. Organizations should evaluate their requirements, existing tooling, and infrastructure setup to determine the most suitable GitOps strategy for managing Terraform infrastructure effectively.
 
+***
+
+# Advantages
+
+GitOps with Terraform offers several advantages that streamline infrastructure management and enhance collaboration among development and operations teams:
+
+| **Advantage** | **Description** |
+| ---------- | --------------- |
+| Declarative Infrastructure Management | GitOps promotes the use of declarative infrastructure as code (IaC), allowing teams to define the desired state of their infrastructure using Terraform configuration files. This approach simplifies infrastructure management by focusing on the intended outcome rather than manual provisioning steps.|
+| Version Control and Auditing | By storing Terraform configurations in a Git repository, GitOps enables versioning, auditing, and tracking of changes over time. Teams can review commit history, roll back to previous states if necessary, and maintain a comprehensive record of infrastructure modifications.|
+| Collaboration and Code Review | GitOps encourages collaboration among team members by facilitating code review processes for infrastructure changes. Developers and operators can propose modifications, comment on code changes, and ensure adherence to best practices before merging changes into the main branch.
+| Automated Deployment Pipelines | Implementing GitOps with Terraform enables the automation of infrastructure deployments through continuous integration and continuous delivery (CI/CD) pipelines. Changes pushed to the Git repository trigger automated workflows that apply Terraform configurations, reducing manual intervention and human error.
+| Consistency and Reproducibility | With GitOps, infrastructure configurations are consistently applied across different environments, ensuring reproducibility and eliminating configuration drift. By maintaining a single source of truth in the Git repository, teams can achieve consistency in infrastructure deployments across development, staging, and production environments.
+| Scalability and Efficiency | GitOps promotes scalability and efficiency in managing infrastructure by leveraging automation and standardized workflows. Teams can rapidly provision, modify, and tear down infrastructure resources using Terraform, leading to faster development cycles and improved time-to-market for applications.
+| Resilience and Disaster Recovery | GitOps enhances resilience and disaster recovery capabilities by enabling quick restoration of infrastructure from a known state stored in the Git repository. In the event of failures or outages, teams can easily roll back to previous configurations and restore services to a stable state. |
+| Observability and Monitoring | By integrating observability and monitoring tools with GitOps workflows, teams gain visibility into infrastructure changes, resource utilization, and performance metrics. Monitoring solutions can detect anomalies, alert stakeholders to potential issues, and facilitate proactive maintenance of infrastructure components. |
