@@ -22,21 +22,25 @@ There are several approaches to GitOps with Terraform, each offering unique bene
 ### Direct Application of Terraform Configuration:
 
 | **Method** | **Description** |
+| ---------- | --------------- |
 | Push-Based Deployment | Changes to Terraform configurations are directly applied to the infrastructure by pulling the latest configuration from the Git repository and running Terraform commands (e.g., terraform apply). |
 | Manual Trigger | Changes are manually triggered by operators or developers, who push changes to the Git repository and initiate the deployment process. |
 
 ### Infrastructure as Code (IaC) Pipelines:
 | **Method** | **Description** |
+| ---------- | --------------- |
 | CI/CD Pipelines | Use CI/CD pipelines to automate the deployment of Terraform configurations. Changes pushed to the Git repository trigger the pipeline, which executes Terraform commands to apply the changes |
 | Pipeline Orchestration Tools | Employ dedicated CI/CD tools like Jenkins, GitLab CI/CD, CircleCI, or GitHub Actions to manage the Terraform deployment pipeline. These tools provide capabilities for versioning, testing, approval gates, and deployment automation. |
 
 ### GitOps Operators:
 | **Method** | **Description** |
+| ---------- | --------------- |
 | Terraform Operators | Utilize GitOps operators designed specifically for Terraform, such as FluxCD with Terraform controller or ArgoCD with Terraform plugin. These operators continuously monitor the Git repository for changes and reconcile the desired state with the actual state of the infrastructure.
 | Custom Operators | Develop custom operators tailored to your organization's requirements using tools like Kubernetes Operators SDK or Operator Framework. These operators can integrate with Git repositories and Terraform to automate infrastructure deployments within Kubernetes clusters. |
 
 ### Infrastructure Automation Frameworks:
 | **Method** | **Description** |
+| ---------- | --------------- |
 | Custom Scripts and Automation |Develop custom scripts or use automation frameworks to implement GitOps workflows tailored to your organization's needs. This approach allows for flexibility in integrating Terraform with existing infrastructure automation processes and toolchains. |
 
 Each of these approaches offers its own advantages and trade-offs in terms of complexity, scalability, flexibility, and level of automation. Organizations should evaluate their requirements, existing tooling, and infrastructure setup to determine the most suitable GitOps strategy for managing Terraform infrastructure effectively.
