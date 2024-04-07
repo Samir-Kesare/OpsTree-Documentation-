@@ -1,4 +1,5 @@
 # GitOps with Terraform 
+![image-396](https://github.com/CodeOps-Hub/Documentation/assets/156056344/cf2dfb82-f792-4558-938b-a0223525cada)
 
 ## Introduction
 The fusion of GitOps principles with Terraform technology marks a significant advancement in infrastructure management. GitOps emphasizes declarative infrastructure as code (IaC) stored in Git repositories, seamlessly integrating with Terraform's provisioning capabilities. This document explores how this symbiotic relationship enhances automation, scalability, and reliability in infrastructure workflows, offering insights into implementation strategies and best practices.
