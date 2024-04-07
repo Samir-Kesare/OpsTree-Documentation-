@@ -1,11 +1,12 @@
-# Ansible Role to setup Redis
-![download (1)](https://github.com/CodeOps-Hub/redis-ansiblerole/assets/156056344/88c00e2a-36c4-4087-95e0-c83833747845)
+# Ansible Role to setup Kibana
+
+![images](https://github.com/CodeOps-Hub/Documentation/assets/156056344/27b67a6b-4461-4b33-b51e-c5af850beb28)
 
 
 
 |   Authors        |  Created on   |  Version   | Last updated by | Last edited on |
 | -----------------| --------------| -----------|---------------- | -------------- |
-| Aakash Tripathi      |  19 Feb 2024   |     v1     | Aakash Tripathi     | 19 Feb 2024    |
+| Aakash Tripathi      |  04 April 2024   |     v1     | Aakash Tripathi     | 05 April 2024    |
 
 ***
 ## Table of Contents
@@ -14,19 +15,19 @@
 + [Pre-requisites](#pre-requisites)
 + [Setup Ansible Role](#steps)
 + [Output Verification](#output)
-+ [Connect Redis](#post-installation-steps)
++ [Open Kibana](#post-installation-steps)
 + [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
 + [References](#references)
 
 ***
 ## Introduction
-This role is designed to automate the installation and configuration of Redis on target ubuntu servers. This role aims to simplify the process of setting up standalone redis servers.
+This role is designed to automate the installation and configuration of Kibana on target ubuntu servers. This role aims to simplify the process of setting up kibana visualizations on  servers running Elasticsearch.
 
 ***
 ## Flow Diagram
 
-* This diagram should help you visualize the sequence of tasks in the Ansible role for setting up Redis.
+* This diagram should help you visualize the sequence of tasks in the Ansible role for setting up Kibana.
 ![Screenshot 2024-02-19 221431](https://github.com/CodeOps-Hub/redis-ansiblerole/assets/156056344/7545e86d-43be-4571-b9b4-ca2e02bf2b00)
 
 
@@ -48,15 +49,26 @@ Ansible is an open-source automation tool that simplifies and accelerates IT inf
 2. **SSH Access to Target Servers:**
    - Ensure that you have SSH access to the target servers where Redis will be installed.
 
+3. **Elasticsearch**
+   - Ensure that the correct version of Elasticsearch is installed on running on the server.
+   
 ***
 
-## Redis  
-Redis is an open-source, high-performance, in-memory data store known for its speed and versatility. It functions as a key-value store and supports various data structures, including strings, hashes, lists, sets, and sorted sets. Commonly used for caching due to its in-memory storage, Redis also serves as a message broker with Pub/Sub messaging capabilities. Its atomic operations, support for persistence, scripting with Lua, and clustering features make Redis a popular choice for applications requiring fast data access, real-time processing, and horizontal scalability.
+## Kibana 
+Kibana is an open-source data visualization and exploration tool designed primarily for analyzing and visualizing log and time-series data stored in Elasticsearch. It is part of the Elastic Stack (formerly known as the ELK Stack), which also includes Elasticsearch, Logstash, and Beats.
 
-Please refer [*Redis Document*](https://github.com/avengers-p7/Documentation/blob/main/OT%20Micro%20Services/Software/Redis/README.md) for better understanding of Redis
+Kibana provides a user-friendly interface for performing various tasks such as:
+- Data Visualization: It allows users to create a wide range of visualizations including line charts, bar charts, pie charts, maps, and more to represent data stored in Elasticsearch.
+- Dashboard Creation: Users can combine multiple visualizations into interactive dashboards, enabling them to gain insights from complex data sets at a glance.
+- Data Exploration: Kibana provides powerful search capabilities and filtering options, allowing users to explore their data efficiently.
+- Monitoring and Alerting: Kibana can be used to monitor the health and performance of Elasticsearch clusters, as well as set up alerts based on predefined conditions.
+
+Overall, Kibana plays a crucial role in the Elastic Stack ecosystem by providing users with the tools they need to analyze and visualize their data effectively.
+
+Please refer [*Kibana Documentation*](https://www.elastic.co/guide/en/kibana/current/index.html) for better understanding of Redis
 
 # Steps 
-* Before going further check  [*Ansible Role For Redis Installation*](https://github.com/CodeOps-Hub/redis-ansiblerole/tree/main/roles/redis)
+* Before going further check  [*Ansible Role For Kibana Installation*](https://github.com/CodeOps-Hub/redis-ansiblerole/tree/main/roles/kibana)
 * For more information on [Ansible Roles](https://github.com/avengers-p7/Documentation/blob/main/Application_CI/Design/DevOps%20Practices/Ansible/Ansible%20Role.md)
 
 **Step 1: Dynamic Inventory Setup** 
@@ -96,30 +108,31 @@ regions:
   - us-east-1
 
 groups: 
-  redis: "'redis' in tags.Type"
+  efk: "'efk' in tags.Type"
 ```
 
 1. `plugin: aws_ec2`: Specifies the use of the aws_ec2 plugin as the dynamic inventory source. This plugin is designed to fetch information about EC2 instances in AWS.
 2. `regions: - us-east-1`: Indicates the AWS region(s) from which the dynamic inventory should fetch information.
-3. `redis: "'redis' in tags.Type"`: Creates an Ansible group named redis. This group includes EC2 instances where the tag named Type has a value of 'redis'. You can tag all your redis instances accordingly.
+3. `efk: "'efk' in tags.Type"`: Creates an Ansible group named efk. This group includes EC2 instances where the tag named Type has a value of 'efk'. You can tag all your EFK instances accordingly.
 
 **Step 3: Create Ansible Role**
 * Create a new Ansible role which should follow this directory structure:
 
-![Screenshot 2024-02-19 213938](https://github.com/CodeOps-Hub/redis-ansiblerole/assets/156056344/5ddada64-d834-4f36-8bc4-9638ff6e0c0e)
+![Screenshot 2024-04-07 164759](https://github.com/CodeOps-Hub/Documentation/assets/156056344/f0311895-9da9-4f8c-babc-59341e597d8c)
 
 
 
-**Step 4: redis-playbook.yml**
+
+**Step 4: kibana_playbook.yml**
 * This file is defining a set of tasks to be executed on hosts belonging to the ubuntu group.
 
 ```yaml
 ---
-- hosts: redis
+- hosts: efk
   become: yes
   gather_facts: yes 
   roles:
-    - redis
+    - kibana
 ```
 **Step 5: Tasks**
 1. `main.yml`: This main.yml file is acting as an orchestrator, importing tasks from other task files. This separation of tasks into different files is a good practice for better organization, especially when dealing with complex configurations or roles.
@@ -127,327 +140,280 @@ groups:
 ```yaml
 ---
 ---
-# tasks file for redis
+# tasks file for kibana
+---
 
-- name: Ensuring prerequisites are met for redis installation
-  include_tasks: prerequisites.yml
+    - name: Install prerequisites
+      apt:
+        name: "{{ prerequisites }}"
+        state: present
 
-- name: Ensuring redis server is installed on the system
-  include_tasks: install.yml
+    - name: Add Elastic GPG key
+      apt_key:
+        url: "{{ key_url }}"
+        state: present
 
-- name: Ensuring redis configuration is up to date
-  include_tasks: configure.yml
+    - name: Add Elastic APT repository for Kibana
+      apt_repository:
+        repo: "{{ kibana_repository }}"
+        state: present
+
+    - name: Install Kibana
+      apt:
+        name: kibana={{ kibana_version }}
+        state: present
+
+    - name: Reload systemd daemon
+      shell: systemctl daemon-reload
+
+    - name: Enable and start Kibana service
+      systemd:
+        name: kibana
+        enabled: yes
+        state: started
+
+    - name: Copy Kibana configuration template
+      template:
+        src: kibana.yml.j2
+        dest: "{{ kibana_config_path }}"
+        owner: root
+        group: root
+        mode: '0644'
+      notify: Restart Kibana
+
+
 ```
 
 2. `Default` variables: This role comes with default values for several variables that have been used in the role. You can find these defaults in the `defaults/main.yml` file within the role directory.
 
 ```yaml
 ---
-# defaults file for redis
+# defaults file for kibana
+prerequisites:
+ - apt-transport-https
+ - software-properties-common
+key_url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+kibana_repository: "deb https://artifacts.elastic.co/packages/8.x/apt stable main"
+kibana_config_path: "/etc/kibana/kibana.yml"
+kibana_version: "8.13.1"
+kibana_host: "0.0.0.0"
+kibana_port: "5601"
 
-upgrade_redis: false
-redis_version: 7.0.6
-redis_port: 6379
-redis_conf_file_location: /etc/redis
-redis_data_dir: /opt/redis/data
-redis_log_dir: /var/log/redis
-redis_logfile: "/var/log/redis/redis.log"
-
-redis_supervised: "no"
-redis_always_show_logo: "yes"
-redis_daemonize: "no"
-redis_pidfile: "/var/run/redis-{{- redis_port -}}.pid"
-redis_databases: 16
-redis_loglevel: notice
-redis_save:
-  - 900 1
-  - 300 10
-  - 60 10000
-redis_stop_writes_on_bgsave_error: "yes"
-redis_rdbcompression: "yes"
-redis_rdbchecksum: "yes"
-redis_db_filename: "dump.rdb"
-redis_slowlog_log_slower_than: 10000
-redis_slowlog_max_len: 128
-redis_appendonly: "no"
-redis_appendfilename: "appendonly.aof"
-redis_appendfsync: "everysec"
-redis_no_appendfsync_on_rewrite: "no"
-redis_auto_aof_rewrite_percentage: "100"
-redis_auto_aof_rewrite_min_size: "64mb"
-redis_maxclients: 10000
-redis_maxmemory: false
-redis_maxmemory_policy: noeviction
-redis_bind: "{{ ansible_ssh_host }}"
-redis_tcp_backlog: 511
-redis_tcp_keepalive: 0
-redis_protected_mode: "no"
-redis_timeout: 0
-redis_socket_path: false
-redis_socket_perm: 755
-redis_conf_file_location: /etc/redis
-redis_runtime_directory: redis
-disable_commands:
-  - FLUSHDB
-  - FLUSHALL
 ```
 ### Important Role Variables 
 | **Variable** | **Description** |
 | ------------ | --------------- |
-| redis_version |  Version of redis to be installed |
-| redis_port | Default redis port |
-| redis_conf_file_location | Redis configuration file directory path |
-| redis_data_dir | Path to redis data storage directory |
-| redis_log_dir | Redis logs storage directory |
-| redis_logfile | Redis logfile |
-| redis_password | Redis Password |
+| kibana_version |  Version of Kibana to be installed |
+| kibana_port | Default Kibana port |
+| kibana_config_path | Kibana configuration file path |
+| kibana_host | IP of the Elasticsearch/Kibana Host  |
+| kibana_repository | Kibana repository |
+| key_url | Kibana GPG Key URL |
+| prerequisites | Pre-requisite packages for Kibana |
 
 > [!NOTE]
-> To customize the Redis installation based on your specific requirements, you can override these default values in main.yaml file in the vars directory of the role. 
+> To customize the Kibana installation based on your specific requirements, you can override these default values in main.yaml file in the vars directory of the role. 
 
-
-3. `prerequisites.yml`: This file is included in the redis/tasks/main.yml file to make sure prerequisites are met before redis installation
-
-```yaml
----
-- name: Ensure build tools are installed on the system (Debian)
-  apt:
-    name: "build-essential"
-    state: present
-    update_cache: yes
-  become: yes
-  when: ansible_os_family == "Debian"
-
-- name: Ensure build tools are installed on the system (RedHat)
-  yum:
-    name: "make"
-    state: present
-  become: yes
-  when: ansible_os_family == "RedHat"
-
-- name: Ensuring redis performance parameters are defined
-  sysctl:
-    name: vm.overcommit_memory
-    value: "1"
-    state: present
-  become: yes
-
-- name: Ensuring the maximum number of connection count is set
-  sysctl:
-    name: net.core.somaxconn
-    value: "65365"
-    state: present
-  become: yes
-
-- name: Ensure that transparent huge page is disabled in Kernel
-  shell: "echo never > /sys/kernel/mm/transparent_hugepage/enabled"
-  become: yes
-  become_user: root
-  changed_when: False
-```
-
-4. `install.yml`: This file is included in the redis/tasks/main.yml file to perform redis installation
- ```yaml
- ---
-- name: Ensure if redis is previously installed or not
-  stat:
-    path: "/usr/local/bin/redis-server"
-  register: redis_status
-
-- name: Ensure that the defined redis version is downloaded {{ redis_version }}
-  unarchive:
-    src: "http://download.redis.io/releases/redis-{{ redis_version }}.tar.gz"
-    dest: /tmp/
-    remote_src: yes
-  when: >
-    not redis_status.stat.exists or
-    upgrade_redis
-
-- name: Ensure the build time dependencies are met
-  make:
-    chdir: "/tmp/redis-{{ redis_version }}"
-  when: >
-    not redis_status.stat.exists or
-    upgrade_redis
-  become: yes
-
-- name: Ensuring redis server is installed on the system
-  make:
-    chdir: "/tmp/redis-{{ redis_version }}"
-    target: install
-  when: >
-    not redis_status.stat.exists or
-    upgrade_redis
-  become: yes
-
-- name: Ensure the tarballs and build directory is cleaned up
-  file:
-    path: "{{ item }}"
-    state: absent
-  with_items:
-    - "/tmp/redis-{{ redis_version }}.tar.gz"
-    - "/tmp/redis-{{ redis_version }}"
-  when: >
-    not redis_status.stat.exists or
-    upgrade_redis
-  become: yes
-
-- name: Ensuring that redis group exists in system
-  group:
-    name: "redis"
-    state: present
-  become: yes
-
-- name: Ensuring that redis user exists in system
-  user:
-    name: "redis"
-    group: "redis"
-    shell: /sbin/nologin
-    password: "!!"
-    createhome: no
-    system: yes
-    state: present
-  become: yes
- ```
- 5.  `configure.yml` : This file is included in the redis/tasks/main.yml file to configure redis, redis service and start redis service
-   ```yaml
-      ---
-    - name: Ensure the configuration directories are present
-    file:
-      path: "{{ item }}"
-      state: directory
-      recurse: yes
-      owner: redis
-      group: redis
-    with_items:
-      - "{{ redis_log_dir }}"
-      - "{{ redis_data_dir }}"
-      - "{{ redis_conf_file_location }}"
-    become: yes
-  
-    - name: Ensure that redis service exists on the system
-    template:
-      src: redis.service.j2
-      dest: "/etc/systemd/system/redis.service"
-      owner: root
-      group: root
-    become: yes
-    notify:
-      - Ensure system daemon reloaded
-  
-    - name: Ensure the redis configuration is updated
-    template:
-      src: redis.conf.j2
-      dest: "{{ redis_conf_file_location }}/redis.conf"
-      owner: redis
-      group: redis
-    become: yes
-    notify:
-      - Ensure redis service is running
-
-   ```
 
 
 **Step 6: Templates for Configuration**
-We need to create two jinja2 templates :
-* To configure Redis
-* To set up redis Service
+We need to create jinja2 template :
+* To configure Kibana
 
-1. `redis.conf.j2` template includes parameteters to configure Redis
+1. `kibana.yml.j2` template includes parameteters to configure Redis
 
 ```yaml
-{{ ansible_managed | comment }}
-#network
-bind 0.0.0.0
-protected-mode {{ redis_protected_mode }}
-port {{ redis_port }}
-tcp-keepalive {{ redis_tcp_keepalive }}
-tcp-backlog {{ redis_tcp_backlog }}
-timeout {{ redis_timeout }}
-{% if redis_socket_path -%}
-unixsocket {{ redis_socket_path }}
-unixsocketperm {{ redis_socket_perm }}
-{% endif -%}
+# For more configuration options see the configuration guide for Kibana in
+# https://www.elastic.co/guide/index.html
 
-# General
-supervised {{redis_supervised}}
-always-show-logo {{redis_always_show_logo}}
-daemonize {{ redis_daemonize }}
-pidfile {{ redis_pidfile }}
-loglevel {{ redis_loglevel }}
-databases {{ redis_databases }}
-logfile {{ redis_logfile }}
+# =================== System: Kibana Server ===================
+# Kibana is served by a back end server. This setting specifies the port to use.
+server.port: {{ kibana_port }}
 
-# Snapshotting
-{% for save in redis_save %}
-save {{ save }}
-{% endfor %}
-stop-writes-on-bgsave-error {{ redis_stop_writes_on_bgsave_error|string }}
-rdbcompression {{ redis_rdbcompression|string }}
-rdbchecksum {{ redis_rdbchecksum|string }}
-dbfilename {{ redis_db_filename|string }}
-dir {{ redis_data_dir }}
+# Specifies the address to which the Kibana server will bind. IP addresses and host names are both valid values.
+# The default is 'localhost', which usually means remote machines will not be able to connect.
+# To allow connections from remote users, set this parameter to a non-loopback address.
+server.host: {{ kibana_host }}
+# Enables you to specify a path to mount Kibana at if you are running behind a proxy.
+# Use the `server.rewriteBasePath` setting to tell Kibana if it should remove the basePath
+# from requests it receives, and to prevent a deprecation warning at startup.
+# This setting cannot end in a slash.
+#server.basePath: ""
 
-# Disable Redis commands
-{% for disable_command in disable_commands %}
-rename-command {{ disable_command }} ""
-{% endfor %}
+# Specifies whether Kibana should rewrite requests that are prefixed with
+# `server.basePath` or require that they are rewritten by your reverse proxy.
+# Defaults to `false`.
+#server.rewriteBasePath: false
 
-# Clients -- not in default redis.conf
-maxclients {{ redis_maxclients }}
+# Specifies the public URL at which Kibana is available for end users. If
+# `server.basePath` is configured this URL should end with the same basePath.
+#server.publicBaseUrl: ""
 
-#Memory Management
-maxmemory-policy {{ redis_maxmemory_policy }}
-{% if redis_maxmemory -%}
-maxmemory {{ redis_maxmemory }}
-{%- endif %}
-# Append Only Mode
-appendonly {{ redis_appendonly }}
-appendfilename "{{ redis_appendfilename }}"
-appendfsync {{ redis_appendfsync|string }}
-no-appendfsync-on-rewrite {{ redis_no_appendfsync_on_rewrite }}
-auto-aof-rewrite-percentage {{ redis_auto_aof_rewrite_percentage }}
-auto-aof-rewrite-min-size {{ redis_auto_aof_rewrite_min_size }}
+# The maximum payload size in bytes for incoming server requests.
+#server.maxPayload: 1048576
 
+# The Kibana server's name. This is used for display purposes.
+#server.name: "your-hostname"
 
-# Slow Log
-slowlog-log-slower-than {{ redis_slowlog_log_slower_than }}
-slowlog-max-len {{ redis_slowlog_max_len }}
+# =================== System: Kibana Server (Optional) ===================
+# Enables SSL and paths to the PEM-format SSL certificate and SSL key files, respectively.
+# These settings enable SSL for outgoing requests from the Kibana server to the browser.
+#server.ssl.enabled: false
+#server.ssl.certificate: /path/to/your/server.crt
+#server.ssl.key: /path/to/your/server.key
 
-# latency monitor
-latency-monitor-threshold 0
+# =================== System: Elasticsearch ===================
+# The URLs of the Elasticsearch instances to use for all your queries.
+#elasticsearch.hosts: ["http://localhost:9200"]
 
-{% if redis_password -%}
-requirepass {{ redis_password }}
-{%- endif %}
-```
+# If your Elasticsearch is protected with basic authentication, these settings provide
+# the username and password that the Kibana server uses to perform maintenance on the Kibana
+# index at startup. Your Kibana users still need to authenticate with Elasticsearch, which
+# is proxied through the Kibana server.
+#elasticsearch.username: "kibana_system"
+#elasticsearch.password: "pass"
 
-2. `redis.service.j2` template creates a service file for setting up `redis.service`
-```ini
-[Unit]
-Description=Redis persistent key-value database
-After=network.target
+# Kibana can also authenticate to Elasticsearch via "service account tokens".
+# Service account tokens are Bearer style tokens that replace the traditional username/password based configuration.
+# Use this token instead of a username/password.
+# elasticsearch.serviceAccountToken: "my_token"
 
-[Service]
-ExecStart=/usr/local/bin/redis-server {{ redis_conf_file_location }}/redis.conf --supervised systemd
-ExecStop=/bin/redis-cli shutdown
-Type=simple
-User=redis
-Group=redis
-RuntimeDirectory={{ redis_runtime_directory }}
-RuntimeDirectoryMode=0755
-LimitNOFILE=65535
+# Time in milliseconds to wait for Elasticsearch to respond to pings. Defaults to the value of
+# the elasticsearch.requestTimeout setting.
+#elasticsearch.pingTimeout: 1500
 
-[Install]
-WantedBy=multi-user.target
+# Time in milliseconds to wait for responses from the back end or Elasticsearch. This value
+# must be a positive integer.
+#elasticsearch.requestTimeout: 30000
+
+# The maximum number of sockets that can be used for communications with elasticsearch.
+# Defaults to `Infinity`.
+#elasticsearch.maxSockets: 1024
+
+# Specifies whether Kibana should use compression for communications with elasticsearch
+# Defaults to `false`.
+#elasticsearch.compression: false
+
+# List of Kibana client-side headers to send to Elasticsearch. To send *no* client-side
+# headers, set this value to [] (an empty list).
+#elasticsearch.requestHeadersWhitelist: [ authorization ]
+
+# Header names and values that are sent to Elasticsearch. Any custom headers cannot be overwritten
+# by client-side headers, regardless of the elasticsearch.requestHeadersWhitelist configuration.
+#elasticsearch.customHeaders: {}
+
+# Time in milliseconds for Elasticsearch to wait for responses from shards. Set to 0 to disable.
+#elasticsearch.shardTimeout: 30000
+
+# =================== System: Elasticsearch (Optional) ===================
+# These files are used to verify the identity of Kibana to Elasticsearch and are required when
+# xpack.security.http.ssl.client_authentication in Elasticsearch is set to required.
+#elasticsearch.ssl.certificate: /path/to/your/client.crt
+#elasticsearch.ssl.key: /path/to/your/client.key
+
+# Enables you to specify a path to the PEM file for the certificate
+# authority for your Elasticsearch instance.
+#elasticsearch.ssl.certificateAuthorities: [ "/path/to/your/CA.pem" ]
+
+# To disregard the validity of SSL certificates, change this setting's value to 'none'.
+#elasticsearch.ssl.verificationMode: full
+
+# =================== System: Logging ===================
+# Set the value of this setting to off to suppress all logging output, or to debug to log everything. Defaults to 'info'
+#logging.root.level: debug
+
+# Enables you to specify a file where Kibana stores log output.
+#logging.appenders.default:
+#  type: file
+#  fileName: /var/logs/kibana.log
+#  layout:
+#    type: json
+
+# Example with size based log rotation
+#logging.appenders.default:
+#  type: rolling-file
+#  fileName: /var/logs/kibana.log
+#  policy:
+#    type: size-limit
+#    size: 256mb
+#  strategy:
+#    type: numeric
+#    max: 10
+#  layout:
+#    type: json
+
+# Logs queries sent to Elasticsearch.
+#logging.loggers:
+#  - name: elasticsearch.query
+#    level: debug
+
+# Logs http responses.
+#logging.loggers:
+#  - name: http.server.response
+#    level: debug
+
+# Logs system usage information.
+#logging.loggers:
+#  - name: metrics.ops
+#    level: debug
+
+# Enables debug logging on the browser (dev console)
+#logging.browser.root:
+#  level: debug
+
+# =================== System: Other ===================
+# The path where Kibana stores persistent data not saved in Elasticsearch. Defaults to data
+#path.data: data
+
+# Specifies the path where Kibana creates the process ID file.
+#pid.file: /run/kibana/kibana.pid
+
+# Set the interval in milliseconds to sample system and process performance
+# metrics. Minimum is 100ms. Defaults to 5000ms.
+#ops.interval: 5000
+
+# Specifies locale to be used for all localizable strings, dates and number formats.
+# Supported languages are the following: English (default) "en", Chinese "zh-CN", Japanese "ja-JP", French "fr-FR".
+#i18n.locale: "en"
+
+# =================== Frequently used (Optional)===================
+
+# =================== Saved Objects: Migrations ===================
+# Saved object migrations run at startup. If you run into migration-related issues, you might need to adjust these settings.
+
+# The number of documents migrated at a time.
+# If Kibana can't start up or upgrade due to an Elasticsearch `circuit_breaking_exception`,
+# use a smaller batchSize value to reduce the memory pressure. Defaults to 1000 objects per batch.
+#migrations.batchSize: 1000
+
+# The maximum payload size for indexing batches of upgraded saved objects.
+# To avoid migrations failing due to a 413 Request Entity Too Large response from Elasticsearch.
+# This value should be lower than or equal to your Elasticsearch cluster’s `http.max_content_length`
+# configuration option. Default: 100mb
+#migrations.maxBatchSizeBytes: 100mb
+
+# The number of times to retry temporary migration failures. Increase the setting
+# if migrations fail frequently with a message such as `Unable to complete the [...] step after
+# 15 attempts, terminating`. Defaults to 15
+#migrations.retryAttempts: 15
+
+# =================== Search Autocomplete ===================
+# Time in milliseconds to wait for autocomplete suggestions from Elasticsearch.
+# This value must be a whole number greater than zero. Defaults to 1000ms
+#unifiedSearch.autocomplete.valueSuggestions.timeout: 1000
+
+# Maximum number of documents loaded by each shard to generate autocomplete suggestions.
+# This value must be a whole number greater than zero. Defaults to 100_000
+#unifiedSearch.autocomplete.valueSuggestions.terminateAfter: 100000
+
 ```
 
 **Step 7: Playbook Execution**
 
-* To set up Redis on your target servers, you will execute the Ansible playbook using the following command:
+* To set up Kibanas on your target servers, you will execute the Ansible playbook using the following command:
 
 ```bash
-ansible-playbook -i aws_ec2.yml playbook.yml
+ansible-playbook -i aws_ec2.yml kibana_playbook.yml
 ```
 
 > Additional Options
@@ -461,14 +427,16 @@ ansible-playbook -i aws_ec2.yml playbook.yml
 ## Output
 **Host-level output**: Output for each host would indicate whether the playbook execution was successful or not.
 
-![Screenshot 2024-02-19 202326](https://github.com/CodeOps-Hub/redis-ansiblerole/assets/156056344/e4b974a2-66f5-4e86-896f-1ef36e172cf1)
+![Screenshot 2024-04-07 155342](https://github.com/CodeOps-Hub/Documentation/assets/156056344/7d76ab9e-91d6-4af8-bd79-135ed5fdf850)
+
 
 ***
 
 ## Post-Installation Setup
-* Connect to redis using `redis-cli`
+* Access Kibana on `http://URL:5601`
   
-   ![Screenshot 2024-02-19 220233](https://github.com/CodeOps-Hub/redis-ansiblerole/assets/156056344/1d42ae6e-b031-4fb7-b156-6999ce9da7d0)
+![Screenshot 2024-04-07 155322](https://github.com/CodeOps-Hub/Documentation/assets/156056344/12509da0-2431-4499-8275-bac5a5f4f929)
+
 
 ***
 ## Conclusion 
