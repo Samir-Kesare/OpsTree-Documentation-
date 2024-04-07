@@ -82,3 +82,32 @@ GitOps with Terraform offers several advantages that streamline infrastructure m
 | Scalability and Efficiency | GitOps promotes scalability and efficiency in managing infrastructure by leveraging automation and standardized workflows. Teams can rapidly provision, modify, and tear down infrastructure resources using Terraform, leading to faster development cycles and improved time-to-market for applications.
 | Resilience and Disaster Recovery | GitOps enhances resilience and disaster recovery capabilities by enabling quick restoration of infrastructure from a known state stored in the Git repository. In the event of failures or outages, teams can easily roll back to previous configurations and restore services to a stable state. |
 | Observability and Monitoring | By integrating observability and monitoring tools with GitOps workflows, teams gain visibility into infrastructure changes, resource utilization, and performance metrics. Monitoring solutions can detect anomalies, alert stakeholders to potential issues, and facilitate proactive maintenance of infrastructure components. |
+
+***
+
+## Drawbacks 
+
+While GitOps with Terraform offers numerous benefits, it also presents certain drawbacks and limitations that organizations should be aware of:
+
+| **Advantage** | **Description** |
+| ---------- | --------------- |
+| Learning Curve | Adopting GitOps and mastering Terraform may require a significant investment of time and resources for teams that are new to these technologies. Training, documentation, and skill development efforts may be necessary to ensure proficiency and effectiveness. |
+| Complexity of Infrastructure | Managing complex infrastructure configurations with Terraform can become challenging, particularly as the size and scope of deployments increase. Orchestrating multiple resources, dependencies, and interactions within a GitOps workflow may introduce complexity and potential points of failure. |
+| Version Control Overhead | While version control is a key advantage of GitOps, it can also introduce overhead in terms of managing branches, conflicts, and merge operations. Maintaining a clean and organized Git repository structure becomes crucial to prevent issues with code conflicts and synchronization errors.|
+| Limited Support for Legacy Systems | Organizations with existing legacy systems or infrastructure may encounter challenges in adopting GitOps practices with Terraform. Integrating Terraform with legacy technologies, proprietary systems, or non-cloud-native environments may require additional effort and customization.
+| Dependency on External Services | GitOps workflows rely on external services such as Git repositories, CI/CD pipelines, and cloud providers. Any disruptions or outages in these services can impact the reliability and availability of infrastructure deployments, highlighting the importance of contingency plans and redundancy measures.|
+| Operational Overhead | Maintaining and managing GitOps workflows, CI/CD pipelines, and Terraform configurations requires ongoing operational effort and monitoring. Teams must allocate resources for monitoring, troubleshooting, and optimizing the GitOps infrastructure to ensure smooth operation and reliability. |
+| Vendor Lock-In | While Terraform provides support for multiple cloud providers and infrastructure platforms, organizations may face vendor lock-in if they heavily rely on proprietary features or integrations offered by specific vendors. This could limit flexibility and portability in the long term.|
+***
+## Conclusion 
+# Contact Information:
+| Name | Email address |
+| ---- | ------------- |
+| Aakash | aakash.tripathi.snaatak@mygurukulam.co |
+***
+## References:
+| Source | Description |
+| ------ | ----------- |
+| https://www.techtarget.com/searchitoperations/definition/GitOps  | Gitops Features |
+| https://www.weave.works/technologies/gitops/  | Gitops Principles |
+| https://www.cncf.io/blog/2022/09/30/how-to-gitops-your-terraform/ | Terraform GitOps |
