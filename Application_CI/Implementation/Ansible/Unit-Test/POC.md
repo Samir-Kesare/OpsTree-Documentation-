@@ -17,7 +17,7 @@
 3. [Flow of Ansible Unit Test](#Flow-of-Ansible-Unit-Test)
 4. [Steps of Ansible Unit Testing](#Steps-of-Ansible-Unit-Testing)
 5. [Advantages of Ansible Molecule](#Advantages-of-Ansible-Molecule)
-6. [Disadvantages of Ansible Unit Test](#Disadvantages-of-Ansible-Molecule)
+6. [Disadvantages of Ansible Molecule](#Disadvantages-of-Ansible-Molecule)
 7. [Best Practices](#Best-Practices)
 8. [Conclusion](#Conclusion)
 9. [Contact Information](#Contact-Information)
