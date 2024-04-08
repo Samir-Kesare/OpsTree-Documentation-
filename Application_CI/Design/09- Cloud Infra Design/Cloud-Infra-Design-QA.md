@@ -39,7 +39,7 @@ In the modern software development landscape, microservices architecture has bec
 
 # Infrastructure Diagram
 
-![Ideal-Dev-Infra - Page 1](https://github.com/CodeOps-Hub/Documentation/assets/156057205/56fc0c28-7e21-4e6f-b7e4-bdc455db7cf8)
+![Ideal-Dev-Infra - Page 1 (1)](https://github.com/CodeOps-Hub/Documentation/assets/156057205/b4ad8a45-4032-4d38-b300-94a19c69d2ef)
 
 *** 
 
@@ -154,9 +154,9 @@ In the modern software development landscape, microservices architecture has bec
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | SSH                     | TCP | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.1.0.0/28)  | Allow      |
-| 110         | Custom TCP(Redis)       | TCP | 6379       | QA-Backend-Pvt-Subnet (10.1.0.64/28)                            | Allow      |
-| 120         | Custom TCP(Scylla)      | TCP | 9042       | QA-Backend-Pvt-Subnet (10.1.0.64/28)                            | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | QA-Backend-Pvt-Subnet (10.1.0.64/28)                            | Allow      |
+| 110         | Custom TCP(Redis)       | TCP | 6379       | QA-Backend-Pvt-Subnet (10.1.0.64/27)                            | Allow      |
+| 120         | Custom TCP(Scylla)      | TCP | 9042       | QA-Backend-Pvt-Subnet (10.1.0.64/27)                            | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | QA-Backend-Pvt-Subnet (10.1.0.64/27)                            | Allow      |
 | *           | All traffic             | All | All        | 0.0.0.0/0                                                       | Deny       |
 
 ### Database NACL Outbound Rules
