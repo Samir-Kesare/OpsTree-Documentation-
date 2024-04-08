@@ -123,5 +123,5 @@ In conclusion, following these best practices with Ansible Molecule helps ensure
 | --------- | --------------- |
 | [Link](https://medium.com/contino-engineering/testing-ansible-automation-with-molecule-pt-1-66ab3ea7a58a) | Ansible Unit Test Reference Link |
 | [Link](https://github.com/ansible-community/molecule) | Ansible Unit Test Reference Link |
-| [Link](https://ansible.readthedocs.io/projects/molecule/) | Concept Of Ansible Unit Test |
+| [Link](https://ansible.readthedocs.io/projects/molecule/) | Concept of Ansible Unit Test |
 
