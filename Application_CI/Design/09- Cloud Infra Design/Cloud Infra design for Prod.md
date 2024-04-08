@@ -61,8 +61,8 @@ A well-designed cloud infrastructure for production environments encompasses var
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
 | Frontend | Frontend-lb-sg      | 80                | 0.0.0.0/0           | 
-| Frontend | Frontend-sg         | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |      
-| Frontend | Frontend-sg         | 3000              | Frontend-lb-sg (sg-04d283934a64707a) | 
+| Frontend | Frontend-sg         | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28) |      
+| Frontend | Frontend-sg         | 3000              | Frontend-lb-sg | 
 
 ***
 
@@ -70,12 +70,12 @@ A well-designed cloud infrastructure for production environments encompasses var
 
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
-| Backend  | Attendance-sg       | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28)     |
-| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg (sg-04d283934a64707a)                               | 
-| Backend  | Salary-sg           | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28)     |
-| Backend  | Salary-sg           | 8080              | Frontend-lb-sg (sg-04d283934a64707a)                               |
-| Backend  | Employee-sg         | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28)     |
-| Backend  | Employee-sg         | 8080              | Frontend-lb-sg (sg-04d283934a64707a)                               |
+| Backend  | Attendance-sg       | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28)     |
+| Backend  | Attendance-sg       | 8080              | Frontend-lb-sg                               | 
+| Backend  | Salary-sg           | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28)     |
+| Backend  | Salary-sg           | 8080              | Frontend-lb-sg                                |
+| Backend  | Employee-sg         | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28)     |
+| Backend  | Employee-sg         | 8080              | Frontend-lb-sg                               |
 
 ***
 
@@ -83,12 +83,12 @@ A well-designed cloud infrastructure for production environments encompasses var
 
 | Layer    | Security Group Name | Inbound Rule Port | Inbound Rule Source |
 |----------|---------------------|-------------------|---------------------|
-| Database | Postgresql-sg       | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |      
-| Database | Postgresql-sg       | 5432              | Backend-sg (sg-0a4ecb0570e13e3) |       
-| Database | Redis-sg            | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) |
-| Database | Redis-sg            | 6379              | Backend-sg (sg-0a4ecb0570e13e3)     |
-| Database | Scylla-sg           | 22                | Openvpn-sg (sg-0ced15d988acdb94), Management-vpc (20.0.0.0/28) | 
-| Database | Scylla-sg           | 9042              | Backend-sg (sg-0a4ecb0570e13e3)  |
+| Database | Postgresql-sg       | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28) |      
+| Database | Postgresql-sg       | 5432              | Backend-sg |       
+| Database | Redis-sg            | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28) |
+| Database | Redis-sg            | 6379              | Backend-sg     |
+| Database | Scylla-sg           | 22                | Openvpn-sg, Management-vpc (20.0.0.0/28) | 
+| Database | Scylla-sg           | 9042              | Backend-sg  |
 
 ***
 
