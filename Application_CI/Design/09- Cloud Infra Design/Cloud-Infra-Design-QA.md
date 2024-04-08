@@ -39,7 +39,7 @@ In the modern software development landscape, microservices architecture has bec
 
 # Infrastructure Diagram
 
-![Ideal-QA-Infra - Page 1 (2)](https://github.com/CodeOps-Hub/Documentation/assets/156057205/eef74ae9-bba3-4f93-b0e2-be2172ef3212)
+![Ideal-Dev-Infra - Page 1](https://github.com/CodeOps-Hub/Documentation/assets/156057205/56fc0c28-7e21-4e6f-b7e4-bdc455db7cf8)
 
 *** 
 
@@ -115,8 +115,8 @@ In the modern software development landscape, microservices architecture has bec
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.0.1.0/27)      | Allow |
-| 110         | Custom TCP| TCP      | 3000       | QA-Public-Subnet-1 (10.0.1.0/27), QA-Public-Subnet-2 (10.0.1.64/27) | Allow |
+| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.1.0.0/28)      | Allow |
+| 110         | Custom TCP| TCP      | 3000       | QA-Public-Subnet-1 (10.1.0.0/28), QA-Public-Subnet-2 (10.1.0.16/28) | Allow |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Frontend NACL Outbound Rules
@@ -124,19 +124,19 @@ In the modern software development landscape, microservices architecture has bec
 | Rule number | Type      | Protocol | Port range | Destination  | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)      | Allow      |
-| 110         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.1.0.0/28)  | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.1.0.16/28) | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.0.1.0/27)      | Allow      |
-| 110         | Custom TCP| TCP      | 8080       | QA-Public-Subnet-1 (10.0.1.0/27), QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet (10.0.1.48/27)   | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
-| 140         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
+| 100         | SSH       | TCP      | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.1.0.0/28)      | Allow      |
+| 110         | Custom TCP| TCP      | 8080       | QA-Public-Subnet-1 (10.1.0.0/28), QA-Public-Subnet-2 (10.1.0.16/28) | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet (10.1.0.96/28)   | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.1.0.16/28) | Allow      |
+| 140         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.1.0.0/28)  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Backend NACL Outbound Rules
@@ -144,28 +144,28 @@ In the modern software development landscape, microservices architecture has bec
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
 | 100         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)      | Allow      |
-| 110         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet (10.0.1.48/27)   | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.0.1.64/27) | Allow      |
-| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
+| 110         | Custom TCP| TCP      | 1024-65535 | QA-DB-Pvt-Subnet (10.1.0.96/28)   | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-2 (10.1.0.16/28) | Allow      |
+| 130         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.1.0.0/28)  | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0    | Deny       |
 
 ### Database NACL Inbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | SSH                     | TCP | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.0.1.0/27)  | Allow      |
-| 110         | Custom TCP(Redis)       | TCP | 6379       | QA-Backend-Pvt-Subnet (10.0.1.32/27)                            | Allow      |
-| 120         | Custom TCP(Scylla)      | TCP | 9042       | QA-Backend-Pvt-Subnet (10.0.1.32/27)                            | Allow      |
-| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | QA-Backend-Pvt-Subnet (10.0.1.32/27)                            | Allow      |
+| 100         | SSH                     | TCP | 22         | Management-vpc (20.0.0.0/28), QA-Public-Subnet-1 (10.1.0.0/28)  | Allow      |
+| 110         | Custom TCP(Redis)       | TCP | 6379       | QA-Backend-Pvt-Subnet (10.1.0.64/28)                            | Allow      |
+| 120         | Custom TCP(Scylla)      | TCP | 9042       | QA-Backend-Pvt-Subnet (10.1.0.64/28)                            | Allow      |
+| 130         | Custom TCP (PostgreSQL) | TCP | 5432       | QA-Backend-Pvt-Subnet (10.1.0.64/28)                            | Allow      |
 | *           | All traffic             | All | All        | 0.0.0.0/0                                                       | Deny       |
 
 ### Database NACL Outbound Rules
 
 | Rule number | Type      | Protocol | Port range | Source       | Allow/Deny |
 |-------------|-----------|----------|------------|--------------|------------|
-| 100         | Custom TCP| TCP      | 1024-65535 | QA-Backend-Pvt-Subnet (10.0.1.32/27) | Allow      |
+| 100         | Custom TCP| TCP      | 1024-65535 | QA-Backend-Pvt-Subnet (10.1.0.64/28) | Allow      |
 | 110         | Custom TCP| TCP      | 1024-65535 | Management-vpc (20.0.0.0/28)         | Allow      |
-| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.0.1.0/27)     | Allow      |
+| 120         | Custom TCP| TCP      | 1024-65535 | QA-Public-Subnet-1 (10.1.0.0/28)     | Allow      |
 | *           | All traffic | All    | All        | 0.0.0.0/0                            | Deny       |
 
 ***
