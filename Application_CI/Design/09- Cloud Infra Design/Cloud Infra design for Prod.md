@@ -33,7 +33,7 @@ A well-designed cloud infrastructure for production environments encompasses var
 ***
 ## Infrastructure Diagram
 
-![Ideal-Dev-Infra - Page 1 (4)](https://github.com/CodeOps-Hub/Documentation/assets/156057205/aa8beeaf-abd3-4aa9-b702-306cc4184fd0)
+![Ideal-Dev-Infra - Page 1 (5)](https://github.com/CodeOps-Hub/Documentation/assets/156057205/509581df-c82b-490d-abb2-b758513564d1)
 
 ---
 ## Description
