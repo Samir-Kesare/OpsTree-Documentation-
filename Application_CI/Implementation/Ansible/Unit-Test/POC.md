@@ -14,14 +14,16 @@
 
 1. [Introduction](#Introduction)
 2. [Why Ansible Molecule](#Why-Ansible-Molecule)
-3. [Flow of Ansible Unit Test](#Flow-of-Ansible-Unit-Test)
-4. [Steps of Ansible Unit Testing](#Steps-of-Ansible-Unit-Testing)
-5. [Advantages of Ansible Molecule](#Advantages-of-Ansible-Molecule)
-6. [Disadvantages of Ansible Molecule](#Disadvantages-of-Ansible-Molecule)
-7. [Best Practices](#Best-Practices)
-8. [Conclusion](#Conclusion)
-9. [Contact Information](#Contact-Information)
-10. [References](#References)
+3. [Pre-requisites](#Pre-requisites)
+4. [Directory Structure](#Directory-Structure)
+5. [Flow of Ansible Unit Test](#Flow-of-Ansible-Unit-Test)
+6. [Steps of Ansible Unit Testing](#Steps-of-Ansible-Unit-Testing)
+7. [Advantages of Ansible Molecule](#Advantages-of-Ansible-Molecule)
+8. [Disadvantages of Ansible Molecule](#Disadvantages-of-Ansible-Molecule)
+9. [Best Practices](#Best-Practices)
+10. [Conclusion](#Conclusion)
+11. [Contact Information](#Contact-Information)
+12. [References](#References)
 
 ***
 
@@ -40,6 +42,23 @@ Ansible Molecule is a powerful tool designed to streamline the development and t
 | **Flexibility**                                     | Molecule supports multiple backends and testing frameworks, allowing users to choose their preferred setup.         |
 | **Scalability**                                     | Molecule scales seamlessly from simple unit tests to complex integration tests, accommodating diverse use cases.    |
 | **Community Support**                               | Molecule is backed by an active community, ensuring ongoing support, updates, and a wealth of resources.            |
+
+***
+
+# Pre-requisites
+
+| **Pre-requisite** | **Description** |
+| ----------------- | --------------- |
+| **Ansible** | Ansible should be installed. |
+| **Molecule** | Molecule must be installed and configured. |
+| **Python3 & pip** | Python3 and pip are requirements for Ansible and Molecule. |
+| **Docker** | Docker is a requirement as we are using `docker` as a `driver`. |
+
+***
+
+#  Directory Structure
+
+<img width="300" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e0046246-fc38-4d56-b848-fecd0f41f519">
 
 ***
 
@@ -64,7 +83,19 @@ Ansible Molecule is a powerful tool designed to streamline the development and t
 
 # Steps of Ansible Unit Testing
 
+## Step-01: Installation of some pre-requisites
 
+```shell
+# install ansible
+python3 -m pip install --user ansible
+# Install the latest version of molecule from source
+python3 -m pip install -U git+https://github.com/ansible-community/molecule
+#install testinfra
+python3 -m pip install --user pytest-testinfra
+#install the molecule docker driver
+python3 -m pip install -U "molecule[docker]"
+
+```
 
 ***
 
