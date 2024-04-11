@@ -59,7 +59,7 @@ Ansible Molecule is a powerful tool designed to streamline the development and t
 
 #  Directory Structure
 
-<img width="300" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e0046246-fc38-4d56-b848-fecd0f41f519">
+<img width="800" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/e0046246-fc38-4d56-b848-fecd0f41f519">
 
 ***
 
@@ -84,7 +84,7 @@ Ansible Molecule is a powerful tool designed to streamline the development and t
 
 # Steps of Ansible Unit Testing
 
-## Step-01: Installation of some pre-requisites.
+## Step-01 Installation of some pre-requisites.
 
 <details>
 <summary> Click here to see commands</summary>
@@ -104,7 +104,9 @@ python3 -m pip install -U "molecule[docker]"
 ```
 </details>
 
-## Step-02: Creation of role(demo_role) through `ansible galaxy`.
+***
+
+## Step-02 Creation of role(demo_role) through `ansible galaxy`.
 
 <details>
 <summary> Click here to see command</summary>
@@ -116,7 +118,9 @@ ansible-galaxy init demo_role
 ```
 </details>
 
-## Step-03: Role Initialization
+***
+
+## Step-03 Role Initialization
 
 Initializing the role with Molecule, this will create a directory named `molecule` withing `demo_role` directory and it contains some default files `molecule.yml`, `create.yml`, `destroy.yml`, `converge.yml`.Note that, we can create files and folders withing molecule/default/ according to our requirement except the defaults. I have created a folder named `test` under molecule/default/ and under that, I have created `test_default.py` file.
 
@@ -132,10 +136,11 @@ molecule init scenerio default
 ```
 </details>
 
-<img width="300" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ad6799b2-0273-418d-acb8-531c94e8e7a0">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ad6799b2-0273-418d-acb8-531c94e8e7a0">
 
 ***
-## Step-04: After that, will configure the molecule's files:-
+
+## Step-04 After that, will configure the molecule's files:-
 
 ### First, we will configure `molecule.yml` file
 
@@ -170,7 +175,7 @@ verifier:
 This is the playbook that Molecule will run to provision the targets for testing. Below is the file that Molecule creates.
 
 <details>
-<summary> Click here to see molecule.yml file</summary>
+<summary> Click here to see converge.yml file</summary>
 <br>
   
 ```shell
@@ -187,13 +192,12 @@ This is the playbook that Molecule will run to provision the targets for testing
 
 ***
 
-
 ### Then, we will configure `test_default.py` file
 
 This is the initial test file generated for testinfra. This is where we will be putting our tests.
 
 <details>
-<summary> Click here to see molecule.yml file</summary>
+<summary> Click here to see test_default.py file</summary>
 <br>
   
 ```shell
@@ -210,7 +214,7 @@ def test_hosts_file(host):
 
 ***
 
-## Step-05: Configuring the files for `demo_role`
+## Step-05 Configuring the files for `demo_role`
 
 We have a role that currently doesn’t do anything, let’s fix that by adding some tasks to ./tasks/main.yml. For this post, we’ll stick to the basics, only adding a few things we can write tests for. In this case, some yum packages, a user, and a config file. Provided in the code below.
 
@@ -343,7 +347,7 @@ dependencies: []
 
 ***
 
-## Step-06: Running `molecule commands`
+## Step-06 Running `molecule commands`
 
 ### `molecule create`
 
@@ -358,7 +362,7 @@ sudo -E /home/shreya/.local/bin/molecule create
 
 ```
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/12f81b46-671b-456d-82bb-74731ee21012">
+<img width="950" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/12f81b46-671b-456d-82bb-74731ee21012">
 
 ***
 
@@ -372,7 +376,7 @@ sudo -E /home/shreya/.local/bin/molecule converge
 
 ```
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/68483f42-e848-4fdd-86d3-99234e4d1a04">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/68483f42-e848-4fdd-86d3-99234e4d1a04">
 
 ***
 
@@ -382,16 +386,22 @@ Now that we have run converge and deployed the containers, let’s run some test
 
 ```shell
 
-sudo -E /home/shreya/.local/bin/molecule converge
+sudo -E /home/shreya/.local/bin/molecule verify
 
 ```
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8b184e9b-9bde-4f00-b2f6-faf07918317d">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/8b184e9b-9bde-4f00-b2f6-faf07918317d">
 
 ***
 
-### Now let’s write some tests to confirm our role is doing what it should. We’ll start by testing that the proper packages and versions are installed. Add the following to ./molecule/default/tests/test_default.py, then run `molecule verify`.
+### Running another test
 
+Now let’s write some tests to confirm our role is doing what it should. We’ll start by testing that the proper packages and versions are installed. Add the following to ./molecule/default/tests/test_default.py, then run `molecule verify`.
+
+<details>
+<summary> Click here to see test_default.py file</summary>
+<br>
+  
 ```shell
 
 import pytest
@@ -407,13 +417,18 @@ def test_packages(host, name, version):
     assert pkg.version.startswith(version)
 
 ```
+</details>
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7ac339a9-efde-4845-b781-462c312b8f85">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/7ac339a9-efde-4845-b781-462c312b8f85">
 
 ***
 
 ### Next, we can test for the user webapp and the file app.conf. Add the following to `test_default.py` and run the command `molecule verify`.
 
+<details>
+<summary> Click here to see test_default.py file</summary>
+<br>
+  
 ```shell
 
 import pytest
@@ -439,14 +454,15 @@ def test_file(host, filename, owner, group, mode):
     assert target.mode == mode
 
 ```
+</details>
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/18b5c647-ed22-4754-bf34-33c0c803cd84">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/18b5c647-ed22-4754-bf34-33c0c803cd84">
 
 ***
 
 ### Finally, to clean up, we can run molecule destroy. This removes the containers that we deployed and provisioned with create or converge.
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ca793892-b411-475c-a3ee-6b602f507d26">
+<img width="700" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/ca793892-b411-475c-a3ee-6b602f507d26">
 
 ***
 
@@ -454,7 +470,7 @@ def test_file(host, filename, owner, group, mode):
 
 One last Molecule command to look at is molecule test. The test command will run the entire scenario; creating, converging, verifying, and more.
 
-<img width="856" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/43fcadd0-e149-4721-a7eb-3fe74ae91ffa">
+<img width="900" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/43fcadd0-e149-4721-a7eb-3fe74ae91ffa">
 
 ***
 
