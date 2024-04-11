@@ -472,6 +472,8 @@ One last Molecule command to look at is molecule test. The test command will run
 
 <img width="1000" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/43fcadd0-e149-4721-a7eb-3fe74ae91ffa">
 
+
+<img width="1000" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/fb38fce2-9c7e-440b-82e1-1f41dd07b8ba">
 ***
 
 # Advantages of Ansible Molecule
