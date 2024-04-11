@@ -470,7 +470,11 @@ def test_file(host, filename, owner, group, mode):
 
 One last Molecule command to look at is molecule test. The test command will run the entire scenario; creating, converging, verifying, and more.
 
-<img width="1000" alt="image" src="https://github.com/CodeOps-Hub/Documentation/assets/156057205/fb38fce2-9c7e-440b-82e1-1f41dd07b8ba">
+![Screenshot 2024-04-11 234903](https://github.com/CodeOps-Hub/Documentation/assets/156057205/b149ea32-a820-424e-82d0-62a4760165bb)
+![Screenshot 2024-04-11 234929](https://github.com/CodeOps-Hub/Documentation/assets/156057205/3409eec2-272d-4391-a4c9-8deaaa21ac7a)
+![Screenshot 2024-04-11 235404](https://github.com/CodeOps-Hub/Documentation/assets/156057205/a5aba4e0-c084-463e-b089-7b8376268e72)
+![Screenshot 2024-04-11 235441](https://github.com/CodeOps-Hub/Documentation/assets/156057205/3772a3ae-9a3c-45d4-ba81-cf77cdd459b3)
+![Screenshot 2024-04-11 235502](https://github.com/CodeOps-Hub/Documentation/assets/156057205/d9151522-d2db-4133-93c6-31a133fb1f0a)
 
 ***
 
