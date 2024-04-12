@@ -109,10 +109,10 @@ Maven will be used as a package manager to download specific versions of depende
    ```shell
    cqlsh <IP>
    ```
-   Now, create the keyspace mentioned `employee_db` manually in your ScyllDB.
+   Now, create the keyspace mentioned `employee_salary` manually in your ScyllDB.
    
    ```shell
-    CREATE KEYSPACE IF NOT EXISTS employee_db WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+    CREATE KEYSPACE IF NOT EXISTS employee_salary WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
    ```
 3. _Redis_
 
