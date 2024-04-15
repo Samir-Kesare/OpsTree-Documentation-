@@ -53,9 +53,9 @@ Maven will be used as a package manager to download specific versions of depende
 
 |   System Requirement              |             Minimum                        |
 |-----------------------------------|--------------------------------------------|
-| Processor/Instance Type           |             Dual Core/t2.medium            | 
-| RAM                               |               4GB                          |
-| Disk Space                        |               16GB                         |            
+| Processor/Instance Type           |             t2.micro            | 
+| RAM                               |               1GB                          |
+| Disk Space                        |               8GB                         |            
 | OS Required | Ubuntu   |
 
 ## Important Ports
