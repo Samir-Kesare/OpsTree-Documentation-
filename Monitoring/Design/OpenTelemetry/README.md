@@ -6,7 +6,19 @@
 | --------------- | --------------| -----------|----------------- | -------------- |
 | Aakash Tripathi   | 21 April 2024 |  Version 1 | Vikram Bisht     | 21 April 2024  |
 ***
+## Table of Contents
++ [Introduction](#Introduction)
++ [What is OpenTelemetry](#flow-diagram)
++ [What is Observability](#pre-requisites)
++ [Why OpenTelemetry?](#steps)
++ [Key Features and Capabilities](#output)
++ [Benefits of OpenTelemetry](#post-installation-steps)
++ [Drawbacks or Limitations](#drawbacks-or-limitations)
++ [Conclusion](#conclusion)
++ [Contact Information](#contact-information)
++ [References](#references)
 
+***
 ## Introduction
 In today's increasingly complex distributed systems landscape, understanding and monitoring the behavior of applications across various services and components is crucial for ensuring reliability, performance, and troubleshooting. OpenTelemetry emerges as a powerful toolset designed to address these challenges by providing a unified approach to instrumenting, collecting, and exporting telemetry data from cloud-native environments, microservices, and monolithic applications alike.
 
@@ -21,7 +33,7 @@ To make a system observable, it must be instrumented. That is, the code must emi
 
 ***
 
-# Why OpenTelemetry
+# Why OpenTelemetry?
 
 In today's rapidly evolving landscape of cloud computing, microservices architectures, and intricate business demands, the necessity for comprehensive observability of software and infrastructure has become paramount. OpenTelemetry emerges as a solution that not only fulfills this need but also adheres to two fundamental principles:
 
