@@ -11,6 +11,7 @@
 + [What is OpenTelemetry](#what-is-opentelemetry)
 + [What is Observability](#what-is-observability)
 + [Why OpenTelemetry?](#why-opentelemetry)
++ [Components of Opentelemetry](#components-of-opentelemetry)
 + [Key Features and Capabilities](#key-features-and-capabilaties)
 + [Benefits of OpenTelemetry](#post-installation-steps)
 + [Drawbacks or Limitations](#drawbacks-or-limitations)
@@ -42,6 +43,22 @@ In today's rapidly evolving landscape of cloud computing, microservices architec
 **Unified API and Conventions**: OpenTelemetry streamlines the observability process by providing a single, standardized set of APIs and conventions. This simplifies the learning curve for developers and operators, enabling them to seamlessly integrate observability features into their applications and infrastructure.
 
 By embodying these principles, OpenTelemetry empowers teams and organizations with the flexibility and agility required to navigate the complexities of modern computing environments effectively. Whether it's ensuring data sovereignty or fostering interoperability through standardized practices, OpenTelemetry equips users with the tools needed to thrive in today's dynamic ecosystem.
+
+***
+
+## Components of Opentelemetry
+OpenTelemetry consists of several key components that work together to enable observability in distributed systems. These components include:
+
+| Component             | Description                                                                                                          |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------|
+| SDKs                  | Software Development Kits for various programming languages, enabling instrumentation of applications.               |
+| APIs                  | Standardized Application Programming Interfaces for instrumenting applications with telemetry data.                 |
+| Instrumentation       | Libraries and integrations for automatic or manual instrumentation of frameworks, libraries, and technologies.       |
+| Exporters             | Components responsible for sending telemetry data to backend systems, supporting various destinations and formats.  |
+| Collectors            | Intermediary components for receiving, processing, and forwarding telemetry data to exporters and backend systems.  |
+| Context Propagation   | Mechanism for seamless propagation of contextual information across distributed systems for correlation of data.   |
+| Resource Management   | Management of resources associated with telemetry data, including service names, versions, and environment metadata. |
+| Semantic Conventions  | Guidelines for structuring telemetry data with consistent naming, tagging, and formatting for better interoperability. |
 
 ***
 
