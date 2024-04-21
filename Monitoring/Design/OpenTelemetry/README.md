@@ -1,4 +1,5 @@
 # Open Telemetry
+![download (3)](https://github.com/CodeOps-Hub/Documentation/assets/156056344/a7b48053-5284-493d-81f9-b0cdbf8010b2)
 
 ## Introduction
 In today's increasingly complex distributed systems landscape, understanding and monitoring the behavior of applications across various services and components is crucial for ensuring reliability, performance, and troubleshooting. OpenTelemetry emerges as a powerful toolset designed to address these challenges by providing a unified approach to instrumenting, collecting, and exporting telemetry data from cloud-native environments, microservices, and monolithic applications alike.
