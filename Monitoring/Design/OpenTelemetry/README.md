@@ -34,7 +34,7 @@ To make a system observable, it must be instrumented. That is, the code must emi
 
 ***
 
-# Why OpenTelemetry?
+## Why OpenTelemetry?
 
 In today's rapidly evolving landscape of cloud computing, microservices architectures, and intricate business demands, the necessity for comprehensive observability of software and infrastructure has become paramount. OpenTelemetry emerges as a solution that not only fulfills this need but also adheres to two fundamental principles:
 
