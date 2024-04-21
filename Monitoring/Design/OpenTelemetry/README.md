@@ -8,10 +8,10 @@
 ***
 ## Table of Contents
 + [Introduction](#Introduction)
-+ [What is OpenTelemetry](#flow-diagram)
-+ [What is Observability](#pre-requisites)
-+ [Why OpenTelemetry?](#steps)
-+ [Key Features and Capabilities](#output)
++ [What is OpenTelemetry](#what-is-opentelemetry)
++ [What is Observability](#what-is-observability)
++ [Why OpenTelemetry?](#why-opentelemetry)
++ [Key Features and Capabilities](#key-features-and-capabilaties)
 + [Benefits of OpenTelemetry](#post-installation-steps)
 + [Drawbacks or Limitations](#drawbacks-or-limitations)
 + [Conclusion](#conclusion)
