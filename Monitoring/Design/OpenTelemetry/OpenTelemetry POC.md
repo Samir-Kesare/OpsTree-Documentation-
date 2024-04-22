@@ -9,7 +9,8 @@
 ## Table of Contents
 + [Introduction](#Introduction)
 + [Pre-requisites](#pre-requisites)
-+ [Proof of Concept](#Pre-requisite)
++ [POC:Instrumentation](#Pre-requisite)
++ [POC: Automatic Instrumentation]
 + [Conclusion](#conclusion)
 + [Contact Information](#contact-information)
 + [References](#references)
