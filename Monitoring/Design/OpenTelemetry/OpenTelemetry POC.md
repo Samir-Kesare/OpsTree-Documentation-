@@ -231,4 +231,20 @@ Now you can observe the traces from the java app on Zipkin
 
 ## Conclusion
 
+OpenTelemetry serves as a unified solution for collecting logs, traces, and metrics across diverse environments and services. It enables seamless integration with various vendors and platforms by providing standardized instrumentation libraries and exporters. Through its flexible architecture, developers can easily instrument their applications to capture telemetry data, which can then be exported to different monitoring and observability platforms, including cloud providers, APM (Application Performance Monitoring) tools, and logging services. This interoperability empowers organizations to leverage their preferred monitoring solutions while maintaining consistency and compatibility across their entire infrastructure stack. Ultimately, OpenTelemetry fosters a more comprehensive understanding of system behavior and performance, facilitating effective troubleshooting, optimization, and monitoring in complex distributed environments.
 
+
+## Contact Information
+
+|Aakash Tripathi                 | aakash.tripathi.snaatak@mygurukulam.co                                                                                      
+|---------------------------------|------------------------------------------------------------|
+
+***
+## References
+
+| Title                                      | URL                                           |
+|--------------------------------------------|-----------------------------------------------|
+| Open Telemetry Docs           | https://opentelemetry.io/docs/  |
+| Instrumentation          |  https://opentelemetry.io/docs/languages/java/getting-started/|
+|Automatic Instrumentation | https://opentelemetry.io/docs/languages/java/automatic/
+***
